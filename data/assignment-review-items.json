@@ -1,0 +1,30 @@
+[
+  {
+    "id": "assign-bulk-003-u-student-bulk-006-review-item",
+    "reviewId": "assign-bulk-003-u-student-bulk-006-review",
+    "questionId": "q-chinese-7-kp-chinese-7-1-2",
+    "wrongTag": "粗心",
+    "comment": "注意审题与计算步骤。"
+  },
+  {
+    "id": "assign-bulk-003-u-student-bulk-018-review-item",
+    "reviewId": "assign-bulk-003-u-student-bulk-018-review",
+    "questionId": "q-chinese-7-kp-chinese-7-1-2",
+    "wrongTag": "粗心",
+    "comment": "注意审题与计算步骤。"
+  },
+  {
+    "id": "assign-bulk-006-u-student-bulk-007-review-item",
+    "reviewId": "assign-bulk-006-u-student-bulk-007-review",
+    "questionId": "q-english-10-kp-english-10-1-2",
+    "wrongTag": "粗心",
+    "comment": "注意审题与计算步骤。"
+  },
+  {
+    "id": "assign-bulk-006-u-student-bulk-019-review-item",
+    "reviewId": "assign-bulk-006-u-student-bulk-019-review",
+    "questionId": "q-english-10-kp-english-10-1-2",
+    "wrongTag": "粗心",
+    "comment": "注意审题与计算步骤。"
+  }
+]

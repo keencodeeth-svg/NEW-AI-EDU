@@ -1,0 +1,196 @@
+{
+  "id": "fEJYevrhjf",
+  "stage": {
+    "id": "fEJYevrhjf",
+    "name": "请为小星设计一节适合学生自主使用的数学课前预习课堂。\n\n学习主题：巩固分数意义与阅读理解预习\n\n当前学习目标：巩固分数意义与阅读理解\n\n课堂要求：先激活旧知，再建立主线、提出问题、安排 2 到 3 个预习检测点，帮助学生带着问题进入真实课堂。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：课前预习\n学习目标：巩固分数意义与阅读理解\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 先用学生已有认知做旧知激活，再搭出本节内容的知识主线和进入课堂前的问题清单。\n- 预习模式不要一次讲完整章，而要优先帮助学生知道“这节课要学什么、哪里可能听不懂”。\n- 预习检测以理解准备度为主，题量小但要能快速暴露盲点。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774246139986,
+    "updatedAt": 1774246217815,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "preview-preparation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解"
+    },
+    "currentSceneId": "R0tleYkxgftkXMxGclUON"
+  },
+  "scenes": [
+    {
+      "id": "R0tleYkxgftkXMxGclUON",
+      "stageId": "fEJYevrhjf",
+      "type": "slide",
+      "title": "欢迎来到预习课堂",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "YVKeq09xH6ben4AbRi80K",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_NAW17_eS",
+              "type": "shape",
+              "left": 100,
+              "top": 80,
+              "width": 800,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_LA2nbA4c",
+              "type": "text",
+              "left": 120,
+              "top": 112,
+              "width": 760,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>欢迎来到预习课堂</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_DC4PpdBx",
+              "type": "shape",
+              "left": 100,
+              "top": 240,
+              "width": 800,
+              "height": 250,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f9f9f9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_r7lj1wu-",
+              "type": "text",
+              "left": 120,
+              "top": 272,
+              "width": 760,
+              "height": 184,
+              "content": "<p style=\"font-size: 20px; margin-bottom: 10px;\">你好，小星！欢迎来到你的专属数学预习课堂。</p><p style=\"font-size: 20px; margin-bottom: 10px;\">今天我们要一起探索的主题是：<strong>分数的意义与阅读理解</strong>。</p><p style=\"font-size: 20px; margin-bottom: 10px;\">预习的目标不是学完所有内容，而是帮你提前发现‘哪里可能听不懂’。</p><p style=\"font-size: 20px;\"><strong>准备好了吗？我们开始吧！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_ClBBTAiA",
+          "type": "spotlight",
+          "elementId": "text_LA2nbA4c"
+        },
+        {
+          "id": "action__ASUfDgP",
+          "type": "speech",
+          "text": "你好，小星！欢迎来到你的专属数学预习课堂。"
+        },
+        {
+          "id": "action_FulGeZVG",
+          "type": "laser",
+          "elementId": "text_r7lj1wu-"
+        },
+        {
+          "id": "action_TqxaHyYs",
+          "type": "speech",
+          "text": "我是你的学习教练，很高兴能和你一起开始这段学习旅程。"
+        },
+        {
+          "id": "action_lJopJ8bJ",
+          "type": "speech",
+          "text": "今天我们要一起探索的主题是：分数的意义与阅读理解。"
+        },
+        {
+          "id": "action_kqutpaHu",
+          "type": "speech",
+          "text": "在开始之前，我想先和你明确一下预习的目标。"
+        },
+        {
+          "id": "action_ugwdl4ck",
+          "type": "spotlight",
+          "elementId": "text_r7lj1wu-"
+        },
+        {
+          "id": "action_CcR8pOqk",
+          "type": "speech",
+          "text": "预习的目标不是学完所有内容，而是帮你提前发现‘哪里可能听不懂’。这样，当你在真正的课堂上再遇到这些内容时，你就能带着清晰的问题去听讲，学习效果会更好。"
+        },
+        {
+          "id": "action_oKZPFQra",
+          "type": "speech",
+          "text": "所以，在整个过程中，如果你有任何疑问，随时都可以停下来思考，或者记下来。准备好了吗？我们开始吧！"
+        }
+      ],
+      "createdAt": 1774246217310,
+      "updatedAt": 1774246217310
+    }
+  ],
+  "createdAt": "2026-03-23T06:10:18.363Z"
+}

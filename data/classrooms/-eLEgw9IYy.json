@@ -1,0 +1,1354 @@
+{
+  "id": "-eLEgw9IYy",
+  "stage": {
+    "id": "-eLEgw9IYy",
+    "name": "请为小星设计一节适合学生自主使用的数学课前预习课堂。\n\n学习主题：巩固分数意义与阅读理解预习\n\n当前学习目标：巩固分数意义与阅读理解\n\n课堂要求：先激活旧知，再建立主线、提出问题、安排 2 到 3 个预习检测点，帮助学生带着问题进入真实课堂。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：课前预习\n学习目标：巩固分数意义与阅读理解\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 先用学生已有认知做旧知激活，再搭出本节内容的知识主线和进入课堂前的问题清单。\n- 预习模式不要一次讲完整章，而要优先帮助学生知道“这节课要学什么、哪里可能听不懂”。\n- 预习检测以理解准备度为主，题量小但要能快速暴露盲点。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774465260872,
+    "updatedAt": 1774465703006,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "preview-preparation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解"
+    },
+    "currentSceneId": "goZD6QG9E8yZsiIDU-WJD"
+  },
+  "scenes": [
+    {
+      "id": "goZD6QG9E8yZsiIDU-WJD",
+      "stageId": "-eLEgw9IYy",
+      "type": "slide",
+      "title": "欢迎来到预习课堂",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "gJ9T65lNMf7VkV5SVWEpT",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_4jrqQVmt",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1e40af;\"><strong>欢迎来到预习课堂</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_vloXiwFI",
+              "type": "text",
+              "left": 60,
+              "top": 180,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 28px; text-align: center; color: #0f766e;\">你好，小星！欢迎来到数学课前预习</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_1-_zjQeU",
+              "type": "shape",
+              "left": 200,
+              "top": 260,
+              "width": 600,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Fm2djYkR",
+              "type": "text",
+              "left": 220,
+              "top": 272,
+              "width": 560,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #0369a1;\">今天我们要一起巩固<strong>分数的意义</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_EWWVpge1",
+              "type": "text",
+              "left": 60,
+              "top": 360,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #7c2d12;\"><strong>预习目标</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_sWTFDdf2",
+              "type": "shape",
+              "left": 150,
+              "top": 420,
+              "width": 700,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fefce8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_VSahjZBw",
+              "type": "text",
+              "left": 170,
+              "top": 432,
+              "width": 660,
+              "height": 70,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #854d0e;\">帮你发现<strong>‘这节课要学什么’</strong>和<strong>‘哪里可能听不懂’</strong></p><p style=\"font-size: 18px; text-align: center; color: #854d0e;\">带着清晰的问题进入真实课堂</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_oifYuI50",
+              "type": "text",
+              "left": 60,
+              "top": 540,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #15803d;\"><strong>准备好了吗？我们开始吧！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_Jhw9ii2O",
+          "type": "spotlight",
+          "elementId": "text_4jrqQVmt"
+        },
+        {
+          "id": "action_4KCykhp2",
+          "type": "speech",
+          "text": "你好，小星！欢迎来到我们的数学课前预习课堂。"
+        },
+        {
+          "id": "action_vMKJKtD5",
+          "type": "spotlight",
+          "elementId": "text_vloXiwFI"
+        },
+        {
+          "id": "action_xJ6Ndguq",
+          "type": "speech",
+          "text": "我是你的数学学习教练，在接下来的时间里，我会陪你一起，为正式的课堂学习做好准备。"
+        },
+        {
+          "id": "action_QpGHvMOV",
+          "type": "spotlight",
+          "elementId": "text_Fm2djYkR"
+        },
+        {
+          "id": "action_836ikYiU",
+          "type": "speech",
+          "text": "今天我们要一起巩固一个非常重要的概念——分数的意义。这是我们后续学习分数运算和应用的基础。"
+        },
+        {
+          "id": "action_c4M13juW",
+          "type": "spotlight",
+          "elementId": "text_EWWVpge1"
+        },
+        {
+          "id": "action_wx0uhnqp",
+          "type": "speech",
+          "text": "那么，预习的目标是什么呢？"
+        },
+        {
+          "id": "action_BUxevTaT",
+          "type": "spotlight",
+          "elementId": "text_VSahjZBw"
+        },
+        {
+          "id": "action_ZewFpifW",
+          "type": "speech",
+          "text": "我们的目标就是帮你发现‘这节课要学什么’和‘哪里可能听不懂’。这样，当你带着这些清晰的问题进入真实课堂时，听课就会更有重点，学习效果也会更好。"
+        },
+        {
+          "id": "action_BfYqwTyG",
+          "type": "spotlight",
+          "elementId": "text_oifYuI50"
+        },
+        {
+          "id": "action_6jhdvk5z",
+          "type": "speech",
+          "text": "听起来是不是很有用？准备好了吗？我们开始吧！"
+        }
+      ],
+      "createdAt": 1774465339232,
+      "updatedAt": 1774465339232
+    },
+    {
+      "id": "jYu1XmAZmpjYge2xu-K7F",
+      "stageId": "-eLEgw9IYy",
+      "type": "slide",
+      "title": "旧知激活：回忆一下分数",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "_22vbGwdMoNCqKwQl43Ko",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_Io0sw-ui",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>旧知激活：回忆一下分数</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_d-DKVegn",
+              "type": "text",
+              "left": 60,
+              "top": 166,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #666666;\">通过生活实例，激活关于分数意义的已有认知</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_-gOjPnb4",
+              "type": "shape",
+              "left": 60,
+              "top": 240,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_XnwpP78z",
+              "type": "text",
+              "left": 80,
+              "top": 263,
+              "width": 840,
+              "height": 48,
+              "content": "<p style=\"font-size: 20px;\">还记得分数吗？比如一块披萨被分成4份，你吃了1份</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_jGTfHiQ8",
+              "type": "shape",
+              "left": 60,
+              "top": 354,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ZXQ7F6Jo",
+              "type": "text",
+              "left": 80,
+              "top": 377,
+              "width": 840,
+              "height": 48,
+              "content": "<p style=\"font-size: 20px;\">分数表示一个整体被平均分成了几份，取了其中的几份</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_-gTGP8iu",
+              "type": "shape",
+              "left": 60,
+              "top": 468,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_H4tKOe43",
+              "type": "text",
+              "left": 80,
+              "top": 491,
+              "width": 840,
+              "height": 48,
+              "content": "<p style=\"font-size: 20px;\">分数的‘分母’表示总份数，‘分子’表示取的份数</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_hWwQUOSE",
+              "type": "shape",
+              "left": 60,
+              "top": 380,
+              "width": 880,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff7ed",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_7c_pz5lp",
+              "type": "text",
+              "left": 80,
+              "top": 412,
+              "width": 840,
+              "height": 76,
+              "content": "<p style=\"font-size: 20px; text-align: center;\"><strong>想一想：</strong>1/2 块蛋糕和 3/4 瓶果汁，哪个更多？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "latex_DT6RVOE1",
+              "type": "latex",
+              "left": 380,
+              "top": 420,
+              "width": 100,
+              "height": 80,
+              "latex": "\\frac{1}{2}",
+              "color": "#92400e",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_56mWX02w",
+              "type": "latex",
+              "left": 520,
+              "top": 420,
+              "width": 100,
+              "height": 80,
+              "latex": "\\frac{3}{4}",
+              "color": "#92400e",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">4</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">3</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_UUoi8JXM",
+          "type": "spotlight",
+          "elementId": "text_Io0sw-ui"
+        },
+        {
+          "id": "action_TdoyTObJ",
+          "type": "speech",
+          "text": "好的，我们刚刚完成了欢迎环节，现在正式进入学习内容。首先，我们来激活一下旧知识。"
+        },
+        {
+          "id": "action_7U6KsEfc",
+          "type": "spotlight",
+          "elementId": "text_XnwpP78z"
+        },
+        {
+          "id": "action_iDut3S81",
+          "type": "speech",
+          "text": "还记得分数吗？这是一个非常贴近生活的概念。比如，一块披萨被平均分成了4份，如果你吃了其中的1份，那么你吃的就是这块披萨的四分之一。"
+        },
+        {
+          "id": "action_zpk1eUt3",
+          "type": "spotlight",
+          "elementId": "text_ZXQ7F6Jo"
+        },
+        {
+          "id": "action_Ya8zcE0v",
+          "type": "speech",
+          "text": "所以，分数本质上表示一个整体被平均分成了几份，然后我们取了其中的几份。这就是分数的核心意义。"
+        },
+        {
+          "id": "action_fGGtU31n",
+          "type": "spotlight",
+          "elementId": "text_H4tKOe43"
+        },
+        {
+          "id": "action_xJGdzFHQ",
+          "type": "speech",
+          "text": "在分数里，我们有两个重要的部分。下面的数字叫‘分母’，它表示总共有多少份。上面的数字叫‘分子’，它表示我们取了多少份。"
+        },
+        {
+          "id": "action_AruDwD7G",
+          "type": "spotlight",
+          "elementId": "text_7c_pz5lp"
+        },
+        {
+          "id": "action_FNGdbBTQ",
+          "type": "speech",
+          "text": "现在，让我们动动脑筋，想一想这个问题：二分之一块蛋糕和四分之三瓶果汁，哪个更多呢？"
+        },
+        {
+          "id": "action_tHyQ8Rx5",
+          "type": "laser",
+          "elementId": "latex_DT6RVOE1"
+        },
+        {
+          "id": "action_CI-4mZsK",
+          "type": "speech",
+          "text": "这是二分之一。"
+        },
+        {
+          "id": "action_1E5VaUO5",
+          "type": "laser",
+          "elementId": "latex_56mWX02w"
+        },
+        {
+          "id": "action_eP44PR6f",
+          "type": "speech",
+          "text": "这是四分之三。"
+        },
+        {
+          "id": "action_ch_DxtIY",
+          "type": "speech",
+          "text": "不着急回答，我们先把这个疑问留在心里。回忆分数的意义，就是为我们接下来要学习的新内容打好基础。准备好了吗？我们进入下一个环节。"
+        }
+      ],
+      "createdAt": 1774465373848,
+      "updatedAt": 1774465373848
+    },
+    {
+      "id": "fI6ZzljY2KTJwd4JfDO31",
+      "stageId": "-eLEgw9IYy",
+      "type": "quiz",
+      "title": "小试牛刀：分数意义理解",
+      "order": 3,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "下面哪个图能正确表示分数 3/5？",
+            "options": [
+              {
+                "value": "A",
+                "label": "一个圆被平均分成5份，其中3份被涂色。"
+              },
+              {
+                "value": "B",
+                "label": "一个圆被平均分成8份，其中3份被涂色。"
+              },
+              {
+                "value": "C",
+                "label": "一个圆被分成大小不等的5份，其中3份被涂色。"
+              },
+              {
+                "value": "D",
+                "label": "一个长方形被平均分成5份，其中2份被涂色。"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "分数3/5表示将一个整体平均分成5等份，取其中的3份。选项A正确，因为它描述了“平均分成5份”并“涂色3份”。选项B错误，因为整体被分成了8份，不是5份。选项C错误，因为虽然分成了5份，但不是“平均”的。选项D错误，因为涂色部分是2份，不是3份。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_Q5FQMjVh",
+          "type": "speech",
+          "text": "很好，刚才我们回忆了分数的意义。现在，让我们通过一道简单的选择题，来快速检测一下你的理解。看看下面哪个图能正确表示分数 3/5。"
+        },
+        {
+          "id": "action_vbOA0hVP",
+          "type": "speech",
+          "text": "请仔细看一看题目和选项。想一想，分数 3/5 表示什么？它表示把一个整体平均分成了 5 份，我们取其中的 3 份。"
+        },
+        {
+          "id": "action_OH0rBo_C",
+          "type": "speech",
+          "text": "现在，请你做出选择。选好后，我们一起来看看正确答案和解释。"
+        },
+        {
+          "id": "action_0g9X1F9i",
+          "type": "speech",
+          "text": "正确答案是 B。我们来看一下为什么。选项B的图形被平均分成了 5 个相等的部分，并且其中 3 个部分被涂上了阴影，这正好对应了分数 3/5 的意义。而其他选项，要么是总份数不对，要么是取的份数不对，没有正确表示平均分和取几份的关系。"
+        },
+        {
+          "id": "action_HwD-Ku-a",
+          "type": "speech",
+          "text": "这道题虽然简单，但能帮我们确认是否真正理解了分数的核心——‘平均分’和‘取几份’。理解了这个，我们才能更好地进入下一环节的学习。"
+        },
+        {
+          "id": "action_n-UItKBr",
+          "type": "discussion",
+          "topic": "为什么‘平均分’对理解分数这么重要？",
+          "prompt": "如果图形不是平均分的，还能用分数表示吗？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774465392019,
+      "updatedAt": 1774465392019
+    },
+    {
+      "id": "heGAMGF7jEeSfUPF88l3U",
+      "stageId": "-eLEgw9IYy",
+      "type": "slide",
+      "title": "搭建主线：这节课要学什么？",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "MfFgU89pbMtDenzYINuKj",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_WjQwJzF2",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>搭建主线：这节课要学什么？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_uQBetQRA",
+              "type": "shape",
+              "left": 150,
+              "top": 166,
+              "width": 700,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_jN5CBQ2t",
+              "type": "text",
+              "left": 60,
+              "top": 200,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #333333;\">明确本节课的知识主线</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_K4TeEqbU",
+              "type": "shape",
+              "left": 100,
+              "top": 280,
+              "width": 800,
+              "height": 200,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_2MvSzd5Z",
+              "type": "text",
+              "left": 120,
+              "top": 312,
+              "width": 760,
+              "height": 136,
+              "content": "<p style=\"font-size: 20px; color: #1e40af;\"><strong>两条核心主线：</strong></p><p style=\"font-size: 18px; line-height: 1.6;\">1. 深入理解<strong>分数的意义</strong></p><p style=\"font-size: 18px; line-height: 1.6;\">2. 学习在<strong>阅读题目时应用分数</strong></p><p style=\"font-size: 18px; line-height: 1.6;\">• 你会遇到更复杂的描述，比如‘比…多几分之几’</p><p style=\"font-size: 18px; line-height: 1.6;\">• 学会判断：这个分数表示‘部分与整体’还是‘两个量在比较’？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_yIxfVzv4",
+              "type": "shape",
+              "left": 150,
+              "top": 450,
+              "width": 700,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_9aGw0qA9",
+              "type": "text",
+              "left": 170,
+              "top": 462,
+              "width": 660,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #166534;\"><strong>带着这些问题，我们进入预习检测。</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_GYRefnCv",
+          "type": "spotlight",
+          "elementId": "text_WjQwJzF2"
+        },
+        {
+          "id": "action_fqzqpyNN",
+          "type": "speech",
+          "text": "非常好，小星。我们刚刚通过几道题，巩固了分数的核心——‘平均分’和‘取几份’。那么，接下来我们要做什么呢？就像我们看地图需要先知道路线一样，学习新知识前，我们也得先看看这节课的‘主线’是什么。"
+        },
+        {
+          "id": "action_5okeJPEI",
+          "type": "spotlight",
+          "elementId": "text_jN5CBQ2t"
+        },
+        {
+          "id": "action_I1Y2oioF",
+          "type": "speech",
+          "text": "所以，在开始正式的预习检测之前，老师想先和你一起明确一下，今天这节课我们要重点攻克的两条知识主线。"
+        },
+        {
+          "id": "action_D-M1-ctz",
+          "type": "spotlight",
+          "elementId": "text_2MvSzd5Z"
+        },
+        {
+          "id": "action_cUJsGU0S",
+          "type": "speech",
+          "text": "第一条主线，是‘深入理解分数的意义’。这不仅仅是知道分数怎么读怎么写，而是要真正明白，一个分数背后到底在说什么。"
+        },
+        {
+          "id": "action_-YcYz8Rq",
+          "type": "speech",
+          "text": "第二条主线，是‘学习在阅读题目时应用分数’。你会发现，题目里关于分数的描述可能会变得更复杂，比如‘比…多几分之几’这样的说法。"
+        },
+        {
+          "id": "action_KZd0pFtG",
+          "type": "speech",
+          "text": "所以，在后面的练习里，老师可能会经常问你一个关键问题：‘小星，你看这个分数，它表示的是部分与整体的关系，还是两个量在互相比较呢？’ 这个问题，就是我们今天要带着去思考的。"
+        },
+        {
+          "id": "action_mOCU0w5D",
+          "type": "spotlight",
+          "elementId": "text_9aGw0qA9"
+        },
+        {
+          "id": "action_ngDBi8Sl",
+          "type": "speech",
+          "text": "好啦，主线已经搭好了，目标也明确了。现在，就让我们带着‘分数的意义’和‘应用’这两个问题，一起进入预习检测环节，看看你的准备度如何吧！"
+        }
+      ],
+      "createdAt": 1774465428249,
+      "updatedAt": 1774465428249
+    },
+    {
+      "id": "UsIxFJeUv205L6LDTgd_B",
+      "stageId": "-eLEgw9IYy",
+      "type": "quiz",
+      "title": "预习检测点一：阅读理解准备度",
+      "order": 5,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "short_answer",
+            "question": "小星有12颗糖，他吃掉了其中的 1/3。请问他吃掉了多少颗糖？请写出你的计算过程和答案。",
+            "commentPrompt": "详细评分标准：(1) 正确理解‘其中的 1/3’指的是‘12颗糖这个整体’的 1/3，并列出算式（如 12 × 1/3）或等价的文字描述 - 60% (2) 计算过程清晰，结果正确（4颗） - 30% (3) 答案表述完整、清晰 - 10%",
+            "analysis": "参考解答：题目中‘其中的 1/3’指的是以12颗糖为整体，求它的三分之一是多少。正确的计算方法是：12 × 1/3 = 4（颗）。所以，小星吃掉了4颗糖。",
+            "points": 10,
+            "hasAnswer": false
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_v0-jj9WD",
+          "type": "speech",
+          "text": "好的，主线搭好了，目标也明确了。现在，就让我们带着‘分数的意义’和‘应用’这两个问题，一起进入预习检测环节，看看你的准备度如何吧！"
+        },
+        {
+          "id": "action_F6vDl-1j",
+          "type": "speech",
+          "text": "第一道题来了，请仔细读题：小星有12颗糖，他吃掉了其中的 1/3。请问他吃掉了多少颗糖？请写出你的计算过程和答案。"
+        },
+        {
+          "id": "action_-62aN-qR",
+          "type": "speech",
+          "text": "这道题的关键，就是理解‘其中的 1/3’指的是什么。它指的不是别的，就是‘12颗糖这个整体’的 1/3。所以，我们要求的就是12的 1/3 是多少。"
+        },
+        {
+          "id": "action_Ts1rnv0w",
+          "type": "speech",
+          "text": "计算过程很简单，用12乘以 1/3，或者用12除以3，结果都是4。所以答案是：小星吃掉了4颗糖。你做对了吗？"
+        },
+        {
+          "id": "action_aCrXPmVv",
+          "type": "speech",
+          "text": "这道题虽然简单，但它是一个很好的起点，帮助我们检查自己能否从文字描述中准确地提取出分数信息，并理解它所指的对象。"
+        },
+        {
+          "id": "action_28TMSMNE",
+          "type": "discussion",
+          "topic": "你是如何理解题目中‘其中的 1/3’这个表述的？",
+          "prompt": "想一想，如果题目改成‘吃掉了 1/3 颗糖’，意思还一样吗？为什么？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774465445892,
+      "updatedAt": 1774465445892
+    },
+    {
+      "id": "AIBRZsfWgMaebSePmb-wK",
+      "stageId": "-eLEgw9IYy",
+      "type": "slide",
+      "title": "追问与点拨",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "VkbMNYbRw046yquEUD48z",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_qzfFYUIw",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>追问与点拨</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_VEgtE6rd",
+              "type": "text",
+              "left": 100,
+              "top": 180,
+              "width": 800,
+              "height": 94,
+              "content": "<p style=\"font-size: 20px;\">如果刚才的题目你觉得难，可能是因为没找到‘整体’</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_68oNcz7y",
+              "type": "text",
+              "left": 100,
+              "top": 280,
+              "width": 800,
+              "height": 94,
+              "content": "<p style=\"font-size: 20px;\">在分数应用题里，找到‘谁’被平均分（整体）非常关键</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_yA6xocYm",
+              "type": "text",
+              "left": 100,
+              "top": 380,
+              "width": 800,
+              "height": 94,
+              "content": "<p style=\"font-size: 20px;\">‘其中的’、‘占…的’这些词常常在提示整体</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_OsGhmuwi",
+              "type": "shape",
+              "left": 100,
+              "top": 480,
+              "width": 800,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Y6OCsOfh",
+              "type": "text",
+              "left": 120,
+              "top": 492,
+              "width": 760,
+              "height": 52,
+              "content": "<p style=\"font-size: 20px;\">再试一次：一个班有30人，女生占 2/5。女生有多少人？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_zlT1ehwF",
+          "type": "spotlight",
+          "elementId": "text_qzfFYUIw"
+        },
+        {
+          "id": "action_8Wd2ky-x",
+          "type": "speech",
+          "text": "好的，我们刚刚完成了第一个预习检测点。现在，让我们进入一个非常重要的环节：追问与点拨。"
+        },
+        {
+          "id": "action_V5N5U9ny",
+          "type": "spotlight",
+          "elementId": "text_VEgtE6rd"
+        },
+        {
+          "id": "action_6ztLrw1U",
+          "type": "speech",
+          "text": "如果刚才那道题你觉得有点难，小星，这很可能是因为我们还没有找到题目里的那个‘整体’。"
+        },
+        {
+          "id": "action_OGUk5Dow",
+          "type": "laser",
+          "elementId": "text_68oNcz7y"
+        },
+        {
+          "id": "action_FywoOTuM",
+          "type": "speech",
+          "text": "在分数应用题里，找到‘谁’被平均分，也就是找到这个‘整体’，是解题最关键的第一步。"
+        },
+        {
+          "id": "action_zAss0o48",
+          "type": "spotlight",
+          "elementId": "text_yA6xocYm"
+        },
+        {
+          "id": "action_NagBgLW8",
+          "type": "speech",
+          "text": "那怎么找呢？其实题目里常常会给我们提示。像‘其中的’、‘占…的’这些词语，就是在悄悄地告诉我们，谁才是那个被分的整体。"
+        },
+        {
+          "id": "action_m0DnLNJt",
+          "type": "spotlight",
+          "elementId": "text_Y6OCsOfh"
+        },
+        {
+          "id": "action_i-LbRHC8",
+          "type": "speech",
+          "text": "光说不练可不行。来，我们再用这个思路试一道题。请看：一个班有30人，女生占 2/5。女生有多少人？小星，你觉得这道题里的‘整体’是谁呢？"
+        }
+      ],
+      "createdAt": 1774465470508,
+      "updatedAt": 1774465470508
+    },
+    {
+      "id": "nvMDWUKt0vaK66-FMfCXY",
+      "stageId": "-eLEgw9IYy",
+      "type": "quiz",
+      "title": "预习检测点二：暴露潜在混淆点",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "判断对错：把一根绳子剪成两段，一段长3米，另一段长5米，那么短的那段绳子是总长的 3/5。",
+            "options": [
+              {
+                "value": "A",
+                "label": "正确"
+              },
+              {
+                "value": "B",
+                "label": "错误"
+              },
+              {
+                "value": "C",
+                "label": "无法判断"
+              },
+              {
+                "value": "D",
+                "label": "短的那段是总长的 3/8"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "analysis": "这个说法是错误的。总绳长是 3米 + 5米 = 8米。短的那段长3米，它占总长的比例是 3 ÷ 8 = 3/8，而不是 3/5。题目中的 3/5 是短绳长度（3米）与长绳长度（5米）的比值，而不是与总长的比值。这是一个常见的混淆点。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_WeOS9BNh",
+          "type": "speech",
+          "text": "刚才我们讨论了分数应用题里的‘整体’。现在，我们再用一道题来检验一下，看看你是不是真的理解了分数的意义，特别是当它不是‘平均分’的时候。"
+        },
+        {
+          "id": "action_UD-Pdnuf",
+          "type": "speech",
+          "text": "请看这道判断题：把一根绳子剪成两段，一段长3米，另一段长5米，那么短的那段绳子是总长的 3/5。你觉得这句话是对还是错呢？先自己想一想。"
+        },
+        {
+          "id": "action_DrmvqToK",
+          "type": "speech",
+          "text": "好，时间到。答案是‘错’。我们来看看为什么。总长度是3米加5米，等于8米。短的那段是3米，所以短的那段占总长的比例应该是 3/8，而不是 3/5。"
+        },
+        {
+          "id": "action_-rdtfINs",
+          "type": "speech",
+          "text": "这道题的关键在于，它故意把‘3米’和‘总长的3/5’放在一起，想让你混淆。但你要记住，分数表示的是部分与整体的关系。这里的整体是8米，不是5米。题目里的两段绳子并不是‘平均分’的，所以不能简单地把一段的长度当成分子，另一段的长度当成分母。"
+        },
+        {
+          "id": "action_Fvfj1iec",
+          "type": "speech",
+          "text": "这个混淆点很常见，就是容易把具体的数量直接和分数划等号，而忽略了分数真正的意义是表示一个比例。把它揪出来，以后你遇到类似的题就不会上当了。"
+        },
+        {
+          "id": "action_Ito2ZwBQ",
+          "type": "discussion",
+          "topic": "为什么我们容易在这道题上出错？",
+          "prompt": "想想看，是哪个概念没理清导致了判断错误？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774465489247,
+      "updatedAt": 1774465489247
+    },
+    {
+      "id": "uvQrLXZFSOpp_2WBEgqF1",
+      "stageId": "-eLEgw9IYy",
+      "type": "slide",
+      "title": "总结与进入课堂的问题清单",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "jixnO-XUWDGTUkd398Fk7",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_r17O9ic5",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">总结与进入课堂的问题清单</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_61284K9t",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; font-weight: bold; color: #1e40af;\">预习总结</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_4sTq5GVC",
+              "type": "shape",
+              "left": 60,
+              "top": 200,
+              "width": 880,
+              "height": 106,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text__DsN0NGL",
+              "type": "text",
+              "left": 80,
+              "top": 217,
+              "width": 840,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px;\">1. 分数表示‘平均分’后的部分与整体关系</p><p style=\"font-size: 18px;\">2. 读题时要找准‘整体’</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_baqeV6k8",
+              "type": "text",
+              "left": 60,
+              "top": 320,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; font-weight: bold; color: #166534;\">进入课堂前，请带着这些问题</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_MCIZ2iM1",
+              "type": "shape",
+              "left": 60,
+              "top": 380,
+              "width": 880,
+              "height": 142,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_4sNobhQ8",
+              "type": "text",
+              "left": 80,
+              "top": 401,
+              "width": 840,
+              "height": 118,
+              "content": "<p style=\"font-size: 18px;\">• 如果题目没有明确说‘平均分’，还能用分数吗？</p><p style=\"font-size: 18px;\">• 怎么判断一个分数是在表示‘关系’还是在做‘比较’？</p><p style=\"font-size: 18px;\">• ‘比…多1/4’到底是什么意思？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Vao4MfDM",
+              "type": "text",
+              "left": 60,
+              "top": 540,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #92400e;\">你已经做好了准备，带着思考去上课吧！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_sqwf-E8j",
+          "type": "spotlight",
+          "elementId": "text_r17O9ic5"
+        },
+        {
+          "id": "action_sMktO0Xa",
+          "type": "speech",
+          "text": "好的，小星，我们来到了预习课堂的最后一站。就像我们刚才在第七页揪出了那个常见的混淆点一样，现在我们来做一个完整的总结，并准备好带着问题进入正式的课堂。"
+        },
+        {
+          "id": "action_DUFMBnrI",
+          "type": "spotlight",
+          "elementId": "text_61284K9t"
+        },
+        {
+          "id": "action_LtMu8j-U",
+          "type": "speech",
+          "text": "首先，我们来回顾一下这次预习的核心收获。第一，分数表示的是‘平均分’之后的部分与整体的关系。第二，读题时最关键的一步，就是找准谁是那个‘整体’。"
+        },
+        {
+          "id": "action_Nd_aJfRz",
+          "type": "laser",
+          "elementId": "text__DsN0NGL"
+        },
+        {
+          "id": "action_0WCqbJm-",
+          "type": "speech",
+          "text": "这两点是你理解分数意义的基石，一定要牢牢记住。"
+        },
+        {
+          "id": "action_3eTjYtHK",
+          "type": "spotlight",
+          "elementId": "text_baqeV6k8"
+        },
+        {
+          "id": "action_Ble6btJ_",
+          "type": "speech",
+          "text": "预习的目的，不仅仅是知道答案，更是为了带着更清晰、更深入的问题去上课。所以，进入课堂前，请你把下面这几个问题装进脑子里。"
+        },
+        {
+          "id": "action_sxvCWdx_",
+          "type": "spotlight",
+          "elementId": "text_4sNobhQ8"
+        },
+        {
+          "id": "action_ZQY9XfJt",
+          "type": "speech",
+          "text": "第一个问题：如果题目没有明确说‘平均分’，还能用分数吗？第二个问题：怎么判断一个分数是在表示‘关系’还是在做‘比较’？第三个问题：‘比…多1/4’到底是什么意思？"
+        },
+        {
+          "id": "action_7FmJiJcW",
+          "type": "laser",
+          "elementId": "text_4sNobhQ8"
+        },
+        {
+          "id": "action_u_MS0TES",
+          "type": "speech",
+          "text": "这些问题都非常棒，它们能帮助你在课堂上听得更专注，思考得更深入。"
+        },
+        {
+          "id": "action_l0fsQfOq",
+          "type": "spotlight",
+          "elementId": "text_Vao4MfDM"
+        },
+        {
+          "id": "action_2d0dJ7WP",
+          "type": "speech",
+          "text": "好了，小星，今天的预习就到这里。你已经做好了充分的准备，带着清晰的总结和宝贵的问题去上课吧！相信在正式的课堂上，你一定能学得更明白，理解得更透彻。加油！"
+        },
+        {
+          "id": "action_y43BtUSo",
+          "type": "discussion",
+          "topic": "对即将开始的正式课堂的期待",
+          "prompt": "小星，对于我们总结的这两个要点，或者这三个问题，你哪一个最想在接下来的课里搞清楚？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774465531927,
+      "updatedAt": 1774465531927
+    }
+  ],
+  "createdAt": "2026-03-25T19:09:46.017Z"
+}

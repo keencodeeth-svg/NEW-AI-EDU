@@ -1,0 +1,1938 @@
+{
+  "id": "jVxo7MkKHE",
+  "stage": {
+    "id": "jVxo7MkKHE",
+    "name": "我要学python",
+    "description": "",
+    "createdAt": 1774004497482,
+    "updatedAt": 1774070319247,
+    "language": "zh-CN",
+    "style": "professional",
+    "currentSceneId": "dvt1MKadJTJtCZJKW8EvP"
+  },
+  "scenes": [
+    {
+      "id": "_QoLBsqfcPqOoyzZWhmAD",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "欢迎来到Python世界",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "JT77wGzTUyUJN_3AFjsWT",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_jrYyifUK",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center;\"><strong>欢迎来到Python世界</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_60ynZ_dX",
+              "type": "shape",
+              "left": 100,
+              "top": 166,
+              "width": 800,
+              "height": 4,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text__YJi06DS",
+              "type": "text",
+              "left": 80,
+              "top": 200,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #1e40af;\"><strong>Python是什么？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_3xtNEEMv",
+              "type": "text",
+              "left": 100,
+              "top": 268,
+              "width": 800,
+              "height": 94,
+              "content": "<p style=\"font-size: 18px;\">• 一门简洁、易读、功能强大的高级编程语言</p><p style=\"font-size: 18px;\">• 设计哲学强调代码的可读性和简洁性</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_eKJwYq-o",
+              "type": "text",
+              "left": 80,
+              "top": 382,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #166534;\"><strong>Python能做什么？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_4PPdObxz",
+              "type": "text",
+              "left": 100,
+              "top": 450,
+              "width": 800,
+              "height": 94,
+              "content": "<p style=\"font-size: 18px;\">• Web开发、数据分析、人工智能</p><p style=\"font-size: 18px;\">• 自动化脚本、科学计算、游戏开发</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_b9SrpNvk",
+              "type": "text",
+              "left": 80,
+              "top": 564,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #92400e;\"><strong>为什么选择Python？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_88sSWbC0",
+              "type": "text",
+              "left": 540,
+              "top": 564,
+              "width": 380,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #7c3aed;\"><strong>本课程目标</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#7c3aed",
+              "rotate": 0
+            },
+            {
+              "id": "text_CB58wscg",
+              "type": "text",
+              "left": 100,
+              "top": 632,
+              "width": 380,
+              "height": 94,
+              "content": "<p style=\"font-size: 18px;\">• 语法简单，上手快速</p><p style=\"font-size: 18px;\">• 社区庞大，库资源丰富</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_xa80fH6V",
+              "type": "text",
+              "left": 560,
+              "top": 632,
+              "width": 380,
+              "height": 94,
+              "content": "<p style=\"font-size: 18px;\">• 从零开始，掌握基础语法</p><p style=\"font-size: 18px;\">• 培养编程思维和解决问题的能力</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_3XORlYZy",
+              "type": "shape",
+              "left": 520,
+              "top": 580,
+              "width": 2,
+              "height": 160,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e5e7eb",
+              "fixedRatio": false,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_jU7ZTlcH",
+          "type": "spotlight",
+          "elementId": "text_jrYyifUK"
+        },
+        {
+          "id": "action_Ddav4aYm",
+          "type": "speech",
+          "text": "大家好！欢迎来到我们的Python编程课堂。我是你们的老师，很高兴今天能和大家一起开启这段编程之旅。"
+        },
+        {
+          "id": "action_qrVj6LkS",
+          "type": "spotlight",
+          "elementId": "text__YJi06DS"
+        },
+        {
+          "id": "action_FyiwlHzd",
+          "type": "speech",
+          "text": "那么，首先我们来回答一个最核心的问题：Python是什么？"
+        },
+        {
+          "id": "action_p_x5hjof",
+          "type": "spotlight",
+          "elementId": "text_3xtNEEMv"
+        },
+        {
+          "id": "action_qV6uWEsm",
+          "type": "speech",
+          "text": "Python是一门非常简洁、易读、功能强大的高级编程语言。它的设计哲学强调代码的可读性和简洁性，这意味着你写的代码不仅机器能懂，其他人，甚至未来的你自己，也能轻松看懂。"
+        },
+        {
+          "id": "action_0U3ts4-q",
+          "type": "spotlight",
+          "elementId": "text_eKJwYq-o"
+        },
+        {
+          "id": "action_aVmWVw_E",
+          "type": "speech",
+          "text": "了解了它是什么，大家可能会好奇，Python到底能用来做什么呢？它的应用领域非常广泛。"
+        },
+        {
+          "id": "action_EnGGBOrk",
+          "type": "spotlight",
+          "elementId": "text_4PPdObxz"
+        },
+        {
+          "id": "action_EdvHkAYs",
+          "type": "speech",
+          "text": "比如，你可以用它来开发网站，进行数据分析和人工智能研究，编写自动化脚本帮你处理重复性工作，甚至进行科学计算和游戏开发。可以说，Python是当今最通用、最热门的编程语言之一。"
+        },
+        {
+          "id": "action_sDh_2uv3",
+          "type": "spotlight",
+          "elementId": "text_b9SrpNvk"
+        },
+        {
+          "id": "action_40WWB3-A",
+          "type": "speech",
+          "text": "面对众多编程语言，我们为什么选择Python作为入门呢？"
+        },
+        {
+          "id": "action_tjoiAtwR",
+          "type": "spotlight",
+          "elementId": "text_CB58wscg"
+        },
+        {
+          "id": "action_c0BV-Rra",
+          "type": "speech",
+          "text": "最主要的原因有两个：第一，它的语法非常简单，上手非常快，对初学者非常友好。第二，它有一个极其庞大的全球社区和丰富的库资源，这意味着你遇到的几乎所有问题，都能在网上找到解决方案和现成的工具。"
+        },
+        {
+          "id": "action_S-bCesqo",
+          "type": "spotlight",
+          "elementId": "text_88sSWbC0"
+        },
+        {
+          "id": "action_NX0TJHqT",
+          "type": "speech",
+          "text": "最后，我们来看看通过这门课程，大家将达到什么样的目标。"
+        },
+        {
+          "id": "action_iNHdVIlb",
+          "type": "spotlight",
+          "elementId": "text_xa80fH6V"
+        },
+        {
+          "id": "action_xJzI0kgv",
+          "type": "speech",
+          "text": "我们的目标很明确：带领大家从零开始，系统地掌握Python的基础语法。更重要的是，在这个过程中，培养大家的编程思维和独立解决问题的能力。这不仅是学习一门语言，更是学习一种新的思考方式。"
+        },
+        {
+          "id": "action_ABWYfws9",
+          "type": "speech",
+          "text": "好的，介绍就到这里。相信大家对Python已经有了一个初步的、积极的印象。接下来，我们就正式进入学习环节。"
+        }
+      ],
+      "createdAt": 1774024818820,
+      "updatedAt": 1774024818820
+    },
+    {
+      "id": "PNLxgHYkj8_WWUCpIJSeh",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "搭建你的第一个Python环境",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "ih2mcLQer2UB9yOwa1uax",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_7gc6wWG4",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>搭建你的第一个Python环境</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_oysQfKBR",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #5b9bd5;\">安装Python解释器并运行第一个程序</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "shape_dJ_sUf0N",
+              "type": "shape",
+              "left": 100,
+              "top": 210,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e0e0e0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_qTKGahpJ",
+              "type": "shape",
+              "left": 60,
+              "top": 240,
+              "width": 880,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_8nImqCAK",
+              "type": "text",
+              "left": 80,
+              "top": 254,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>1. 获取Python</strong>：访问 python.org 下载官方安装包</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_jXeYMK3R",
+              "type": "shape",
+              "left": 60,
+              "top": 310,
+              "width": 880,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text__mrwdOgW",
+              "type": "text",
+              "left": 80,
+              "top": 324,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>2. 安装步骤</strong>：演示（以Windows/Mac为例）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_AIRKdNob",
+              "type": "shape",
+              "left": 60,
+              "top": 380,
+              "width": 880,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_07Dvg976",
+              "type": "text",
+              "left": 80,
+              "top": 394,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>3. 认识IDLE</strong>：Python自带的简易开发环境</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_gah5ATcp",
+              "type": "shape",
+              "left": 60,
+              "top": 450,
+              "width": 880,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_eWgYN0_G",
+              "type": "text",
+              "left": 80,
+              "top": 464,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>4. 动手实践</strong>：编写并运行 print('Hello, World!')</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_xmGKhaCf",
+              "type": "shape",
+              "left": 300,
+              "top": 240,
+              "width": 400,
+              "height": 262,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8f9fa",
+              "fixedRatio": false,
+              "opacity": 0.9,
+              "rotate": 0
+            },
+            {
+              "id": "text_-Z7sMnXw",
+              "type": "text",
+              "left": 320,
+              "top": 260,
+              "width": 360,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center;\"><strong>第一个Python程序</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#d97706",
+              "rotate": 0
+            },
+            {
+              "id": "latex_poi_xjIb",
+              "type": "latex",
+              "left": 320,
+              "top": 320,
+              "width": 360,
+              "height": 80,
+              "latex": "\\text{print('Hello, World!')}",
+              "color": "#0ea5e9",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord text\"><span class=\"mord\">print(’Hello, World!’)</span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_QAGTKHNp",
+              "type": "text",
+              "left": 320,
+              "top": 410,
+              "width": 360,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; text-align: center; color: #16a34a;\">输出：Hello, World!</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#16a34a",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_eBTYUTvp",
+          "type": "spotlight",
+          "elementId": "text_7gc6wWG4"
+        },
+        {
+          "id": "action_QIow8mb2",
+          "type": "speech",
+          "text": "好的，我们刚刚对Python有了一个初步的、积极的印象。接下来，我们就正式进入学习环节，开始动手搭建你的第一个Python环境。"
+        },
+        {
+          "id": "action_hQeErSjF",
+          "type": "spotlight",
+          "elementId": "text_oysQfKBR"
+        },
+        {
+          "id": "action_9KNcQSmr",
+          "type": "speech",
+          "text": "这节课的核心目标非常明确，就是安装Python解释器，并成功运行你的第一个程序。这是从理论到实践的第一步。"
+        },
+        {
+          "id": "action_J1RgOeNq",
+          "type": "spotlight",
+          "elementId": "text_8nImqCAK"
+        },
+        {
+          "id": "action__MrMapzM",
+          "type": "speech",
+          "text": "首先，第一步，获取Python。请大家记住这个官方网址：python.org。这是Python的官方网站，从这里下载的安装包是最安全、最可靠的。我们直接访问网站，找到下载链接，选择适合你电脑操作系统的版本。"
+        },
+        {
+          "id": "action_2fM3esjH",
+          "type": "spotlight",
+          "elementId": "text__mrwdOgW"
+        },
+        {
+          "id": "action_QcPRemmZ",
+          "type": "speech",
+          "text": "第二步，安装。下载完成后，我们以Windows和Mac系统为例，来演示一下安装过程。大家跟着我的演示一步步来。安装过程很简单，基本上就是‘下一步’、‘下一步’，但请注意，在Windows上，一定要勾选‘Add Python to PATH’这个选项，这非常重要，它关系到我们后面能否在命令行里直接使用Python。"
+        },
+        {
+          "id": "action_NdaB604e",
+          "type": "spotlight",
+          "elementId": "text_07Dvg976"
+        },
+        {
+          "id": "action_okGtKiCE",
+          "type": "speech",
+          "text": "安装完成后，第三步，我们来认识一下IDLE。IDLE是Python自带的、一个非常简易但足够我们初学者使用的开发环境。它集成了代码编辑器和运行窗口，我们可以在这里直接写代码并看到结果。"
+        },
+        {
+          "id": "action_B3SmnpP3",
+          "type": "spotlight",
+          "elementId": "text_eWgYN0_G"
+        },
+        {
+          "id": "action_EARIufSZ",
+          "type": "speech",
+          "text": "最后，第四步，也是最重要的一步，动手实践。让我们打开IDLE，在代码编辑区，输入我们今天要运行的第一个程序。"
+        },
+        {
+          "id": "action_1yrXD1Dg",
+          "type": "spotlight",
+          "elementId": "text_-Z7sMnXw"
+        },
+        {
+          "id": "action_yRzTyeo2",
+          "type": "speech",
+          "text": "这就是我们的第一个Python程序，一个经典的入门仪式。"
+        },
+        {
+          "id": "action_4spgMg6G",
+          "type": "laser",
+          "elementId": "latex_poi_xjIb"
+        },
+        {
+          "id": "action_LxmbtCH-",
+          "type": "speech",
+          "text": "请大家输入：print，然后一对括号，在括号里用单引号或双引号包裹‘Hello, World!’这句话。就像屏幕上显示的这样。"
+        },
+        {
+          "id": "action_zb2rpeWp",
+          "type": "spotlight",
+          "elementId": "text_QAGTKHNp"
+        },
+        {
+          "id": "action_iWfoJ9r4",
+          "type": "speech",
+          "text": "输入完成后，按下回车键。看，在下面的运行窗口里，程序输出了‘Hello, World!’。恭喜你！你的第一个Python程序已经成功运行了。这虽然只是一小步，但却是你编程之旅的一大步。"
+        }
+      ],
+      "createdAt": 1774024884154,
+      "updatedAt": 1774024884154
+    },
+    {
+      "id": "HHlvvToSr6_gl3_TvnSOp",
+      "stageId": "jVxo7MkKHE",
+      "type": "quiz",
+      "title": "小试牛刀：环境与初识",
+      "order": 3,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "以下哪一项是Python语言的主要特点？",
+            "options": [
+              {
+                "value": "A",
+                "label": "语法简洁，易于学习和阅读"
+              },
+              {
+                "value": "B",
+                "label": "代码执行速度在所有语言中最快"
+              },
+              {
+                "value": "C",
+                "label": "只能用于Web开发"
+              },
+              {
+                "value": "D",
+                "label": "需要编译后才能运行"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "Python以其简洁、清晰的语法而闻名，这使得它非常易于学习和阅读，是其核心特点之一。选项B错误，Python的执行速度通常不如C或Java等编译型语言快。选项C错误，Python是一种通用语言，可用于Web开发、数据分析、人工智能、自动化脚本等多种领域。选项D错误，Python是一种解释型语言，通常不需要显式的编译步骤（尽管存在字节码编译过程）。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "在Windows系统上成功安装Python环境后，为了验证安装并方便在命令行中使用，通常需要确认或执行以下哪些关键步骤？（选择所有适用的选项）",
+            "options": [
+              {
+                "value": "A",
+                "label": "在命令提示符（CMD）或PowerShell中输入 `python --version` 检查版本"
+              },
+              {
+                "value": "B",
+                "label": "确保Python的安装路径已被添加到系统的环境变量PATH中"
+              },
+              {
+                "value": "C",
+                "label": "重启计算机以使所有安装更改生效"
+              },
+              {
+                "value": "D",
+                "label": "安装一个独立的代码编辑器，如VSCode或PyCharm"
+              }
+            ],
+            "answer": [
+              "A",
+              "B"
+            ],
+            "analysis": "选项A和B是验证Python环境安装成功并确保可以从命令行访问的关键步骤。输入 `python --version` 可以确认Python解释器是否可用及其版本号。将Python安装目录添加到系统PATH环境变量是确保在任何命令行路径下都能直接运行 `python` 命令的必要条件。选项C（重启计算机）有时可能需要，特别是当安装程序提示时，但并非总是验证安装的“关键”或“必须”步骤。选项D（安装独立编辑器）是进行实际开发的推荐做法，但它不属于Python环境本身安装和验证的“关键步骤”，没有编辑器依然可以在命令行中运行Python。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_21kv8AjC",
+          "type": "speech",
+          "text": "好的，我们刚刚成功运行了第一个程序。现在，让我们通过一个小测验，来检查一下大家对Python语言本身以及环境搭建的关键步骤理解得怎么样。"
+        },
+        {
+          "id": "action_UYtyRqyI",
+          "type": "speech",
+          "text": "请大家仔细阅读题目。第一题是关于Python语言的主要特点，这是一个单选题。第二题是关于在Windows上安装Python后需要确认的关键步骤，这是一个多选题，记得要选择所有适用的选项。"
+        },
+        {
+          "id": "action_2zMzE1n5",
+          "type": "speech",
+          "text": "现在，请大家花一点时间来完成这两道题目。"
+        },
+        {
+          "id": "action_o40W2Bxf",
+          "type": "speech",
+          "text": "好的，时间到。我们来一起看看答案和解析。"
+        },
+        {
+          "id": "action_LrVY_BzC",
+          "type": "speech",
+          "text": "第一题，Python的主要特点。常见的正确选项包括语法简洁易读、是一种解释型语言、拥有丰富的第三方库、以及跨平台性等。这些特点共同构成了Python强大且受欢迎的原因，正如我们在第一页‘欢迎来到Python世界’中介绍的那样。"
+        },
+        {
+          "id": "action_hQngLSrs",
+          "type": "speech",
+          "text": "第二题，环境安装后的关键步骤。这通常包括：第一，在命令行中输入‘python --version’来验证Python解释器是否已正确安装并能被系统找到。第二，可能需要将Python的安装目录添加到系统的环境变量PATH中，这样才能在任意路径下直接使用‘python’命令。这两个步骤是确保后续学习和开发顺利进行的基础。"
+        },
+        {
+          "id": "action_Qk6SHsBH",
+          "type": "discussion",
+          "topic": "在安装或配置软件环境时，你遇到过哪些常见的‘坑’或挑战？",
+          "prompt": "可以分享一下你是如何解决这些问题的，或者有什么小技巧可以避免它们。",
+          "agentId": "student_tech_savvy"
+        }
+      ],
+      "createdAt": 1774024913854,
+      "updatedAt": 1774024913854
+    },
+    {
+      "id": "mEkCt2yiaRrVBHdn7_4xb",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "编程基石：变量与数据类型",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "Ynu7U3OmqowS-Y7UPw_Xo",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_Yu_tGWXV",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>编程基石：变量与数据类型</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_HkWHQcrH",
+              "type": "shape",
+              "left": 100,
+              "top": 136,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_qJPuYlao",
+              "type": "text",
+              "left": 80,
+              "top": 160,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #1e40af;\"><strong>1. 什么是变量</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_86O47cFf",
+              "type": "text",
+              "left": 100,
+              "top": 228,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">存储数据的容器</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_xwiJwFkk",
+              "type": "text",
+              "left": 80,
+              "top": 294,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #166534;\"><strong>2. 变量的命名规则与规范</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_siEiqEim",
+              "type": "text",
+              "left": 100,
+              "top": 362,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">字母/数字/下划线，区分大小写，见名知意</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_8tgnFfFs",
+              "type": "text",
+              "left": 80,
+              "top": 428,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #92400e;\"><strong>3. 基本数据类型</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_NObVPhGH",
+              "type": "text",
+              "left": 100,
+              "top": 496,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">整数(int)、浮点数(float)、字符串(str)、布尔值(bool)</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_wygp_tOW",
+          "type": "spotlight",
+          "elementId": "text_Yu_tGWXV"
+        },
+        {
+          "id": "action__Uv82NhQ",
+          "type": "speech",
+          "text": "很好，刚才我们完成了环境的验证和配置。现在，让我们正式进入编程的核心部分。请看屏幕上的标题——编程基石：变量与数据类型。这是所有编程语言，包括Python，最基础也是最重要的概念。"
+        },
+        {
+          "id": "action_ORlrMQaO",
+          "type": "spotlight",
+          "elementId": "text_qJPuYlao"
+        },
+        {
+          "id": "action_oxpgy2_z",
+          "type": "speech",
+          "text": "首先，我们来理解第一个关键点：什么是变量？"
+        },
+        {
+          "id": "action_yw-HmS8U",
+          "type": "laser",
+          "elementId": "text_86O47cFf"
+        },
+        {
+          "id": "action_Ng0oMAjK",
+          "type": "speech",
+          "text": "大家可以把变量想象成一个贴了标签的盒子，或者一个储物柜。它的核心作用就是‘存储数据的容器’。比如，我们可以创建一个叫‘age’的变量，用来存放数字18。这样，程序需要用到这个年龄值时，直接找‘age’这个盒子就行了。"
+        },
+        {
+          "id": "action_eNURab6p",
+          "type": "spotlight",
+          "elementId": "text_xwiJwFkk"
+        },
+        {
+          "id": "action_qOAqhFA4",
+          "type": "speech",
+          "text": "知道了变量是什么，我们就要学习如何正确地给它起名字。这就是第二个要点：变量的命名规则与规范。"
+        },
+        {
+          "id": "action_zAtaq0D2",
+          "type": "laser",
+          "elementId": "text_siEiqEim"
+        },
+        {
+          "id": "action_xOvkD3JP",
+          "type": "speech",
+          "text": "规则很简单，但很重要。第一，名字只能由字母、数字和下划线组成，并且不能以数字开头。第二，Python是区分大小写的，所以‘Age’和‘age’是两个不同的变量。第三，也是最重要的规范，就是要‘见名知意’。比如，用‘student_name’而不是‘s1’，这样别人（包括未来的你自己）一看就知道这个变量存的是什么。"
+        },
+        {
+          "id": "action_k6P284E8",
+          "type": "spotlight",
+          "elementId": "text_8tgnFfFs"
+        },
+        {
+          "id": "action_gpZ4EIie",
+          "type": "speech",
+          "text": "最后，我们来看看变量这个‘容器’里能放什么类型的东西。这就是第三个要点：基本数据类型。"
+        },
+        {
+          "id": "action_TRLOqMbN",
+          "type": "laser",
+          "elementId": "text_NObVPhGH"
+        },
+        {
+          "id": "action_kw_1rm2q",
+          "type": "speech",
+          "text": "Python有几种最常用的基本类型。整数，比如1，100，-5，在Python里用‘int’表示。浮点数，就是带小数点的数，比如3.14，用‘float’表示。字符串，就是一段文本，比如‘你好’，必须用引号包起来，用‘str’表示。还有布尔值，只有两个值：True和False，表示真或假，用‘bool’表示。"
+        },
+        {
+          "id": "action_LLJjWaoi",
+          "type": "speech",
+          "text": "理解变量和数据类型，就像学会了认字和写字，是编写任何程序的第一步。接下来，我们马上就会在‘变量实验室’里亲手创建它们，并进行简单的运算，把理论变成实践。"
+        }
+      ],
+      "createdAt": 1774024963430,
+      "updatedAt": 1774024963430
+    },
+    {
+      "id": "lRPuOOhH1Sx25L6pB5at4",
+      "stageId": "jVxo7MkKHE",
+      "type": "interactive",
+      "title": "变量实验室：观察与操作",
+      "order": 5,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>变量与数据类型</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');\n        * { font-family: 'Noto Sans SC', sans-serif; }\n        .variable-card { transition: all 0.2s ease; }\n        .variable-card.selected { transform: scale(1.05); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }\n        .result-success { animation: pulseSuccess 1s; }\n        .result-error { animation: pulseError 1s; }\n        @keyframes pulseSuccess {\n            0% { background-color: #d1fae5; }\n            50% { background-color: #a7f3d0; }\n            100% { background-color: #d1fae5; }\n        }\n        @keyframes pulseError {\n            0% { background-color: #fee2e2; }\n            50% { background-color: #fecaca; }\n            100% { background-color: #fee2e2; }\n        }\n        .operator-btn.active { background-color: #3b82f6; color: white; }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gray-50 min-h-screen p-4 md:p-6\">\n    <div class=\"max-w-6xl mx-auto\">\n        <header class=\"mb-8 text-center\">\n            <h1 class=\"text-3xl md:text-4xl font-bold text-gray-800 mb-2\">变量与数据类型</h1>\n            <p class=\"text-gray-600\">可视化Python中的变量创建、赋值与基本操作</p>\n        </header>\n\n        <main class=\"grid grid-cols-1 lg:grid-cols-3 gap-6\">\n            <!-- 区域1: 创建区 -->\n            <section class=\"lg:col-span-1 bg-white rounded-xl shadow-lg p-6\">\n                <h2 class=\"text-xl font-semibold text-gray-800 mb-4 border-b pb-2\">1. 创建变量</h2>\n                <div class=\"space-y-4\">\n                    <div>\n                        <label class=\"block text-sm font-medium text-gray-700 mb-1\">变量名</label>\n                        <input type=\"text\" id=\"varName\" placeholder=\"例如: my_var, count\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500\">\n                        <p class=\"text-xs text-gray-500 mt-1\">规则：以字母或下划线开头，仅包含字母、数字、下划线。</p>\n                    </div>\n                    <div>\n                        <label class=\"block text-sm font-medium text-gray-700 mb-1\">数据类型</label>\n                        <select id=\"dataType\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500\">\n                            <option value=\"int\">整数 (int)</option>\n                            <option value=\"float\">浮点数 (float)</option>\n                            <option value=\"str\">字符串 (str)</option>\n                        </select>\n                    </div>\n                    <div>\n                        <label class=\"block text-sm font-medium text-gray-700 mb-1\">值</label>\n                        <input type=\"text\" id=\"varValue\" placeholder=\"输入对应类型的值\" class=\"w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500\">\n                        <p class=\"text-xs text-gray-500 mt-1\" id=\"valueHint\">请输入一个整数，如：42</p>\n                    </div>\n                    <button id=\"createBtn\" class=\"w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200\">创建变量</button>\n                </div>\n                <div class=\"mt-6 p-4 bg-blue-50 rounded-lg\">\n                    <h3 class=\"font-medium text-blue-800 mb-2\">赋值语句</h3>\n                    <p class=\"text-sm text-blue-700\">当您点击“创建”，系统执行：</p>\n                    <p id=\"assignmentPreview\" class=\"text-sm font-mono bg-white p-2 rounded mt-1 border\">变量名 = 值</p>\n                </div>\n            </section>\n\n            <!-- 区域2: 操作区 -->\n            <section class=\"lg:col-span-2 bg-white rounded-xl shadow-lg p-6\">\n                <h2 class=\"text-xl font-semibold text-gray-800 mb-4 border-b pb-2\">2. 操作与运算</h2>\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n                    <!-- 变量池 -->\n                    <div>\n                        <h3 class=\"font-medium text-gray-700 mb-3\">已创建的变量</h3>\n                        <div id=\"variablePool\" class=\"min-h-[200px] border-2 border-dashed border-gray-300 rounded-lg p-4 flex flex-wrap gap-3\">\n                            <p class=\"text-gray-400 text-sm self-center w-full text-center\">创建的变量将显示在这里</p>\n                        </div>\n                        <p class=\"text-xs text-gray-500 mt-2\">点击变量卡片以选中用于操作。可选中两个变量。</p>\n                    </div>\n\n                    <!-- 操作面板 -->\n                    <div>\n                        <h3 class=\"font-medium text-gray-700 mb-3\">执行操作</h3>\n                        <div class=\"space-y-4\">\n                            <div>\n                                <label class=\"block text-sm font-medium text-gray-700 mb-2\">选择运算符</label>\n                                <div class=\"flex flex-wrap gap-2\" id=\"operatorPanel\">\n                                    <button data-op=\"+\" class=\"operator-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50\">+ (加/拼接)</button>\n                                    <button data-op=\"-\" class=\"operator-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50\">- (减)</button>\n                                    <button data-op=\"*\" class=\"operator-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50\">* (乘)</button>\n                                    <button data-op=\"/\" class=\"operator-btn px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50\">/ (除)</button>\n                                </div>\n                            </div>\n                            <div class=\"p-4 border border-gray-200 rounded-lg bg-gray-50\">\n                                <p class=\"text-sm font-medium text-gray-700 mb-2\">选中的变量</p>\n                                <div class=\"flex items-center justify-center space-x-4 min-h-[60px]\">\n                                    <div id=\"selectedVar1\" class=\"variable-placeholder text-center text-gray-400 text-sm p-3 border border-dashed rounded w-1/3\">变量1</div>\n                                    <div id=\"selectedOp\" class=\"text-xl font-bold\">?</div>\n                                    <div id=\"selectedVar2\" class=\"variable-placeholder text-center text-gray-400 text-sm p-3 border border-dashed rounded w-1/3\">变量2</div>\n                                </div>\n                            </div>\n                            <button id=\"executeBtn\" class=\"w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed\" disabled>执行操作</button>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- 观察台 -->\n                <div class=\"mt-8\">\n                    <h3 class=\"text-xl font-semibold text-gray-800 mb-4 border-b pb-2\">3. 观察台</h3>\n                    <div id=\"observationLog\" class=\"space-y-3 max-h-60 overflow-y-auto p-2\">\n                        <div class=\"p-3 bg-gray-100 rounded-lg\">\n                            <p class=\"text-sm text-gray-600\">操作结果和错误信息将实时显示在这里。</p>\n                        </div>\n                    </div>\n                    <div class=\"mt-4 p-4 bg-gray-50 rounded-lg\">\n                        <h4 class=\"font-medium text-gray-700 mb-2\">表达式求值</h4>\n                        <p class=\"text-sm text-gray-600\">操作执行时，系统计算：<span id=\"expressionPreview\" class=\"font-mono\">操作数1 运算符 操作数2</span></p>\n                        <p class=\"text-sm text-gray-600 mt-1\">并检查类型兼容性：<span id=\"typeCheckPreview\" class=\"font-mono\">类型(操作数1) 与 类型(操作数2)</span></p>\n                    </div>\n                </div>\n            </section>\n        </main>\n    </div>\n\n    <script>\n        // 状态管理\n        const state = {\n            variables: {}, // 存储所有变量 {name: {type, value, element}}\n            selectedVars: [], // 当前选中的变量名（最多两个）\n            selectedOperator: null,\n            varNamePattern: /^[a-zA-Z_][a-zA-Z0-9_]*$/ // Python标识符规则\n        };\n\n        // DOM 元素\n        const varNameInput = document.getElementById('varName');\n        const dataTypeSelect = document.getElementById('dataType');\n        const varValueInput = document.getElementById('varValue');\n        const valueHint = document.getElementById('valueHint');\n        const createBtn = document.getElementById('createBtn');\n        const assignmentPreview = document.getElementById('assignmentPreview');\n        const variablePool = document.getElementById('variablePool');\n        const operatorButtons = document.querySelectorAll('.operator-btn');\n        const selectedVar1 = document.getElementById('selectedVar1');\n        const selectedVar2 = document.getElementById('selectedVar2');\n        const selectedOp = document.getElementById('selectedOp');\n        const executeBtn = document.getElementById('executeBtn');\n        const observationLog = document.getElementById('observationLog');\n        const expressionPreview = document.getElementById('expressionPreview');\n        const typeCheckPreview = document.getElementById('typeCheckPreview');\n\n        // 根据数据类型更新值输入提示\n        dataTypeSelect.addEventListener('change', updateValueHint);\n        function updateValueHint() {\n            const type = dataTypeSelect.value;\n            let hint = '';\n            if (type === 'int') hint = '请输入一个整数，如：42';\n            else if (type === 'float') hint = '请输入一个浮点数，如：3.14';\n            else hint = '请输入一个字符串，如：\"Hello\"';\n            valueHint.textContent = hint;\n            varValueInput.placeholder = hint.split('，如：')[1] || '输入值';\n        }\n        updateValueHint(); // 初始化\n\n        // 更新赋值预览\n        function updateAssignmentPreview() {\n            const name = varNameInput.value || '变量名';\n            const type = dataTypeSelect.value;\n            const value = varValueInput.value || '值';\n            assignmentPreview.textContent = `\\({name} = \\){value}  # ${type}`;\n        }\n        varNameInput.addEventListener('input', updateAssignmentPreview);\n        dataTypeSelect.addEventListener('change', updateAssignmentPreview);\n        varValueInput.addEventListener('input', updateAssignmentPreview);\n        updateAssignmentPreview();\n\n        // 创建变量\n        createBtn.addEventListener('click', createVariable);\n        function createVariable() {\n            const name = varNameInput.value.trim();\n            const type = dataTypeSelect.value;\n            const rawValue = varValueInput.value.trim();\n\n            // 1. 验证变量名\n            if (!name) {\n                logMessage('错误：变量名不能为空。', 'error');\n                return;\n            }\n            if (!state.varNamePattern.test(name)) {\n                logMessage(`错误：变量名\"${name}\"无效。必须以字母或下划线开头，仅包含字母、数字、下划线。`, 'error');\n                return;\n            }\n            if (state.variables[name]) {\n                logMessage(`错误：变量名\"${name}\"已存在。`, 'error');\n                return;\n            }\n\n            // 2. 验证并转换值\n            let value;\n            let isValid = true;\n            try {\n                if (type === 'int') {\n                    value = parseInt(rawValue, 10);\n                    if (isNaN(value) || rawValue.includes('.') || rawValue.trim() !== value.toString()) {\n                        throw new Error('不是有效的整数');\n                    }\n                } else if (type === 'float') {\n                    value = parseFloat(rawValue);\n                    if (isNaN(value)) {\n                        throw new Error('不是有效的浮点数');\n                    }\n                } else if (type === 'str') {\n                    // 允许用户输入带或不带引号的字符串\n                    if ((rawValue.startsWith('\"') && rawValue.endsWith('\"')) || (rawValue.startsWith(\"'\") && rawValue.endsWith(\"'\"))) {\n                        value = rawValue.slice(1, -1);\n                    } else {\n                        value = rawValue;\n                    }\n                }\n            } catch (e) {\n                isValid = false;\n                logMessage(`错误：无法将\"\\({rawValue}\"转换为\\){type}类型。`, 'error');\n            }\n\n            if (!isValid) return;\n\n            // 3. 创建变量对象和UI卡片\n            const varId = `var_${Date.now()}`;\n            const card = document.createElement('div');\n            card.className = 'variable-card flex flex-col items-center justify-center p-3 border border-gray-300 rounded-lg bg-white cursor-pointer w-24';\n            card.dataset.name = name;\n            card.dataset.type = type;\n            card.dataset.value = (type === 'str') ? `\"${value}\"` : value;\n            card.innerHTML = `\n                <div class=\"font-mono font-bold text-blue-600\">${name}</div>\n                <div class=\"text-sm text-gray-700 mt-1\">${type}</div>\n                <div class=\"text-xs text-gray-500 mt-1 break-all text-center\">\\({(type === 'str') ? `\"\\){value}\"` : value}</div>\n            `;\n\n            // 4. 添加到状态和UI\n            state.variables[name] = { type, value, element: card };\n            variablePool.querySelector('p')?.remove(); // 移除占位文本\n            variablePool.appendChild(card);\n\n            // 5. 添加点击事件以选中变量\n            card.addEventListener('click', () => selectVariable(name, card));\n\n            // 6. 清空输入框并记录\n            varNameInput.value = '';\n            varValueInput.value = '';\n            updateAssignmentPreview();\n            logMessage(`创建成功：变量 <strong>\\({name}</strong> = \\){(type === 'str') ? `\"\\({value}\"` : value} (\\){type})`, 'success');\n        }\n\n        // 选择变量用于操作\n        function selectVariable(name, card) {\n            const index = state.selectedVars.indexOf(name);\n            if (index > -1) {\n                // 取消选中\n                state.selectedVars.splice(index, 1);\n                card.classList.remove('selected');\n            } else {\n                // 选中（最多两个）\n                if (state.selectedVars.length >= 2) {\n                    // 取消选中第一个，加入新的\n                    const oldName = state.selectedVars.shift();\n                    state.variables[oldName]?.element.classList.remove('selected');\n                }\n                state.selectedVars.push(name);\n                card.classList.add('selected');\n            }\n            updateSelectionDisplay();\n            updateExecuteButton();\n        }\n\n        // 更新选中变量的显示\n        function updateSelectionDisplay() {\n            const var1 = state.selectedVars[0];\n            const var2 = state.selectedVars[1];\n            const obj1 = var1 ? state.variables[var1] : null;\n            const obj2 = var2 ? state.variables[var2] : null;\n\n            selectedVar1.innerHTML = var1 ? `\n                <div class=\"font-mono font-bold\">${var1}</div>\n                <div class=\"text-xs text-gray-600\">\\({obj1.type}: \\){obj1.type === 'str' ? `\"${obj1.value}\"` : obj1.value}</div>\n            ` : '变量1';\n            selectedVar1.className = var1 ? 'variable-placeholder text-center p-3 border border-blue-300 rounded w-1/3 bg-blue-50' : 'variable-placeholder text-center text-gray-400 text-sm p-3 border border-dashed rounded w-1/3';\n\n            selectedVar2.innerHTML = var2 ? `\n                <div class=\"font-mono font-bold\">${var2}</div>\n                <div class=\"text-xs text-gray-600\">\\({obj2.type}: \\){obj2.type === 'str' ? `\"${obj2.value}\"` : obj2.value}</div>\n            ` : '变量2';\n            selectedVar2.className = var2 ? 'variable-placeholder text-center p-3 border border-blue-300 rounded w-1/3 bg-blue-50' : 'variable-placeholder text-center text-gray-400 text-sm p-3 border border-dashed rounded w-1/3';\n\n            // 更新表达式预览\n            if (var1 && var2 && state.selectedOperator) {\n                expressionPreview.textContent = `\\({var1} \\){state.selectedOperator} ${var2}`;\n                typeCheckPreview.textContent = `type(\\({var1}) = \\){obj1.type}, type(\\({var2}) = \\){obj2.type}`;\n            } else {\n                expressionPreview.textContent = '操作数1 运算符 操作数2';\n                typeCheckPreview.textContent = '类型(操作数1) 与 类型(操作数2)';\n            }\n        }\n\n        // 运算符选择\n        operatorButtons.forEach(btn => {\n            btn.addEventListener('click', () => {\n                const op = btn.dataset.op;\n                // 如果点击已选中的运算符，则取消选中\n                if (state.selectedOperator === op) {\n                    state.selectedOperator = null;\n                    btn.classList.remove('active');\n                } else {\n                    // 选中新的运算符\n                    operatorButtons.forEach(b => b.classList.remove('active'));\n                    state.selectedOperator = op;\n                    btn.classList.add('active');\n                }\n                selectedOp.textContent = state.selectedOperator || '?';\n                updateSelectionDisplay();"
+      },
+      "actions": [
+        {
+          "id": "action_g8GnenD7",
+          "type": "speech",
+          "text": "好的，我们刚刚在上一页了解了变量和数据类型的基本理论，现在让我们进入这个‘变量实验室’，亲手操作一下。"
+        },
+        {
+          "id": "action_1rsexV1t",
+          "type": "speech",
+          "text": "请看界面左侧的‘创建区’。你可以在这里输入一个变量名，比如‘age’，然后从下拉菜单中选择它的数据类型，比如整数‘int’，最后给它赋一个值，比如‘18’。完成后，点击‘创建’按钮。"
+        },
+        {
+          "id": "action_eNusXXMY",
+          "type": "speech",
+          "text": "看，你创建的变量‘age’已经出现在中间的‘操作区’了。现在，请再创建一个字符串类型的变量，比如名字‘name’，值为‘小明’。这样我们就有了两个不同类型的变量。"
+        },
+        {
+          "id": "action_8zOiDqg_",
+          "type": "speech",
+          "text": "接下来，我们试试运算。在‘操作区’选中‘age’和另一个数字变量，然后在下方选择一个操作符，比如加号‘+’，点击‘执行操作’。观察‘观察台’显示的结果，它是不是两个数字的和？"
+        },
+        {
+          "id": "action_LJwSvV30",
+          "type": "speech",
+          "text": "现在，让我们尝试一个会出错的运算。选中数字变量‘age’和字符串变量‘name’，再点击加号‘+’执行操作。看，‘观察台’给出了错误提示。这直观地展示了我们之前提到的‘类型错误’——不同类型的数据不能直接进行某些运算。"
+        },
+        {
+          "id": "action_64goVohv",
+          "type": "speech",
+          "text": "你可以多创建几个变量，尝试不同的数据类型和运算组合，比如字符串拼接、浮点数计算，亲自感受一下变量如何存储数据，以及不同类型数据交互时的规则。"
+        }
+      ],
+      "createdAt": 1774025105859,
+      "updatedAt": 1774025105859
+    },
+    {
+      "id": "EpslLjUdUc9EnTUsumOP5",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "控制程序流程：条件判断",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "1xfiXCvpDcQHdMLfV1D3n",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_Us775ZBu",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>控制程序流程：条件判断</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_p3vlOqz4",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; text-align:center; color:#5b9bd5;\">使用if, elif, else语句让程序做出决策</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "text_noLDYQhx",
+              "type": "text",
+              "left": 60,
+              "top": 210,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>1. if语句基本结构</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_f1jQlW4y",
+              "type": "latex",
+              "left": 80,
+              "top": 280,
+              "width": 360,
+              "height": 80,
+              "latex": "\\text{if } \\text{条件}:\\newline \\quad \\text{执行语句}",
+              "color": "#1e40af",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6944em;\"></span><span class=\"mord text\"><span class=\"mord\">if </span></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">条件</span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">执行语句</span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_Uxu5UEvR",
+              "type": "text",
+              "left": 540,
+              "top": 210,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>2. 比较运算符</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_QTV_bkg6",
+              "type": "text",
+              "left": 560,
+              "top": 280,
+              "width": 360,
+              "height": 130,
+              "content": "<p style=\"font-size:18px;\">• >, <, >=, <=</p><p style=\"font-size:18px;\">• == (等于)</p><p style=\"font-size:18px;\">• != (不等于)</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_yUN40sth",
+              "type": "text",
+              "left": 60,
+              "top": 380,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>3. 逻辑运算符</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_f-yjod9B",
+              "type": "text",
+              "left": 80,
+              "top": 450,
+              "width": 360,
+              "height": 106,
+              "content": "<p style=\"font-size:18px;\">• and (与) — 条件都成立</p><p style=\"font-size:18px;\">• or (或) — 至少一个成立</p><p style=\"font-size:18px;\">• not (非) — 取反</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_dJi5D-Z1",
+              "type": "text",
+              "left": 540,
+              "top": 380,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>4. 实践案例</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_4QeOuIgj",
+              "type": "text",
+              "left": 560,
+              "top": 450,
+              "width": 360,
+              "height": 76,
+              "content": "<p style=\"font-size:18px;\">成绩评级程序</p><p style=\"font-size:16px; color:#666;\">根据分数输出等级</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_Hk9OwTYj",
+              "type": "latex",
+              "left": 560,
+              "top": 540,
+              "width": 360,
+              "height": 100,
+              "latex": "\\text{if score >= 90:}\\newline \\quad \\text{print('A')}\\newline \\text{elif score >= 80:}\\newline \\quad \\text{print('B')}\\newline \\text{else:}\\newline \\quad \\text{print('C')}",
+              "color": "#166534",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7335em;vertical-align:-0.0391em;\"></span><span class=\"mord text\"><span class=\"mord\">if score &gt;= 90:</span></span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mord text\"><span class=\"mord\">print(’A’)</span></span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7335em;vertical-align:-0.0391em;\"></span><span class=\"mord text\"><span class=\"mord\">elif score &gt;= 80:</span></span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mord text\"><span class=\"mord\">print(’B’)</span></span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6944em;\"></span><span class=\"mord text\"><span class=\"mord\">else:</span></span></span><span class=\"mspace newline\"></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mord text\"><span class=\"mord\">print(’C’)</span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_Hm5WgtKe",
+          "type": "spotlight",
+          "elementId": "text_Us775ZBu"
+        },
+        {
+          "id": "action_p4jvbwtb",
+          "type": "speech",
+          "text": "好的，我们刚刚在变量实验室里尝试了各种数据操作，现在，我们要让程序变得更智能。接下来，我们进入一个非常核心的部分——控制程序流程：条件判断。"
+        },
+        {
+          "id": "action_8xIMzoJf",
+          "type": "spotlight",
+          "elementId": "text_p3vlOqz4"
+        },
+        {
+          "id": "action_DZ8dwFIB",
+          "type": "speech",
+          "text": "简单来说，就是使用 if, elif, else 这些语句，让程序能够像我们人一样，根据不同的情况做出不同的决策。"
+        },
+        {
+          "id": "action_QRmBQHZw",
+          "type": "spotlight",
+          "elementId": "text_noLDYQhx"
+        },
+        {
+          "id": "action_gDxTc9GH",
+          "type": "speech",
+          "text": "首先，我们来看 if 语句最基本的结构。"
+        },
+        {
+          "id": "action_OCDJl7Nd",
+          "type": "spotlight",
+          "elementId": "latex_f1jQlW4y"
+        },
+        {
+          "id": "action_-4PMKJl5",
+          "type": "speech",
+          "text": "它的格式是 `if 条件:`，注意，这个冒号是英文的，而且必不可少。在冒号下面，要缩进一个代码块，里面写上当条件为真时要执行的语句。"
+        },
+        {
+          "id": "action_m22_bCTk",
+          "type": "spotlight",
+          "elementId": "text_Uxu5UEvR"
+        },
+        {
+          "id": "action_8VutJTkC",
+          "type": "speech",
+          "text": "那么，这个‘条件’是怎么构建出来的呢？这就用到了比较运算符。"
+        },
+        {
+          "id": "action_eUZKVHjQ",
+          "type": "laser",
+          "elementId": "text_QTV_bkg6"
+        },
+        {
+          "id": "action_r7BVIopG",
+          "type": "speech",
+          "text": "比如大于、小于、等于、不等于。这里要特别注意，判断两个值是否相等，用的是两个等号 `==`，一个等号是赋值。不等于则是 `!=`。"
+        },
+        {
+          "id": "action_-QyIsOud",
+          "type": "spotlight",
+          "elementId": "text_yUN40sth"
+        },
+        {
+          "id": "action_pH2VzpNU",
+          "type": "speech",
+          "text": "有时候，一个条件可能不够，我们需要把多个条件组合起来，这就需要逻辑运算符了。"
+        },
+        {
+          "id": "action_foYVRJ99",
+          "type": "laser",
+          "elementId": "text_f-yjod9B"
+        },
+        {
+          "id": "action_RMtGHJC-",
+          "type": "speech",
+          "text": "`and` 表示‘与’，要求两边的条件都成立，整个条件才为真。`or` 表示‘或’，只要任意一边的条件成立，整个条件就为真。`not` 则是‘非’，用来对条件的结果取反。"
+        },
+        {
+          "id": "action_ubO0fcDy",
+          "type": "spotlight",
+          "elementId": "text_dJi5D-Z1"
+        },
+        {
+          "id": "action_r30z4RCP",
+          "type": "speech",
+          "text": "光说不练假把式，我们来看一个实践案例。"
+        },
+        {
+          "id": "action_tvtQKz-H",
+          "type": "spotlight",
+          "elementId": "text_4QeOuIgj"
+        },
+        {
+          "id": "action_Y70nd3GP",
+          "type": "speech",
+          "text": "我们来编写一个简单的成绩评级程序。"
+        },
+        {
+          "id": "action_PZ0RzOi2",
+          "type": "spotlight",
+          "elementId": "latex_Hk9OwTYj"
+        },
+        {
+          "id": "action_zl3Dvwun",
+          "type": "speech",
+          "text": "比如，我们可以这样写：如果分数大于等于90分，就打印‘优秀’；如果分数在80到89之间，打印‘良好’；以此类推。这个程序就会根据我们输入的分数，自动判断并输出对应的等级。这就是条件判断最直接的应用。"
+        }
+      ],
+      "createdAt": 1774025153412,
+      "updatedAt": 1774025153412
+    },
+    {
+      "id": "66evHH-1i4mQDdLNtZHNq",
+      "stageId": "jVxo7MkKHE",
+      "type": "quiz",
+      "title": "逻辑挑战：条件判断",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "在Python中，以下哪个if语句的语法是正确的？",
+            "options": [
+              {
+                "value": "A",
+                "label": "if x > 10: print('大于10')"
+              },
+              {
+                "value": "B",
+                "label": "if (x > 10) { print('大于10') }"
+              },
+              {
+                "value": "C",
+                "label": "if x > 10 then print('大于10')"
+              },
+              {
+                "value": "D",
+                "label": "if x > 10: \n    print('大于10')"
+              }
+            ],
+            "answer": [
+              "D"
+            ],
+            "analysis": "Python中if语句的正确语法是使用冒号(:)表示代码块开始，并且代码块必须通过缩进来定义。选项A缺少缩进，虽然在某些交互式环境中可能单行执行，但不符合标准语法规范。选项B是C语言或Java的语法。选项C是其他一些语言（如VB）的语法。选项D是唯一语法完全正确的，它使用了冒号并进行了正确的缩进。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "给定一个程序，其功能是判断一个年份是否为闰年。闰年的规则是：能被4整除但不能被100整除，或者能被400整除。以下哪些条件组合可以正确实现这个逻辑？（选择所有符合的）",
+            "options": [
+              {
+                "value": "A",
+                "label": "if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):"
+              },
+              {
+                "value": "B",
+                "label": "if year % 4 == 0: \n    if year % 100 == 0: \n        if year % 400 == 0: \n            return True \n        else: \n            return False \n    else: \n        return True \nelse: \n    return False"
+              },
+              {
+                "value": "C",
+                "label": "if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:"
+              },
+              {
+                "value": "D",
+                "label": "if not (year % 4 != 0 or (year % 100 == 0 and year % 400 != 0)):"
+              }
+            ],
+            "answer": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "analysis": "所有选项都正确实现了闰年判断逻辑。\n选项A：直接使用or和and组合，清晰表达了“能被400整除 或 (能被4整除且不能被100整除)”的原规则。\n选项B：使用嵌套的if-else语句，逻辑上逐步判断，最终结果与规则一致。\n选项C：虽然运算符优先级（and高于or）可能使表达式等价于 `(year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)`，这与规则一致。但实际编程中建议加括号明确优先级。\n选项D：使用了德摩根定律对原规则进行逻辑变换。原规则为：条件P = (year % 400 == 0) 或 (条件Q = (year % 4 == 0 且 year % 100 != 0))。选项D的条件 `not (year % 4 != 0 or (year % 100 == 0 and year % 400 != 0))` 经过逻辑推导，等价于 `(year % 4 == 0) and not (year % 100 == 0 and year % 400 != 0)`，进一步推导为 `(year % 4 == 0) and (year % 100 != 0 or year % 400 == 0)`，这与“能被4整除，并且（不能被100整除 或 能被400整除）”等价，而“能被4整除”是“能被400整除”或“能被4整除且不能被100整除”的必要条件，因此整体逻辑正确。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_y_nIr_iH",
+          "type": "speech",
+          "text": "好的，刚才我们学习了条件判断的语法和应用，比如根据分数判断等级。现在，让我们通过几道题目来检验一下大家对条件判断逻辑和语法的掌握程度。"
+        },
+        {
+          "id": "action_WWqHckDa",
+          "type": "speech",
+          "text": "第一题是关于if语句的语法。在Python中，if语句的写法有严格的规定，比如冒号、缩进这些细节，一个都不能错。请大家仔细审题，选出语法正确的那一项。"
+        },
+        {
+          "id": "action_xllKiJPA",
+          "type": "speech",
+          "text": "第二题是一个经典的逻辑推理题，关于闰年的判断规则。题目给出了规则：能被4整除但不能被100整除，或者能被400整除。这需要我们仔细分析，看哪些条件组合能完整、准确地表达这个逻辑。"
+        },
+        {
+          "id": "action_oj_ySCgw",
+          "type": "speech",
+          "text": "做这类题目时，关键是要理清逻辑关系。‘并且’、‘或者’这些连接词的使用非常重要。比如，‘能被4整除但不能被100整除’是一个整体条件，它和‘能被400整除’之间是‘或者’的关系。"
+        },
+        {
+          "id": "action_P1TuDy1m",
+          "type": "discussion",
+          "topic": "在实现复杂条件逻辑时，有什么技巧可以避免出错？",
+          "prompt": "可以结合刚才的闰年题目，谈谈你是如何拆分和组合这些条件的。",
+          "agentId": "student_agent_id"
+        }
+      ],
+      "createdAt": 1774025190256,
+      "updatedAt": 1774025190256
+    },
+    {
+      "id": "8yJAxBWGMYv0AaJmcpWQj",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "重复的力量：循环语句",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "nf-UZF4qMj-ZuHF2iefWe",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_D-ajl0KJ",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>重复的力量：循环语句</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_frcHW2Qr",
+              "type": "shape",
+              "left": 70,
+              "top": 166,
+              "width": 860,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Z1FrXOdy",
+              "type": "text",
+              "left": 60,
+              "top": 200,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #1e40af;\"><strong>1. for循环</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_azJIjzzX",
+              "type": "text",
+              "left": 80,
+              "top": 270,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 遍历序列（如列表、字符串）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_T5vYymIB",
+              "type": "latex",
+              "left": 100,
+              "top": 330,
+              "width": 400,
+              "height": 70,
+              "latex": "\\text{for } x \\text{ in } [1, 2, 3]:",
+              "color": "#166534",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord text\"><span class=\"mord\">for </span></span><span class=\"mord mathnormal\">x</span><span class=\"mord text\"><span class=\"mord\"> in </span></span><span class=\"mopen\">[</span><span class=\"mord\">1</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">2</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\">3</span><span class=\"mclose\">]</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_8vtMOu1i",
+              "type": "text",
+              "left": 60,
+              "top": 420,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #1e40af;\"><strong>2. while循环</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_o6Q_1T5y",
+              "type": "text",
+              "left": 80,
+              "top": 490,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 在条件满足时重复执行</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_Re2_HVw1",
+              "type": "latex",
+              "left": 100,
+              "top": 550,
+              "width": 400,
+              "height": 70,
+              "latex": "\\text{while } count < 10:",
+              "color": "#166534",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7335em;vertical-align:-0.0391em;\"></span><span class=\"mord text\"><span class=\"mord\">while </span></span><span class=\"mord mathnormal\">co</span><span class=\"mord mathnormal\">u</span><span class=\"mord mathnormal\">n</span><span class=\"mord mathnormal\">t</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">&lt;</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">10</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">:</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_l_CXlHNr",
+          "type": "spotlight",
+          "elementId": "text_D-ajl0KJ"
+        },
+        {
+          "id": "action_hjmd60k7",
+          "type": "speech",
+          "text": "非常好，刚才我们解决了逻辑判断的挑战。现在，让我们进入一个能真正解放我们双手、让计算机为我们高效工作的强大工具——循环语句。"
+        },
+        {
+          "id": "action_SOeE9_LC",
+          "type": "spotlight",
+          "elementId": "text_Z1FrXOdy"
+        },
+        {
+          "id": "action_Ptz4kmKi",
+          "type": "speech",
+          "text": "首先来看第一种循环：for循环。它的核心思想是‘遍历’。"
+        },
+        {
+          "id": "action_QgR3t760",
+          "type": "spotlight",
+          "elementId": "text_azJIjzzX"
+        },
+        {
+          "id": "action_fi18bn-C",
+          "type": "speech",
+          "text": "它可以自动地、一个接一个地访问一个序列里的所有元素，比如一个列表，或者一个字符串。"
+        },
+        {
+          "id": "action_H9CVbBRR",
+          "type": "spotlight",
+          "elementId": "latex_T5vYymIB"
+        },
+        {
+          "id": "action_47uE3ozu",
+          "type": "speech",
+          "text": "它的基本语法结构是这样的：`for x in [1, 2, 3]:`。这里的`x`就是一个变量，它会依次变成列表`[1, 2, 3]`里的每一个值。冒号下面的缩进代码块，就是每次循环要执行的操作。"
+        },
+        {
+          "id": "action_yyZXFPaq",
+          "type": "spotlight",
+          "elementId": "text_8vtMOu1i"
+        },
+        {
+          "id": "action_yhw7xUBi",
+          "type": "speech",
+          "text": "接下来是第二种循环：while循环。它的逻辑和我们之前学的条件判断有点像。"
+        },
+        {
+          "id": "action_OrJvjcu5",
+          "type": "spotlight",
+          "elementId": "text_o6Q_1T5y"
+        },
+        {
+          "id": "action_phrsyUN6",
+          "type": "speech",
+          "text": "只要它后面的条件表达式结果为`True`，也就是条件满足，它就会一直重复执行下面的代码块。"
+        },
+        {
+          "id": "action_q7HnXhea",
+          "type": "spotlight",
+          "elementId": "latex_Re2_HVw1"
+        },
+        {
+          "id": "action_o2PVDpDV",
+          "type": "speech",
+          "text": "看这个例子：`while count < 10:`。只要变量`count`的值小于10，循环就会继续。通常我们需要在循环体内部改变`count`的值，否则就可能陷入‘死循环’。"
+        },
+        {
+          "id": "action_kQtmbcxz",
+          "type": "speech",
+          "text": "除了这两种基本的循环结构，我们还需要掌握两个重要的循环控制语句。一个是`break`，它可以立刻终止整个循环，跳出来。另一个是`continue`，它跳过本次循环中剩下的代码，直接进入下一次循环。"
+        },
+        {
+          "id": "action_y_EuhIlQ",
+          "type": "speech",
+          "text": "掌握了这些，我们就可以用循环来解决很多重复性的任务了。比如，我们可以轻松地计算从1加到100的总和，而不需要写100行加法。我们还可以用嵌套循环，也就是循环里面套循环，来打印出经典的九九乘法表。这些实践案例能让我们真切感受到‘重复的力量’带来的效率提升。"
+        }
+      ],
+      "createdAt": 1774025231233,
+      "updatedAt": 1774025231233
+    },
+    {
+      "id": "dvt1MKadJTJtCZJKW8EvP",
+      "stageId": "jVxo7MkKHE",
+      "type": "slide",
+      "title": "课程总结与进阶之路",
+      "order": 9,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "EZzmFmHjhfXI0BJA_frGV",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_cfpF55GM",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_8XwirjeZ",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>课程总结与进阶之路</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_UUG-woII",
+              "type": "text",
+              "left": 80,
+              "top": 150,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #166534;\"><strong>核心回顾</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_a1jug4ii",
+              "type": "text",
+              "left": 80,
+              "top": 220,
+              "width": 400,
+              "height": 148,
+              "content": "<p style=\"font-size: 18px;\">• 环境：安装与配置</p><p style=\"font-size: 18px;\">• 变量：存储与操作</p><p style=\"font-size: 18px;\">• 条件：if/elif/else</p><p style=\"font-size: 18px;\">• 循环：for/while</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_D5sRQKtc",
+              "type": "text",
+              "left": 520,
+              "top": 150,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #92400e;\"><strong>编程思维培养</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_4wIWrD1j",
+              "type": "text",
+              "left": 520,
+              "top": 220,
+              "width": 400,
+              "height": 148,
+              "content": "<p style=\"font-size: 18px;\">• 分解问题</p><p style=\"font-size: 18px;\">• 抽象建模</p><p style=\"font-size: 18px;\">• 自动化流程</p><p style=\"font-size: 18px;\">• 调试与优化</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_EeLG5fw1",
+              "type": "shape",
+              "left": 100,
+              "top": 400,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#cccccc",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_JWo9tfrT",
+              "type": "text",
+              "left": 80,
+              "top": 430,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #7c3aed;\"><strong>下一步学什么</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_X4rZM4Mv",
+              "type": "text",
+              "left": 80,
+              "top": 500,
+              "width": 400,
+              "height": 148,
+              "content": "<p style=\"font-size: 18px;\">• 函数：封装与复用</p><p style=\"font-size: 18px;\">• 列表：有序数据集合</p><p style=\"font-size: 18px;\">• 字典：键值对映射</p><p style=\"font-size: 18px;\">• 文件操作：读写数据</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_25UwhYaO",
+              "type": "text",
+              "left": 520,
+              "top": 430,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #dc2626;\"><strong>推荐学习资源</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_BVvihVSM",
+              "type": "text",
+              "left": 520,
+              "top": 500,
+              "width": 400,
+              "height": 148,
+              "content": "<p style=\"font-size: 18px;\">• 官方文档</p><p style=\"font-size: 18px;\">• 在线练习平台</p><p style=\"font-size: 18px;\">• 开源项目实践</p><p style=\"font-size: 18px;\">• 社区与论坛</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_4qKOhUQi",
+          "type": "spotlight",
+          "elementId": "text_8XwirjeZ"
+        },
+        {
+          "id": "action_-jeiL4Cs",
+          "type": "speech",
+          "text": "好了，同学们，经过前面几页的学习，我们已经来到了本次课程的最后一站。让我们一起来回顾一下这段旅程，并规划一下未来的学习方向。"
+        },
+        {
+          "id": "action_52wzES5Z",
+          "type": "spotlight",
+          "elementId": "text_UUG-woII"
+        },
+        {
+          "id": "action_HYZpdmvj",
+          "type": "speech",
+          "text": "首先，我们来做一个核心回顾。"
+        },
+        {
+          "id": "action_d0ySVL3x",
+          "type": "laser",
+          "elementId": "text_a1jug4ii"
+        },
+        {
+          "id": "action_FIpXykHl",
+          "type": "speech",
+          "text": "在这节课里，我们搭建了Python环境，学会了用变量来存储和操作数据，掌握了用if/elif/else来控制程序的分支，最后，就像我们刚刚在上一页讨论的，我们学会了用for和while循环来赋予程序‘重复的力量’。这些都是编程最基础、最重要的基石。"
+        },
+        {
+          "id": "action_3tpEmZmC",
+          "type": "spotlight",
+          "elementId": "text_D5sRQKtc"
+        },
+        {
+          "id": "action_HThfcV9U",
+          "type": "speech",
+          "text": "但更重要的是，我希望大家已经开始培养一种‘编程思维’。"
+        },
+        {
+          "id": "action_VR6IBsAT",
+          "type": "laser",
+          "elementId": "text_4wIWrD1j"
+        },
+        {
+          "id": "action_BAedzo2x",
+          "type": "speech",
+          "text": "这种思维包括：如何把一个复杂的问题分解成一个个小步骤；如何抽象出问题的核心模型；如何设计自动化流程来让计算机替你工作；以及当程序出错时，如何进行调试和优化。掌握了这种思维，你学任何编程语言都会事半功倍。"
+        },
+        {
+          "id": "action_fe0uQ47P",
+          "type": "spotlight",
+          "elementId": "text_JWo9tfrT"
+        },
+        {
+          "id": "action_n9QzC6M5",
+          "type": "speech",
+          "text": "那么，接下来我们应该学什么呢？"
+        },
+        {
+          "id": "action_jRvHgcmG",
+          "type": "laser",
+          "elementId": "text_X4rZM4Mv"
+        },
+        {
+          "id": "action_MaxyjSCn",
+          "type": "speech",
+          "text": "我建议大家从这几个方向深入：学习函数，它能让你的代码更模块化、可复用；掌握列表和字典，它们是Python中处理数据集合的利器；最后，学习文件操作，让你写的程序能和外部世界交换数据。"
+        },
+        {
+          "id": "action_QmBpFbz8",
+          "type": "spotlight",
+          "elementId": "text_25UwhYaO"
+        },
+        {
+          "id": "action__ESWR6IF",
+          "type": "speech",
+          "text": "当然，学习路上少不了好的工具和伙伴。这里有一些我推荐的学习资源。"
+        },
+        {
+          "id": "action_h1adAqoK",
+          "type": "laser",
+          "elementId": "text_BVvihVSM"
+        },
+        {
+          "id": "action_iehRoViu",
+          "type": "speech",
+          "text": "Python的官方文档是最权威的参考。在线练习平台可以帮你巩固知识。尝试阅读和参与开源项目是提升实战能力的最佳途径。最后，别忘了加入社区和论坛，和其他开发者交流，你会收获很多。"
+        },
+        {
+          "id": "action_O3DDDvh9",
+          "type": "speech",
+          "text": "今天的课程到这里就全部结束了。恭喜大家完成了Python编程的入门之旅！记住，编程是一门实践的艺术，关键在于多写、多练、多思考。希望大家保持这份热情，持续探索这个充满创造力的数字世界。祝大家学习顺利，我们下次再见！"
+        }
+      ],
+      "createdAt": 1774025295494,
+      "updatedAt": 1774025295494
+    }
+  ],
+  "createdAt": "2026-03-26T12:07:56.446Z"
+}

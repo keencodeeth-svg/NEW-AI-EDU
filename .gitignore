@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+tsconfig.tsbuildinfo
+playwright-report/
+test-results/
+.playwright-cli/
+
+# Runtime app data (DATA_DIR)
+.runtime-data/
+data/admin-logs.json
+data/analytics-events.json
+data/assignment-progress.json
+data/assignment-submissions.json
+data/auth-login-attempts.json
+data/auth-login-profiles.json
+data/auth-recovery-attempts.json
+data/correction-tasks.json
+data/exam-answers.json
+data/exam-assignments.json
+data/exam-submissions.json
+data/focus-sessions.json
+data/mastery-records.json
+data/memory-reviews.json
+data/notifications.json
+data/parent-action-receipts.json
+data/question-attempts.json
+data/review-tasks.json
+data/sessions.json
+data/study-plans.json
+data/wrong-review-items.json
+
+# Generated exports
+exports/*.csv
+output/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/

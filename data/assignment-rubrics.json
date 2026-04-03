@@ -1,0 +1,164 @@
+[
+  {
+    "id": "assign-bulk-001-rubric-1",
+    "assignmentId": "assign-bulk-001",
+    "title": "完成度",
+    "description": "题目完成情况",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-001-rubric-2",
+    "assignmentId": "assign-bulk-001",
+    "title": "准确性",
+    "description": "计算与表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-001-rubric-3",
+    "assignmentId": "assign-bulk-001",
+    "title": "规范性",
+    "description": "书写与步骤规范",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-002-rubric-1",
+    "assignmentId": "assign-bulk-002",
+    "title": "结构与逻辑",
+    "description": "段落层次与结构完整",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-002-rubric-2",
+    "assignmentId": "assign-bulk-002",
+    "title": "内容与观点",
+    "description": "观点清晰、内容充实",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-002-rubric-3",
+    "assignmentId": "assign-bulk-002",
+    "title": "语言表达",
+    "description": "语句通顺、表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-004-rubric-1",
+    "assignmentId": "assign-bulk-004",
+    "title": "完成度",
+    "description": "题目完成情况",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-004-rubric-2",
+    "assignmentId": "assign-bulk-004",
+    "title": "准确性",
+    "description": "计算与表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-004-rubric-3",
+    "assignmentId": "assign-bulk-004",
+    "title": "规范性",
+    "description": "书写与步骤规范",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-005-rubric-1",
+    "assignmentId": "assign-bulk-005",
+    "title": "结构与逻辑",
+    "description": "段落层次与结构完整",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-005-rubric-2",
+    "assignmentId": "assign-bulk-005",
+    "title": "内容与观点",
+    "description": "观点清晰、内容充实",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-005-rubric-3",
+    "assignmentId": "assign-bulk-005",
+    "title": "语言表达",
+    "description": "语句通顺、表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-007-rubric-1",
+    "assignmentId": "assign-bulk-007",
+    "title": "完成度",
+    "description": "题目完成情况",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-007-rubric-2",
+    "assignmentId": "assign-bulk-007",
+    "title": "准确性",
+    "description": "计算与表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-007-rubric-3",
+    "assignmentId": "assign-bulk-007",
+    "title": "规范性",
+    "description": "书写与步骤规范",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-008-rubric-1",
+    "assignmentId": "assign-bulk-008",
+    "title": "结构与逻辑",
+    "description": "段落层次与结构完整",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-008-rubric-2",
+    "assignmentId": "assign-bulk-008",
+    "title": "内容与观点",
+    "description": "观点清晰、内容充实",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "assign-bulk-008-rubric-3",
+    "assignmentId": "assign-bulk-008",
+    "title": "语言表达",
+    "description": "语句通顺、表达准确",
+    "maxScore": 10,
+    "weight": 1,
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "assign-bulk-003-item-1",
+    "assignmentId": "assign-bulk-003",
+    "questionId": "q-chinese-7-kp-chinese-7-1-1"
+  },
+  {
+    "id": "assign-bulk-003-item-2",
+    "assignmentId": "assign-bulk-003",
+    "questionId": "q-chinese-7-kp-chinese-7-1-2"
+  },
+  {
+    "id": "assign-bulk-003-item-3",
+    "assignmentId": "assign-bulk-003",
+    "questionId": "q-chinese-7-kp-chinese-7-1-3"
+  },
+  {
+    "id": "assign-bulk-003-item-4",
+    "assignmentId": "assign-bulk-003",
+    "questionId": "q-chinese-7-kp-chinese-7-1-4"
+  },
+  {
+    "id": "assign-bulk-003-item-5",
+    "assignmentId": "assign-bulk-003",
+    "questionId": "q-chinese-7-kp-chinese-7-2-1"
+  },
+  {
+    "id": "assign-bulk-006-item-1",
+    "assignmentId": "assign-bulk-006",
+    "questionId": "q-english-10-kp-english-10-1-1"
+  },
+  {
+    "id": "assign-bulk-006-item-2",
+    "assignmentId": "assign-bulk-006",
+    "questionId": "q-english-10-kp-english-10-1-2"
+  },
+  {
+    "id": "assign-bulk-006-item-3",
+    "assignmentId": "assign-bulk-006",
+    "questionId": "q-english-10-kp-english-10-1-3"
+  },
+  {
+    "id": "assign-bulk-006-item-4",
+    "assignmentId": "assign-bulk-006",
+    "questionId": "q-english-10-kp-english-10-1-4"
+  },
+  {
+    "id": "assign-bulk-006-item-5",
+    "assignmentId": "assign-bulk-006",
+    "questionId": "q-english-10-kp-english-10-2-1"
+  }
+]

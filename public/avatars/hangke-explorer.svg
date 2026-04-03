@@ -1,0 +1,27 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="160" rx="48" fill="url(#paint0_linear_1504_4)"/>
+  <circle cx="80" cy="78" r="54" fill="url(#paint1_linear_1504_4)"/>
+  <path d="M50 64C50 42.4609 67.4609 25 89 25C110.539 25 128 42.4609 128 64V73H50V64Z" fill="#C2410C"/>
+  <path d="M104 81C104 96.464 93.7025 109 81 109C68.2975 109 58 96.464 58 81V68H104V81Z" fill="#FFD9BC"/>
+  <path d="M71 81C73.4853 81 75.5 78.9853 75.5 76.5C75.5 74.0147 73.4853 72 71 72C68.5147 72 66.5 74.0147 66.5 76.5C66.5 78.9853 68.5147 81 71 81Z" fill="#1F2937"/>
+  <path d="M92 81C94.4853 81 96.5 78.9853 96.5 76.5C96.5 74.0147 94.4853 72 92 72C89.5147 72 87.5 74.0147 87.5 76.5C87.5 78.9853 89.5147 81 92 81Z" fill="#1F2937"/>
+  <path d="M73.5 92C76.5466 94.9015 80.5916 96.5249 84.7986 96.5249C89.0057 96.5249 93.0507 94.9015 96.0973 92" stroke="#B96844" stroke-width="4" stroke-linecap="round"/>
+  <path d="M42 139C42 116.909 59.9086 99 82 99H84C106.091 99 124 116.909 124 139V160H42V139Z" fill="url(#paint2_linear_1504_4)"/>
+  <circle cx="117" cy="42" r="11" fill="#F59E0B"/>
+  <path d="M118 36V48" stroke="#FFF7E5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M112 42H124" stroke="#FFF7E5" stroke-width="3" stroke-linecap="round"/>
+  <defs>
+    <linearGradient id="paint0_linear_1504_4" x1="23" y1="16" x2="144" y2="152" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8ED"/>
+      <stop offset="1" stop-color="#FFF3DD"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_1504_4" x1="36" y1="29" x2="121" y2="124" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.94"/>
+      <stop offset="1" stop-color="#FFE8CF"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_1504_4" x1="44" y1="103" x2="122" y2="158" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C2410C"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+</svg>

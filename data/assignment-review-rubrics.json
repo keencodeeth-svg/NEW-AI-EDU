@@ -1,0 +1,254 @@
+[
+  {
+    "id": "assign-bulk-001-u-student-bulk-001-rubric-1",
+    "reviewId": "assign-bulk-001-u-student-bulk-001-review",
+    "rubricId": "assign-bulk-001-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-001-u-student-bulk-001-rubric-2",
+    "reviewId": "assign-bulk-001-u-student-bulk-001-review",
+    "rubricId": "assign-bulk-001-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-001-u-student-bulk-001-rubric-3",
+    "reviewId": "assign-bulk-001-u-student-bulk-001-review",
+    "rubricId": "assign-bulk-001-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-001-u-student-bulk-013-rubric-1",
+    "reviewId": "assign-bulk-001-u-student-bulk-013-review",
+    "rubricId": "assign-bulk-001-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-001-u-student-bulk-013-rubric-2",
+    "reviewId": "assign-bulk-001-u-student-bulk-013-review",
+    "rubricId": "assign-bulk-001-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-001-u-student-bulk-013-rubric-3",
+    "reviewId": "assign-bulk-001-u-student-bulk-013-review",
+    "rubricId": "assign-bulk-001-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-009-rubric-1",
+    "reviewId": "assign-bulk-002-u-student-bulk-009-review",
+    "rubricId": "assign-bulk-002-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-009-rubric-2",
+    "reviewId": "assign-bulk-002-u-student-bulk-009-review",
+    "rubricId": "assign-bulk-002-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-009-rubric-3",
+    "reviewId": "assign-bulk-002-u-student-bulk-009-review",
+    "rubricId": "assign-bulk-002-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-021-rubric-1",
+    "reviewId": "assign-bulk-002-u-student-bulk-021-review",
+    "rubricId": "assign-bulk-002-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-021-rubric-2",
+    "reviewId": "assign-bulk-002-u-student-bulk-021-review",
+    "rubricId": "assign-bulk-002-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-002-u-student-bulk-021-rubric-3",
+    "reviewId": "assign-bulk-002-u-student-bulk-021-review",
+    "rubricId": "assign-bulk-002-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-002-rubric-1",
+    "reviewId": "assign-bulk-004-u-student-bulk-002-review",
+    "rubricId": "assign-bulk-004-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-002-rubric-2",
+    "reviewId": "assign-bulk-004-u-student-bulk-002-review",
+    "rubricId": "assign-bulk-004-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-002-rubric-3",
+    "reviewId": "assign-bulk-004-u-student-bulk-002-review",
+    "rubricId": "assign-bulk-004-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-014-rubric-1",
+    "reviewId": "assign-bulk-004-u-student-bulk-014-review",
+    "rubricId": "assign-bulk-004-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-014-rubric-2",
+    "reviewId": "assign-bulk-004-u-student-bulk-014-review",
+    "rubricId": "assign-bulk-004-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-004-u-student-bulk-014-rubric-3",
+    "reviewId": "assign-bulk-004-u-student-bulk-014-review",
+    "rubricId": "assign-bulk-004-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-011-rubric-1",
+    "reviewId": "assign-bulk-005-u-student-bulk-011-review",
+    "rubricId": "assign-bulk-005-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-011-rubric-2",
+    "reviewId": "assign-bulk-005-u-student-bulk-011-review",
+    "rubricId": "assign-bulk-005-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-011-rubric-3",
+    "reviewId": "assign-bulk-005-u-student-bulk-011-review",
+    "rubricId": "assign-bulk-005-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-023-rubric-1",
+    "reviewId": "assign-bulk-005-u-student-bulk-023-review",
+    "rubricId": "assign-bulk-005-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-023-rubric-2",
+    "reviewId": "assign-bulk-005-u-student-bulk-023-review",
+    "rubricId": "assign-bulk-005-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-005-u-student-bulk-023-rubric-3",
+    "reviewId": "assign-bulk-005-u-student-bulk-023-review",
+    "rubricId": "assign-bulk-005-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-004-rubric-1",
+    "reviewId": "assign-bulk-007-u-student-bulk-004-review",
+    "rubricId": "assign-bulk-007-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-004-rubric-2",
+    "reviewId": "assign-bulk-007-u-student-bulk-004-review",
+    "rubricId": "assign-bulk-007-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-004-rubric-3",
+    "reviewId": "assign-bulk-007-u-student-bulk-004-review",
+    "rubricId": "assign-bulk-007-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-016-rubric-1",
+    "reviewId": "assign-bulk-007-u-student-bulk-016-review",
+    "rubricId": "assign-bulk-007-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-016-rubric-2",
+    "reviewId": "assign-bulk-007-u-student-bulk-016-review",
+    "rubricId": "assign-bulk-007-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-007-u-student-bulk-016-rubric-3",
+    "reviewId": "assign-bulk-007-u-student-bulk-016-review",
+    "rubricId": "assign-bulk-007-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-012-rubric-1",
+    "reviewId": "assign-bulk-008-u-student-bulk-012-review",
+    "rubricId": "assign-bulk-008-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-012-rubric-2",
+    "reviewId": "assign-bulk-008-u-student-bulk-012-review",
+    "rubricId": "assign-bulk-008-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-012-rubric-3",
+    "reviewId": "assign-bulk-008-u-student-bulk-012-review",
+    "rubricId": "assign-bulk-008-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-024-rubric-1",
+    "reviewId": "assign-bulk-008-u-student-bulk-024-review",
+    "rubricId": "assign-bulk-008-rubric-1",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-024-rubric-2",
+    "reviewId": "assign-bulk-008-u-student-bulk-024-review",
+    "rubricId": "assign-bulk-008-rubric-2",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  },
+  {
+    "id": "assign-bulk-008-u-student-bulk-024-rubric-3",
+    "reviewId": "assign-bulk-008-u-student-bulk-024-review",
+    "rubricId": "assign-bulk-008-rubric-3",
+    "score": 8,
+    "comment": "表现不错，继续提升。"
+  }
+]

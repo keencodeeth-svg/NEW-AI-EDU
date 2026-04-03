@@ -1,0 +1,180 @@
+import { createAdminRoute } from "@/lib/api/domains";
+import { assertAdminStepUp } from "@/lib/admin-step-up";
+import { addAdminLog } from "@/lib/admin-log";
+import { buildAdminAuditDetail, diffAuditFields } from "@/lib/admin-audit";
+import { badRequest, notFound, unauthorized } from "@/lib/api/http";
+import {
+  refreshAiQualityCalibrationState,
+  getAiQualityCalibration,
+  listAiQualityCalibrationSnapshots,
+  rollbackAiQualityCalibration,
+  upsertAiQualityCalibration,
+  type AiQualityCalibrationPatch
+} from "@/lib/ai-quality-calibration";
+import { v } from "@/lib/api/validation";
+
+const querySchema = v.object<{ historyLimit?: number }>(
+  {
+    historyLimit: v.optional(v.number({ integer: true, min: 1, max: 100, coerce: true }))
+  },
+  { allowUnknown: true }
+);
+
+function toNumberMap(input: unknown) {
+  if (!input || typeof input !== "object" || Array.isArray(input)) return undefined;
+  const next: Record<string, number> = {};
+  Object.entries(input as Record<string, unknown>).forEach(([key, value]) => {
+    if (typeof value === "number" && Number.isFinite(value)) {
+      next[key] = value;
+    }
+  });
+  return next;
+}
+
+async function buildPayload(historyLimit = 20) {
+  await refreshAiQualityCalibrationState();
+  return {
+    ...getAiQualityCalibration(),
+    snapshots: listAiQualityCalibrationSnapshots(historyLimit)
+  };
+}
+
+function toAuditSnapshot(config: ReturnType<typeof getAiQualityCalibration>) {
+  return {
+    globalBias: config.globalBias,
+    providerAdjustments: config.providerAdjustments,
+    kindAdjustments: config.kindAdjustments,
+    enabled: config.enabled,
+    rolloutPercent: config.rolloutPercent,
+    rolloutSalt: config.rolloutSalt
+  };
+}
+
+export const GET = createAdminRoute({
+  role: "admin",
+  query: querySchema,
+  cache: "private-realtime",
+  handler: async ({ user, query }) => {
+    if (!user || user.role !== "admin") {
+      unauthorized();
+    }
+
+    return { data: await buildPayload(query.historyLimit ?? 20) };
+  }
+});
+
+export const POST = createAdminRoute({
+  role: "admin",
+  cache: "private-realtime",
+  handler: async ({ user, request }) => {
+    if (!user || user.role !== "admin") {
+      unauthorized();
+    }
+    await assertAdminStepUp(user);
+
+    let payload: unknown;
+    try {
+      payload = await request.json();
+    } catch {
+      badRequest("invalid json body");
+    }
+
+    if (!payload || typeof payload !== "object" || Array.isArray(payload)) {
+      badRequest("body must be an object");
+    }
+
+    const input = payload as Record<string, unknown>;
+    const action = typeof input.action === "string" ? input.action.trim().toLowerCase() : "";
+    const reason = typeof input.reason === "string" ? input.reason.trim() : undefined;
+    const confirmAction = input.confirmAction === true;
+    await refreshAiQualityCalibrationState();
+    const currentConfig = getAiQualityCalibration();
+    const beforeSnapshot = toAuditSnapshot(currentConfig);
+
+    if (action === "rollback") {
+      const snapshotId = typeof input.snapshotId === "string" ? input.snapshotId.trim() : "";
+      if (!snapshotId) {
+        badRequest("snapshotId required");
+      }
+      if (!confirmAction) {
+        badRequest("confirmAction required");
+      }
+      const next = await rollbackAiQualityCalibration(snapshotId, {
+        updatedBy: user.id,
+        reason: reason || `rollback:${snapshotId}`
+      });
+      if (!next) {
+        notFound("snapshot not found");
+      }
+
+      await addAdminLog({
+        adminId: user.id,
+        action: "rollback_ai_quality_calibration",
+        entityType: "ai_quality_calibration",
+        entityId: snapshotId,
+        detail: buildAdminAuditDetail({
+          summary: "回滚 AI 质量校准快照",
+          reason,
+          changedFields: diffAuditFields(beforeSnapshot, toAuditSnapshot(next)),
+          before: beforeSnapshot,
+          after: toAuditSnapshot(next),
+          meta: {
+            snapshotId,
+            confirmAction: true
+          }
+        })
+      });
+      return { data: await buildPayload(20) };
+    }
+
+    const patch: AiQualityCalibrationPatch = {};
+    if (typeof input.globalBias === "number" && Number.isFinite(input.globalBias)) {
+      patch.globalBias = input.globalBias;
+    }
+    const providerAdjustments = toNumberMap(input.providerAdjustments);
+    if (providerAdjustments) {
+      patch.providerAdjustments = providerAdjustments;
+    }
+    const kindAdjustments = toNumberMap(input.kindAdjustments);
+    if (kindAdjustments) {
+      patch.kindAdjustments = kindAdjustments as AiQualityCalibrationPatch["kindAdjustments"];
+    }
+    if (typeof input.enabled === "boolean") {
+      patch.enabled = input.enabled;
+    }
+    if (typeof input.rolloutPercent === "number" && Number.isFinite(input.rolloutPercent)) {
+      patch.rolloutPercent = input.rolloutPercent;
+    }
+    if (typeof input.rolloutSalt === "string" && input.rolloutSalt.trim()) {
+      patch.rolloutSalt = input.rolloutSalt.trim();
+    }
+
+    if (!Object.keys(patch).length) {
+      badRequest("empty calibration patch");
+    }
+
+    const next = await upsertAiQualityCalibration(patch, {
+      updatedBy: user.id,
+      reason: reason || "manual_update"
+    });
+
+    await addAdminLog({
+      adminId: user.id,
+      action: "update_ai_quality_calibration",
+      entityType: "ai_quality_calibration",
+      entityId: "runtime",
+      detail: buildAdminAuditDetail({
+        summary: "更新 AI 质量校准配置",
+        reason,
+        changedFields: diffAuditFields(beforeSnapshot, toAuditSnapshot(next)),
+        before: beforeSnapshot,
+        after: toAuditSnapshot(next),
+        meta: {
+          patchKeys: Object.keys(patch).sort()
+        }
+      })
+    });
+
+    return { data: await buildPayload(20) };
+  }
+});

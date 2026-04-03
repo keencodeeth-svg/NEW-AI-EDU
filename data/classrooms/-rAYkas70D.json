@@ -1,0 +1,2007 @@
+{
+  "id": "-rAYkas70D",
+  "stage": {
+    "id": "-rAYkas70D",
+    "name": "请围绕“我大学的理论力学挂科了，想要考前冲刺一下”为小星设计一节适合学生自主使用的兴趣培养课堂。\n\n学习主题：我大学的理论力学挂科了，想要考前冲刺一下\n\n当前学习目标：考前复习\n\n课堂要求：适合单人观看与跟练，包含导入、启发式讲解、互动追问、即时练习、总结，并支持课后回看与导出。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：兴趣培养\n兴趣主题：我大学的理论力学挂科了，想要考前冲刺一下\n学习目标：考前复习\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 兴趣探索要兼顾趣味性与启发性，用学生能听懂的语言把概念讲清楚。\n- 可以加入故事化情境、项目式追问和延伸任务，让学生愿意继续探索。\n- 最后要留下一个适合学生继续查找或动手尝试的下一步问题。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774251469185,
+    "updatedAt": 1774433385939,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "考前复习",
+      "interestTopic": "我大学的理论力学挂科了，想要考前冲刺一下"
+    },
+    "currentSceneId": "xmfF_nP37o1cESlydb6s5"
+  },
+  "scenes": [
+    {
+      "id": "Fjt2yn9c-H1mFcCbR2MfK",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "欢迎来到理论力学冲刺营！",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "NMwIFdZBrZsL1maOFxa3y",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_Vpnf21QZ",
+              "type": "shape",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_fn8rg7T6",
+              "type": "text",
+              "left": 80,
+              "top": 98,
+              "width": 840,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">欢迎来到理论力学冲刺营！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_leJ3ZaN7",
+              "type": "shape",
+              "left": 60,
+              "top": 190,
+              "width": 880,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_zlMB_oLb",
+              "type": "text",
+              "left": 80,
+              "top": 208,
+              "width": 840,
+              "height": 64,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">情境引入：考前冲刺</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_wmdAKVlK",
+              "type": "text",
+              "left": 80,
+              "top": 280,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 大学理论力学挂科，面临补考压力</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_D7jASadC",
+              "type": "text",
+              "left": 80,
+              "top": 336,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 时间紧迫，需要高效、精准的复习方案</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_4CBWrWHe",
+              "type": "shape",
+              "left": 60,
+              "top": 410,
+              "width": 430,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_IxC16jV-",
+              "type": "text",
+              "left": 80,
+              "top": 428,
+              "width": 390,
+              "height": 64,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">目标与心态</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_qmnJMlGA",
+              "type": "text",
+              "left": 80,
+              "top": 490,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 目标：掌握核心概念，建立解题信心</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_B7rWhLWY",
+              "type": "text",
+              "left": 80,
+              "top": 546,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 心态：将复杂问题转化为有趣的探索</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_2DQs2_Jx",
+              "type": "shape",
+              "left": 510,
+              "top": 410,
+              "width": 430,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_aRrIni_E",
+              "type": "text",
+              "left": 530,
+              "top": 428,
+              "width": 390,
+              "height": 64,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">课程承诺</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_alBxFj7G",
+              "type": "text",
+              "left": 530,
+              "top": 490,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 适合单人观看与跟练</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_TOX_u0X9",
+              "type": "text",
+              "left": 530,
+              "top": 546,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 支持随时回看与内容导出</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_HR-O7AEW",
+          "type": "spotlight",
+          "elementId": "text_fn8rg7T6"
+        },
+        {
+          "id": "action_a2mdeHaY",
+          "type": "speech",
+          "text": "小星你好！欢迎来到理论力学冲刺营！我是你的学习教练。很高兴能和你一起开始这段考前冲刺的旅程。"
+        },
+        {
+          "id": "action_5WVo5ISR",
+          "type": "spotlight",
+          "elementId": "text_zlMB_oLb"
+        },
+        {
+          "id": "action_-tciZFDE",
+          "type": "speech",
+          "text": "我知道你现在正面临一个非常具体的情境，就像这里写的：考前冲刺。"
+        },
+        {
+          "id": "action_VOfBRDRs",
+          "type": "spotlight",
+          "elementId": "text_wmdAKVlK"
+        },
+        {
+          "id": "action_70mP-yGv",
+          "type": "speech",
+          "text": "大学的理论力学挂科了，现在面临补考的压力。"
+        },
+        {
+          "id": "action_II8-3VpK",
+          "type": "spotlight",
+          "elementId": "text_D7jASadC"
+        },
+        {
+          "id": "action_iJj9KS08",
+          "type": "speech",
+          "text": "而且时间非常紧迫，需要一个高效、精准的复习方案。别担心，这正是我们接下来要一起做的事情。"
+        },
+        {
+          "id": "action_tD6cb33A",
+          "type": "spotlight",
+          "elementId": "text_IxC16jV-"
+        },
+        {
+          "id": "action_e6WPQX8H",
+          "type": "speech",
+          "text": "在开始之前，我们先明确一下这次冲刺的目标和心态。"
+        },
+        {
+          "id": "action_Ll3RNB61",
+          "type": "spotlight",
+          "elementId": "text_qmnJMlGA"
+        },
+        {
+          "id": "action_2oSBI2dt",
+          "type": "speech",
+          "text": "我们的核心目标不是把整本书再背一遍，而是掌握最核心的概念，建立解题的信心。把大目标拆解成一个个小目标，一步步来。"
+        },
+        {
+          "id": "action_-Ma7hzX2",
+          "type": "spotlight",
+          "elementId": "text_B7rWhLWY"
+        },
+        {
+          "id": "action__0f1W5qo",
+          "type": "speech",
+          "text": "心态上，我希望我们能一起把复杂的力学问题，变成一次有趣的探索。力学其实就在我们身边，理解它背后的原理会很有成就感。"
+        },
+        {
+          "id": "action_dgXIkJUw",
+          "type": "spotlight",
+          "elementId": "text_aRrIni_E"
+        },
+        {
+          "id": "action_rpyCeQU5",
+          "type": "speech",
+          "text": "最后，关于这次课程，我向你做出两个承诺。"
+        },
+        {
+          "id": "action_noKQjy2r",
+          "type": "spotlight",
+          "elementId": "text_alBxFj7G"
+        },
+        {
+          "id": "action_3dqfSaq6",
+          "type": "speech",
+          "text": "第一，这个课程完全适合你一个人观看和跟练。我会带着你一步步思考。"
+        },
+        {
+          "id": "action_6_lLY9gJ",
+          "type": "spotlight",
+          "elementId": "text_TOX_u0X9"
+        },
+        {
+          "id": "action_1dIyPrTT",
+          "type": "speech",
+          "text": "第二，所有内容都支持你随时回看，也可以把关键内容导出来复习。准备好了吗？我们马上开始。"
+        }
+      ],
+      "createdAt": 1774251578726,
+      "updatedAt": 1774251578726
+    },
+    {
+      "id": "RBi2zk-UxntOAZ-z1r3Ns",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "力学的两大支柱：静力学与动力学",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "2685RSzBTVp6iTlcqg9rn",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_xjvedmuR",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>力学的两大支柱：静力学与动力学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_1X1S-34j",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:18px; text-align:center; color:#666666;\">理论力学的核心分支</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_TJ1-ieoz",
+              "type": "shape",
+              "left": 60,
+              "top": 220,
+              "width": 430,
+              "height": 240,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Hc3V6cn0",
+              "type": "text",
+              "left": 80,
+              "top": 240,
+              "width": 390,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; text-align:center; color:#1e40af;\"><strong>静力学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_lcYvk-rn",
+              "type": "text",
+              "left": 80,
+              "top": 310,
+              "width": 390,
+              "height": 130,
+              "content": "<p style=\"font-size:18px;\">• 研究物体在力作用下保持平衡</p><p style=\"font-size:18px;\">• 平衡状态：静止或匀速直线运动</p><p style=\"font-size:18px;\">• 核心问题：力怎么平衡？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_ae69aAwy",
+              "type": "shape",
+              "left": 510,
+              "top": 220,
+              "width": 430,
+              "height": 240,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_yKk47RFl",
+              "type": "text",
+              "left": 530,
+              "top": 240,
+              "width": 390,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; text-align:center; color:#92400e;\"><strong>动力学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_cca4541W",
+              "type": "text",
+              "left": 530,
+              "top": 310,
+              "width": 390,
+              "height": 130,
+              "content": "<p style=\"font-size:18px;\">• 研究力如何改变物体的运动状态</p><p style=\"font-size:18px;\">• 核心概念：加速度</p><p style=\"font-size:18px;\">• 核心问题：力怎么产生运动？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_LlcZF2g8",
+              "type": "text",
+              "left": 60,
+              "top": 480,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>联系与区别</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_zbhojuWN",
+              "type": "shape",
+              "left": 300,
+              "top": 510,
+              "width": 120,
+              "height": 120,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_H9pKhe6r",
+              "type": "shape",
+              "left": 580,
+              "top": 510,
+              "width": 120,
+              "height": 120,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_2-xRDADC",
+              "type": "text",
+              "left": 310,
+              "top": 540,
+              "width": 100,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; text-align:center;\">静力学</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_A9ThvlTs",
+              "type": "text",
+              "left": 590,
+              "top": 540,
+              "width": 100,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; text-align:center;\">动力学</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_BVg30PWA",
+              "type": "text",
+              "left": 450,
+              "top": 540,
+              "width": 100,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; text-align:center;\">力学</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "line_hJ7R49NL",
+              "type": "line",
+              "left": 420,
+              "top": 570,
+              "width": 3,
+              "start": [
+                0,
+                0
+              ],
+              "end": [
+                60,
+                0
+              ],
+              "style": "solid",
+              "color": "#666666",
+              "points": [
+                "",
+                "arrow"
+              ],
+              "rotate": 0
+            },
+            {
+              "id": "line_7e9RFEzb",
+              "type": "line",
+              "left": 520,
+              "top": 570,
+              "width": 3,
+              "start": [
+                0,
+                0
+              ],
+              "end": [
+                60,
+                0
+              ],
+              "style": "solid",
+              "color": "#666666",
+              "points": [
+                "arrow",
+                ""
+              ],
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_4qScJm99",
+          "type": "spotlight",
+          "elementId": "text_xjvedmuR"
+        },
+        {
+          "id": "action_Jn3kpRY8",
+          "type": "speech",
+          "text": "非常好，我们刚才已经了解了这门课程的整体安排。现在，让我们正式进入理论力学的核心内容。请看这里，理论力学主要建立在两大支柱之上，它们就是静力学和动力学。"
+        },
+        {
+          "id": "action_yFW7XoW5",
+          "type": "spotlight",
+          "elementId": "text_Hc3V6cn0"
+        },
+        {
+          "id": "action_tv7IMaAy",
+          "type": "speech",
+          "text": "我们先来看第一个支柱：静力学。"
+        },
+        {
+          "id": "action_sJUTbeDR",
+          "type": "laser",
+          "elementId": "text_lcYvk-rn"
+        },
+        {
+          "id": "action_QXamct3D",
+          "type": "speech",
+          "text": "静力学研究的是物体在力的作用下，如何保持平衡。平衡状态有两种，一种是物体完全静止不动，另一种是物体在做匀速直线运动。所以，静力学的核心问题就是：力是怎么达到平衡的？"
+        },
+        {
+          "id": "action_Dqsokn7W",
+          "type": "spotlight",
+          "elementId": "text_yKk47RFl"
+        },
+        {
+          "id": "action_QRfcdhp7",
+          "type": "speech",
+          "text": "接下来，我们看另一个支柱：动力学。"
+        },
+        {
+          "id": "action_rJiOoj7u",
+          "type": "laser",
+          "elementId": "text_cca4541W"
+        },
+        {
+          "id": "action_7Hl5eZ33",
+          "type": "speech",
+          "text": "动力学研究的是力如何改变物体的运动状态。这里最关键的概念就是加速度。所以，动力学的核心问题正好和静力学相反，它问的是：力是怎么产生运动的？"
+        },
+        {
+          "id": "action_aVVNUpn1",
+          "type": "spotlight",
+          "elementId": "text_LlcZF2g8"
+        },
+        {
+          "id": "action_X5iH3LuC",
+          "type": "speech",
+          "text": "那么，这两个分支之间有什么联系和区别呢？"
+        },
+        {
+          "id": "action_3Lu7kXmi",
+          "type": "spotlight",
+          "elementId": "text_BVg30PWA"
+        },
+        {
+          "id": "action_gFeMHhL6",
+          "type": "speech",
+          "text": "我们可以用一个简单的图来理解。整个力学就像一个大圆圈。"
+        },
+        {
+          "id": "action_GNNUiE9s",
+          "type": "laser",
+          "elementId": "text_2-xRDADC"
+        },
+        {
+          "id": "action_A1bmdETr",
+          "type": "speech",
+          "text": "其中一部分是静力学，它关注的是物体在力作用下保持平衡的状态。"
+        },
+        {
+          "id": "action_cW9IznyM",
+          "type": "laser",
+          "elementId": "text_A9ThvlTs"
+        },
+        {
+          "id": "action_k3Fk6O8n",
+          "type": "speech",
+          "text": "另一部分是动力学，它关注的是力如何让物体从一种运动状态变化到另一种状态。"
+        },
+        {
+          "id": "action_JNZC2iKj",
+          "type": "speech",
+          "text": "简单来说，静力学研究的是‘不动’或‘匀速动’的情况，而动力学研究的是‘加速动’的情况。它们共同构成了我们理解物体运动的基础。小星，你觉得这个框架清晰吗？"
+        }
+      ],
+      "createdAt": 1774251642637,
+      "updatedAt": 1774251642637
+    },
+    {
+      "id": "spgX4nJTfz8TitrW-mcxI",
+      "stageId": "-rAYkas70D",
+      "type": "interactive",
+      "title": "力的合成与分解：动手玩一玩",
+      "order": 3,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>力的合成与分解</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        canvas {\n            touch-action: none;\n        }\n        .arrow {\n            cursor: move;\n        }\n        .control-dot {\n            cursor: pointer;\n            transition: r 0.1s;\n        }\n        .control-dot:hover {\n            r: 8;\n        }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gray-50 text-gray-800 p-4 md:p-6 font-sans\">\n    <div class=\"max-w-6xl mx-auto\">\n        <header class=\"mb-6\">\n            <h1 class=\"text-3xl font-bold text-center text-blue-700 mb-2\">力的合成与分解</h1>\n            <p class=\"text-center text-gray-600 mb-4\">拖拽力矢量，直观观察合力与分力的变化关系。</p>\n        </header>\n\n        <div class=\"flex flex-col lg:flex-row gap-6\">\n            <!-- 左侧：主画布与控制区 -->\n            <div class=\"lg:w-2/3\">\n                <div class=\"bg-white rounded-xl shadow-lg p-4 mb-4\">\n                    <div class=\"flex flex-wrap justify-center gap-4 mb-4\">\n                        <button id=\"viewToggle\" class=\"px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors\">切换到正交分解视图</button>\n                        <div class=\"flex items-center gap-2\">\n                            <span class=\"text-sm font-medium\">显示网格</span>\n                            <input type=\"checkbox\" id=\"gridToggle\" class=\"h-5 w-5\" checked>\n                        </div>\n                    </div>\n                    <div class=\"relative border border-gray-300 rounded-lg overflow-hidden bg-gray-100\" style=\"height: 500px;\">\n                        <canvas id=\"mainCanvas\" width=\"800\" height=\"500\" class=\"absolute top-0 left-0 w-full h-full\"></canvas>\n                        <svg id=\"vectorOverlay\" width=\"800\" height=\"500\" class=\"absolute top-0 left-0 w-full h-full pointer-events-none\"></svg>\n                    </div>\n                </div>\n\n                <!-- 公式与信息面板 -->\n                <div class=\"bg-white rounded-xl shadow-lg p-4\">\n                    <h2 class=\"text-xl font-semibold mb-3 text-blue-600\">核心原理</h2>\n                    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                        <div class=\"p-3 bg-blue-50 rounded-lg\">\n                            <h3 class=\"font-medium mb-1\">平行四边形法则</h3>\n                            <p class=\"text-sm text-gray-700 mb-1\">合力是以两个分力为邻边的平行四边形的对角线。</p>\n                            <p class=\"text-sm font-mono\">合力大小: \\\\(F = \\\\sqrt{F_1^2 + F_2^2 + 2 F_1 F_2 \\\\cos\\\\theta}\\\\)</p>\n                        </div>\n                        <div class=\"p-3 bg-green-50 rounded-lg\">\n                            <h3 class=\"font-medium mb-1\">正交分解法</h3>\n                            <p class=\"text-sm text-gray-700 mb-1\">将力分解到互相垂直的x轴和y轴上。</p>\n                            <p class=\"text-sm font-mono\">分量: \\\\(F_x = F \\\\cos\\\\alpha\\\\), \\\\(F_y = F \\\\sin\\\\alpha\\\\)</p>\n                            <p class=\"text-sm font-mono\">合力分量: \\\\(F_x = \\\\sum F_{ix}\\\\), \\\\(F_y = \\\\sum F_{iy}\\\\)</p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- 右侧：数据面板与说明 -->\n            <div class=\"lg:w-1/3\">\n                <div class=\"bg-white rounded-xl shadow-lg p-4 mb-4\">\n                    <h2 class=\"text-xl font-semibold mb-3 text-blue-600\">实时数据</h2>\n                    <div class=\"space-y-4\">\n                        <div>\n                            <h3 class=\"font-medium text-gray-700 mb-1\">力 \\\\(F_1\\\\)</h3>\n                            <div class=\"flex items-center gap-2 mb-1\">\n                                <div class=\"w-3 h-3 rounded-full bg-red-500\"></div>\n                                <span>大小: <span id=\"f1Mag\" class=\"font-mono font-bold\">10.0 N</span></span>\n                            </div>\n                            <div class=\"text-sm\">方向角: <span id=\"f1Ang\" class=\"font-mono\">0.0°</span> (与x轴正方向夹角)</div>\n                            <div class=\"text-sm\">分量: Fx=<span id=\"f1x\" class=\"font-mono\">10.0</span>, Fy=<span id=\"f1y\" class=\"font-mono\">0.0</span></div>\n                        </div>\n                        <div>\n                            <h3 class=\"font-medium text-gray-700 mb-1\">力 \\\\(F_2\\\\)</h3>\n                            <div class=\"flex items-center gap-2 mb-1\">\n                                <div class=\"w-3 h-3 rounded-full bg-green-600\"></div>\n                                <span>大小: <span id=\"f2Mag\" class=\"font-mono font-bold\">10.0 N</span></span>\n                            </div>\n                            <div class=\"text-sm\">方向角: <span id=\"f2Ang\" class=\"font-mono\">90.0°</span> (与x轴正方向夹角)</div>\n                            <div class=\"text-sm\">分量: Fx=<span id=\"f2x\" class=\"font-mono\">0.0</span>, Fy=<span id=\"f2y\" class=\"font-mono\">10.0</span></div>\n                        </div>\n                        <div class=\"pt-3 border-t\">\n                            <h3 class=\"font-medium text-gray-700 mb-1\">合力 \\\\(F_R\\\\)</h3>\n                            <div class=\"flex items-center gap-2 mb-1\">\n                                <div class=\"w-3 h-3 rounded-full bg-purple-600\"></div>\n                                <span>大小: <span id=\"rMag\" class=\"font-mono font-bold text-purple-700\">14.1 N</span></span>\n                            </div>\n                            <div class=\"text-sm\">方向角: <span id=\"rAng\" class=\"font-mono\">45.0°</span> (与x轴正方向夹角)</div>\n                            <div class=\"text-sm\">分量: Fx=<span id=\"rx\" class=\"font-mono\">10.0</span>, Fy=<span id=\"ry\" class=\"font-mono\">10.0</span></div>\n                            <div class=\"text-sm\">两力夹角 θ: <span id=\"theta\" class=\"font-mono\">90.0°</span></div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"bg-white rounded-xl shadow-lg p-4\">\n                    <h2 class=\"text-xl font-semibold mb-3 text-blue-600\">操作指南</h2>\n                    <ul class=\"space-y-2 text-sm text-gray-700\">\n                        <li class=\"flex items-start gap-2\">\n                            <div class=\"w-2 h-2 bg-blue-500 rounded-full mt-1.5 flex-shrink-0\"></div>\n                            <span><strong>拖拽箭头端点</strong>：改变力的大小和方向。</span>\n                        </li>\n                        <li class=\"flex items-start gap-2\">\n                            <div class=\"w-2 h-2 bg-blue-500 rounded-full mt-1.5 flex-shrink-0\"></div>\n                            <span><strong>切换视图</strong>：在平行四边形法则和正交分解视图之间切换。</span>\n                        </li>\n                        <li class=\"flex items-start gap-2\">\n                            <div class=\"w-2 h-2 bg-blue-500 rounded-full mt-1.5 flex-shrink-0\"></div>\n                            <span><strong>观察规律</strong>：当两力同向(θ=0°)时合力最大，反向(θ=180°)时合力最小。</span>\n                        </li>\n                    </ul>\n                    <div class=\"mt-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200\">\n                        <p class=\"text-sm text-yellow-800\"><strong>前提</strong>：本可视化假设两个力作用于同一点且作用于同一物体。</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <script>\n        // 状态管理\n        const state = {\n            viewMode: 'parallelogram', // 'parallelogram' 或 'orthogonal'\n            showGrid: true,\n            forces: [\n                { x: 100, y: 250, mag: 100, angle: 0 },   // F1: 起点(100,250), 大小100px, 角度0度\n                { x: 100, y: 250, mag: 100, angle: Math.PI/2 } // F2: 起点相同, 大小100px, 角度90度\n            ],\n            selectedForce: null, // 当前被拖拽的力索引 (0 或 1)\n            isDragging: false\n        };\n\n        // DOM 元素\n        const canvas = document.getElementById('mainCanvas');\n        const ctx = canvas.getContext('2d');\n        const svg = document.getElementById('vectorOverlay');\n        const viewToggleBtn = document.getElementById('viewToggle');\n        const gridToggle = document.getElementById('gridToggle');\n\n        // 物理常量 (1px = 0.1 N 用于显示)\n        const PIXELS_PER_NEWTON = 0.1;\n\n        // 初始化\n        function init() {\n            updateCanvasSize();\n            setupEventListeners();\n            draw();\n            updateDataPanel();\n        }\n\n        function updateCanvasSize() {\n            const container = canvas.parentElement;\n            const rect = container.getBoundingClientRect();\n            canvas.width = rect.width;\n            canvas.height = rect.height;\n            svg.setAttribute('width', rect.width);\n            svg.setAttribute('height', rect.height);\n        }\n\n        function setupEventListeners() {\n            window.addEventListener('resize', () => {\n                updateCanvasSize();\n                draw();\n            });\n\n            // 画布鼠标/触摸事件\n            canvas.addEventListener('mousedown', handlePointerDown);\n            canvas.addEventListener('touchstart', handlePointerDown, { passive: false });\n            window.addEventListener('mousemove', handlePointerMove);\n            window.addEventListener('touchmove', handlePointerMove, { passive: false });\n            window.addEventListener('mouseup', handlePointerUp);\n            window.addEventListener('touchend', handlePointerUp);\n\n            // 控制按钮\n            viewToggleBtn.addEventListener('click', toggleView);\n            gridToggle.addEventListener('change', () => {\n                state.showGrid = gridToggle.checked;\n                draw();\n            });\n        }\n\n        // 事件处理函数\n        function handlePointerDown(e) {\n            e.preventDefault();\n            const rect = canvas.getBoundingClientRect();\n            const x = (e.clientX || e.touches[0].clientX) - rect.left;\n            const y = (e.clientY || e.touches[0].clientY) - rect.top;\n\n            // 检查是否点击了力的控制点（箭头末端）\n            for (let i = 0; i < state.forces.length; i++) {\n                const force = state.forces[i];\n                const endX = force.x + force.mag * Math.cos(force.angle);\n                const endY = force.y + force.mag * Math.sin(force.angle);\n                const dist = Math.sqrt((x - endX)**2 + (y - endY)**2);\n                if (dist < 15) {\n                    state.selectedForce = i;\n                    state.isDragging = true;\n                    return;\n                }\n            }\n        }\n\n        function handlePointerMove(e) {\n            if (!state.isDragging || state.selectedForce === null) return;\n            e.preventDefault();\n            const rect = canvas.getBoundingClientRect();\n            const x = (e.clientX || e.touches[0].clientX) - rect.left;\n            const y = (e.clientY || e.touches[0].clientY) - rect.top;\n\n            const force = state.forces[state.selectedForce];\n            const dx = x - force.x;\n            const dy = y - force.y;\n            // 计算新的大小和角度\n            force.mag = Math.sqrt(dx*dx + dy*dy);\n            force.angle = Math.atan2(dy, dx);\n\n            draw();\n            updateDataPanel();\n        }\n\n        function handlePointerUp() {\n            state.isDragging = false;\n            state.selectedForce = null;\n        }\n\n        function toggleView() {\n            state.viewMode = state.viewMode === 'parallelogram' ? 'orthogonal' : 'parallelogram';\n            viewToggleBtn.textContent = state.viewMode === 'parallelogram' ? '切换到正交分解视图' : '切换到平行四边形视图';\n            draw();\n        }\n\n        // 计算函数 (严格遵循科学约束)\n        function calculateResultant() {\n            const f1 = state.forces[0];\n            const f2 = state.forces[1];\n\n            // 计算分量 (正交分解)\n            const f1x = f1.mag * Math.cos(f1.angle);\n            const f1y = f1.mag * Math.sin(f1.angle);\n            const f2x = f2.mag * Math.cos(f2.angle);\n            const f2y = f2.mag * Math.sin(f2.angle);\n\n            // 合力分量 (代数和)\n            const rx = f1x + f2x;\n            const ry = f1y + f2y;\n\n            // 合力大小和方向\n            const rMag = Math.sqrt(rx*rx + ry*ry);\n            let rAngle = Math.atan2(ry, rx);\n            if (rAngle < 0) rAngle += 2*Math.PI;\n\n            // 两分力夹角 θ (0 到 π)\n            let theta = Math.abs(f2.angle - f1.angle);\n            if (theta > Math.PI) theta = 2*Math.PI - theta;\n\n            // 验证平行四边形法则公式\n            const cosTheta = Math.cos(theta);\n            const formulaMag = Math.sqrt(f1.mag*f1.mag + f2.mag*f2.mag + 2*f1.mag*f2.mag*cosTheta);\n\n            return {\n                f1x, f1y, f2x, f2y,\n                rx, ry,\n                rMag, rAngle,\n                theta,\n                formulaMag // 用于验证，应与 rMag 非常接近\n            };\n        }\n\n        // 绘制函数\n        function draw() {\n            ctx.clearRect(0, 0, canvas.width, canvas.height);\n            svg.innerHTML = '';\n\n            if (state.showGrid) drawGrid();\n\n            const res = calculateResultant();\n            const origin = { x: state.forces[0].x, y: state.forces[0].y };\n\n            if (state.viewMode === 'parallelogram') {\n                drawParallelogramView(origin, res);\n            } else {\n                drawOrthogonalView(origin, res);\n            }\n\n            // 始终绘制可拖拽的力矢量 (使用SVG实现交互点)\n            drawForceVectors(origin);\n        }\n\n        function drawGrid() {\n            ctx.strokeStyle = '#e5e7eb';\n            ctx.lineWidth = 0.5;\n            const gridSize = 40;\n\n            // 垂直线\n            for (let x = 0; x < canvas.width; x += gridSize) {\n                ctx.beginPath();\n                ctx.moveTo(x, 0);\n                ctx.lineTo(x, canvas.height);\n                ctx.stroke();\n            }\n            // 水平线\n            for (let y = 0; y < canvas.height; y += gridSize) {\n                ctx.beginPath();\n                ctx.moveTo(0, y);\n                ctx.lineTo(canvas.width, y);\n                ctx.stroke();\n            }\n\n            // 坐标轴\n            ctx.strokeStyle = '#9ca3af';\n            ctx.lineWidth = 1.5;\n            ctx.beginPath();\n            ctx.moveTo(0, canvas.height/2);\n            ctx.lineTo(canvas.width, canvas.height/2);\n            ctx.moveTo(canvas.width/2, 0);\n            ctx.lineTo(canvas.width/2, canvas.height);\n            ctx.stroke();\n\n            // 坐标轴标签\n            ctx.fillStyle = '#6b7280';\n            ctx.font = '12px sans-serif';\n            ctx.fillText('x', canvas.width - 15, canvas.height/2 - 5);\n            ctx.fillText('y', canvas.width/2 + 5, 15);\n        }\n\n        function drawParallelogramView(origin, res) {\n            const f1 = state.forces[0];\n            const f2 = state.forces[1];\n\n            // 绘制平行四边形\n            ctx.strokeStyle = 'rgba(156, 163, 175, 0.5)';\n            ctx.lineWidth = 1;\n            ctx.setLineDash([5, 5]);\n            ctx.beginPath();\n            // 点1: 原点\n            ctx.moveTo(origin.x, origin.y);\n            // 点2: F1 终点\n            const f1End = { x: origin.x + f1.mag * Math.cos(f1.angle), y: origin.y + f1.mag * Math.sin(f1.angle) };\n            ctx.lineTo(f1End.x, f1End.y);\n            // 点3: F1终点 + F2\n            ctx.lineTo(f1End.x + f2.mag * Math.cos(f2.angle), f1End.y + f2.mag * Math.sin(f2.angle));\n            // 点4: 原点 + F2\n            const f2End = { x: origin.x + f2.mag * Math.cos(f2.angle), y: origin.y + f2.mag * Math.sin(f2.angle) };\n            ctx.lineTo(f2End.x, f2End.y);\n            ctx.closePath();\n            ctx.stroke();\n            ctx.setLineDash([]);\n\n            //"
+      },
+      "actions": [
+        {
+          "id": "action_pEKItT_S",
+          "type": "speech",
+          "text": "很好。那么，为了让大家对‘力’这个核心概念有更直观的感受，我们现在就进入一个动手环节。"
+        },
+        {
+          "id": "action_gaIZphOm",
+          "type": "speech",
+          "text": "请看屏幕上的交互模拟。这里有两个可以拖拽的箭头，分别代表力F1和F2。请你尝试拖拽它们的端点，改变力的大小和方向，观察会发生什么。"
+        },
+        {
+          "id": "action_CPywWsjU",
+          "type": "speech",
+          "text": "注意看，系统根据你设定的两个力，实时画出了一个平行四边形。这个平行四边形的对角线，就是这两个力的合力。这就是我们刚刚提到的‘力的矢量性’和‘平行四边形法则’的直观体现。"
+        },
+        {
+          "id": "action_Ct82eFGa",
+          "type": "speech",
+          "text": "现在，请你试着将两个力调整到方向相反，或者方向相同，看看合力是如何变化的。这能帮助你理解力的大小和方向是如何共同决定最终效果的。"
+        },
+        {
+          "id": "action_X5sMtdRj",
+          "type": "speech",
+          "text": "接下来，我们切换到另一个视图。点击切换按钮，看看力在直角坐标系下的正交分解。你会看到每个力都被分解成了沿x轴和y轴的两个分量Fx和Fy。这种方法在解决复杂受力问题时非常有用。"
+        },
+        {
+          "id": "action_JKAmGkxx",
+          "type": "speech",
+          "text": "通过这个动手体验，你应该对力的合成与分解有了更具体的认识。记住这个平行四边形，它会是解决许多力学问题的关键工具。"
+        }
+      ],
+      "createdAt": 1774332494242,
+      "updatedAt": 1774332494242
+    },
+    {
+      "id": "a440XOKC7r_UGoMfEbR8s",
+      "stageId": "-rAYkas70D",
+      "type": "quiz",
+      "title": "小试牛刀：力的概念",
+      "order": 4,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "关于力的概念，以下说法正确的是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "力是物体对物体的作用，不能脱离物体而独立存在。"
+              },
+              {
+                "value": "B",
+                "label": "力只有大小，没有方向。"
+              },
+              {
+                "value": "C",
+                "label": "一个物体可以产生力，不需要另一个物体。"
+              },
+              {
+                "value": "D",
+                "label": "力的大小是标量，因此力的合成遵循代数加减法则。"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "力是物体对物体的相互作用，必须同时存在施力物体和受力物体，因此不能脱离物体而独立存在。选项B错误，因为力是矢量，既有大小也有方向。选项C错误，力是相互作用，必须涉及至少两个物体。选项D错误，力是矢量，其合成遵循平行四边形定则等矢量运算法则，而非简单的代数加减。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "关于合力与分力的关系，以下哪些说法是正确的？（多选）",
+            "options": [
+              {
+                "value": "A",
+                "label": "合力与分力是等效替代的关系。"
+              },
+              {
+                "value": "B",
+                "label": "几个分力的共同作用效果可以用一个合力来代替。"
+              },
+              {
+                "value": "C",
+                "label": "合力一定大于每一个分力。"
+              },
+              {
+                "value": "D",
+                "label": "已知合力，其分力的分解方式是唯一的。"
+              }
+            ],
+            "answer": [
+              "A",
+              "B"
+            ],
+            "analysis": "选项A和B正确，它们共同阐述了合力与分力的核心关系——等效替代。一个力（合力）的作用效果可以跟几个力（分力）的共同作用效果相同，因此它们可以互相替代。选项C错误，合力的大小可以大于、等于或小于任意一个分力的大小，这取决于分力间的夹角。选项D错误，如果没有附加条件（如已知两个分力的方向），一个合力可以分解为无数对分力，分解方式不唯一。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_MH0cshSN",
+          "type": "speech",
+          "text": "好的，我们刚刚动手体验了力的合成与分解。现在，让我们通过几道选择题，快速检验一下你对力的基本属性和合成法则的理解。"
+        },
+        {
+          "id": "action_ZYhJcB7l",
+          "type": "speech",
+          "text": "请仔细阅读第一题，关于力的概念，哪个说法是正确的？这主要是在测试你对力的矢量性的认知。力不仅有大小，还有方向，这是它和标量的根本区别。"
+        },
+        {
+          "id": "action_--Q8_CkM",
+          "type": "speech",
+          "text": "再看第二题，这是一个多选题，关于合力与分力的关系。请回想一下我们刚才画的平行四边形法则。合力是作用效果等效的替代，而分力则是从不同方向对合力的分解。注意区分哪些是等效关系，哪些是同时存在的关系。"
+        },
+        {
+          "id": "action_cFdkMaya",
+          "type": "speech",
+          "text": "完成了吗？我们来看看关键点。对于第一题，要牢记力是矢量，其作用效果由大小、方向和作用点共同决定。对于第二题，合力与它的分力是等效替代关系，它们并不是同时作用在物体上的；并且，合力的大小不一定大于每一个分力，比如两个反向的力，其合力可能很小。"
+        },
+        {
+          "id": "action_aDqgHSo4",
+          "type": "discussion",
+          "topic": "在做这两道题时，你觉得最容易混淆的概念是什么？",
+          "prompt": "可以结合你做题时的思考过程来谈一谈。"
+        }
+      ],
+      "createdAt": 1774332522455,
+      "updatedAt": 1774332522455
+    },
+    {
+      "id": "rjwdKBhgzPvSmuCX_1uBj",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "静力学的核心：受力分析与平衡方程",
+      "order": 5,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "jQoh141o2Ux3GB9cWaSJJ",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_Knb25cef",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">静力学的核心：受力分析与平衡方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_vBz49ZG2",
+              "type": "shape",
+              "left": 60,
+              "top": 150,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_mOe9AGht",
+              "type": "text",
+              "left": 80,
+              "top": 182,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 20px; text-align: center; font-weight: bold;\">第一步</p><p style=\"font-size: 18px; text-align: center;\">隔离研究对象</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_EI9anIMB",
+              "type": "shape",
+              "left": 360,
+              "top": 150,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_7fSNHTz1",
+              "type": "text",
+              "left": 380,
+              "top": 182,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 20px; text-align: center; font-weight: bold;\">第二步</p><p style=\"font-size: 18px; text-align: center;\">画出所有外力</p><p style=\"font-size: 16px; text-align: center;\">（主动力与约束力）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_g_A6mepU",
+              "type": "shape",
+              "left": 660,
+              "top": 150,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_o_JF8Azm",
+              "type": "text",
+              "left": 680,
+              "top": 182,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 20px; text-align: center; font-weight: bold;\">第三步</p><p style=\"font-size: 18px; text-align: center;\">建立平衡方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "latex_-Qe0O-7O",
+              "type": "latex",
+              "left": 360,
+              "top": 320,
+              "width": 280,
+              "height": 80,
+              "latex": "\\sum F_x = 0, \\quad \\sum F_y = 0, \\quad \\sum M = 0",
+              "color": "#1e293b",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1.6em;vertical-align:-0.55em;\"></span><span class=\"mop op-symbol large-op\" style=\"position:relative;top:0em;\">∑</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">F</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.1514em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">x</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1.6em;vertical-align:-0.55em;\"></span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop op-symbol large-op\" style=\"position:relative;top:0em;\">∑</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">F</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.1514em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.03588em;\">y</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.2861em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1.6em;vertical-align:-0.55em;\"></span><span class=\"mord\">0</span><span class=\"mpunct\">,</span><span class=\"mspace\" style=\"margin-right:1em;\"></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop op-symbol large-op\" style=\"position:relative;top:0em;\">∑</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.10903em;\">M</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">0</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_1qgilBMN",
+              "type": "shape",
+              "left": 100,
+              "top": 420,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#cbd5e1",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_62-U7O_4",
+              "type": "text",
+              "left": 60,
+              "top": 440,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">情境分析：斜面上的静止木块</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_dICbF0Z0",
+              "type": "text",
+              "left": 80,
+              "top": 500,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">为什么木块能静止？—— 受力平衡</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#4b5563",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_BYsw7oIa",
+          "type": "spotlight",
+          "elementId": "text_Knb25cef"
+        },
+        {
+          "id": "action_G0ZDm-za",
+          "type": "speech",
+          "text": "非常好，我们刚刚完成了对力基本概念的练习。现在，让我们进入理论力学中一个非常核心且实用的部分——静力学。它的核心，就是受力分析与平衡方程。"
+        },
+        {
+          "id": "action_NjVY3LkN",
+          "type": "spotlight",
+          "elementId": "text_mOe9AGht"
+        },
+        {
+          "id": "action_CaxsLIR3",
+          "type": "speech",
+          "text": "解决任何静力学问题，第一步永远是隔离研究对象。这意味着，我们要在脑海中，或者用虚线，把你关心的那个物体从它周围的环境中‘切割’出来，单独拿出来分析。"
+        },
+        {
+          "id": "action_JA_al-Ok",
+          "type": "spotlight",
+          "elementId": "text_7fSNHTz1"
+        },
+        {
+          "id": "action_-if-SLbI",
+          "type": "speech",
+          "text": "第二步，画出所有作用在这个孤立物体上的外力。这里要注意，力分为主动力，比如重力、推力；以及约束力，比如支持力、绳子的拉力。一个都不能漏掉，这是受力分析正确与否的关键。"
+        },
+        {
+          "id": "action_iSHc9chD",
+          "type": "spotlight",
+          "elementId": "text_o_JF8Azm"
+        },
+        {
+          "id": "action_-dffJtOJ",
+          "type": "speech",
+          "text": "第三步，建立平衡方程。对于一个静止或匀速直线运动的物体，它所受的合力必须为零。"
+        },
+        {
+          "id": "action_G_IE-r_m",
+          "type": "spotlight",
+          "elementId": "latex_-Qe0O-7O"
+        },
+        {
+          "id": "action_Fo6osVfv",
+          "type": "speech",
+          "text": "具体来说，就是所有力在x方向的分量之和为零，在y方向的分量之和也为零。对于更复杂的情况，可能还需要考虑力矩平衡，即所有力对某一点的力矩之和也为零。"
+        },
+        {
+          "id": "action_uYv0xUeV",
+          "type": "spotlight",
+          "elementId": "text_62-U7O_4"
+        },
+        {
+          "id": "action_Go5U2UUV",
+          "type": "speech",
+          "text": "让我们用一个故事化的情境来理解。想象一个木块静止在一个斜面上。"
+        },
+        {
+          "id": "action_IUG0RDb3",
+          "type": "laser",
+          "elementId": "text_dICbF0Z0"
+        },
+        {
+          "id": "action_5UHb1S3a",
+          "type": "speech",
+          "text": "大家思考一下，为什么这个木块能静止在斜面上而不滑落？根本原因，就是它受到的力达到了平衡。如果我们对它进行受力分析，会发现重力、斜面的支持力以及可能的静摩擦力，这三个力共同作用，使得木块在平行和垂直于斜面的方向上，合力都为零。这就是我们刚才讲的三步法的完美应用。"
+        }
+      ],
+      "createdAt": 1774332582569,
+      "updatedAt": 1774332582569
+    },
+    {
+      "id": "UfcWyQvUsLejLZdNhsXa-",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "动力学的钥匙：牛顿第二定律 F=ma",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "43m4WkSqZPGKfVj7z-Mef",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_JFXV9zuc",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_jQsC03Nc",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">动力学的钥匙：牛顿第二定律 F=ma</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_xTkD1is-",
+              "type": "shape",
+              "left": 60,
+              "top": 150,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_XTSasa54",
+              "type": "text",
+              "left": 80,
+              "top": 162,
+              "width": 840,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>1. 定律核心</strong></p><p style=\"font-size: 18px;\">物体的加速度与合外力成正比，与质量成反比</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_LbhfDE6l",
+              "type": "shape",
+              "left": 60,
+              "top": 264,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_CUloy7un",
+              "type": "text",
+              "left": 80,
+              "top": 276,
+              "width": 840,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>2. 矢量方程</strong></p><p style=\"font-size: 18px;\">F=ma 在x, y方向分别成立：F_x = m a_x, F_y = m a_y</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_jMnmB-5m",
+              "type": "shape",
+              "left": 60,
+              "top": 378,
+              "width": 430,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fee2e2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_BfEkYO2s",
+              "type": "text",
+              "left": 80,
+              "top": 390,
+              "width": 390,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>3. 与静力学的对比</strong></p><p style=\"font-size: 18px;\">静力学是F=0的特殊情况（a=0）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#991b1b",
+              "rotate": 0
+            },
+            {
+              "id": "shape_PIOdfJa3",
+              "type": "shape",
+              "left": 510,
+              "top": 378,
+              "width": 430,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_by8jnbS-",
+              "type": "text",
+              "left": 530,
+              "top": 390,
+              "width": 390,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>4. 项目式追问</strong></p><p style=\"font-size: 18px;\">如何设计实验验证F=ma？需要测量哪些量？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "latex_lx3Rby1-",
+              "type": "latex",
+              "left": 300,
+              "top": 490,
+              "width": 400,
+              "height": 60,
+              "latex": "\\vec{F}_{\\text{合}} = m \\vec{a}",
+              "color": "#1e40af",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1.1163em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.9663em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">F</span></span><span style=\"top:-3.2523em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.1522em;\"><span class=\"overlay\" style=\"height:0.714em;width:0.471em;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"0.471em\" height=\"0.714em\" style=\"width:0.471em\" viewBox=\"0 0 471 714\" preserveAspectRatio=\"xMinYMin\"><path d=\"M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5\n3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11\n10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63\n-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1\n-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59\nH213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359\nc-16-25.333-24-45-24-59z\"/></svg></span></span></span></span></span></span></span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3283em;\"><span style=\"top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord text mtight\"><span class=\"mord cjk_fallback mtight\">合</span></span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.714em;\"></span><span class=\"mord mathnormal\">m</span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.714em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\">a</span></span><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.2355em;\"><span class=\"overlay\" style=\"height:0.714em;width:0.471em;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"0.471em\" height=\"0.714em\" style=\"width:0.471em\" viewBox=\"0 0 471 714\" preserveAspectRatio=\"xMinYMin\"><path d=\"M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5\n3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11\n10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63\n-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1\n-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59\nH213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359\nc-16-25.333-24-45-24-59z\"/></svg></span></span></span></span></span></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_sJ_xHwQW",
+          "type": "spotlight",
+          "elementId": "text_jQsC03Nc"
+        },
+        {
+          "id": "action_EpCqU8dx",
+          "type": "speech",
+          "text": "非常好！刚才我们详细分析了静力学中力平衡的条件。现在，我们要打开动力学的世界，而它的钥匙，就是牛顿第二定律 F=ma。"
+        },
+        {
+          "id": "action_owC6RoPG",
+          "type": "spotlight",
+          "elementId": "text_XTSasa54"
+        },
+        {
+          "id": "action_475L3hI_",
+          "type": "speech",
+          "text": "首先，我们来看定律的核心。它告诉我们，物体的加速度与它受到的合外力成正比，与它自身的质量成反比。这是一个非常简洁而深刻的定量关系。"
+        },
+        {
+          "id": "action_YP0st3Xv",
+          "type": "laser",
+          "elementId": "latex_lx3Rby1-"
+        },
+        {
+          "id": "action__p703nlP",
+          "type": "speech",
+          "text": "大家看这个公式，F合等于m乘以a。这里的F和a都是矢量，所以这个方程是一个矢量方程。"
+        },
+        {
+          "id": "action_CddWkzxk",
+          "type": "spotlight",
+          "elementId": "text_CUloy7un"
+        },
+        {
+          "id": "action_vYvdALVd",
+          "type": "speech",
+          "text": "正因为它是矢量方程，所以它在各个方向上都是成立的。我们可以把它分解到x方向和y方向，分别写出分量方程：F_x = m a_x，F_y = m a_y。这为我们解决平面运动问题提供了极大的便利。"
+        },
+        {
+          "id": "action_rqSPFont",
+          "type": "spotlight",
+          "elementId": "text_BfEkYO2s"
+        },
+        {
+          "id": "action_MwuUywU4",
+          "type": "speech",
+          "text": "那么，它和我们刚刚学完的静力学有什么关系呢？请大家思考一下。对，静力学其实是牛顿第二定律的一个特殊情况。当物体的加速度a等于0时，合外力F自然也等于0。所以，静力学的平衡方程F=0，其实就是动力学方程F=ma在a=0时的特例。"
+        },
+        {
+          "id": "action_lKA8FtHq",
+          "type": "spotlight",
+          "elementId": "text_by8jnbS-"
+        },
+        {
+          "id": "action_xcUw58sp",
+          "type": "speech",
+          "text": "最后，我们来做一个项目式追问。如果让你设计一个实验来验证F=ma这个定律，你会怎么做？你需要测量哪些物理量？大家可以先想一想，比如，如何产生一个已知的、可控的力？如何精确测量物体的加速度？如何保证质量是恒定的？"
+        }
+      ],
+      "createdAt": 1774332636417,
+      "updatedAt": 1774332636417
+    },
+    {
+      "id": "-29cTaa458ZfOVRWfmWWw",
+      "stageId": "-rAYkas70D",
+      "type": "quiz",
+      "title": "概念辨析：静力学 vs. 动力学",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "一个质量为m的箱子静止在水平地面上。现在，一个人开始用水平力F推这个箱子，但箱子仍然保持静止。分析此时箱子的受力情况，应该使用以下哪个原理？",
+            "options": [
+              {
+                "value": "A",
+                "label": "静力学平衡方程（合力为零，合力矩为零）"
+              },
+              {
+                "value": "B",
+                "label": "牛顿第二定律 F=ma"
+              },
+              {
+                "value": "C",
+                "label": "动能定理"
+              },
+              {
+                "value": "D",
+                "label": "动量守恒定律"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "因为题目明确指出箱子“仍然保持静止”，这意味着它的加速度为零（a=0）。根据牛顿第二定律 F_net = ma，当 a=0 时，F_net = 0。这正是静力学平衡条件（合力为零）。在此情景下，直接应用静力学平衡方程来分析受力是最直接和恰当的。虽然从牛顿第二定律可以推导出相同结论，但问题的核心是识别“静止”状态对应静力学的分析框架。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "（多选）以下哪些情景中，分析物体的运动或受力必须或最适合使用牛顿第二定律（F=ma），而不是静力学平衡方程？",
+            "options": [
+              {
+                "value": "A",
+                "label": "电梯从一楼匀加速上升至五楼的过程。"
+              },
+              {
+                "value": "B",
+                "label": "汽车在水平路面上以恒定速度直线行驶。"
+              },
+              {
+                "value": "C",
+                "label": "滑雪者从无摩擦的斜坡上自由滑下。"
+              },
+              {
+                "value": "D",
+                "label": "一本书平放在静止的桌面上。"
+              }
+            ],
+            "answer": [
+              "A",
+              "C"
+            ],
+            "analysis": "牛顿第二定律适用于有加速度（非零）的物体。\nA正确：电梯匀加速上升，加速度不为零，必须用F=ma分析（例如求缆绳拉力）。\nC正确：滑雪者从斜坡滑下，是加速运动，加速度由重力分量产生，必须用F=ma分析。\nB错误：汽车匀速直线行驶，加速度为零，属于平衡状态，可以用静力学平衡方程（合力为零）分析，虽然其本质也来自F=ma在a=0时的特例，但“最适合”的是平衡分析。\nD错误：书静止在桌面上，加速度为零，是典型的静力学平衡问题。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_slHC2Iso",
+          "type": "speech",
+          "text": "好的，刚才我们讨论了如何设计实验来验证F=ma。现在，让我们通过几道题目，来检验一下大家对静力学和动力学核心概念的理解是否清晰。"
+        },
+        {
+          "id": "action_u4M_ZI7O",
+          "type": "speech",
+          "text": "请大家看第一题。一个箱子被水平力推却保持静止。分析它的受力，应该用什么原理？关键在于‘静止’这个词。静止意味着加速度为零。根据牛顿第二定律，当合外力为零时，加速度为零。所以，这个情景虽然有力在作用，但物体处于平衡状态，我们应该使用静力学的平衡方程来分析。"
+        },
+        {
+          "id": "action_ISgm2M3t",
+          "type": "speech",
+          "text": "再看第二题，这是一个多选题。题目问，哪些情景中必须或最适合使用牛顿第二定律F=ma，而不是平衡方程？这里的关键是寻找‘加速度不为零’或‘运动状态发生改变’的情景。比如，物体正在加速、减速，或者做曲线运动，这些时候合外力不为零，F=ma就是最核心的分析工具。"
+        },
+        {
+          "id": "action_kDuIRon8",
+          "type": "speech",
+          "text": "希望大家通过这两道题能更深刻地体会到：静力学和动力学并非割裂的。静力学其实是动力学在加速度为零时的一个特例。判断用哪个，就看物体的加速度是否为零。"
+        },
+        {
+          "id": "action_59CTTYqE",
+          "type": "discussion",
+          "topic": "为什么‘加速度为零’是连接静力学和动力学的桥梁？",
+          "prompt": "可以结合第一题的例子，或者生活中其他‘看似受力却平衡’的现象来思考。",
+          "agentId": "student_agent_id"
+        }
+      ],
+      "createdAt": 1774332668729,
+      "updatedAt": 1774332668729
+    },
+    {
+      "id": "7HiuHVi2w3GMqQpQi7e5J",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "考前冲刺秘籍与总结",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "uKAUJChToUsYIOLxb-w4E",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_cCpf8qpY",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_vTodlEew",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>考前冲刺秘籍与总结</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_LROQKyqo",
+              "type": "text",
+              "left": 80,
+              "top": 150,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #166534;\"><strong>一、知识地图回顾</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_PxHb6niZ",
+              "type": "shape",
+              "left": 80,
+              "top": 210,
+              "width": 840,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fdf4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_wwQZkBYW",
+              "type": "text",
+              "left": 100,
+              "top": 222,
+              "width": 800,
+              "height": 70,
+              "content": "<p style=\"font-size: 18px;\">• <strong>两大支柱</strong>：静力学 / 动力学</p><p style=\"font-size: 18px;\">• <strong>核心工具</strong>：受力图、平衡方程、F=ma</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_JWOfR02d",
+              "type": "text",
+              "left": 80,
+              "top": 320,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #92400e;\"><strong>二、高效复习策略</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_WnVtyzC0",
+              "type": "shape",
+              "left": 80,
+              "top": 380,
+              "width": 840,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_LDa9Ijvp",
+              "type": "text",
+              "left": 100,
+              "top": 392,
+              "width": 800,
+              "height": 22,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">优先掌握典型例题的解题步骤</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_iD4SulL6",
+              "type": "text",
+              "left": 80,
+              "top": 450,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #7c3aed;\"><strong>三、考场答题技巧</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#7c3aed",
+              "rotate": 0
+            },
+            {
+              "id": "shape_LB86hjtL",
+              "type": "shape",
+              "left": 80,
+              "top": 510,
+              "width": 840,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f5f3ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_juqnpszD",
+              "type": "text",
+              "left": 100,
+              "top": 522,
+              "width": 800,
+              "height": 22,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">从画好受力图开始，明确是静力学还是动力学问题</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_-1zPWu5_",
+          "type": "spotlight",
+          "elementId": "text_vTodlEew"
+        },
+        {
+          "id": "action_p9nOgJbS",
+          "type": "speech",
+          "text": "好的，经过前面七个页面的学习，我们来到了理论力学冲刺营的最后一站——考前冲刺秘籍与总结。"
+        },
+        {
+          "id": "action_NMCKvNyU",
+          "type": "spotlight",
+          "elementId": "text_LROQKyqo"
+        },
+        {
+          "id": "action_BB8QZt-1",
+          "type": "speech",
+          "text": "首先，我们来回顾一下整个知识地图。"
+        },
+        {
+          "id": "action_lw44pWrl",
+          "type": "spotlight",
+          "elementId": "text_wwQZkBYW"
+        },
+        {
+          "id": "action_xNiIc4Yr",
+          "type": "speech",
+          "text": "正如我们反复强调的，理论力学有两大支柱：静力学和动力学。而贯穿始终的核心工具，就是受力图、平衡方程以及牛顿第二定律 F=ma。"
+        },
+        {
+          "id": "action_XWi1myYo",
+          "type": "spotlight",
+          "elementId": "text_JWOfR02d"
+        },
+        {
+          "id": "action_AJxiXN2S",
+          "type": "speech",
+          "text": "那么，在考前有限的时间里，如何进行高效复习呢？"
+        }
+      ],
+      "createdAt": 1774332714400,
+      "updatedAt": 1774332714400
+    },
+    {
+      "id": "xmfF_nP37o1cESlydb6s5",
+      "stageId": "-rAYkas70D",
+      "type": "slide",
+      "title": "你的下一步探索任务",
+      "order": 9,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "HF2_hOFvSvWqB8QIm5y8i",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_6uh5Z8Wp",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_EmOocDyy",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>你的下一步探索任务</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_er9reIKT",
+              "type": "text",
+              "left": 80,
+              "top": 150,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #166534;\"><strong>延伸问题</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_7NAA_QyI",
+              "type": "text",
+              "left": 100,
+              "top": 200,
+              "width": 800,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px;\">研究一下‘动量’和‘动能’有什么区别？</p><p style=\"font-size: 18px;\">它们各自在什么力学问题中扮演关键角色？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_cW3zuHcg",
+              "type": "text",
+              "left": 80,
+              "top": 290,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #92400e;\"><strong>行动建议</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_pOGI6SgP",
+              "type": "text",
+              "left": 100,
+              "top": 340,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">用受力分析方法，分析书桌上一个静止物品的受力情况。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_WvDex_jd",
+              "type": "text",
+              "left": 80,
+              "top": 400,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #7c3aed;\"><strong>资源指引</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_7jHAk-BN",
+              "type": "text",
+              "left": 100,
+              "top": 450,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">查阅经典教材相关章节或可靠的在线物理学习平台。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_9zI-Ek9i",
+              "type": "shape",
+              "left": 200,
+              "top": 510,
+              "width": 600,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Jfv3oXyR",
+              "type": "text",
+              "left": 200,
+              "top": 510,
+              "width": 600,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #92400e;\"><strong>祝你冲刺成功，理论力学不再是你学习路上的障碍！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_vOJMoUf-",
+          "type": "spotlight",
+          "elementId": "text_EmOocDyy"
+        },
+        {
+          "id": "action_zRceKPiM",
+          "type": "speech",
+          "text": "好的，我们来到了冲刺营的最后一站。刚才我们分享了考前冲刺的秘籍，现在，我想给大家留下一些课后可以继续探索的任务，帮助你们把知识真正用起来。"
+        },
+        {
+          "id": "action_-6G-M4VQ",
+          "type": "spotlight",
+          "elementId": "text_er9reIKT"
+        },
+        {
+          "id": "action_Ss7KRpm4",
+          "type": "spotlight",
+          "elementId": "text_7NAA_QyI"
+        },
+        {
+          "id": "action_UpHQdZaf",
+          "type": "speech",
+          "text": "首先是一个延伸问题。我们这节课重点讲了静力学和动力学的基础，提到了力、加速度这些概念。那么，同样是描述物体运动的量，‘动量’和‘动能’有什么区别呢？它们各自在什么力学问题中，比如碰撞、火箭推进中，扮演着关键角色？这个问题值得你们课后去深入研究一下。"
+        },
+        {
+          "id": "action_zdzEP_BC",
+          "type": "spotlight",
+          "elementId": "text_cW3zuHcg"
+        },
+        {
+          "id": "action_gCR-AXod",
+          "type": "spotlight",
+          "elementId": "text_pOGI6SgP"
+        },
+        {
+          "id": "action_8yPmYHSt",
+          "type": "speech",
+          "text": "光想还不够，我建议大家动动手。可以尝试用我们今天学的受力分析方法，去分析一下你书桌上一个静止的物品，比如一个水杯或者一本书。画出它的受力图，看看各个力是否平衡。这是把理论应用到身边最简单、最直接的方法。"
+        },
+        {
+          "id": "action_80v8ncjD",
+          "type": "spotlight",
+          "elementId": "text_WvDex_jd"
+        },
+        {
+          "id": "action_IQYQBShH",
+          "type": "spotlight",
+          "elementId": "text_7jHAk-BN"
+        },
+        {
+          "id": "action_IXMYrfDp",
+          "type": "speech",
+          "text": "在做这些探索的时候，如果需要更系统的资料，我建议大家去查阅经典教材的相关章节，或者一些可靠的在线物理学习平台。它们能提供更深入、更全面的解释。"
+        },
+        {
+          "id": "action_YPsHCREx",
+          "type": "spotlight",
+          "elementId": "text_Jfv3oXyR"
+        },
+        {
+          "id": "action_BAMFggGv",
+          "type": "speech",
+          "text": "好了，同学们，我们这次的理论力学冲刺营到这里就全部结束了。从力的基本概念，到静力学、动力学，再到考前复习方法，我们一起走过了关键的知识点。希望这些内容能成为你们学习路上的有力工具。最后，衷心祝愿大家冲刺成功，让理论力学不再是你学习路上的障碍！加油！"
+        }
+      ],
+      "createdAt": 1774332763739,
+      "updatedAt": 1774332763739
+    }
+  ],
+  "createdAt": "2026-03-26T13:01:39.031Z"
+}

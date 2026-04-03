@@ -1,0 +1,30 @@
+[
+  {
+    "id": "class-bulk-001-join-1",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-001",
+    "status": "pending",
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-join-2",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-002",
+    "status": "pending",
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-join-3",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-003",
+    "status": "pending",
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-join-4",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-004",
+    "status": "pending",
+    "createdAt": "2026-02-24T17:18:39.618Z"
+  }
+]

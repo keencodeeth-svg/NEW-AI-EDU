@@ -1,0 +1,2301 @@
+{
+  "id": "LgVmnRlIRe",
+  "stage": {
+    "id": "LgVmnRlIRe",
+    "name": "我要学习英语的现在完成时",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774247461084,
+    "updatedAt": 1774248805547,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解",
+      "interestTopic": "巩固分数意义与阅读理解"
+    },
+    "currentSceneId": "DNAFFa34Fgk_d6ZtBNXpp"
+  },
+  "scenes": [
+    {
+      "id": "rIb1ucccjJxAxQgY71dun",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "欢迎与课程目标",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "GfmaN4KFVZ0u6m17YxLJF",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_67sBf4ZN",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>欢迎与课程目标</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_S7NF45im",
+              "type": "shape",
+              "left": 100,
+              "top": 166,
+              "width": 800,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_FCZ5k7zj",
+              "type": "shape",
+              "left": 100,
+              "top": 200,
+              "width": 800,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_RXUTlrTw",
+              "type": "text",
+              "left": 120,
+              "top": 222,
+              "width": 760,
+              "height": 76,
+              "content": "<p style=\"font-size: 24px; text-align: center;\">欢迎来到英语语法课堂</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_nb9jWm9V",
+              "type": "shape",
+              "left": 100,
+              "top": 340,
+              "width": 800,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_g9MZNLVj",
+              "type": "text",
+              "left": 120,
+              "top": 352,
+              "width": 760,
+              "height": 56,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">本节课我们将学习：<strong>现在完成时</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_1zvHg923",
+              "type": "text",
+              "left": 100,
+              "top": 440,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px;\"><strong>学习目标</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_x2Q2SSML",
+              "type": "text",
+              "left": 120,
+              "top": 500,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 理解现在完成时的基本概念和结构</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_6JX1J9O6",
+              "type": "text",
+              "left": 120,
+              "top": 550,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 正确使用现在完成时描述经历和结果</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_moXgCoXB",
+              "type": "text",
+              "left": 100,
+              "top": 460,
+              "width": 800,
+              "height": 30,
+              "content": "<p style=\"font-size: 16px; color: #666666; text-align: right;\">适合独立观看、跟练和回放</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_Ats959Bn",
+          "type": "spotlight",
+          "elementId": "text_RXUTlrTw"
+        },
+        {
+          "id": "action_ZqkuXrdM",
+          "type": "speech",
+          "text": "你好，小星！欢迎来到我们的英语语法课堂。"
+        },
+        {
+          "id": "action_zYfyhKxt",
+          "type": "spotlight",
+          "elementId": "text_g9MZNLVj"
+        },
+        {
+          "id": "action_ETA_YbGv",
+          "type": "speech",
+          "text": "今天这节课，我们将要一起学习一个非常重要的语法点：现在完成时。"
+        },
+        {
+          "id": "action_qxjyg148",
+          "type": "spotlight",
+          "elementId": "text_1zvHg923"
+        },
+        {
+          "id": "action_SDyDycIX",
+          "type": "speech",
+          "text": "在开始之前，我们先来明确一下今天的学习目标。"
+        },
+        {
+          "id": "action_5LjCCJsT",
+          "type": "spotlight",
+          "elementId": "text_x2Q2SSML"
+        },
+        {
+          "id": "action_Efon8Wxp",
+          "type": "speech",
+          "text": "第一个目标是，理解现在完成时的基本概念和它的句子结构。比如，它是由哪两部分组成的。"
+        },
+        {
+          "id": "action_hGuXDvJZ",
+          "type": "spotlight",
+          "elementId": "text_6JX1J9O6"
+        },
+        {
+          "id": "action_CZGbpHi7",
+          "type": "speech",
+          "text": "第二个目标是，学会正确使用现在完成时来描述我们过去的经历，或者一个动作对现在造成的结果。"
+        },
+        {
+          "id": "action_S-hjOVry",
+          "type": "spotlight",
+          "elementId": "text_moXgCoXB"
+        },
+        {
+          "id": "action_Yts09J4C",
+          "type": "speech",
+          "text": "这节课程是专门为你这样的四年级同学设计的，非常适合独立观看、跟着练习，如果有不明白的地方，随时可以回放哦。"
+        },
+        {
+          "id": "action_KNYx9rDT",
+          "type": "speech",
+          "text": "准备好了吗？让我们开始吧！"
+        }
+      ],
+      "createdAt": 1774247542277,
+      "updatedAt": 1774247542277
+    },
+    {
+      "id": "NvQHfGLRmvJ71Cv_guDoO",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "什么是现在完成时？",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "iHUkWdiAZcrqPnjdhFXJ9",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_vo1gNigm",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_99-naeLE",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">什么是现在完成时？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape__OuO8AX8",
+              "type": "shape",
+              "left": 60,
+              "top": 150,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Gtwjg15H",
+              "type": "text",
+              "left": 80,
+              "top": 160,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">1. 定义</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_ITWjSTz4",
+              "type": "text",
+              "left": 80,
+              "top": 190,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">表示过去发生的动作对现在造成的影响或结果</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_fjphZ02D",
+              "type": "shape",
+              "left": 60,
+              "top": 264,
+              "width": 430,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_r06pUVKB",
+              "type": "text",
+              "left": 80,
+              "top": 274,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">2. 核心功能</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_IQrtcmRw",
+              "type": "text",
+              "left": 80,
+              "top": 304,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">连接过去与现在</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_YDeWUKhG",
+              "type": "shape",
+              "left": 510,
+              "top": 264,
+              "width": 430,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_o0l_r899",
+              "type": "text",
+              "left": 530,
+              "top": 274,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">3. 基本结构</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_SzlBXYQG",
+              "type": "text",
+              "left": 530,
+              "top": 304,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">have/has + 动词的过去分词</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_v2wQKAXj",
+              "type": "shape",
+              "left": 60,
+              "top": 378,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f3e8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_i-eXaQz5",
+              "type": "text",
+              "left": 80,
+              "top": 388,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">4. 举例</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#6b21a8",
+              "rotate": 0
+            },
+            {
+              "id": "text_jriFoSJD",
+              "type": "text",
+              "left": 80,
+              "top": 418,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">I have finished my homework. (我已经完成了作业。)</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_O4Q0SNeX",
+              "type": "shape",
+              "left": 60,
+              "top": 492,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fee2e2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_FCZJDiYB",
+              "type": "text",
+              "left": 80,
+              "top": 492,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; font-weight: bold;\">5. 与一般过去时的关键区别</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#991b1b",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_0w5mtsJ7",
+          "type": "spotlight",
+          "elementId": "text_99-naeLE"
+        },
+        {
+          "id": "action_0exUfjst",
+          "type": "speech",
+          "text": "非常好！刚才我们明确了这节课的目标，现在我们就来正式学习第一个核心知识点。请看这里，这就是我们今天要回答的第一个大问题：什么是现在完成时？"
+        },
+        {
+          "id": "action_e378kGpf",
+          "type": "spotlight",
+          "elementId": "text_ITWjSTz4"
+        },
+        {
+          "id": "action_LDCZKwqh",
+          "type": "speech",
+          "text": "它的定义是：表示过去发生的动作对现在造成的影响或结果。小星，你可以试着理解一下这句话吗？比如，一个动作发生在过去，但它产生的结果或影响，一直持续到了现在。"
+        },
+        {
+          "id": "action_hnu6rmWl",
+          "type": "laser",
+          "elementId": "text_IQrtcmRw"
+        },
+        {
+          "id": "action_JjLn8ojZ",
+          "type": "speech",
+          "text": "所以，它的核心功能非常关键，就是‘连接过去与现在’。它就像一座桥梁，把过去和现在这两个时间点给连接起来了。"
+        },
+        {
+          "id": "action_rnYnjuw8",
+          "type": "spotlight",
+          "elementId": "text_SzlBXYQG"
+        },
+        {
+          "id": "action_AfhoxExh",
+          "type": "speech",
+          "text": "那么这座‘桥梁’是怎么搭建的呢？它的基本结构是：have 或者 has，加上动词的过去分词。记住这个公式，它是我们判断现在完成时的关键。"
+        },
+        {
+          "id": "action_gPh1UEjV",
+          "type": "spotlight",
+          "elementId": "text_jriFoSJD"
+        },
+        {
+          "id": "action_NObG_N7C",
+          "type": "speech",
+          "text": "我们来看一个例子：‘I have finished my homework.’ 意思是‘我已经完成了作业。’ 这个‘完成’的动作发生在过去，但它对现在的影响是什么呢？就是‘我现在没有作业了，可以休息了’。你看，这就是一个典型的现在完成时句子。"
+        },
+        {
+          "id": "action_iZsAaIlP",
+          "type": "laser",
+          "elementId": "text_FCZJDiYB"
+        },
+        {
+          "id": "action_hwAkuyOF",
+          "type": "speech",
+          "text": "最后，这里提到了一个关键区别：现在完成时和一般过去时。这是很多同学容易混淆的地方。别担心，在后面的课程里，我们会专门来对比和区分它们。现在，我们先把这个基本概念牢牢记住。"
+        },
+        {
+          "id": "action_c9Vyt5d2",
+          "type": "speech",
+          "text": "好了，现在完成时的‘是什么’和‘长什么样’，我们已经清楚了。接下来，我们做个小练习，看看你能不能快速识别出它的结构。"
+        }
+      ],
+      "createdAt": 1774247608906,
+      "updatedAt": 1774247608906
+    },
+    {
+      "id": "2i4BzivWERbQ6tr7DD_DZ",
+      "stageId": "LgVmnRlIRe",
+      "type": "quiz",
+      "title": "小练习：识别结构",
+      "order": 3,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "以下哪个句子正确地使用了现在完成时结构？",
+            "options": [
+              {
+                "value": "A",
+                "label": "我昨天去了公园。"
+              },
+              {
+                "value": "B",
+                "label": "她每天喝咖啡。"
+              },
+              {
+                "value": "C",
+                "label": "他们已经完成了作业。"
+              },
+              {
+                "value": "D",
+                "label": "他明天会来开会。"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "analysis": "选项C“他们已经完成了作业。”正确使用了现在完成时结构，包含助动词“have”的复数形式“have”和动词“完成”的过去分词“完成了”。选项A是过去时，选项B是一般现在时，选项D是将来时。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "请选出所有包含正确现在完成时结构的句子。（多选）",
+            "options": [
+              {
+                "value": "A",
+                "label": "Tom has visited China three times."
+              },
+              {
+                "value": "B",
+                "label": "We have eat lunch already."
+              },
+              {
+                "value": "C",
+                "label": "She has written a letter to her friend."
+              },
+              {
+                "value": "D",
+                "label": "The train has just left the station."
+              }
+            ],
+            "answer": [
+              "A",
+              "C",
+              "D"
+            ],
+            "analysis": "选项A、C、D都正确使用了现在完成时结构：A（has visited）、C（has written）、D（has left）。选项B“We have eat lunch already.”是错误的，因为动词“eat”的过去分词应为“eaten”，而不是原形“eat”。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_4IJO8vt9",
+          "type": "speech",
+          "text": "现在，我们来检验一下刚才学到的内容。这是一个关于识别现在完成时结构的小练习。"
+        },
+        {
+          "id": "action_rq_3nOT1",
+          "type": "speech",
+          "text": "请仔细阅读题目。第一题是单选题，你需要从四个选项中，找出那个正确使用了‘have/has + 过去分词’结构的句子。"
+        },
+        {
+          "id": "action_x3ra0EsX",
+          "type": "speech",
+          "text": "第二题是多选题，难度会高一点。你需要选出所有结构正确的句子，这需要你同时判断‘have’或‘has’的使用是否正确，以及动词的过去分词形式是否正确。"
+        },
+        {
+          "id": "action_8LrPNBuC",
+          "type": "speech",
+          "text": "做完后，我们一起来看看关键点。记住，核心是‘have/has + 过去分词’。要特别注意主语是‘he, she, it’时要用‘has’，以及不规则动词的过去分词形式，比如‘go’的过去分词是‘gone’，不是‘goed’。"
+        },
+        {
+          "id": "action_RtM0tAe0",
+          "type": "discussion",
+          "topic": "在做这类识别结构的题目时，你觉得最容易出错的地方是什么？",
+          "prompt": "是分不清用have还是has，还是记不住某些动词的过去分词形式？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774247631413,
+      "updatedAt": 1774247631413
+    },
+    {
+      "id": "uGUfw6Vft3oFk2FCO2MXf",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "现在完成时的两种主要用法",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "l2n4yWSIMVrjNYLul9tVA",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_nAZIi-Qp",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>现在完成时的两种主要用法</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_EShyIk7Y",
+              "type": "shape",
+              "left": 100,
+              "top": 136,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_rPzq2YnF",
+              "type": "shape",
+              "left": 60,
+              "top": 180,
+              "width": 430,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_vioWgguI",
+              "type": "text",
+              "left": 70,
+              "top": 190,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#1e40af;\"><strong>用法一：已完成动作</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_UEEmk4Z_",
+              "type": "text",
+              "left": 70,
+              "top": 246,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">强调结果或经历</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_jUmSo77W",
+              "type": "text",
+              "left": 70,
+              "top": 302,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">例句：She has visited Paris.</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_1dVJLVDg",
+              "type": "text",
+              "left": 70,
+              "top": 348,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; color:#666666;\">（她去过巴黎。）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_UQZkUUxH",
+              "type": "shape",
+              "left": 510,
+              "top": 180,
+              "width": 430,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Bg73DjKf",
+              "type": "text",
+              "left": 520,
+              "top": 190,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#0c4a6e;\"><strong>用法二：持续动作</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#0c4a6e",
+              "rotate": 0
+            },
+            {
+              "id": "text_F9RlSsLK",
+              "type": "text",
+              "left": 520,
+              "top": 246,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">从过去持续到现在</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_VY6Q-pdD",
+              "type": "text",
+              "left": 520,
+              "top": 302,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">例句：They have lived here for ten years.</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_nQNjM1Kn",
+              "type": "text",
+              "left": 520,
+              "top": 348,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; color:#666666;\">（他们在这里住了十年了。）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_YdA6bQd5",
+              "type": "shape",
+              "left": 60,
+              "top": 390,
+              "width": 880,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fefce8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_IHNmnya0",
+              "type": "text",
+              "left": 70,
+              "top": 400,
+              "width": 860,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#92400e;\"><strong>关键词</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_lQaSxe9D",
+              "type": "text",
+              "left": 70,
+              "top": 456,
+              "width": 860,
+              "height": 52,
+              "content": "<p style=\"font-size:18px;\">for, since, already, yet, just, ever, never</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_aIgPoYF6",
+          "type": "spotlight",
+          "elementId": "text_nAZIi-Qp"
+        },
+        {
+          "id": "action_Qcw4lka3",
+          "type": "speech",
+          "text": "非常好，小星。我们刚刚一起识别了现在完成时的基本结构。现在，让我们深入它的核心，看看它到底怎么用。请看标题，现在完成时主要有两种用法。"
+        },
+        {
+          "id": "action_4IJdz9Ky",
+          "type": "spotlight",
+          "elementId": "text_vioWgguI"
+        },
+        {
+          "id": "action_UMVQlDtX",
+          "type": "speech",
+          "text": "第一种用法，是表示一个已经完成的动作。但它的重点不在于动作发生在过去的哪个具体时间点，而在于这个动作带来的结果，或者它是一段经历。"
+        },
+        {
+          "id": "action_rsWe7PyF",
+          "type": "laser",
+          "elementId": "text_UEEmk4Z_"
+        },
+        {
+          "id": "action_Too7byDa",
+          "type": "speech",
+          "text": "看这里，它强调的是‘结果’或‘经历’。比如，我说‘我吃过午饭了’，重点是结果——我现在不饿了。"
+        },
+        {
+          "id": "action_gkkhi5sQ",
+          "type": "spotlight",
+          "elementId": "text_jUmSo77W"
+        },
+        {
+          "id": "action_k2xQNB_s",
+          "type": "speech",
+          "text": "我们来看这个例句：She has visited Paris. 她去过巴黎。"
+        },
+        {
+          "id": "action_9wOFJqKg",
+          "type": "laser",
+          "elementId": "text_1dVJLVDg"
+        },
+        {
+          "id": "action_v7LUf8VL",
+          "type": "speech",
+          "text": "这个句子没有说她去年还是前年去的，我们不知道具体时间。但它告诉我们一个重要的‘经历’：她有去巴黎的经历。这就是第一种用法。"
+        },
+        {
+          "id": "action_b68tFEUv",
+          "type": "spotlight",
+          "elementId": "text_Bg73DjKf"
+        },
+        {
+          "id": "action_yaUjEpLv",
+          "type": "speech",
+          "text": "接下来是第二种用法，表示一个持续的动作。这个动作从过去某个时间点开始，一直持续到了现在，而且可能还会继续下去。"
+        },
+        {
+          "id": "action_SPTOaX3H",
+          "type": "laser",
+          "elementId": "text_F9RlSsLK"
+        },
+        {
+          "id": "action_0ZwYRwVT",
+          "type": "speech",
+          "text": "看这个描述，‘从过去持续到现在’。这和我们之前学的过去时完全不一样，过去时是动作在过去的某个时间点就结束了。"
+        },
+        {
+          "id": "action_PHndp46D",
+          "type": "spotlight",
+          "elementId": "text_VY6Q-pdD"
+        },
+        {
+          "id": "action_5pyOcFoY",
+          "type": "speech",
+          "text": "我们看这个例句：They have lived here for ten years. 他们在这里住了十年了。"
+        },
+        {
+          "id": "action_SoqSUJtO",
+          "type": "laser",
+          "elementId": "text_nQNjM1Kn"
+        },
+        {
+          "id": "action_GpjpS3-U",
+          "type": "speech",
+          "text": "这句话的意思是，他们从十年前开始住在这里，一直住到现在，并且很可能现在还住在这里。这个‘住’的动作持续了十年，这就是持续状态。"
+        },
+        {
+          "id": "action_1R_SDDpu",
+          "type": "spotlight",
+          "elementId": "text_IHNmnya0"
+        },
+        {
+          "id": "action_3kNelyzu",
+          "type": "speech",
+          "text": "最后，我们来认识一些现在完成时的‘好朋友’，也就是关键词。这些词经常和它一起出现，能帮助我们判断该用哪种用法。"
+        },
+        {
+          "id": "action_Vl08eNDz",
+          "type": "spotlight",
+          "elementId": "text_lQaSxe9D"
+        },
+        {
+          "id": "action_OFc6-wps",
+          "type": "speech",
+          "text": "看，这里有‘for’和‘since’，它们通常和第二种‘持续动作’连用，表示一段时间。而‘already, yet, just, ever, never’这些词，则常常和第一种‘已完成动作’连用，强调经历或结果。比如，你吃过寿司吗？Have you ever eaten sushi? 这里的‘ever’就是在询问经历。"
+        },
+        {
+          "id": "action_bkzzdMx_",
+          "type": "speech",
+          "text": "小星，你理解这两种用法的区别了吗？一个是动作已完成，看结果和经历；一个是动作在持续，看时间长度。接下来，我们会做一个互动练习，帮你把这两种用法和时间线对应起来，巩固一下。"
+        }
+      ],
+      "createdAt": 1774247690289,
+      "updatedAt": 1774247690289
+    },
+    {
+      "id": "XrucDDgZBwdzXNDGobLvW",
+      "stageId": "LgVmnRlIRe",
+      "type": "interactive",
+      "title": "互动练习：时间线匹配",
+      "order": 5,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>现在完成时的时间概念</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');\n        * { font-family: 'Noto Sans SC', sans-serif; }\n        .timeline-past {\n            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);\n        }\n        .timeline-presentperfect {\n            background: linear-gradient(90deg, #3b82f6 0%, #1d4ed8 100%);\n        }\n        .card-correct { box-shadow: 0 0 0 3px #10b981; }\n        .card-incorrect { animation: shake 0.5s ease-in-out; }\n        @keyframes shake {\n            0%, 100% { transform: translateX(0); }\n            25% { transform: translateX(-8px); }\n            75% { transform: translateX(8px); }\n        }\n        .drop-zone { transition: all 0.3s ease; }\n        .drop-zone.active { transform: scale(1.05); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gray-50 min-h-screen p-4 md:p-6\">\n    <div class=\"max-w-6xl mx-auto\">\n        <header class=\"text-center mb-8\">\n            <h1 class=\"text-3xl md:text-4xl font-bold text-gray-800 mb-2\">现在完成时 vs. 一般过去时</h1>\n            <p class=\"text-gray-600\">通过拖拽句子到时间线，理解动作与时间的联系。</p>\n            <div class=\"mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200 text-left inline-block\">\n                <p class=\"text-sm font-medium text-gray-700\"><span class=\"font-bold\">核心概念：</span>现在完成时（<span class=\"text-blue-600 font-semibold\">have/has + 过去分词</span>）连接<span class=\"text-blue-600 font-semibold\">过去</span>与<span class=\"text-blue-600 font-semibold\">现在</span>。一般过去时（<span class=\"text-red-600 font-semibold\">动词过去式</span>）描述纯粹的<span class=\"text-red-600 font-semibold\">过去</span>动作。</p>\n            </div>\n        </header>\n\n        <main class=\"flex flex-col lg:flex-row gap-8\">\n            <!-- 左侧：时间线可视化区域 -->\n            <section class=\"lg:w-2/5\">\n                <div class=\"bg-white p-6 rounded-2xl shadow-lg h-full\">\n                    <h2 class=\"text-2xl font-bold text-gray-800 mb-6 border-b pb-3\">时间线</h2>\n                    <div class=\"space-y-12\">\n                        <!-- 一般过去时时间线 -->\n                        <div class=\"relative\">\n                            <div class=\"flex items-center justify-between mb-4\">\n                                <h3 class=\"text-xl font-semibold text-red-700\">一般过去时</h3>\n                                <span class=\"text-sm font-medium px-3 py-1 bg-red-100 text-red-800 rounded-full\">过去时间点</span>\n                            </div>\n                            <div class=\"relative h-24\">\n                                <!-- 时间轴 -->\n                                <div class=\"absolute top-1/2 left-0 right-0 h-1 bg-gray-300 transform -translate-y-1/2\"></div>\n                                <!-- 过去点 -->\n                                <div class=\"absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2\">\n                                    <div class=\"timeline-past w-6 h-6 rounded-full shadow-lg border-4 border-white\"></div>\n                                    <div class=\"absolute top-full left-1/2 transform -translate-x-1/2 mt-2 text-center\">\n                                        <p class=\"text-sm font-bold text-gray-800\">过去</p>\n                                        <p class=\"text-xs text-gray-500\">动作在此发生并结束</p>\n                                    </div>\n                                </div>\n                                <!-- 现在点（作为参考） -->\n                                <div class=\"absolute top-1/2 right-4 transform -translate-y-1/2 opacity-40\">\n                                    <div class=\"w-4 h-4 rounded-full bg-gray-400 border-2 border-white\"></div>\n                                    <p class=\"absolute top-full left-1/2 transform -translate-x-1/2 mt-1 text-xs text-gray-500\">现在</p>\n                                </div>\n                            </div>\n                            <div class=\"mt-6 p-4 bg-red-50 border border-red-200 rounded-lg\">\n                                <p class=\"text-sm text-gray-700\"><span class=\"font-bold text-red-700\">规则：</span>句子描述一个在明确<span class=\"font-semibold\">过去时间点</span>发生并已完成的动作，与现在<span class=\"font-semibold\">没有直接联系</span>。结构：<span class=\"font-mono\">\\\\( \\\\text{动词过去式} \\\\)</span>。</p>\n                            </div>\n                            <!-- 放置区域 -->\n                            <div id=\"drop-past\" class=\"drop-zone mt-6 min-h-[100px] border-2 border-dashed border-red-300 rounded-xl bg-red-50/50 flex items-center justify-center p-4\">\n                                <p id=\"drop-past-text\" class=\"text-gray-500 text-center\">将<span class=\"font-bold text-red-600\">一般过去时</span>句子拖放到这里</p>\n                            </div>\n                        </div>\n\n                        <!-- 现在完成时时间线 -->\n                        <div class=\"relative\">\n                            <div class=\"flex items-center justify-between mb-4\">\n                                <h3 class=\"text-xl font-semibold text-blue-700\">现在完成时</h3>\n                                <span class=\"text-sm font-medium px-3 py-1 bg-blue-100 text-blue-800 rounded-full\">过去-现在联系</span>\n                            </div>\n                            <div class=\"relative h-24\">\n                                <!-- 时间轴（连接线段） -->\n                                <div class=\"absolute top-1/2 left-8 right-8 h-1 timeline-presentperfect transform -translate-y-1/2\"></div>\n                                <!-- 过去端点 -->\n                                <div class=\"absolute top-1/2 left-8 transform -translate-x-1/2 -translate-y-1/2\">\n                                    <div class=\"timeline-presentperfect w-5 h-5 rounded-full shadow border-3 border-white\"></div>\n                                    <p class=\"absolute top-full left-1/2 transform -translate-x-1/2 mt-1 text-xs font-bold text-gray-800\">过去</p>\n                                </div>\n                                <!-- 现在端点 -->\n                                <div class=\"absolute top-1/2 right-8 transform translate-x-1/2 -translate-y-1/2\">\n                                    <div class=\"timeline-presentperfect w-5 h-5 rounded-full shadow border-3 border-white\"></div>\n                                    <p class=\"absolute top-full left-1/2 transform -translate-x-1/2 mt-1 text-xs font-bold text-gray-800\">现在</p>\n                                </div>\n                                <!-- 连接箭头 -->\n                                <div class=\"absolute top-1/2 right-8 transform translate-x-[-12px] -translate-y-1/2\">\n                                    <div class=\"w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-blue-600 border-b-[6px] border-b-transparent\"></div>\n                                </div>\n                            </div>\n                            <div class=\"mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg\">\n                                <p class=\"text-sm text-gray-700\"><span class=\"font-bold text-blue-700\">规则：</span>句子描述一个从<span class=\"font-semibold\">过去开始</span>，并<span class=\"font-semibold\">持续到现在</span>、或<span class=\"font-semibold\">对现在有影响/结果</span>的动作。结构：<span class=\"font-mono\">\\\\( \\\\text{have/has} + \\\\text{过去分词} \\\\)</span>。</p>\n                            </div>\n                            <!-- 放置区域 -->\n                            <div id=\"drop-presentperfect\" class=\"drop-zone mt-6 min-h-[100px] border-2 border-dashed border-blue-300 rounded-xl bg-blue-50/50 flex items-center justify-center p-4\">\n                                <p id=\"drop-presentperfect-text\" class=\"text-gray-500 text-center\">将<span class=\"font-bold text-blue-600\">现在完成时</span>句子拖放到这里</p>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </section>\n\n            <!-- 右侧：句子卡片区域 -->\n            <section class=\"lg:w-3/5\">\n                <div class=\"bg-white p-6 rounded-2xl shadow-lg h-full\">\n                    <div class=\"flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 border-b pb-3\">\n                        <h2 class=\"text-2xl font-bold text-gray-800\">句子卡片</h2>\n                        <div class=\"mt-2 sm:mt-0\">\n                            <button id=\"resetBtn\" class=\"px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-lg transition\">重置所有卡片</button>\n                            <p class=\"text-sm text-gray-500 mt-2\">将卡片拖拽到上方对应的时间线上。</p>\n                        </div>\n                    </div>\n\n                    <div id=\"feedback\" class=\"mb-6 p-4 rounded-lg hidden\"></div>\n\n                    <div id=\"cards-container\" class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                        <!-- 卡片将通过JS动态生成并放置在这里 -->\n                    </div>\n\n                    <!-- 规则总结 -->\n                    <div class=\"mt-10 p-5 bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-300 rounded-xl\">\n                        <h3 class=\"text-lg font-bold text-gray-800 mb-3\">📚 判断要点总结</h3>\n                        <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-sm\">\n                            <div class=\"space-y-2\">\n                                <p class=\"font-semibold text-red-700\">使用 <u>一般过去时</u> 如果句子包含：</p>\n                                <ul class=\"list-disc pl-5 space-y-1 text-gray-700\">\n                                    <li>明确的过去时间点 (<code class=\"bg-gray-200 px-1 rounded\">yesterday</code>, <code class=\"bg-gray-200 px-1 rounded\">last week</code>, <code class=\"bg-gray-200 px-1 rounded\">in 2020</code>)</li>\n                                    <li>动作在过去已明确完成，与现在无关</li>\n                                    <li>动词形式为<strong>过去式</strong> (<code class=\"bg-gray-200 px-1 rounded\">worked</code>, <code class=\"bg-gray-200 px-1 rounded\">went</code>, <code class=\"bg-gray-200 px-1 rounded\">did</code>)</li>\n                                </ul>\n                            </div>\n                            <div class=\"space-y-2\">\n                                <p class=\"font-semibold text-blue-700\">使用 <u>现在完成时</u> 如果句子包含：</p>\n                                <ul class=\"list-disc pl-5 space-y-1 text-gray-700\">\n                                    <li>表示持续或与现在相关的时间状语 (<code class=\"bg-gray-200 px-1 rounded\">for 5 years</code>, <code class=\"bg-gray-200 px-1 rounded\">since 2010</code>, <code class=\"bg-gray-200 px-1 rounded\">already</code>, <code class=\"bg-gray-200 px-1 rounded\">ever</code>)</li>\n                                    <li>动作从过去持续到现在，或对现在有影响/结果</li>\n                                    <li>动词形式为<strong>have/has + 过去分词</strong> (<code class=\"bg-gray-200 px-1 rounded\">have worked</code>, <code class=\"bg-gray-200 px-1 rounded\">has been</code>)</li>\n                                </ul>\n                            </div>\n                        </div>\n                        <p class=\"mt-4 text-sm text-gray-600 border-t pt-3\"><span class=\"font-bold\">注意：</span>必须结合<strong>动词形式</strong>和<strong>句子整体含义</strong>综合判断。例如 \"<em>I have been to Beijing.</em>\" 表示经历（与现在相关），即使没有明确时间状语，也属于现在完成时。</p>\n                    </div>\n                </div>\n            </section>\n        </main>\n    </div>\n\n    <script>\n        // 句子数据：每个句子包含文本、正确时态、id和解释\n        const sentences = [\n            { id: 1, text: \"I finished my homework yesterday.\", correctTense: \"past\", hint: \"有明确过去时间点 'yesterday'，动作已结束。\" },\n            { id: 2, text: \"She has lived in London for five years.\", correctTense: \"presentperfect\", hint: \"时间状语 'for five years' 表示从过去持续到现在。\" },\n            { id: 3, text: \"They visited the museum last summer.\", correctTense: \"past\", hint: \"有明确过去时间点 'last summer'。\" },\n            { id: 4, text: \"We have already seen that movie.\", correctTense: \"presentperfect\", hint: \"'already' 表示动作已完成，且对现在有影响（已经知道内容）。\" },\n            { id: 5, text: \"He broke his leg in 2019.\", correctTense: \"past\", hint: \"有明确过去年份 'in 2019'，是纯粹的过去事件。\" },\n            { id: 6, text: \"I have known her since we were children.\", correctTense: \"presentperfect\", hint: \"'since...' 表示从过去某一时间点开始，持续到现在的状态。\" },\n            { id: 7, text: \"The train left at 8 PM.\", correctTense: \"past\", hint: \"有明确过去时间点 'at 8 PM'。\" },\n            { id: 8, text: \"Scientists have discovered new evidence.\", correctTense: \"presentperfect\", hint: \"发现新证据是过去的动作，但其结果（证据存在）影响现在。\" },\n            // 一个错误示例：时间状语冲突\n            { id: 9, text: \"She has finished her homework yesterday.\", correctTense: \"error\", hint: \"错误句子！'has finished' 是现在完成时，但 'yesterday' 是明确的过去时间点，两者冲突。\" }\n        ];\n\n        // 状态管理\n        let draggedCard = null;\n        let placedCards = { past: [], presentperfect: [] }; // 记录已放置卡片的id\n\n        // DOM 元素\n        const cardsContainer = document.getElementById('cards-container');\n        const dropPast = document.getElementById('drop-past');\n        const dropPresentPerfect = document.getElementById('drop-presentperfect');\n        const dropPastText = document.getElementById('drop-past-text');\n        const dropPresentPerfectText = document.getElementById('drop-presentperfect-text');\n        const feedbackEl = document.getElementById('feedback');\n        const resetBtn = document.getElementById('resetBtn');\n\n        // 初始化：生成卡片\n        function initCards() {\n            cardsContainer.innerHTML = '';\n            sentences.forEach(sentence => {\n                const card = document.createElement('div');\n                card.className = 'card bg-white border border-gray-300 rounded-xl p-4 shadow-sm cursor-move transition hover:shadow-md hover:-translate-y-1';\n                card.id = `card-${sentence.id}`;\n                card.draggable = true;\n                card.dataset.id = sentence.id;\n                card.dataset.tense = sentence.correctTense;\n                card.dataset.hint = sentence.hint;\n\n                card.innerHTML = `\n                    <div class=\"flex items-start\">\n                        <div class=\"mr-3 mt-1 flex-shrink-0\">\n                            <div class=\"w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold \\({sentence.correctTense === 'past' ? 'bg-red-100 text-red-800' : sentence.correctTense === 'presentperfect' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}\">\\){sentence.id}</div>\n                        </div>\n                        <div class=\"flex-grow\">\n                            <p class=\"text-gray-800 font-medium\">${sentence.text}</p>\n                            <div class=\"mt-2 flex flex-wrap gap-1\">\n                                <span class=\"text-xs px-2 py-1 rounded \\({sentence.correctTense === 'past' ? 'bg-red-100 text-red-800' : sentence.correctTense === 'presentperfect' ? 'bg-blue-100 text-blue-800' : 'bg-yellow-100 text-yellow-800'}\">\\){getTenseLabel(sentence.correctTense)}</span>\n                                ${sentence.correctTense === 'error' ? '<span class=\"text-xs px-2 py-1 rounded bg-red-100 text-red-800\">错误示例</span>' : ''}\n                            </div>\n                        </div>\n                        <div class=\"ml-2 text-gray-400\">\n                            <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"h-5 w-5\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n                                <path fill-rule=\"evenodd\" d=\"M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707"
+      },
+      "actions": [
+        {
+          "id": "action_c8xECQqe",
+          "type": "speech",
+          "text": "好的，小星，我们现在就来动手练习一下。看屏幕，这里有两个时间轴：左边这个标着‘过去’的点，代表一个过去的时间点；右边这个从‘过去’连到‘现在’的线段，代表从过去持续到现在的这段时间。"
+        },
+        {
+          "id": "action_hE12Ik-W",
+          "type": "speech",
+          "text": "屏幕右边有一些句子卡片，它们有的用了一般过去时，有的用了现在完成时。你的任务就是把这些卡片拖拽到它们对应的时间线上。比如，如果一个句子描述的是一个在过去就完成的动作，它应该放在‘过去’这个点上。如果一个句子描述的是从过去开始，一直持续到现在的动作或状态，它就应该放在‘过去-现在’这条线段上。"
+        },
+        {
+          "id": "action_utHUMTj_",
+          "type": "speech",
+          "text": "你可以先试试看，把第一张卡片拖过去。不用担心对错，系统会给你提示的。匹配正确的话，卡片会吸附上去并高亮；如果放错了，卡片会弹回来，并告诉你原因。"
+        },
+        {
+          "id": "action__rWNa_vr",
+          "type": "speech",
+          "text": "很好！你刚刚匹配了几个句子。想一想，为什么‘I finished my homework.’要放在‘过去’的点上？而‘I have lived here for five years.’要放在‘过去-现在’的线段上？这正好对应了我们刚才讲的那两种主要用法。"
+        },
+        {
+          "id": "action_5wg6SnON",
+          "type": "speech",
+          "text": "把剩下的卡片也尝试匹配一下吧。通过这个动手操作，你能更直观地感受到一般过去时和现在完成时在时间概念上的根本区别。"
+        },
+        {
+          "id": "action_IoJiLhu4",
+          "type": "speech",
+          "text": "完成得不错！通过这个时间线匹配，你是不是对‘已完成动作’和‘持续动作’该怎么选择时态，感觉更清晰了？我们巩固了这个关键概念，接下来就要看看构成现在完成时的另一个重要部分了。"
+        }
+      ],
+      "createdAt": 1774247841184,
+      "updatedAt": 1774247841184
+    },
+    {
+      "id": "yNcKl5GkJoPjUujhU9GfX",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "不规则动词的过去分词",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "HURl9cvvEldCgCuG8QnVU",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_D7IUzEmr",
+              "type": "text",
+              "left": 60,
+              "top": 60,
+              "width": 880,
+              "height": 70,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>不规则动词的过去分词</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_IJ4FiFii",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:18px; text-align:center; color:#666666;\">构成现在完成时的关键</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_YZSC_NO5",
+              "type": "shape",
+              "left": 100,
+              "top": 195,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e0e0e0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_O_LrYaX2",
+              "type": "shape",
+              "left": 60,
+              "top": 220,
+              "width": 420,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ilZhbSYr",
+              "type": "text",
+              "left": 80,
+              "top": 242,
+              "width": 380,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>规则动词</strong></p><p style=\"font-size:16px; text-align:center;\">动词原形 + ed</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_S0li66lR",
+              "type": "shape",
+              "left": 520,
+              "top": 220,
+              "width": 420,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff0f0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_bS3O9MH3",
+              "type": "text",
+              "left": 540,
+              "top": 242,
+              "width": 380,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>不规则动词</strong></p><p style=\"font-size:16px; text-align:center;\">需要特别记忆</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#991b1b",
+              "rotate": 0
+            },
+            {
+              "id": "text_KpSfY-D1",
+              "type": "text",
+              "left": 60,
+              "top": 320,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px;\"><strong>常见不规则动词表</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "table_-cc6Dw-w",
+              "type": "table",
+              "left": 60,
+              "top": 370,
+              "width": 880,
+              "height": 130,
+              "colWidths": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+              ],
+              "data": [
+                [
+                  {
+                    "id": "h1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "动词原形",
+                    "style": "bold"
+                  },
+                  {
+                    "id": "h2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "过去式",
+                    "style": "bold"
+                  },
+                  {
+                    "id": "h3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "过去分词",
+                    "style": "bold"
+                  },
+                  {
+                    "id": "h4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "中文意思",
+                    "style": "bold"
+                  }
+                ],
+                [
+                  {
+                    "id": "r1c1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "go"
+                  },
+                  {
+                    "id": "r1c2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "went"
+                  },
+                  {
+                    "id": "r1c3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "gone"
+                  },
+                  {
+                    "id": "r1c4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "去"
+                  }
+                ],
+                [
+                  {
+                    "id": "r2c1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "see"
+                  },
+                  {
+                    "id": "r2c2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "saw"
+                  },
+                  {
+                    "id": "r2c3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "seen"
+                  },
+                  {
+                    "id": "r2c4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "看见"
+                  }
+                ],
+                [
+                  {
+                    "id": "r3c1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "eat"
+                  },
+                  {
+                    "id": "r3c2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "ate"
+                  },
+                  {
+                    "id": "r3c3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "eaten"
+                  },
+                  {
+                    "id": "r3c4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "吃"
+                  }
+                ],
+                [
+                  {
+                    "id": "r4c1",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "write"
+                  },
+                  {
+                    "id": "r4c2",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "wrote"
+                  },
+                  {
+                    "id": "r4c3",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "written"
+                  },
+                  {
+                    "id": "r4c4",
+                    "colspan": 1,
+                    "rowspan": 1,
+                    "text": "写"
+                  }
+                ]
+              ],
+              "outline": {
+                "width": 2,
+                "style": "solid",
+                "color": "#d1d5db"
+              },
+              "rotate": 0
+            },
+            {
+              "id": "text_AaU_JFxX",
+              "type": "text",
+              "left": 60,
+              "top": 520,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px;\"><strong>记忆小技巧</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_h906Nd79",
+              "type": "text",
+              "left": 80,
+              "top": 570,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size:18px;\">分组记忆法：按变化规律分组记忆</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_k_9JCpt1",
+          "type": "spotlight",
+          "elementId": "text_D7IUzEmr"
+        },
+        {
+          "id": "action_Aaj_ftoZ",
+          "type": "speech",
+          "text": "好的，小星，我们刚刚练习了如何根据时间线选择现在完成时的用法。现在，我们来看看构成这个时态最关键的部分——动词的过去分词。"
+        },
+        {
+          "id": "action_nMU4TSoL",
+          "type": "spotlight",
+          "elementId": "text_IJ4FiFii"
+        },
+        {
+          "id": "action_VY2NlERJ",
+          "type": "speech",
+          "text": "没错，过去分词是构成现在完成时的关键。没有它，我们就无法正确地说出‘I have done’或‘She has seen’这样的句子。"
+        },
+        {
+          "id": "action_4zRrFKU2",
+          "type": "spotlight",
+          "elementId": "text_ilZhbSYr"
+        },
+        {
+          "id": "action_R6AqJbZ4",
+          "type": "speech",
+          "text": "对于规则动词，过去分词的构成非常简单，就像它的过去式一样，直接在动词原形后面加上‘ed’。比如‘work’变成‘worked’，‘play’变成‘played’。这部分对我们来说应该很熟悉。"
+        },
+        {
+          "id": "action_JJuIG6aH",
+          "type": "spotlight",
+          "elementId": "text_bS3O9MH3"
+        },
+        {
+          "id": "action__qqeMPK0",
+          "type": "speech",
+          "text": "但真正的挑战在于不规则动词。它们的过去分词形式没有固定规律，需要我们特别去记忆。比如，你不能说‘goed’，而必须记住‘gone’。"
+        },
+        {
+          "id": "action_vxgGWzs0",
+          "type": "spotlight",
+          "elementId": "text_KpSfY-D1"
+        },
+        {
+          "id": "action_4eps104s",
+          "type": "speech",
+          "text": "别担心，虽然不规则，但很多都是我们常用的高频词。我们来看这个常见不规则动词表。"
+        },
+        {
+          "id": "action_2lfaoR6z",
+          "type": "spotlight",
+          "elementId": "table_-cc6Dw-w"
+        },
+        {
+          "id": "action_l_DcMXlr",
+          "type": "speech",
+          "text": "看这里，第一组：go-went-gone。第二组：see-saw-seen。第三组：eat-ate-eaten。第四组：write-wrote-written。你有没有发现，有些词的过去式和过去分词是一样的，比如‘see’是saw和seen，而‘eat’是ate和eaten，它们又不一样。"
+        },
+        {
+          "id": "action_QDrkoqhu",
+          "type": "spotlight",
+          "elementId": "text_AaU_JFxX"
+        },
+        {
+          "id": "action_MdNIFBQv",
+          "type": "speech",
+          "text": "面对这么多需要记忆的词，有没有好办法呢？有的，我们可以用一些记忆小技巧。"
+        },
+        {
+          "id": "action_f--Lfbte",
+          "type": "spotlight",
+          "elementId": "text_h906Nd79"
+        },
+        {
+          "id": "action_9GtY0zHs",
+          "type": "speech",
+          "text": "一个很有效的方法就是分组记忆法。我们可以不按字母顺序死记硬背，而是按照它们的变化规律来分组。比如，把‘go-went-gone’，‘see-saw-seen’，‘eat-ate-eaten’放在一起，观察它们‘原形-过去式-过去分词’三者都不相同的特点。把‘write-wrote-written’和‘drive-drove-driven’放在一起，观察它们过去式和过去分词都含有‘o’和‘en’的特点。这样分组记忆，效率会高很多。"
+        },
+        {
+          "id": "action_P_b-Xq8d",
+          "type": "speech",
+          "text": "现在，我们来个小练习，快速说出它们的过去分词。我说动词原形，你试着在心里说出它的过去分词，准备好了吗？Go… See… Eat… Write… 很棒！多练习几次，你就会越来越熟练。掌握这些不规则动词的过去分词，你的现在完成时就能用得又准又自信了。"
+        }
+      ],
+      "createdAt": 1774247898048,
+      "updatedAt": 1774247898048
+    },
+    {
+      "id": "9vLxVTZVijFg9hKWqA47B",
+      "stageId": "LgVmnRlIRe",
+      "type": "quiz",
+      "title": "知识检查：用法与形式",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "请判断以下句子中现在完成时的用法是否正确：'我已经吃午饭了，所以我不饿。'",
+            "options": [
+              {
+                "value": "A",
+                "label": "正确。句子描述了过去发生的动作（吃午饭）对现在造成的结果（不饿）。"
+              },
+              {
+                "value": "B",
+                "label": "错误。句子应该使用一般过去时，因为它只提到了过去的一个动作。"
+              },
+              {
+                "value": "C",
+                "label": "错误。句子应该使用现在进行时，因为它描述的是现在的状态。"
+              },
+              {
+                "value": "D",
+                "label": "错误。句子应该使用将来时，因为结果发生在未来。"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "选项A正确。现在完成时用于连接过去和现在，强调过去动作对现在的影响或结果。在这个句子中，'吃午饭'是过去的动作，'不饿'是现在的结果，因此用法正确。选项B错误，因为一般过去时只强调动作发生在过去，不强调与现在的联系。选项C和D的时态与句子语境不符。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "请选择以下动词中，过去分词形式正确的选项（可多选）。",
+            "options": [
+              {
+                "value": "A",
+                "label": "go → went"
+              },
+              {
+                "value": "B",
+                "label": "see → seen"
+              },
+              {
+                "value": "C",
+                "label": "write → written"
+              },
+              {
+                "value": "D",
+                "label": "begin → began"
+              }
+            ],
+            "answer": [
+              "B",
+              "C"
+            ],
+            "analysis": "选项B和C正确。'see'的过去分词是'seen'，'write'的过去分词是'written'，它们都是不规则动词的正确过去分词形式。选项A错误，'went'是'go'的过去式，其过去分词应为'gone'。选项D错误，'began'是'begin'的过去式，其过去分词应为'begun'。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "single",
+            "question": "请根据语境，选择正确的词填空：'She has lived in Beijing ______ 2020.'",
+            "options": [
+              {
+                "value": "A",
+                "label": "for"
+              },
+              {
+                "value": "B",
+                "label": "since"
+              },
+              {
+                "value": "C",
+                "label": "两者都可以"
+              },
+              {
+                "value": "D",
+                "label": "两者都不对"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "analysis": "选项B正确。'since'后接一个过去的时间点（如2020年），表示动作从那个时间点开始持续到现在。'for'后接一段时间（如for three years），表示动作持续了多长时间。句中'2020'是一个具体的时间点，因此应使用'since'。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_fBO62uYU",
+          "type": "speech",
+          "text": "好的，小星，刚才我们练习了不规则动词的过去分词。现在，让我们通过一个小测验，来检查一下你对现在完成时的用法和动词形式的掌握情况。"
+        },
+        {
+          "id": "action_Bt6hKSk_",
+          "type": "speech",
+          "text": "这个测验有三道题。第一题，你需要判断一个句子中现在完成时的用法是否正确。第二题，是多选题，要选出过去分词形式正确的动词。第三题，则是根据语境，选择是用‘for’还是‘since’来填空。"
+        },
+        {
+          "id": "action__5X4wLht",
+          "type": "speech",
+          "text": "请仔细阅读每一道题，并选出你认为正确的答案。准备好了吗？我们开始吧。"
+        },
+        {
+          "id": "action_FXNQrrTx",
+          "type": "speech",
+          "text": "（等待学生完成测验）"
+        },
+        {
+          "id": "action_S1ZSvHqc",
+          "type": "speech",
+          "text": "让我们一起来看看答案和解析。第一题，‘我已经吃午饭了，所以我不饿。’这个句子是正确的。它用现在完成时‘已经吃了’来表达一个发生在过去的动作对现在造成的结果——‘不饿’，这正是我们之前讲过的‘已完成用法’。"
+        },
+        {
+          "id": "action_ihMuKSm8",
+          "type": "speech",
+          "text": "第二题，考察的是不规则动词的过去分词。比如‘go’的过去分词是‘gone’，‘see’是‘seen’，‘eat’是‘eaten’，‘write’是‘written’。多选几个，能帮你更好地记住它们。"
+        },
+        {
+          "id": "action_y1lH2Kry",
+          "type": "speech",
+          "text": "第三题，‘She has lived in Beijing ______ 2020.’ 这里应该填‘since’。还记得我们讲过的‘for’和‘since’的区别吗？‘for’后面跟一段时间，比如for three years；而‘since’后面跟一个时间点，比如since 2020。这个句子是从2020年这个时间点开始，所以用since。"
+        },
+        {
+          "id": "action_AWzcAP2h",
+          "type": "discussion",
+          "topic": "你在做这几道题时，觉得哪部分最容易混淆？是判断用法，还是记住过去分词，或者是区分for和since？",
+          "prompt": "可以分享一下你的思考过程，或者你用了什么小技巧来记住它们吗？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774247933978,
+      "updatedAt": 1774247933978
+    },
+    {
+      "id": "DNAFFa34Fgk_d6ZtBNXpp",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "综合运用与易错点",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "F-PX7dJFqf8o8OFfpzSpf",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_AZ8mYfWh",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>综合运用与易错点</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_9228JsqQ",
+              "type": "text",
+              "left": 60,
+              "top": 166,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">现在完成时</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_-8tRlX2Q",
+              "type": "shape",
+              "left": 60,
+              "top": 230,
+              "width": 880,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_JYIrNolJ",
+              "type": "text",
+              "left": 80,
+              "top": 240,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #2e5984;\">综合运用场景</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_fK8VHoC_",
+              "type": "text",
+              "left": 80,
+              "top": 290,
+              "width": 840,
+              "height": 64,
+              "content": "<p style=\"font-size: 16px;\">在对话和写作中，如何自然地运用现在完成时？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_9kUxhWqu",
+              "type": "shape",
+              "left": 60,
+              "top": 380,
+              "width": 880,
+              "height": 150,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff5f5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_I072YrM2",
+              "type": "text",
+              "left": 80,
+              "top": 390,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #8b0000;\">常见易错点</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_xZP7Loa8",
+              "type": "text",
+              "left": 80,
+              "top": 440,
+              "width": 840,
+              "height": 82,
+              "content": "<p style=\"font-size: 16px;\">1. 与一般过去时混淆（I have seen that movie yesterday. ❌）</p><p style=\"font-size: 16px;\">2. 忘记使用过去分词（I have see the film. ❌）</p><p style=\"font-size: 16px;\">3. 错误使用 have/has（He have finished his homework. ❌）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_X8Q1fHWn",
+              "type": "shape",
+              "left": 60,
+              "top": 450,
+              "width": 880,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fff0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_GXUQlQI8",
+              "type": "text",
+              "left": 80,
+              "top": 460,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; font-weight: bold; color: #228b22;\">实用小贴士</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_E3n-2j7r",
+              "type": "text",
+              "left": 80,
+              "top": 510,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px;\">多听、多读、多模仿，培养语感</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_164lrpKC",
+          "type": "spotlight",
+          "elementId": "text_AZ8mYfWh"
+        },
+        {
+          "id": "action__xfP_56Q",
+          "type": "speech",
+          "text": "非常好，小星。我们刚刚完成了知识检查，巩固了现在完成时的用法和形式。现在，我们来到了一个非常关键的部分：综合运用与易错点。"
+        },
+        {
+          "id": "action_Gt7gVlHu",
+          "type": "spotlight",
+          "elementId": "text_JYIrNolJ"
+        },
+        {
+          "id": "action_JMB3VBEr",
+          "type": "speech",
+          "text": "首先，我们来看看综合运用场景。学习语法最终是为了使用，对吧？"
+        },
+        {
+          "id": "action_6FqG2v1t",
+          "type": "spotlight",
+          "elementId": "text_fK8VHoC_"
+        },
+        {
+          "id": "action_rxbxFhpN",
+          "type": "speech",
+          "text": "在真实的对话和写作中，如何自然地运用现在完成时呢？关键在于理解它的核心——连接过去和现在。比如，当你想分享一个最近发生的、但对现在有影响的经历时，就可以用它。例如，'I have finished my homework.' 这句话不仅告诉你作业做完了，还暗示'我现在有空了'。"
+        },
+        {
+          "id": "action_QpSw_3rN",
+          "type": "laser",
+          "elementId": "text_9228JsqQ"
+        },
+        {
+          "id": "action_sV1hQ7pB",
+          "type": "speech",
+          "text": "记住，现在完成时是你的一个表达工具，用来强调经历、变化或持续到现在的状态。"
+        },
+        {
+          "id": "action_6PA36tPn",
+          "type": "spotlight",
+          "elementId": "text_I072YrM2"
+        },
+        {
+          "id": "action_4GZpQyxE",
+          "type": "speech",
+          "text": "接下来，我们看看同学们在学习时最容易踩的'坑'，也就是常见易错点。"
+        },
+        {
+          "id": "action_dU6sQWt9",
+          "type": "spotlight",
+          "elementId": "text_xZP7Loa8"
+        },
+        {
+          "id": "action_JWFH0Sw9",
+          "type": "speech",
+          "text": "第一个，也是最常见的，就是与一般过去时混淆。看这个例子：'I have seen that movie yesterday.' 这句话是错的。为什么？因为'yesterday'是一个明确的、已经结束的过去时间点，它和现在没有联系。这种情况下，必须用一般过去时：'I saw that movie yesterday.' 现在完成时不能与像yesterday, last week, in 2020这样表示具体过去时间的词连用。"
+        },
+        {
+          "id": "action_1Vi_6-Gq",
+          "type": "speech",
+          "text": "第二个易错点是忘记使用过去分词。我们前面花了时间记不规则动词，就是为了这里不出错。不能说'I have eat lunch'，必须是'I have eaten lunch'。'eat'的过去分词是'eaten'。"
+        },
+        {
+          "id": "action_8ksfI16h",
+          "type": "speech",
+          "text": "第三个易错点是错误使用have或has。主语是第三人称单数（he, she, it, 单个人名）时，要用has，其他情况用have。比如：'She has been to London.' 而'They have been to London.'"
+        },
+        {
+          "id": "action_wmu4UgOj",
+          "type": "spotlight",
+          "elementId": "text_GXUQlQI8"
+        },
+        {
+          "id": "action_crMqNsMy",
+          "type": "speech",
+          "text": "最后，老师给你一些实用小贴士。"
+        },
+        {
+          "id": "action_sAAZTG3i",
+          "type": "spotlight",
+          "elementId": "text_E3n-2j7r"
+        },
+        {
+          "id": "action_alFpNHVi",
+          "type": "speech",
+          "text": "语法规则需要记忆，但语感更重要。怎么培养语感呢？就是多听、多读、多模仿。听英语歌曲、看英语动画片时，留意里面的人物是怎么用现在完成时的。读故事书时，看到这个时态，停下来想一想它为什么用在这里。然后，大胆地在你的口语和写作中去模仿使用。犯错没关系，这是学习的一部分。"
+        },
+        {
+          "id": "action_LzVVbDUi",
+          "type": "speech",
+          "text": "好了，关于现在完成时的核心内容，我们就全部讲完了。你掌握得怎么样？有没有哪个部分觉得特别有挑战，或者特别有趣，想和大家分享你的想法的？"
+        }
+      ],
+      "createdAt": 1774247986660,
+      "updatedAt": 1774247986660
+    },
+    {
+      "id": "WlRO8eO_K6nkAd7LAlDae",
+      "stageId": "LgVmnRlIRe",
+      "type": "slide",
+      "title": "总结与挑战",
+      "order": 9,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "PWafUUZD6ByG5aYkfCoDR",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_fLL2y1LF",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>总结与挑战</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_gSnHE52u",
+              "type": "shape",
+              "left": 100,
+              "top": 136,
+              "width": 800,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_YBKsPiH4",
+              "type": "text",
+              "left": 80,
+              "top": 170,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #1e40af;\"><strong>核心回顾</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_R7VHv5bD",
+              "type": "shape",
+              "left": 60,
+              "top": 240,
+              "width": 880,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ZoI8h9ZP",
+              "type": "text",
+              "left": 80,
+              "top": 252,
+              "width": 840,
+              "height": 106,
+              "content": "<p style=\"font-size: 18px;\">• 现在完成时的定义与结构</p><p style=\"font-size: 18px;\">• 用法一：过去发生，对现在有影响</p><p style=\"font-size: 18px;\">• 用法二：从过去持续到现在</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_qN7Kr4RY",
+              "type": "text",
+              "left": 80,
+              "top": 390,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #166534;\"><strong>关键区别</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_RBAU91bO",
+              "type": "shape",
+              "left": 60,
+              "top": 460,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_kG4hqvRs",
+              "type": "text",
+              "left": 80,
+              "top": 472,
+              "width": 840,
+              "height": 52,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">现在完成时 vs. 一般过去时</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_y4oO36m3",
+              "type": "text",
+              "left": 80,
+              "top": 550,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #92400e;\"><strong>你的学习挑战</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_VOSvXhyz",
+              "type": "shape",
+              "left": 60,
+              "top": 620,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_D8YEA7gL",
+              "type": "text",
+              "left": 80,
+              "top": 632,
+              "width": 840,
+              "height": 52,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">用现在完成时描述你今天已完成的三件事</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_afTa-wCl",
+              "type": "text",
+              "left": 60,
+              "top": 710,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; text-align: center; color: #666666;\">你已经掌握了重要的语法点，继续加油！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "text_wNUEVXG1",
+              "type": "text",
+              "left": 60,
+              "top": 760,
+              "width": 880,
+              "height": 43,
+              "content": "<p style=\"font-size: 14px; text-align: center; color: #999999;\">课程结束，欢迎回放复习</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#999999",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_cwd34ghO",
+          "type": "spotlight",
+          "elementId": "text_fLL2y1LF"
+        },
+        {
+          "id": "action_b3gvew7H",
+          "type": "speech",
+          "text": "非常好！我们来到了课程的最后一页，总结与挑战。"
+        },
+        {
+          "id": "action_d3gNES6M",
+          "type": "spotlight",
+          "elementId": "text_YBKsPiH4"
+        },
+        {
+          "id": "action_w3O1Ldvc",
+          "type": "speech",
+          "text": "首先，让我们快速回顾一下这节课的核心内容。"
+        },
+        {
+          "id": "action__GjKmy3V",
+          "type": "spotlight",
+          "elementId": "text_ZoI8h9ZP"
+        },
+        {
+          "id": "action_rOIdf3dG",
+          "type": "speech",
+          "text": "我们刚刚系统学习了现在完成时。它的定义是描述过去发生的动作对现在造成的影响或结果。它的基本结构是‘have/has + 过去分词’。我们重点探讨了它的两种主要用法：第一，表示过去发生的动作对现在有影响；第二，表示从过去开始一直持续到现在的动作或状态。"
+        },
+        {
+          "id": "action_wWbEVHZx",
+          "type": "spotlight",
+          "elementId": "text_kG4hqvRs"
+        },
+        {
+          "id": "action_3Ib5Edfj",
+          "type": "speech",
+          "text": "接下来是一个关键的区别。我们之前也提到过，现在完成时和一般过去时很容易混淆。"
+        },
+        {
+          "id": "action_jwUNR93S",
+          "type": "laser",
+          "elementId": "text_qN7Kr4RY"
+        },
+        {
+          "id": "action_uoGu5xWc",
+          "type": "speech",
+          "text": "简单来说，一般过去时只关心动作在过去某个具体时间发生，与现在无关。而现在完成时，就像我们反复强调的，它的核心是‘现在’，是过去与现在的连接。"
+        },
+        {
+          "id": "action_SrJccCVH",
+          "type": "spotlight",
+          "elementId": "text_y4oO36m3"
+        },
+        {
+          "id": "action_Ou0hGV16",
+          "type": "speech",
+          "text": "理论学完了，现在轮到你的实践挑战了！"
+        },
+        {
+          "id": "action_8j88hTco",
+          "type": "spotlight",
+          "elementId": "text_D8YEA7gL"
+        },
+        {
+          "id": "action_1_398w_0",
+          "type": "speech",
+          "text": "请你用现在完成时，描述你今天已经完成的三件事。比如，‘I have finished my math homework.’ 或者 ‘I have eaten breakfast.’ 试着在评论区写下来吧，看看你能不能把学到的知识用起来。"
+        },
+        {
+          "id": "action_Y4RPmHMt",
+          "type": "spotlight",
+          "elementId": "text_afTa-wCl"
+        },
+        {
+          "id": "action_ANLN3zng",
+          "type": "speech",
+          "text": "小星，你已经掌握了现在完成时这个非常重要的语法点，这真的很棒！继续加油，多练习，你会用得越来越熟练的。"
+        },
+        {
+          "id": "action_br4y6vBr",
+          "type": "spotlight",
+          "elementId": "text_wNUEVXG1"
+        },
+        {
+          "id": "action_FKLoIvIZ",
+          "type": "speech",
+          "text": "好了，我们今天的课程到这里就全部结束了。如果你还有任何疑问，或者想复习某个部分，随时欢迎回放这节课程。感谢你的认真学习，我们下次课再见！"
+        },
+        {
+          "id": "action_PGaToP28",
+          "type": "discussion",
+          "topic": "应用现在完成时",
+          "prompt": "试着用现在完成时描述你今天已完成的三件事。可以分享一下你的句子吗？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774248050512,
+      "updatedAt": 1774248050512
+    }
+  ],
+  "createdAt": "2026-03-23T07:34:18.656Z"
+}

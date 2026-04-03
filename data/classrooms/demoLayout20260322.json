@@ -1,0 +1,120 @@
+{
+  "id": "demoLayout20260322",
+  "stage": {
+    "id": "demoLayout20260322",
+    "name": "版式校验示范课堂",
+    "description": "用于验证航科互动课堂标准播放态的空间比例与信息层级",
+    "language": "zh-CN",
+    "style": "professional",
+    "createdAt": 1774120000000,
+    "updatedAt": 1774120000000,
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "teacher-tools",
+      "classId": "CLS-DEMO-01",
+      "className": "高一（3）班",
+      "subject": "math",
+      "grade": "高一",
+      "learningMode": "teacher-led",
+      "audienceMode": "whole-class",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": {
+        "id": "teacher-demo-1",
+        "name": "林老师",
+        "subject": "math",
+        "title": "数学教师",
+        "digitalHuman": {
+          "teacherId": "teacher-demo-1",
+          "displayName": "林老师数字人",
+          "voiceLabel": "温和讲解",
+          "updatedAt": "2026-03-22T15:40:00.000Z"
+        }
+      },
+      "students": [
+        {
+          "id": "stu-1",
+          "name": "张同学",
+          "grade": "高一"
+        },
+        {
+          "id": "stu-2",
+          "name": "李同学",
+          "grade": "高一"
+        }
+      ],
+      "studentCount": 2
+    }
+  },
+  "scenes": [
+    {
+      "id": "scene-demo-1",
+      "stageId": "demoLayout20260322",
+      "type": "slide",
+      "title": "版式校验示范课堂",
+      "order": 1,
+      "createdAt": 1774120000000,
+      "updatedAt": 1774120000000,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "slide-demo-1",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#f8fbff",
+            "themeColors": [
+              "#2563eb",
+              "#14b8a6",
+              "#f97316",
+              "#8b5cf6",
+              "#ec4899"
+            ],
+            "fontColor": "#0f172a",
+            "fontName": "Microsoft YaHei"
+          },
+          "elements": [
+            {
+              "id": "title-1",
+              "type": "text",
+              "left": 72,
+              "top": 72,
+              "width": 760,
+              "height": 72,
+              "rotate": 0,
+              "content": "<p><span style=\"font-size:34px;font-weight:700;color:#0f172a;\">航科互动课堂 · 版式校验示范课</span></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#0f172a",
+              "lineHeight": 1.2,
+              "textType": "title"
+            },
+            {
+              "id": "body-1",
+              "type": "text",
+              "left": 72,
+              "top": 176,
+              "width": 760,
+              "height": 180,
+              "rotate": 0,
+              "content": "<p><span style=\"font-size:20px;color:#334155;\">这节示范课主要用于验证标准课堂页的头部比例、舞台纵向空间和下方互动区高度。</span></p><p><span style=\"font-size:20px;color:#334155;\">如果这里看起来更像一块完整的教学舞台，而不是被多层信息挤压，说明这一轮比例优化是有效的。</span></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#334155",
+              "lineHeight": 1.5,
+              "textType": "content"
+            }
+          ]
+        }
+      },
+      "actions": [
+        {
+          "id": "speech-demo-1",
+          "type": "speech",
+          "text": "欢迎来到航科互动课堂版式校验示范课，我们现在重点确认课堂舞台是否更聚焦、更舒展。"
+        }
+      ]
+    }
+  ],
+  "createdAt": "2026-03-26T12:27:14.012Z"
+}

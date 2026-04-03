@@ -1,0 +1,1631 @@
+{
+  "id": "tYzC_Mutd8",
+  "stage": {
+    "id": "tYzC_Mutd8",
+    "name": "请围绕“学习一元二次方程”为小星设计一节适合学生自主使用的兴趣培养课堂。\n\n学习主题：学习一元二次方程\n\n当前学习目标：巩固分数意义与阅读理解\n\n课堂要求：适合单人观看与跟练，包含导入、启发式讲解、互动追问、即时练习、总结，并支持课后回看与导出。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：兴趣培养\n兴趣主题：学习一元二次方程\n学习目标：巩固分数意义与阅读理解\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 兴趣探索要兼顾趣味性与启发性，用学生能听懂的语言把概念讲清楚。\n- 可以加入故事化情境、项目式追问和延伸任务，让学生愿意继续探索。\n- 最后要留下一个适合学生继续查找或动手尝试的下一步问题。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774527114350,
+    "updatedAt": 1774528165224,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解",
+      "interestTopic": "学习一元二次方程"
+    },
+    "currentSceneId": "xxLEvVOw2oW250X8C3Q8Y"
+  },
+  "scenes": [
+    {
+      "id": "DNuQKNoKdLHRmei8IdYAu",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "欢迎来到数学探险！",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "ulWdtiU6C7yQpGVBR1-bs",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_7WDwtBb7",
+              "type": "shape",
+              "left": 100,
+              "top": 50,
+              "width": 800,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_vLvj1tYe",
+              "type": "text",
+              "left": 120,
+              "top": 62,
+              "width": 760,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1e40af;\"><strong>欢迎来到数学探险！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "image_CY4vUWLe",
+              "type": "image",
+              "left": 100,
+              "top": 150,
+              "width": 500,
+              "height": 281,
+              "src": "gen_img_w71Amenu",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_0cT7Qkmd",
+              "type": "shape",
+              "left": 620,
+              "top": 150,
+              "width": 280,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ho7tbCAj",
+              "type": "text",
+              "left": 640,
+              "top": 172,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">欢迎小星开始数学探险</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_sJ0MPqL7",
+              "type": "shape",
+              "left": 620,
+              "top": 300,
+              "width": 280,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_OQOrdxkg",
+              "type": "text",
+              "left": 640,
+              "top": 322,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">我们将一起发现一个有趣的数学秘密</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_w7zNhrNO",
+              "type": "shape",
+              "left": 620,
+              "top": 450,
+              "width": 280,
+              "height": 130,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_kBLV5tQu",
+              "type": "text",
+              "left": 640,
+              "top": 472,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">这个秘密藏在‘一元二次方程’里</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_Bg7lFdGK",
+          "type": "spotlight",
+          "elementId": "text_vLvj1tYe"
+        },
+        {
+          "id": "action_gBZggwMp",
+          "type": "speech",
+          "text": "你好，小星！欢迎来到今天的数学探险课堂！我是你的学习教练，很高兴能和你一起开始这段有趣的旅程。"
+        },
+        {
+          "id": "action_LbYSBtsn",
+          "type": "spotlight",
+          "elementId": "text_ho7tbCAj"
+        },
+        {
+          "id": "action_ca3TYRF4",
+          "type": "speech",
+          "text": "今天，我们要一起开启一场特别的数学探险。就像寻宝一样，我们会发现一个藏在数学世界里的有趣秘密。"
+        },
+        {
+          "id": "action_6AWjDpIm",
+          "type": "spotlight",
+          "elementId": "text_OQOrdxkg"
+        },
+        {
+          "id": "action_EDGri_Fy",
+          "type": "speech",
+          "text": "这个秘密是什么呢？它可能和我们以前学过的数学知识有关，但又有点不一样。它就像一个等待我们去解开的谜题。"
+        },
+        {
+          "id": "action_1Ux-O3zP",
+          "type": "spotlight",
+          "elementId": "text_kBLV5tQu"
+        },
+        {
+          "id": "action__s-yjHn4",
+          "type": "speech",
+          "text": "这个秘密就藏在‘一元二次方程’里。别担心，这个名字听起来有点复杂，但我们会一步步把它变得简单又有趣。在接下来的课程里，我们会从老朋友‘方程’说起，一起动手搭建方程天平，还会从故事里找出方程。准备好了吗？我们的探险现在开始！"
+        }
+      ],
+      "createdAt": 1774527223151,
+      "updatedAt": 1774527223151
+    },
+    {
+      "id": "GlFSFyS0d_ONcEvY8mBKT",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "方程是什么？从老朋友说起",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "CbqGxCjEFkzqLEotIVS_g",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_N98cgS-l",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>方程是什么？从老朋友说起</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "image_JWygb27n",
+              "type": "image",
+              "left": 100,
+              "top": 150,
+              "width": 800,
+              "height": 450,
+              "src": "gen_img_pbt7Rery",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_d6M2GDhA",
+              "type": "text",
+              "left": 60,
+              "top": 120,
+              "width": 400,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; color:#5b9bd5;\">方程就像一个天平</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Mf3woGio",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 400,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">两边要相等</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_QGT_C5Dk",
+              "type": "text",
+              "left": 540,
+              "top": 120,
+              "width": 400,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; color:#ed7d31;\">老朋友：一元一次方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_3oSRUJ57",
+              "type": "text",
+              "left": 540,
+              "top": 140,
+              "width": 400,
+              "height": 46,
+              "content": "<p style=\"font-size:16px;\">例如：x + 2 = 5</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_UFdP58QV",
+              "type": "text",
+              "left": 60,
+              "top": 500,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; color:#70ad47;\">今天的新朋友：含有“平方”的方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_o9Qnmhnv",
+          "type": "spotlight",
+          "elementId": "text_N98cgS-l"
+        },
+        {
+          "id": "action_cfYRDvWE",
+          "type": "speech",
+          "text": "刚才我们预告了今天要探索的秘密武器——一元二次方程。现在，我们就从最基础的问题开始：方程到底是什么呢？让我们从一个老朋友说起。"
+        },
+        {
+          "id": "action_6fJ7HulI",
+          "type": "spotlight",
+          "elementId": "image_JWygb27n"
+        },
+        {
+          "id": "action_hE21Evpb",
+          "type": "laser",
+          "elementId": "text_d6M2GDhA"
+        },
+        {
+          "id": "action_svzlGGmx",
+          "type": "speech",
+          "text": "看这张图，它是不是很像一个天平？这就是理解方程最好的比喻。方程，就像一个天平。"
+        },
+        {
+          "id": "action_b4nPqd7c",
+          "type": "spotlight",
+          "elementId": "text_Mf3woGio"
+        },
+        {
+          "id": "action_b20tKur4",
+          "type": "speech",
+          "text": "天平最重要的特点是什么？对，就是两边的重量要完全相等，保持平衡。方程也一样，它的核心就是‘两边要相等’。"
+        },
+        {
+          "id": "action_gHUNoe0T",
+          "type": "spotlight",
+          "elementId": "text_QGT_C5Dk"
+        },
+        {
+          "id": "action_cztQ3c-N",
+          "type": "speech",
+          "text": "那我们的老朋友是谁呢？就是我们以前学过的‘一元一次方程’。小星，你还记得它吗？"
+        },
+        {
+          "id": "action_2CqfI_38",
+          "type": "spotlight",
+          "elementId": "text_3oSRUJ57"
+        },
+        {
+          "id": "action_W_KYbvy9",
+          "type": "speech",
+          "text": "比如这个例子：x 加 2 等于 5。这里的 x 就是我们要求解的未知数。这个方程就像一个天平，左边是‘x + 2’，右边是‘5’。我们的任务就是找到那个能让天平平衡的 x 的值。"
+        },
+        {
+          "id": "action__uUOyaww",
+          "type": "spotlight",
+          "elementId": "text_UFdP58QV"
+        },
+        {
+          "id": "action_omBX3R0P",
+          "type": "speech",
+          "text": "那么，今天我们要认识的新朋友，和这个老朋友有什么不同呢？关键就在这个‘平方’上。新朋友里，未知数的最高次数是‘平方’，也就是像 x² 这样的。它会让我们的天平游戏变得更有挑战，也更有趣。小星，准备好认识这位新朋友了吗？"
+        }
+      ],
+      "createdAt": 1774527254905,
+      "updatedAt": 1774527254905
+    },
+    {
+      "id": "rBu7Krelw5MU52WWnG5Lm",
+      "stageId": "tYzC_Mutd8",
+      "type": "interactive",
+      "title": "动手搭建方程天平",
+      "order": 3,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>一元二次方程的标准形式</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        @keyframes balance {\n            0%, 100% { transform: rotate(0deg); }\n            25% { transform: rotate(-1deg); }\n            75% { transform: rotate(1deg); }\n        }\n        @keyframes pop {\n            0% { transform: scale(1); opacity: 1; }\n            100% { transform: scale(1.5); opacity: 0; }\n        }\n        .balanced {\n            animation: balance 0.5s ease-in-out 3;\n        }\n        .success-pop {\n            animation: pop 0.8s ease-out forwards;\n        }\n        .card-shadow {\n            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);\n        }\n        .card-shadow:hover {\n            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);\n        }\n        .tray-shadow {\n            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);\n        }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen p-4 md:p-6 font-sans text-gray-800\">\n    <div class=\"max-w-6xl mx-auto\">\n        <!-- 标题区 -->\n        <header class=\"text-center mb-8\">\n            <h1 class=\"text-3xl md:text-4xl font-bold text-indigo-800 mb-2\">一元二次方程天平</h1>\n            <p class=\"text-lg text-gray-600 max-w-3xl mx-auto\">通过组合卡片，让天平两侧平衡，理解方程 <span class=\"font-mono font-semibold text-indigo-700\">ax² + bx + c = 0 (a ≠ 0)</span> 的标准形式。</p>\n        </header>\n\n        <div class=\"flex flex-col lg:flex-row gap-8 items-start\">\n            <!-- 左侧：卡片库与控制区 -->\n            <div class=\"lg:w-2/5 w-full space-y-8\">\n                <!-- 卡片库 -->\n                <div class=\"bg-white rounded-2xl p-6 card-shadow\">\n                    <h2 class=\"text-xl font-bold text-gray-700 mb-4 border-b pb-2\">📚 卡片库</h2>\n                    <p class=\"text-sm text-gray-500 mb-4\">拖拽卡片到左侧托盘上。同类项（如两个\"x\"）会自动合并。</p>\n                    <div class=\"grid grid-cols-3 sm:grid-cols-4 gap-4\" id=\"cardLibrary\">\n                        <!-- 卡片由JS动态生成 -->\n                    </div>\n                </div>\n\n                <!-- 控制与信息区 -->\n                <div class=\"bg-white rounded-2xl p-6 card-shadow space-y-6\">\n                    <div>\n                        <h2 class=\"text-xl font-bold text-gray-700 mb-2\">🎯 目标方程</h2>\n                        <div class=\"text-2xl font-mono font-bold text-center p-4 bg-indigo-50 rounded-lg border border-indigo-200\" id=\"targetEquation\">\n                            <!-- 目标方程由JS动态生成 -->\n                        </div>\n                        <p class=\"text-sm text-gray-500 mt-2 text-center\">你的任务：让左侧托盘表达式的值等于 <strong>0</strong>。</p>\n                    </div>\n\n                    <div class=\"border-t pt-4\">\n                        <h3 class=\"font-bold text-gray-700 mb-2\">⚙️ 控制面板</h3>\n                        <div class=\"flex flex-wrap gap-3\">\n                            <button id=\"resetBtn\" class=\"flex-1 min-w-[120px] bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-4 rounded-lg transition duration-200\">\n                                重置天平\n                            </button>\n                            <button id=\"hintBtn\" class=\"flex-1 min-w-[120px] bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold py-3 px-4 rounded-lg transition duration-200\">\n                                显示提示\n                            </button>\n                        </div>\n                    </div>\n\n                    <div class=\"border-t pt-4\">\n                        <h3 class=\"font-bold text-gray-700 mb-2\">📈 当前状态</h3>\n                        <div class=\"space-y-2\">\n                            <div class=\"flex justify-between\">\n                                <span class=\"text-gray-600\">左侧表达式：</span>\n                                <span class=\"font-mono font-semibold\" id=\"currentExpression\">0</span>\n                            </div>\n                            <div class=\"flex justify-between\">\n                                <span class=\"text-gray-600\">计算值：</span>\n                                <span class=\"font-mono font-semibold\" id=\"currentValue\">0</span>\n                            </div>\n                            <div class=\"flex justify-between\">\n                                <span class=\"text-gray-600\">与0的差值：</span>\n                                <span class=\"font-mono font-semibold\" id=\"currentDifference\">0</span>\n                            </div>\n                            <div class=\"h-2 bg-gray-200 rounded-full overflow-hidden mt-1\">\n                                <div id=\"balanceBar\" class=\"h-full bg-green-500 transition-all duration-300\" style=\"width: 0%\"></div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- 右侧：天平可视化区 -->\n            <div class=\"lg:w-3/5 w-full\">\n                <div class=\"bg-gradient-to-b from-white to-blue-50 rounded-3xl p-6 md:p-8 card-shadow h-full\">\n                    <h2 class=\"text-2xl font-bold text-center text-gray-700 mb-8\">⚖️ 方程天平</h2>\n\n                    <!-- 天平主体 -->\n                    <div class=\"relative flex flex-col items-center\" style=\"min-height: 400px;\">\n                        <!-- 天平横梁与支点 -->\n                        <div class=\"relative w-full max-w-2xl mb-10 z-10\">\n                            <div class=\"h-2 bg-gradient-to-r from-yellow-800 to-yellow-900 rounded-full mx-auto\" style=\"width: 90%;\"></div>\n                            <div class=\"absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-yellow-700 rounded-full\"></div>\n                            <div class=\"absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-12 bg-yellow-600 rounded-full\"></div>\n                        </div>\n\n                        <!-- 天平托盘与内容 -->\n                        <div class=\"flex justify-between w-full max-w-2xl items-start\">\n                            <!-- 左侧托盘 -->\n                            <div class=\"w-5/12 flex flex-col items-center\">\n                                <div class=\"text-center mb-3\">\n                                    <div class=\"inline-block bg-indigo-100 text-indigo-800 text-sm font-semibold px-4 py-1 rounded-full\">左侧表达式</div>\n                                </div>\n                                <div id=\"leftTray\" class=\"tray-shadow bg-gradient-to-b from-blue-100 to-white w-full min-h-[220px] rounded-2xl border-4 border-blue-300 p-4 flex flex-col gap-3 items-center justify-start transition-all duration-500 relative\">\n                                    <!-- 拖拽区域提示 -->\n                                    <div id=\"trayHint\" class=\"text-gray-400 text-sm italic p-4 text-center\">将卡片拖拽到这里构建表达式</div>\n                                    <!-- 卡片将在此处放置 -->\n                                </div>\n                                <div class=\"mt-4 text-center\">\n                                    <div class=\"text-lg font-mono\">= <span id=\"leftValueDisplay\" class=\"font-bold\">0</span></div>\n                                </div>\n                            </div>\n\n                            <!-- 中间等号与平衡指示器 -->\n                            <div class=\"w-1/6 flex flex-col items-center justify-center pt-16\">\n                                <div class=\"text-4xl font-bold text-gray-400 mb-4\">=</div>\n                                <div id=\"balanceIndicator\" class=\"w-16 h-16 rounded-full bg-gray-200 border-4 border-gray-300 flex items-center justify-center text-gray-500 font-bold text-sm\">\n                                    未平衡\n                                </div>\n                            </div>\n\n                            <!-- 右侧托盘 -->\n                            <div class=\"w-5/12 flex flex-col items-center\">\n                                <div class=\"text-center mb-3\">\n                                    <div class=\"inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full\">右侧常数</div>\n                                </div>\n                                <div class=\"tray-shadow bg-gradient-to-b from-green-100 to-white w-full min-h-[220px] rounded-2xl border-4 border-green-300 p-8 flex items-center justify-center\">\n                                    <div class=\"text-6xl font-bold text-green-700\">0</div>\n                                </div>\n                                <div class=\"mt-4 text-center\">\n                                    <div class=\"text-lg font-mono font-bold text-green-700\">0</div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <!-- 成功动画区域 -->\n                        <div id=\"successAnimation\" class=\"absolute inset-0 pointer-events-none flex items-center justify-center z-20 opacity-0\">\n                            <!-- 动画元素由JS动态生成 -->\n                        </div>\n                    </div>\n\n                    <!-- 关卡选择 -->\n                    <div class=\"mt-10 pt-6 border-t border-gray-200\">\n                        <h3 class=\"text-xl font-bold text-gray-700 mb-4\">🎮 选择关卡</h3>\n                        <p class=\"text-sm text-gray-500 mb-4\">难度递增：系数会包含负数、分数等。</p>\n                        <div class=\"grid grid-cols-2 sm:grid-cols-4 gap-3\" id=\"levelSelector\">\n                            <!-- 关卡按钮由JS动态生成 -->\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- 原理说明 -->\n        <footer class=\"mt-10 pt-6 border-t border-gray-300 text-center text-gray-600 text-sm\">\n            <p><strong>核心原理：</strong> 一元二次方程的标准形式为 \\(ax^2 + bx + c = 0\\)，其中 \\(a \\neq 0\\)。方程就像天平，两边必须相等。只有同类项（常数、\\(x\\)、\\(x^2\\)）的系数可以相加。</p>\n        </footer>\n    </div>\n\n    <script>\n        // 全局状态与配置\n        const state = {\n            currentLevel: 0,\n            isBalanced: false,\n            cardsInTray: [], // 格式: {type: 'num', value: 2, id: 'num_2', element: div} 或 {type: 'x'}, {type: 'x2'}\n            expression: {\n                a: 0, // x²系数\n                b: 0, // x系数\n                c: 0  // 常数项\n            }\n        };\n\n        // 关卡定义：每个关卡是一个目标方程 [a, b, c]\n        const levels = [\n            { name: \"入门\", eq: [1, 2, 1], hint: \"试试 (x+1)² = 0\" }, // x² + 2x + 1 = 0\n            { name: \"简单\", eq: [1, -3, 2], hint: \"试试 (x-1)(x-2) = 0\" }, // x² - 3x + 2 = 0\n            { name: \"中等\", eq: [2, 4, -6], hint: \"所有系数除以2试试\" }, // 2x² + 4x - 6 = 0\n            { name: \"挑战\", eq: [1, 0, -4], hint: \"x² = 4\" }, // x² - 4 = 0\n            { name: \"进阶\", eq: [-1, 2, 3], hint: \"注意a是负数\" }, // -x² + 2x + 3 = 0\n            { name: \"分数\", eq: [0.5, -1.5, 2], hint: \"两边乘以2消除分数\" }, // 0.5x² - 1.5x + 2 = 0\n        ];\n\n        // 可用卡片\n        const cardTypes = [\n            { type: 'num', value: 1, label: '1', color: 'bg-blue-100 border-blue-300 text-blue-800' },\n            { type: 'num', value: 2, label: '2', color: 'bg-blue-100 border-blue-300 text-blue-800' },\n            { type: 'num', value: 3, label: '3', color: 'bg-blue-100 border-blue-300 text-blue-800' },\n            { type: 'num', value: -1, label: '-1', color: 'bg-red-100 border-red-300 text-red-800' },\n            { type: 'num', value: -2, label: '-2', color: 'bg-red-100 border-red-300 text-red-800' },\n            { type: 'x', value: 1, label: 'x', color: 'bg-green-100 border-green-300 text-green-800' },\n            { type: 'x2', value: 1, label: 'x²', color: 'bg-purple-100 border-purple-300 text-purple-800' },\n        ];\n\n        // DOM 元素引用\n        const dom = {\n            cardLibrary: document.getElementById('cardLibrary'),\n            leftTray: document.getElementById('leftTray'),\n            trayHint: document.getElementById('trayHint'),\n            targetEquation: document.getElementById('targetEquation'),\n            currentExpression: document.getElementById('currentExpression'),\n            currentValue: document.getElementById('currentValue'),\n            currentDifference: document.getElementById('currentDifference'),\n            balanceBar: document.getElementById('balanceBar'),\n            balanceIndicator: document.getElementById('balanceIndicator'),\n            leftValueDisplay: document.getElementById('leftValueDisplay'),\n            successAnimation: document.getElementById('successAnimation'),\n            resetBtn: document.getElementById('resetBtn'),\n            hintBtn: document.getElementById('hintBtn'),\n            levelSelector: document.getElementById('levelSelector')\n        };\n\n        // 初始化函数\n        function init() {\n            generateCardLibrary();\n            generateLevelButtons();\n            loadLevel(0);\n            setupEventListeners();\n            updateDisplay();\n        }\n\n        // 生成卡片库\n        function generateCardLibrary() {\n            dom.cardLibrary.innerHTML = '';\n            cardTypes.forEach((card, index) => {\n                const cardEl = document.createElement('div');\n                cardEl.className = `flex items-center justify-center h-20 rounded-xl border-2 ${card.color} font-bold text-2xl cursor-move card-shadow transition-transform duration-200 hover:scale-105 draggable-card`;\n                cardEl.textContent = card.label;\n                cardEl.draggable = true;\n                cardEl.dataset.type = card.type;\n                cardEl.dataset.value = card.value;\n                cardEl.dataset.id = `\\({card.type}_\\){card.value}_${index}`;\n                cardEl.id = `card_\\({card.type}_\\){card.value}_${index}`;\n\n                cardEl.addEventListener('dragstart', handleDragStart);\n                dom.cardLibrary.appendChild(cardEl);\n            });\n        }\n\n        // 生成关卡按钮\n        function generateLevelButtons() {\n            dom.levelSelector.innerHTML = '';\n            levels.forEach((level, index) => {\n                const btn = document.createElement('button');\n                btn.className = `py-3 px-4 rounded-lg font-semibold transition duration-200 ${index === state.currentLevel ? 'bg-indigo-600 text-white' : 'bg-gray-100 hover:bg-gray-200 text-gray-800'}`;\n                btn.textContent = `\\({index + 1}. \\){level.name}`;\n                btn.addEventListener('click', () => loadLevel(index));\n                dom.levelSelector.appendChild(btn);\n            });\n        }\n\n        // 加载关卡\n        function loadLevel(levelIndex) {\n            state.currentLevel = levelIndex;\n            state.isBalanced = false;\n            state.cardsInTray = [];\n            state.expression = { a: 0, b: 0, c: 0 };\n\n            // 更新目标方程显示\n            const [a, b, c] = levels[levelIndex].eq;\n            let eqText = '';\n            if (a !== 0) eqText += `${formatCoefficient(a)}x²`;\n            if (b !== 0) eqText += `\\({b > 0 && eqText ? '+' : ''}\\){formatCoefficient(b)}x`;\n            if (c !== 0) eqText += `\\({c > 0 && eqText ? '+' : ''}\\){formatCoefficient(c)}`;\n            if (!eqText) eqText = '0';\n            eqText += ' = 0';\n            dom.targetEquation.textContent = eqText;\n\n            // 重置天平视觉状态\n            dom.leftTray.classList.remove('balanced');\n            dom.balanceIndicator.className = 'w-16 h-16 rounded-full bg-gray-200 border-4 border-gray-300 flex items-center justify-center text-gray-500 font-bold text-sm';\n            dom.balanceIndicator.textContent = '未平衡';\n            dom.successAnimation.innerHTML = '';\n            dom.successAnimation.classList.add('opacity-0');\n\n            // 清空托盘并显示提示\n            dom.leftTray.innerHTML = '';\n            dom.trayHint.style.display = 'block';\n            dom.leftTray.appendChild(dom.trayHint);\n\n            // 更新关卡按钮状态\n            document.querySelectorAll('#levelSelector button').forEach((btn, idx) => {\n                btn.className = `py-3 px-4 rounded-lg font-semibold transition duration-200 ${idx === levelIndex ? 'bg-indigo-600 text-white' : 'bg-gray-100 hover:bg-gray-200"
+      },
+      "actions": [
+        {
+          "id": "action_G0pe1NvT",
+          "type": "speech",
+          "text": "刚才我们认识了新朋友‘一元二次方程’，知道了它里面有像 x² 这样的平方项。现在，让我们亲手来搭建一个方程天平，直观地感受一下它的结构吧。"
+        },
+        {
+          "id": "action_0CsIWzoY",
+          "type": "speech",
+          "text": "看，屏幕中央有一个卡通天平。右边托盘上显示了一个目标方程，比如 ‘x² + 2x + 1 = 0’。你的任务是从左边拖拽数字卡片、‘x’卡片和‘x²’卡片到左边的托盘上，让天平两边平衡。"
+        },
+        {
+          "id": "action_bQkjB61z",
+          "type": "speech",
+          "text": "试着拖拽一个‘x²’卡片到左边。注意观察，‘x²’和右边的‘x²’项是对应的。现在，再拖拽两个‘x’卡片和一个数字‘1’的卡片过去。看看天平平衡了吗？"
+        },
+        {
+          "id": "action_RD01VdTu",
+          "type": "speech",
+          "text": "太棒了！当天平平衡时，它会晃动并给你鼓励。这表示你成功搭建了一个等于0的表达式。你可以点击重置按钮，或者尝试不同难度的关卡，看看系数变化时，你需要拖拽哪些不同的卡片。"
+        },
+        {
+          "id": "action_AcKHhzf3",
+          "type": "speech",
+          "text": "通过这个动手游戏，你是不是更清楚地看到了‘x’、‘x²’和数字在方程中各自的位置？感受一下让方程两边相等的乐趣吧！"
+        }
+      ],
+      "createdAt": 1774527407561,
+      "updatedAt": 1774527407561
+    },
+    {
+      "id": "E8oRws-dxen95Mibr1rVF",
+      "stageId": "tYzC_Mutd8",
+      "type": "quiz",
+      "title": "小试牛刀：认出它！",
+      "order": 4,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "下列方程中，哪个是一元二次方程？",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 3x² - 5x + 2 = 0"
+              },
+              {
+                "value": "B",
+                "label": "B. 2x - 7 = 0"
+              },
+              {
+                "value": "C",
+                "label": "C. x³ + x - 1 = 0"
+              },
+              {
+                "value": "D",
+                "label": "D. 5/x + x = 2"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "选项A是标准的一元二次方程，它只含有一个未知数x，并且x的最高次数是2，且方程整理后等于0。选项B是一元一次方程。选项C是一元三次方程。选项D中含有x在分母上，不是整式方程，因此也不是一元二次方程。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "请从下列方程中，选出所有的一元二次方程。（多选）",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. x² = 9"
+              },
+              {
+                "value": "B",
+                "label": "B. 2x² - x = 0"
+              },
+              {
+                "value": "C",
+                "label": "C. y² + 2y + 1 = 0"
+              },
+              {
+                "value": "D",
+                "label": "D. x² + 2x - 1"
+              }
+            ],
+            "answer": [
+              "A",
+              "B",
+              "C"
+            ],
+            "analysis": "判断一元二次方程有三个关键点：1. 是整式方程；2. 只含有一个未知数；3. 未知数的最高次数是2。选项A、B、C都满足这些条件。选项D不是一个方程，因为它没有等号，只是一个二次三项式。注意选项C中的未知数是y，这并不影响它是一元二次方程，因为“一元”指的是未知数的个数，而不是必须用x表示。",
+            "points": 15,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_EnBaKwbD",
+          "type": "speech",
+          "text": "好的，小星！我们刚刚通过动手搭建，感受了方程中各项的位置。现在，让我们来个小测试，看看你能不能从几个方程里，准确地认出哪个是‘一元二次方程’。"
+        },
+        {
+          "id": "action_WNr_W8Vx",
+          "type": "speech",
+          "text": "请仔细观察屏幕上的每一个方程。我们的目标有两个：第一，找出含有‘x²’项的方程；第二，确认这个方程是整理成标准形式，也就是等于0的。"
+        },
+        {
+          "id": "action_DiiG2Bvn",
+          "type": "speech",
+          "text": "先看第一题，是一个单选题。别着急，仔细看看每个选项的结构。想一想我们之前说的，一元二次方程必须有一个未知数的平方项，而且最高次数是2。"
+        },
+        {
+          "id": "action_0nG21RbG",
+          "type": "speech",
+          "text": "再看第二题，这是一道多选题。这意味着可能不止一个正确答案。你需要运用同样的判断标准，把所有符合一元二次方程定义的都选出来。"
+        },
+        {
+          "id": "action_p9G5y225",
+          "type": "discussion",
+          "topic": "判断一元二次方程时，最容易忽略或混淆的地方是什么？",
+          "prompt": "比如，方程里如果有‘x³’项，或者方程没有整理成等于0的形式，还算不算呢？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774527433642,
+      "updatedAt": 1774527433642
+    },
+    {
+      "id": "lUa8fEf9rfwuHy81nwU6G",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "藏在故事里的方程",
+      "order": 5,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "hpVZCArOCqsWVuW08YkNn",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_u63vvQaN",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>藏在故事里的方程</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_sYmGdfBL",
+              "type": "text",
+              "left": 60,
+              "top": 130,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #5b9bd5;\">规划矩形花园</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "text_x0gSuEOT",
+              "type": "text",
+              "left": 60,
+              "top": 200,
+              "width": 400,
+              "height": 94,
+              "content": "<p style=\"font-size: 18px;\">小星想规划一个长方形花园。</p><p style=\"font-size: 18px;\">已知：</p><p style=\"font-size: 18px;\">• 宽 = x 米</p><p style=\"font-size: 18px;\">• 长 = (x + 2) 米</p><p style=\"font-size: 18px;\">• 面积 = 24 平方米</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "image_jNJfQ5xB",
+              "type": "image",
+              "left": 500,
+              "top": 200,
+              "width": 440,
+              "height": 247.5,
+              "src": "gen_img_-x_WGDjk",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_k6wX5orX",
+              "type": "text",
+              "left": 60,
+              "top": 320,
+              "width": 400,
+              "height": 52,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">如何用方程表示？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#d35400",
+              "rotate": 0
+            },
+            {
+              "id": "latex_KH3Wr5qj",
+              "type": "latex",
+              "left": 60,
+              "top": 390,
+              "width": 400,
+              "height": 80,
+              "latex": "\\text{面积} = \\text{长} \\times \\text{宽}",
+              "color": "#333333",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">面积</span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7667em;vertical-align:-0.0833em;\"></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">长</span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">×</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">宽</span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_jLj2oEKT",
+              "type": "latex",
+              "left": 60,
+              "top": 480,
+              "width": 400,
+              "height": 80,
+              "latex": "24 = (x + 2) \\times x",
+              "color": "#333333",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">24</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mopen\">(</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord\">2</span><span class=\"mclose\">)</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">×</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_KoquxWYq",
+              "type": "latex",
+              "left": 500,
+              "top": 470,
+              "width": 440,
+              "height": 100,
+              "latex": "x^2 + 2x - 24 = 0",
+              "color": "#c0392b",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9474em;vertical-align:-0.0833em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8641em;\"><span style=\"top:-3.113em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">24</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">0</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_7JrXKPcv",
+              "type": "text",
+              "left": 500,
+              "top": 380,
+              "width": 440,
+              "height": 76,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">这就是一个</p><p style=\"font-size: 24px; text-align: center; font-weight: bold; color: #2980b9;\">一元二次方程！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_RJ4fZmn4",
+          "type": "spotlight",
+          "elementId": "text_u63vvQaN"
+        },
+        {
+          "id": "action_ERuOg03L",
+          "type": "speech",
+          "text": "刚才我们练习了如何识别一元二次方程，现在我们来看一个更有趣的部分。看这里，藏在故事里的方程。"
+        },
+        {
+          "id": "action_zQXmlQ6n",
+          "type": "spotlight",
+          "elementId": "text_sYmGdfBL"
+        },
+        {
+          "id": "action_UyiLKw07",
+          "type": "speech",
+          "text": "这是一个关于规划矩形花园的故事。小星，你平时喜欢种花吗？想象一下，如果我们自己要设计一个小花园，是不是要考虑它的大小呢？"
+        },
+        {
+          "id": "action_JK2-9yI1",
+          "type": "spotlight",
+          "elementId": "text_x0gSuEOT"
+        },
+        {
+          "id": "action_NpQ7lQtq",
+          "type": "speech",
+          "text": "故事里的小星就想规划一个长方形花园。已知条件是：花园的宽是x米，长比宽多2米，也就是(x+2)米，而花园的总面积是24平方米。"
+        },
+        {
+          "id": "action_vLX-VM6W",
+          "type": "laser",
+          "elementId": "image_jNJfQ5xB"
+        },
+        {
+          "id": "action_1Gkr454l",
+          "type": "speech",
+          "text": "我们可以想象一下这个花园的样子，一个长一点，宽一点的长方形。"
+        },
+        {
+          "id": "action_2JnTbnFb",
+          "type": "spotlight",
+          "elementId": "text_k6wX5orX"
+        },
+        {
+          "id": "action_PWTmLdvi",
+          "type": "speech",
+          "text": "那么，关键问题来了：如何用方程来表示这个花园的面积关系呢？"
+        },
+        {
+          "id": "action_VauKX5j_",
+          "type": "spotlight",
+          "elementId": "latex_KH3Wr5qj"
+        },
+        {
+          "id": "action_4yX5zalW",
+          "type": "speech",
+          "text": "我们知道，长方形的面积等于长乘以宽。这是一个我们非常熟悉的公式。"
+        },
+        {
+          "id": "action_cHAXKYK9",
+          "type": "spotlight",
+          "elementId": "latex_jLj2oEKT"
+        },
+        {
+          "id": "action_DVnWhrZo",
+          "type": "speech",
+          "text": "现在我们把故事里的数字和字母代进去。面积24等于长(x+2)乘以宽x。看，一个方程就列出来了！"
+        },
+        {
+          "id": "action_I61EaoFG",
+          "type": "spotlight",
+          "elementId": "latex_KoquxWYq"
+        },
+        {
+          "id": "action_QnwfIQJF",
+          "type": "speech",
+          "text": "如果我们把这个方程整理一下，把括号乘开，把24移到等号左边，就会得到：x的平方加上2x减去24等于0。"
+        },
+        {
+          "id": "action_s6t93a3o",
+          "type": "spotlight",
+          "elementId": "text_7JrXKPcv"
+        },
+        {
+          "id": "action_1ETooMeT",
+          "type": "speech",
+          "text": "仔细观察这个方程的形式。x的最高次数是2，而且只有一个未知数x。没错，这就是一个标准的一元二次方程！你看，一个生活中的花园规划问题，就自然地引出了我们今天学习的核心内容。"
+        }
+      ],
+      "createdAt": 1774527474487,
+      "updatedAt": 1774527474487
+    },
+    {
+      "id": "IOAhLiR1tc8bXDAoJPt3o",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "关键一步：阅读理解与转化",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "61CaDLnzcQMVdue-hFI2b",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_5hJcSOPM",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>关键一步：阅读理解与转化</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_w7Ie54oX",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">将故事描述转化为数学方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_zPJFSunW",
+              "type": "shape",
+              "left": 60,
+              "top": 220,
+              "width": 880,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_NrY2TwUE",
+              "type": "text",
+              "left": 80,
+              "top": 235,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px;\"><strong>第一步：找出已知数和未知数</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_7gGDK1TQ",
+              "type": "text",
+              "left": 100,
+              "top": 295,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">已知：长方形面积 = 24，长比宽多 2</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_v92wKTfA",
+              "type": "shape",
+              "left": 60,
+              "top": 360,
+              "width": 880,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_QgnFCqeq",
+              "type": "text",
+              "left": 80,
+              "top": 375,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px;\"><strong>第二步：设未知的边长为 x</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "latex_zSHOinYR",
+              "type": "latex",
+              "left": 100,
+              "top": 435,
+              "width": 300,
+              "height": 80,
+              "latex": "\\text{设宽为 } x，\\text{ 则长为 } x+2",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7667em;vertical-align:-0.0833em;\"></span><span class=\"mord text\"><span class=\"mord cjk_fallback\">设宽为</span><span class=\"mord\"> </span></span><span class=\"mord mathnormal\">x</span><span class=\"mord cjk_fallback\">，</span><span class=\"mord text\"><span class=\"mord\"> </span><span class=\"mord cjk_fallback\">则长为</span><span class=\"mord\"> </span></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">2</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape__LbRA3OZ",
+              "type": "shape",
+              "left": 60,
+              "top": 530,
+              "width": 430,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_4jWcsbkv",
+              "type": "text",
+              "left": 80,
+              "top": 545,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px;\"><strong>第三步：根据公式列方程</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "latex_IcEWoVl4",
+              "type": "latex",
+              "left": 100,
+              "top": 605,
+              "width": 360,
+              "height": 80,
+              "latex": "x(x+2) = 24",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mopen\">(</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord\">2</span><span class=\"mclose\">)</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">24</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_kwyd-th4",
+              "type": "shape",
+              "left": 510,
+              "top": 530,
+              "width": 430,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f3e8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_0eAlhREd",
+              "type": "text",
+              "left": 530,
+              "top": 545,
+              "width": 390,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px;\"><strong>第四步：整理为标准形式</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#6b21a8",
+              "rotate": 0
+            },
+            {
+              "id": "latex_d_mRMMgg",
+              "type": "latex",
+              "left": 550,
+              "top": 605,
+              "width": 360,
+              "height": 80,
+              "latex": "x^2 + 2x - 24 = 0",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9474em;vertical-align:-0.0833em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">x</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8641em;\"><span style=\"top:-3.113em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">24</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">0</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_BhUMsMa8",
+          "type": "spotlight",
+          "elementId": "text_5hJcSOPM"
+        },
+        {
+          "id": "action_SGRajQv1",
+          "type": "speech",
+          "text": "非常好！我们刚刚从花园的故事里，成功识别出了一个一元二次方程。那么接下来，就是最关键的一步了：我们怎么把一个故事，变成这样一个方程呢？这个过程，就叫做阅读理解与转化。"
+        },
+        {
+          "id": "action_FxETDmZY",
+          "type": "spotlight",
+          "elementId": "text_NrY2TwUE"
+        },
+        {
+          "id": "action_bcTZHoQ5",
+          "type": "speech",
+          "text": "我们一起来看第一步：找出题目中的已知数和未知数。这是所有数学建模的起点。就像侦探破案，得先知道哪些是已知线索，哪些是我们要找的答案。"
+        },
+        {
+          "id": "action_iz_tMYyl",
+          "type": "laser",
+          "elementId": "text_7gGDK1TQ"
+        },
+        {
+          "id": "action_cTFPqcIW",
+          "type": "speech",
+          "text": "在这个花园问题里，已知条件非常清晰：长方形的面积是24平方米，长比宽多2米。这就是我们的两条关键线索。"
+        },
+        {
+          "id": "action_W9iY1C9u",
+          "type": "spotlight",
+          "elementId": "text_QgnFCqeq"
+        },
+        {
+          "id": "action_dI6mhKp4",
+          "type": "speech",
+          "text": "线索有了，第二步，我们要设未知数。通常，我们会用字母‘x’来表示我们不知道的那个量。这里，我们设宽为x。"
+        },
+        {
+          "id": "action_asjAmlI1",
+          "type": "spotlight",
+          "elementId": "latex_zSHOinYR"
+        },
+        {
+          "id": "action_1Ht-0ZiU",
+          "type": "speech",
+          "text": "那么，根据‘长比宽多2’这个条件，长就是x加上2，也就是x+2。看，我们把文字描述，变成了一个用x表达的数学关系。"
+        },
+        {
+          "id": "action_ltqywZZb",
+          "type": "spotlight",
+          "elementId": "text_4jWcsbkv"
+        },
+        {
+          "id": "action_CP1wr-5m",
+          "type": "speech",
+          "text": "第三步，也是最核心的一步：根据公式列方程。长方形的面积公式是长乘以宽，对吧？"
+        }
+      ],
+      "createdAt": 1774527531041,
+      "updatedAt": 1774527531041
+    },
+    {
+      "id": "hE_BXNPycTfvSov5AMn6P",
+      "stageId": "tYzC_Mutd8",
+      "type": "quiz",
+      "title": "你来当小侦探",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "short_answer",
+            "question": "连续两个偶数的乘积是168。设较小的偶数为x，请根据题意列出方程。",
+            "commentPrompt": "详细评分标准：\n(1) 正确识别两个连续偶数 - 40%（较小的偶数为x，则下一个偶数为x+2）\n(2) 正确建立乘积方程 - 40%（方程应为 x * (x+2) = 168）\n(3) 方程形式规范、完整 - 20%（方程应为等式，并包含等号）",
+            "analysis": "参考解答：设较小的偶数为x，则下一个连续的偶数为x+2。根据题意“连续两个偶数的乘积是168”，可列出方程：x(x+2) = 168。注意：偶数之间相差2，而不是1。",
+            "points": 15,
+            "hasAnswer": false
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_FG5AJ3Be",
+          "type": "speech",
+          "text": "现在，轮到你来当小侦探了！我们刚刚在‘藏在故事里的方程’里练习了如何把文字描述转化成方程，现在来小试牛刀。"
+        },
+        {
+          "id": "action_r8SV16lc",
+          "type": "speech",
+          "text": "题目是：‘连续两个偶数的乘积是168。设较小的偶数为x，请根据题意列出方程。’"
+        },
+        {
+          "id": "action_TQw94eKn",
+          "type": "speech",
+          "text": "小侦探，请仔细阅读题目。关键信息是什么？是‘连续两个偶数’。如果较小的偶数是x，那么紧接着的下一个偶数应该是多少呢？"
+        },
+        {
+          "id": "action_BQ31Kgb0",
+          "type": "speech",
+          "text": "对，因为偶数是像2，4，6这样相差2的数。所以，较大的偶数就是x加2，也就是x+2。"
+        },
+        {
+          "id": "action_40vynCgG",
+          "type": "speech",
+          "text": "它们的‘乘积’是168。所以，方程就是x乘以(x+2)等于168。列出来就是：x(x+2) = 168。"
+        },
+        {
+          "id": "action_nfc_qrcG",
+          "type": "speech",
+          "text": "你列对了吗？这就是从一段文字里‘侦查’出数学方程的过程。做得很好！"
+        }
+      ],
+      "createdAt": 1774527547122,
+      "updatedAt": 1774527547122
+    },
+    {
+      "id": "xxLEvVOw2oW250X8C3Q8Y",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "解方程的秘密武器（预告）",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "dUZf3a240x214h2MXnUxY",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_WGZcCqrG",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>解方程的秘密武器（预告）</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_0GkwhyTH",
+              "type": "shape",
+              "left": 70,
+              "top": 136,
+              "width": 860,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "image_64FM-DhY",
+              "type": "image",
+              "left": 100,
+              "top": 170,
+              "width": 800,
+              "height": 450,
+              "src": "gen_img_DMgDC8Mi",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_ZE-ySuL-",
+              "type": "text",
+              "left": 100,
+              "top": 440,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">解一元二次方程有好几种巧妙的方法</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_r0dJjSKW",
+              "type": "text",
+              "left": 100,
+              "top": 500,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">它们像魔法钥匙，能打开方程的门</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_6fZxzCKU",
+              "type": "text",
+              "left": 100,
+              "top": 560,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">下次探险：第一种方法——<strong>‘因式分解’</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_Tf_dY4Ao",
+          "type": "spotlight",
+          "elementId": "text_WGZcCqrG"
+        },
+        {
+          "id": "action_6AcRukv7",
+          "type": "speech",
+          "text": "刚才我们当了一回小侦探，从故事里找到了方程。现在，我们来到了这次探险的一个关键预告站。看这里——‘解方程的秘密武器’！"
+        },
+        {
+          "id": "action_6ThL0gcV",
+          "type": "spotlight",
+          "elementId": "text_ZE-ySuL-"
+        },
+        {
+          "id": "action_3EpUxuqe",
+          "type": "speech",
+          "text": "就像我们刚才搭建天平、找出方程一样，找到了方程，下一步就是解开它。解一元二次方程，其实有好几种非常巧妙的方法。"
+        },
+        {
+          "id": "action_dNgtL719",
+          "type": "laser",
+          "elementId": "text_r0dJjSKW"
+        },
+        {
+          "id": "action_QN9IaHaK",
+          "type": "speech",
+          "text": "它们就像一把把魔法钥匙，每一把都能打开方程这扇神秘的大门。"
+        },
+        {
+          "id": "action_eMnFXgVF",
+          "type": "spotlight",
+          "elementId": "text_6fZxzCKU"
+        },
+        {
+          "id": "action_xRSMI9-H",
+          "type": "speech",
+          "text": "那么，我们的下一次探险，就会学习第一种，也是最神奇、最直观的方法之一，叫做——‘因式分解’。除此之外，我们还会遇到‘配方法’等等有趣的工具。它们都是我们数学工具箱里的宝贝。"
+        },
+        {
+          "id": "action_5dCOZnT3",
+          "type": "laser",
+          "elementId": "image_64FM-DhY"
+        },
+        {
+          "id": "action_lQoAoVLe",
+          "type": "speech",
+          "text": "就像这个工具箱一样，每一种工具都有它最适合的‘工作’。掌握了这些秘密武器，解方程就会变得像玩游戏一样有趣。"
+        },
+        {
+          "id": "action_QA3Z1o_j",
+          "type": "speech",
+          "text": "好了，关于解方程的预告就到这里。我们的探险也快要接近尾声了。让我们带着这份期待，进入最后的总结吧！"
+        }
+      ],
+      "createdAt": 1774527582258,
+      "updatedAt": 1774527582258
+    },
+    {
+      "id": "6ysHhlnlrVaYKTTNbRQVq",
+      "stageId": "tYzC_Mutd8",
+      "type": "slide",
+      "title": "总结与挑战",
+      "order": 9,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "dTeli7bU9oY6CrkPt9NS3",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_96WvB2-C",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>总结与挑战</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_8bD62Ps2",
+              "type": "text",
+              "left": 60,
+              "top": 170,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #5b9bd5;\">本节课的核心收获</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "shape_97vchoUE",
+              "type": "shape",
+              "left": 60,
+              "top": 240,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_MGVp_lcb",
+              "type": "text",
+              "left": 80,
+              "top": 251,
+              "width": 840,
+              "height": 36,
+              "content": "<p style=\"font-size: 18px;\">认识了新朋友：一元二次方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_9rEIRBJ_",
+              "type": "shape",
+              "left": 60,
+              "top": 318,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_SqKCipgK",
+              "type": "text",
+              "left": 80,
+              "top": 329,
+              "width": 840,
+              "height": 36,
+              "content": "<p style=\"font-size: 18px;\">知道了它从哪来（实际问题），长什么样（标准形式）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_ywoNHP8W",
+              "type": "text",
+              "left": 60,
+              "top": 400,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #ed7d31;\"><strong>延伸挑战</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#ed7d31",
+              "rotate": 0
+            },
+            {
+              "id": "shape_h5c7oxiI",
+              "type": "shape",
+              "left": 60,
+              "top": 460,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff4e6",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_yuzWyaf6",
+              "type": "text",
+              "left": 80,
+              "top": 471,
+              "width": 840,
+              "height": 54,
+              "content": "<p style=\"font-size: 18px; text-align: center;\">在身边找一个可能用一元二次方程描述的情况</p><p style=\"font-size: 16px; text-align: center; color: #666;\">（例如：一张纸对折后形成的图形面积？）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_DLa1us_v",
+              "type": "text",
+              "left": 60,
+              "top": 550,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; text-align: center; color: #666;\">记得保存或导出你的学习成果，随时可以回看哦！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_8Kwe7LkL",
+          "type": "spotlight",
+          "elementId": "text_96WvB2-C"
+        },
+        {
+          "id": "action_vPdovk-D",
+          "type": "speech",
+          "text": "好的，小星，欢迎来到我们这次数学探险的最后一站——总结与挑战。就像我们刚才预告的，现在来一起回顾一下今天的核心收获。"
+        },
+        {
+          "id": "action_Gk4oQzKS",
+          "type": "spotlight",
+          "elementId": "text_8bD62Ps2"
+        },
+        {
+          "id": "action_jZT1IO9p",
+          "type": "speech",
+          "text": "看看这里，这就是我们本节课的核心收获。"
+        },
+        {
+          "id": "action_4G3OVwbm",
+          "type": "spotlight",
+          "elementId": "text_MGVp_lcb"
+        },
+        {
+          "id": "action_JIuy7Gll",
+          "type": "speech",
+          "text": "首先，我们认识了一位新朋友，它就是一元二次方程。"
+        },
+        {
+          "id": "action_68sJZ8-L",
+          "type": "spotlight",
+          "elementId": "text_SqKCipgK"
+        },
+        {
+          "id": "action_A-v19dhy",
+          "type": "speech",
+          "text": "更重要的是，我们知道了它从哪来，也就是从我们之前分析的那些实际问题中来。我们也知道了它长什么样，也就是它的标准形式。这就像我们给这位新朋友画了一张清晰的肖像画。"
+        },
+        {
+          "id": "action_hNnSuwRH",
+          "type": "spotlight",
+          "elementId": "text_ywoNHP8W"
+        },
+        {
+          "id": "action_whkU9-Rj",
+          "type": "speech",
+          "text": "回顾之后，我们的学习并没有结束。这里有一个延伸挑战，是专门留给你的。"
+        },
+        {
+          "id": "action_cCZiltmj",
+          "type": "spotlight",
+          "elementId": "text_yuzWyaf6"
+        },
+        {
+          "id": "action_Rdn8p-2i",
+          "type": "speech",
+          "text": "挑战就是：请你在身边找一个可能用一元二次方程描述的情况。比如，一张长方形的纸，对折一次后，形成的图形面积变化，是不是和我们今天学的知识有关呢？这个挑战很有趣，希望你能在课后继续探索，把学习延伸到课堂之外。"
+        },
+        {
+          "id": "action_QHtGlLve",
+          "type": "spotlight",
+          "elementId": "text_DLa1us_v"
+        },
+        {
+          "id": "action_ux43HvCw",
+          "type": "speech",
+          "text": "最后，记得保存或导出你的学习成果。这样，你随时都可以回看这节课的内容，复习我们认识的新朋友和那些藏在故事里的方程。今天的数学探险就到这里了，小星，你表现得非常棒！期待下次和你一起探索解方程的秘密武器。再见！"
+        }
+      ],
+      "createdAt": 1774527621337,
+      "updatedAt": 1774527621337
+    }
+  ],
+  "createdAt": "2026-03-26T12:48:41.404Z"
+}

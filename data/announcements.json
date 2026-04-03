@@ -1,0 +1,66 @@
+[
+  {
+    "id": "class-bulk-001-ann-1",
+    "classId": "class-bulk-001",
+    "authorId": "u-teacher-bulk-001",
+    "title": "测试班级 1 开学提醒",
+    "content": "请按时完成本周作业，并准备课堂材料。",
+    "createdAt": "2026-02-22T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-001-ann-2",
+    "classId": "class-bulk-001",
+    "authorId": "u-teacher-bulk-001",
+    "title": "测试班级 1 测试公告",
+    "content": "本周五进行单元小测，请提前复习。",
+    "createdAt": "2026-02-23T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-002-ann-1",
+    "classId": "class-bulk-002",
+    "authorId": "u-teacher-bulk-002",
+    "title": "测试班级 2 开学提醒",
+    "content": "请按时完成本周作业，并准备课堂材料。",
+    "createdAt": "2026-02-22T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-002-ann-2",
+    "classId": "class-bulk-002",
+    "authorId": "u-teacher-bulk-002",
+    "title": "测试班级 2 测试公告",
+    "content": "本周五进行单元小测，请提前复习。",
+    "createdAt": "2026-02-23T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-003-ann-1",
+    "classId": "class-bulk-003",
+    "authorId": "u-teacher-bulk-001",
+    "title": "测试班级 3 开学提醒",
+    "content": "请按时完成本周作业，并准备课堂材料。",
+    "createdAt": "2026-02-22T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-003-ann-2",
+    "classId": "class-bulk-003",
+    "authorId": "u-teacher-bulk-001",
+    "title": "测试班级 3 测试公告",
+    "content": "本周五进行单元小测，请提前复习。",
+    "createdAt": "2026-02-23T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-004-ann-1",
+    "classId": "class-bulk-004",
+    "authorId": "u-teacher-bulk-002",
+    "title": "测试班级 4 开学提醒",
+    "content": "请按时完成本周作业，并准备课堂材料。",
+    "createdAt": "2026-02-22T17:18:39.627Z"
+  },
+  {
+    "id": "class-bulk-004-ann-2",
+    "classId": "class-bulk-004",
+    "authorId": "u-teacher-bulk-002",
+    "title": "测试班级 4 测试公告",
+    "content": "本周五进行单元小测，请提前复习。",
+    "createdAt": "2026-02-23T17:18:39.627Z"
+  }
+]

@@ -1,0 +1,2194 @@
+{
+  "id": "9rNOssJSrS",
+  "stage": {
+    "id": "9rNOssJSrS",
+    "name": "我的大学物理挂科了，需要考前冲刺",
+    "description": "",
+    "createdAt": 1774250532001,
+    "updatedAt": 1774336066117,
+    "language": "zh-CN",
+    "style": "professional",
+    "currentSceneId": "vr15Lhyr_VYwCVbR4Om8-"
+  },
+  "scenes": [
+    {
+      "id": "BYlvSTdGzLAJdqzhuSh1d",
+      "stageId": "9rNOssJSrS",
+      "type": "slide",
+      "title": "考前冲刺：核心考点总览",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "Y1FyqZjOXOf-YhV2xenOH",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_q9wG5Tnx",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>考前冲刺：核心考点总览</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_7VVunI0X",
+              "type": "text",
+              "left": 60,
+              "top": 170,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; text-align:center; color:#5b9bd5;\">大学物理知识框架与复习重点</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "shape_41ZUfBvn",
+              "type": "shape",
+              "left": 100,
+              "top": 235,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_tMIVUcCE",
+              "type": "text",
+              "left": 60,
+              "top": 270,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>五大知识模块</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_OoVDmEeH",
+              "type": "shape",
+              "left": 60,
+              "top": 350,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_7pC85lsb",
+              "type": "text",
+              "left": 80,
+              "top": 382,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>力学</strong></p><p style=\"font-size:16px; text-align:center;\">牛顿定律、动量、能量、刚体转动</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_f0ZItq8r",
+              "type": "shape",
+              "left": 360,
+              "top": 350,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_s7bUKyWK",
+              "type": "text",
+              "left": 380,
+              "top": 382,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>电磁学</strong></p><p style=\"font-size:16px; text-align:center;\">静电场、磁场、电磁感应、麦克斯韦方程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#2d5a8c",
+              "rotate": 0
+            },
+            {
+              "id": "shape_BZYVO2Rm",
+              "type": "shape",
+              "left": 660,
+              "top": 350,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_sRP5kxky",
+              "type": "text",
+              "left": 680,
+              "top": 382,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>热学</strong></p><p style=\"font-size:16px; text-align:center;\">热力学定律、气体动理论</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_hho9PPMD",
+              "type": "shape",
+              "left": 210,
+              "top": 510,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_sdC_mghS",
+              "type": "text",
+              "left": 230,
+              "top": 542,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>光学</strong></p><p style=\"font-size:16px; text-align:center;\">波动光学、几何光学</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_c87yxAmT",
+              "type": "shape",
+              "left": 510,
+              "top": 510,
+              "width": 280,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f3e8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_kg8qdY_M",
+              "type": "text",
+              "left": 530,
+              "top": 542,
+              "width": 240,
+              "height": 76,
+              "content": "<p style=\"font-size:20px; text-align:center;\"><strong>近代物理</strong></p><p style=\"font-size:16px; text-align:center;\">相对论、量子物理基础</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b21b6",
+              "rotate": 0
+            },
+            {
+              "id": "text_PSPGEP1X",
+              "type": "text",
+              "left": 60,
+              "top": 670,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size:24px;\"><strong>复习优先级与策略</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_4g7ysL9s",
+              "type": "shape",
+              "left": 60,
+              "top": 750,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fee2e2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Ll3sn55W",
+              "type": "text",
+              "left": 80,
+              "top": 772,
+              "width": 840,
+              "height": 70,
+              "content": "<p style=\"font-size:18px;\"><strong>重点模块：</strong>力学与电磁学是考试占比最大的两部分（通常超过60%），需优先投入时间，确保核心概念与解题方法掌握。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#991b1b",
+              "rotate": 0
+            },
+            {
+              "id": "shape_5NxJ7dT5",
+              "type": "shape",
+              "left": 60,
+              "top": 870,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_YHAQTaHY",
+              "type": "text",
+              "left": 80,
+              "top": 892,
+              "width": 840,
+              "height": 70,
+              "content": "<p style=\"font-size:18px;\"><strong>复习策略：</strong>梳理常见易错题型（如受力分析、电磁感应方向判断），建立标准解题流程，避免概念混淆。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#0c4a6e",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_zEoR-4SF",
+          "type": "spotlight",
+          "elementId": "text_q9wG5Tnx"
+        },
+        {
+          "id": "action_QA_JydSN",
+          "type": "speech",
+          "text": "各位同学，大家好。欢迎来到大学物理考前冲刺课程。我是王教授，这位是李助教。看到大家，特别是张明、刘思思、陈浩几位同学，为了这次考试积极准备，我感到非常欣慰。这门课的目标很明确，就是帮助大家，尤其是上学期学习遇到困难的同学，在考前快速梳理核心考点，建立清晰的知识框架，明确复习的优先级和策略。"
+        },
+        {
+          "id": "action_MEtCgIrl",
+          "type": "spotlight",
+          "elementId": "text_7VVunI0X"
+        },
+        {
+          "id": "action_pcZ0VhPh",
+          "type": "speech",
+          "text": "首先，我们来看一下大学物理的整体知识框架与复习重点。这是你们复习的总地图，只有看清了全貌，才知道力气该往哪里使。"
+        },
+        {
+          "id": "action_wP0bPGps",
+          "type": "spotlight",
+          "elementId": "text_tMIVUcCE"
+        },
+        {
+          "id": "action_OuYQvyfD",
+          "type": "speech",
+          "text": "大学物理的知识体系可以归纳为五大核心模块。"
+        },
+        {
+          "id": "action_Jd5o9Npv",
+          "type": "laser",
+          "elementId": "text_7pC85lsb"
+        },
+        {
+          "id": "action_0zF7q0AP",
+          "type": "speech",
+          "text": "第一个，也是最重要的模块，力学。它涵盖了牛顿定律、动量、能量以及刚体转动。这是整个物理学的基石。"
+        },
+        {
+          "id": "action_WujUdLzg",
+          "type": "laser",
+          "elementId": "text_s7bUKyWK"
+        },
+        {
+          "id": "action_li7W2uw-",
+          "type": "speech",
+          "text": "第二个关键模块，电磁学。包括静电场、磁场、电磁感应，以及集大成的麦克斯韦方程组。这部分概念抽象，但规律性很强。"
+        },
+        {
+          "id": "action__CUpzEMF",
+          "type": "laser",
+          "elementId": "text_sRP5kxky"
+        },
+        {
+          "id": "action_X2_3wIW0",
+          "type": "speech",
+          "text": "第三，热学。核心是热力学定律和气体动理论。"
+        },
+        {
+          "id": "action_YmVolJsi",
+          "type": "laser",
+          "elementId": "text_sdC_mghS"
+        },
+        {
+          "id": "action_PPh77rhQ",
+          "type": "speech",
+          "text": "第四，光学。分为波动光学和几何光学两部分。"
+        },
+        {
+          "id": "action_ZTpBaJ7N",
+          "type": "laser",
+          "elementId": "text_kg8qdY_M"
+        },
+        {
+          "id": "action_bOW2QJ9K",
+          "type": "speech",
+          "text": "最后是近代物理，主要是相对论和量子物理的基础概念。对于我们的考试，这部分通常占比不大。"
+        },
+        {
+          "id": "action_4ohSc-Ba",
+          "type": "spotlight",
+          "elementId": "text_PSPGEP1X"
+        },
+        {
+          "id": "action_DsTz7btH",
+          "type": "speech",
+          "text": "了解了五大模块，接下来就是决定我们复习成败的关键：优先级与策略。时间有限，我们必须把好钢用在刀刃上。"
+        },
+        {
+          "id": "action_R4-3wBLZ",
+          "type": "spotlight",
+          "elementId": "text_Ll3sn55W"
+        },
+        {
+          "id": "action_edQ6aSZx",
+          "type": "speech",
+          "text": "请大家务必记住这一点：力学与电磁学，是考试占比最大的两部分，通常超过60%。所以，它们必须是你们优先投入时间、反复打磨的部分。确保核心概念清晰，解题方法熟练。"
+        },
+        {
+          "id": "action_Kf_FjA5t",
+          "type": "spotlight",
+          "elementId": "text_YHAQTaHY"
+        },
+        {
+          "id": "action_UULtHlYp",
+          "type": "speech",
+          "text": "在具体的复习策略上，我建议大家不要盲目刷题。要主动去梳理常见的易错题型，比如受力分析中摩擦力的方向判断，电磁感应中楞次定律的应用。针对这些薄弱环节，建立标准的解题流程，避免概念混淆。李助教会在这方面给大家提供更多具体的技巧。"
+        },
+        {
+          "id": "action_BO945a2l",
+          "type": "speech",
+          "text": "好了，这就是我们本次冲刺课程的一个总览。接下来，我们将深入第一个重点模块——力学，从牛顿定律开始，一步步夯实基础。请大家跟上节奏。"
+        }
+      ],
+      "createdAt": 1774250665487,
+      "updatedAt": 1774250665487
+    },
+    {
+      "id": "Awyxc1YOxfG-CukYKibaO",
+      "stageId": "9rNOssJSrS",
+      "type": "slide",
+      "title": "力学核心：牛顿定律与运动学",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "IRCSq9p7dz2H38eNQOggy",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_KOiFdP89",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_XkCQQoRm",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>力学核心：牛顿定律与运动学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_zeRzP3yl",
+              "type": "text",
+              "left": 60,
+              "top": 150,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px;\"><strong>一、牛顿三大定律</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_ODrWh6ff",
+              "type": "text",
+              "left": 80,
+              "top": 230,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>第一定律（惯性定律）</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Es_rnjnn",
+              "type": "text",
+              "left": 100,
+              "top": 290,
+              "width": 820,
+              "height": 76,
+              "content": "<p style=\"font-size: 16px;\">• 物体不受外力时，总保持静止或匀速直线运动状态</p><p style=\"font-size: 16px;\">• 定义了惯性的概念，是力的定性描述</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_l94AKz6t",
+              "type": "text",
+              "left": 80,
+              "top": 390,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>第二定律（F=ma）</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_tNws3wLI",
+              "type": "text",
+              "left": 100,
+              "top": 450,
+              "width": 820,
+              "height": 94,
+              "content": "<p style=\"font-size: 16px;\">• 核心公式：<strong>F<sub>合</sub> = ma</strong>（矢量性、瞬时性、同体性）</p><p style=\"font-size: 16px;\">• 解题关键：正确进行受力分析，求合力</p><p style=\"font-size: 16px;\">• 适用条件：宏观、低速、惯性参考系</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_yp-LyxPb",
+              "type": "text",
+              "left": 60,
+              "top": 560,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px;\"><strong>二、运动学五大公式（匀变速直线运动）</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_oOISbEXa",
+              "type": "latex",
+              "left": 100,
+              "top": 640,
+              "width": 300,
+              "height": 80,
+              "latex": "v = v_0 + at",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7333em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6151em;\"></span><span class=\"mord mathnormal\">a</span><span class=\"mord mathnormal\">t</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_Y4wn4jPo",
+              "type": "latex",
+              "left": 420,
+              "top": 640,
+              "width": 300,
+              "height": 80,
+              "latex": "x = v_0 t + \\frac{1}{2} a t^2",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7651em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mord mathnormal\">t</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mord mathnormal\">a</span><span class=\"mord\"><span class=\"mord mathnormal\">t</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8641em;\"><span style=\"top:-3.113em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_PSS1WOCn",
+              "type": "latex",
+              "left": 740,
+              "top": 640,
+              "width": 300,
+              "height": 80,
+              "latex": "v^2 - v_0^2 = 2 a x",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9474em;vertical-align:-0.0833em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8641em;\"><span style=\"top:-3.113em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1.1111em;vertical-align:-0.247em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8641em;\"><span style=\"top:-2.453em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span><span style=\"top:-3.113em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.247em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">a</span><span class=\"mord mathnormal\">x</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_k6jZMtzl",
+              "type": "latex",
+              "left": 100,
+              "top": 740,
+              "width": 300,
+              "height": 80,
+              "latex": "\\bar{v} = \\frac{v_0 + v}{2}",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.5678em;\"></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.5678em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span></span><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.2222em;\"><span class=\"mord\">ˉ</span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1.9463em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.2603em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_0CcU0g0l",
+              "type": "latex",
+              "left": 420,
+              "top": 740,
+              "width": 300,
+              "height": 80,
+              "latex": "x = \\bar{v} t",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6151em;\"></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.5678em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span></span><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.2222em;\"><span class=\"mord\">ˉ</span></span></span></span></span></span></span><span class=\"mord mathnormal\">t</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_K7u5v8wC",
+              "type": "text",
+              "left": 740,
+              "top": 740,
+              "width": 300,
+              "height": 94,
+              "content": "<p style=\"font-size: 16px;\">• 五个公式，知三求二</p><p style=\"font-size: 16px;\">• 注意矢量性（方向）</p><p style=\"font-size: 16px;\">• 优先选用不含t的公式</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_3N0aY52q",
+              "type": "shape",
+              "left": 60,
+              "top": 550,
+              "width": 880,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#cccccc",
+              "fixedRatio": false,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_5jjga5xD",
+          "type": "spotlight",
+          "elementId": "text_XkCQQoRm"
+        },
+        {
+          "id": "action_GoCSaap8",
+          "type": "speech",
+          "text": "非常好，我们刚刚完成了考点的总览，现在正式进入第一个核心模块。正如大家所见，这一页的主题是——力学核心：牛顿定律与运动学。这是整个高中物理的基石，也是考试的重中之重。"
+        },
+        {
+          "id": "action_VWnrOwXS",
+          "type": "spotlight",
+          "elementId": "text_zeRzP3yl"
+        },
+        {
+          "id": "action_aZR8X1O0",
+          "type": "speech",
+          "text": "我们先来看第一部分：牛顿三大定律。这三条定律构建了我们理解力和运动关系的全部框架。"
+        },
+        {
+          "id": "action_KY9mqkV6",
+          "type": "spotlight",
+          "elementId": "text_ODrWh6ff"
+        },
+        {
+          "id": "action_fsvcRZhq",
+          "type": "speech",
+          "text": "首先是第一定律，也叫惯性定律。它的表述是：物体不受外力时，总保持静止或匀速直线运动状态。"
+        },
+        {
+          "id": "action_EH4veE3n",
+          "type": "laser",
+          "elementId": "text_Es_rnjnn"
+        },
+        {
+          "id": "action_AFlSqSob",
+          "type": "speech",
+          "text": "请大家注意这里的两个关键词。第一，它定义了‘惯性’的概念，即物体维持其运动状态不变的性质。第二，它是对‘力’的定性描述，告诉我们力是改变物体运动状态的原因，而不是维持运动的原因。很多同学在这里容易混淆。"
+        },
+        {
+          "id": "action_aQPEiMDW",
+          "type": "spotlight",
+          "elementId": "text_l94AKz6t"
+        },
+        {
+          "id": "action_leyvPggK",
+          "type": "speech",
+          "text": "接下来是第二定律，F=ma。这是整个力学的核心公式，也是定量计算的基础。"
+        },
+        {
+          "id": "action_KUgE7ZuR",
+          "type": "laser",
+          "elementId": "text_tNws3wLI"
+        },
+        {
+          "id": "action_IJ7KoQ2K",
+          "type": "speech",
+          "text": "大家看这里的要点。公式F合=ma，强调三个性质：矢量性、瞬时性和同体性。解题的关键，第一步永远是正确进行受力分析，求出合力。这一步错了，后面全错。所以，画好受力分析图是基本功，我们稍后会专门讲。"
+        },
+        {
+          "id": "action_F1BAdJoe",
+          "type": "spotlight",
+          "elementId": "text_yp-LyxPb"
+        },
+        {
+          "id": "action_2AeVOfKo",
+          "type": "speech",
+          "text": "好，理解了力如何改变运动（动力学），我们再来回顾描述运动本身的规律（运动学）。第二部分，是匀变速直线运动的五大公式。"
+        },
+        {
+          "id": "action_8MklecB1",
+          "type": "spotlight",
+          "elementId": "latex_oOISbEXa"
+        },
+        {
+          "id": "action_f0CNmBLs",
+          "type": "laser",
+          "elementId": "latex_Y4wn4jPo"
+        },
+        {
+          "id": "action_0BdiZcAi",
+          "type": "laser",
+          "elementId": "latex_PSS1WOCn"
+        },
+        {
+          "id": "action_CbawN10I",
+          "type": "laser",
+          "elementId": "latex_k6jZMtzl"
+        },
+        {
+          "id": "action_Ez7UKcRO",
+          "type": "laser",
+          "elementId": "latex_0CcU0g0l"
+        },
+        {
+          "id": "action_dZs6e-HP",
+          "type": "speech",
+          "text": "这五个公式，大家必须滚瓜烂熟。它们描述了初速度v0、末速度v、加速度a、时间t和位移x这五个物理量之间的关系。"
+        },
+        {
+          "id": "action_yoVC6Hop",
+          "type": "spotlight",
+          "elementId": "text_K7u5v8wC"
+        },
+        {
+          "id": "action_18uZHqvj",
+          "type": "speech",
+          "text": "应用时，记住三句口诀：第一，‘五个公式，知三求二’，意思是已知其中任意三个量，就能求出另外两个。第二，‘注意矢量性’，方向正负不能搞错。第三，‘优先选用不含时间t的公式’，因为题目中经常不直接给出时间，用v^2 - v0^2 = 2ax这类公式会更方便。"
+        },
+        {
+          "id": "action_K-NMDgnT",
+          "type": "speech",
+          "text": "总结一下这一页，我们重温了牛顿第一、第二定律的核心思想，以及运动学的五大公式。它们是解决所有力学问题的工具箱。接下来，我们要学习如何运用这个工具箱，也就是进行规范的受力分析和解决典型问题，比如连接体和斜面问题。请大家准备好纸笔，我们进入实操部分。"
+        }
+      ],
+      "createdAt": 1774250726530,
+      "updatedAt": 1774250726530
+    },
+    {
+      "id": "6gFWwxMkm-Su7TZSxQTU0",
+      "stageId": "9rNOssJSrS",
+      "type": "quiz",
+      "title": "力学概念小测",
+      "order": 3,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "一个物体在光滑水平面上以恒定速度做直线运动。关于该物体的受力情况，以下说法正确的是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "物体不受任何外力作用。"
+              },
+              {
+                "value": "B",
+                "label": "物体受到一个大小不变、方向与运动方向相同的力。"
+              },
+              {
+                "value": "C",
+                "label": "物体受到的合力为零。"
+              },
+              {
+                "value": "D",
+                "label": "物体受到一个与运动方向相反的摩擦力。"
+              }
+            ],
+            "answer": [
+              "C"
+            ],
+            "analysis": "根据牛顿第一定律（惯性定律），物体在不受外力或所受合力为零时，将保持静止或匀速直线运动状态。题目中物体在光滑水平面上做匀速直线运动，说明它受到的合力为零（可能存在多个力，但它们的矢量和为零）。选项A错误，因为物体可能受到重力和支持力，但它们平衡了。选项B和D描述的力都会导致物体速度改变，与匀速运动矛盾。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "single",
+            "question": "一辆汽车从静止开始做匀加速直线运动。已知它在第2秒内的位移是3米，那么它在第5秒内的位移是多少？",
+            "options": [
+              {
+                "value": "A",
+                "label": "6米"
+              },
+              {
+                "value": "B",
+                "label": "9米"
+              },
+              {
+                "value": "C",
+                "label": "12米"
+              },
+              {
+                "value": "D",
+                "label": "15米"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "analysis": "对于初速度为零的匀加速直线运动，连续相等时间间隔内的位移之比为1:3:5:7:...。'第2秒内'指的是从第1秒末到第2秒末的这1秒时间，其位移对应比例中的第2个奇数，即3份。'第5秒内'指的是从第4秒末到第5秒末的这1秒，其位移对应比例中的第5个奇数，即9份。已知第2秒内位移（3份）为3米，则每份为1米，所以第5秒内位移（9份）为9米。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "single",
+            "question": "根据牛顿第二定律 F = ma，以下理解正确的是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "物体的质量与它受到的合外力成正比，与加速度成反比。"
+              },
+              {
+                "value": "B",
+                "label": "物体加速度的方向总是与合外力的方向相同，与速度方向无关。"
+              },
+              {
+                "value": "C",
+                "label": "只要物体受到力的作用，就一定会产生加速度。"
+              },
+              {
+                "value": "D",
+                "label": "公式中的 F 指的是物体受到的所有力（包括重力、支持力等）的算术和。"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "analysis": "牛顿第二定律的核心是加速度与合外力成正比，与质量成反比，且加速度方向与合外力方向一致。选项B正确表述了这一矢量关系。选项A错误，因为质量是物体的固有属性，不随力或加速度改变。选项C不严谨，如果物体受到多个力且合力为零，则加速度为零。选项D错误，F 指的是所有力的矢量和（合力），不是简单的算术和。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_-EgRNZB-",
+          "type": "speech",
+          "text": "好的，理论回顾之后，我们来做一个小测验，快速检验一下大家对牛顿定律和运动学基本概念的理解。请大家准备好，我们开始。"
+        },
+        {
+          "id": "action_fX1rUK1E",
+          "type": "speech",
+          "text": "第一题考察的是力和运动的关系。一个物体在光滑水平面上匀速直线运动，根据牛顿第一定律，它所受的合力一定为零。所以，它可能不受力，也可能受平衡力作用。关键在于‘光滑’意味着没有摩擦力。"
+        },
+        {
+          "id": "action_H4zE66gu",
+          "type": "speech",
+          "text": "第二题是典型的运动学公式应用。题目给出了‘第2秒内’的位移，这指的是从t=1s到t=2s这1秒时间内的位移。我们需要利用匀加速直线运动的位移公式，先求出加速度，再计算第5秒内的位移。这里最容易出错的就是对‘第n秒内’这个时间间隔的理解。"
+        },
+        {
+          "id": "action_akvROvQG",
+          "type": "speech",
+          "text": "第三题直接考察对牛顿第二定律F=ma的理解。这个公式中的F指的是物体所受的合外力，m是物体的质量，a是合外力产生的加速度。三者是瞬时对应关系，并且a的方向与F的方向始终一致。要特别注意，不能认为力是维持物体运动的原因。"
+        },
+        {
+          "id": "action_HPlQuKIS",
+          "type": "speech",
+          "text": "现在，请大家花几分钟时间独立完成这三道选择题。做完后，我们一起来核对答案，并分析其中的关键点。"
+        },
+        {
+          "id": "action_bu-xhjrM",
+          "type": "discussion",
+          "topic": "在刚才的力学小测中，哪道题或哪个概念让你觉得最有挑战性？",
+          "prompt": "可以分享一下你的解题思路，或者指出哪个选项让你感到困惑。",
+          "agentId": "gen-fbTynT0-"
+        }
+      ],
+      "createdAt": 1774250765632,
+      "updatedAt": 1774250765632
+    },
+    {
+      "id": "iN15Rjjn2xiFBClCHegxB",
+      "stageId": "9rNOssJSrS",
+      "type": "slide",
+      "title": "电磁学基石：库仑定律与电场",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "JXLC1hXJ6bV5K5sV9eiuF",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_oDu6-2ZV",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>电磁学基石：库仑定律与电场</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_9dxDVRff",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #5b9bd5;\">核心概念与公式梳理</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#5b9bd5",
+              "rotate": 0
+            },
+            {
+              "id": "shape_rC8ksKbe",
+              "type": "shape",
+              "left": 100,
+              "top": 210,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e0e0e0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_FMrFYgXa",
+              "type": "shape",
+              "left": 60,
+              "top": 240,
+              "width": 430,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ypEKxJ-T",
+              "type": "text",
+              "left": 70,
+              "top": 250,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #1e40af;\">点电荷电场</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "latex_W8UJysKi",
+              "type": "latex",
+              "left": 80,
+              "top": 300,
+              "width": 390,
+              "height": 70,
+              "latex": "\\vec{E} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r^2} \\hat{r}",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.9663em;\"></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.9663em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span><span style=\"top:-3.2523em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.1522em;\"><span class=\"overlay\" style=\"height:0.714em;width:0.471em;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"0.471em\" height=\"0.714em\" style=\"width:0.471em\" viewBox=\"0 0 471 714\" preserveAspectRatio=\"xMinYMin\"><path d=\"M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5\n3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11\n10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63\n-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1\n-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59\nH213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359\nc-16-25.333-24-45-24-59z\"/></svg></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.1574em;vertical-align:-0.836em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">4</span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">π</span><span class=\"mord\"><span class=\"mord mathnormal\">ε</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.836em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.1076em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">r</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.7401em;\"><span style=\"top:-2.989em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span></span></span></span></span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">q</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6944em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">r</span></span><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.1944em;\"><span class=\"mord\">^</span></span></span></span></span></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_5U8zWFe-",
+              "type": "latex",
+              "left": 80,
+              "top": 370,
+              "width": 390,
+              "height": 70,
+              "latex": "V = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r}",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.1574em;vertical-align:-0.836em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">4</span><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">π</span><span class=\"mord\"><span class=\"mord mathnormal\">ε</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.836em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.1076em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">r</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">q</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_fLQTfrQz",
+              "type": "shape",
+              "left": 510,
+              "top": 240,
+              "width": 430,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fff4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_XpDFLKcx",
+              "type": "text",
+              "left": 520,
+              "top": 250,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #166534;\">电场线与等势面</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "text_okoDFgeK",
+              "type": "text",
+              "left": 530,
+              "top": 300,
+              "width": 390,
+              "height": 76,
+              "content": "<p style=\"font-size: 16px;\">• 电场线：始于正电荷，止于负电荷</p><p style=\"font-size: 16px;\">• 等势面：与电场线处处垂直</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_vYLabfJy",
+              "type": "shape",
+              "left": 60,
+              "top": 400,
+              "width": 430,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff7ed",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_ZSJYImCY",
+              "type": "text",
+              "left": 70,
+              "top": 410,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #92400e;\">高斯定理</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "latex_noFawZ5R",
+              "type": "latex",
+              "left": 80,
+              "top": 460,
+              "width": 390,
+              "height": 70,
+              "latex": "\\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:2.2719em;vertical-align:-0.9119em;\"></span><span class=\"mop\"><span class=\"mop op-symbol large-op\" style=\"margin-right:0.44445em;position:relative;top:-0.0011em;\">∮</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:-0.4336em;\"><span style=\"top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\" style=\"margin-right:0.05764em;\">S</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.9119em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.9663em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.05764em;\">E</span></span><span style=\"top:-3.2523em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.1522em;\"><span class=\"overlay\" style=\"height:0.714em;width:0.471em;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"0.471em\" height=\"0.714em\" style=\"width:0.471em\" viewBox=\"0 0 471 714\" preserveAspectRatio=\"xMinYMin\"><path d=\"M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5\n3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11\n10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63\n-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1\n-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59\nH213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359\nc-16-25.333-24-45-24-59z\"/></svg></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">⋅</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.9663em;\"></span><span class=\"mord mathnormal\">d</span><span class=\"mord accent\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.9663em;\"><span style=\"top:-3em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord mathnormal\">A</span></span><span style=\"top:-3.2523em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"accent-body\" style=\"left:-0.0966em;\"><span class=\"overlay\" style=\"height:0.714em;width:0.471em;\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"0.471em\" height=\"0.714em\" style=\"width:0.471em\" viewBox=\"0 0 471 714\" preserveAspectRatio=\"xMinYMin\"><path d=\"M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5\n3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11\n10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63\n-1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1\n-7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59\nH213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359\nc-16-25.333-24-45-24-59z\"/></svg></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.1963em;vertical-align:-0.836em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3603em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathnormal\">ε</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">0</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\"><span class=\"mord mathnormal\">Q</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.1514em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\"><span class=\"mord mathnormal mtight\">e</span><span class=\"mord mathnormal mtight\">n</span><span class=\"mord mathnormal mtight\">c</span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.836em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_NzcETNND",
+              "type": "shape",
+              "left": 510,
+              "top": 400,
+              "width": 430,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fdf2f8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_uxNp82C3",
+              "type": "text",
+              "left": 520,
+              "top": 410,
+              "width": 410,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; font-weight: bold; color: #9d174d;\">典型场强分布</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#9d174d",
+              "rotate": 0
+            },
+            {
+              "id": "text_s5sqjKGI",
+              "type": "text",
+              "left": 530,
+              "top": 460,
+              "width": 390,
+              "height": 76,
+              "content": "<p style=\"font-size: 16px;\">• 均匀带电球壳</p><p style=\"font-size: 16px;\">• 无限大带电平面</p><p style=\"font-size: 16px;\">• 无限长带电直线</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_nsXiYqPX",
+              "type": "shape",
+              "left": 60,
+              "top": 480,
+              "width": 880,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fefce8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_W_j7esnf",
+              "type": "text",
+              "left": 70,
+              "top": 490,
+              "width": 860,
+              "height": 49,
+              "content": "<p style=\"font-size: 16px; color: #854d0e;\"><strong>要点：</strong> 高斯定理适用于高度对称的电荷分布；解题关键在于选取合适的高斯面。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#854d0e",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_I9GGHYKG",
+          "type": "spotlight",
+          "elementId": "text_oDu6-2ZV"
+        },
+        {
+          "id": "action_5KkI4wbh",
+          "type": "speech",
+          "text": "好的，力学部分的小测我们先放一放，核对答案稍后进行。现在，让我们正式进入电磁学的世界。正如大家所见，这一页的标题是‘电磁学基石：库仑定律与电场’。电磁学是大学物理的另一大支柱，而今天我们要梳理的，正是它的地基。"
+        },
+        {
+          "id": "action_ECZJhfG_",
+          "type": "spotlight",
+          "elementId": "text_9dxDVRff"
+        },
+        {
+          "id": "action_rbJlgiRY",
+          "type": "speech",
+          "text": "首先，我们来梳理最核心的概念与公式。电磁学的研究对象是电荷及其产生的场。一切的基础，都源于库仑定律。"
+        },
+        {
+          "id": "action_NBO5AhGs",
+          "type": "spotlight",
+          "elementId": "text_ypEKxJ-T"
+        },
+        {
+          "id": "action_e9bpwAfw",
+          "type": "speech",
+          "text": "对于最简单的模型——点电荷，我们需要掌握两个最重要的物理量：电场强度和电势。"
+        },
+        {
+          "id": "action_I9hklTQj",
+          "type": "spotlight",
+          "elementId": "latex_W8UJysKi"
+        },
+        {
+          "id": "action_EOu-qVYW",
+          "type": "speech",
+          "text": "这是点电荷电场的强度公式。E 是电场强度矢量，它描述的是单位正电荷在电场中某点所受的力。公式告诉我们，电场强度的大小与源电荷 Q 成正比，与距离 r 的平方成反比，方向沿径向。"
+        },
+        {
+          "id": "action_jVmw6EQK",
+          "type": "spotlight",
+          "elementId": "latex_5U8zWFe-"
+        },
+        {
+          "id": "action_bVrGd1gI",
+          "type": "speech",
+          "text": "这是点电荷的电势公式。V 是电势，它是一个标量，描述的是单位正电荷在电场中某点所具有的电势能。注意，电势的零点我们通常选取在无穷远处。这个公式是计算许多复杂电势分布的基础。"
+        },
+        {
+          "id": "action_IqPQQWSL",
+          "type": "spotlight",
+          "elementId": "text_XpDFLKcx"
+        },
+        {
+          "id": "action_BG9Aqmw1",
+          "type": "speech",
+          "text": "理解了抽象的公式，我们还需要直观的图像来辅助思考。这就是电场线和等势面。"
+        },
+        {
+          "id": "action_yGQc0Snf",
+          "type": "spotlight",
+          "elementId": "text_okoDFgeK"
+        },
+        {
+          "id": "action_RqgAShWd",
+          "type": "speech",
+          "text": "请大家记住这两条关键性质：第一，电场线始于正电荷，止于负电荷，它不会在没有电荷的地方中断或相交。第二，等势面是电势相等的点构成的面，它处处与电场线垂直。等势面越密集的地方，电场强度越大。"
+        },
+        {
+          "id": "action_iBTWXA3B",
+          "type": "spotlight",
+          "elementId": "text_ZSJYImCY"
+        },
+        {
+          "id": "action_MsV8ClzA",
+          "type": "speech",
+          "text": "然而，用库仑定律叠加去计算复杂电荷分布的电场，往往非常繁琐。这时，我们就需要引入一个强大的工具——高斯定理。"
+        },
+        {
+          "id": "action_PkLvDgnv",
+          "type": "spotlight",
+          "elementId": "latex_noFawZ5R"
+        },
+        {
+          "id": "action_avagNKOk",
+          "type": "speech",
+          "text": "这就是高斯定理的积分形式。它指出，通过任意闭合曲面 S 的电通量，等于该曲面内包围的净电荷除以真空介电常数。它的强大之处在于，当电荷分布具有高度对称性时，我们可以巧妙地选取高斯面，从而非常简便地求出电场分布。"
+        },
+        {
+          "id": "action_oh3KnIt4",
+          "type": "spotlight",
+          "elementId": "text_uxNp82C3"
+        },
+        {
+          "id": "action_7ajG5n05",
+          "type": "speech",
+          "text": "那么，哪些是‘高度对称’的典型分布呢？考试中最常见的就是这三种。"
+        },
+        {
+          "id": "action_ZYlf0Kd3",
+          "type": "spotlight",
+          "elementId": "text_s5sqjKGI"
+        },
+        {
+          "id": "action_CZKUjCGh",
+          "type": "speech",
+          "text": "均匀带电的球壳或球体、无限大的带电平面、以及无限长的带电直线。对于这些模型，利用高斯定理求场强是必须掌握的基本功。"
+        },
+        {
+          "id": "action_oVRaM--P",
+          "type": "spotlight",
+          "elementId": "text_W_j7esnf"
+        },
+        {
+          "id": "action_ozTWiodd",
+          "type": "speech",
+          "text": "最后，我强调一个要点，也是解题的关键：高斯定理的威力在于对称性。如果电荷分布不对称，这个定理虽然仍然成立，但很难用来直接计算场强。所以，解题的第一步，永远是分析对称性并选取一个合适的高斯面。这个面要满足：要么面上各点 E 的大小相等且方向与面垂直，要么 E 的方向与面平行使得通量为零。掌握这个思路，很多题目就迎刃而解了。"
+        }
+      ],
+      "createdAt": 1774250851661,
+      "updatedAt": 1774250851661
+    },
+    {
+      "id": "KB-Flc0LfeUsNUuEgNf93",
+      "stageId": "9rNOssJSrS",
+      "type": "interactive",
+      "title": "电场线与等势面可视化",
+      "order": 5,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>静电场分布 - 交互演示</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        /* 自定义样式用于画布和等势面 */\n        #simCanvas {\n            touch-action: none; /* 防止触摸时页面滚动 */\n        }\n        .potential-surface {\n            pointer-events: none; /* 允许点击穿透到画布 */\n        }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gray-50 text-gray-800 font-sans p-4\">\n    <div class=\"max-w-7xl mx-auto\">\n        <header class=\"mb-6\">\n            <h1 class=\"text-3xl font-bold text-center text-blue-800\">静电场分布交互演示</h1>\n            <p class=\"text-center text-gray-600 mt-2\">拖动电荷，观察电场线与等势面的变化。理解电场叠加原理。</p>\n        </header>\n\n        <div class=\"flex flex-col lg:flex-row gap-6\">\n            <!-- 左侧控制面板 -->\n            <div class=\"lg:w-1/4 space-y-6 bg-white p-5 rounded-xl shadow-md\">\n                <section>\n                    <h2 class=\"text-xl font-semibold mb-3 text-gray-700\">控制面板</h2>\n                    <div class=\"space-y-4\">\n                        <div>\n                            <p class=\"text-sm font-medium mb-2\">添加电荷到模拟区：</p>\n                            <div class=\"flex space-x-4 mb-2\">\n                                <div id=\"chargePos\" class=\"w-12 h-12 rounded-full bg-red-100 border-2 border-red-500 flex items-center justify-center text-2xl font-bold cursor-grab select-none\" draggable=\"true\" data-type=\"positive\">+</div>\n                                <div id=\"chargeNeg\" class=\"w-12 h-12 rounded-full bg-blue-100 border-2 border-blue-500 flex items-center justify-center text-2xl font-bold cursor-grab select-none\" draggable=\"true\" data-type=\"negative\">−</div>\n                            </div>\n                            <p class=\"text-xs text-gray-500\">拖拽上方“+”或“−”图标到右侧灰色区域。</p>\n                        </div>\n\n                        <div id=\"chargeControls\" class=\"space-y-4\">\n                            <!-- 动态生成的电荷控制项将出现在这里 -->\n                            <p class=\"text-sm text-gray-500 italic\" id=\"noChargeHint\">暂无电荷。请先添加一个电荷。</p>\n                        </div>\n\n                        <div class=\"pt-4 border-t\">\n                            <div class=\"flex items-center justify-between mb-4\">\n                                <span class=\"font-medium\">显示等势面</span>\n                                <label class=\"relative inline-flex items-center cursor-pointer\">\n                                    <input type=\"checkbox\" id=\"togglePotential\" class=\"sr-only peer\">\n                                    <div class=\"w-11 h-6 bg-gray-300 peer-focus:ring-0 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500\"></div>\n                                </label>\n                            </div>\n                            <button id=\"btnClear\" class=\"w-full py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-lg transition duration-150\">\n                                清空所有电荷\n                            </button>\n                        </div>\n                    </div>\n                </section>\n\n                <section class=\"pt-4 border-t\">\n                    <h3 class=\"text-lg font-semibold mb-2 text-gray-700\">核心原理</h3>\n                    <ul class=\"text-sm space-y-2 text-gray-600\">\n                        <li>• 电场强度：\\\\(\\\\vec{E} = k \\\\frac{Q}{r^2} \\\\hat{r}\\\\)</li>\n                        <li>• 叠加原理：\\\\(\\\\vec{E}_{总} = \\\\sum \\\\vec{E}_i\\\\)</li>\n                        <li>• 电场线与等势面处处垂直。</li>\n                        <li>• 电场线始于正电荷，止于负电荷。</li>\n                    </ul>\n                </section>\n            </div>\n\n            <!-- 右侧模拟区域 -->\n            <div class=\"lg:w-3/4\">\n                <div class=\"bg-gray-100 border-2 border-gray-300 rounded-xl shadow-inner overflow-hidden relative\" style=\"height: 600px;\">\n                    <canvas id=\"simCanvas\" width=\"1000\" height=\"600\" class=\"absolute top-0 left-0 w-full h-full\"></canvas>\n                    <!-- 等势面将作为半透明SVG叠加在Canvas上 -->\n                    <svg id=\"potentialSurface\" width=\"1000\" height=\"600\" class=\"absolute top-0 left-0 w-full h-full potential-surface\"></svg>\n                    <div class=\"absolute bottom-4 left-4 bg-black/70 text-white text-sm px-3 py-1.5 rounded\">\n                        模拟区域 | 电场线密度表示场强\n                    </div>\n                </div>\n                <div class=\"mt-4 text-sm text-gray-600 flex flex-wrap items-center justify-between\">\n                    <div class=\"flex items-center space-x-4\">\n                        <div class=\"flex items-center\"><div class=\"w-4 h-0.5 bg-red-500 mr-2\"></div> 正电荷电场线</div>\n                        <div class=\"flex items-center\"><div class=\"w-4 h-0.5 bg-blue-500 mr-2\"></div> 负电荷电场线</div>\n                        <div class=\"flex items-center\"><div class=\"w-4 h-1 bg-purple-300/60 mr-2\"></div> 等势面</div>\n                    </div>\n                    <div class=\"mt-2 lg:mt-0\">\n                        拖动电荷或调节滑块以更新电场。\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <script>\n        // ========== 物理常量与全局配置 ==========\n        const k = 9e9; // 静电力常量 N·m²/C²，为简化可视化使用此值\n        const CANVAS_WIDTH = 1000;\n        const CANVAS_HEIGHT = 600;\n        const GRID_SPACING = 80; // 计算电场和电势的网格间距\n        const CHARGE_RADIUS = 20;\n        const LINE_STEPS = 40; // 每条电场线追踪步数\n        const LINE_STEP_SIZE = 10; // 每步像素长度\n        const MIN_FIELD_FOR_LINE = 0.5; // 绘制电场线的最小场强阈值\n\n        // ========== 状态变量 ==========\n        let charges = []; // 存储所有电荷 {x, y, q, id, isDragging}\n        let selectedChargeId = null; // 当前选中用于调节电量的电荷ID\n        let showPotential = false; // 是否显示等势面\n        let canvas, ctx, svg;\n        let nextChargeId = 1;\n        const fieldGrid = []; // 用于存储网格点上的场强矢量\n\n        // ========== DOM 元素 ==========\n        const simCanvas = document.getElementById('simCanvas');\n        const potentialSurface = document.getElementById('potentialSurface');\n        const chargeControlsDiv = document.getElementById('chargeControls');\n        const noChargeHint = document.getElementById('noChargeHint');\n        const togglePotential = document.getElementById('togglePotential');\n        const btnClear = document.getElementById('btnClear');\n        const chargePos = document.getElementById('chargePos');\n        const chargeNeg = document.getElementById('chargeNeg');\n\n        // ========== 初始化 ==========\n        function init() {\n            canvas = simCanvas;\n            ctx = canvas.getContext('2d');\n            svg = potentialSurface;\n\n            // 设置拖拽事件\n            setupDragAndDrop();\n            // 设置画布交互\n            setupCanvasInteraction();\n            // 绑定按钮事件\n            togglePotential.addEventListener('change', () => {\n                showPotential = togglePotential.checked;\n                drawAll();\n            });\n            btnClear.addEventListener('click', clearAllCharges);\n\n            // 初始绘制\n            drawAll();\n        }\n\n        // ========== 电荷管理 ==========\n        function addCharge(x, y, type) {\n            const q = type === 'positive' ? 1e-9 : -1e-9; // 默认 ±1 nC\n            const id = nextChargeId++;\n            const charge = { x, y, q, id, isDragging: false };\n            charges.push(charge);\n            updateChargeControlsUI();\n            drawAll();\n            return charge;\n        }\n\n        function removeCharge(id) {\n            charges = charges.filter(c => c.id !== id);\n            if (selectedChargeId === id) selectedChargeId = null;\n            updateChargeControlsUI();\n            drawAll();\n        }\n\n        function clearAllCharges() {\n            charges = [];\n            selectedChargeId = null;\n            updateChargeControlsUI();\n            drawAll();\n        }\n\n        // ========== 电场计算 (严格遵守科学约束) ==========\n        function calculateFieldAtPoint(px, py) {\n            let Ex_total = 0;\n            let Ey_total = 0;\n\n            for (const charge of charges) {\n                const dx = px - charge.x;\n                const dy = py - charge.y;\n                const rSq = dx * dx + dy * dy;\n\n                if (rSq < 1) { // 避免除以零，在电荷位置场强设为极大/无穷（方向向外/内）\n                    const dirFactor = charge.q > 0 ? 1 : -1;\n                    // 返回一个径向的大矢量\n                    return { Ex: dirFactor * 1e10, Ey: 0, magnitude: 1e10 };\n                }\n\n                const r = Math.sqrt(rSq);\n                // 点电荷电场强度公式 E = k * Q / r^2\n                const E_magnitude = k * Math.abs(charge.q) / rSq;\n                // 单位矢量方向：正电荷向外，负电荷向内\n                const dirX = dx / r;\n                const dirY = dy / r;\n                const sign = charge.q > 0 ? 1 : -1; // 正电荷方向远离电荷 (dx, dy)，负电荷方向指向电荷 (-dx, -dy)\n                Ex_total += sign * E_magnitude * dirX;\n                Ey_total += sign * E_magnitude * dirY;\n            }\n\n            const magnitude = Math.sqrt(Ex_total * Ex_total + Ey_total * Ey_total);\n            return { Ex: Ex_total, Ey: Ey_total, magnitude };\n        }\n\n        function calculatePotentialAtPoint(px, py) {\n            // 电势 V = k * Q / r (标量叠加)\n            let V_total = 0;\n            for (const charge of charges) {\n                const dx = px - charge.x;\n                const dy = py - charge.y;\n                const r = Math.sqrt(dx * dx + dy * dy);\n                if (r < 1) r = 1; // 避免除以零\n                V_total += k * charge.q / r;\n            }\n            return V_total;\n        }\n\n        // ========== 电场线追踪 (严格遵守科学约束) ==========\n        function traceFieldLine(startX, startY, fromPositive) {\n            const points = [];\n            let x = startX;\n            let y = startY;\n            let stepDirection = fromPositive ? 1 : -1; // 1: 沿E方向（正电荷发出）， -1: 逆E方向（负电荷汇聚）\n\n            for (let i = 0; i < LINE_STEPS; i++) {\n                points.push({ x, y });\n\n                const field = calculateFieldAtPoint(x, y);\n                if (field.magnitude < MIN_FIELD_FOR_LINE) break;\n\n                // 方向：从正电荷发出沿E方向，向负电荷汇聚则逆E方向\n                const dirX = field.Ex / field.magnitude;\n                const dirY = field.Ey / field.magnitude;\n\n                x += dirX * LINE_STEP_SIZE * stepDirection;\n                y += dirY * LINE_STEP_SIZE * stepDirection;\n\n                // 边界检查\n                if (x < 0 || x > CANVAS_WIDTH || y < 0 || y > CANVAS_HEIGHT) break;\n\n                // 检查是否过于接近异号电荷（终止条件）\n                let tooCloseToOpposite = false;\n                for (const charge of charges) {\n                    const dx = x - charge.x;\n                    const dy = y - charge.y;\n                    const distSq = dx * dx + dy * dy;\n                    const oppositeSign = (fromPositive && charge.q < 0) || (!fromPositive && charge.q > 0);\n                    if (oppositeSign && distSq < CHARGE_RADIUS * CHARGE_RADIUS * 4) {\n                        tooCloseToOpposite = true;\n                        break;\n                    }\n                }\n                if (tooCloseToOpposite) break;\n            }\n            return points;\n        }\n\n        // ========== 等势面计算与绘制 ==========\n        function drawPotentialSurfaces() {\n            svg.innerHTML = ''; // 清除之前的等势面\n            if (charges.length === 0 || !showPotential) return;\n\n            // 计算模拟区域内电势的极值\n            let Vmin = Infinity, Vmax = -Infinity;\n            const samplePoints = [];\n            for (let x = GRID_SPACING/2; x < CANVAS_WIDTH; x += GRID_SPACING) {\n                for (let y = GRID_SPACING/2; y < CANVAS_HEIGHT; y += GRID_SPACING) {\n                    const V = calculatePotentialAtPoint(x, y);\n                    samplePoints.push({x, y, V});\n                    if (V < Vmin) Vmin = V;\n                    if (V > Vmax) Vmax = V;\n                }\n            }\n            if (Vmax - Vmin < 1e-6) return; // 电势几乎恒定，不绘制\n\n            // 定义要绘制的等势面数值（电势值）\n            const numSurfaces = 8;\n            const surfaces = [];\n            for (let i = 1; i < numSurfaces; i++) {\n                surfaces.push(Vmin + (Vmax - Vmin) * i / numSurfaces);\n            }\n\n            // 使用Marching Squares算法轮廓绘制等势线（近似为面）\n            const gridW = Math.ceil(CANVAS_WIDTH / GRID_SPACING) + 1;\n            const gridH = Math.ceil(CANVAS_HEIGHT / GRID_SPACING) + 1;\n            const potentialGrid = new Array(gridH).fill(0).map(() => new Array(gridW).fill(0));\n\n            // 填充电势网格\n            for (let gy = 0; gy < gridH; gy++) {\n                for (let gx = 0; gx < gridW; gx++) {\n                    const x = gx * GRID_SPACING;\n                    const y = gy * GRID_SPACING;\n                    potentialGrid[gy][gx] = calculatePotentialAtPoint(x, y);\n                }\n            }\n\n            // 为每个等势面值绘制轮廓\n            surfaces.forEach(Vtarget => {\n                const pathData = [];\n                for (let gy = 0; gy < gridH - 1; gy++) {\n                    for (let gx = 0; gx < gridW - 1; gx++) {\n                        const x0 = gx * GRID_SPACING;\n                        const y0 = gy * GRID_SPACING;\n                        const corners = [\n                            potentialGrid[gy][gx],\n                            potentialGrid[gy][gx+1],\n                            potentialGrid[gy+1][gx+1],\n                            potentialGrid[gy+1][gx]\n                        ];\n                        // 简单的线性插值画线（简化版Marching Squares）\n                        const edges = [];\n                        if ((corners[0] > Vtarget) !== (corners[1] > Vtarget)) {\n                            const t = (Vtarget - corners[0]) / (corners[1] - corners[0]);\n                            edges.push({x: x0 + t * GRID_SPACING, y: y0});\n                        }\n                        if ((corners[1] > Vtarget) !== (corners[2] > Vtarget)) {\n                            const t = (Vtarget - corners[1]) / (corners[2] - corners[1]);\n                            edges.push({x: x0 + GRID_SPACING, y: y0 + t * GRID_SPACING});\n                        }\n                        if ((corners[2] > Vtarget) !== (corners[3] > Vtarget)) {\n                            const t = (Vtarget - corners[2]) / (corners[3] - corners[2]);\n                            edges.push({x: x0 + (1-t) * GRID_SPACING, y: y0 + GRID_SPACING});\n                        }\n                        if ((corners[3] > Vtarget) !== (corners[0] > Vtarget)) {\n                            const t = (Vtarget - corners[3]) / (corners[0] - corners[3]);\n                            edges.push({x: x0, y: y0 + (1-t) * GRID_SPACING});\n                        }\n                        if (edges.length === 2) {\n                            if (pathData.length === 0) {\n                                pathData.push(`M \\({edges[0].x} \\){edges[0].y}`);\n                            }\n                            pathData.push(`L \\({edges[1].x} \\){edges[1].y}`);\n                        }\n                    }\n                }\n                if (pathData.length > 0) {\n                    const path = document.createElementNS(\"http://www.w3.org/2000/svg\", \"path\");\n                    path.setAttribute(\"d\", pathData.join(' '));\n                    path.setAttribute(\"fill\", \"none\");\n                    path.setAttribute(\"stroke\", \"rgba(147, 51, 234, 0.6)\"); // 紫色半透明\n                    path.setAttribute(\"stroke-width\", \"2\");\n                    path.setAttribute(\"stroke-dasharray\", \"5,5\");\n                    svg.appendChild(path);\n                }\n            });\n        }\n\n        // ========== 绘制函数 =========="
+      },
+      "actions": [
+        {
+          "id": "action_cKWle2Kc",
+          "type": "speech",
+          "text": "好的，我们刚刚从理论上讨论了库仑定律和高斯定理。现在，让我们通过一个动手操作的可视化工具，来直观感受一下电场的分布。"
+        },
+        {
+          "id": "action_4kY2tGN3",
+          "type": "speech",
+          "text": "请看屏幕中央的模拟区域。你可以从左侧拖拽一个正电荷或负电荷图标进来，并放在任意位置。试着放一个正电荷，看看发生了什么？注意观察那些红色的电场线，它们是从正电荷向外发出的。"
+        },
+        {
+          "id": "action_QDHCmiAL",
+          "type": "speech",
+          "text": "现在，你可以用滑块调整这个电荷的电量大小。增大电量，观察电场线变得更密集；减小电量，电场线则变得更稀疏。这直观地展示了场强与电荷量成正比的关系。"
+        },
+        {
+          "id": "action_ejDoluGD",
+          "type": "speech",
+          "text": "接下来，我们打开‘显示等势面’的开关。看这些半透明的彩色曲面，它们代表电势相等的点构成的曲面。请特别留意，等势面与电场线处处都是垂直的，这是等势面一个非常重要的性质。"
+        },
+        {
+          "id": "action_Li4qd7jU",
+          "type": "speech",
+          "text": "让我们来模拟一个更复杂的情况。请再拖入一个负电荷，形成一个电偶极子。观察电场线和等势面的形状是如何发生复杂变化的。你可以拖动电荷改变它们的位置，或者调整各自的电量，实时观察电场的叠加效果。"
+        },
+        {
+          "id": "action_WnlD7XAI",
+          "type": "speech",
+          "text": "最后，你可以点击‘清空’按钮重置画面，然后自由组合多个正负电荷，亲手构建并观察各种电荷分布下的电场。这个直观的感受，会帮助你更好地理解我们之前讲过的电场叠加原理。"
+        }
+      ],
+      "createdAt": 1774251000350,
+      "updatedAt": 1774251000350
+    },
+    {
+      "id": "p-gClq_3k9_Clj1iYNqXD",
+      "stageId": "9rNOssJSrS",
+      "type": "slide",
+      "title": "热学与光学要点速记",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "WccNTwI8921XPgfobAHXc",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_TYYTPJwF",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>热学与光学要点速记</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_t6atufRE",
+              "type": "text",
+              "left": 60,
+              "top": 126,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #666666;\">核心考点梳理与易错点提示</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#666666",
+              "rotate": 0
+            },
+            {
+              "id": "shape_Dcc0liqV",
+              "type": "shape",
+              "left": 100,
+              "top": 182,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e0e0e0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_pmRKItbq",
+              "type": "text",
+              "left": 60,
+              "top": 200,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #2e75b6;\"><strong>一、热学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#2e75b6",
+              "rotate": 0
+            },
+            {
+              "id": "shape_34NwEtHS",
+              "type": "shape",
+              "left": 60,
+              "top": 268,
+              "width": 400,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f2f8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_rmxLwU1c",
+              "type": "text",
+              "left": 80,
+              "top": 288,
+              "width": 360,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px;\"><strong>热力学第一定律</strong></p><p style=\"font-size: 16px;\">ΔU = Q + W</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_3D6-bkCw",
+              "type": "latex",
+              "left": 180,
+              "top": 328,
+              "width": 160,
+              "height": 50,
+              "latex": "\\Delta U = Q + W",
+              "color": "#c00000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord\">Δ</span><span class=\"mord mathnormal\" style=\"margin-right:0.10903em;\">U</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.8778em;vertical-align:-0.1944em;\"></span><span class=\"mord mathnormal\">Q</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">W</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_OUULZafP",
+              "type": "text",
+              "left": 80,
+              "top": 378,
+              "width": 360,
+              "height": 106,
+              "content": "<p style=\"font-size: 16px;\">• ΔU: 内能变化</p><p style=\"font-size: 16px;\">• Q: 系统吸热为正</p><p style=\"font-size: 16px;\">• W: 外界对系统做功为正</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_ovPlJxXr",
+              "type": "shape",
+              "left": 60,
+              "top": 494,
+              "width": 400,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f2f8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_lLtwhGR_",
+              "type": "text",
+              "left": 80,
+              "top": 514,
+              "width": 360,
+              "height": 40,
+              "content": "<p style=\"font-size: 18px;\"><strong>理想气体状态方程</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_hLpv40ky",
+              "type": "latex",
+              "left": 140,
+              "top": 534,
+              "width": 240,
+              "height": 50,
+              "latex": "PV = nRT",
+              "color": "#c00000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">P</span><span class=\"mord mathnormal\" style=\"margin-right:0.22222em;\">V</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\">n</span><span class=\"mord mathnormal\" style=\"margin-right:0.00773em;\">R</span><span class=\"mord mathnormal\" style=\"margin-right:0.13889em;\">T</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_mfPD9wJ0",
+              "type": "text",
+              "left": 540,
+              "top": 200,
+              "width": 400,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; color: #2e75b6;\"><strong>二、光学</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#2e75b6",
+              "rotate": 0
+            },
+            {
+              "id": "shape_camvTKOt",
+              "type": "shape",
+              "left": 540,
+              "top": 268,
+              "width": 400,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff2f2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_uWs0amOf",
+              "type": "text",
+              "left": 560,
+              "top": 288,
+              "width": 360,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px;\"><strong>反射与折射定律</strong></p><p style=\"font-size: 16px;\">反射：θ₁ = θ₂</p><p style=\"font-size: 16px;\">折射：n₁ sinθ₁ = n₂ sinθ₂</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_QKx-H-dE",
+              "type": "latex",
+              "left": 620,
+              "top": 328,
+              "width": 80,
+              "height": 40,
+              "latex": "\\theta_1 = \\theta_2",
+              "color": "#c00000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">θ</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">θ</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_Tepoao1i",
+              "type": "latex",
+              "left": 620,
+              "top": 368,
+              "width": 240,
+              "height": 40,
+              "latex": "n_1 \\sin\\theta_1 = n_2 \\sin\\theta_2",
+              "color": "#c00000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">n</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">sin</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">θ</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.8444em;vertical-align:-0.15em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">n</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:0em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mop\">sin</span><span class=\"mspace\" style=\"margin-right:0.1667em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.02778em;\">θ</span><span class=\"msupsub\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.3011em;\"><span style=\"top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mtight\">2</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.15em;\"><span></span></span></span></span></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_aZqKlQoO",
+              "type": "shape",
+              "left": 540,
+              "top": 398,
+              "width": 400,
+              "height": 176,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff2f2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_v5eFFu-Q",
+              "type": "text",
+              "left": 560,
+              "top": 418,
+              "width": 360,
+              "height": 40,
+              "content": "<p style=\"font-size: 18px;\"><strong>薄透镜成像公式</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_WUJ0EWHb",
+              "type": "latex",
+              "left": 600,
+              "top": 448,
+              "width": 280,
+              "height": 60,
+              "latex": "\\frac{1}{f} = \\frac{1}{u} + \\frac{1}{v}",
+              "color": "#c00000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:2.2019em;vertical-align:-0.8804em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.10764em;\">f</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.8804em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\">u</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord mathnormal\" style=\"margin-right:0.03588em;\">v</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">1</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_ipLfK8BI",
+              "type": "text",
+              "left": 560,
+              "top": 508,
+              "width": 360,
+              "height": 106,
+              "content": "<p style=\"font-size: 16px;\">• f: 焦距（凸正凹负）</p><p style=\"font-size: 16px;\">• u: 物距（实物为正）</p><p style=\"font-size: 16px;\">• v: 像距（实像为正）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_5RFSFj_F",
+              "type": "shape",
+              "left": 60,
+              "top": 584,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff4e6",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_uJy2vt8Y",
+              "type": "text",
+              "left": 80,
+              "top": 594,
+              "width": 840,
+              "height": 38,
+              "content": "<p style=\"font-size: 16px; text-align: center; color: #bf9000;\"><strong>注意各物理量的符号规定，是解题关键！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#bf9000",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_VXZWYu4w",
+          "type": "spotlight",
+          "elementId": "text_TYYTPJwF"
+        },
+        {
+          "id": "action_16Nm7AHU",
+          "type": "speech",
+          "text": "好的，我们继续。刚刚大家亲手操作了电场，感受了电场的叠加，现在我们把目光转向另外两个重要的模块：热学和光学。"
+        },
+        {
+          "id": "action_-VrA8yVy",
+          "type": "spotlight",
+          "elementId": "text_t6atufRE"
+        },
+        {
+          "id": "action_4bnA6dpN",
+          "type": "speech",
+          "text": "这一页，我们来做一个快速的要点速记，核心是梳理考点和提醒大家容易出错的地方。"
+        },
+        {
+          "id": "action_Ia6Vy38F",
+          "type": "spotlight",
+          "elementId": "text_pmRKItbq"
+        },
+        {
+          "id": "action_jj17KXxD",
+          "type": "speech",
+          "text": "首先看热学部分。"
+        },
+        {
+          "id": "action_hG_YQgiu",
+          "type": "spotlight",
+          "elementId": "latex_3D6-bkCw"
+        },
+        {
+          "id": "action_cO3j4kdb",
+          "type": "speech",
+          "text": "第一个核心，热力学第一定律，公式是ΔU等于Q加W。"
+        },
+        {
+          "id": "action_JlDEMurT",
+          "type": "spotlight",
+          "elementId": "text_OUULZafP"
+        },
+        {
+          "id": "action_ty5TKewN",
+          "type": "speech",
+          "text": "这里的符号规定是解题的命门，一定要记牢。ΔU是内能变化，增加为正。Q是系统吸热，吸热为正，放热为负。W是外界对系统做功，外界对系统做功为正，系统对外做功为负。很多同学丢分就丢在正负号上。"
+        },
+        {
+          "id": "action_DMixVchi",
+          "type": "spotlight",
+          "elementId": "latex_hLpv40ky"
+        },
+        {
+          "id": "action_u_OdpFD5",
+          "type": "speech",
+          "text": "另一个基础是理想气体状态方程，PV等于nRT。这个公式看似简单，但经常需要和其他热学过程，比如等温、等压、等容过程结合起来考察。"
+        },
+        {
+          "id": "action_X-QQhxfg",
+          "type": "spotlight",
+          "elementId": "text_mfPD9wJ0"
+        },
+        {
+          "id": "action_MQyWd1S2",
+          "type": "speech",
+          "text": "接下来，我们看第二部分，光学。"
+        },
+        {
+          "id": "action_KBG_Q23I",
+          "type": "spotlight",
+          "elementId": "latex_QKx-H-dE"
+        },
+        {
+          "id": "action_EsFQbhwy",
+          "type": "speech",
+          "text": "几何光学的起点是反射和折射定律。反射定律很简单，入射角θ₁等于反射角θ₂。"
+        },
+        {
+          "id": "action_1U8a7uMc",
+          "type": "spotlight",
+          "elementId": "latex_Tepoao1i"
+        },
+        {
+          "id": "action__Q4HX_JB",
+          "type": "speech",
+          "text": "折射定律，也就是斯涅尔定律，n₁ sinθ₁ 等于 n₂ sinθ₂。这里要注意，θ是光线与法线的夹角，n是介质的折射率。"
+        },
+        {
+          "id": "action_uq1J0IYN",
+          "type": "spotlight",
+          "elementId": "latex_WUJ0EWHb"
+        },
+        {
+          "id": "action_R1q8bnRx",
+          "type": "speech",
+          "text": "最后，薄透镜成像的高斯公式，1/f 等于 1/u 加 1/v。"
+        },
+        {
+          "id": "action_C_zd15nn",
+          "type": "spotlight",
+          "elementId": "text_ipLfK8BI"
+        },
+        {
+          "id": "action_3XQPbiTa",
+          "type": "speech",
+          "text": "和热学定律一样，光学公式也有严格的符号法则。焦距f，凸透镜为正，凹透镜为负。物距u，实物为正。像距v，实像为正，虚像为负。应用公式前，务必先判断符号。"
+        },
+        {
+          "id": "action_VWRTLQIR",
+          "type": "spotlight",
+          "elementId": "text_uJy2vt8Y"
+        },
+        {
+          "id": "action_4SVp3VOO",
+          "type": "speech",
+          "text": "所以，请大家务必记住我反复强调的这一点：对于热学和光学里的这些基本公式，物理量的符号规定，是解题的关键！先判断正负，再代入计算，这个步骤不能省。"
+        }
+      ],
+      "createdAt": 1774251095882,
+      "updatedAt": 1774251095882
+    },
+    {
+      "id": "8mikWvkihwwYyne9hlqe1",
+      "stageId": "9rNOssJSrS",
+      "type": "quiz",
+      "title": "综合概念辨析",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "multiple",
+            "question": "关于功、能和热量，下列哪些说法是正确的？",
+            "options": [
+              {
+                "value": "A",
+                "label": "功和热量都是过程量，而内能是状态量。"
+              },
+              {
+                "value": "B",
+                "label": "物体对外做功，其内能一定减少。"
+              },
+              {
+                "value": "C",
+                "label": "热量可以从低温物体自发地传递到高温物体。"
+              },
+              {
+                "value": "D",
+                "label": "能的转化和转移（如做功和热传递）都遵循能量守恒定律。"
+              }
+            ],
+            "answer": [
+              "A",
+              "D"
+            ],
+            "analysis": "A正确：功和热量描述的是能量传递或转化的过程，与具体路径有关，是过程量；内能是系统状态的单值函数，是状态量。B错误：根据热力学第一定律 ΔU = Q + W，内能变化取决于吸热Q和外界对系统做功W的总和。物体对外做功（W为负），但如果同时吸收了足够多的热量（Q为正），内能仍可能增加。C错误：根据热力学第二定律，热量不能自发地从低温物体传到高温物体而不引起其他变化。D正确：能量守恒定律是自然界普遍规律，功和热传递是能量转移的两种方式，都遵循该定律。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "short_answer",
+            "question": "一个绝热容器（与外界无热量交换）中装有理想气体，气体通过一个可移动的活塞与外界隔开。初始时活塞被固定，气体处于平衡态。现将活塞释放，气体自由膨胀，最终达到新的平衡。请分析此过程中：(1) 气体对外做功吗？(2) 气体的内能如何变化？(3) 气体与外界有热量交换吗？并简述你的判断依据。",
+            "commentPrompt": "详细评分标准：(1) 判断气体是否对外做功（占30%）：需明确指出“不做功”或“W=0”，并给出正确依据（如“活塞自由移动，但外界是真空或压强为零，因此气体膨胀时无阻力，不对外做功”或类似表述）。(2) 判断气体内能变化（占30%）：需明确指出“内能不变”或“ΔU=0”，并给出正确依据（如“理想气体内能只与温度有关”结合“绝热过程Q=0”和“W=0”，推导出ΔU=0，故温度不变，内能不变）。(3) 判断热量交换（占20%）：需明确指出“无热量交换”或“Q=0”，并给出依据（如“容器绝热”）。(4) 逻辑连贯性与表述清晰度（占20%）：三个判断的结论和依据需逻辑自洽，表述清晰无矛盾。",
+            "analysis": "参考分析：(1) 气体不做功（W=0）。依据：自由膨胀是指气体向真空膨胀。在此过程中，活塞另一侧如果是真空或压强为零，则气体膨胀时没有受到外界压力的抵抗，因此气体不对外做功。(2) 气体的内能不变（ΔU=0）。依据：首先，容器绝热，故Q=0。其次，由(1)知W=0。根据热力学第一定律ΔU=Q+W=0。对于理想气体，内能是温度的单值函数，内能不变意味着温度也不变（自由膨胀是等温过程）。(3) 气体与外界无热量交换（Q=0）。依据：题目已明确说明容器是绝热的。综上，这是一个绝热的自由膨胀过程，Q=0，W=0，ΔU=0。",
+            "points": 20,
+            "hasAnswer": false
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_Najb4r93",
+          "type": "speech",
+          "text": "好的，刚才我们快速梳理了热学和光学的要点，现在来检验一下大家对跨章节概念的综合辨析和应用能力。"
+        },
+        {
+          "id": "action_Uxr1kwsg",
+          "type": "speech",
+          "text": "这一页有两道题。第一道多选题，考察的是对功、能和热量这几个极易混淆的基本概念的区分。请大家仔细审题，想想每个选项描述的是哪个物理量，以及它们之间的根本区别是什么。"
+        },
+        {
+          "id": "action_uLfrrdH_",
+          "type": "speech",
+          "text": "第二道简答题，情景是一个绝热容器中理想气体的自由膨胀。这需要大家综合运用热力学第一定律的知识来分析。关键点在于：明确过程特点（绝热、自由膨胀），然后判断做功、内能变化和热量交换的情况，并给出你的依据。"
+        },
+        {
+          "id": "action_i3hclsRw",
+          "type": "speech",
+          "text": "这类题目在考试中很常见，它不单纯考记忆，而是考你对物理过程的理解和概念的清晰度。比如‘自由膨胀’意味着气体向真空膨胀，外界压强为零，所以气体对外不做功。再结合绝热条件，就能一步步推理出结论。"
+        },
+        {
+          "id": "action_H0cso7Zb",
+          "type": "discussion",
+          "topic": "在分析像气体自由膨胀这样的物理过程时，你的思考步骤是怎样的？",
+          "prompt": "可以分享一下你是如何确定‘做功’、‘内能变化’和‘热量交换’这三个量的吗？",
+          "agentId": "gen-grPULthn"
+        }
+      ],
+      "createdAt": 1774251133071,
+      "updatedAt": 1774251133071
+    },
+    {
+      "id": "vr15Lhyr_VYwCVbR4Om8-",
+      "stageId": "9rNOssJSrS",
+      "type": "slide",
+      "title": "解题策略与临场技巧",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "vGPD0UMUDEDVshnH1SkX7",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_yKU2FLjb",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>解题策略与临场技巧</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_0YAYKYma",
+              "type": "text",
+              "left": 60,
+              "top": 150,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; color:#5b9bd5;\"><strong>一、读题三步法</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_MAM8PLgI",
+              "type": "text",
+              "left": 80,
+              "top": 220,
+              "width": 860,
+              "height": 94,
+              "content": "<p style=\"font-size:18px;\">1. 明确对象：研究对象、物理量</p><p style=\"font-size:18px;\">2. 分析过程：运动过程、受力变化</p><p style=\"font-size:18px;\">3. 确定规律：适用公式、物理定律</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_CaSCECUR",
+              "type": "text",
+              "left": 60,
+              "top": 340,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; color:#ed7d31;\"><strong>二、计算题规范书写</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_PSUYZ0jN",
+              "type": "text",
+              "left": 80,
+              "top": 410,
+              "width": 860,
+              "height": 76,
+              "content": "<p style=\"font-size:18px;\">公式 → 代入数据 → 计算结果 → 标明单位</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Zs5Gn4nt",
+              "type": "text",
+              "left": 60,
+              "top": 510,
+              "width": 430,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; color:#70ad47;\"><strong>三、选择题技巧</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_gyO8vXn6",
+              "type": "text",
+              "left": 80,
+              "top": 580,
+              "width": 410,
+              "height": 76,
+              "content": "<p style=\"font-size:18px;\">• 排除法</p><p style=\"font-size:18px;\">• 量纲分析法</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text__-F75ck7",
+              "type": "text",
+              "left": 510,
+              "top": 510,
+              "width": 430,
+              "height": 58,
+              "content": "<p style=\"font-size:24px; color:#ffc000;\"><strong>四、考场时间管理</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_dwH7bWlu",
+              "type": "text",
+              "left": 530,
+              "top": 580,
+              "width": 410,
+              "height": 76,
+              "content": "<p style=\"font-size:18px;\">• 合理分配时间</p><p style=\"font-size:18px;\">• 留出检查验算环节</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_LaH04zvB",
+          "type": "spotlight",
+          "elementId": "text_yKU2FLjb"
+        },
+        {
+          "id": "action_M56J0Rnm",
+          "type": "speech",
+          "text": "好的，同学们，我们来到了今天课程的最后一站。前面我们梳理了各个板块的核心考点，也进行了概念辨析。现在，我们来整合一下，聚焦于实战——也就是解题策略与临场技巧。掌握了这些，你们在考场上就能更从容、更高效。"
+        },
+        {
+          "id": "action_5LQvSX9q",
+          "type": "spotlight",
+          "elementId": "text_0YAYKYma"
+        },
+        {
+          "id": "action_-jeTMa_T",
+          "type": "speech",
+          "text": "首先，我们来看读题。很多同学失分不是因为不会做，而是没读懂题。这里我给大家一个‘读题三步法’。"
+        },
+        {
+          "id": "action_rRCjqtjH",
+          "type": "spotlight",
+          "elementId": "text_MAM8PLgI"
+        },
+        {
+          "id": "action_e3U_z9fb",
+          "type": "speech",
+          "text": "第一步，明确对象。题目问的是哪个物体？涉及哪些物理量？是速度、加速度，还是力、能量？第二步，分析过程。这个物体经历了怎样的运动过程？受力情况发生了什么变化？比如是匀加速直线运动，还是圆周运动？第三步，确定规律。根据前面的分析，应该选用哪个物理定律或公式？是牛顿第二定律，还是动能定理？这三步走下来，题目就清晰了一大半。"
+        },
+        {
+          "id": "action_JTjjLTpa",
+          "type": "spotlight",
+          "elementId": "text_CaSCECUR"
+        },
+        {
+          "id": "action_GIgkC3Ng",
+          "type": "speech",
+          "text": "接下来，对于计算题，规范书写是拿满分的保障。很多同学答案对了，但过程分丢了，非常可惜。"
+        },
+        {
+          "id": "action_h6SM0zNj",
+          "type": "spotlight",
+          "elementId": "text_PSUYZ0jN"
+        },
+        {
+          "id": "action_56g0CRMA",
+          "type": "speech",
+          "text": "记住这个标准流程：先写出原始公式，这是你的理论依据。然后代入数据，注意单位要统一，最好用国际单位制。接着进行计算，得出结果。最后，一定要记得标明单位。这个流程能最大程度避免因跳步或单位混乱导致的错误。"
+        },
+        {
+          "id": "action_4WzPXnT7",
+          "type": "spotlight",
+          "elementId": "text_Zs5Gn4nt"
+        },
+        {
+          "id": "action_ectlXWMK",
+          "type": "speech",
+          "text": "对于选择题，我们也有一些快速解题的技巧。"
+        },
+        {
+          "id": "action__FBkp3op",
+          "type": "spotlight",
+          "elementId": "text_gyO8vXn6"
+        },
+        {
+          "id": "action_MVRfptPa",
+          "type": "speech",
+          "text": "第一个是排除法。先排除那些明显违背物理常识或者单位都不对的选项，能大大增加正确率。第二个是量纲分析法。看看选项的单位是否和所求物理量的单位一致，这能帮你快速锁定或排除一些选项。"
+        },
+        {
+          "id": "action_BxZbbLWL",
+          "type": "spotlight",
+          "elementId": "text__-F75ck7"
+        },
+        {
+          "id": "action_pTGQBzwP",
+          "type": "speech",
+          "text": "最后，也是非常重要的一点，考场时间管理。"
+        },
+        {
+          "id": "action_k8sr8E0B",
+          "type": "spotlight",
+          "elementId": "text_dwH7bWlu"
+        },
+        {
+          "id": "action_6EGgUTAt",
+          "type": "speech",
+          "text": "拿到试卷后，先快速浏览，对题目难度有个大致判断。合理分配时间，不要在某一题上卡太久。一定要留出至少5到10分钟来检查验算，重点检查单位、计算过程，以及有没有看错题目条件。"
+        },
+        {
+          "id": "action_gPgPniYh",
+          "type": "speech",
+          "text": "好了，同学们，今天的课程到这里就全部结束了。我们从核心考点回顾，到力学、电磁学、热学光学的要点梳理，再到最后的解题策略，完成了一次完整的考前冲刺。希望大家能把这些知识和方法内化于心，在考场上沉着冷静，发挥出自己最好的水平。祝大家考试顺利，取得理想的成绩！"
+        }
+      ],
+      "createdAt": 1774251357206,
+      "updatedAt": 1774251357206
+    }
+  ],
+  "createdAt": "2026-03-25T11:47:39.749Z"
+}

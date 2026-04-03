@@ -1,0 +1,52 @@
+[
+  {
+    "id": "lib-demo-fractions-pdf",
+    "title": "四年级分数的意义课堂讲义",
+    "description": "用于演示资料库与 AI 互动课堂联动的 PDF 讲义，覆盖分数的概念、读写与生活化场景。",
+    "contentType": "textbook",
+    "subject": "math",
+    "grade": "4",
+    "ownerRole": "admin",
+    "ownerId": "u-admin-001",
+    "accessScope": "global",
+    "sourceType": "file",
+    "fileName": "fractions-demo.pdf",
+    "mimeType": "application/pdf",
+    "size": 1047,
+    "contentBase64": "JVBERi0xLjEKMSAwIG9iajw8IC9UeXBlIC9DYXRhbG9nIC9QYWdlcyAyIDAgUiA+PmVuZG9iagoyIDAgb2JqPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj5lbmRvYmoKMyAwIG9iajw8IC9UeXBlIC9QYWdlIC9QYXJlbnQgMiAwIFIgL01lZGlhQm94IFswIDAgMzAwIDE0NF0gL0NvbnRlbnRzIDQgMCBSIC9SZXNvdXJjZXM8PCAvRm9udDw8IC9GMSA1IDAgUj4+Pj4+PmVuZG9iago0IDAgb2JqPDwgL0xlbmd0aCA0NCA+PnN0cmVhbQpCVCAvRjEgMTggVGYgMzYgOTYgVGQgKEZyYWN0aW9uIERlbW8gUERGKSBUaiBFVAplbmRzdHJlYW0gZW5kb2JqCjUgMCBvYmo8PCAvVHlwZSAvRm9udCAvU3VidHlwZSAvVHlwZTEgL0Jhc2VGb250IC9IZWx2ZXRpY2EgPj5lbmRvYmoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4gCjAwMDAwMDAwNjMgMDAwMDAgbiAKMDAwMDAwMDEyMiAwMDAwMCBuIAowMDAwMDAwMjM1IDAwMDAwIG4gCjAwMDAwMDAzMjkgMDAwMDAgbiAKdHJhaWxlcjw8IC9Sb290IDEgMCBSIC9TaXplIDYgPj4Kc3RhcnR4cmVmCjM5OQolJUVPRg==",
+    "textContent": "本讲义围绕分数的意义展开，包含把整体平均分、认识分子与分母、分数读写、结合蛋糕和披萨等生活情境理解几分之一与几分之几，并安排课堂提问和巩固练习。",
+    "knowledgePointIds": [
+      "math-g4-fractions-meaning"
+    ],
+    "extractedKnowledgePoints": [
+      "分数的意义"
+    ],
+    "generatedByAi": false,
+    "status": "published",
+    "createdAt": "2026-03-20T00:00:00.000Z",
+    "updatedAt": "2026-03-20T00:00:00.000Z"
+  },
+  {
+    "id": "lib-demo-fractions-lesson-plan",
+    "title": "分数的意义互动课教案",
+    "description": "用于教师从资料库一键带入互动课堂的文字教案模板。",
+    "contentType": "lesson_plan",
+    "subject": "math",
+    "grade": "4",
+    "ownerRole": "admin",
+    "ownerId": "u-admin-001",
+    "accessScope": "global",
+    "sourceType": "text",
+    "textContent": "教学目标：理解分数表示把一个整体平均分成若干份并取其中几份；会读写简单分数；能够在生活情境中判断平均分。教学流程：1. 情境导入，用蛋糕平均分的图片引出分数。2. 概念讲解，解释分子、分母与平均分。3. 互动提问，让学生判断给定图形能否用分数表示。4. 板书推进，梳理分数的读写规则。5. 课堂练习，完成 3 道分数读写题和 2 道生活应用题。6. 课堂总结，回顾分数与平均分的关系，并布置课后观察任务。",
+    "knowledgePointIds": [
+      "math-g4-fractions-meaning"
+    ],
+    "extractedKnowledgePoints": [
+      "分数的意义"
+    ],
+    "generatedByAi": false,
+    "status": "published",
+    "createdAt": "2026-03-20T00:05:00.000Z",
+    "updatedAt": "2026-03-20T00:05:00.000Z"
+  }
+]

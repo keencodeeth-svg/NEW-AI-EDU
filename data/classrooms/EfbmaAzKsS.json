@@ -1,0 +1,2964 @@
+{
+  "id": "EfbmaAzKsS",
+  "stage": {
+    "id": "EfbmaAzKsS",
+    "name": "我要学习明朝历史",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774072178763,
+    "updatedAt": 1774526813683,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解",
+      "interestTopic": "巩固分数意义与阅读理解"
+    },
+    "currentSceneId": "_TZsdoU8Yu1xdwoQ-HgB0",
+    "whiteboard": [
+      {
+        "id": "whiteboard_PgUmTYvoLu",
+        "viewportSize": 1000,
+        "viewportRatio": 1.7777777777777777,
+        "elements": [
+          {
+            "id": "line_NAWuTkUJBU",
+            "type": "line",
+            "left": null,
+            "top": null,
+            "width": 2,
+            "start": [
+              null,
+              null
+            ],
+            "end": [
+              null,
+              null
+            ],
+            "style": "solid",
+            "color": "#333333",
+            "points": [
+              "",
+              ""
+            ]
+          },
+          {
+            "id": "line_L3TfnPrHOS",
+            "type": "line",
+            "left": null,
+            "top": null,
+            "width": 2,
+            "start": [
+              null,
+              null
+            ],
+            "end": [
+              null,
+              null
+            ],
+            "style": "solid",
+            "color": "#333333",
+            "points": [
+              "",
+              ""
+            ]
+          },
+          {
+            "id": "line_4ULX9emjl7",
+            "type": "line",
+            "left": null,
+            "top": null,
+            "width": 2,
+            "start": [
+              null,
+              null
+            ],
+            "end": [
+              null,
+              null
+            ],
+            "style": "solid",
+            "color": "#333333",
+            "points": [
+              "",
+              ""
+            ]
+          },
+          {
+            "id": "line__M1p1sI6zh",
+            "type": "line",
+            "left": null,
+            "top": null,
+            "width": 2,
+            "start": [
+              null,
+              null
+            ],
+            "end": [
+              null,
+              null
+            ],
+            "style": "solid",
+            "color": "#333333",
+            "points": [
+              "",
+              ""
+            ]
+          }
+        ],
+        "background": {
+          "type": "solid",
+          "color": "#ffffff"
+        },
+        "animations": []
+      }
+    ]
+  },
+  "scenes": [
+    {
+      "id": "CIPO8L_BRfpm3aBGYABgi",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "欢迎来到明朝",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "Qc81rXPYUe3tuHWbr3Tyx",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_TQi3wWpi",
+              "type": "shape",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8f9fa",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_YkGsxuxi",
+              "type": "text",
+              "left": 80,
+              "top": 94,
+              "width": 840,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>欢迎来到明朝</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_29eRUFWL",
+              "type": "text",
+              "left": 60,
+              "top": 190,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #374151;\">开启一段探索明朝历史的旅程</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#374151",
+              "rotate": 0
+            },
+            {
+              "id": "shape_Svs__OOd",
+              "type": "shape",
+              "left": 100,
+              "top": 285,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#d1d5db",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_wNQsWbX6",
+              "type": "shape",
+              "left": 100,
+              "top": 320,
+              "width": 800,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#eff6ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Oz6oiCNh",
+              "type": "text",
+              "left": 120,
+              "top": 332,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 明朝是中国历史上一个重要的朝代</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_G8OKDIaN",
+              "type": "shape",
+              "left": 100,
+              "top": 400,
+              "width": 800,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_GVinI7K1",
+              "type": "text",
+              "left": 120,
+              "top": 412,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 它存在于公元1368年至1644年</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#0369a1",
+              "rotate": 0
+            },
+            {
+              "id": "shape_yG-ZRy8B",
+              "type": "shape",
+              "left": 100,
+              "top": 480,
+              "width": 800,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fdf4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_acGGCp6B",
+              "type": "text",
+              "left": 120,
+              "top": 492,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">• 我们将一起探索它的建立、辉煌与衰落</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_P0SAOwBv",
+          "type": "spotlight",
+          "elementId": "text_YkGsxuxi"
+        },
+        {
+          "id": "action_eDBjxgED",
+          "type": "speech",
+          "text": "小星，你好！欢迎来到我们的历史课堂。今天，我们将开启一段非常精彩的旅程。"
+        },
+        {
+          "id": "action_U67h1DR6",
+          "type": "spotlight",
+          "elementId": "text_29eRUFWL"
+        },
+        {
+          "id": "action_LKXZXz0c",
+          "type": "speech",
+          "text": "就像这里写的，我们要一起探索明朝的历史。这是一个非常伟大又充满故事的朝代。"
+        },
+        {
+          "id": "action_A81UYv-Q",
+          "type": "laser",
+          "elementId": "text_Oz6oiCNh"
+        },
+        {
+          "id": "action_Zxw9OKPY",
+          "type": "speech",
+          "text": "首先，我们要知道，明朝是中国历史上一个非常重要的朝代。它就像我们历史长河中一颗闪亮的星星。"
+        },
+        {
+          "id": "action_dXz5UlFk",
+          "type": "laser",
+          "elementId": "text_GVinI7K1"
+        },
+        {
+          "id": "action_fMaCidHF",
+          "type": "speech",
+          "text": "它存在的时间是从公元1368年到1644年。你可以算一算，这个朝代一共持续了多少年呢？"
+        },
+        {
+          "id": "action_2rkPrsRx",
+          "type": "spotlight",
+          "elementId": "text_acGGCp6B"
+        },
+        {
+          "id": "action_9Wi67RXn",
+          "type": "speech",
+          "text": "在接下来的课程里，我们会像探险家一样，一步步了解明朝是怎么建立的，它最辉煌的时候是什么样子，以及后来为什么又走向了衰落。"
+        },
+        {
+          "id": "action_TELrWa9B",
+          "type": "speech",
+          "text": "准备好了吗？让我们开始吧！"
+        }
+      ],
+      "createdAt": 1774072251771,
+      "updatedAt": 1774072251771
+    },
+    {
+      "id": "DzgloGYSTGsBiN8-jvqbr",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "明朝的建立者：朱元璋",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "OJJSHBXvbEMqnCex56--M",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_hGKsgaFv",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_8SMX7-ij",
+              "type": "text",
+              "left": 60,
+              "top": 62,
+              "width": 880,
+              "height": 70,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1a56db;\"><strong>明朝的建立者：朱元璋</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_PWYWrg-k",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">从平民到皇帝的传奇人生</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_5IS1HuKS",
+              "type": "shape",
+              "left": 100,
+              "top": 200,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#d1d5db",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_WyiyByNN",
+              "type": "shape",
+              "left": 100,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_fXTUYwqN",
+              "type": "shape",
+              "left": 180,
+              "top": 250,
+              "width": 40,
+              "height": 40,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#1a56db",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_NAx2tqho",
+              "type": "text",
+              "left": 120,
+              "top": 302,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\"><strong>开国皇帝</strong></p><p style=\"font-size: 16px; text-align: center;\">朱元璋，年号洪武</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_qBnTRP36",
+              "type": "shape",
+              "left": 370,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fdf4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_lSxBz0Bz",
+              "type": "shape",
+              "left": 450,
+              "top": 250,
+              "width": 40,
+              "height": 40,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#059669",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_BB9-hgit",
+              "type": "text",
+              "left": 390,
+              "top": 302,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\"><strong>出身贫寒</strong></p><p style=\"font-size: 16px; text-align: center;\">曾做过和尚</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_XfvDgLBt",
+              "type": "shape",
+              "left": 640,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_h-kMGobq",
+              "type": "shape",
+              "left": 720,
+              "top": 250,
+              "width": 40,
+              "height": 40,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#d97706",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_WqNzj7Se",
+              "type": "text",
+              "left": 660,
+              "top": 302,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center;\"><strong>建立大明</strong></p><p style=\"font-size: 16px; text-align: center;\">起义推翻元朝</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_MHdk9mqM",
+              "type": "shape",
+              "left": 100,
+              "top": 400,
+              "width": 800,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f9fafb",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_-_1lKZcS",
+              "type": "text",
+              "left": 120,
+              "top": 422,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; text-align: center;\"><strong>人生轨迹：</strong>贫民 → 和尚 → 起义军领袖 → 明朝开国皇帝</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#374151",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_j_O9Ptgq",
+          "type": "spotlight",
+          "elementId": "text_8SMX7-ij"
+        },
+        {
+          "id": "action_LU7WC5aY",
+          "type": "speech",
+          "text": "非常好，小星。刚才我们简单认识了明朝这个朝代。现在，我们来深入了解一下它的开创者。看这里，明朝的建立者，就是这位——朱元璋。"
+        },
+        {
+          "id": "action_AoWRFon8",
+          "type": "spotlight",
+          "elementId": "text_PWYWrg-k"
+        },
+        {
+          "id": "action_4CHwgvvk",
+          "type": "speech",
+          "text": "他的故事非常特别，被称作“从平民到皇帝的传奇人生”。这可不是一个普通的故事，而是一个巨大的逆袭。"
+        },
+        {
+          "id": "action_j2LIobw6",
+          "type": "spotlight",
+          "elementId": "text_NAx2tqho"
+        },
+        {
+          "id": "action_HD8mOSI4",
+          "type": "speech",
+          "text": "首先，我们要记住他的身份：他是明朝的开国皇帝，他使用的年号叫做“洪武”。所以，我们有时也叫他“明太祖”或者“洪武帝”。"
+        },
+        {
+          "id": "action_StIljLWC",
+          "type": "spotlight",
+          "elementId": "text_BB9-hgit"
+        },
+        {
+          "id": "action_rAqqbMK3",
+          "type": "speech",
+          "text": "那么，他传奇在哪里呢？看这里，他出身贫寒，家里非常穷，甚至为了活下去，还曾经当过和尚。你能想象吗？一个未来的皇帝，曾经是个小和尚。"
+        },
+        {
+          "id": "action_8gwAQxck",
+          "type": "spotlight",
+          "elementId": "text_WqNzj7Se"
+        },
+        {
+          "id": "action_3SVdMKDb",
+          "type": "speech",
+          "text": "后来，他加入了反抗元朝统治的起义军，凭借自己的勇敢和智慧，最终带领军队推翻了元朝，建立了我们正在学习的大明王朝。"
+        },
+        {
+          "id": "action_dRoVCb6c",
+          "type": "spotlight",
+          "elementId": "text_-_1lKZcS"
+        },
+        {
+          "id": "action_4a0h2xYB",
+          "type": "speech",
+          "text": "我们可以把他的整个人生轨迹总结成一条清晰的路线：从贫民开始，到成为和尚，再到成为起义军的领袖，最后，登上了权力的顶峰，成为明朝的开国皇帝。这是一个非常了不起的奋斗故事。"
+        },
+        {
+          "id": "action_5HBqPrCb",
+          "type": "speech",
+          "text": "小星，了解了朱元璋的故事，你有什么感想或者疑问吗？你觉得从一个普通人变成皇帝，最重要的因素会是什么呢？"
+        },
+        {
+          "id": "action_XE1qUDlx",
+          "type": "discussion",
+          "topic": "朱元璋的传奇人生",
+          "prompt": "从一个普通人变成皇帝，最重要的因素会是什么？是勇敢、智慧、运气，还是别的什么？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774072313911,
+      "updatedAt": 1774072313911
+    },
+    {
+      "id": "bnhuLOv3niygatLGMfvYT",
+      "stageId": "EfbmaAzKsS",
+      "type": "quiz",
+      "title": "小试牛刀：明朝知多少",
+      "order": 3,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "明朝的起止时间是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "1368年-1644年"
+              },
+              {
+                "value": "B",
+                "label": "1271年-1368年"
+              },
+              {
+                "value": "C",
+                "label": "1644年-1912年"
+              },
+              {
+                "value": "D",
+                "label": "960年-1279年"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "明朝由明太祖朱元璋于1368年建立，定都应天府（南京）。1644年，李自成攻入北京，崇祯帝自缢，明朝作为全国性政权灭亡。选项B是元朝，选项C是清朝，选项D是宋朝。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "single",
+            "question": "明朝的开国皇帝是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "朱元璋"
+              },
+              {
+                "value": "B",
+                "label": "朱棣"
+              },
+              {
+                "value": "C",
+                "label": "朱允炆"
+              },
+              {
+                "value": "D",
+                "label": "朱厚照"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "朱元璋，即明太祖，是明朝的建立者。他出身贫寒，通过农民起义推翻元朝统治，于1368年称帝，建立明朝。选项B朱棣是明成祖，选项C朱允炆是建文帝，选项D朱厚照是明武宗。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "single",
+            "question": "明朝最初的都城是？",
+            "options": [
+              {
+                "value": "A",
+                "label": "应天府（今南京）"
+              },
+              {
+                "value": "B",
+                "label": "顺天府（今北京）"
+              },
+              {
+                "value": "C",
+                "label": "开封府"
+              },
+              {
+                "value": "D",
+                "label": "长安（今西安）"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "1368年，朱元璋在应天府（今江苏南京）称帝，建立明朝，并定都于此。后来明成祖朱棣迁都至顺天府（今北京）。选项B是明朝中后期的都城，选项C是北宋都城，选项D是唐朝等多个朝代的首都。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_CwHB4NTu",
+          "type": "speech",
+          "text": "好的，小星，刚才我们聊了朱元璋的故事，现在让我们通过几个小问题，来检验一下你对明朝基础知识的掌握情况。"
+        },
+        {
+          "id": "action__ZaKYktB",
+          "type": "speech",
+          "text": "请仔细阅读题目，选择你认为正确的答案。这些题目主要考察三个关键点：明朝的起止时间、开国皇帝是谁，以及最初的都城在哪里。"
+        },
+        {
+          "id": "action_5B-XI7iL",
+          "type": "speech",
+          "text": "第一题，关于明朝的起止时间。第二题，开国皇帝是谁，这个我们刚刚才重点讲过。第三题，明朝最初的都城，这和我们之前提到的朱元璋建立明朝的地点有关。"
+        },
+        {
+          "id": "action_ZJj8Yh6A",
+          "type": "speech",
+          "text": "都完成了吗？我们来看看答案和解析。明朝的起止时间是公元1368年到1644年，一共276年。开国皇帝正是我们刚刚讨论的朱元璋，也就是明太祖。而明朝最初的都城，是位于今天江苏省南京市的应天府，也就是南京。"
+        },
+        {
+          "id": "action_Y4PaGYS9",
+          "type": "speech",
+          "text": "这些是学习明朝历史最基础也是最重要的几个知识点，一定要记牢哦。掌握好这些，我们才能更好地理解接下来要讲的明朝的黄金时代。"
+        },
+        {
+          "id": "action_pIL5fJYc",
+          "type": "discussion",
+          "topic": "你觉得朱元璋选择在南京（应天府）建立都城，可能有哪些原因？",
+          "prompt": "可以结合我们之前讲过的他的出身和经历想一想。",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774072339304,
+      "updatedAt": 1774072339304
+    },
+    {
+      "id": "eKZPZIA58SxWJg4Q4n74t",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "明朝的黄金时代：永乐盛世",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "sF2MDWTG4WC8lXnTLEUng",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_OjyqbhEw",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_q9Kx0W8S",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1a56db;\"><strong>明朝的黄金时代：永乐盛世</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_BWMB7EnM",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">探索明朝最鼎盛的时期，了解其辉煌的文化与外交成就</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_lkErym8_",
+              "type": "shape",
+              "left": 100,
+              "top": 200,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#d1d5db",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_M7K41OOW",
+              "type": "shape",
+              "left": 100,
+              "top": 230,
+              "width": 800,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_05ULmMvM",
+              "type": "text",
+              "left": 120,
+              "top": 242,
+              "width": 760,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>迁都北京</strong></p><p style=\"font-size: 18px;\">明成祖朱棣将都城从南京迁至北京，修建紫禁城</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_1Uhnmyiz",
+              "type": "shape",
+              "left": 100,
+              "top": 340,
+              "width": 800,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_3Y0e0pUE",
+              "type": "text",
+              "left": 120,
+              "top": 352,
+              "width": 760,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>编纂《永乐大典》</strong></p><p style=\"font-size: 18px;\">下令编纂这部包罗万象的巨著，汇集古代文献</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_9mr7GEz3",
+              "type": "shape",
+              "left": 100,
+              "top": 450,
+              "width": 800,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_JNAxOa8h",
+              "type": "text",
+              "left": 120,
+              "top": 462,
+              "width": 760,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>郑和下西洋</strong></p><p style=\"font-size: 18px;\">派遣郑和七次远航，扬威海外，促进中外交流</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_V0bbVpNi",
+          "type": "spotlight",
+          "elementId": "text_q9Kx0W8S"
+        },
+        {
+          "id": "action_Z2x7HM9h",
+          "type": "speech",
+          "text": "非常好，小星。我们刚刚了解了明朝的建立和基础，现在，让我们一起走进明朝最辉煌的篇章——永乐盛世。"
+        },
+        {
+          "id": "action_Cg1DLDOG",
+          "type": "spotlight",
+          "elementId": "text_05ULmMvM"
+        },
+        {
+          "id": "action_tPThy0M7",
+          "type": "speech",
+          "text": "首先，我们来看第一个关键成就。明成祖朱棣做了一件影响深远的大事，那就是把都城从南京迁到了北京。他还在北京修建了宏伟的紫禁城，也就是我们今天故宫的前身。这不仅仅是一次搬家，更是一个强大的政治和军事信号。"
+        },
+        {
+          "id": "action_Df1Pc8tB",
+          "type": "laser",
+          "elementId": "text_05ULmMvM"
+        },
+        {
+          "id": "action_0Ig3-h5v",
+          "type": "speech",
+          "text": "小星，你觉得把都城从温暖的南方迁到靠近北方边境的北京，可能会有什么好处呢？"
+        },
+        {
+          "id": "action_WomNpSff",
+          "type": "spotlight",
+          "elementId": "text_3Y0e0pUE"
+        },
+        {
+          "id": "action_QvzptNqi",
+          "type": "speech",
+          "text": "接下来，是文化上的巨大贡献。朱棣下令编纂了一部超级大的书，叫做《永乐大典》。这部书就像明朝的‘百科全书’，把当时能找到的古代文献、知识都收集、整理在了一起。这体现了当时对文化的重视和国力之强盛。"
+        },
+        {
+          "id": "action_EhPIm6Hw",
+          "type": "spotlight",
+          "elementId": "text_JNAxOa8h"
+        },
+        {
+          "id": "action_WKlXcRSj",
+          "type": "speech",
+          "text": "最后，也是最激动人心的，就是外交上的壮举。朱棣派出了他最信任的航海家——郑和，率领着当时世界上最庞大的船队，七次远航西洋。"
+        },
+        {
+          "id": "action_qJN8QHsA",
+          "type": "laser",
+          "elementId": "text_JNAxOa8h"
+        },
+        {
+          "id": "action_CjsyvhFt",
+          "type": "speech",
+          "text": "这可不是简单的旅行，而是去展示明朝的强大，同时和沿途的许多国家进行贸易、文化交流。你想一想，在600多年前，这样的远航需要多大的勇气和技术啊！"
+        },
+        {
+          "id": "action_XROtiq7d",
+          "type": "speech",
+          "text": "所以你看，迁都北京、编纂大典、下西洋，这三件事分别从政治、文化、外交三个方面，共同构成了明朝的黄金时代。"
+        }
+      ],
+      "createdAt": 1774072390136,
+      "updatedAt": 1774072390136
+    },
+    {
+      "id": "cb3kJP2z3TK3kKRjbKLgt",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "紫禁城与万里长城",
+      "order": 5,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "KVkIzzL7dSQPn90r0fovf",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_9c5PfhqB",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_L77zqoCV",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1a237e;\"><strong>紫禁城与万里长城</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_3uZ3SzIB",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #5c6bc0;\">明朝留下的两大世界文化遗产</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_7VxNrVB9",
+              "type": "shape",
+              "left": 100,
+              "top": 200,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#c5cae9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_eJk5PjzT",
+              "type": "shape",
+              "left": 100,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f5e9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_qCrZ7FN-",
+              "type": "shape",
+              "left": 180,
+              "top": 250,
+              "width": 100,
+              "height": 100,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#4caf50",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_F_rLXWjK",
+              "type": "text",
+              "left": 120,
+              "top": 282,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #1b5e20;\">北京紫禁城</p><p style=\"font-size: 16px; text-align: center; color: #1b5e20;\">明朝开始修建的皇宫</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_19sReYTd",
+              "type": "shape",
+              "left": 370,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fff3e0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_8LuEQwZT",
+              "type": "shape",
+              "left": 450,
+              "top": 250,
+              "width": 100,
+              "height": 100,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ff9800",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_1dlE2G53",
+              "type": "text",
+              "left": 390,
+              "top": 282,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #e65100;\">万里长城</p><p style=\"font-size: 16px; text-align: center; color: #e65100;\">主要是明朝修建</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_IOAFLAHu",
+              "type": "shape",
+              "left": 640,
+              "top": 230,
+              "width": 260,
+              "height": 140,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f3e5f5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_WI4yA0Rb",
+              "type": "shape",
+              "left": 720,
+              "top": 250,
+              "width": 100,
+              "height": 100,
+              "path": "M 0.5 0 L 1 0.5 L 0.5 1 L 0 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#9c27b0",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_IcmqxBfr",
+              "type": "text",
+              "left": 660,
+              "top": 282,
+              "width": 220,
+              "height": 76,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #4a148c;\">共同点</p><p style=\"font-size: 16px; text-align: center; color: #4a148c;\">古代劳动人民智慧的结晶</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_39jS4vzz",
+              "type": "shape",
+              "left": 100,
+              "top": 400,
+              "width": 800,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e1f5fe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Wo96nMhX",
+              "type": "text",
+              "left": 120,
+              "top": 418,
+              "width": 760,
+              "height": 58,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #01579b;\">感受古代中国的建筑智慧与伟大成就</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_S12TNTTM",
+          "type": "spotlight",
+          "elementId": "text_L77zqoCV"
+        },
+        {
+          "id": "action_sJdiyHGj",
+          "type": "speech",
+          "text": "刚才我们聊了明朝的黄金时代，永乐盛世。接下来，我们要看看这个盛世为我们留下了什么。请看，紫禁城与万里长城。"
+        },
+        {
+          "id": "action_Lkcz_lht",
+          "type": "spotlight",
+          "elementId": "text_3uZ3SzIB"
+        },
+        {
+          "id": "action_hYaPTyjt",
+          "type": "speech",
+          "text": "它们都是明朝留下的，并且被联合国教科文组织认定为世界文化遗产。这是非常了不起的成就。"
+        },
+        {
+          "id": "action_b-_JcJSG",
+          "type": "spotlight",
+          "elementId": "text_F_rLXWjK"
+        },
+        {
+          "id": "action_dQj-Kj_k",
+          "type": "speech",
+          "text": "我们先看紫禁城。它就是我们今天说的北京故宫。明朝永乐皇帝迁都北京后，就开始修建这座巨大的皇宫。它不仅是皇帝的家，更是整个国家的政治中心，体现了皇权的至高无上。"
+        },
+        {
+          "id": "action_DnM978ul",
+          "type": "spotlight",
+          "elementId": "text_1dlE2G53"
+        },
+        {
+          "id": "action_ZZMrNjWa",
+          "type": "speech",
+          "text": "再看万里长城。很多人以为长城是秦始皇修的，但其实我们今天看到的长城，大部分砖石结构的长城，都是明朝修建的。明朝为了防御北方的游牧民族，投入了巨大的人力物力来加固和延长长城。"
+        },
+        {
+          "id": "action_PbDa1E0C",
+          "type": "spotlight",
+          "elementId": "text_IcmqxBfr"
+        },
+        {
+          "id": "action_npK3HbCu",
+          "type": "speech",
+          "text": "那么，它们有什么共同点呢？它们都是中国古代劳动人民智慧的结晶。在没有大型机械的古代，要完成如此宏伟的工程，需要难以想象的组织能力、建筑技术和无数工匠的辛勤付出。"
+        },
+        {
+          "id": "action_vu_hHQp4",
+          "type": "spotlight",
+          "elementId": "text_Wo96nMhX"
+        },
+        {
+          "id": "action_ScEPWU7w",
+          "type": "speech",
+          "text": "所以，通过了解紫禁城和长城，我们不仅能学到历史知识，更能感受到古代中国的建筑智慧与伟大成就。它们就像两座丰碑，静静地诉说着明朝的强盛与辉煌。"
+        }
+      ],
+      "createdAt": 1774072454392,
+      "updatedAt": 1774072454392
+    },
+    {
+      "id": "_TZsdoU8Yu1xdwoQ-HgB0",
+      "stageId": "EfbmaAzKsS",
+      "type": "interactive",
+      "title": "郑和下西洋航线图",
+      "order": 6,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>郑和下西洋 - 交互式学习</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap');\n        body { font-family: 'Noto Serif SC', serif; }\n        #map-container {\n            background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800\" height=\"500\" viewBox=\"0 0 800 500\"><rect width=\"800\" height=\"500\" fill=\"%231e3a8a\"/><ellipse cx=\"200\" cy=\"250\" rx=\"180\" ry=\"120\" fill=\"%232e8b57\"/><ellipse cx=\"500\" cy=\"200\" rx=\"150\" ry=\"100\" fill=\"%23daa520\"/><ellipse cx=\"600\" cy=\"350\" rx=\"120\" ry=\"80\" fill=\"%238b4513\"/><path d=\"M 150 250 Q 250 200 350 250 T 550 200 T 700 250\" stroke=\"%23006699\" stroke-width=\"2\" fill=\"none\"/></svg>');\n            background-size: cover;\n            background-position: center;\n        }\n        .port-marker {\n            cursor: pointer;\n            transition: all 0.3s ease;\n        }\n        .port-marker:hover {\n            transform: scale(1.3);\n            filter: drop-shadow(0 0 4px white);\n        }\n        .route-path {\n            fill: none;\n            stroke-width: 3;\n            stroke-dasharray: 10,5;\n            animation: dash 20s linear infinite;\n        }\n        @keyframes dash {\n            to { stroke-dashoffset: -1000; }\n        }\n        .ship {\n            transition: left 0.5s linear, top 0.5s linear;\n        }\n        .info-panel {\n            backdrop-filter: blur(10px);\n            background: rgba(255, 255, 255, 0.9);\n        }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-amber-50 text-gray-800 p-4 md:p-6\">\n    <div class=\"max-w-6xl mx-auto\">\n        <header class=\"text-center mb-6\">\n            <h1 class=\"text-3xl md:text-4xl font-bold text-blue-900 mb-2\">郑和下西洋</h1>\n            <p class=\"text-lg text-gray-600\">明朝永乐三年至宣德八年（1405-1433年）七次远航的交互探索</p>\n        </header>\n\n        <main class=\"flex flex-col lg:flex-row gap-6\">\n            <!-- 控制面板 -->\n            <div class=\"lg:w-1/4 space-y-6\">\n                <div class=\"info-panel rounded-xl p-5 shadow-lg border border-amber-200\">\n                    <h2 class=\"text-xl font-bold text-blue-800 mb-3\">航行控制</h2>\n                    <div class=\"mb-4\">\n                        <label class=\"block text-sm font-medium text-gray-700 mb-2\">选择航次 (共七次)</label>\n                        <div class=\"flex flex-wrap gap-2 mb-2\">\n                            <button onclick=\"selectVoyage(1)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第一次</button>\n                            <button onclick=\"selectVoyage(2)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第二次</button>\n                            <button onclick=\"selectVoyage(3)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第三次</button>\n                            <button onclick=\"selectVoyage(4)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第四次</button>\n                            <button onclick=\"selectVoyage(5)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第五次</button>\n                            <button onclick=\"selectVoyage(6)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第六次</button>\n                            <button onclick=\"selectVoyage(7)\" class=\"voyage-btn px-3 py-1 rounded bg-blue-100 text-blue-800 hover:bg-blue-200 border border-blue-300\">第七次</button>\n                        </div>\n                        <button onclick=\"toggleAllRoutes()\" class=\"w-full px-4 py-2 rounded bg-amber-500 text-white hover:bg-amber-600 mt-2\">叠加显示所有航线</button>\n                    </div>\n                    <div class=\"mb-4\">\n                        <label class=\"block text-sm font-medium text-gray-700 mb-2\">时间轴：永乐 <span id=\"year-display\">三年 (1405)</span></label>\n                        <input type=\"range\" min=\"0\" max=\"6\" value=\"0\" step=\"1\" class=\"w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer\" id=\"timeline-slider\" oninput=\"updateTimeline(this.value)\">\n                        <div class=\"flex justify-between text-xs text-gray-500 mt-1\">\n                            <span>1405</span><span>1407</span><span>1409</span><span>1413</span><span>1417</span><span>1421</span><span>1433</span>\n                        </div>\n                    </div>\n                    <div>\n                        <label class=\"block text-sm font-medium text-gray-700 mb-2\">航行状态</label>\n                        <button onclick=\"toggleShipAnimation()\" class=\"w-full px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700\" id=\"animate-btn\">启动航行动画</button>\n                        <p class=\"text-xs text-gray-500 mt-2\">动画模拟遵循季风规律：冬季东北风出航，夏季西南风返航。</p>\n                    </div>\n                </div>\n\n                <div class=\"info-panel rounded-xl p-5 shadow-lg border border-amber-200\">\n                    <h2 class=\"text-xl font-bold text-blue-800 mb-3\">航海技术</h2>\n                    <ul class=\"space-y-2 text-sm\">\n                        <li class=\"flex items-start\"><span class=\"text-blue-600 mr-2\">•</span> <strong>季风航行</strong>: 利用规律性风向，数学上可表示为周期性函数 \\\\( V_{\\\\text{wind}}(t) \\\\)。</li>\n                        <li class=\"flex items-start\"><span class=\"text-blue-600 mr-2\">•</span> <strong>星象导航</strong>: 观测星辰高度 \\\\( h_{\\\\star} \\\\) 确定纬度。</li>\n                        <li class=\"flex items-start\"><span class=\"text-blue-600 mr-2\">•</span> <strong>地文导航</strong>: 结合海岸线、水深与罗盘定位。</li>\n                        <li class=\"flex items-start\"><span class=\"text-blue-600 mr-2\">•</span> <strong>船队规模</strong>: 宝船尺寸比例可达 \\\\( L : W : H \\\\approx 5 : 2 : 1 \\\\)。</li>\n                    </ul>\n                </div>\n            </div>\n\n            <!-- 主地图区域 -->\n            <div class=\"lg:w-3/4\">\n                <div class=\"info-panel rounded-xl p-4 shadow-xl border border-blue-300 mb-4\">\n                    <div id=\"map-container\" class=\"relative w-full h-96 md:h-[500px] rounded-lg overflow-hidden\">\n                        <!-- 航线 SVG (由JS动态生成) -->\n                        <svg id=\"routes-svg\" class=\"absolute top-0 left-0 w-full h-full\" style=\"pointer-events: none;\"></svg>\n                        <!-- 港口标记 (由JS动态生成) -->\n                        <div id=\"port-markers\"></div>\n                        <!-- 动画小船 -->\n                        <div id=\"ship\" class=\"ship absolute w-8 h-8 -ml-4 -mt-8 hidden\">\n                            <svg viewBox=\"0 0 100 100\" class=\"w-full h-full\">\n                                <path d=\"M10,50 L90,50 L70,20 L30,20 Z\" fill=\"#8B4513\"/>\n                                <rect x=\"45\" y=\"10\" width=\"10\" height=\"40\" fill=\"#D2691E\"/>\n                                <polygon points=\"50,10 65,30 35,30\" fill=\"#A0522D\"/>\n                            </svg>\n                        </div>\n                        <!-- 地图方向示意 -->\n                        <div class=\"absolute bottom-4 left-4 bg-white/80 p-2 rounded text-sm\">\n                            <div class=\"flex items-center\"><div class=\"w-4 h-4 bg-blue-600 mr-2\"></div>主线（古里方向）</div>\n                            <div class=\"flex items-center mt-1\"><div class=\"w-4 h-4 bg-green-600 mr-2\"></div>分支航线</div>\n                        </div>\n                    </div>\n                </div>\n\n                <!-- 信息展示面板 -->\n                <div class=\"info-panel rounded-xl p-5 shadow-lg border border-amber-200\">\n                    <h2 class=\"text-xl font-bold text-blue-800 mb-3\" id=\"info-title\">探索航行信息</h2>\n                    <div id=\"info-content\" class=\"text-gray-700\">\n                        <p class=\"mb-3\">点击地图上的<span class=\"font-bold text-red-600\">港口标记</span>，查看郑和船队到达该地的具体时间、活动与历史意义。</p>\n                        <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                            <div>\n                                <h3 class=\"font-bold text-blue-700 mb-2\">航行目的复合性</h3>\n                                <ul class=\"text-sm space-y-1\">\n                                    <li><strong>政治</strong>: 宣扬大明国威，建立朝贡体系。</li>\n                                    <li><strong>经济</strong>: 发展官方贸易，获取海外珍品。</li>\n                                    <li><strong>文化</strong>: 传播中华文明，促进交流互鉴。</li>\n                                </ul>\n                            </div>\n                            <div>\n                                <h3 class=\"font-bold text-blue-700 mb-2\">历史时空范围</h3>\n                                <ul class=\"text-sm space-y-1\">\n                                    <li><strong>时间</strong>: 1405-1433年（比欧洲达·伽马早约60年）。</li>\n                                    <li><strong>空间</strong>: 明代“西洋”，即今南海与印度洋沿岸。</li>\n                                    <li><strong>约束</strong>: 航线不超出历史记载范围。</li>\n                                </ul>\n                            </div>\n                        </div>\n                        <div id=\"dynamic-info\" class=\"mt-4 p-4 bg-blue-50 rounded-lg hidden\">\n                            <!-- 动态内容由JS填充 -->\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </main>\n\n        <footer class=\"text-center mt-8 text-sm text-gray-500 border-t pt-4\">\n            <p>本交互模块基于《郑和航海图》及主流史学研究制作。航线与事件信息遵循历史记载，展示明朝航海壮举。</p>\n            <p class=\"mt-1\">设计遵循约束：时间顺序正确、地理范围准确、历史逻辑严谨。</p>\n        </footer>\n    </div>\n\n    <script>\n        // 严格遵循约束的数据定义\n        const voyages = [\n            { id: 1, years: \"1405-1407\", period: \"永乐三至五年\", startYear: 1405 },\n            { id: 2, years: \"1407-1409\", period: \"永乐五至七年\", startYear: 1407 },\n            { id: 3, years: \"1409-1411\", period: \"永乐七至九年\", startYear: 1409 },\n            { id: 4, years: \"1413-1415\", period: \"永乐十一至十三年\", startYear: 1413 },\n            { id: 5, years: \"1417-1419\", period: \"永乐十五至十七年\", startYear: 1417 },\n            { id: 6, years: \"1421-1422\", period: \"永乐十九至二十年\", startYear: 1421 },\n            { id: 7, years: \"1431-1433\", period: \"宣德六至八年\", startYear: 1431 }\n        ];\n\n        // 基于历史记载的主要港口与事件（地理坐标已简化适配视图）\n        const ports = [\n            { id: \"liujia\", name: \"刘家港\", x: 15, y: 50, info: \"起点：太仓刘家港，船队集结出发地。\" },\n            { id: \"champa\", name: \"占城\", x: 30, y: 60, info: \"第一站（今越南中部），受到当地国王欢迎，进行贸易。\" },\n            { id: \"java\", name: \"爪哇\", x: 40, y: 75, info: \"重要贸易点，用瓷器、丝绸交换香料。\" },\n            { id: \"malacca\", name: \"满剌加\", x: 35, y: 65, info: \"关键中转站，建立官厂，控制海峡。\" },\n            { id: \"sumatra\", name: \"苏门答腊\", x: 38, y: 70, info: \"平息当地冲突，彰显明朝权威。\" },\n            { id: \"ceylon\", name: \"锡兰山\", x: 45, y: 60, info: \"立碑布施，后发生冲突并俘获其王。\" },\n            { id: \"calicut\", name: \"古里\", x: 55, y: 55, info: \"主要终点（今印度卡利卡特），进行大规模贸易，立碑纪念。\" },\n            { id: \"hulumosi\", name: \"忽鲁谟斯\", x: 65, y: 45, info: \"波斯湾重要港口（第四次起到达），联通西亚贸易网。\" },\n            { id: \"aden\", name: \"阿丹\", x: 60, y: 40, info: \"阿拉伯半岛港口，获取珍稀宝物如麒麟（长颈鹿）。\" },\n            { id: \"mogadishu\", name: \"木骨都束\", x: 55, y: 35, info: \"非洲东岸（今索马里），进行友好访问与贸易。\" },\n            { id: \"malindi\", name: \"麻林\", x: 53, y: 30, info: \"最远到达地之一（今肯尼亚），带回长颈鹿等贡物。\" }\n        ];\n\n        // 基于历史记载的航线路径（简化坐标点，主航线+分支）\n        const routePaths = {\n            1: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[40,75],[45,60],[55,55]], branch: [] },\n            2: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[38,70],[45,60],[55,55]], branch: [] },\n            3: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[45,60],[55,55]], branch: [[45,60],[48,58]] },\n            4: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[45,60],[55,55],[65,45]], branch: [[55,55],[60,40]] },\n            5: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[45,60],[55,55],[65,45]], branch: [[55,55],[53,30]] },\n            6: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[45,60],[55,55],[65,45]], branch: [[55,55],[55,35]] },\n            7: { color: \"#3b82f6\", points: [[15,50],[30,60],[35,65],[45,60],[55,55],[65,45]], branch: [[55,55],[60,40],[55,35]] }\n        };\n\n        // 状态变量\n        let currentVoyage = 1;\n        let showingAllRoutes = false;\n        let animationInterval = null;\n        let shipPositionIndex = 0;\n        let isAnimating = false;\n        const yearMap = [1405, 1407, 1409, 1413, 1417, 1421, 1433];\n\n        // 初始化\n        document.addEventListener('DOMContentLoaded', function() {\n            renderPortMarkers();\n            selectVoyage(1);\n        });\n\n        // 渲染港口标记\n        function renderPortMarkers() {\n            const container = document.getElementById('port-markers');\n            container.innerHTML = '';\n            ports.forEach(port => {\n                const marker = document.createElement('div');\n                marker.className = 'port-marker absolute w-6 h-6 -ml-3 -mt-3 rounded-full bg-red-600 border-2 border-white shadow-lg';\n                marker.style.left = port.x + '%';\n                marker.style.top = port.y + '%';\n                marker.title = port.name;\n                marker.onclick = () => showPortInfo(port);\n                container.appendChild(marker);\n\n                // 添加港口标签\n                const label = document.createElement('div');\n                label.className = 'absolute text-xs font-bold text-white bg-black/70 px-2 py-1 rounded -mt-8 -ml-"
+      },
+      "actions": [
+        {
+          "id": "action_VxOoRgeL",
+          "type": "speech",
+          "text": "刚才我们领略了紫禁城和长城的宏伟，现在，让我们把目光投向更广阔的大海，亲手探索一段同样令人惊叹的明朝传奇——郑和下西洋。"
+        },
+        {
+          "id": "action_OxHGvbTY",
+          "type": "speech",
+          "text": "小星，请看这个交互式地图。这条醒目的主线就是郑和船队的主航线。你可以先拖动时间轴上的滑块，看看从第一次到第七次下西洋，他们的航线有什么变化和发展。"
+        },
+        {
+          "id": "action_4U7IG8WT",
+          "type": "speech",
+          "text": "现在，尝试点击航线上的港口标记，比如‘古里’或‘忽鲁谟斯’。看看弹出的信息框，里面会告诉你船队什么时候到达这里，以及在那里发生了哪些重要的贸易或文化交流事件。"
+        },
+        {
+          "id": "action_9LZ5D5GV",
+          "type": "speech",
+          "text": "注意看地图上小船的动画，它正沿着航线移动。想象一下，几百年前，庞大的船队就是沿着这样的路线，克服重重困难，远航万里。这能帮助我们直观地感受当时航海技术的伟大。"
+        },
+        {
+          "id": "action_Rjv5N49G",
+          "type": "speech",
+          "text": "通过观察这些不同的到达地点和时间顺序，你能梳理出郑和船队都访问了哪些国家和地区吗？试着总结一下他们的航行轨迹。"
+        },
+        {
+          "id": "action_a59J7U7T",
+          "type": "speech",
+          "text": "很棒！通过亲手操作，我们不仅看到了航线图，更理解了这次远航背后的时间顺序、主要事件和它所展现的国力。这为明朝的黄金时代又添上了精彩的一笔。"
+        }
+      ],
+      "createdAt": 1774072591048,
+      "updatedAt": 1774072591048
+    },
+    {
+      "id": "KE9zXp1YQgNxreFvX1_TY",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "明朝的科技与文化",
+      "order": 7,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "40KVROBDFa9j74a7r04YY",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_TTT4Juae",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_iqqvfUcG",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; font-weight: bold;\">明朝的科技与文化</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_mJSpV4bt",
+              "type": "shape",
+              "left": 70,
+              "top": 136,
+              "width": 860,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_e4Xi2__a",
+              "type": "shape",
+              "left": 60,
+              "top": 180,
+              "width": 880,
+              "height": 100,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fefce8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_vlQ2H_KR",
+              "type": "shape",
+              "left": 80,
+              "top": 200,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f59e0b",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_5Ah7AOdB",
+              "type": "text",
+              "left": 110,
+              "top": 200,
+              "width": 820,
+              "height": 60,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">医药学巨著</p><p style=\"font-size: 18px;\">李时珍编写《本草纲目》</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_ur2M6e-H",
+              "type": "shape",
+              "left": 60,
+              "top": 300,
+              "width": 880,
+              "height": 100,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fdf4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_AJ2fEoPG",
+              "type": "shape",
+              "left": 80,
+              "top": 320,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#10b981",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_5zhRrQ7y",
+              "type": "text",
+              "left": 110,
+              "top": 320,
+              "width": 820,
+              "height": 60,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">小说创作繁荣</p><p style=\"font-size: 18px;\">《西游记》、《水浒传》等名著</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_hF-Svsnf",
+              "type": "shape",
+              "left": 60,
+              "top": 420,
+              "width": 880,
+              "height": 100,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3f2",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_-paWEUBh",
+              "type": "shape",
+              "left": 80,
+              "top": 440,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ef4444",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_gGZMCYzI",
+              "type": "text",
+              "left": 110,
+              "top": 440,
+              "width": 820,
+              "height": 60,
+              "content": "<p style=\"font-size: 20px; font-weight: bold;\">青花瓷工艺顶峰</p><p style=\"font-size: 18px;\">闻名世界的艺术成就</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#991b1b",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_zsvW0h4r",
+          "type": "spotlight",
+          "elementId": "text_iqqvfUcG"
+        },
+        {
+          "id": "action_uv2QGIvQ",
+          "type": "speech",
+          "text": "刚才我们领略了郑和远航的壮举，现在让我们把目光转向明朝的另一个辉煌领域。看这里，明朝的科技与文化。"
+        },
+        {
+          "id": "action_LpnaTzXt",
+          "type": "spotlight",
+          "elementId": "text_5Ah7AOdB"
+        },
+        {
+          "id": "action_CfMEfUYw",
+          "type": "speech",
+          "text": "首先，在科学领域，明朝诞生了一位伟大的医药学家——李时珍。他花费了毕生精力，编写了医药学巨著《本草纲目》。这本书系统地整理了近两千种药物，纠正了前人的许多错误，可以说是中医药学的百科全书，影响非常深远。"
+        },
+        {
+          "id": "action_YZMVDq4X",
+          "type": "spotlight",
+          "elementId": "text_5zhRrQ7y"
+        },
+        {
+          "id": "action_Ib_LCQ-E",
+          "type": "speech",
+          "text": "接下来，我们看看文学。明朝的小说创作非常繁荣，达到了一个高峰。我们熟悉的《西游记》，讲的是孙悟空保护唐僧西天取经的故事；还有《水浒传》，讲的是梁山好汉们的故事。这些作品人物形象生动，情节曲折，直到今天都深受大家喜爱。"
+        },
+        {
+          "id": "action_io7KlOba",
+          "type": "laser",
+          "elementId": "text_5zhRrQ7y"
+        },
+        {
+          "id": "action_qWCpBkiu",
+          "type": "speech",
+          "text": "小星，你读过或者听过《西游记》里的哪个故事吗？"
+        },
+        {
+          "id": "action_CeDojN2Z",
+          "type": "spotlight",
+          "elementId": "text_gGZMCYzI"
+        },
+        {
+          "id": "action_E5AiQl-M",
+          "type": "speech",
+          "text": "最后，在艺术方面，明朝的青花瓷工艺达到了顶峰。青花瓷以其白底蓝花的优雅图案闻名世界，成为当时中国对外贸易的重要商品，也是中华文化的一个标志。"
+        },
+        {
+          "id": "action_dhYflDGV",
+          "type": "speech",
+          "text": "所以你看，明朝不仅在政治、军事上强大，在科技、文学和艺术方面也取得了非凡的成就，为我们留下了丰富的文化遗产。"
+        }
+      ],
+      "createdAt": 1774072643833,
+      "updatedAt": 1774072643833
+    },
+    {
+      "id": "I8LC1RBKH859Zax3UJGPK",
+      "stageId": "EfbmaAzKsS",
+      "type": "quiz",
+      "title": "知识巩固：盛世与成就",
+      "order": 8,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "multiple",
+            "question": "下列哪些是“永乐盛世”的标志性事件或成就？（多选）",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 迁都北京，营建紫禁城"
+              },
+              {
+                "value": "B",
+                "label": "B. 编纂《永乐大典》"
+              },
+              {
+                "value": "C",
+                "label": "C. 派遣郑和七下西洋"
+              },
+              {
+                "value": "D",
+                "label": "D. 解除海禁，鼓励民间海外贸易"
+              }
+            ],
+            "answer": [
+              "A",
+              "B",
+              "C"
+            ],
+            "analysis": "正确答案是A、B、C。A项迁都北京并营建紫禁城是明成祖朱棣巩固统治、彰显国威的重要举措。B项《永乐大典》是当时世界上最大的百科全书，是文化盛世的象征。C项郑和下西洋是永乐年间规模空前的航海活动，展示了明朝的国力与外交影响力。D项错误，明朝在永乐年间并未解除海禁，郑和下西洋是官方的朝贡贸易，民间海外贸易仍受限制。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "single",
+            "question": "郑和下西洋的主要历史意义不包括以下哪一项？",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 促进了中国与亚非各国的经济文化交流"
+              },
+              {
+                "value": "B",
+                "label": "B. 开辟了通往美洲的新航路"
+              },
+              {
+                "value": "C",
+                "label": "C. 展示了明朝前期强大的国力和航海技术"
+              },
+              {
+                "value": "D",
+                "label": "D. 扩大了明朝在海外的影响力"
+              }
+            ],
+            "answer": [
+              "B"
+            ],
+            "analysis": "正确答案是B。郑和船队的航行范围是东南亚、南亚、西亚直至东非海岸，并未到达美洲。开辟通往美洲新航路的是15世纪末的哥伦布等欧洲航海家。A、C、D三项都是郑和下西洋公认的重要历史意义：它确实促进了交流，展示了国力，并扩大了明朝的海外影响力。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "single",
+            "question": "下列哪部著作被誉为“中国17世纪的工艺百科全书”？",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 《农政全书》"
+              },
+              {
+                "value": "B",
+                "label": "B. 《天工开物》"
+              },
+              {
+                "value": "C",
+                "label": "C. 《本草纲目》"
+              },
+              {
+                "value": "D",
+                "label": "D. 《徐霞客游记》"
+              }
+            ],
+            "analysis": "正确答案是B。《天工开物》由明代科学家宋应星所著，系统地总结了明代农业和手工业的生产技术和经验，覆盖了众多工业部门，故被西方学者称为“中国17世纪的工艺百科全书”。A项《农政全书》是徐光启所著的农业科学著作。C项《本草纲目》是李时珍的药物学巨著。D项《徐霞客游记》是地理学著作。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_1rDZR2Sm",
+          "type": "speech",
+          "text": "好的，小星，我们刚刚了解了明朝辉煌的科技与文化。现在，让我们通过几道题目，来巩固一下关于明朝鼎盛时期——也就是‘永乐盛世’的重大事件与成就，看看你掌握得怎么样。"
+        },
+        {
+          "id": "action_t4yD9zDA",
+          "type": "speech",
+          "text": "请仔细阅读题目，选出你认为正确的答案。第一题是多选题，关于‘永乐盛世’的标志性事件或成就。第二题和第三题是单选题，分别考察郑和下西洋的意义和明朝的科技代表作。"
+        },
+        {
+          "id": "action_TPOniZhL",
+          "type": "speech",
+          "text": "（等待学生作答）"
+        },
+        {
+          "id": "action_q3DIvisD",
+          "type": "speech",
+          "text": "时间到。我们一起来看一下。第一题，永乐盛世的标志，我们之前在第4页和第5页重点讲过，主要包括：明成祖朱棣迁都北京并营建紫禁城，组织编纂《永乐大典》这部规模空前的类书，以及派遣郑和七次下西洋。这些都是国力强盛、文化繁荣的集中体现。"
+        },
+        {
+          "id": "action_3DNw2wiK",
+          "type": "speech",
+          "text": "第二题，郑和下西洋的意义。我们第6页详细分析过他的航线图。其主要历史意义在于展示了明朝强大的国力与先进的航海技术，促进了与亚非各国的友好往来和经济文化交流。但它的主要目的并非像后来的欧洲航海家那样是为了开拓海外殖民地或进行大规模移民，这一点需要特别注意区分。"
+        },
+        {
+          "id": "action_QbzlcpOb",
+          "type": "speech",
+          "text": "第三题，明朝的科技文化代表作。我们第7页刚介绍过，宋应星所著的《天工开物》，系统地总结了明朝及以前的农业和手工业技术，被外国人誉为‘中国17世纪的工艺百科全书’。而《农政全书》和《本草纲目》虽然也是巨著，但分别侧重于农业和医药学。"
+        },
+        {
+          "id": "action_0OI664Go",
+          "type": "discussion",
+          "topic": "你认为，郑和下西洋和后来欧洲的大航海，最主要的区别是什么？",
+          "prompt": "可以从目的、性质和结果等方面对比思考。",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774072676726,
+      "updatedAt": 1774072676726
+    },
+    {
+      "id": "hZYUEzvPoYN5zjpqoLHEx",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "明朝的危机与衰落",
+      "order": 9,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "ER30d4PYc_hSLGThWGbR9",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_yjlFiykR",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>明朝的危机与衰落</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_8BHc0IbN",
+              "type": "text",
+              "left": 60,
+              "top": 140,
+              "width": 880,
+              "height": 58,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">分析导致明朝走向衰落的内部与外部因素</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_JRwwDA1P",
+              "type": "shape",
+              "left": 100,
+              "top": 195,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#cccccc",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_pH12BN4y",
+              "type": "shape",
+              "left": 60,
+              "top": 230,
+              "width": 280,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_8hIAAcMk",
+              "type": "text",
+              "left": 80,
+              "top": 250,
+              "width": 240,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #1e40af;\"><strong>内部危机</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Kv-NJIQq",
+              "type": "text",
+              "left": 80,
+              "top": 310,
+              "width": 240,
+              "height": 85,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">宦官专权</p><p style=\"font-size: 16px; text-align: center;\">党争激烈</p><p style=\"font-size: 16px; text-align: center;\">政治腐败</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_kcA4l9ho",
+              "type": "shape",
+              "left": 360,
+              "top": 230,
+              "width": 280,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_yBB3ZfCz",
+              "type": "text",
+              "left": 380,
+              "top": 250,
+              "width": 240,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #166534;\"><strong>外部威胁</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_t2vP7xK-",
+              "type": "text",
+              "left": 380,
+              "top": 310,
+              "width": 240,
+              "height": 85,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">北方女真族（后金）</p><p style=\"font-size: 16px; text-align: center;\">不断侵扰边境</p><p style=\"font-size: 16px; text-align: center;\">军事压力巨大</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_VWCOqwsu",
+              "type": "shape",
+              "left": 660,
+              "top": 230,
+              "width": 280,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_DO2HKtJF",
+              "type": "text",
+              "left": 680,
+              "top": 250,
+              "width": 240,
+              "height": 58,
+              "content": "<p style=\"font-size: 24px; text-align: center; color: #92400e;\"><strong>社会动荡</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_tkrYsw_c",
+              "type": "text",
+              "left": 680,
+              "top": 310,
+              "width": 240,
+              "height": 85,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">连年自然灾害</p><p style=\"font-size: 16px; text-align: center;\">农民起义频发</p><p style=\"font-size: 16px; text-align: center;\">统治根基动摇</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_sSwN2hS3",
+              "type": "shape",
+              "left": 60,
+              "top": 430,
+              "width": 880,
+              "height": 85,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f5f5f5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text__2o1HXJW",
+              "type": "text",
+              "left": 80,
+              "top": 440,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px; color: #333333;\"><strong>关键总结</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text__TNquGj2",
+              "type": "text",
+              "left": 80,
+              "top": 470,
+              "width": 840,
+              "height": 40,
+              "content": "<p style=\"font-size: 16px; color: #666666;\">内忧（政治腐败） + 外患（军事威胁） + 天灾人祸（社会动荡） = 明朝走向衰落</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_vlnOJRlt",
+          "type": "spotlight",
+          "elementId": "text_yjlFiykR"
+        },
+        {
+          "id": "action_tzp2CQsq",
+          "type": "speech",
+          "text": "好的，小星。刚才我们回顾了明朝的辉煌成就，现在我们要进入一个沉重但非常重要的部分。请看这里，明朝的危机与衰落。"
+        },
+        {
+          "id": "action_RJYCEzun",
+          "type": "spotlight",
+          "elementId": "text_8hIAAcMk"
+        },
+        {
+          "id": "action_ElSep-WI",
+          "type": "speech",
+          "text": "我们先来分析明朝的内部危机。一个王朝的衰落，往往是从内部开始的。"
+        },
+        {
+          "id": "action_O7iO0_LW",
+          "type": "laser",
+          "elementId": "text_Kv-NJIQq"
+        },
+        {
+          "id": "action_Bk3BesUn",
+          "type": "speech",
+          "text": "你看，这里总结了三个核心问题：宦官专权、党争激烈和政治腐败。想象一下，皇帝身边最亲近的太监掌握了巨大的权力，大臣们不团结，反而拉帮结派互相攻击，整个官场贪污成风。这样的政府，还能有效管理国家吗？"
+        },
+        {
+          "id": "action_WqDHBsEs",
+          "type": "spotlight",
+          "elementId": "text_yBB3ZfCz"
+        },
+        {
+          "id": "action_Gzpvtwxo",
+          "type": "speech",
+          "text": "内部已经问题重重，外部的威胁也接踵而至。"
+        },
+        {
+          "id": "action_Ud_cj2Sh",
+          "type": "laser",
+          "elementId": "text_t2vP7xK-"
+        },
+        {
+          "id": "action_v4K5pxIX",
+          "type": "speech",
+          "text": "看这里，北方的女真族，也就是后来的后金，不断侵扰明朝的边境。这给明朝带来了巨大的军事压力，需要耗费大量的人力、财力去防御，进一步加重了国家的负担。"
+        },
+        {
+          "id": "action_ci5hJFOX",
+          "type": "spotlight",
+          "elementId": "text_DO2HKtJF"
+        },
+        {
+          "id": "action_vJdywnPc",
+          "type": "speech",
+          "text": "最后，也是最直接的打击，是社会动荡。"
+        },
+        {
+          "id": "action_mnaEG-Kj",
+          "type": "laser",
+          "elementId": "text_tkrYsw_c"
+        },
+        {
+          "id": "action_qg_u1C0O",
+          "type": "speech",
+          "text": "连年的自然灾害，比如干旱、洪水，导致粮食减产，农民活不下去了。于是，大规模的农民起义爆发了，比如我们可能听过的李自成起义。这直接动摇了明朝统治的根基。"
+        },
+        {
+          "id": "action_qXzhRxYm",
+          "type": "spotlight",
+          "elementId": "text__2o1HXJW"
+        },
+        {
+          "id": "action_Irxmt1OT",
+          "type": "speech",
+          "text": "所以，我们来做一个关键总结。"
+        },
+        {
+          "id": "action_ufdo3yy5",
+          "type": "laser",
+          "elementId": "text__TNquGj2"
+        },
+        {
+          "id": "action_8XA2DCys",
+          "type": "speech",
+          "text": "你看这个公式：内忧，也就是政治腐败；加上外患，也就是军事威胁；再加上天灾人祸，也就是社会动荡。这三个因素叠加在一起，共同作用，最终导致了明朝走向衰落。小星，你觉得这三个因素里，哪一个对普通老百姓的生活影响最大呢？"
+        }
+      ],
+      "createdAt": 1774072737364,
+      "updatedAt": 1774072737364
+    },
+    {
+      "id": "ZMdiEYGU37OwTsq0g3OtB",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "明朝的终结：崇祯皇帝",
+      "order": 10,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "8lplrCBUeDQ_sMC5uoaDL",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_lM-zVHzd",
+              "type": "shape",
+              "left": 50,
+              "top": 50,
+              "width": 900,
+              "height": 90,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_6rvWDUor",
+              "type": "text",
+              "left": 70,
+              "top": 62,
+              "width": 860,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1a237e;\"><strong>明朝的终结：崇祯皇帝</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_y1IC5zke",
+              "type": "shape",
+              "left": 100,
+              "top": 140,
+              "width": 800,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_9URrmIDX",
+              "type": "shape",
+              "left": 80,
+              "top": 180,
+              "width": 840,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f9f9f9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_gk73MHhN",
+              "type": "text",
+              "left": 100,
+              "top": 203,
+              "width": 800,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>末代皇帝</strong></p><p style=\"font-size: 18px;\">明朝最后一位皇帝是崇祯帝</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_9DYkfNVb",
+              "type": "shape",
+              "left": 80,
+              "top": 294,
+              "width": 840,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f9f9f9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_1q4DHzsM",
+              "type": "text",
+              "left": 100,
+              "top": 317,
+              "width": 800,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>农民起义</strong></p><p style=\"font-size: 18px;\">李自成领导的农民军攻破了北京城</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape__vPQ4J-w",
+              "type": "shape",
+              "left": 80,
+              "top": 408,
+              "width": 840,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f9f9f9",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_rrju_Tyz",
+              "type": "text",
+              "left": 100,
+              "top": 431,
+              "width": 800,
+              "height": 70,
+              "content": "<p style=\"font-size: 20px;\"><strong>明朝灭亡</strong></p><p style=\"font-size: 18px;\">崇祯帝自尽，标志着明朝的灭亡</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "line_J7AhJy0I",
+              "type": "line",
+              "left": 120,
+              "top": 200,
+              "width": 3,
+              "start": [
+                0,
+                0
+              ],
+              "end": [
+                0,
+                300
+              ],
+              "style": "solid",
+              "color": "#ed7d31",
+              "points": [
+                "",
+                ""
+              ],
+              "rotate": 0
+            },
+            {
+              "id": "shape_R0gB2yCh",
+              "type": "shape",
+              "left": 110,
+              "top": 225,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ed7d31",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_clDRRzn3",
+              "type": "shape",
+              "left": 110,
+              "top": 340,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ed7d31",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_3vdKsd92",
+              "type": "shape",
+              "left": 110,
+              "top": 455,
+              "width": 20,
+              "height": 20,
+              "path": "M 1 0.5 A 0.5 0.5 0 1 1 0 0.5 A 0.5 0.5 0 1 1 1 0.5 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ed7d31",
+              "fixedRatio": false,
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_msl38rRW",
+          "type": "spotlight",
+          "elementId": "text_6rvWDUor"
+        },
+        {
+          "id": "action_jsMQ3sr6",
+          "type": "speech",
+          "text": "好，小星，我们刚刚分析了明朝衰落的三大原因，现在历史来到了一个关键的时刻。你看，这就是明朝的终结，而它的主角，就是这位崇祯皇帝。"
+        },
+        {
+          "id": "action_eXe_JyA8",
+          "type": "spotlight",
+          "elementId": "text_gk73MHhN"
+        },
+        {
+          "id": "action_KOT0Ns_C",
+          "type": "speech",
+          "text": "崇祯帝是明朝的第十六位皇帝，也是最后一位皇帝。他接手的是一个已经千疮百孔的烂摊子，就是我们上一页提到的内忧外患、天灾人祸，全都集中在他身上了。"
+        },
+        {
+          "id": "action_-dGhM3qP",
+          "type": "laser",
+          "elementId": "text_1q4DHzsM"
+        },
+        {
+          "id": "action_FRXv1fet",
+          "type": "speech",
+          "text": "你看这里，这是压垮明朝的最后一根稻草：农民起义。其中，李自成领导的农民军力量非常强大，他们一路北上，最终在1644年，攻破了明朝的都城——北京城。"
+        },
+        {
+          "id": "action_LO8KGHjd",
+          "type": "spotlight",
+          "elementId": "text_rrju_Tyz"
+        },
+        {
+          "id": "action_gWHjFS18",
+          "type": "speech",
+          "text": "北京城被攻破，意味着皇帝的家和国家的中心都没了。崇祯皇帝知道大势已去，他选择在皇宫后面的煤山上自尽。这个悲壮的举动，正式宣告了明朝的灭亡。"
+        },
+        {
+          "id": "action_uhLxxed-",
+          "type": "speech",
+          "text": "所以，小星，我们来总结一下这个悲情的故事：崇祯皇帝作为末代皇帝，面对李自成攻破北京，最终选择自尽，明朝就此画上了句号。一个曾经辉煌的帝国，就这样被清朝取代了。"
+        }
+      ],
+      "createdAt": 1774072777412,
+      "updatedAt": 1774072777412
+    },
+    {
+      "id": "yAdWJaV_2gp39lGksIFah",
+      "stageId": "EfbmaAzKsS",
+      "type": "slide",
+      "title": "总结：明朝的历史遗产",
+      "order": 11,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "BfRx2axbUT0whvnJ9kGyB",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_yRoaIEOC",
+              "type": "shape",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_POfXySO4",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center; color: #1e40af;\"><strong>总结：明朝的历史遗产</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_xLXwee3f",
+              "type": "text",
+              "left": 60,
+              "top": 146,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; text-align: center; color: #666666;\">回顾明朝近三百年的历史，总结它对后世中国产生的深远影响</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_Ky5rRZWL",
+              "type": "shape",
+              "left": 100,
+              "top": 210,
+              "width": 800,
+              "height": 2,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_j3_O5z1S",
+              "type": "shape",
+              "left": 80,
+              "top": 240,
+              "width": 260,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#eff6ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_A-J2GF_l",
+              "type": "text",
+              "left": 100,
+              "top": 260,
+              "width": 220,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #1e40af;\"><strong>疆域格局</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_CRybEenR",
+              "type": "text",
+              "left": 100,
+              "top": 312,
+              "width": 220,
+              "height": 94,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">奠定了现代中国的基本疆域格局</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_WgKGktZm",
+              "type": "shape",
+              "left": 370,
+              "top": 240,
+              "width": 260,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0fdf4",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_lu1a68PH",
+              "type": "text",
+              "left": 390,
+              "top": 260,
+              "width": 220,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #166534;\"><strong>文化成果</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_GQYbVc7K",
+              "type": "text",
+              "left": 390,
+              "top": 312,
+              "width": 220,
+              "height": 94,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">小说、瓷器等影响深远</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_y3DjzZ0x",
+              "type": "shape",
+              "left": 660,
+              "top": 240,
+              "width": 260,
+              "height": 180,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fefce8",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_w4YAOxGg",
+              "type": "text",
+              "left": 680,
+              "top": 260,
+              "width": 220,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #92400e;\"><strong>开放自信</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_pmf7XMTW",
+              "type": "text",
+              "left": 680,
+              "top": 312,
+              "width": 220,
+              "height": 94,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">郑和下西洋展现古代中国的开放与自信</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_PMlyg8XJ",
+              "type": "shape",
+              "left": 100,
+              "top": 450,
+              "width": 800,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8fafc",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_n2EXvrV9",
+              "type": "text",
+              "left": 120,
+              "top": 462,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; text-align: center;\">明朝的历史遗产，为后世中国的发展奠定了重要基础</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_M0GynQKu",
+          "type": "spotlight",
+          "elementId": "text_POfXySO4"
+        },
+        {
+          "id": "action_AqdxF9Pb",
+          "type": "speech",
+          "text": "好了，小星，我们刚刚回顾了明朝的终结。现在，让我们站得更高一点，来做一个总结。看看明朝这近三百年的历史，到底给后世的中国留下了哪些重要的遗产。"
+        },
+        {
+          "id": "action_z0foyywL",
+          "type": "spotlight",
+          "elementId": "text_A-J2GF_l"
+        },
+        {
+          "id": "action_vOfo24o1",
+          "type": "spotlight",
+          "elementId": "text_CRybEenR"
+        },
+        {
+          "id": "action_QTuiFlrm",
+          "type": "speech",
+          "text": "首先，一个非常基础但至关重要的遗产，就是疆域。明朝的统治，基本奠定了我们现代中国的版图格局。还记得我们之前讲过的万里长城吗？它不仅是防御工事，也标志着当时中原王朝的北部边界。明朝的疆域管理，为后来清朝乃至现代中国的领土范围，打下了重要的基础。"
+        },
+        {
+          "id": "action_xSrGm4AY",
+          "type": "spotlight",
+          "elementId": "text_lu1a68PH"
+        },
+        {
+          "id": "action_8aZ_Fe1Q",
+          "type": "spotlight",
+          "elementId": "text_GQYbVc7K"
+        },
+        {
+          "id": "action_2VQxLSo9",
+          "type": "speech",
+          "text": "第二项遗产，是灿烂的文化成果。比如我们之前提到的《西游记》、《三国演义》这些经典小说，就是在明朝时期成熟并广泛流传的，它们至今都是中国文化宝库里的明珠。还有精美的青花瓷，通过贸易走向世界，成为了中国文化的名片。这些文化成果的影响力，穿越了时间，一直延续到今天。"
+        },
+        {
+          "id": "action_XBZp0K1c",
+          "type": "spotlight",
+          "elementId": "text_w4YAOxGg"
+        },
+        {
+          "id": "action_F7FgzA3e",
+          "type": "spotlight",
+          "elementId": "text_pmf7XMTW"
+        },
+        {
+          "id": "action_EdRotHS9",
+          "type": "speech",
+          "text": "最后，明朝还留下了一种精神遗产，那就是开放与自信。还记得我们详细看过的郑和下西洋航线图吗？那是世界航海史上的壮举。庞大的船队远航万里，不是为了征服，而是为了友好交流和展示国力。这充分展现了当时中国的强大、开放和面向世界的自信。"
+        },
+        {
+          "id": "action_0kfx6jsC",
+          "type": "spotlight",
+          "elementId": "text_n2EXvrV9"
+        },
+        {
+          "id": "action_xf1b4jnc",
+          "type": "speech",
+          "text": "所以你看，小星，明朝虽然结束了，但它留下的疆域、文化和精神，都为后世中国的发展奠定了非常重要的基础。学习历史，就是为了看清我们从哪里来，这些遗产是如何塑造今天的。你总结得怎么样？有没有对明朝的印象更完整、更深刻了一些？"
+        }
+      ],
+      "createdAt": 1774072829132,
+      "updatedAt": 1774072829132
+    },
+    {
+      "id": "AEz-yE9flNpuOtZVUxhOh",
+      "stageId": "EfbmaAzKsS",
+      "type": "quiz",
+      "title": "终极挑战：回顾明朝",
+      "order": 12,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "明朝初年，朱元璋为巩固统治、恢复经济采取了一系列措施。下列哪项措施最能体现其“重农抑商”的治国思想？",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 实行里甲制度，加强对人口和土地的控制"
+              },
+              {
+                "value": "B",
+                "label": "B. 下令丈量全国土地，编制《鱼鳞图册》"
+              },
+              {
+                "value": "C",
+                "label": "C. 推行“开中法”，鼓励商人运粮至边塞换取盐引"
+              },
+              {
+                "value": "D",
+                "label": "D. 规定商贾之家不得穿绸纱，并课以重税"
+              }
+            ],
+            "answer": [
+              "D"
+            ],
+            "analysis": "“重农抑商”的核心是重视农业、限制和贬低商业及商人地位。选项A（里甲制度）和B（《鱼鳞图册》）主要目的是加强基层控制和赋税管理，虽服务于农业经济，但并非直接“抑商”。选项C（开中法）实际上利用了商人的力量来解决边防军需，带有一定的“重商”色彩。只有选项D，通过服饰限制和重税直接歧视和打压商人阶层，是“抑商”政策的典型体现。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "下列哪些事件或现象，共同导致了明朝中后期严重的财政危机与社会动荡？（选择所有符合的选项）",
+            "options": [
+              {
+                "value": "A",
+                "label": "A. 张居正推行“一条鞭法”改革"
+              },
+              {
+                "value": "B",
+                "label": "B. 万历年间三大征（宁夏之役、朝鲜之役、播州之役）耗费巨大"
+              },
+              {
+                "value": "C",
+                "label": "C. 皇室宗藩俸禄成为国家财政的沉重负担"
+              },
+              {
+                "value": "D",
+                "label": "D. 东南沿海倭寇与北方蒙古部落的侵扰持续不断"
+              }
+            ],
+            "answer": [
+              "B",
+              "C",
+              "D"
+            ],
+            "analysis": "明朝中后期的财政危机是多重因素叠加的结果。选项B：万历三大征虽然巩固了边疆，但耗银千万两，严重消耗了张居正改革积累的国库储备。选项C：明朝宗室制度导致宗藩人口暴增，其俸禄支出在明后期已占国家财政收入的极大部分，是结构性财政包袱。选项D：南北边疆的长期军事压力，使得军费开支居高不下，加剧了财政困难。选项A：张居正的“一条鞭法”是旨在整顿财政、增加收入的改革措施，短期内改善了财政状况，是缓解而非导致危机的原因。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "short_answer",
+            "question": "试从政治、经济、军事三个层面，综合分析明朝灭亡的主要原因。",
+            "commentPrompt": "详细评分标准：\n(1) 政治层面分析（占40%）：需提及宦官专权（如魏忠贤）、党争（东林党争等）导致朝政腐败、行政效率低下；皇帝怠政（如万历、天启）；对基层控制力减弱（流民问题）。\n(2) 经济层面分析（占30%）：需说明财政崩溃的原因，如宗藩负担、军费开支、加征“三饷”（辽饷、剿饷、练饷）导致民不聊生；土地兼并严重，大量农民破产。\n(3) 军事层面分析（占30%）：需指出多线作战的困境（对后金/清战争、镇压内部农民起义）；军队战斗力下降，军纪涣散；关键战略失误（如松锦之战）。\n回答需层次清晰，论点与史实结合。",
+            "analysis": "明朝的灭亡是政治、经济、军事全面崩溃的结果。\n政治层面：中后期宦官屡次专权（王振、刘瑾、魏忠贤），严重干扰朝政；激烈的党争（如东林党与阉党之争）使官僚体系陷入内耗，无法有效应对危机；皇帝长期怠政（如万历皇帝数十年不上朝），导致中枢决策瘫痪；政府对基层社会的控制力减弱，无法妥善安置因灾荒和剥削产生的流民，使其成为起义的源头。\n经济层面：财政结构性问题突出，供养庞大的宗室成员耗费巨资；应对辽东战事和农民起义的军费开支浩大；为弥补财政赤字，朝廷不断加派“三饷”，使本就困苦的农民负担达到极限，彻底破坏了小农经济；同时，土地兼并日益严重，大量农民失去土地，沦为佃农或流民，社会矛盾空前尖锐。\n军事层面：明朝陷入两线作战的绝境，精锐部队在辽东与后金（清）的战争中消耗殆尽（如萨尔浒之战、松锦之战），而内部又需分兵镇压李自成、张献忠等农民军；军队后勤匮乏，欠饷严重，导致士气低落，甚至倒戈加入起义军；战略上屡屡失误，未能有效统筹内外战事。最终，李自成农民军攻入北京，崇祯帝自缢，明朝覆亡。",
+            "points": 20,
+            "hasAnswer": false
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_CV09a3KW",
+          "type": "speech",
+          "text": "好的，小星，我们刚刚梳理了明朝的历史遗产，现在来做最后一个终极挑战，回顾一下整个明朝从建立到灭亡的完整历程。这能帮你检验一下，是不是把整个脉络都串起来了。"
+        },
+        {
+          "id": "action_BNw3T3mA",
+          "type": "speech",
+          "text": "第一题是关于明朝开国皇帝朱元璋的治国思想。他为了巩固统治、恢复经济，采取了很多措施。题目问哪一项最能体现他的‘重农抑商’思想。你要回想一下，我们之前讲朱元璋时提到，他非常重视农业，认为这是国家的根本，而对商业活动则有所限制。看看选项，哪个措施最直接地体现了这种‘重视农业、抑制商业’的倾向呢？"
+        },
+        {
+          "id": "action_PknIMYu-",
+          "type": "speech",
+          "text": "第二题是多选题，关于明朝中后期严重的财政危机和社会动荡。这和我们讲‘明朝的危机与衰落’那部分内容紧密相关。想想看，哪些是导致国家没钱、社会不稳的共同原因？是像我们提到的宦官专权、土地兼并，还是对外战争消耗巨大？把几个关键因素组合起来看。"
+        },
+        {
+          "id": "action_XLCPvR0f",
+          "type": "speech",
+          "text": "第三题是综合分析题，要求从政治、经济、军事三个层面来分析明朝灭亡的主要原因。这需要你把前面学过的知识点都整合起来。政治上，可以想想崇祯皇帝面临的困境，比如党争和腐败；经济上，联系刚才提到的财政危机、农民负担重；军事上，则有内忧外患，比如农民起义和后金的威胁。试着从这三个角度，构建一个完整的解释。"
+        },
+        {
+          "id": "action_m3u-43Ye",
+          "type": "speech",
+          "text": "题目都完成了？很棒。我们一起来看一下关键点。第一题，朱元璋‘重农抑商’的典型措施是奖励垦荒、轻徭薄赋来恢复农业，同时限制商人地位和活动，所以正确选项应该是与此最相关的。第二题，导致财政危机和社会动荡的往往是几个因素叠加，比如宦官乱政加剧腐败，土地兼并导致流民增多，加上对外的战争消耗，这些共同压垮了明朝。第三题，明朝的灭亡是一个系统性的崩溃，政治上统治失效，经济上崩溃，军事上失败，三者相互影响，最终导致了王朝的终结。"
+        },
+        {
+          "id": "action_uiTBr7L-",
+          "type": "discussion",
+          "topic": "如果让你用一个词或一句话来总结明朝给你的整体印象，会是什么？为什么？",
+          "prompt": "可以结合它的辉煌、它的危机，或者它留给后人的东西来谈谈。",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774072883016,
+      "updatedAt": 1774072883016
+    }
+  ],
+  "createdAt": "2026-03-26T12:07:36.581Z"
+}

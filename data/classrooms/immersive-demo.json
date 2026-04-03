@@ -1,0 +1,169 @@
+{
+  "id": "immersive-demo",
+  "stage": {
+    "id": "immersive-demo",
+    "name": "沉浸播放验收课堂",
+    "description": "用于验证航科互动课堂的全屏播放体验",
+    "language": "zh-CN",
+    "style": "professional",
+    "createdAt": 1742535000000,
+    "updatedAt": 1742535000000
+  },
+  "scenes": [
+    {
+      "id": "scene-intro",
+      "stageId": "immersive-demo",
+      "type": "slide",
+      "title": "杠杆的第一印象",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "slide-intro",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#f8fbff",
+            "themeColors": [
+              "#0f172a",
+              "#0ea5e9",
+              "#14b8a6",
+              "#f59e0b",
+              "#ef4444"
+            ],
+            "fontColor": "#0f172a",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#0ea5e9",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "background": {
+            "type": "solid",
+            "color": "#f8fbff"
+          },
+          "elements": [
+            {
+              "id": "title-intro",
+              "type": "text",
+              "left": 72,
+              "top": 72,
+              "width": 856,
+              "height": 80,
+              "rotate": 0,
+              "content": "<p style=\"font-size: 34px;\"><strong>杠杆并不抽象，它就在我们每天的动作里</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#0f172a"
+            },
+            {
+              "id": "body-intro",
+              "type": "text",
+              "left": 72,
+              "top": 188,
+              "width": 856,
+              "height": 206,
+              "rotate": 0,
+              "content": "<p style=\"font-size: 20px;\">• 跷跷板、撬棍、开瓶器，都是杠杆的生活例子</p><p style=\"font-size: 20px;\">• 观察支点、动力点、阻力点的位置变化</p><p style=\"font-size: 20px;\">• 进入沉浸播放后，这一页应该完整铺满，不被头部、侧栏或聊天区遮挡</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e293b"
+            }
+          ]
+        }
+      },
+      "actions": [
+        {
+          "id": "speech-intro",
+          "type": "speech",
+          "text": "先别急着记定义，你只需要记住一件事，杠杆本质上是在帮我们更省力地完成动作。"
+        }
+      ],
+      "createdAt": 1742535000000,
+      "updatedAt": 1742535000000
+    },
+    {
+      "id": "scene-summary",
+      "stageId": "immersive-demo",
+      "type": "slide",
+      "title": "预习观察任务",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "slide-summary",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#07111f",
+            "themeColors": [
+              "#e2e8f0",
+              "#38bdf8",
+              "#22c55e",
+              "#f59e0b",
+              "#ef4444"
+            ],
+            "fontColor": "#e2e8f0",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#38bdf8",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "background": {
+            "type": "solid",
+            "color": "#07111f"
+          },
+          "elements": [
+            {
+              "id": "title-summary",
+              "type": "text",
+              "left": 72,
+              "top": 72,
+              "width": 856,
+              "height": 80,
+              "rotate": 0,
+              "content": "<p style=\"font-size: 34px;\"><strong>带着这三个问题进入下一节课</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#f8fafc"
+            },
+            {
+              "id": "body-summary",
+              "type": "text",
+              "left": 72,
+              "top": 188,
+              "width": 856,
+              "height": 228,
+              "rotate": 0,
+              "content": "<p style=\"font-size: 20px;\">1. 支点在中间、在一端，省力效果会怎样变化？</p><p style=\"font-size: 20px;\">2. 为什么有的杠杆省力却费距离？</p><p style=\"font-size: 20px;\">3. 全屏播放时，只保留舞台与底部控制条，是否比常规布局更利于全班观看？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#cbd5e1"
+            }
+          ]
+        }
+      },
+      "actions": [
+        {
+          "id": "speech-summary",
+          "type": "speech",
+          "text": "试着在生活里再找一个杠杆例子，想清楚谁是支点、哪里施加动力、哪里承受阻力。"
+        }
+      ],
+      "createdAt": 1742535000000,
+      "updatedAt": 1742535000000
+    }
+  ],
+  "createdAt": "2026-03-21T05:38:43.606Z"
+}

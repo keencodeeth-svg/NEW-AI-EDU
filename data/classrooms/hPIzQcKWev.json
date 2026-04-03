@@ -1,0 +1,1974 @@
+{
+  "id": "hPIzQcKWev",
+  "stage": {
+    "id": "hPIzQcKWev",
+    "name": "请围绕“我要学习一元一次方程”为小星设计一节适合学生自主使用的兴趣培养课堂。\n\n学习主题：我要学习一元一次方程\n\n当前学习目标：学习\n\n课堂要求：适合单人观看与跟练，包含导入、启发式讲解、互动追问、即时练习、总结，并支持课后回看与导出。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：兴趣培养\n兴趣主题：我要学习一元一次方程\n学习目标：学习\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 兴趣探索要兼顾趣味性与启发性，用学生能听懂的语言把概念讲清楚。\n- 可以加入故事化情境、项目式追问和延伸任务，让学生愿意继续探索。\n- 最后要留下一个适合学生继续查找或动手尝试的下一步问题。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774439504590,
+    "updatedAt": 1774463666004,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "学习",
+      "interestTopic": "我要学习一元一次方程"
+    },
+    "currentSceneId": "i702W4g8bFNet_5LCb_SB"
+  },
+  "scenes": [
+    {
+      "id": "PRkpXFUAekBLdZd0h5IR4",
+      "stageId": "hPIzQcKWev",
+      "type": "slide",
+      "title": "欢迎来到方程王国",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "b8AaATTs7t483wdql2NPD",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_pr_sF5PO",
+              "type": "shape",
+              "left": 100,
+              "top": 60,
+              "width": 800,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_T-fN04_h",
+              "type": "text",
+              "left": 120,
+              "top": 92,
+              "width": 760,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1e40af;\"><strong>欢迎来到方程王国</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_lUa0Z77r",
+              "type": "text",
+              "left": 60,
+              "top": 210,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">一场奇妙的数学解谜冒险</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_87zkmEEF",
+              "type": "shape",
+              "left": 60,
+              "top": 280,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_fpM4hvLx",
+              "type": "text",
+              "left": 80,
+              "top": 292,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>欢迎小星</strong> 来到神秘的‘方程王国’</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_huoIxqIJ",
+              "type": "shape",
+              "left": 60,
+              "top": 350,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_w6qNu1zA",
+              "type": "text",
+              "left": 80,
+              "top": 362,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">国王遇到了一个关于‘未知数’的难题</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_nP7b2wg3",
+              "type": "shape",
+              "left": 60,
+              "top": 420,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_zEpQayup",
+              "type": "text",
+              "left": 80,
+              "top": 432,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">学习‘一元一次方程’，成为解题英雄</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_UIfR-HVO",
+              "type": "shape",
+              "left": 60,
+              "top": 490,
+              "width": 880,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f3e8ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_2Hg0usg9",
+              "type": "text",
+              "left": 80,
+              "top": 502,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\">学习就像一场有趣的解谜冒险</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#6b21a8",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action__9VQ5Tc4",
+          "type": "spotlight",
+          "elementId": "text_T-fN04_h"
+        },
+        {
+          "id": "action_vq92NkRM",
+          "type": "speech",
+          "text": "你好，小星！欢迎来到我们的数学课堂。今天，我们要开始一场非常特别的冒险。"
+        },
+        {
+          "id": "action_ZsTkum4r",
+          "type": "spotlight",
+          "elementId": "text_lUa0Z77r"
+        },
+        {
+          "id": "action_jctr63FU",
+          "type": "speech",
+          "text": "这不仅仅是一堂数学课，而是一场奇妙的数学解谜冒险。"
+        },
+        {
+          "id": "action_5cOmisIS",
+          "type": "spotlight",
+          "elementId": "text_fpM4hvLx"
+        },
+        {
+          "id": "action_U4YEzb5V",
+          "type": "speech",
+          "text": "欢迎你，小星，来到这个神秘的‘方程王国’。在这里，数字和符号都充满了魔法。"
+        },
+        {
+          "id": "action_DroG1Yp1",
+          "type": "spotlight",
+          "elementId": "text_w6qNu1zA"
+        },
+        {
+          "id": "action_PdWqTAE1",
+          "type": "speech",
+          "text": "但是，王国的国王最近遇到了一个大麻烦，一个关于‘未知数’的难题，让他非常头疼。"
+        },
+        {
+          "id": "action_RAqMgNj0",
+          "type": "spotlight",
+          "elementId": "text_zEpQayup"
+        },
+        {
+          "id": "action_yebaoCEi",
+          "type": "speech",
+          "text": "所以，我们需要你的帮助！在这趟冒险中，我们将一起学习‘一元一次方程’，掌握解谜的钥匙，成为帮助国王的解题英雄。"
+        },
+        {
+          "id": "action_dpRYgjSe",
+          "type": "spotlight",
+          "elementId": "text_2Hg0usg9"
+        },
+        {
+          "id": "action_walWr1SQ",
+          "type": "speech",
+          "text": "别担心，学习就像一场有趣的解谜冒险，我们会一步步来。准备好了吗？让我们开始吧！"
+        }
+      ],
+      "createdAt": 1774439586610,
+      "updatedAt": 1774439586610
+    },
+    {
+      "id": "AkEcRawnsSZd7rKzoXWXN",
+      "stageId": "hPIzQcKWev",
+      "type": "slide",
+      "title": "什么是方程？认识‘未知数’",
+      "order": 2,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "ugqiAPfF3AtCMzC3oDmLj",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_o7Df1xfL",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>什么是方程？认识‘未知数’</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_4YdPYiTr",
+              "type": "text",
+              "left": 60,
+              "top": 136,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:18px; text-align:center; color:#666666;\">一个藏着秘密数字的数学句子</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_QSXMCTwE",
+              "type": "shape",
+              "left": 80,
+              "top": 200,
+              "width": 840,
+              "height": 280,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8f9fa",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_KcCpNgcC",
+              "type": "text",
+              "left": 100,
+              "top": 220,
+              "width": 800,
+              "height": 58,
+              "content": "<p style=\"font-size:20px; color:#1e40af;\"><strong>方程是什么？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_kpmgKmj_",
+              "type": "text",
+              "left": 120,
+              "top": 278,
+              "width": 760,
+              "height": 94,
+              "content": "<p style=\"font-size:18px;\">• 一个藏着秘密数字的数学句子</p><p style=\"font-size:18px;\">• 像一道数学谜语，等号两边要相等</p><p style=\"font-size:18px;\">• 例如：3 + ? = 7</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_NvBsausC",
+              "type": "text",
+              "left": 100,
+              "top": 382,
+              "width": 800,
+              "height": 58,
+              "content": "<p style=\"font-size:20px; color:#166534;\"><strong>未知数是什么？</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_IoArJM1d",
+              "type": "text",
+              "left": 120,
+              "top": 440,
+              "width": 760,
+              "height": 94,
+              "content": "<p style=\"font-size:18px;\">• 用字母（比如 x）代表的神秘数字</p><p style=\"font-size:18px;\">• 是我们需要找出来的答案</p><p style=\"font-size:18px;\">• 例如：3 + x = 7 中的 x</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_j8OB42xy",
+              "type": "shape",
+              "left": 200,
+              "top": 150,
+              "width": 600,
+              "height": 50,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_DImTG2Br",
+              "type": "text",
+              "left": 210,
+              "top": 162,
+              "width": 580,
+              "height": 46,
+              "content": "<p style=\"font-size:18px; text-align:center;\"><strong>生活比喻：天平</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_mvpd3_0y",
+              "type": "shape",
+              "left": 300,
+              "top": 210,
+              "width": 400,
+              "height": 200,
+              "path": "M 0 0.5 L 1 0.5 M 0.5 0.5 L 0.5 1 L 0.2 1 L 0.8 1 Z M 0.2 0.2 L 0.2 0.5 M 0.8 0.2 L 0.8 0.5",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "none",
+              "strokeWidth": 3,
+              "stroke": "#6b7280",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_GPs7HRQK",
+              "type": "shape",
+              "left": 320,
+              "top": 230,
+              "width": 80,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_OziIb1A_",
+              "type": "text",
+              "left": 330,
+              "top": 320,
+              "width": 60,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; text-align:center;\">已知数</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_B_Y9B1Iw",
+              "type": "shape",
+              "left": 600,
+              "top": 230,
+              "width": 80,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#ed7d31",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_OypJ7M_m",
+              "type": "text",
+              "left": 610,
+              "top": 320,
+              "width": 60,
+              "height": 46,
+              "content": "<p style=\"font-size:16px; text-align:center;\">未知数 x</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_N9AznCUI",
+              "type": "text",
+              "left": 300,
+              "top": 380,
+              "width": 400,
+              "height": 76,
+              "content": "<p style=\"font-size:18px; text-align:center;\">方程的目标：找出让天平平衡的 x 是多少</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_gr6i2qQn",
+              "type": "latex",
+              "left": 350,
+              "top": 466,
+              "width": 300,
+              "height": 80,
+              "latex": "3 + x = 7",
+              "color": "#000000",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">3</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">7</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_lEdKTwKQ",
+              "type": "text",
+              "left": 80,
+              "top": 490,
+              "width": 840,
+              "height": 58,
+              "content": "<p style=\"font-size:20px; text-align:center; color:#7c3aed;\"><strong>我们的任务：解开谜语，找到 x！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_avIsnKqH",
+          "type": "spotlight",
+          "elementId": "text_o7Df1xfL"
+        },
+        {
+          "id": "action_VfKFSv4g",
+          "type": "speech",
+          "text": "好的，小星，欢迎来到方程王国的第一站！刚才我们说了这是一场解谜冒险，那现在，我们就来认识一下这个王国里最重要的角色——方程。你看，这里写着‘什么是方程？认识‘未知数’’。"
+        },
+        {
+          "id": "action_335a2UvA",
+          "type": "spotlight",
+          "elementId": "text_kpmgKmj_"
+        },
+        {
+          "id": "action_Bs-98Ig_",
+          "type": "speech",
+          "text": "方程到底是什么呢？它其实就是一个藏着秘密数字的数学句子。就像一道数学谜语，它有一个特点，就是等号两边的值必须相等。我给你举个例子，比如：3加一个问号等于7。"
+        },
+        {
+          "id": "action_QYSPr12y",
+          "type": "laser",
+          "elementId": "latex_gr6i2qQn"
+        },
+        {
+          "id": "action_p-5tLutj",
+          "type": "speech",
+          "text": "在数学里，我们不会用问号，而是用一个字母来代替这个秘密数字。看这个公式：3 + x = 7。这个x，就是我们今天要认识的‘未知数’。"
+        },
+        {
+          "id": "action_bxrVchnB",
+          "type": "spotlight",
+          "elementId": "text_IoArJM1d"
+        },
+        {
+          "id": "action_6oAkilSq",
+          "type": "speech",
+          "text": "未知数，就是用一个字母，比如x，来代表的神秘数字。它就是我们在这个谜语里需要找出来的答案。在3 + x = 7这个方程里，x就是那个未知数。"
+        },
+        {
+          "id": "action_JrYLOPoS",
+          "type": "spotlight",
+          "elementId": "text_DImTG2Br"
+        },
+        {
+          "id": "action_RRQoaFdM",
+          "type": "speech",
+          "text": "为了更好地理解，我们可以用一个生活中的比喻——天平。想象一下，方程就像一个天平。"
+        },
+        {
+          "id": "action_sp1CqCdF",
+          "type": "spotlight",
+          "elementId": "text_OziIb1A_"
+        },
+        {
+          "id": "action__13MbqQk",
+          "type": "speech",
+          "text": "天平的左边，放着我们已经知道的数字，叫做‘已知数’，比如这里的3。"
+        },
+        {
+          "id": "action_O5XRHTQ4",
+          "type": "spotlight",
+          "elementId": "text_OypJ7M_m"
+        },
+        {
+          "id": "action_zKut9ipO",
+          "type": "speech",
+          "text": "天平的右边呢，放着那个神秘的‘未知数x’。现在这个天平是歪的，不平衡，因为3和x加起来不等于7。"
+        },
+        {
+          "id": "action_dO4dd4LV",
+          "type": "spotlight",
+          "elementId": "text_N9AznCUI"
+        },
+        {
+          "id": "action_XZGweKe2",
+          "type": "speech",
+          "text": "所以，我们方程的目标就非常明确了：就是要找出这个x应该是多少，才能让这个天平恢复平衡，让等号两边真正相等。"
+        },
+        {
+          "id": "action_lFUwedmb",
+          "type": "spotlight",
+          "elementId": "text_lEdKTwKQ"
+        },
+        {
+          "id": "action_IB3IMoXQ",
+          "type": "speech",
+          "text": "所以，小星，我们的任务就是解开这个数学谜语，找到x！听起来是不是很有意思？接下来，我们就来玩一个‘天平平衡小游戏’，亲手试试怎么找到这个x。"
+        }
+      ],
+      "createdAt": 1774439648624,
+      "updatedAt": 1774439648624
+    },
+    {
+      "id": "i702W4g8bFNet_5LCb_SB",
+      "stageId": "hPIzQcKWev",
+      "type": "interactive",
+      "title": "天平平衡小游戏",
+      "order": 3,
+      "content": {
+        "type": "interactive",
+        "url": "",
+        "html": "<!DOCTYPE html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>等式平衡 - 交互式天平</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <style>\n        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');\n        * { font-family: 'Noto Sans SC', sans-serif; }\n        .tray {\n            transition: transform 0.5s ease;\n        }\n        .balance-needle {\n            transition: transform 0.8s ease;\n            transform-origin: top center;\n        }\n        .weight {\n            user-select: none;\n            transition: all 0.3s ease;\n        }\n        .weight.dragging {\n            opacity: 0.7;\n            transform: scale(1.05);\n            z-index: 10;\n        }\n        .weight.in-tray {\n            animation: dropIn 0.3s ease;\n        }\n        @keyframes dropIn {\n            0% { transform: scale(0.8); opacity: 0.5; }\n            100% { transform: scale(1); opacity: 1; }\n        }\n        .equation-box {\n            transition: background-color 0.8s ease;\n        }\n    </style>\n\n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css\">\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js\"></script>\n<script src=\"https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js\"></script>\n<script>\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    const katexOptions = {\n        delimiters: [\n            {left: '\\\\[', right: '\\\\]', display: true},\n            {left: '\\\\(', right: '\\\\)', display: false},\n            {left: '$$', right: '$$', display: true},\n            {left: '$', right: '$', display: false}\n        ],\n        throwOnError: false,\n        strict: false,\n        trust: true\n    };\n\n    let renderTimeout;\n    function safeRender() {\n        if (renderTimeout) clearTimeout(renderTimeout);\n        renderTimeout = setTimeout(() => {\n            renderMathInElement(document.body, katexOptions);\n        }, 100);\n    }\n\n    renderMathInElement(document.body, katexOptions);\n\n    const observer = new MutationObserver((mutations) => {\n        let shouldRender = false;\n        mutations.forEach((mutation) => {\n            if (mutation.target &&\n                mutation.target.className &&\n                typeof mutation.target.className === 'string' &&\n                mutation.target.className.includes('katex')) {\n                return;\n            }\n            shouldRender = true;\n        });\n\n        if (shouldRender) {\n            safeRender();\n        }\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true,\n        characterData: true\n    });\n\n    setInterval(() => {\n        const text = document.body.innerText;\n        if (text.includes('\\\\(') || text.includes('$$')) {\n            safeRender();\n        }\n    }, 2000);\n});\n</script>\n</head>\n<body class=\"bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen p-4 md:p-8 flex flex-col items-center justify-center\">\n    <header class=\"w-full max-w-6xl text-center mb-6 md:mb-10\">\n        <h1 class=\"text-3xl md:text-4xl font-bold text-gray-800 mb-2\">等式平衡</h1>\n        <p class=\"text-gray-600 text-lg md:text-xl\">通过交互式天平，直观理解“两边相等”是等式的核心。</p>\n    </header>\n\n    <main class=\"w-full max-w-6xl flex flex-col lg:flex-row items-center lg:items-start gap-8\">\n        <!-- 左侧：天平与算式 -->\n        <div class=\"flex-1 flex flex-col items-center\">\n            <!-- 天平可视化区域 -->\n            <div class=\"relative w-full max-w-lg h-80 bg-gradient-to-b from-white to-gray-100 rounded-2xl shadow-xl border border-gray-300 p-6 mb-8\">\n                <!-- 天平横梁 -->\n                <div class=\"absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 h-2 bg-gradient-to-r from-amber-800 to-amber-900 rounded-full shadow-lg\"></div>\n                <!-- 天平支柱 -->\n                <div class=\"absolute top-1/4 left-1/2 transform -translate-x-1/2 w-3 h-2/5 bg-gradient-to-b from-gray-600 to-gray-800 rounded-b-lg\"></div>\n                <!-- 平衡指针 -->\n                <div class=\"balance-needle absolute top-1/4 left-1/2 transform -translate-x-1/2 w-1 h-16 bg-red-600 rounded-full shadow\" id=\"balanceNeedle\"></div>\n\n                <!-- 左侧托盘 -->\n                <div class=\"tray absolute top-3/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-blue-200 to-blue-300 rounded-full shadow-lg border-4 border-blue-400 flex flex-col items-center justify-center p-4\" id=\"leftTray\">\n                    <p class=\"text-sm font-semibold text-blue-800 mb-2\">左边 (L)</p>\n                    <div class=\"flex flex-wrap gap-2 justify-center\" id=\"leftWeightsContainer\">\n                        <!-- 固定砝码 5 和 x 会由JS添加 -->\n                    </div>\n                </div>\n                <!-- 右侧托盘 -->\n                <div class=\"tray absolute top-3/4 left-3/4 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-full shadow-lg border-4 border-green-400 flex flex-col items-center justify-center p-4\" id=\"rightTray\">\n                    <p class=\"text-sm font-semibold text-green-800 mb-2\">右边 (R)</p>\n                    <div class=\"flex flex-wrap gap-2 justify-center\" id=\"rightWeightsContainer\">\n                        <!-- 用户拖放的砝码会放在这里 -->\n                    </div>\n                </div>\n                <!-- 连接线 -->\n                <div class=\"absolute top-1/2 left-1/4 transform -translate-x-1/2 w-1 h-24 bg-gray-500\"></div>\n                <div class=\"absolute top-1/2 left-3/4 transform -translate-x-1/2 w-1 h-24 bg-gray-500\"></div>\n            </div>\n\n            <!-- 实时算式与状态 -->\n            <div class=\"w-full max-w-lg bg-white rounded-2xl shadow-lg p-6 equation-box\" id=\"equationBox\">\n                <h2 class=\"text-xl font-bold text-gray-800 mb-4 text-center\">当前等式与状态</h2>\n                <div class=\"text-center mb-4\">\n                    <div class=\"text-2xl md:text-3xl font-mono font-bold text-gray-800 mb-2\" id=\"equationDisplay\">\n                        等待操作...\n                    </div>\n                    <div class=\"text-lg text-gray-700\" id=\"balanceStatus\">\n                        请从下方拖动数字到右边托盘。\n                    </div>\n                </div>\n                <div class=\"mt-4 p-4 bg-gray-50 rounded-lg\">\n                    <p class=\"text-gray-700 text-sm mb-2\"><span class=\"font-bold\">核心原理：</span></p>\n                    <ul class=\"text-gray-600 text-sm list-disc pl-5 space-y-1\">\n                        <li>天平平衡：<strong>左边总和 = 右边总和</strong>。</li>\n                        <li>这对应数学等式：<strong>\\\\(L = R\\\\)</strong>。</li>\n                        <li>等式性质：两边同时加/减相同数，等式仍成立。</li>\n                        <li>未知数 <strong>\\\\(x\\\\)</strong> 在本局中是一个固定值。</li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n\n        <!-- 右侧：控制与说明 -->\n        <div class=\"flex-1 w-full lg:w-auto\">\n            <!-- 数字砝码区 -->\n            <div class=\"bg-white rounded-2xl shadow-lg p-6 mb-8\">\n                <h2 class=\"text-xl font-bold text-gray-800 mb-4 text-center\">数字砝码区</h2>\n                <p class=\"text-gray-600 text-center mb-6\">拖动数字到<b class=\"text-green-700\">右边托盘</b>，目标是让天平平衡。</p>\n                <div class=\"grid grid-cols-3 md:grid-cols-5 gap-4\" id=\"numberWeightsContainer\">\n                    <!-- 数字砝码 1-5 会由JS动态生成 -->\n                </div>\n                <div class=\"mt-6 text-center\">\n                    <p class=\"text-gray-700 mb-2\">本局中，左边固定有： <span class=\"font-bold text-blue-700\">5</span> 和 未知数 <span class=\"font-bold text-purple-700\">x</span>。</p>\n                    <p class=\"text-sm text-gray-500\">提示：<strong>\\\\(x\\\\)</strong> 的值在本局中是固定的。尝试找出能让 <strong>\\\\(5 + x\\\\)</strong> 等于右边总和的数字组合。</p>\n                </div>\n            </div>\n\n            <!-- 控制按钮 -->\n            <div class=\"bg-white rounded-2xl shadow-lg p-6\">\n                <h2 class=\"text-xl font-bold text-gray-800 mb-4 text-center\">操作控制</h2>\n                <div class=\"flex flex-col sm:flex-row gap-4 justify-center\">\n                    <button id=\"btnResetRight\" class=\"px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-lg shadow transition duration-300\">\n                        清空右边托盘\n                    </button>\n                    <button id=\"btnNewGame\" class=\"px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow transition duration-300\">\n                        新的一局 (重置 x)\n                    </button>\n                </div>\n                <div class=\"mt-6 p-4 bg-blue-50 rounded-lg\">\n                    <h3 class=\"font-bold text-blue-800 mb-2\">如何操作：</h3>\n                    <ol class=\"text-gray-700 text-sm list-decimal pl-5 space-y-1\">\n                        <li>从<b>数字砝码区</b>点击并拖动一个数字到<b>右边托盘</b>。</li>\n                        <li>观察天平指针和算式变化。</li>\n                        <li>尝试不同组合，直到指针指向正中间，天平平衡。</li>\n                        <li>理解：当 <strong>\\\\(5 + x = \\\\) 右边总和</strong> 时，等式成立。</li>\n                    </ol>\n                </div>\n            </div>\n        </div>\n    </main>\n\n    <footer class=\"mt-10 text-center text-gray-500 text-sm\">\n        <p>交互式数学学习工具 | 理解等式平衡的本质</p>\n    </footer>\n\n    <script>\n        (function() {\n            'use strict';\n\n            // --- 状态与配置 ---\n            const state = {\n                // 左侧固定值\n                leftFixedValue: 5,\n                // 未知数 x 的值，每局随机生成且在局内固定\n                xValue: null,\n                // 右侧托盘上的数字数组\n                rightWeights: [],\n                // 是否处于平衡状态\n                isBalanced: false,\n                // 拖拽相关状态\n                dragState: {\n                    isDragging: false,\n                    draggedWeight: null,\n                    draggedValue: null,\n                    originContainer: null\n                }\n            };\n\n            // --- DOM 元素 ---\n            const dom = {\n                leftWeightsContainer: document.getElementById('leftWeightsContainer'),\n                rightWeightsContainer: document.getElementById('rightWeightsContainer'),\n                numberWeightsContainer: document.getElementById('numberWeightsContainer'),\n                balanceNeedle: document.getElementById('balanceNeedle'),\n                equationDisplay: document.getElementById('equationDisplay'),\n                balanceStatus: document.getElementById('balanceStatus'),\n                equationBox: document.getElementById('equationBox'),\n                btnResetRight: document.getElementById('btnResetRight'),\n                btnNewGame: document.getElementById('btnNewGame'),\n                leftTray: document.getElementById('leftTray'),\n                rightTray: document.getElementById('rightTray')\n            };\n\n            // --- 核心计算函数 ---\n            function calculateLeftTotal() {\n                // 严格遵循：左边总和 = 固定值 + x\n                return state.leftFixedValue + state.xValue;\n            }\n\n            function calculateRightTotal() {\n                // 右边总和 = 用户放置的所有数字之和\n                return state.rightWeights.reduce((sum, val) => sum + val, 0);\n            }\n\n            function checkBalance() {\n                const leftTotal = calculateLeftTotal();\n                const rightTotal = calculateRightTotal();\n                // 严格遵循：必须绝对相等才算平衡\n                const balanced = leftTotal === rightTotal;\n                state.isBalanced = balanced;\n                return { leftTotal, rightTotal, balanced };\n            }\n\n            function updateBalanceVisual() {\n                const { leftTotal, rightTotal, balanced } = checkBalance();\n                const totalDiff = rightTotal - leftTotal;\n                // 指针旋转角度：-30度到30度，基于差值（限制差值范围以美观）\n                const maxDiffForVisual = 10;\n                const clampedDiff = Math.max(Math.min(totalDiff, maxDiffForVisual), -maxDiffForVisual);\n                const rotation = (clampedDiff / maxDiffForVisual) * 30;\n                dom.balanceNeedle.style.transform = `translateX(-50%) rotate(${rotation}deg)`;\n\n                // 托盘轻微上下移动效果\n                const trayTilt = Math.max(Math.min(totalDiff * 0.5, 10), -10);\n                dom.leftTray.style.transform = `translateX(-50%) translateY(calc(-50% + ${-trayTilt}px))`;\n                dom.rightTray.style.transform = `translateX(-50%) translateY(calc(-50% + ${trayTilt}px))`;\n\n                // 更新算式显示\n                // 注意：在JS字符串中生成LaTeX时，需要对反斜杠进行转义\n                const eqLeft = `\\\\(${state.leftFixedValue} + x\\\\)`;\n                const eqRight = `\\\\(${state.rightWeights.length > 0 ? state.rightWeights.join(' + ') : '0'}\\\\)`;\n                dom.equationDisplay.innerHTML = `\\({eqLeft} = \\){eqRight}`;\n\n                // 显示当前数值（不暴露x）\n                const rightSum = calculateRightTotal();\n                dom.balanceStatus.innerHTML = `左边总和 = <strong>\\({leftTotal}</strong> | 右边总和 = <strong>\\){rightSum}</strong>`;\n\n                // 更新状态框颜色\n                if (balanced) {\n                    dom.equationBox.classList.remove('bg-white');\n                    dom.equationBox.classList.add('bg-green-100', 'border', 'border-green-300');\n                    dom.balanceStatus.innerHTML += `<br><span class=\"text-green-700 font-bold\">✓ 天平平衡！等式成立！</span>`;\n                } else {\n                    dom.equationBox.classList.remove('bg-green-100', 'border', 'border-green-300');\n                    dom.equationBox.classList.add('bg-white');\n                    let hint = '';\n                    if (totalDiff > 0) hint = '（右边太重）';\n                    if (totalDiff < 0) hint = '（左边太重）';\n                    dom.balanceStatus.innerHTML += `<br><span class=\"text-gray-600\">${hint}</span>`;\n                }\n            }\n\n            // --- 砝码管理函数 ---\n            function createWeightElement(value, isX = false) {\n                const weight = document.createElement('div');\n                weight.className = `weight w-12 h-12 rounded-full flex items-center justify-center font-bold text-white shadow-lg cursor-move ${isX ? 'bg-gradient-to-br from-purple-500 to-purple-700' : 'bg-gradient-to-br from-cyan-500 to-blue-600'}`;\n                weight.textContent = isX ? 'x' : value.toString();\n                weight.dataset.value = value;\n                if (isX) weight.dataset.isX = 'true';\n\n                // 添加拖拽事件\n                weight.setAttribute('draggable', 'true');\n                weight.addEventListener('dragstart', handleDragStart);\n                weight.addEventListener('dragend', handleDragEnd);\n\n                return weight;\n            }\n\n            function initializeWeights() {\n                // 清空容器\n                dom.leftWeightsContainer.innerHTML = '';\n                dom.rightWeightsContainer.innerHTML = '';\n                dom.numberWeightsContainer.innerHTML = '';\n\n                // 生成左侧固定砝码 (5 和 x)\n                const fixedWeight = createWeightElement(state.leftFixedValue);\n                const xWeight = createWeightElement(state.xValue, true);\n                dom.leftWeightsContainer.appendChild(fixedWeight);\n                dom.leftWeightsContainer.appendChild(xWeight);\n\n                // 生成数字砝码区 1-5\n                for (let i = 1; i <= 5; i++) {\n                    const numWeight = createWeightElement(i);\n                    numWeight.classList.add('source-weight');\n                    dom.numberWeightsContainer.appendChild(numWeight);\n                }\n\n                // 初始化右侧为空\n                state.rightWeights = [];\n            }\n\n            // --- 拖拽逻辑 ---\n            function handleDragStart(e) {\n                const weight = e.target;\n                if (!weight.classList.contains('weight')) return;\n\n                state.dragState.isDragging = true;\n                state.dragState.draggedWeight = weight;\n                state.dragState.draggedValue = parseInt(weight.dataset.value);\n                state.dragState.originContainer = weight.parentNode.id;\n\n                weight.classList.add('dragging');\n                e.dataTransfer.setData('text/plain', weight.dataset.value);\n                e.dataTransfer.effectAllowed = 'copyMove';\n            }\n\n            function handleDragEnd(e) {\n                if (!state.dragState.isDragging) return;\n                const weight = state.dragState.draggedWeight;\n                if (weight) {\n                    weight.classList.remove('dragging');\n                }\n                state.dragState.isDragging = false;\n                state.dragState.draggedWeight = null;\n            }\n\n            function setupDropZones() {\n                // 右侧托盘为可投放区\n                dom.rightTray.addEventListener('dragover', (e) => {\n                    e.preventDefault();\n                    e.dataTransfer.dropEffect = 'copy';\n                });\n\n                dom.rightTray.addEventListener('drop', (e) => {\n                    e.preventDefault();\n                    if (!state.dragState.isDragging) return;\n\n                    const origin = state.dragState.originContainer;\n                    const value = state.dragState.draggedValue;\n\n                    // 科学约束：只能从数字砝码区拖动到右边托盘。不能移动左边的固定砝码。\n                    if (origin !== 'numberWeightsContainer') {\n                        alert('只能从下方的数字砝码区拖动数字到右边托盘。左侧的 5 和 x 是固定的。');\n                        return;\n                    }\n\n                    // 科学约束：x被视为固定实体，不能作为可拖动的数字砝码。\n                    if (state.dragState.draggedWeight?.dataset.isX === 'true') {\n                        return;\n                    }\n\n                    // 添加到右侧状态数组\n                    state.rightWeights.push(value);\n                    // 创建砝码副本放入右边托盘\n                    const newWeight = createWeightElement(value);\n                    newWeight.classList.add('in-tray');\n                    dom.rightWeightsContainer.appendChild(newWeight);\n\n                    updateBalanceVisual();\n                });\n\n                // 数字砝码区也可作为拖拽起点，但已在weight上设置\n            }\n\n            // --- 按钮事件 ---\n            function setupButtons() {\n                dom.btnResetRight.addEventListener('click', () => {\n                    state.rightWeights = [];\n                    dom.rightWeightsContainer.innerHTML = '';\n                    updateBalanceVisual();\n                });\n\n                dom.btnNewGame.addEventListener('"
+      },
+      "actions": [
+        {
+          "id": "action_iLE-KZ-3",
+          "type": "speech",
+          "text": "太好了，我们刚刚认识了未知数x，现在就来亲手操作一下。看，屏幕中央有一个虚拟天平。"
+        },
+        {
+          "id": "action_lG-uy5dU",
+          "type": "speech",
+          "text": "天平的左边托盘上已经有一个固定的数字5和一个代表未知数x的图标。你的任务是从下方的数字区，比如1、2、3这些数字里，拖动一个数字砝码到右边的空托盘上。"
+        },
+        {
+          "id": "action_0-IVHYpa",
+          "type": "speech",
+          "text": "试着拖动一个数字过去，看看天平会怎么样？我们的目标是让天平的指针指向正中间，保持平衡。"
+        },
+        {
+          "id": "action_VBlPTgTA",
+          "type": "speech",
+          "text": "看，系统会实时显示一个算式，比如‘5 + x = 你放的数字’。这就是在告诉我们，当天平平衡时，左边的总重量和右边的总重量是相等的。这就是一个等式！"
+        },
+        {
+          "id": "action_keIGr7-9",
+          "type": "speech",
+          "text": "你可以多尝试几次，用不同的数字组合，看看哪个数字能让天平稳稳地平衡。感受一下‘左边重量 = 右边重量’这个等式的含义。"
+        },
+        {
+          "id": "action_KZTu56vQ",
+          "type": "speech",
+          "text": "玩得怎么样？通过这个游戏，我们是不是更直观地理解了等式和平衡？这为我们接下来学习解方程的魔法打下了很好的基础。"
+        }
+      ],
+      "createdAt": 1774439793388,
+      "updatedAt": 1774439793388
+    },
+    {
+      "id": "H1HGmIcwj_-qqya4l8MJc",
+      "stageId": "hPIzQcKWev",
+      "type": "slide",
+      "title": "解方程的魔法：逆运算",
+      "order": 4,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "9wcJbVRAvSfxyYyHV3oiL",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_BMCJlfTw",
+              "type": "shape",
+              "left": 60,
+              "top": 60,
+              "width": 880,
+              "height": 80,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#e8f4fd",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_qdkXDTSS",
+              "type": "text",
+              "left": 80,
+              "top": 72,
+              "width": 840,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1e40af;\"><strong>解方程的魔法：逆运算</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_R5ja2fI_",
+              "type": "text",
+              "left": 60,
+              "top": 160,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #666666;\">揭开未知数 x 的面纱</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_EpKBEGzL",
+              "type": "shape",
+              "left": 100,
+              "top": 230,
+              "width": 800,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_mElzI-mY",
+              "type": "text",
+              "left": 120,
+              "top": 242,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>1. 解方程就像玩‘拆礼物’</strong>：一层层去掉包装</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "shape_2uCj2RYR",
+              "type": "shape",
+              "left": 100,
+              "top": 300,
+              "width": 800,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_YoG69Trx",
+              "type": "text",
+              "left": 120,
+              "top": 312,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>2. 核心魔法：逆运算</strong>（相反的操作）</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#166534",
+              "rotate": 0
+            },
+            {
+              "id": "shape_q_A8pRsn",
+              "type": "shape",
+              "left": 100,
+              "top": 370,
+              "width": 800,
+              "height": 52,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dbeafe",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_c3FM46Zr",
+              "type": "text",
+              "left": 120,
+              "top": 382,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 18px;\"><strong>3. 抵消法则</strong>：加 ↔ 减，乘 ↔ 除</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "text_LFNi3Nfr",
+              "type": "text",
+              "left": 100,
+              "top": 440,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #333333;\"><strong>魔法演示</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_FjInqVgD",
+              "type": "latex",
+              "left": 120,
+              "top": 490,
+              "width": 760,
+              "height": 70,
+              "latex": "x + 5 = 12",
+              "color": "#000000",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6667em;vertical-align:-0.0833em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">5</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">12</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_7DCxw6dZ",
+              "type": "latex",
+              "left": 120,
+              "top": 570,
+              "width": 760,
+              "height": 70,
+              "latex": "x = 12 - 5",
+              "color": "#000000",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">12</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">5</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_a9Jqb44H",
+              "type": "latex",
+              "left": 120,
+              "top": 650,
+              "width": 760,
+              "height": 70,
+              "latex": "x = 7",
+              "color": "#000000",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">7</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "line_-uA_bN7y",
+              "type": "line",
+              "left": 180,
+              "top": 560,
+              "width": 3,
+              "start": [
+                0,
+                0
+              ],
+              "end": [
+                0,
+                60
+              ],
+              "style": "dashed",
+              "color": "#5b9bd5",
+              "points": [
+                "",
+                "arrow"
+              ],
+              "rotate": 0
+            },
+            {
+              "id": "line_N1zAxfcy",
+              "type": "line",
+              "left": 180,
+              "top": 640,
+              "width": 3,
+              "start": [
+                0,
+                0
+              ],
+              "end": [
+                0,
+                60
+              ],
+              "style": "dashed",
+              "color": "#5b9bd5",
+              "points": [
+                "",
+                "arrow"
+              ],
+              "rotate": 0
+            },
+            {
+              "id": "text_OhMiuK3_",
+              "type": "text",
+              "left": 200,
+              "top": 560,
+              "width": 200,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; color: #5b9bd5;\">逆运算：减 5</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_q07HW9w7",
+              "type": "text",
+              "left": 200,
+              "top": 640,
+              "width": 200,
+              "height": 46,
+              "content": "<p style=\"font-size: 16px; color: #5b9bd5;\">计算得出答案</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_HXTyO9kE",
+              "type": "text",
+              "left": 100,
+              "top": 730,
+              "width": 800,
+              "height": 58,
+              "content": "<p style=\"font-size: 18px; text-align: center; color: #d97706;\"><strong>黄金法则：对等式一边做的事，对另一边也要做！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_YaQ97KWD",
+          "type": "spotlight",
+          "elementId": "text_qdkXDTSS"
+        },
+        {
+          "id": "action_5hpmP54U",
+          "type": "speech",
+          "text": "非常好！刚才我们通过天平游戏，直观地感受了等式的平衡。现在，我们就要正式学习解开方程这个‘礼物’的魔法了。请看标题——解方程的魔法：逆运算。"
+        },
+        {
+          "id": "action_e3lfoykh",
+          "type": "spotlight",
+          "elementId": "text_mElzI-mY"
+        },
+        {
+          "id": "action_2lM2Iw-s",
+          "type": "speech",
+          "text": "首先，我们要建立一种感觉。解方程，就像玩‘拆礼物’。礼物盒外面有包装纸，有丝带，有一层层的盒子。我们的未知数 x 就被这些加、减、乘、除的运算‘包装’起来了。我们的任务，就是一层层地、有顺序地去掉这些包装，最终看到 x 的真面目。"
+        },
+        {
+          "id": "action_gGcWEwd7",
+          "type": "spotlight",
+          "elementId": "text_YoG69Trx"
+        },
+        {
+          "id": "action_4BQ7UwWV",
+          "type": "speech",
+          "text": "那么，用什么工具来拆包装呢？这就是我们的核心魔法——逆运算。什么叫逆运算呢？就是‘相反的操作’。比如，包装的动作是‘加’，那拆包装的动作就是‘减’。"
+        },
+        {
+          "id": "action_mFBDdn4U",
+          "type": "spotlight",
+          "elementId": "text_c3FM46Zr"
+        },
+        {
+          "id": "action_4KtZySVd",
+          "type": "speech",
+          "text": "这就是我们神奇的抵消法则。大家跟我一起念：加，用减来抵消；减，用加来抵消；乘，用除来抵消；除，用乘来抵消。记住这四对好朋友，它们就是解开所有方程包装的钥匙。"
+        },
+        {
+          "id": "action_vWgvMg_O",
+          "type": "spotlight",
+          "elementId": "text_LFNi3Nfr"
+        },
+        {
+          "id": "action_af-cFpG8",
+          "type": "speech",
+          "text": "光说不练假把式，我们马上来一场魔法演示。"
+        },
+        {
+          "id": "action_Zxg1c1kK",
+          "type": "spotlight",
+          "elementId": "latex_FjInqVgD"
+        },
+        {
+          "id": "action_ueFJgS58",
+          "type": "speech",
+          "text": "看这个方程：x 加 5 等于 12。x 被‘加 5’这个包装包住了。我们的目标是把‘加 5’去掉。"
+        },
+        {
+          "id": "action_67CpITVp",
+          "type": "laser",
+          "elementId": "text_OhMiuK3_"
+        },
+        {
+          "id": "action_Yx_syFsi",
+          "type": "speech",
+          "text": "根据抵消法则，加法的逆运算是减法。所以，我们要在等式的两边都减去 5。"
+        },
+        {
+          "id": "action_zO-PPd2R",
+          "type": "spotlight",
+          "elementId": "latex_7DCxw6dZ"
+        },
+        {
+          "id": "action_feOIXy15",
+          "type": "speech",
+          "text": "看，左边 x 加 5 再减 5，加和减抵消了，就只剩下 x。右边 12 减 5。这样，包装就被我们拆掉了。"
+        },
+        {
+          "id": "action_VUQjkzR5",
+          "type": "spotlight",
+          "elementId": "latex_a9Jqb44H"
+        },
+        {
+          "id": "action_RU_xYA8I",
+          "type": "speech",
+          "text": "最后，我们计算右边，12 减 5 等于 7。所以，x 就等于 7。看，未知数的面纱被我们揭开了！"
+        },
+        {
+          "id": "action_J0deq9jW",
+          "type": "spotlight",
+          "elementId": "text_HXTyO9kE"
+        },
+        {
+          "id": "action_qs95P7l6",
+          "type": "speech",
+          "text": "在整个过程中，有一个绝对不能忘记的黄金法则。小星，你发现了吗？当我们用减法去掉左边的‘加5’时，我们同时对等式的右边也做了‘减5’。这就是‘对等式一边做的事，对另一边也要做！’只有这样，天平的平衡，也就是等号的成立，才能一直保持下去。记住了吗？"
+        }
+      ],
+      "createdAt": 1774439857904,
+      "updatedAt": 1774439857904
+    },
+    {
+      "id": "x8FmuBDA0hfIOBzffXVvd",
+      "stageId": "hPIzQcKWev",
+      "type": "quiz",
+      "title": "魔法小试炼",
+      "order": 5,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "single",
+            "question": "在方程 x + 5 = 12 中，为了解出 x，我们需要抵消掉数字 5。应该使用哪种逆运算？",
+            "options": [
+              {
+                "value": "A",
+                "label": "从等式两边减去 5"
+              },
+              {
+                "value": "B",
+                "label": "在等式两边加上 5"
+              },
+              {
+                "value": "C",
+                "label": "在等式两边乘以 5"
+              },
+              {
+                "value": "D",
+                "label": "在等式两边除以 5"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "因为原方程是 x 加上 5，所以它的逆运算是减去 5。为了保持等式平衡，需要在等式两边同时减去 5，这样左边就只剩下 x 了。",
+            "points": 10,
+            "hasAnswer": true
+          },
+          {
+            "id": "q2",
+            "type": "multiple",
+            "question": "观察方程 3x = 18。为了解出 x，下列哪些步骤是正确的？（选择所有正确的选项）",
+            "options": [
+              {
+                "value": "A",
+                "label": "因为 3 乘以了 x，所以应该使用除法作为逆运算。"
+              },
+              {
+                "value": "B",
+                "label": "在等式两边同时加上 3。"
+              },
+              {
+                "value": "C",
+                "label": "在等式两边同时除以 3。"
+              },
+              {
+                "value": "D",
+                "label": "计算 x = 18 ÷ 3，得到 x = 6。"
+              }
+            ],
+            "answer": [
+              "A",
+              "C",
+              "D"
+            ],
+            "analysis": "选项A正确，指出了乘法的逆运算是除法。选项C是执行逆运算的正确操作，在等式两边同时除以3以保持平衡。选项D是执行除法计算后的正确结果。选项B错误，因为加法不是乘法的逆运算，无法抵消乘以3的操作。",
+            "points": 15,
+            "hasAnswer": true
+          },
+          {
+            "id": "q3",
+            "type": "single",
+            "question": "小星在解方程 x - 7 = 3。他第一步在等式两边加上了 7，得到 x = 10。他的做法和结果正确吗？",
+            "options": [
+              {
+                "value": "A",
+                "label": "正确，减法的逆运算是加法，计算也正确。"
+              },
+              {
+                "value": "B",
+                "label": "错误，应该减去7而不是加上7。"
+              },
+              {
+                "value": "C",
+                "label": "做法正确，但计算结果错了，应该是 x = 4。"
+              },
+              {
+                "value": "D",
+                "label": "做法错误，应该两边乘以7。"
+              }
+            ],
+            "answer": [
+              "A"
+            ],
+            "analysis": "对于方程 x - 7 = 3，为了抵消左边的 -7，正确的逆运算是加上 7。小星在等式两边同时加上 7，左边变为 x，右边变为 3 + 7 = 10，所以得到 x = 10。他的步骤和结果都是完全正确的。",
+            "points": 10,
+            "hasAnswer": true
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_kGgFAaxi",
+          "type": "speech",
+          "text": "好的，小星，我们刚刚学习了使用逆运算这个魔法来解方程，并且记住了保持天平平衡的黄金法则。现在，让我们通过一个‘魔法小试炼’来检验一下你的理解，看看你是不是已经掌握了这个重要的技能。"
+        },
+        {
+          "id": "action_iroFPUu0",
+          "type": "speech",
+          "text": "这里有三个小问题，都是关于我们刚才讲的内容。别紧张，慢慢来，仔细读题，想想我们学过的‘抵消’和‘逆运算’。"
+        },
+        {
+          "id": "action_onbKdEpd",
+          "type": "speech",
+          "text": "第一题，在方程 x + 5 = 12 中，要抵消掉数字5，我们应该用哪种逆运算呢？回想一下，加法的逆运算是减法。所以，我们需要在等式两边都减去5，这样才能让左边的‘+5’消失，同时保持天平平衡。"
+        },
+        {
+          "id": "action_sYpTXDEe",
+          "type": "speech",
+          "text": "第二题是观察方程 3x = 18。这里，x 被乘以了3。要解出 x，我们需要抵消掉这个‘乘以3’的操作。乘法的逆运算是除法，所以正确的步骤是在等式两边都除以3。记住，一定要对等式两边做相同的操作哦。"
+        },
+        {
+          "id": "action_-vG1NkAY",
+          "type": "speech",
+          "text": "第三题是关于小星自己的做法。他解方程 x - 7 = 3 时，第一步在等式两边加上了7，得到 x = 10。你觉得他做得对吗？减法的逆运算是加法，他通过加7来抵消左边的‘减7’，这个思路完全正确，计算的结果 x=10 也是对的。小星，看来你已经会用这个魔法了！"
+        },
+        {
+          "id": "action_-vOQ63lN",
+          "type": "discussion",
+          "topic": "解方程时，你觉得最容易出错的地方是什么？",
+          "prompt": "是选错逆运算，还是忘记对等式两边做相同的操作？",
+          "agentId": "student-u-student-001"
+        }
+      ],
+      "createdAt": 1774439894339,
+      "updatedAt": 1774439894339
+    },
+    {
+      "id": "Z7No2B80WFqJDPj6i1Sc-",
+      "stageId": "hPIzQcKWev",
+      "type": "slide",
+      "title": "实战演练：帮国王解决问题",
+      "order": 6,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "huUNCxEgGVXCqjE6UHK86",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_OD9VYd0e",
+              "type": "text",
+              "left": 60,
+              "top": 50,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size:32px; text-align:center;\"><strong>实战演练：帮国王解决问题</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_OuwIBoc-",
+              "type": "text",
+              "left": 60,
+              "top": 150,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#5b9bd5;\"><strong>国王的难题</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_LuajLF_K",
+              "type": "text",
+              "left": 60,
+              "top": 210,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:18px;\">2个神秘宝箱 + 3枚金币 = 9枚金币</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_7RoW6prq",
+              "type": "text",
+              "left": 60,
+              "top": 280,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#ed7d31;\"><strong>列出方程</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_64XUOxY_",
+              "type": "latex",
+              "left": 60,
+              "top": 340,
+              "width": 880,
+              "height": 80,
+              "latex": "2x + 3 = 9",
+              "color": "#333333",
+              "align": "center",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">3</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">9</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_Rr4FwJjW",
+              "type": "text",
+              "left": 60,
+              "top": 440,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#70ad47;\"><strong>分步拆解</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_73EdXkB0",
+              "type": "text",
+              "left": 100,
+              "top": 500,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size:18px;\">1. 抵消加法：两边同时减去3</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_Ul1RvJEc",
+              "type": "latex",
+              "left": 100,
+              "top": 560,
+              "width": 800,
+              "height": 80,
+              "latex": "2x + 3 - 3 = 9 - 3",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">+</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">3</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">3</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.7278em;vertical-align:-0.0833em;\"></span><span class=\"mord\">9</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span><span class=\"mbin\">−</span><span class=\"mspace\" style=\"margin-right:0.2222em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">3</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_HAvorX6D",
+              "type": "latex",
+              "left": 100,
+              "top": 650,
+              "width": 800,
+              "height": 80,
+              "latex": "2x = 6",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">6</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_8xAbXfFF",
+              "type": "text",
+              "left": 100,
+              "top": 740,
+              "width": 800,
+              "height": 46,
+              "content": "<p style=\"font-size:18px;\">2. 抵消乘法：两边同时除以2</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "latex_Al8RgzIV",
+              "type": "latex",
+              "left": 100,
+              "top": 800,
+              "width": 800,
+              "height": 80,
+              "latex": "\\frac{2x}{2} = \\frac{6}{2}",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span><span class=\"mord mathnormal\">x</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:2.0074em;vertical-align:-0.686em;\"></span><span class=\"mord\"><span class=\"mopen nulldelimiter\"></span><span class=\"mfrac\"><span class=\"vlist-t vlist-t2\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:1.3214em;\"><span style=\"top:-2.314em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">2</span></span></span><span style=\"top:-3.23em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"frac-line\" style=\"border-bottom-width:0.04em;\"></span></span><span style=\"top:-3.677em;\"><span class=\"pstrut\" style=\"height:3em;\"></span><span class=\"mord\"><span class=\"mord\">6</span></span></span></span><span class=\"vlist-s\">​</span></span><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.686em;\"><span></span></span></span></span></span><span class=\"mclose nulldelimiter\"></span></span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "latex_WYsN7oWh",
+              "type": "latex",
+              "left": 100,
+              "top": 890,
+              "width": 800,
+              "height": 80,
+              "latex": "x = 3",
+              "color": "#333333",
+              "align": "left",
+              "html": "<span class=\"katex-display\"><span class=\"katex\"><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">x</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">=</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6444em;\"></span><span class=\"mord\">3</span></span></span></span></span>",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "text_G6Gq-HUl",
+              "type": "text",
+              "left": 60,
+              "top": 980,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#ffc000;\"><strong>得出结论</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_DDd-HmY9",
+              "type": "text",
+              "left": 60,
+              "top": 1040,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:18px;\">每个宝箱里有 <strong>3</strong> 枚金币</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_wRccOXMR",
+          "type": "spotlight",
+          "elementId": "text_OD9VYd0e"
+        },
+        {
+          "id": "action_iefH_obB",
+          "type": "speech",
+          "text": "很好，小星，刚才的魔法小试炼你都顺利通过了。现在，我们学到的解方程魔法要派上真正的用场了！让我们进入今天的实战演练，一起来帮国王解决一个难题。"
+        },
+        {
+          "id": "action_7ROQ_5Gf",
+          "type": "spotlight",
+          "elementId": "text_OuwIBoc-"
+        },
+        {
+          "id": "action_ukx56MCy",
+          "type": "speech",
+          "text": "故事是这样的，方程王国的国王遇到了一个难题。"
+        },
+        {
+          "id": "action_CNQ26423",
+          "type": "spotlight",
+          "elementId": "text_LuajLF_K"
+        },
+        {
+          "id": "action_zFRj4_y9",
+          "type": "speech",
+          "text": "他发现，有2个神秘的宝箱，每个宝箱里装着同样多的金币，再加上国王手里本来就有的3枚金币，总数正好是9枚金币。"
+        },
+        {
+          "id": "action_HqmV2vIN",
+          "type": "spotlight",
+          "elementId": "text_7RoW6prq"
+        },
+        {
+          "id": "action_60AcYnHT",
+          "type": "speech",
+          "text": "那么，我们怎么帮国王算出每个宝箱里有多少金币呢？首先，我们需要把这个问题变成一个方程。"
+        },
+        {
+          "id": "action_qFz_ZSwh",
+          "type": "spotlight",
+          "elementId": "latex_64XUOxY_"
+        },
+        {
+          "id": "action_fd8aNvDg",
+          "type": "speech",
+          "text": "看这里，我们可以设每个宝箱里的金币数为x。那么，2个宝箱就是2x，再加上国王的3枚金币，总数等于9枚。所以，方程就是：2x 加 3 等于 9。"
+        },
+        {
+          "id": "action_uwn3vAS_",
+          "type": "spotlight",
+          "elementId": "text_Rr4FwJjW"
+        },
+        {
+          "id": "action_doR_CW_s",
+          "type": "speech",
+          "text": "接下来，就像我们刚才练习的那样，用分步拆解的方法来解这个方程。"
+        },
+        {
+          "id": "action_k_PQ8CPf",
+          "type": "spotlight",
+          "elementId": "text_73EdXkB0"
+        },
+        {
+          "id": "action_TtdWtfmj",
+          "type": "speech",
+          "text": "第一步，抵消加法。方程左边是‘2x加3’，为了把‘加3’去掉，我们需要在等式两边同时减去3。"
+        },
+        {
+          "id": "action_-aFC1OvJ",
+          "type": "spotlight",
+          "elementId": "latex_Ul1RvJEc"
+        },
+        {
+          "id": "action_tBk5Dc8T",
+          "type": "speech",
+          "text": "左边，2x加3再减3，就只剩下2x了。右边，9减3等于6。"
+        },
+        {
+          "id": "action_3WmRPJse",
+          "type": "spotlight",
+          "elementId": "latex_HAvorX6D"
+        },
+        {
+          "id": "action_n436SwPa",
+          "type": "speech",
+          "text": "这样，方程就简化成了：2x 等于 6。"
+        },
+        {
+          "id": "action_FCnue13M",
+          "type": "spotlight",
+          "elementId": "text_8xAbXfFF"
+        },
+        {
+          "id": "action_bgZs6Sjy",
+          "type": "speech",
+          "text": "第二步，抵消乘法。现在，x被2乘着，为了得到x，我们需要在等式两边同时除以2。"
+        },
+        {
+          "id": "action_pFbhyqdS",
+          "type": "spotlight",
+          "elementId": "latex_Al8RgzIV"
+        },
+        {
+          "id": "action_A34TvcLL",
+          "type": "speech",
+          "text": "左边，2x除以2，就得到了x。右边，6除以2等于3。"
+        },
+        {
+          "id": "action_6cSOOyea",
+          "type": "spotlight",
+          "elementId": "latex_WYsN7oWh"
+        },
+        {
+          "id": "action_xVJk6_-H",
+          "type": "speech",
+          "text": "看，结果出来了，x 等于 3。"
+        },
+        {
+          "id": "action_i-sGWz-R",
+          "type": "spotlight",
+          "elementId": "text_G6Gq-HUl"
+        },
+        {
+          "id": "action__Aw6_SPo",
+          "type": "speech",
+          "text": "所以，我们得出结论。"
+        },
+        {
+          "id": "action_oGdp8vvN",
+          "type": "spotlight",
+          "elementId": "text_DDd-HmY9"
+        },
+        {
+          "id": "action_SDt5qW_t",
+          "type": "speech",
+          "text": "每个神秘宝箱里，都装着3枚金币！国王的难题被我们解开了。小星，你看，我们刚才学的‘先抵消加法，再抵消乘法’的步骤，是不是非常清晰？"
+        }
+      ],
+      "createdAt": 1774439945689,
+      "updatedAt": 1774439945689
+    },
+    {
+      "id": "0D5VqOvrLPXMtx1DefE3x",
+      "stageId": "hPIzQcKWev",
+      "type": "quiz",
+      "title": "独立闯关练习",
+      "order": 7,
+      "content": {
+        "type": "quiz",
+        "questions": [
+          {
+            "id": "q1",
+            "type": "short_answer",
+            "question": "请独立解方程：3(x - 2) + 5 = 2x + 4。请写出你的完整解题步骤。",
+            "commentPrompt": "详细评分标准：\n(1) 去括号并合并同类项（3x - 6 + 5 = 2x + 4 或 3x - 1 = 2x + 4） - 40%\n(2) 正确移项（将含x项移到一边，常数项移到另一边，如 3x - 2x = 4 + 1） - 30%\n(3) 正确求解并得出最终答案（x = 5） - 30%",
+            "analysis": "参考解答：\n1. 去括号：3x - 6 + 5 = 2x + 4\n2. 合并常数项：3x - 1 = 2x + 4\n3. 移项：3x - 2x = 4 + 1\n4. 合并同类项：x = 5\n\n小星，检查一下你的步骤和这个一样吗？记得每一步都要保持等式平衡哦！",
+            "points": 15,
+            "hasAnswer": false
+          },
+          {
+            "id": "q2",
+            "type": "short_answer",
+            "question": "请独立解方程：(2y + 1)/3 = y - 2。请写出你的完整解题步骤。",
+            "commentPrompt": "详细评分标准：\n(1) 正确去分母（方程两边同时乘以3，得到 2y + 1 = 3(y - 2)） - 40%\n(2) 正确去括号并移项（2y + 1 = 3y - 6 移项后得 1 + 6 = 3y - 2y） - 30%\n(3) 正确求解并得出最终答案（y = 7） - 30%",
+            "analysis": "参考解答：\n1. 去分母（两边乘以3）：2y + 1 = 3(y - 2)\n2. 去括号：2y + 1 = 3y - 6\n3. 移项：1 + 6 = 3y - 2y\n4. 合并同类项：7 = y 或 y = 7\n\n太棒了，小星！你已经成功闯过两关！即使有步骤不一样也没关系，重要的是你尝试了并理解了过程。错误是学习的好机会！",
+            "points": 15,
+            "hasAnswer": false
+          }
+        ]
+      },
+      "actions": [
+        {
+          "id": "action_gWmWevXE",
+          "type": "speech",
+          "text": "小星，刚才我们帮国王解决了金币的难题，现在轮到你自己来当解题小勇士了！这是一个独立闯关练习，需要你独立解两个方程。"
+        },
+        {
+          "id": "action_ZE15kFt_",
+          "type": "speech",
+          "text": "请拿出你的草稿纸，像我们刚才练习的那样，一步一步来。记住我们的魔法口诀：先抵消加法或减法，再抵消乘法或除法。"
+        },
+        {
+          "id": "action_NbaWbPyg",
+          "type": "speech",
+          "text": "第一个方程是：3(x - 2) + 5 = 2x + 4。别着急，先看看方程两边，有括号，也有常数项。"
+        },
+        {
+          "id": "action_4YLI5Dmm",
+          "type": "speech",
+          "text": "第二个方程是：(2y + 1)/3 = y - 2。这个方程里，未知数y在等号两边都有，而且左边是一个整体除以3。"
+        },
+        {
+          "id": "action_0xeiZEW8",
+          "type": "speech",
+          "text": "系统会检查你的每一步，无论对错，都会给你鼓励和提示。请记住，错误是学习的好机会！现在，开始你的闯关吧！"
+        }
+      ],
+      "createdAt": 1774439972721,
+      "updatedAt": 1774439972721
+    },
+    {
+      "id": "Snz7mD6p2EBXWmTqjG6Ea",
+      "stageId": "hPIzQcKWev",
+      "type": "slide",
+      "title": "总结与宝藏地图",
+      "order": 8,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "klwwRrECE5i0YiCKb8e0E",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_DqECgfIm",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 36px; text-align: center; color: #1e40af;\"><strong>总结与宝藏地图</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_5DWm1Ovq",
+              "type": "shape",
+              "left": 100,
+              "top": 166,
+              "width": 800,
+              "height": 3,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#5b9bd5",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "shape_9kJNoWPJ",
+              "type": "shape",
+              "left": 60,
+              "top": 200,
+              "width": 880,
+              "height": 64,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_xNGjOmFb",
+              "type": "text",
+              "left": 80,
+              "top": 212,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #1e40af;\"><strong>知识宝藏回顾</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_66v78ws2",
+              "type": "shape",
+              "left": 80,
+              "top": 280,
+              "width": 840,
+              "height": 94,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8fafc",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_0G8DE1tj",
+              "type": "text",
+              "left": 100,
+              "top": 294,
+              "width": 800,
+              "height": 70,
+              "content": "<p style=\"font-size: 16px;\">• 方程：含有未知数的等式</p><p style=\"font-size: 16px;\">• 未知数：需要求解的“神秘数”</p><p style=\"font-size: 16px;\">• 逆运算：解方程的钥匙（加法↔减法，乘法↔除法）</p><p style=\"font-size: 16px;\">• 解题步骤：找未知数 → 用逆运算 → 求结果 → 验算</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_-9IdPiAL",
+              "type": "shape",
+              "left": 60,
+              "top": 400,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_2ig40o6O",
+              "type": "text",
+              "left": 80,
+              "top": 408,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #1e40af;\"><strong>延伸任务：课后探索</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_qiRRkYet",
+              "type": "shape",
+              "left": 80,
+              "top": 470,
+              "width": 840,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f8fafc",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_Z0rwyXy7",
+              "type": "text",
+              "left": 100,
+              "top": 482,
+              "width": 800,
+              "height": 52,
+              "content": "<p style=\"font-size: 16px;\">1. 寻找生活中的“方程”</p><p style=\"font-size: 16px;\">2. 设计一个方程谜题，考考家人</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_b4NcQhYL",
+              "type": "shape",
+              "left": 350,
+              "top": 120,
+              "width": 300,
+              "height": 58,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#dcfce7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_QYaEOmPh",
+              "type": "text",
+              "left": 370,
+              "top": 132,
+              "width": 260,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center; color: #166534;\"><strong>初级解密师认证</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_pJ4Jso1v",
+          "type": "spotlight",
+          "elementId": "text_DqECgfIm"
+        },
+        {
+          "id": "action_8yhjV2vF",
+          "type": "speech",
+          "text": "太棒了，小星！恭喜你成功完成了所有的挑战，来到了我们方程王国的最后一站——总结与宝藏地图。"
+        },
+        {
+          "id": "action_Os1cKGhG",
+          "type": "spotlight",
+          "elementId": "text_xNGjOmFb"
+        },
+        {
+          "id": "action_o_W9mPsZ",
+          "type": "speech",
+          "text": "现在，让我们一起回顾一下我们刚刚一起挖掘出的知识宝藏。"
+        },
+        {
+          "id": "action_FrvwPgla",
+          "type": "spotlight",
+          "elementId": "text_0G8DE1tj"
+        },
+        {
+          "id": "action_eDs0X2_t",
+          "type": "speech",
+          "text": "首先，我们认识了什么是方程，就是含有未知数的等式。那个神秘的未知数，就是我们要求解的‘神秘数’。然后，我们找到了解方程的钥匙——逆运算，比如加法的逆运算是减法，乘法的逆运算是除法。我们还一起练习了完整的解题步骤：先写解，再用逆运算，最后要检验。"
+        },
+        {
+          "id": "action__4g75qJx",
+          "type": "spotlight",
+          "elementId": "text_QYaEOmPh"
+        },
+        {
+          "id": "action_BwHSDJiy",
+          "type": "speech",
+          "text": "掌握了这些，你已经完全有资格获得‘方程王国初级解密师’的认证了！为你感到骄傲！"
+        },
+        {
+          "id": "action_2mOZaPy6",
+          "type": "spotlight",
+          "elementId": "text_2ig40o6O"
+        },
+        {
+          "id": "action__9Mz1AnN",
+          "type": "speech",
+          "text": "不过，真正的探险家不会停下脚步。这里有一个延伸任务，邀请你在课后继续探索。"
+        },
+        {
+          "id": "action_MTdVudP7",
+          "type": "spotlight",
+          "elementId": "text_Z0rwyXy7"
+        },
+        {
+          "id": "action_pL-TJaPn",
+          "type": "speech",
+          "text": "第一，在生活中寻找‘方程’。比如，你的年龄加上5等于多少？这就是一个简单的方程。第二，你可以自己设计一个方程谜题，去考考你的家人，看看他们能不能解开你这个‘初级解密师’出的题。"
+        },
+        {
+          "id": "action_MGFggfE2",
+          "type": "speech",
+          "text": "今天的课程到这里就圆满结束了。我们这节课所有的内容，包括你闯关的精彩表现，都已经保存好了，你随时可以回看复习。"
+        },
+        {
+          "id": "action_jT8izSuU",
+          "type": "speech",
+          "text": "小星，你今天的表现非常出色，不仅学到了知识，更展现了探索和思考的勇气。期待你在生活中继续运用方程这个‘解密工具’。我们下次课再见！"
+        }
+      ],
+      "createdAt": 1774440029726,
+      "updatedAt": 1774440029726
+    }
+  ],
+  "createdAt": "2026-03-25T18:36:09.006Z"
+}

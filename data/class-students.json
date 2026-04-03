@@ -1,0 +1,164 @@
+[
+  {
+    "id": "class-bulk-001-student-1",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-001",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-001-student-2",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-005",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-001-student-3",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-009",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-001-student-4",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-013",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-001-student-5",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-017",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-001-student-6",
+    "classId": "class-bulk-001",
+    "studentId": "u-student-bulk-021",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-1",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-002",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-2",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-006",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-3",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-010",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-4",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-014",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-5",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-018",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-002-student-6",
+    "classId": "class-bulk-002",
+    "studentId": "u-student-bulk-022",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-1",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-003",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-2",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-007",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-3",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-011",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-4",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-015",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-5",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-019",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-003-student-6",
+    "classId": "class-bulk-003",
+    "studentId": "u-student-bulk-023",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-1",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-004",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-2",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-008",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-3",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-012",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-4",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-016",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-5",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-020",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-bulk-004-student-6",
+    "classId": "class-bulk-004",
+    "studentId": "u-student-bulk-024",
+    "joinedAt": "2026-02-24T17:18:39.618Z"
+  },
+  {
+    "id": "class-student-5519aef59e20",
+    "classId": "class-15f51b1e74e8",
+    "studentId": "u-e223738228b7",
+    "joinedAt": "2026-02-26T10:35:07.003Z"
+  },
+  {
+    "id": "class-student-83cabca723c9",
+    "classId": "class-15f51b1e74e8",
+    "studentId": "u-1fc0fd6f084e",
+    "joinedAt": "2026-02-26T11:16:39.791Z"
+  },
+  {
+    "id": "class-student-44e0be64488a",
+    "classId": "class-15f51b1e74e8",
+    "studentId": "u-0591e777e503",
+    "joinedAt": "2026-02-26T11:18:11.211Z"
+  }
+]

@@ -1,0 +1,238 @@
+{
+  "id": "aTKVPF0ZGq",
+  "stage": {
+    "id": "aTKVPF0ZGq",
+    "name": "请为小星设计一节适合学生自主使用的数学巩固课堂。\n\n学习主题：分数的意义\n\n优先巩固知识点：分数的意义\n\n当前学习目标：巩固分数意义与阅读理解\n\n课堂要求：聚焦薄弱点收口，包含例题拆解、即时练习、错因提醒和最后的迁移检验。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：学科巩固\n当前巩固重点：分数的意义\n学习目标：巩固分数意义与阅读理解\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 学科巩固要围绕薄弱知识点或最近刚练过的主题安排巩固环节和即时练习。\n- 讲解要强调分步拆解、易错点提醒和讲后立练，避免只讲概念不检验。\n- 最后给出一题迁移或变式，帮助学生把“听懂”转成“做稳”。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774526384053,
+    "updatedAt": 1774526483055,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "subject-reinforcement",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解",
+      "focusKnowledgePointTitle": "分数的意义"
+    },
+    "currentSceneId": "06vcv4u_WyidnwXvQIqbp"
+  },
+  "scenes": [
+    {
+      "id": "06vcv4u_WyidnwXvQIqbp",
+      "stageId": "aTKVPF0ZGq",
+      "type": "slide",
+      "title": "欢迎来到分数世界",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "hw_mZDlgv3ndDeF4kovFG",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "text_paSQ-QOl",
+              "type": "text",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "content": "<p style=\"font-size: 32px; text-align: center;\"><strong>欢迎来到分数世界</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_f-NrMZqg",
+              "type": "text",
+              "left": 60,
+              "top": 180,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">欢迎小星！</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "shape_kM8xit0P",
+              "type": "shape",
+              "left": 100,
+              "top": 250,
+              "width": 800,
+              "height": 120,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f9ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_jgnEkGDF",
+              "type": "text",
+              "left": 120,
+              "top": 282,
+              "width": 760,
+              "height": 58,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">一个披萨，要公平地分给朋友们</p><p style=\"font-size: 20px; text-align: center;\">怎么表示每人得到的一份呢？</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#1e40af",
+              "rotate": 0
+            },
+            {
+              "id": "shape_H9M1tc0x",
+              "type": "shape",
+              "left": 100,
+              "top": 400,
+              "width": 800,
+              "height": 100,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#fef3c7",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_WO6kVut3",
+              "type": "text",
+              "left": 120,
+              "top": 430,
+              "width": 760,
+              "height": 40,
+              "content": "<p style=\"font-size: 24px; text-align: center;\"><strong>分数</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#92400e",
+              "rotate": 0
+            },
+            {
+              "id": "text_761hK1oO",
+              "type": "text",
+              "left": 60,
+              "top": 520,
+              "width": 880,
+              "height": 94,
+              "content": "<p style=\"font-size: 20px; text-align: center;\">学习目标</p><p style=\"font-size: 18px; text-align: center;\">1. 巩固分数的意义</p><p style=\"font-size: 18px; text-align: center;\">2. 能在阅读题目时准确理解分数</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_8JXuFb3L",
+          "type": "spotlight",
+          "elementId": "text_paSQ-QOl"
+        },
+        {
+          "id": "action_ULwTZqFY",
+          "type": "speech",
+          "text": "小星你好！欢迎来到我们的数学课堂，欢迎来到奇妙的分数世界！"
+        },
+        {
+          "id": "action_hhih_J-r",
+          "type": "spotlight",
+          "elementId": "text_f-NrMZqg"
+        },
+        {
+          "id": "action_TCeOkP24",
+          "type": "speech",
+          "text": "今天这节课，就由我来陪你一起，巩固一个非常重要、也非常有趣的数学概念。"
+        },
+        {
+          "id": "action_i3Z5mqGr",
+          "type": "spotlight",
+          "elementId": "text_jgnEkGDF"
+        },
+        {
+          "id": "action_xf9cdzcq",
+          "type": "speech",
+          "text": "让我们从一个熟悉的情境开始。想象一下，你有一个香喷喷的大披萨，要公平地分给你的好朋友们。那么，怎么才能清楚地表示出每个人得到的那一份呢？"
+        },
+        {
+          "id": "action_qCaYMnli",
+          "type": "laser",
+          "elementId": "text_WO6kVut3"
+        },
+        {
+          "id": "action_aatdAMwn",
+          "type": "speech",
+          "text": "没错，这就需要用到我们今天的主角——分数。"
+        },
+        {
+          "id": "action_dECVE0je",
+          "type": "spotlight",
+          "elementId": "text_761hK1oO"
+        },
+        {
+          "id": "action_94bxJluT",
+          "type": "speech",
+          "text": "所以，这节课我们的学习目标有两个：第一，巩固分数的意义，把它理解得更透彻；第二，学会在阅读题目时，准确地理解分数所表达的含义。准备好了吗？我们开始吧！"
+        }
+      ],
+      "createdAt": 1774526483040,
+      "updatedAt": 1774526483040
+    }
+  ],
+  "createdAt": "2026-03-26T12:01:23.598Z"
+}

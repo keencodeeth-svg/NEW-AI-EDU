@@ -1,0 +1,312 @@
+{
+  "id": "k2IcHRZfDX",
+  "stage": {
+    "id": "k2IcHRZfDX",
+    "name": "请围绕“火箭推进原理与轨道入门”为小星设计一节适合学生自主使用的兴趣培养课堂。\n\n学习主题：火箭推进原理与轨道入门\n\n当前学习目标：巩固分数意义与阅读理解\n\n课堂要求：适合单人观看与跟练，包含导入、启发式讲解、互动追问、即时练习、总结，并支持课后回看与导出。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：兴趣培养\n兴趣主题：火箭推进原理与轨道入门\n学习目标：巩固分数意义与阅读理解\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 兴趣探索要兼顾趣味性与启发性，用学生能听懂的语言把概念讲清楚。\n- 可以加入故事化情境、项目式追问和延伸任务，让学生愿意继续探索。\n- 最后要留下一个适合学生继续查找或动手尝试的下一步问题。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774527544246,
+    "updatedAt": 1774527654864,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "interest-cultivation",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "巩固分数意义与阅读理解",
+      "interestTopic": "火箭推进原理与轨道入门"
+    },
+    "currentSceneId": "TjgqgrvFM7sf8Rna43A_A"
+  },
+  "scenes": [
+    {
+      "id": "TjgqgrvFM7sf8Rna43A_A",
+      "stageId": "k2IcHRZfDX",
+      "type": "slide",
+      "title": "欢迎来到火箭发射中心！",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "YVi9HzaGF57kr_qz2iwTG",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_XVOGqxsS",
+              "type": "shape",
+              "left": 100,
+              "top": 50,
+              "width": 800,
+              "height": 70,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#1e3a8a",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_R4EHJhjr",
+              "type": "text",
+              "left": 120,
+              "top": 62,
+              "width": 760,
+              "height": 46,
+              "content": "<p style=\"font-size: 32px; color: #ffffff; text-align: center;\"><strong>欢迎来到火箭发射中心！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#ffffff",
+              "rotate": 0
+            },
+            {
+              "id": "image_AligwOoa",
+              "type": "image",
+              "left": 100,
+              "top": 140,
+              "width": 800,
+              "height": 450,
+              "src": "gen_img_i9Y7m0VF",
+              "fixedRatio": true,
+              "rotate": 0
+            },
+            {
+              "id": "shape_a89gzkbK",
+              "type": "shape",
+              "left": 60,
+              "top": 380,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "rgba(255, 255, 255, 0.15)",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_UIrOoOrU",
+              "type": "text",
+              "left": 70,
+              "top": 392,
+              "width": 860,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #fbbf24; text-align: left;\"><strong>想象一下，你是火箭发射中心的总工程师</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#fbbf24",
+              "rotate": 0
+            },
+            {
+              "id": "shape_7WN84YDL",
+              "type": "shape",
+              "left": 60,
+              "top": 436,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "rgba(255, 255, 255, 0.15)",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_KxUDhGd-",
+              "type": "text",
+              "left": 70,
+              "top": 448,
+              "width": 860,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #ffffff; text-align: left;\">我们的任务：用有限的燃料（分数表示）将火箭送入轨道</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#ffffff",
+              "rotate": 0
+            },
+            {
+              "id": "shape_pT2Jx9Lc",
+              "type": "shape",
+              "left": 60,
+              "top": 492,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "rgba(255, 255, 255, 0.15)",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_SnFL1wLR",
+              "type": "text",
+              "left": 70,
+              "top": 504,
+              "width": 860,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #ffffff; text-align: left;\">分数就像燃料的分配计划，决定了火箭能飞多远</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#ffffff",
+              "rotate": 0
+            },
+            {
+              "id": "shape_ofezOiRF",
+              "type": "shape",
+              "left": 60,
+              "top": 548,
+              "width": 880,
+              "height": 46,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "rgba(255, 255, 255, 0.15)",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_CfAFTk3W",
+              "type": "text",
+              "left": 70,
+              "top": 560,
+              "width": 860,
+              "height": 46,
+              "content": "<p style=\"font-size: 20px; color: #ffffff; text-align: left;\">今天，我们将用数学知识来探索火箭的奥秘</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#ffffff",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#0a1f44"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_26cgTWfe",
+          "type": "spotlight",
+          "elementId": "text_R4EHJhjr"
+        },
+        {
+          "id": "action_jJxkduaU",
+          "type": "speech",
+          "text": "大家好！欢迎来到我们的火箭发射中心！我是你的学习教练。今天，我们将一起开启一段激动人心的数学太空之旅。"
+        },
+        {
+          "id": "action_z-w6Sntf",
+          "type": "spotlight",
+          "elementId": "text_UIrOoOrU"
+        },
+        {
+          "id": "action_OhsjykQo",
+          "type": "speech",
+          "text": "首先，让我们进入角色。想象一下，你就是这个发射中心的总工程师，小星工程师！所有的发射任务，都将由你来指挥。"
+        },
+        {
+          "id": "action_gJoRnBAF",
+          "type": "laser",
+          "elementId": "image_AligwOoa"
+        },
+        {
+          "id": "action_asZM733r",
+          "type": "speech",
+          "text": "看，这就是我们雄伟的发射中心。是不是已经感觉到肩上的责任和心中的期待了？"
+        },
+        {
+          "id": "action_h2dM0MR5",
+          "type": "spotlight",
+          "elementId": "text_KxUDhGd-"
+        },
+        {
+          "id": "action_k_RVQOgz",
+          "type": "speech",
+          "text": "作为总工程师，你的核心任务是什么呢？那就是：用我们手头有限的燃料，成功将火箭送入预定轨道。这里有一个关键信息——燃料是用分数来表示的。"
+        },
+        {
+          "id": "action_KWAio_Zv",
+          "type": "spotlight",
+          "elementId": "text_SnFL1wLR"
+        },
+        {
+          "id": "action_bd5YzQcS",
+          "type": "speech",
+          "text": "所以，分数在这里扮演着至关重要的角色。它就像是火箭燃料的精密分配计划。这个计划做得好不好，直接决定了我们的火箭能飞多远，任务能否成功。"
+        },
+        {
+          "id": "action_MfmZ7uP3",
+          "type": "spotlight",
+          "elementId": "text_CfAFTk3W"
+        },
+        {
+          "id": "action_esdrxUrQ",
+          "type": "speech",
+          "text": "因此，今天这堂课，我们将化身工程师，用数学知识——特别是分数的知识，来一步步揭开火箭发射的奥秘，完成我们的光荣使命。"
+        },
+        {
+          "id": "action_htpGpEff",
+          "type": "speech",
+          "text": "准备好了吗，小星工程师？我们的发射倒计时，现在开始！"
+        }
+      ],
+      "createdAt": 1774527654859,
+      "updatedAt": 1774527654859
+    }
+  ],
+  "createdAt": "2026-03-26T12:20:55.400Z"
+}

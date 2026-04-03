@@ -1,0 +1,90 @@
+[
+  {
+    "id": "assign-bulk-001",
+    "classId": "class-bulk-001",
+    "title": "测试班级 1 作业 1",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-02-27T17:18:39.626Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "upload",
+    "maxUploads": 2,
+    "gradingFocus": "计算与步骤"
+  },
+  {
+    "id": "assign-bulk-002",
+    "classId": "class-bulk-001",
+    "title": "测试班级 1 作业 2",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-02-28T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "essay",
+    "maxUploads": 3,
+    "gradingFocus": "结构与表达"
+  },
+  {
+    "id": "assign-bulk-003",
+    "classId": "class-bulk-002",
+    "title": "测试班级 2 作业 3",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-01T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "quiz",
+    "maxUploads": 3,
+    "gradingFocus": "计算与步骤"
+  },
+  {
+    "id": "assign-bulk-004",
+    "classId": "class-bulk-002",
+    "title": "测试班级 2 作业 4",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-02T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "upload",
+    "maxUploads": 2,
+    "gradingFocus": "计算与步骤"
+  },
+  {
+    "id": "assign-bulk-005",
+    "classId": "class-bulk-003",
+    "title": "测试班级 3 作业 5",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-03T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "essay",
+    "maxUploads": 3,
+    "gradingFocus": "结构与表达"
+  },
+  {
+    "id": "assign-bulk-006",
+    "classId": "class-bulk-003",
+    "title": "测试班级 3 作业 6",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-04T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "quiz",
+    "maxUploads": 3,
+    "gradingFocus": "计算与步骤"
+  },
+  {
+    "id": "assign-bulk-007",
+    "classId": "class-bulk-004",
+    "title": "测试班级 4 作业 7",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-05T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "upload",
+    "maxUploads": 2,
+    "gradingFocus": "计算与步骤"
+  },
+  {
+    "id": "assign-bulk-008",
+    "classId": "class-bulk-004",
+    "title": "测试班级 4 作业 8",
+    "description": "自动生成的测试作业。",
+    "dueDate": "2026-03-06T17:18:39.627Z",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "submissionType": "essay",
+    "maxUploads": 3,
+    "gradingFocus": "结构与表达"
+  }
+]

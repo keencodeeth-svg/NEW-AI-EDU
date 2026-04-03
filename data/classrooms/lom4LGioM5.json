@@ -1,0 +1,267 @@
+{
+  "id": "lom4LGioM5",
+  "stage": {
+    "id": "lom4LGioM5",
+    "name": "请为小星设计一节适合学生自主使用的数学巩固课堂。\n\n学习主题：一次函数图像\n\n优先巩固知识点：一次函数图像\n\n当前学习目标：把一次函数图像的判读做稳\n\n课堂要求：聚焦薄弱点收口，包含例题拆解、即时练习、错因提醒和最后的迁移检验。\n请将本次内容按学生自主使用的个性化互动课堂进行编排：\n学习者：小星\n年级：4\n学习学科：数学\n使用模式：学科巩固\n当前巩固重点：一次函数图像\n学习目标：把一次函数图像的判读做稳\n观看方式：私享启动\n课堂要求：\n- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。\n- 学科巩固要围绕薄弱知识点或最近刚练过的主题安排巩固环节和即时练习。\n- 讲解要强调分步拆解、易错点提醒和讲后立练，避免只讲概念不检验。\n- 最后给出一题迁移或变式，帮助学生把“听懂”转成“做稳”。\n- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+    "description": "小星的自学课堂 · math",
+    "createdAt": 1774246529607,
+    "updatedAt": 1774465702365,
+    "language": "zh-CN",
+    "style": "professional",
+    "classroomMeta": {
+      "brandName": "航科互动课堂",
+      "source": "student-self-study",
+      "className": "小星的自学课堂",
+      "subject": "math",
+      "grade": "4",
+      "learningMode": "subject-reinforcement",
+      "audienceMode": "teacher-private",
+      "exportFormats": [
+        "pptx",
+        "resource-pack"
+      ],
+      "teacher": null,
+      "learner": {
+        "id": "u-student-001",
+        "name": "小星",
+        "grade": "4"
+      },
+      "students": [
+        {
+          "id": "u-student-001",
+          "name": "小星",
+          "grade": "4"
+        }
+      ],
+      "speakerStudentIds": [
+        "u-student-001"
+      ],
+      "studentCount": 1,
+      "learnerGoal": "把一次函数图像的判读做稳",
+      "focusKnowledgePointTitle": "一次函数图像",
+      "deliveryRecords": [
+        {
+          "kind": "export",
+          "format": "resource-pack",
+          "createdAt": "2026-03-25T17:49:50.415Z",
+          "audienceMode": "teacher-private",
+          "fileName": "小星的自学课堂-math-学科巩固-请为小星设计一节适合学生自主使用的数学巩固课堂。-学习主题：一次函数图像-优先巩固知识点：一次函数图像-当前学习目标：把一次函数图像的判读做稳-课堂要求：聚焦薄弱点收口，包含例题拆解、即时练习、错因提醒和最后的迁移检验。-请将本次内容按学生自主使用的个性化互动课堂进行编排：-学习者：小星-年级：4-学习学科：数学-使用模式：学科巩固-当前巩固重点：一次函数图像-学习目标：把一次函数图像的判读做稳-观看方式：私享启动-课堂要求：-内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。-学科巩固要围绕薄弱知识点或最近刚练过的主题安排巩固环节和即时练习。-讲解要强调分步拆解、易错点提醒和讲后立练，避免只讲概念不检验。-最后给出一题迁移或变式，帮助学生把“听懂”转成“做稳”。-成品既要适合学生当下使用，也要支持回看与导出复用。.zip",
+          "id": "export-resource-pack-1774460990415",
+          "label": "课堂资源包导出"
+        }
+      ]
+    },
+    "currentSceneId": "z9ICLI8DC94C0H8EKa4hw"
+  },
+  "scenes": [
+    {
+      "id": "z9ICLI8DC94C0H8EKa4hw",
+      "stageId": "lom4LGioM5",
+      "type": "slide",
+      "title": "欢迎来到一次函数图像巩固课",
+      "order": 1,
+      "content": {
+        "type": "slide",
+        "canvas": {
+          "id": "ojbYDWo2uHZcPM-nvV-Kw",
+          "viewportSize": 1000,
+          "viewportRatio": 0.5625,
+          "theme": {
+            "backgroundColor": "#ffffff",
+            "themeColors": [
+              "#5b9bd5",
+              "#ed7d31",
+              "#a5a5a5",
+              "#ffc000",
+              "#4472c4"
+            ],
+            "fontColor": "#333333",
+            "fontName": "Microsoft YaHei",
+            "outline": {
+              "color": "#d14424",
+              "width": 2,
+              "style": "solid"
+            },
+            "shadow": {
+              "h": 0,
+              "v": 0,
+              "blur": 10,
+              "color": "#000000"
+            }
+          },
+          "elements": [
+            {
+              "id": "shape_baGf5cl1",
+              "type": "shape",
+              "left": 60,
+              "top": 80,
+              "width": 880,
+              "height": 76,
+              "path": "M 0 0 L 1 0 L 1 1 L 0 1 Z",
+              "viewBox": [
+                1,
+                1
+              ],
+              "fill": "#f0f7ff",
+              "fixedRatio": false,
+              "rotate": 0
+            },
+            {
+              "id": "text_vAlVcreJ",
+              "type": "text",
+              "left": 80,
+              "top": 92,
+              "width": 840,
+              "height": 52,
+              "content": "<p style=\"font-size:32px; text-align:center; color:#1e40af;\"><strong>一次函数图像巩固课</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_Gt0ZCrUn",
+              "type": "text",
+              "left": 60,
+              "top": 180,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#333333;\">欢迎小星！今天我们来专门巩固一次函数的图像。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_0iioTGRm",
+              "type": "text",
+              "left": 60,
+              "top": 250,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#1e40af;\"><strong>学习目标</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_qQDBIImc",
+              "type": "text",
+              "left": 80,
+              "top": 300,
+              "width": 840,
+              "height": 46,
+              "content": "<p style=\"font-size:18px; color:#333333;\">把一次函数图像的判读做稳、做准。</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_yhP41tYY",
+              "type": "text",
+              "left": 60,
+              "top": 370,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; color:#1e40af;\"><strong>学习流程</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_6dBOucIv",
+              "type": "text",
+              "left": 80,
+              "top": 420,
+              "width": 840,
+              "height": 94,
+              "content": "<p style=\"font-size:18px; color:#333333;\">1. 情境引入</p><p style=\"font-size:18px; color:#333333;\">2. 例题拆解 → 3. 即时练习</p><p style=\"font-size:18px; color:#333333;\">4. 错因提醒 → 5. 迁移检验</p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            },
+            {
+              "id": "text_0ZzEK4eG",
+              "type": "text",
+              "left": 60,
+              "top": 530,
+              "width": 880,
+              "height": 46,
+              "content": "<p style=\"font-size:20px; text-align:center; color:#166534;\"><strong>准备好了吗？我们开始吧！</strong></p>",
+              "defaultFontName": "Microsoft YaHei",
+              "defaultColor": "#333333",
+              "rotate": 0
+            }
+          ],
+          "background": {
+            "type": "solid",
+            "color": "#ffffff"
+          }
+        }
+      },
+      "actions": [
+        {
+          "id": "action_6_N7xLP7",
+          "type": "spotlight",
+          "elementId": "text_vAlVcreJ"
+        },
+        {
+          "id": "action_aGsyjtbT",
+          "type": "speech",
+          "text": "欢迎小星！很高兴见到你。我是你的数学学习教练，今天这节课，我们将一起开启一次函数图像的巩固之旅。"
+        },
+        {
+          "id": "action_AHEDXcKH",
+          "type": "spotlight",
+          "elementId": "text_Gt0ZCrUn"
+        },
+        {
+          "id": "action_Q0OTBKOb",
+          "type": "speech",
+          "text": "就像标题说的，今天我们来专门巩固一次函数的图像。这是一次非常重要的复习，目的是让我们对函数图像的理解更上一层楼。"
+        },
+        {
+          "id": "action_pWr3tZgM",
+          "type": "spotlight",
+          "elementId": "text_0iioTGRm"
+        },
+        {
+          "id": "action_4_W62JYk",
+          "type": "laser",
+          "elementId": "text_qQDBIImc"
+        },
+        {
+          "id": "action_kuhrhLGi",
+          "type": "speech",
+          "text": "首先，我们来看看今天的学习目标。目标非常明确，就是要把一次函数图像的判读，做得又稳又准。这意味着我们要能又快又准地从图像上读出关键信息。"
+        },
+        {
+          "id": "action_4l8X1g6D",
+          "type": "spotlight",
+          "elementId": "text_yhP41tYY"
+        },
+        {
+          "id": "action_v8QiSpnc",
+          "type": "laser",
+          "elementId": "text_6dBOucIv"
+        },
+        {
+          "id": "action_MkZiSJk_",
+          "type": "speech",
+          "text": "为了实现这个目标，我们设计了一个清晰的学习流程。你看，从情境引入开始，然后我们会拆解例题，接着马上进行即时练习。之后，我们会分析常见的错误原因，最后用一个迁移检验来挑战自己。每一步都环环相扣。"
+        },
+        {
+          "id": "action_7IChJ6rR",
+          "type": "spotlight",
+          "elementId": "text_0ZzEK4eG"
+        },
+        {
+          "id": "action_dyCyw4r0",
+          "type": "speech",
+          "text": "怎么样，小星？学习目标和流程都清楚了吗？准备好了的话，我们就一起开始吧！"
+        }
+      ],
+      "createdAt": 1774246624230,
+      "updatedAt": 1774246624230
+    }
+  ],
+  "createdAt": "2026-03-25T19:09:45.451Z"
+}

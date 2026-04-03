@@ -1,0 +1,52 @@
+[
+  {
+    "id": "class-bulk-001",
+    "name": "测试班级 1",
+    "subject": "math",
+    "grade": "4",
+    "teacherId": "u-teacher-bulk-001",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "joinCode": "JOIN01",
+    "joinMode": "auto"
+  },
+  {
+    "id": "class-bulk-002",
+    "name": "测试班级 2",
+    "subject": "chinese",
+    "grade": "7",
+    "teacherId": "u-teacher-bulk-002",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "joinCode": "JOIN02",
+    "joinMode": "approval"
+  },
+  {
+    "id": "class-bulk-003",
+    "name": "测试班级 3",
+    "subject": "english",
+    "grade": "10",
+    "teacherId": "u-teacher-bulk-001",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "joinCode": "JOIN03",
+    "joinMode": "auto"
+  },
+  {
+    "id": "class-bulk-004",
+    "name": "测试班级 4",
+    "subject": "math",
+    "grade": "4",
+    "teacherId": "u-teacher-bulk-002",
+    "createdAt": "2026-02-24T17:18:39.618Z",
+    "joinCode": "JOIN04",
+    "joinMode": "approval"
+  },
+  {
+    "id": "class-15f51b1e74e8",
+    "name": "API_TEST_EXAM_CLASS_mm3bu8p0",
+    "subject": "math",
+    "grade": "4",
+    "teacherId": "u-teacher-001",
+    "createdAt": "2026-02-26T10:35:06.765Z",
+    "joinCode": "BCCD00",
+    "joinMode": "approval"
+  }
+]

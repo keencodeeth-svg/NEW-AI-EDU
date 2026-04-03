@@ -1,0 +1,42 @@
+{
+  "sessionId": "fixture-generation-preview-immersive",
+  "requirements": {
+    "requirement": "围绕一次函数的图像与性质，生成一节适合七年级学生自主巩固的互动课堂，要求先讲概念，再用两道渐进练习完成收口。",
+    "language": "zh-CN",
+    "userNickname": "陈雨桐",
+    "userBio": "七年级学生，最近在函数图像理解上不稳定。",
+    "webSearch": false
+  },
+  "pdfText": "",
+  "pdfImages": [],
+  "imageStorageIds": [],
+  "sceneOutlines": null,
+  "currentStep": "generating",
+  "classroomContext": {
+    "source": "student-self-study",
+    "subject": "math",
+    "grade": "七年级",
+    "learningMode": "subject-reinforcement",
+    "audienceMode": "teacher-private",
+    "exportFormats": ["pptx", "resource-pack"],
+    "learnerGoal": "搞清楚一次函数图像的变化规律，并能独立判断 k 和 b 对图像的影响。",
+    "focusKnowledgePointTitle": "一次函数的图像与性质",
+    "learner": {
+      "id": "student-chen-yutong",
+      "name": "陈雨桐",
+      "grade": "七年级"
+    },
+    "teacher": {
+      "id": "teacher-dh-01",
+      "name": "林知远",
+      "subject": "math",
+      "title": "数学教研教师",
+      "digitalHuman": {
+        "teacherId": "teacher-dh-01",
+        "displayName": "林老师",
+        "voiceLabel": "温和讲解",
+        "updatedAt": "2026-04-04T09:00:00.000Z"
+      }
+    }
+  }
+}
