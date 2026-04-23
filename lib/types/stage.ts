@@ -3,6 +3,7 @@ import type { Slide } from '@/lib/types/slides';
 import type { Action } from '@/lib/types/action';
 import type { PBLProjectConfig } from '@/lib/pbl/types';
 import type { StageClassroomMeta } from '@/lib/classroom-integration';
+import type { WidgetConfig, WidgetType } from '@/lib/types/widgets';
 
 export type SceneType = 'slide' | 'quiz' | 'interactive' | 'pbl';
 
@@ -105,6 +106,8 @@ export interface InteractiveContent {
   url: string; // URL of the interactive page
   // Optional: embedded HTML content
   html?: string;
+  widgetType?: WidgetType;
+  widgetOutline?: WidgetConfig | Record<string, unknown>;
 }
 
 /**

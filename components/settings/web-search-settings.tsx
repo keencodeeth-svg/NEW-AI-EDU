@@ -8,6 +8,8 @@ import { useSettingsStore } from '@/lib/store/settings';
 import { WEB_SEARCH_PROVIDERS } from '@/lib/web-search/constants';
 import type { WebSearchProviderId } from '@/lib/web-search/types';
 import { Eye, EyeOff } from 'lucide-react';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 interface WebSearchSettingsProps {
   selectedProviderId: WebSearchProviderId;
@@ -22,6 +24,10 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
 
   const provider = WEB_SEARCH_PROVIDERS[selectedProviderId];
   const isServerConfigured = !!webSearchProvidersConfig[selectedProviderId]?.isServerConfigured;
+  const { canEditSecrets, effectiveBaseUrl } = getClientProviderUiState(
+    webSearchProvidersConfig[selectedProviderId],
+    provider.defaultBaseUrl,
+  );
 
   // Reset showApiKey when provider changes (derived state pattern)
   const [prevSelectedProviderId, setPrevSelectedProviderId] = useState(selectedProviderId);
@@ -32,12 +38,10 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {isServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={isServerConfigured}
+        browserOverridesDisabled={!canEditSecrets}
+      />
 
       {/* API Key + Base URL Configuration */}
       {(provider.requiresApiKey || isServerConfigured) && (
@@ -54,7 +58,11 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
                   autoCorrect="off"
                   spellCheck={false}
                   placeholder={
-                    isServerConfigured ? t('settings.optionalOverride') : t('settings.enterApiKey')
+                    canEditSecrets
+                      ? isServerConfigured
+                        ? t('settings.optionalOverride')
+                        : t('settings.enterApiKey')
+                      : t('settings.browserOverridesDisabledShort')
                   }
                   value={webSearchProvidersConfig[selectedProviderId]?.apiKey || ''}
                   onChange={(e) =>
@@ -62,12 +70,14 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
                       apiKey: e.target.value,
                     })
                   }
+                  disabled={!canEditSecrets}
                   className="font-mono text-sm pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
+                  disabled={!canEditSecrets}
                 >
                   {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -83,13 +93,20 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                placeholder={provider.defaultBaseUrl || 'https://api.tavily.com'}
+                placeholder={
+                  canEditSecrets
+                    ? webSearchProvidersConfig[selectedProviderId]?.serverBaseUrl ||
+                      provider.defaultBaseUrl ||
+                      'https://api.tavily.com'
+                    : t('settings.browserOverridesDisabledShort')
+                }
                 value={webSearchProvidersConfig[selectedProviderId]?.baseUrl || ''}
                 onChange={(e) =>
                   setWebSearchProviderConfig(selectedProviderId, {
                     baseUrl: e.target.value,
                   })
                 }
+                disabled={!canEditSecrets}
                 className="text-sm"
               />
             </div>
@@ -97,10 +114,6 @@ export function WebSearchSettings({ selectedProviderId }: WebSearchSettingsProps
 
           {/* Request URL Preview */}
           {(() => {
-            const effectiveBaseUrl =
-              webSearchProvidersConfig[selectedProviderId]?.baseUrl ||
-              provider.defaultBaseUrl ||
-              '';
             if (!effectiveBaseUrl) return null;
             const fullUrl = effectiveBaseUrl + '/search';
             return (

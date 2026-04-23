@@ -13,10 +13,6 @@ function now() {
   return new Date();
 }
 
-function iso(value) {
-  return new Date(value).toISOString();
-}
-
 function withOffset({ days = 0, hours = 0, minutes = 0, atHour, atMinute = 0, anchor = now() }) {
   const date = new Date(anchor);
   date.setDate(date.getDate() + days);
@@ -839,7 +835,6 @@ function buildAttemptsAndLearningData(context) {
 }
 
 function buildCommunicationData(context) {
-  const students = context.users.filter((item) => item.role === "student");
   const parents = context.users.filter((item) => item.role === "parent");
   const usersById = new Map(context.users.map((item) => [item.id, item]));
   const rosterByClassId = groupBy(context.classStudents, (item) => item.class_id);

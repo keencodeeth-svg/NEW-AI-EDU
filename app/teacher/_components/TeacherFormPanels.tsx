@@ -108,7 +108,16 @@ export function TeacherAssignmentComposerCard({ classes, modules, assignmentForm
           </label>
           <label>
             <div className="section-title">作业类型</div>
-            <select value={assignmentForm.submissionType} onChange={(event) => onChange({ submissionType: event.target.value as AssignmentFormState["submissionType"] })} style={{ width: "100%", padding: 10, borderRadius: 10, border: "1px solid var(--stroke)" }}>
+            <select
+              value={assignmentForm.submissionType}
+              onChange={(event) =>
+                onChange({
+                  submissionType: event.target.value as AssignmentFormState["submissionType"],
+                  differentiated: event.target.value === "quiz" ? Boolean(assignmentForm.differentiated) : false
+                })
+              }
+              style={{ width: "100%", padding: 10, borderRadius: 10, border: "1px solid var(--stroke)" }}
+            >
               <option value="quiz">在线题目</option>
               <option value="upload">上传作业</option>
               <option value="essay">作文/主观题</option>
@@ -154,6 +163,34 @@ export function TeacherAssignmentComposerCard({ classes, modules, assignmentForm
                 <option value="calculation">计算题</option>
               </select>
             </label>
+            <div
+              className="card"
+              style={{
+                display: "grid",
+                gap: 8,
+                padding: 12,
+                alignContent: "start",
+                borderRadius: 14,
+                border: "1px solid var(--stroke)"
+              }}
+            >
+              <div className="section-title">差异化作业</div>
+              <label style={{ display: "flex", alignItems: "center", gap: 8, cursor: "pointer" }}>
+                <input
+                  type="checkbox"
+                  checked={Boolean(assignmentForm.differentiated)}
+                  onChange={(event) => onChange({ differentiated: event.target.checked })}
+                  disabled={assignmentForm.submissionType !== "quiz"}
+                />
+                <span>按 A / B / C 三档自动分配</span>
+              </label>
+              <div style={{ fontSize: 12, color: "var(--ink-1)" }}>
+                系统会根据班级掌握度自动把学生分为基础巩固、标准提升、迁移挑战三档，并分别生成作业。
+              </div>
+              <a className="button ghost" href="/teacher/lesson-planner">
+                先去 AI 备课助手生成分层建议
+              </a>
+            </div>
             <label>
               <div className="section-title">限定知识点（可选）</div>
               <select value={assignmentForm.knowledgePointId} onChange={(event) => onChange({ knowledgePointId: event.target.value })} style={{ width: "100%", padding: 10, borderRadius: 10, border: "1px solid var(--stroke)" }}>
@@ -162,6 +199,9 @@ export function TeacherAssignmentComposerCard({ classes, modules, assignmentForm
               </select>
             </label>
             {assignmentForm.mode === "ai" ? <div style={{ fontSize: 12, color: "var(--ink-1)" }}>AI 生成会写入题库。建议选择知识点并确认已配置 LLM。</div> : null}
+            {assignmentForm.differentiated ? (
+              <div className="status-note info">已开启差异化作业，发布后会自动生成三档题组并定向分配学生。</div>
+            ) : null}
           </>
         ) : null}
         {assignmentForm.submissionType !== "quiz" ? (

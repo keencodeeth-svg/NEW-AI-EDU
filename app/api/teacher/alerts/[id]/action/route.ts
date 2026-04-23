@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { addAdminLog } from "@/lib/admin-log";
 import { getClassStudentIds } from "@/lib/classes";
 import { addCorrectionTasks } from "@/lib/corrections";

@@ -9,12 +9,16 @@ import {
   shouldAllowClientProviderSecrets,
 } from '@/lib/server/provider-config';
 import { validateUrlForSSRF } from '@/lib/server/ssrf-guard';
+import { MINERU_CLOUD_DEFAULT_BASE } from '@/lib/pdf/constants';
 
 const log = createLogger('Verify PDF Provider');
 
 export async function POST(req: NextRequest) {
+  let providerId: string | undefined;
   try {
-    const { providerId, apiKey, baseUrl } = await req.json();
+    const body = await req.json();
+    providerId = body.providerId;
+    const { apiKey, baseUrl } = body;
 
     if (!providerId) {
       return apiError('MISSING_REQUIRED_FIELD', 400, 'Provider ID is required');
@@ -36,6 +40,45 @@ export async function POST(req: NextRequest) {
       !shouldAllowClientProviderSecrets()
     ) {
       return apiError('INVALID_REQUEST', 403, getBlockedClientProviderSecretMessage());
+    }
+
+    if (providerId === 'mineru-cloud') {
+      const resolvedApiKey = resolvePDFApiKey(providerId, apiKey);
+      if (!resolvedApiKey) {
+        return apiError('MISSING_REQUIRED_FIELD', 400, 'API Key is required for MinerU Cloud');
+      }
+
+      const clientCloudBase = (baseUrl as string | undefined) || undefined;
+      if (clientCloudBase && process.env.NODE_ENV === 'production') {
+        const ssrfError = validateUrlForSSRF(clientCloudBase);
+        if (ssrfError) {
+          return apiError('INVALID_URL', 403, ssrfError);
+        }
+      }
+
+      const cloudBase =
+        resolvePDFBaseUrl(providerId, clientCloudBase) || MINERU_CLOUD_DEFAULT_BASE;
+      const response = await fetch(`${cloudBase.replace(/\/+$/, '')}/extract-results/batch/test-connection`, {
+        headers: {
+          Authorization: `Bearer ${resolvedApiKey}`,
+          Accept: 'application/json',
+        },
+        signal: AbortSignal.timeout(10000),
+      });
+
+      if (response.status === 401 || response.status === 403) {
+        const text = await response.text().catch(() => '');
+        return apiError(
+          'INTERNAL_ERROR',
+          500,
+          `Authentication failed: ${text || response.statusText}`,
+        );
+      }
+
+      return apiSuccess({
+        message: 'Connection successful',
+        status: response.status,
+      });
     }
 
     const resolvedBaseUrl = resolvePDFBaseUrl(providerId, baseUrl);
@@ -67,7 +110,7 @@ export async function POST(req: NextRequest) {
       status: response.status,
     });
   } catch (error) {
-    log.error('PDF provider test error:', error);
+    log.error(`PDF provider test error [provider=${providerId ?? 'unknown'}]:`, error);
 
     let errorMessage = 'Connection failed';
     if (error instanceof Error) {

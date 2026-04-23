@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { acknowledgeTeacherAlert, getTeacherAlerts } from "@/lib/teacher-alerts";
 import { notFound, unauthorized } from "@/lib/api/http";
 import { parseJson, parseParams, v } from "@/lib/api/validation";

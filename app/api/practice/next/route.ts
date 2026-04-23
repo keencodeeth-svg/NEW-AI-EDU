@@ -3,6 +3,7 @@ import { getUnifiedReviewQuestionCandidates } from "@/lib/review-scheduler";
 import { getQuestions } from "@/lib/content";
 import { getMasteryRecordsByUser, getWeaknessRankMap } from "@/lib/mastery";
 import { getStudentProfile } from "@/lib/profiles";
+import { getRecoveryQuestion } from "@/lib/learning-state";
 import { notFound, unauthorized } from "@/lib/api/http";
 import { parseJson, v } from "@/lib/api/validation";
 import { createLearningRoute } from "@/lib/api/domains";
@@ -16,12 +17,14 @@ const nextQuestionBodySchema = v.object<{
   grade?: string;
   knowledgePointId?: string;
   mode?: "normal" | "challenge" | "timed" | "wrong" | "adaptive" | "review";
+  insertRecovery?: boolean;
 }>(
   {
     subject: v.optional(v.string({ minLength: 1 })),
     grade: v.optional(v.string({ minLength: 1 })),
     knowledgePointId: v.optional(v.string({ minLength: 1 })),
-    mode: v.optional(v.enum(["normal", "challenge", "timed", "wrong", "adaptive", "review"] as const))
+    mode: v.optional(v.enum(["normal", "challenge", "timed", "wrong", "adaptive", "review"] as const)),
+    insertRecovery: v.optional(v.boolean())
   },
   { allowUnknown: false }
 );
@@ -75,6 +78,22 @@ export const POST = createLearningRoute({
     let question = body.mode === "review" ? questions[0] : questions[Math.floor(Math.random() * questions.length)];
     let weaknessRank: number | null = null;
     let recommendationReason = "随机练习巩固";
+    let isRecovery = false;
+
+    if (body.insertRecovery) {
+      const recoveryQuestion = await getRecoveryQuestion({
+        userId: user.id,
+        subject,
+        grade,
+        knowledgePointId: body.knowledgePointId,
+        excludeQuestionId: question?.id ?? null
+      });
+      if (recoveryQuestion) {
+        question = recoveryQuestion;
+        recommendationReason = "恢复自信题：先稳住已掌握内容";
+        isRecovery = true;
+      }
+    }
 
     if (!body.knowledgePointId && questions.length > 0) {
       const masteryRecords = await getMasteryRecordsByUser(user.id, subject);
@@ -112,6 +131,7 @@ export const POST = createLearningRoute({
         stem: question.stem,
         options: question.options,
         knowledgePointId: question.knowledgePointId,
+        isRecovery,
         recommendation: {
           reason: recommendationReason,
           weaknessRank

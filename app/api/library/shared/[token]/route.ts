@@ -20,7 +20,11 @@ export const GET = createLearningRoute({
     }
     const hydrated = await hydrateLearningLibraryItemContent(item);
     // Public share endpoint still strips storage internals from payload.
-    const { contentStorageProvider, contentStorageKey, ...publicItem } = hydrated ?? item;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicItem
+    } = hydrated ?? item;
     return { data: publicItem };
   }
 });

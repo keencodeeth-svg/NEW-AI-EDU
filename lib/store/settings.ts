@@ -279,6 +279,7 @@ const getDefaultPDFConfig = () => ({
   pdfProvidersConfig: {
     unpdf: { apiKey: '', baseUrl: '', enabled: true },
     mineru: { apiKey: '', baseUrl: '', enabled: false },
+    'mineru-cloud': { apiKey: '', baseUrl: '', enabled: false },
   } as Record<PDFProviderId, { apiKey: string; baseUrl: string; enabled: boolean }>,
 });
 
@@ -348,6 +349,22 @@ function ensureBuiltInProviders(state: Partial<SettingsState>): void {
       };
     }
   });
+}
+
+function ensureBuiltInPDFProviders(state: Partial<SettingsState>): void {
+  if (!state.pdfProvidersConfig) return;
+
+  const defaultPDFProviders = getDefaultPDFConfig().pdfProvidersConfig;
+  for (const providerId of Object.keys(defaultPDFProviders) as PDFProviderId[]) {
+    state.pdfProvidersConfig[providerId] = {
+      ...defaultPDFProviders[providerId],
+      ...state.pdfProvidersConfig[providerId],
+    };
+  }
+
+  if (!state.pdfProviderId || !state.pdfProvidersConfig[state.pdfProviderId]) {
+    state.pdfProviderId = 'unpdf';
+  }
 }
 
 // Migrate from old localStorage format
@@ -729,7 +746,10 @@ export const useSettingsStore = create<SettingsState>()(
               }
 
               // Merge PDF providers
-              const newPDFConfig = { ...state.pdfProvidersConfig };
+              const newPDFConfig = {
+                ...getDefaultPDFConfig().pdfProvidersConfig,
+                ...state.pdfProvidersConfig,
+              };
               for (const pid of Object.keys(newPDFConfig)) {
                 const key = pid as PDFProviderId;
                 if (newPDFConfig[key]) {
@@ -842,9 +862,13 @@ export const useSettingsStore = create<SettingsState>()(
               let autoVideoEnabled: boolean | undefined;
 
               if (!state.autoConfigApplied) {
-                // PDF: unpdf → mineru if server has it
-                if (newPDFConfig.mineru?.isServerConfigured && state.pdfProviderId === 'unpdf') {
-                  autoPdfProvider = 'mineru' as PDFProviderId;
+                // PDF: unpdf → mineru-cloud → mineru when server has them
+                if (state.pdfProviderId === 'unpdf') {
+                  if (newPDFConfig['mineru-cloud']?.isServerConfigured) {
+                    autoPdfProvider = 'mineru-cloud' as PDFProviderId;
+                  } else if (newPDFConfig.mineru?.isServerConfigured) {
+                    autoPdfProvider = 'mineru' as PDFProviderId;
+                  }
                 }
 
                 // TTS: select first server provider if current is not server-configured
@@ -996,6 +1020,7 @@ export const useSettingsStore = create<SettingsState>()(
           const defaultPDFConfig = getDefaultPDFConfig();
           Object.assign(state, defaultPDFConfig);
         }
+        ensureBuiltInPDFProviders(state);
 
         // Add default Image config if missing
         if (!state.imageProvidersConfig) {
@@ -1069,6 +1094,7 @@ export const useSettingsStore = create<SettingsState>()(
       merge: (persistedState, currentState) => {
         const merged = { ...currentState, ...(persistedState as object) };
         ensureBuiltInProviders(merged as Partial<SettingsState>);
+        ensureBuiltInPDFProviders(merged as Partial<SettingsState>);
         return merged as SettingsState;
       },
     },

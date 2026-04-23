@@ -216,6 +216,17 @@ export const ENTRY_ITEMS: EntryItem[] = [
     order: 4
   },
   {
+    id: "knowledge-map",
+    title: "知识图谱",
+    tag: "学习地图",
+    description: "用可视化图谱查看你的知识掌握全景，找到薄弱点和学习路径。",
+    href: "/student/knowledge-map",
+    cta: "查看图谱",
+    icon: "brain",
+    category: "growth",
+    order: 5
+  },
+  {
     id: "favorites",
     title: "题目收藏夹",
     tag: "收藏",
@@ -224,7 +235,7 @@ export const ENTRY_ITEMS: EntryItem[] = [
     cta: "查看收藏",
     icon: "book",
     category: "growth",
-    order: 5
+    order: 6
   },
   {
     id: "profile",
@@ -235,7 +246,7 @@ export const ENTRY_ITEMS: EntryItem[] = [
     cta: "进入设置",
     icon: "pencil",
     category: "growth",
-    order: 6
+    order: 7
   }
 ];
 

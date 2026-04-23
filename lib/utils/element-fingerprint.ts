@@ -41,6 +41,12 @@ function semanticPart(e: PPTElement): unknown {
       };
     case 'latex':
       return { latex: e.latex };
+    case 'code':
+      return {
+        language: e.language,
+        fileName: e.fileName ?? '',
+        lines: e.lines.map((line) => line.content),
+      };
     case 'video':
       return { src: e.src, poster: e.poster ?? '' };
     case 'audio':

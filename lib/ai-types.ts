@@ -11,6 +11,19 @@ export type AiQualityMeta = {
 export type AiLearningMode = "direct" | "study";
 export type StudyCoachStage = "diagnose" | "check" | "reveal";
 
+export type HintTier = 1 | 2 | 3;
+
+export type ScaffoldedHint = {
+  tier: HintTier;
+  tierLabel: string;
+  content: string;
+};
+
+export type MetacognitionPrompt = {
+  question: string;
+  attributionSuggestions: string[];
+};
+
 export type AssistAnswerMode = "answer_only" | "step_by_step" | "hints_first";
 
 export type AssistPayload = {
@@ -62,6 +75,9 @@ export type StudyCoachResponse = {
   provider: string;
   quality?: AiQualityMeta;
   feedback?: string | null;
+  scaffoldedHints?: ScaffoldedHint[];
+  activeHintTier?: HintTier;
+  metacognition?: MetacognitionPrompt | null;
 };
 
 export type ImageAssistResponse = {

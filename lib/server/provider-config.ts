@@ -20,12 +20,8 @@ import {
   type ServerProviderCategory,
 } from '@/lib/server/provider-catalog';
 import {
-  getBlockedClientProviderSecretMessage,
-  getProviderVaultHint,
-  hasClientProviderSecretOverride,
   resolveManagedBaseUrl,
   resolveManagedSecret,
-  shouldAllowClientProviderSecrets,
 } from '@/lib/server/provider-secret-policy';
 import {
   ensureServerProviderVaultReady,

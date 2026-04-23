@@ -19,7 +19,6 @@ const ADMIN_PASSWORD = "EduAI-Admin-2026";
 const runtimeDir = path.resolve(process.cwd(), process.env.DATA_DIR ?? ".runtime-data");
 const seedDir = path.resolve(process.cwd(), process.env.DATA_SEED_DIR ?? "data");
 
-const OPTION_KEYS = ["A", "B", "C", "D"];
 const MAIN_CAMPUS = "主校区";
 const EAST_CAMPUS = "东校区";
 const WEST_CAMPUS = "西校区";
@@ -1356,7 +1355,6 @@ const usersById = new Map(allUsers.map((item) => [item.id, item]));
 const studentMetaById = new Map(studentProfilesInput.map((item) => [item.id, item]));
 const classById = new Map(classList.map((item) => [item.id, item]));
 const classSubjectMap = new Map(classList.map((item) => [item.id, item.subject]));
-const classGradeMap = new Map(classList.map((item) => [item.id, item.grade]));
 
 function buildKnowledgePoints() {
   return knowledgePointBlueprints.map((item, index) => ({
@@ -2862,7 +2860,7 @@ function buildStudyPlans(masteryRecords) {
   return { plans, planItems };
 }
 
-function buildCorrectionsAndReviews({ attempts, questionsById }) {
+function buildCorrectionsAndReviews({ attempts, questionsById: _questionsById }) {
   const byUserWrong = new Map();
   attempts
     .filter((attempt) => !attempt.correct)
@@ -2884,7 +2882,6 @@ function buildCorrectionsAndReviews({ attempts, questionsById }) {
   [USER_IDS.studentJiangHaochen, USER_IDS.studentZhaoYuhang, USER_IDS.studentZhouJingxing].forEach((studentId, userIndex) => {
     const wrongAttempts = (byUserWrong.get(studentId) ?? []).slice(0, 3);
     wrongAttempts.forEach((attempt, index) => {
-      const question = questionsById.get(attempt.questionId);
       const dueAt = index === 0 ? daysAgo(1, 20, 0) : index === 1 ? daysAhead(0, 19, 0) : daysAhead(2, 20, 0);
       const originType = attempt.reason.startsWith("exam:") ? "exam" : "assignment";
       const originPaperId = attempt.reason.split(":")[1] ?? null;

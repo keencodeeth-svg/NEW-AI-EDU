@@ -195,6 +195,7 @@ export type AssignmentFormState = {
   difficulty: string;
   questionType: string;
   submissionType: "quiz" | "upload" | "essay";
+  differentiated?: boolean;
   maxUploads: number;
   gradingFocus: string;
 };

@@ -20,6 +20,7 @@ import type {
 } from "./types";
 import { usePracticeGuide } from "./usePracticeGuide";
 import { usePracticeQuestionSupport } from "./usePracticeQuestionSupport";
+import { isBreakSuggestionNeeded } from "@/lib/learning-state-helpers";
 import {
   getPracticeKnowledgePointsRequestMessage,
   getPracticeNextQuestionRequestMessage,
@@ -40,6 +41,9 @@ export function usePracticePage() {
   const submitRequestIdRef = useRef(0);
   const hasKnowledgePointsSnapshotRef = useRef(false);
   const timeLeftRef = useRef(0);
+  const sessionStartedAtRef = useRef(Date.now());
+  const consecutiveWrongCountRef = useRef(0);
+  const recoveryPendingRef = useRef(false);
 
   const [subject, setSubject] = useState("math");
   const [grade, setGrade] = useState("4");
@@ -63,6 +67,10 @@ export function usePracticePage() {
   const [autoFixHint, setAutoFixHint] = useState<string | null>(null);
   const [authRequired, setAuthRequired] = useState(false);
   const [lastLoadedAt, setLastLoadedAt] = useState<string | null>(null);
+  const [showBreakSuggestion, setShowBreakSuggestion] = useState(false);
+  const [breakSuggestionDismissed, setBreakSuggestionDismissed] = useState(false);
+  const [moodCheckinVisible, setMoodCheckinVisible] = useState(false);
+  const [moodCheckinSaved, setMoodCheckinSaved] = useState(false);
   const mathView = useMathViewSettings("student-practice");
   const { showPracticeGuide, hidePracticeGuide, showPracticeGuideAgain } = usePracticeGuide(STUDENT_PRACTICE_GUIDE_KEY);
 
@@ -210,6 +218,7 @@ export function usePracticePage() {
       grade: string;
       knowledgePointId?: string;
       mode: PracticeMode;
+      insertRecovery?: boolean;
     }): Promise<PracticeRequestStatus> => {
       const requestId = questionRequestIdRef.current + 1;
       questionRequestIdRef.current = requestId;
@@ -231,6 +240,9 @@ export function usePracticePage() {
         setAuthRequired(false);
         clearQuestionArtifacts({ preserveTimer: shouldPreserveTimedCountdown });
         applyQuestion(data.question ?? null);
+        if (data.question?.isRecovery) {
+          recoveryPendingRef.current = false;
+        }
         if (next.mode === "timed" && !shouldPreserveTimedCountdown) {
           setTimeLeft(60);
           setTimerRunning(true);
@@ -278,7 +290,8 @@ export function usePracticePage() {
       subject,
       grade,
       knowledgePointId: nextKnowledgePointId,
-      mode
+      mode,
+      insertRecovery: recoveryPendingRef.current
     });
   }, [autoFixing, filtered, grade, knowledgePointId, mode, questionLoading, requestQuestion, subject, submitting]);
 
@@ -357,6 +370,21 @@ export function usePracticePage() {
         masteryTrend7d: data?.mastery?.masteryTrend7d,
         weaknessRank: data?.weaknessRank ?? data?.mastery?.weaknessRank ?? null
       });
+      consecutiveWrongCountRef.current = data.correct ? 0 : consecutiveWrongCountRef.current + 1;
+      if (consecutiveWrongCountRef.current >= 3 && mode !== "wrong" && mode !== "review") {
+        recoveryPendingRef.current = true;
+      }
+      if (
+        isBreakSuggestionNeeded({
+          sessionStartedAt: sessionStartedAtRef.current,
+          suggestionDismissed: breakSuggestionDismissed
+        })
+      ) {
+        setShowBreakSuggestion(true);
+      }
+      if (!moodCheckinSaved) {
+        setMoodCheckinVisible(true);
+      }
       trackEvent({
         eventName: "practice_submit_success",
         page: "/practice",
@@ -406,7 +434,7 @@ export function usePracticePage() {
         setSubmitting(false);
       }
     }
-  }, [answer, clearQuestionWorkspace, grade, handleAuthRequired, mode, question, questionLoading, subject, submitting]);
+  }, [answer, breakSuggestionDismissed, clearQuestionWorkspace, grade, handleAuthRequired, mode, moodCheckinSaved, question, questionLoading, subject, submitting]);
 
   const questionSupport = usePracticeQuestionSupport({
     question,
@@ -559,6 +587,16 @@ export function usePracticePage() {
     autoFixing,
     autoFixHint,
     lastLoadedAt,
+    showBreakSuggestion,
+    dismissBreakSuggestion: () => {
+      setShowBreakSuggestion(false);
+      setBreakSuggestionDismissed(true);
+    },
+    moodCheckinVisible,
+    handleMoodCheckinSaved: () => {
+      setMoodCheckinVisible(false);
+      setMoodCheckinSaved(true);
+    },
     mathView,
     showPracticeGuide,
     hidePracticeGuide,

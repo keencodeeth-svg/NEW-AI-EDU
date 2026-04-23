@@ -14,7 +14,6 @@ import { splitLongSpeechActions } from '@/lib/audio/tts-utils';
 import { generateMediaForOutlines } from '@/lib/media/media-orchestrator';
 import { createLogger } from '@/lib/logger';
 import { resolveTeacherVoice } from '@/lib/classroom-integration';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
 
 const log = createLogger('SceneGenerator');
 
@@ -35,28 +34,18 @@ interface SceneActionsResult {
 function getApiHeaders(): HeadersInit {
   const config = getCurrentModelConfig();
   const settings = useSettingsStore.getState();
-  const imageProviderConfig = settings.imageProvidersConfig?.[settings.imageProviderId];
-  const videoProviderConfig = settings.videoProvidersConfig?.[settings.videoProviderId];
-  const imageRequestConfig = getClientProviderRequestConfig(imageProviderConfig);
-  const videoRequestConfig = getClientProviderRequestConfig(videoProviderConfig);
 
   return {
     'Content-Type': 'application/json',
     'x-model': config.modelString || '',
-    'x-api-key': config.apiKey || '',
-    'x-base-url': config.baseUrl || '',
     'x-provider-type': config.providerType || '',
     'x-requires-api-key': String(config.requiresApiKey ?? false),
     // Image generation provider
     'x-image-provider': settings.imageProviderId || '',
     'x-image-model': settings.imageModelId || '',
-    'x-image-api-key': imageRequestConfig.apiKey,
-    'x-image-base-url': imageRequestConfig.baseUrl,
     // Video generation provider
     'x-video-provider': settings.videoProviderId || '',
     'x-video-model': settings.videoModelId || '',
-    'x-video-api-key': videoRequestConfig.apiKey,
-    'x-video-base-url': videoRequestConfig.baseUrl,
     // Media generation toggles
     'x-image-generation-enabled': String(settings.imageGenerationEnabled ?? false),
     'x-video-generation-enabled': String(settings.videoGenerationEnabled ?? false),
@@ -137,8 +126,6 @@ export async function generateAndStoreTTS(
 
   if (effectiveProviderId === 'browser-native-tts') return;
 
-  const ttsProviderConfig = settings.ttsProvidersConfig?.[effectiveProviderId];
-  const ttsRequestConfig = getClientProviderRequestConfig(ttsProviderConfig);
   const response = await fetch('/api/generate/tts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -148,8 +135,6 @@ export async function generateAndStoreTTS(
       ttsProviderId: effectiveProviderId,
       ttsVoice: effectiveVoiceId,
       ttsSpeed: settings.ttsSpeed,
-      ...(ttsRequestConfig.apiKey ? { ttsApiKey: ttsRequestConfig.apiKey } : {}),
-      ...(ttsRequestConfig.baseUrl ? { ttsBaseUrl: ttsRequestConfig.baseUrl } : {}),
     }),
     signal,
   });

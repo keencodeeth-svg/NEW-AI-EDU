@@ -23,6 +23,14 @@ The following constraints must be strictly obeyed in all JavaScript logic and vi
 
 {{designIdea}}
 
+## Widget Contract
+
+**Widget Type**: {{widgetType}}
+
+**Widget Outline**:
+
+{{widgetOutline}}
+
 ---
 
 ## Language
@@ -42,5 +50,6 @@ The following constraints must be strictly obeyed in all JavaScript logic and vi
 5. Do NOT include KaTeX - it will be injected automatically
 6. All simulations must strictly follow the scientific constraints above
 7. Focus on interactive visualization, minimal text
+8. If widgetType/widgetOutline are provided, they are the authoritative interaction schema and must shape the UI, controls, and feedback loop
 
 Return the complete HTML document directly.

@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+import GuidedTour from "@/components/GuidedTour";
 import RoleScheduleFocusCard from "@/components/RoleScheduleFocusCard";
 import WorkspaceHero from "@/components/WorkspaceHero";
 import WorkspacePage, {
@@ -7,15 +9,18 @@ import WorkspacePage, {
   WorkspaceErrorState,
   WorkspaceLoadingState
 } from "@/components/WorkspacePage";
+import { requestJson } from "@/lib/client-request";
 import TeacherDashboardSectionHeader from "./_components/TeacherDashboardSectionHeader";
 import { TeacherAssignmentsCard, TeacherClassListCard, TeacherJoinRequestsCard } from "./_components/TeacherCollectionPanels";
 import { TeacherAddStudentCard, TeacherAssignmentComposerCard, TeacherCreateClassCard } from "./_components/TeacherFormPanels";
 import { TeacherExamModuleCard, TeacherInsightsCard, TeacherOverviewCard, TeacherQuickAccessCards } from "./_components/TeacherSummaryPanels";
+import TeacherMoodTrendCard from "./_components/TeacherMoodTrendCard";
 import { TeacherExecutionSummaryCard, TeacherNextStepCard } from "./_components/TeacherPrimaryFlowPanels";
 import TeacherTeachingLoopCard from "./_components/TeacherTeachingLoopCard";
 import { useTeacherDashboardPageView } from "./useTeacherDashboardPageView";
 
 export default function TeacherPage() {
+  const [showTour, setShowTour] = useState(false);
   const {
     loading,
     pageError,
@@ -53,6 +58,46 @@ export default function TeacherPage() {
   ]
     .filter(Boolean)
     .join(" · ");
+
+  useEffect(() => {
+    let mounted = true;
+    void requestJson<{ data?: { completedAt?: string | null } }>("/api/user/onboarding")
+      .then((payload) => {
+        if (mounted && !payload.data?.completedAt) {
+          setShowTour(true);
+        }
+      })
+      .catch(() => {
+        // Ignore onboarding load failures and keep the dashboard interactive.
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const teacherTourSteps = useMemo(
+    () => [
+      {
+        targetSelector: "#teacher-class-list",
+        title: "先看班级资产",
+        content: "这里集中展示你当前管理的班级，后续的作业、课堂和学情动作都会围绕这些真实班级展开。",
+        placement: "top" as const
+      },
+      {
+        targetSelector: "#teacher-compose-assignment",
+        title: "从这里布置第一份作业",
+        content: "现在支持普通发布和差异化 A/B/C 分层发布，两种模式都从同一个入口发起。",
+        placement: "bottom" as const
+      },
+      {
+        targetSelector: "#teacher-context-layers",
+        title: "最后再看风险与整体盘面",
+        content: "风险预警、教学闭环和课表背景被收纳在这里，先执行，再回看整体数据。",
+        placement: "top" as const
+      }
+    ],
+    []
+  );
 
   if (loading && !pageReady && !unauthorized) {
     return <WorkspaceLoadingState title="教师工作台加载中" description="正在同步班级、作业、预警和教学执行数据。" />;
@@ -148,8 +193,39 @@ export default function TeacherPage() {
         chip="即时开工"
       />
 
+      <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
+        <button className="button ghost" type="button" onClick={() => setShowTour(true)}>
+          ? 重新引导
+        </button>
+      </div>
+
       <div id="teacher-action-center">
         <TeacherNextStepCard {...nextStepProps} />
+      </div>
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          gap: 16,
+          alignItems: "stretch"
+        }}
+      >
+        <a className="card" href="/teacher/lesson-planner" style={{ display: "grid", gap: 8, textDecoration: "none", color: "inherit" }}>
+          <div className="badge">AI 备课助手</div>
+          <div className="section-title" style={{ margin: 0 }}>按真实班级学情生成备课方案</div>
+          <div style={{ color: "var(--ink-1)" }}>快速拿到错误预测、互动设计、分层作业建议和教学反思提示。</div>
+        </a>
+        <a className="card" href="/teacher/classroom-live" style={{ display: "grid", gap: 8, textDecoration: "none", color: "inherit" }}>
+          <div className="badge">课堂实时仪表盘</div>
+          <div className="section-title" style={{ margin: 0 }}>发起课堂练习后实时看全班响应</div>
+          <div style={{ color: "var(--ink-1)" }}>查看作答人数、正确率、快慢学生列表，并一键推进下一题。</div>
+        </a>
+        <a className="card" href="/teacher/projects" style={{ display: "grid", gap: 8, textDecoration: "none", color: "inherit" }}>
+          <div className="badge">项目式学习</div>
+          <div className="section-title" style={{ margin: 0 }}>生成跨学科项目骨架并持续点评</div>
+          <div style={{ color: "var(--ink-1)" }}>把综合任务拆成阶段提交，让学生在过程中持续获得反馈。</div>
+        </a>
       </div>
 
       <TeacherDashboardSectionHeader
@@ -173,6 +249,8 @@ export default function TeacherPage() {
         description="执行入口明确后，再看风险覆盖、教学闭环和课表背景，避免首屏并列太多总览卡片。"
         chip="盘面与背景"
       />
+
+      <TeacherMoodTrendCard classes={executionSummaryProps.classes.map((item) => ({ id: item.id, name: item.name }))} />
 
       <details className="workflow-collapsible" id="teacher-context-layers">
         <summary>
@@ -222,6 +300,23 @@ export default function TeacherPage() {
           </div>
         </div>
       </details>
+      <GuidedTour
+        open={showTour}
+        steps={teacherTourSteps}
+        onSkip={() => setShowTour(false)}
+        onComplete={() => {
+          setShowTour(false);
+          void requestJson("/api/user/onboarding", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              completedSteps: ["tour", "teacher-class-list", "teacher-compose-assignment", "teacher-context-layers"]
+            })
+          }).catch(() => {
+            // Ignore persistence failures and keep the dashboard usable.
+          });
+        }}
+      />
     </WorkspacePage>
   );
 }

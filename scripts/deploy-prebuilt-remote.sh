@@ -5,7 +5,7 @@ set -euo pipefail
 usage() {
   cat <<'EOF'
 Usage:
-  DEPLOY_REMOTE_HOST=root@example.com npm run deploy:remote:prebuilt
+  DEPLOY_REMOTE_HOST=root@example.com corepack pnpm deploy:remote:prebuilt
 
 Required env:
   DEPLOY_REMOTE_HOST            SSH target, for example root@8.136.122.236
@@ -23,10 +23,10 @@ Common optional env:
 
 What it does:
   1. Optionally runs a local build.
-  2. Creates a prebuilt release archive without node_modules or .next/cache.
+  2. Creates a standalone release archive with vendored runtime deps, scripts, and static assets.
   3. Uploads the archive to the remote host.
   4. Restores the remote .env.production into the release dir.
-  5. Installs production deps only, runs db:migrate, starts canary, then cuts PM2 over.
+  5. Runs db:migrate, starts canary, then cuts PM2 over.
 EOF
 }
 
@@ -47,6 +47,25 @@ require_cmd() {
 
 log() {
   printf '[deploy] %s\n' "$1"
+}
+
+detect_package_manager() {
+  if [[ -f "pnpm-lock.yaml" ]]; then
+    echo "pnpm"
+    return
+  fi
+
+  if [[ -f "package-lock.json" ]]; then
+    echo "npm"
+    return
+  fi
+
+  if [[ -f "yarn.lock" ]]; then
+    echo "yarn"
+    return
+  fi
+
+  echo "npm"
 }
 
 require_cmd git
@@ -70,9 +89,26 @@ DEPLOY_REMOTE_ENV_SOURCE="${DEPLOY_REMOTE_ENV_SOURCE:-$DEPLOY_REMOTE_REPO_DIR/.e
 DEPLOY_PM2_APP_NAME="${DEPLOY_PM2_APP_NAME:-hk-ai-edu}"
 DEPLOY_CANARY_APP_NAME="${DEPLOY_CANARY_APP_NAME:-${DEPLOY_PM2_APP_NAME}-canary}"
 DEPLOY_TARGET_COMMIT="${DEPLOY_TARGET_COMMIT:-$(git rev-parse HEAD)}"
-DEPLOY_BUILD_COMMAND="${DEPLOY_BUILD_COMMAND:-npm run build}"
-DEPLOY_REMOTE_INSTALL_COMMAND="${DEPLOY_REMOTE_INSTALL_COMMAND:-npm ci --omit=dev --no-audit --no-fund}"
-DEPLOY_REMOTE_MIGRATE_COMMAND="${DEPLOY_REMOTE_MIGRATE_COMMAND:-npm run db:migrate}"
+DEFAULT_REMOTE_INSTALL_COMMAND=":"
+DEFAULT_REMOTE_MIGRATE_COMMAND="node scripts/init-db.mjs"
+PROJECT_PACKAGE_MANAGER="$(detect_package_manager)"
+case "$PROJECT_PACKAGE_MANAGER" in
+  pnpm)
+    require_cmd corepack
+    DEFAULT_BUILD_COMMAND="corepack pnpm build"
+    ;;
+  yarn)
+    require_cmd corepack
+    DEFAULT_BUILD_COMMAND="corepack yarn build"
+    ;;
+  *)
+    DEFAULT_BUILD_COMMAND="npm run build"
+    ;;
+esac
+
+DEPLOY_BUILD_COMMAND="${DEPLOY_BUILD_COMMAND:-$DEFAULT_BUILD_COMMAND}"
+DEPLOY_REMOTE_INSTALL_COMMAND="${DEPLOY_REMOTE_INSTALL_COMMAND:-$DEFAULT_REMOTE_INSTALL_COMMAND}"
+DEPLOY_REMOTE_MIGRATE_COMMAND="${DEPLOY_REMOTE_MIGRATE_COMMAND:-$DEFAULT_REMOTE_MIGRATE_COMMAND}"
 DEPLOY_REMOTE_PRODUCTION_PORT="${DEPLOY_REMOTE_PRODUCTION_PORT:-3000}"
 DEPLOY_REMOTE_CANARY_PORT="${DEPLOY_REMOTE_CANARY_PORT:-3001}"
 DEPLOY_CANARY_WAIT_SECONDS="${DEPLOY_CANARY_WAIT_SECONDS:-8}"
@@ -85,6 +121,8 @@ DEPLOY_SSH_PORT="${DEPLOY_SSH_PORT:-22}"
 
 SSH_OPTS=(-p "$DEPLOY_SSH_PORT" -o ConnectTimeout=20)
 SCP_OPTS=(-P "$DEPLOY_SSH_PORT" -o ConnectTimeout=20)
+
+log "Detected package manager: $PROJECT_PACKAGE_MANAGER"
 
 WORKTREE_STATUS="$(git status --short)"
 RELEASE_LABEL="$DEPLOY_TARGET_COMMIT"
@@ -109,7 +147,18 @@ if [[ ! -f ".next/BUILD_ID" ]]; then
   exit 1
 fi
 
+if [[ ! -f ".next/standalone/server.js" ]]; then
+  echo "Missing .next/standalone/server.js. Ensure Next.js standalone output is enabled and the build completed successfully." >&2
+  exit 1
+fi
+
+if [[ ! -d ".next/static" ]]; then
+  echo "Missing .next/static. Run a local build first or unset DEPLOY_SKIP_BUILD." >&2
+  exit 1
+fi
+
 TEMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/hk-ai-edu-deploy.XXXXXX")"
+STAGE_DIR="$TEMP_DIR/release"
 ARCHIVE_NAME="${DEPLOY_PROJECT_NAME}-${RELEASE_LABEL}-prebuilt.tgz"
 ARCHIVE_PATH="$TEMP_DIR/$ARCHIVE_NAME"
 REMOTE_ARCHIVE_PATH="$DEPLOY_REMOTE_RELEASES_DIR/$ARCHIVE_NAME"
@@ -121,22 +170,42 @@ cleanup() {
 
 trap cleanup EXIT
 
+log "Preparing standalone release directory at $STAGE_DIR"
+mkdir -p "$STAGE_DIR"
+cp -R ".next/standalone/." "$STAGE_DIR/"
+mkdir -p "$STAGE_DIR/.next"
+cp -R ".next/static" "$STAGE_DIR/.next/static"
+rm -rf \
+  "$STAGE_DIR/scripts" \
+  "$STAGE_DIR/db" \
+  "$STAGE_DIR/public" \
+  "$STAGE_DIR/data" \
+  "$STAGE_DIR/configs" \
+  "$STAGE_DIR/assets"
+cp -R "scripts" "$STAGE_DIR/scripts"
+cp -R "db" "$STAGE_DIR/db"
+cp -R "public" "$STAGE_DIR/public"
+cp -R "data" "$STAGE_DIR/data"
+cp -R "configs" "$STAGE_DIR/configs"
+cp -R "assets" "$STAGE_DIR/assets"
+cp "package.json" "$STAGE_DIR/package.json"
+rm -rf \
+  "$STAGE_DIR/.runtime-data" \
+  "$STAGE_DIR/tests" \
+  "$STAGE_DIR/output" \
+  "$STAGE_DIR/docs"
+
+if command -v xattr >/dev/null 2>&1; then
+  xattr -cr "$STAGE_DIR" >/dev/null 2>&1 || true
+fi
+
 log "Creating prebuilt archive at $ARCHIVE_PATH"
 export COPYFILE_DISABLE=1
 export COPY_EXTENDED_ATTRIBUTES_DISABLE=1
 tar \
-  --exclude='.git' \
-  --exclude='node_modules' \
-  --exclude='.next/cache' \
-  --exclude='.runtime-data' \
-  --exclude='coverage' \
-  --exclude='playwright-report' \
-  --exclude='test-results' \
-  --exclude='.env' \
-  --exclude='.env.local' \
-  --exclude='.env.production' \
   --exclude='.DS_Store' \
   -czf "$ARCHIVE_PATH" \
+  -C "$STAGE_DIR" \
   .
 
 log "Uploading archive to $DEPLOY_REMOTE_HOST:$REMOTE_ARCHIVE_PATH"

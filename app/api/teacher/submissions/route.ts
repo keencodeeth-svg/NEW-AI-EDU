@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { getAssignmentUploads } from "@/lib/assignment-uploads";
 import {
   getAssignmentsByClass,

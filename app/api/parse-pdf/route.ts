@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
     const buffer = Buffer.from(arrayBuffer);
 
     // Parse PDF using the provider system
-    const result = await parsePDF(config, buffer);
+    const result = await parsePDF(config, buffer, pdfFile.name);
 
     // Add file metadata
     const resultWithMetadata: ParsedPdfContent = {

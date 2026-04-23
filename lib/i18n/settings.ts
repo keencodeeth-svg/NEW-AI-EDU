@@ -227,6 +227,7 @@ export const settingsZhCN = {
     providerQwenASR: 'Qwen ASR（阿里云百炼）',
     providerUnpdf: 'unpdf（内置）',
     providerMinerU: 'MinerU',
+    providerMinerUCloud: 'MinerU Cloud',
     browserNativeTTSNote: '浏览器原生 TTS 无需配置，完全免费，使用系统内置语音',
     testTTS: '测试 TTS',
     testASR: '测试 ASR',
@@ -522,9 +523,11 @@ export const settingsZhCN = {
       '当前模型不支持视觉能力，图片仍可放入幻灯片，但模型无法理解图片内容来优化选择和布局',
     // Server provider configuration
     serverConfigured: '服务端',
-    serverConfiguredNotice:
-      '管理员已在服务端配置了此提供方的 API Key，可直接使用。也可输入自己的 Key 覆盖。',
+    serverConfiguredNotice: '管理员已在服务端配置了此提供方，可直接使用。',
     optionalOverride: '可选，留空则使用服务端配置',
+    browserOverridesDisabledShort: '浏览器覆写已禁用',
+    browserOverridesDisabledNotice:
+      '当前环境或服务端托管策略已禁用浏览器侧 Provider 覆写。本地输入的 API Key 和 Base URL 不会发送。请在管理后台的 AI Provider Vault 配置；仅在受控本地调试且该提供方未由服务端托管时开启 NEXT_PUBLIC_ALLOW_CLIENT_PROVIDER_SECRETS。',
     // Access code
     setupNeeded: '请先完成配置',
     modelNotConfigured: '请选择一个模型以开始使用',
@@ -812,6 +815,7 @@ export const settingsEnUS = {
     providerQwenASR: 'Qwen ASR (Alibaba Cloud Bailian)',
     providerUnpdf: 'unpdf (Built-in)',
     providerMinerU: 'MinerU',
+    providerMinerUCloud: 'MinerU Cloud',
     browserNativeTTSNote:
       'Browser Native TTS requires no configuration and is completely free, using system built-in voices',
     testTTS: 'Test TTS',
@@ -1112,8 +1116,11 @@ export const settingsEnUS = {
     // Server provider configuration
     serverConfigured: 'Server',
     serverConfiguredNotice:
-      'Admin has configured an API key for this provider on the server. You can use it directly or enter your own key to override.',
+      'Admin has configured this provider on the server, so it can be used directly.',
     optionalOverride: 'Optional — leave empty to use server config',
+    browserOverridesDisabledShort: 'Browser override disabled',
+    browserOverridesDisabledNotice:
+      'Browser-side provider overrides are disabled by this environment or server-managed policy. Local API keys and Base URLs will not be sent. Configure providers in the AI Provider Vault, or enable NEXT_PUBLIC_ALLOW_CLIENT_PROVIDER_SECRETS only for controlled local debugging when the provider is not server-managed.',
     // Access code
     setupNeeded: 'Setup required',
     modelNotConfigured: 'Please select a model to get started',

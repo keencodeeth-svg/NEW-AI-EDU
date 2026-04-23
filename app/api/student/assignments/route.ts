@@ -39,7 +39,7 @@ export const GET = createLearningRoute({
         total: record?.total ?? null,
         completedAt: record?.completedAt ?? null
       };
-    });
+    }).filter((assignment) => progressMap.has(assignment.id));
 
     return { data };
   }

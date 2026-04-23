@@ -16,7 +16,8 @@ import { NextRequest } from 'next/server';
 import { statelessGenerate } from '@/lib/orchestration/stateless-generate';
 import { getModel, parseModelString } from '@/lib/ai/providers';
 import {
-  getProviderVaultHint,
+  getBlockedClientProviderSecretMessage,
+  hasClientProviderSecretOverride,
   resolveApiKey,
   resolveBaseUrl,
   resolveProxy,
@@ -79,12 +80,14 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    if (clientBaseUrl && !shouldAllowClientProviderSecrets()) {
-      return apiError(
-        'INVALID_REQUEST',
-        403,
-        `当前环境不允许从客户端覆盖 Provider API Key 或 Base URL。${getProviderVaultHint()}`,
-      );
+    if (
+      hasClientProviderSecretOverride({
+        apiKey: body.apiKey,
+        baseUrl: clientBaseUrl,
+      }) &&
+      !shouldAllowClientProviderSecrets()
+    ) {
+      return apiError('INVALID_REQUEST', 403, getBlockedClientProviderSecretMessage());
     }
 
     const effectiveApiKey = resolveApiKey(providerId, body.apiKey);

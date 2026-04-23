@@ -143,7 +143,6 @@ export function listTeacherNotificationHistory(params: {
 export function appendTeacherNotificationHistory(
   input: Omit<TeacherNotificationHistoryItem, "id"> & { id?: string }
 ) {
-  const history = listTeacherNotificationHistory({ teacherId: input.teacherId, limit: HISTORY_LIMIT });
   const globalRaw = readJson<Array<Partial<TeacherNotificationHistoryItem>>>(HISTORY_FILE, []);
   const globalHistory = Array.isArray(globalRaw)
     ? globalRaw

@@ -21,6 +21,10 @@ import {
   uniquifyMediaElementIds,
   formatTeacherPersonaForPrompt,
 } from '@/lib/generation/generation-pipeline';
+import {
+  buildDeepInteractivePromptGuidance,
+  normalizeDeepInteractiveOutline,
+} from '@/lib/generation/deep-interactive';
 import type { AgentInfo } from '@/lib/generation/generation-pipeline';
 import { MAX_PDF_CONTENT_CHARS, MAX_VISION_IMAGES } from '@/lib/constants/generation';
 import { nanoid } from 'nanoid';
@@ -184,6 +188,7 @@ export async function POST(req: NextRequest) {
       researchContext: researchContext || (requirements.language === 'zh-CN' ? '无' : 'None'),
       mediaGenerationPolicy,
       teacherContext,
+      deepInteractiveGuidance: buildDeepInteractivePromptGuidance(requirements.generationMode),
     });
 
     if (!prompts) {
@@ -258,10 +263,11 @@ export async function POST(req: NextRequest) {
                 // Try to extract new outlines from the accumulated text
                 const newOutlines = extractNewOutlines(fullText, parsedOutlines.length);
                 for (const outline of newOutlines) {
+                  const normalizedOutline = normalizeDeepInteractiveOutline(outline);
                   // Ensure ID and order
                   const enriched = {
-                    ...outline,
-                    id: outline.id || nanoid(),
+                    ...normalizedOutline,
+                    id: normalizedOutline.id || nanoid(),
                     order: parsedOutlines.length + 1,
                   };
                   parsedOutlines.push(enriched);

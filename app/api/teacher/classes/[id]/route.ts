@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { getClassById, updateClassSettings } from "@/lib/classes";
 import { notFound, unauthorized } from "@/lib/api/http";
 import { v } from "@/lib/api/validation";

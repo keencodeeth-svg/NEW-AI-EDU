@@ -92,6 +92,13 @@ export type MotivationPayload = {
   weekly?: {
     accuracy?: number;
   };
+  xp?: {
+    totalXp: number;
+    level: number;
+    rankTitle: string;
+    nextLevelXp: number;
+    progress: number;
+  } | null;
 };
 
 export type JoinRequest = {

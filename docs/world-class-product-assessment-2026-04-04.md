@@ -7,6 +7,7 @@
 相关参照：
 
 - `docs/project-readiness-index.md`
+- `docs/p1-p2-feature-task-cards.md`
 - `docs/full-project-assessment-2026-03-18.md`
 - `docs/hangke-interactive-classroom-world-class-prd.md`
 
@@ -16,6 +17,7 @@
 
 - 当前项目已经明显超过原型期，不是“演示拼装品”，而是一个具备真实教育产品主线、可进入受控试点的强 beta 产品。
 - 项目最强的部分不是单个页面，而是产品方向本身：教师授课、学生自学、数字人、整班观看、课堂回看、导出沉淀、教务角色打通，这条线非常有价值，也具备差异化潜力。
+- 同日新增的 P1/P2 能力交付已经基本落到真实代码与自动化回归里，说明项目正在从“概念正确”进入“可维护、可复验”的产品化阶段。
 - 当前离“世界级产品”的差距，主要不在“功能缺不缺”，而在四个收口层：
   - 核心链路是否彻底服务端化
   - 设计系统是否真正沉淀为统一产品语法
@@ -73,10 +75,12 @@
 ### 3.2 工程基础明显高于一般 demo
 
 - 仓库当前体量已经不小：
-  - `74` 个页面
-  - `221` 个 API 路由
-  - `103` 个单测文件
-  - `1` 个浏览器 smoke 文件
+  - `79` 个页面
+  - `237` 个 API 路由
+  - `109` 个单测文件
+  - `360` 条单测
+  - `2` 个浏览器自动化文件
+  - `21` 条浏览器自动化用例
 - 已具备：
   - `build`
   - `unit test`
@@ -84,6 +88,7 @@
   - `browser smoke`
   - `launch readiness`
   - realistic seed / production-like runbook
+- 2026-04-04 已通过 `corepack pnpm check:project-snapshot && corepack pnpm verify:strict`，说明最新一轮能力扩展不是“只在文档里完成”。
 - 这说明项目已经在向“可交付工程”靠近，而不是只做前台展示。
 
 ### 3.3 治理意识已经进入代码，而不是停留在口号

@@ -33,4 +33,7 @@ export type Question = {
   questionType?: string;
   tags?: string[];
   abilities?: string[];
+  actualDifficulty?: number | null;
+  needsManualReview?: boolean;
+  reviewReason?: string | null;
 };

@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { claimChallenge, getChallengePoints, getChallengeState } from "@/lib/challenges";
 import { badRequest, unauthorized } from "@/lib/api/http";
 import { v } from "@/lib/api/validation";

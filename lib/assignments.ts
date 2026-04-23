@@ -14,6 +14,7 @@ export type Assignment = {
   submissionType?: "quiz" | "upload" | "essay";
   maxUploads?: number;
   gradingFocus?: string;
+  targetStudentIds?: string[];
 };
 
 export type AssignmentItem = {
@@ -59,6 +60,7 @@ type DbAssignment = {
   submission_type: string | null;
   max_uploads: number | null;
   grading_focus: string | null;
+  target_student_ids: string[] | null;
 };
 
 type DbAssignmentItem = {
@@ -99,7 +101,8 @@ function mapAssignment(row: DbAssignment): Assignment {
     createdAt: row.created_at,
     submissionType: (row.submission_type as Assignment["submissionType"]) ?? "quiz",
     maxUploads: row.max_uploads ?? 3,
-    gradingFocus: row.grading_focus ?? undefined
+    gradingFocus: row.grading_focus ?? undefined,
+    targetStudentIds: row.target_student_ids ?? []
   };
 }
 
@@ -156,6 +159,11 @@ function requireAssignmentProgressDatabase() {
 
 function requireAssignmentSubmissionsDatabase() {
   requireDatabaseEnabled("assignment_submissions");
+}
+
+function isMissingTargetStudentIdsColumnError(error: unknown) {
+  const pgError = error as { code?: string; message?: string };
+  return pgError?.code === "42703" && /target_student_ids/i.test(pgError?.message ?? "");
 }
 
 export async function getAssignments(): Promise<Assignment[]> {
@@ -412,11 +420,13 @@ export async function createAssignment(input: {
   submissionType?: Assignment["submissionType"];
   maxUploads?: number;
   gradingFocus?: string;
+  targetStudentIds?: string[];
 }): Promise<Assignment> {
   const createdAt = new Date().toISOString();
   const uniqueQuestions = Array.from(new Set(input.questionIds));
   const submissionType = input.submissionType ?? "quiz";
   const maxUploads = Math.max(1, Math.min(input.maxUploads ?? 3, 10));
+  const targetStudentIds = Array.from(new Set((input.targetStudentIds ?? []).filter(Boolean)));
 
   if (!isDbEnabled()) {
     if (!canUseApiTestAssignmentExecutionFallback()) {
@@ -432,7 +442,8 @@ export async function createAssignment(input: {
       createdAt,
       submissionType,
       maxUploads,
-      gradingFocus: input.gradingFocus
+      gradingFocus: input.gradingFocus,
+      targetStudentIds
     };
     await transactJsonFiles<{
       assignments: Assignment[];
@@ -454,7 +465,7 @@ export async function createAssignment(input: {
       }
     );
 
-    const students = await getClassStudentIds(input.classId);
+    const students = targetStudentIds.length ? targetStudentIds : await getClassStudentIds(input.classId);
     // Pre-create per-student progress to make teacher dashboards immediately consistent.
     for (const studentId of students) {
       await createAssignmentProgress(assignment.id, studentId);
@@ -464,23 +475,40 @@ export async function createAssignment(input: {
   }
 
   const id = `assign-${crypto.randomBytes(6).toString("hex")}`;
-  const row = await queryOne<DbAssignment>(
-    `INSERT INTO assignments (id, class_id, module_id, title, description, due_date, created_at, submission_type, max_uploads, grading_focus)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
-     RETURNING *`,
-    [
-      id,
-      input.classId,
-      input.moduleId ?? null,
-      input.title,
-      input.description ?? null,
-      input.dueDate,
-      createdAt,
-      submissionType,
-      maxUploads,
-      input.gradingFocus ?? null
-    ]
-  );
+  const assignmentInsertParams = [
+    id,
+    input.classId,
+    input.moduleId ?? null,
+    input.title,
+    input.description ?? null,
+    input.dueDate,
+    createdAt,
+    submissionType,
+    maxUploads,
+    input.gradingFocus ?? null
+  ];
+
+  let row: DbAssignment | null = null;
+  try {
+    row = await queryOne<DbAssignment>(
+      `INSERT INTO assignments (id, class_id, module_id, title, description, due_date, created_at, submission_type, max_uploads, grading_focus, target_student_ids)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+       RETURNING *`,
+      [...assignmentInsertParams, targetStudentIds]
+    );
+  } catch (error) {
+    if (!isMissingTargetStudentIdsColumnError(error)) {
+      throw error;
+    }
+
+    // Keep assignment publishing available on partially migrated databases.
+    row = await queryOne<DbAssignment>(
+      `INSERT INTO assignments (id, class_id, module_id, title, description, due_date, created_at, submission_type, max_uploads, grading_focus)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+       RETURNING *`,
+      assignmentInsertParams
+    );
+  }
 
   for (const questionId of uniqueQuestions) {
     await query(
@@ -490,7 +518,7 @@ export async function createAssignment(input: {
     );
   }
 
-  const students = await getClassStudentIds(input.classId);
+  const students = targetStudentIds.length ? targetStudentIds : await getClassStudentIds(input.classId);
   // Pre-create per-student progress to make teacher dashboards immediately consistent.
   for (const studentId of students) {
     await createAssignmentProgress(id, studentId);
@@ -508,7 +536,8 @@ export async function createAssignment(input: {
         createdAt,
         submissionType,
         maxUploads,
-        gradingFocus: input.gradingFocus
+        gradingFocus: input.gradingFocus,
+        targetStudentIds
       };
 }
 

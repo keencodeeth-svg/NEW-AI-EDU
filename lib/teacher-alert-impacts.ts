@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { isDbEnabled, query, queryOne } from "./db";
+import { isDbEnabled, queryOne } from "./db";
 import { readJson, writeJson } from "./storage";
 
 export type TeacherAlertImpactBaseline = {

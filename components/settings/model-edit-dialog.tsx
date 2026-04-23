@@ -64,7 +64,18 @@ export function ModelEditDialog({
   };
 
   const handleTestModel = useCallback(async () => {
-    if (!editingModel || (!apiKey && !isServerConfigured)) {
+    if (!editingModel) {
+      return;
+    }
+
+    const requestConfig = getClientProviderRequestConfig({
+      apiKey,
+      baseUrl,
+      isServerConfigured,
+      serverBaseUrl,
+    });
+
+    if (requiresApiKey && !requestConfig.apiKey && !isServerConfigured) {
       setTestStatus('error');
       setTestMessage(t('settings.apiKeyRequired') || 'API Key is required');
       return;
@@ -74,12 +85,6 @@ export function ModelEditDialog({
     setTestMessage('');
 
     try {
-      const requestConfig = getClientProviderRequestConfig({
-        apiKey,
-        baseUrl,
-        isServerConfigured,
-        serverBaseUrl,
-      });
       const response = await fetch('/api/verify-model', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

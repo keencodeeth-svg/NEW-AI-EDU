@@ -1,5 +1,3 @@
-import { shouldEnforceRuntimeGuardrails } from "../runtime-guardrails";
-
 const PROVIDER_VAULT_HINT = "请在管理后台的 AI Provider Vault 中统一配置密钥。";
 
 function cleanOptionalString(value?: string | null) {
@@ -18,8 +16,7 @@ function parseBooleanFlag(value: string | undefined) {
 
 export function shouldAllowClientProviderSecrets() {
   const explicit = parseBooleanFlag(process.env.ALLOW_CLIENT_PROVIDER_SECRETS);
-  if (explicit !== null) return explicit;
-  return process.env.NODE_ENV !== "production" && !shouldEnforceRuntimeGuardrails();
+  return explicit === true;
 }
 
 export function getProviderVaultHint() {

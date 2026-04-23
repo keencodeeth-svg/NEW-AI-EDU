@@ -1,5 +1,5 @@
 import crypto from "crypto";
-import { readJson, updateJson, writeJson } from "./storage";
+import { readJson, updateJson } from "./storage";
 import { isDbEnabled, query, queryOne } from "./db";
 import { getUsers } from "./auth";
 import { DEFAULT_SCHOOL_ID } from "./schools";
@@ -115,15 +115,6 @@ function matchesClassScope(item: ClassItem, scope?: ClassScope) {
   // Centralized tenant filter for JSON mode to match DB-mode WHERE school_id semantics.
   if (!scope?.schoolId) return true;
   return (item.schoolId ?? DEFAULT_SCHOOL_ID) === (scope.schoolId ?? DEFAULT_SCHOOL_ID);
-}
-
-function mapClassStudent(row: DbClassStudent): ClassStudent {
-  return {
-    id: row.id,
-    classId: row.class_id,
-    studentId: row.student_id,
-    joinedAt: row.joined_at
-  };
 }
 
 export async function getClasses(scope?: ClassScope): Promise<ClassItem[]> {
@@ -302,6 +293,10 @@ export async function getClassStudents(classId: string): Promise<ClassStudentInf
     email: row.email,
     grade: row.grade ?? undefined
   }));
+}
+
+export async function getStudentsByClass(classId: string): Promise<ClassStudentInfo[]> {
+  return getClassStudents(classId);
 }
 
 export async function getClassStudentIds(classId: string): Promise<string[]> {

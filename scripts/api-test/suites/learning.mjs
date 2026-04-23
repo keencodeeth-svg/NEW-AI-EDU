@@ -835,6 +835,56 @@ export async function runLearningSuite(context) {
     "Parent weekly report should include effect.last7dEffectScore"
   );
 
+  const parentGoalBaseline = await apiFetch("/api/parent/goal");
+  assert.equal(parentGoalBaseline.status, 200, `GET /api/parent/goal failed: ${parentGoalBaseline.raw}`);
+  assert.ok(Array.isArray(parentGoalBaseline.body?.data?.suggestions), "Parent goal response should include suggestions");
+
+  const goalTitle = `本周目标-${Date.now().toString(36)}`;
+  const goalTargetDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const saveParentGoal = await apiFetch("/api/parent/goal", {
+    method: "POST",
+    json: {
+      title: goalTitle,
+      targetDate: goalTargetDate
+    }
+  });
+  assert.equal(saveParentGoal.status, 200, `POST /api/parent/goal failed: ${saveParentGoal.raw}`);
+  assert.equal(saveParentGoal.body?.data?.title, goalTitle, "Parent goal save should persist title");
+  assert.equal(saveParentGoal.body?.data?.targetDate, goalTargetDate, "Parent goal save should persist targetDate");
+
+  const parentGoalAfterSave = await apiFetch("/api/parent/goal");
+  assert.equal(parentGoalAfterSave.status, 200, `GET /api/parent/goal after save failed: ${parentGoalAfterSave.raw}`);
+  assert.equal(parentGoalAfterSave.body?.data?.goal?.title, goalTitle, "Parent goal should be readable after save");
+  assert.equal(parentGoalAfterSave.body?.data?.goal?.targetDate, goalTargetDate, "Parent goal should retain targetDate");
+
+  const encouragementMessage = `继续保持今天的节奏-${Date.now().toString(36)}`;
+  const sendEncouragement = await apiFetch("/api/parent/encouragement", {
+    method: "POST",
+    json: {
+      message: encouragementMessage
+    }
+  });
+  assert.equal(sendEncouragement.status, 200, `POST /api/parent/encouragement failed: ${sendEncouragement.raw}`);
+  const encouragementId = sendEncouragement.body?.data?.id;
+  assert.ok(encouragementId, "Parent encouragement should expose id");
+  assert.equal(
+    sendEncouragement.body?.data?.message,
+    encouragementMessage,
+    "Parent encouragement should persist the submitted message"
+  );
+
+  const parentLatestEncouragement = await apiFetch("/api/parent/encouragement");
+  assert.equal(
+    parentLatestEncouragement.status,
+    200,
+    `GET /api/parent/encouragement failed: ${parentLatestEncouragement.raw}`
+  );
+  assert.equal(
+    parentLatestEncouragement.body?.data?.id,
+    encouragementId,
+    "Parent encouragement read should return the latest sent record"
+  );
+
   const invalidActionItemReceipt = await apiFetch("/api/parent/action-items/receipt", {
     method: "POST",
     json: {
@@ -947,4 +997,93 @@ export async function runLearningSuite(context) {
     json: { email, password, role: "student" }
   });
   assert.equal(reloginStudent.status, 200, `Student relogin failed: ${reloginStudent.raw}`);
+
+  const unreadEncouragement = await apiFetch("/api/parent/encouragement?unread=true");
+  assert.equal(
+    unreadEncouragement.status,
+    200,
+    `Student GET /api/parent/encouragement?unread=true failed: ${unreadEncouragement.raw}`
+  );
+  assert.equal(unreadEncouragement.body?.data?.id, encouragementId, "Student should receive the unread parent encouragement");
+  assert.equal(
+    unreadEncouragement.body?.data?.message,
+    encouragementMessage,
+    "Student unread encouragement should match parent message"
+  );
+
+  const markEncouragementRead = await apiFetch("/api/parent/encouragement", {
+    method: "PATCH",
+    json: {
+      id: encouragementId
+    }
+  });
+  assert.equal(
+    markEncouragementRead.status,
+    200,
+    `PATCH /api/parent/encouragement failed: ${markEncouragementRead.raw}`
+  );
+  assert.equal(markEncouragementRead.body?.success, true, "Student should be able to mark parent encouragement as read");
+
+  const unreadAfterRead = await apiFetch("/api/parent/encouragement?unread=true");
+  assert.equal(
+    unreadAfterRead.status,
+    200,
+    `Student GET /api/parent/encouragement?unread=true after read failed: ${unreadAfterRead.raw}`
+  );
+  assert.equal(unreadAfterRead.body?.data, null, "Read encouragement should no longer appear in unread query");
+
+  const saveMood = await apiFetch("/api/student/mood", {
+    method: "POST",
+    json: {
+      mood: "neutral",
+      context: "api-test-learning-wrap-up"
+    }
+  });
+  assert.equal(saveMood.status, 200, `POST /api/student/mood failed: ${saveMood.raw}`);
+  const moodId = saveMood.body?.data?.id;
+  assert.ok(moodId, "Student mood checkin should expose id");
+  assert.equal(saveMood.body?.data?.mood, "neutral", "Student mood checkin should persist mood");
+
+  const studentMoodTrend = await apiFetch("/api/student/mood");
+  assert.equal(studentMoodTrend.status, 200, `GET /api/student/mood failed: ${studentMoodTrend.raw}`);
+  assert.equal(studentMoodTrend.body?.data?.scope, "student", "Student mood API should expose student scope");
+  assert.ok(
+    Array.isArray(studentMoodTrend.body?.data?.checkins),
+    "Student mood API should expose checkins array"
+  );
+  assert.ok(
+    (studentMoodTrend.body?.data?.checkins ?? []).some((item) => item.id === moodId),
+    "Student mood API should include the newly saved checkin"
+  );
+  assert.ok(
+    Number(studentMoodTrend.body?.data?.summary?.total ?? 0) >= 1,
+    "Student mood summary should include at least one checkin"
+  );
+
+  const reloginParent = await apiFetch("/api/auth/login", {
+    method: "POST",
+    useCookies: false,
+    json: { email: state.parentEmail, password: state.parentPassword, role: "parent" }
+  });
+  assert.equal(reloginParent.status, 200, `Parent relogin for mood checks failed: ${reloginParent.raw}`);
+
+  const parentMoodTrend = await apiFetch("/api/student/mood");
+  assert.equal(parentMoodTrend.status, 200, `Parent GET /api/student/mood failed: ${parentMoodTrend.raw}`);
+  assert.equal(parentMoodTrend.body?.data?.scope, "parent", "Parent mood API should expose parent scope");
+  assert.ok(parentMoodTrend.body?.data?.studentId, "Parent mood API should expose linked studentId");
+  assert.ok(
+    Array.isArray(parentMoodTrend.body?.data?.checkins),
+    "Parent mood API should expose linked student checkins"
+  );
+  assert.ok(
+    (parentMoodTrend.body?.data?.checkins ?? []).some((item) => item.id === moodId),
+    "Parent mood API should include the student's newly saved checkin"
+  );
+
+  const restoreStudentSession = await apiFetch("/api/auth/login", {
+    method: "POST",
+    useCookies: false,
+    json: { email, password, role: "student" }
+  });
+  assert.equal(restoreStudentSession.status, 200, `Student session restore after parent mood checks failed: ${restoreStudentSession.raw}`);
 }

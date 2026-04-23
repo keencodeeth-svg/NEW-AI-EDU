@@ -5,7 +5,6 @@ import { formatLoadedTime } from "@/lib/client-request";
 import type {
   CorrectionTask,
   ReviewQueueData,
-  ReviewQueueItem,
   Summary,
   WrongBookItem
 } from "./types";

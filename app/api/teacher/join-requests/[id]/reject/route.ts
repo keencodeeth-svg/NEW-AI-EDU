@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { decideJoinRequest, getClassById, getJoinRequestsByTeacher } from "@/lib/classes";
 import { createNotification } from "@/lib/notifications";
 import { notFound, unauthorized } from "@/lib/api/http";

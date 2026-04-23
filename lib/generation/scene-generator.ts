@@ -26,6 +26,7 @@ import { buildPrompt, PROMPT_IDS } from './prompts';
 import { postProcessInteractiveHtml } from './interactive-post-processor';
 import { parseActionsFromStructuredOutput } from './action-parser';
 import { parseJsonResponse } from './json-repair';
+import { normalizeDeepInteractiveOutline } from './deep-interactive';
 import {
   buildCourseContext,
   formatAgentsForPrompt,
@@ -162,6 +163,8 @@ export async function generateSceneContent(
   | GeneratedPBLContent
   | null
 > {
+  outline = normalizeDeepInteractiveOutline(outline);
+
   // If outline is interactive but missing interactiveConfig, fall back to slide
   if (outline.type === 'interactive' && !outline.interactiveConfig) {
     log.warn(
@@ -915,6 +918,7 @@ async function generateInteractiveContent(
   aiCall: AICallFn,
   language: 'zh-CN' | 'en-US' = 'zh-CN',
 ): Promise<GeneratedInteractiveContent | null> {
+  outline = normalizeDeepInteractiveOutline(outline);
   const config = outline.interactiveConfig!;
 
   // Step 1: Scientific modeling (with fallback on failure)
@@ -970,6 +974,8 @@ async function generateInteractiveContent(
     keyPoints: (outline.keyPoints || []).map((p, i) => `${i + 1}. ${p}`).join('\n'),
     scientificConstraints,
     designIdea: config.designIdea,
+    widgetType: outline.widgetType || '',
+    widgetOutline: outline.widgetOutline || '',
     language,
   });
 
@@ -994,6 +1000,8 @@ async function generateInteractiveContent(
   return {
     html: processedHtml,
     scientificModel,
+    widgetType: outline.widgetType,
+    widgetOutline: outline.widgetOutline,
   };
 }
 
@@ -1095,6 +1103,7 @@ export async function generateSceneActions(
   agents?: AgentInfo[],
   userProfile?: string,
 ): Promise<Action[]> {
+  outline = normalizeDeepInteractiveOutline(outline);
   const agentsText = formatAgentsForPrompt(agents);
 
   if (outline.type === 'slide' && 'elements' in content) {
@@ -1444,6 +1453,8 @@ export function createSceneWithActions(
         type: 'interactive',
         url: '',
         html: content.html,
+        widgetType: content.widgetType,
+        widgetOutline: content.widgetOutline,
       },
       actions,
     });

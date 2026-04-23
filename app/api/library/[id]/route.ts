@@ -43,7 +43,11 @@ export const GET = createLearningRoute({
 
     const hydrated = await hydrateLearningLibraryItemContent(item);
     // Strip storage internals from API payload; clients consume only resolved content fields.
-    const { contentStorageProvider, contentStorageKey, ...publicItem } = hydrated ?? item;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicItem
+    } = hydrated ?? item;
     return { data: publicItem };
   }
 });

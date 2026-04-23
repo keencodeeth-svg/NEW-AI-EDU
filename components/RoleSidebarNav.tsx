@@ -90,10 +90,12 @@ export default function RoleSidebarNav({
   }, [primaryLinks, navGroups]);
 
   useEffect(() => {
-    setGroupOpenState(readStoredGroupOpenState());
-    setRecentHrefs(readStoredRecentHrefs());
-    setCollapsed(readStoredCollapsed());
-    setStorageHydrated(true);
+    queueMicrotask(() => {
+      setGroupOpenState(readStoredGroupOpenState());
+      setRecentHrefs(readStoredRecentHrefs());
+      setCollapsed(readStoredCollapsed());
+      setStorageHydrated(true);
+    });
   }, []);
 
   useEffect(() => {

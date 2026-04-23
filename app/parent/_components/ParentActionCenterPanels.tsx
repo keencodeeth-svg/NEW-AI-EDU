@@ -263,7 +263,7 @@ export function ParentExecutionSummaryCard({
   assignmentSummary,
   assignmentActionItems,
   assignmentExecution,
-  pendingCorrectionCount,
+  pendingCorrectionCount: _pendingCorrectionCount,
   overdueCorrectionCount,
   dueSoonCorrectionCount,
   favoritesCount

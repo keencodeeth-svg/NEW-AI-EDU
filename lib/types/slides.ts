@@ -32,6 +32,7 @@ export const enum ElementTypes {
   LATEX = 'latex',
   VIDEO = 'video',
   AUDIO = 'audio',
+  CODE = 'code',
 }
 
 /**
@@ -615,6 +616,35 @@ export interface PPTLatexElement extends PPTBaseElement {
   align?: 'left' | 'center' | 'right';
 }
 
+export interface CodeLine {
+  id: string;
+  content: string;
+}
+
+/**
+ * 代码块元素
+ *
+ * type: 元素类型（code）
+ *
+ * language: 编程语言标识
+ *
+ * lines: 代码行数组，支持后续按行编辑
+ *
+ * fileName?: 文件名展示
+ *
+ * showLineNumbers?: 是否显示行号
+ *
+ * fontSize?: 字号
+ */
+export interface PPTCodeElement extends PPTBaseElement {
+  type: 'code';
+  language: string;
+  lines: CodeLine[];
+  fileName?: string;
+  showLineNumbers?: boolean;
+  fontSize?: number;
+}
+
 /**
  * 视频元素
  *
@@ -671,6 +701,7 @@ export type PPTElement =
   | PPTChartElement
   | PPTTableElement
   | PPTLatexElement
+  | PPTCodeElement
   | PPTVideoElement
   | PPTAudioElement;
 

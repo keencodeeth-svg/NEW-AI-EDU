@@ -19,6 +19,7 @@ import {
   Trash2,
   Play,
   Minus,
+  Code2,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
@@ -71,6 +72,8 @@ const ACTION_CONFIG: Record<string, ActionCfg> = {
   wb_draw_latex: { label: 'Formula', Icon: Sigma, style: WB_STYLE, wb: true },
   wb_draw_table: { label: 'Table', Icon: Table2, style: WB_STYLE, wb: true },
   wb_draw_line: { label: 'Line', Icon: Minus, style: WB_STYLE, wb: true },
+  wb_draw_code: { label: 'Code', Icon: Code2, style: WB_STYLE, wb: true },
+  wb_edit_code: { label: 'Code Edit', Icon: Code2, style: WB_STYLE, wb: true },
 
   // Social
   discussion: { label: 'Discuss', Icon: MessageSquare, style: DISCUSS_STYLE },

@@ -1,4 +1,3 @@
-import { getCurrentUser } from "@/lib/auth";
 import { getClassById, updateClassSettings } from "@/lib/classes";
 import crypto from "crypto";
 import { notFound, unauthorized } from "@/lib/api/http";

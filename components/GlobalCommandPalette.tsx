@@ -133,8 +133,10 @@ export default function GlobalCommandPalette({
   const [navigatingHref, setNavigatingHref] = useState<string | null>(null);
 
   useEffect(() => {
-    setRecentHrefs(readRecentHrefs());
-    setStorageHydrated(true);
+    queueMicrotask(() => {
+      setRecentHrefs(readRecentHrefs());
+      setStorageHydrated(true);
+    });
   }, []);
 
   function openPalette() {

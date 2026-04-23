@@ -8,6 +8,8 @@ import { getFocusSessionsByUser } from "./focus";
 import { getFavoritesByUser } from "./favorites";
 import { scheduleReviewTasksAfterAttempt } from "./review-scheduler";
 import type { WrongReviewOriginMeta } from "./wrong-review";
+import { getXpHistory } from "./gamification";
+import { isOnboardingComplete } from "./onboarding";
 
 export type QuestionAttempt = {
   id: string;
@@ -699,6 +701,10 @@ export async function getBadges(userId: string) {
   const weekly = await getAccuracyLastDays(userId, 7);
   const focusSessions = await getFocusSessionsByUser(userId);
   const favorites = await getFavoritesByUser(userId);
+  const [xpHistory, onboardingComplete] = await Promise.all([
+    getXpHistory(userId, 100).catch(() => []),
+    isOnboardingComplete(userId).catch(() => false)
+  ]);
   const badges: { id: string; title: string; description: string }[] = [];
 
   if (attempts.length >= 1) {
@@ -729,6 +735,24 @@ export async function getBadges(userId: string) {
   const tagged = favorites.filter((item) => item.tags?.length).length;
   if (tagged >= 3) {
     badges.push({ id: "tag-3", title: "分类高手", description: "为 3 道题添加标签" });
+  }
+  if (streak >= 7) {
+    badges.push({ id: "streak-7", title: "周学习达人", description: "连续学习 7 天" });
+  }
+  if (streak >= 14) {
+    badges.push({ id: "streak-14", title: "学习马拉松", description: "连续学习 14 天" });
+  }
+  if (attempts.length >= 100) {
+    badges.push({ id: "practice-100", title: "百题挑战", description: "完成 100 道题" });
+  }
+  if (weekly.accuracy >= 90 && weekly.total >= 5) {
+    badges.push({ id: "accuracy-90", title: "精准射手", description: "近 7 天正确率 ≥ 90% 且至少 5 题" });
+  }
+  if (onboardingComplete) {
+    badges.push({ id: "onboarding-complete", title: "新手起步", description: "完成角色引导并熟悉核心功能" });
+  }
+  if (xpHistory.some((item) => item.source === "peer_teaching")) {
+    badges.push({ id: "peer-teacher", title: "同伴小老师", description: "完成一次 AI 学伴纠错讲解" });
   }
   return badges;
 }

@@ -165,6 +165,9 @@ CREATE TABLE IF NOT EXISTS questions (
   question_type TEXT DEFAULT 'choice',
   tags TEXT[] NOT NULL DEFAULT '{}',
   abilities TEXT[] NOT NULL DEFAULT '{}',
+  actual_difficulty INT,
+  needs_manual_review BOOLEAN NOT NULL DEFAULT false,
+  review_reason TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
 );
@@ -173,6 +176,9 @@ ALTER TABLE questions ADD COLUMN IF NOT EXISTS difficulty TEXT;
 ALTER TABLE questions ADD COLUMN IF NOT EXISTS question_type TEXT;
 ALTER TABLE questions ADD COLUMN IF NOT EXISTS tags TEXT[];
 ALTER TABLE questions ADD COLUMN IF NOT EXISTS abilities TEXT[];
+ALTER TABLE questions ADD COLUMN IF NOT EXISTS actual_difficulty INT;
+ALTER TABLE questions ADD COLUMN IF NOT EXISTS needs_manual_review BOOLEAN NOT NULL DEFAULT false;
+ALTER TABLE questions ADD COLUMN IF NOT EXISTS review_reason TEXT;
 ALTER TABLE questions ADD COLUMN IF NOT EXISTS created_at TIMESTAMPTZ;
 ALTER TABLE questions ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ;
 UPDATE questions
@@ -622,13 +628,15 @@ CREATE TABLE IF NOT EXISTS assignments (
   created_at TIMESTAMPTZ NOT NULL,
   submission_type TEXT NOT NULL DEFAULT 'quiz',
   max_uploads INT NOT NULL DEFAULT 3,
-  grading_focus TEXT
+  grading_focus TEXT,
+  target_student_ids TEXT[] NOT NULL DEFAULT '{}'
 );
 
 ALTER TABLE assignments ADD COLUMN IF NOT EXISTS module_id TEXT;
 ALTER TABLE assignments ADD COLUMN IF NOT EXISTS submission_type TEXT;
 ALTER TABLE assignments ADD COLUMN IF NOT EXISTS max_uploads INT;
 ALTER TABLE assignments ADD COLUMN IF NOT EXISTS grading_focus TEXT;
+ALTER TABLE assignments ADD COLUMN IF NOT EXISTS target_student_ids TEXT[] NOT NULL DEFAULT '{}';
 
 CREATE TABLE IF NOT EXISTS course_modules (
   id TEXT PRIMARY KEY,
@@ -820,6 +828,95 @@ CREATE TABLE IF NOT EXISTS assignment_submissions (
 
 ALTER TABLE assignment_submissions ADD COLUMN IF NOT EXISTS submission_text TEXT;
 ALTER TABLE IF EXISTS assignment_rubrics ADD COLUMN IF NOT EXISTS levels JSONB;
+
+CREATE TABLE IF NOT EXISTS student_mood_checkins (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  mood TEXT NOT NULL CHECK (mood IN ('good', 'neutral', 'tired')),
+  context TEXT,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS student_mood_user_idx ON student_mood_checkins (user_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS parent_encouragements (
+  id TEXT PRIMARY KEY,
+  parent_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  message TEXT NOT NULL,
+  read_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS parent_encouragements_student_idx
+  ON parent_encouragements (student_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS parent_student_goals (
+  id TEXT PRIMARY KEY,
+  parent_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  target_date TEXT NOT NULL,
+  knowledge_point_id TEXT,
+  completed_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS parent_student_goals_student_idx
+  ON parent_student_goals (student_id, created_at DESC);
+
+CREATE TABLE IF NOT EXISTS user_onboarding_progress (
+  user_id TEXT PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  completed_steps TEXT[] NOT NULL DEFAULT '{}',
+  completed_at TIMESTAMPTZ,
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS classroom_live_sessions (
+  id TEXT PRIMARY KEY,
+  class_id TEXT NOT NULL REFERENCES classes(id) ON DELETE CASCADE,
+  teacher_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  title TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'active',
+  current_prompt TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS classroom_live_sessions_class_idx
+  ON classroom_live_sessions (class_id, updated_at DESC);
+
+CREATE TABLE IF NOT EXISTS pbl_projects (
+  id TEXT PRIMARY KEY,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  subjects TEXT[] NOT NULL,
+  class_id TEXT REFERENCES classes(id) ON DELETE SET NULL,
+  created_by TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  featured BOOLEAN NOT NULL DEFAULT false,
+  rubric TEXT[] NOT NULL DEFAULT '{}',
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS pbl_tasks (
+  id TEXT PRIMARY KEY,
+  project_id TEXT NOT NULL REFERENCES pbl_projects(id) ON DELETE CASCADE,
+  subject TEXT NOT NULL,
+  title TEXT NOT NULL,
+  description TEXT NOT NULL,
+  sort_order INT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS pbl_submissions (
+  id TEXT PRIMARY KEY,
+  task_id TEXT NOT NULL REFERENCES pbl_tasks(id) ON DELETE CASCADE,
+  student_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  content TEXT NOT NULL,
+  ai_feedback TEXT,
+  score INT,
+  submitted_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (task_id, student_id)
+);
 
 CREATE TABLE IF NOT EXISTS exam_papers (
   id TEXT PRIMARY KEY,
@@ -1369,3 +1466,51 @@ CREATE TABLE IF NOT EXISTS admin_logs (
 
 CREATE INDEX IF NOT EXISTS admin_logs_admin_idx ON admin_logs (admin_id);
 CREATE INDEX IF NOT EXISTS admin_logs_created_idx ON admin_logs (created_at);
+
+CREATE TABLE IF NOT EXISTS kp_prerequisites (
+  id TEXT PRIMARY KEY,
+  knowledge_point_id TEXT NOT NULL REFERENCES knowledge_points(id) ON DELETE CASCADE,
+  prerequisite_id TEXT NOT NULL REFERENCES knowledge_points(id) ON DELETE CASCADE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (knowledge_point_id, prerequisite_id)
+);
+CREATE INDEX IF NOT EXISTS kp_prerequisites_kp_idx ON kp_prerequisites (knowledge_point_id);
+CREATE INDEX IF NOT EXISTS kp_prerequisites_prereq_idx ON kp_prerequisites (prerequisite_id);
+
+-- XP ledger (immutable transaction log)
+CREATE TABLE IF NOT EXISTS student_xp_ledger (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  amount INT NOT NULL,
+  source TEXT NOT NULL,
+  source_id TEXT,
+  description TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS student_xp_ledger_user_idx ON student_xp_ledger (user_id, created_at DESC);
+
+-- XP summary (materialized current state)
+CREATE TABLE IF NOT EXISTS student_xp_summary (
+  user_id TEXT PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  total_xp INT NOT NULL DEFAULT 0,
+  level INT NOT NULL DEFAULT 1,
+  rank_title TEXT NOT NULL DEFAULT '学习新星',
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Daily challenges
+CREATE TABLE IF NOT EXISTS daily_challenges (
+  id TEXT PRIMARY KEY,
+  user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  challenge_date TEXT NOT NULL,
+  question_ids TEXT[] NOT NULL,
+  time_limit_seconds INT NOT NULL DEFAULT 180,
+  answers JSONB,
+  score INT,
+  total INT,
+  bonus_xp INT NOT NULL DEFAULT 0,
+  completed_at TIMESTAMPTZ,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  UNIQUE (user_id, challenge_date)
+);
+CREATE INDEX IF NOT EXISTS daily_challenges_user_date_idx ON daily_challenges (user_id, challenge_date DESC);

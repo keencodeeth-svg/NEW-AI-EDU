@@ -31,12 +31,6 @@ const SUBJECT_LABELS = {
   english: "英语"
 };
 
-const GRADE_LABELS = {
-  "4": "四年级",
-  "7": "七年级",
-  "10": "高一"
-};
-
 const CLASS_SECTION = {
   "4": "2",
   "7": "3",
@@ -98,10 +92,6 @@ const KNOWLEDGE_POINT_TEMPLATES = {
 
 function now() {
   return new Date();
-}
-
-function iso(value) {
-  return new Date(value).toISOString();
 }
 
 function shiftTime({ days = 0, hours = 0, minutes = 0, atHour, atMinute = 0, anchor = now() }) {
@@ -576,7 +566,7 @@ function buildProgressAndSubmissions({ classes, assignments, assignmentItems, as
     assignmentRubricsByAssignment.get(rubric.assignmentId).push(rubric);
   });
 
-  assignments.forEach((assignment, assignmentIndex) => {
+  assignments.forEach((assignment) => {
     const klass = classById.get(assignment.classId);
     const roster = rosterByClassId.get(assignment.classId) ?? [];
     const quizItems = assignmentItemsByAssignment.get(assignment.id) ?? [];

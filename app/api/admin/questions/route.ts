@@ -85,6 +85,9 @@ type DbQuestionListRow = {
   question_type: string | null;
   tags: string[] | null;
   abilities: string[] | null;
+  actual_difficulty: number | null;
+  needs_manual_review: boolean | null;
+  review_reason: string | null;
 };
 
 type DbFacetRow = {
@@ -214,7 +217,10 @@ function mapDbQuestion(row: DbQuestionListRow): Question {
     difficulty,
     questionType: normalizeQuestionType(row.question_type),
     tags: row.tags ?? [],
-    abilities: row.abilities ?? []
+    abilities: row.abilities ?? [],
+    actualDifficulty: row.actual_difficulty,
+    needsManualReview: Boolean(row.needs_manual_review),
+    reviewReason: row.review_reason
   };
 }
 
@@ -404,7 +410,10 @@ async function listQuestionsFromDb(filters: ListQuestionsFilters) {
         q.difficulty,
         COALESCE(NULLIF(LOWER(BTRIM(q.question_type)), ''), 'choice') AS question_type,
         q.tags,
-        q.abilities
+        q.abilities,
+        NULLIF(to_jsonb(q)->>'actual_difficulty', '')::double precision AS actual_difficulty,
+        NULLIF(to_jsonb(q)->>'needs_manual_review', '')::boolean AS needs_manual_review,
+        NULLIF(to_jsonb(q)->>'review_reason', '') AS review_reason
       ${fromSql}
       ${whereSql}
       ${orderSql}

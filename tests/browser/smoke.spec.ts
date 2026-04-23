@@ -65,6 +65,20 @@ type LibraryListResponse = {
   }>;
 };
 
+type ProjectListResponse = {
+  data?: Array<{
+    id: string;
+    title: string;
+    description: string;
+    featured: boolean;
+    tasks: Array<{
+      id: string;
+      title: string;
+      subject: string;
+    }>;
+  }>;
+};
+
 function uniqueId(prefix: string) {
   return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 }
@@ -610,6 +624,191 @@ test.describe("browser smoke", () => {
     await firstActionItem.locator('[data-testid^="parent-action-done-assignment_plan-"]').click();
 
     await expect(status).toContainText("已打卡");
+  });
+
+  test("parent can send encouragement and student can acknowledge it on the dashboard", async ({ page }) => {
+    const studentEmail = `${uniqueId("encourage-student")}@local.test`;
+    const parentEmail = `${uniqueId("encourage-parent")}@local.test`;
+    const encouragementMessage = `今天先把最关键的一步做完-${uniqueId("msg")}`;
+    const weeklyGoal = `本周把分数应用题的已知量和问题圈出来-${uniqueId("goal")}`;
+    const targetDate = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10);
+
+    await page.goto("/register?role=student");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "Encouragement Student"
+    });
+    await loginByApi(page, {
+      email: studentEmail,
+      role: "student"
+    });
+    const observerCode = await getObserverCode(page);
+
+    await page.goto("/register?role=parent");
+    await registerParent(page, {
+      email: parentEmail,
+      name: "Encouragement Parent",
+      observerCode
+    });
+
+    await page.goto("/login?role=parent");
+    await page.getByLabel("邮箱").fill(parentEmail);
+    await page.getByLabel("密码").fill(PASSWORD);
+    await Promise.all([page.waitForURL("**/parent"), page.getByRole("button", { name: "登录" }).click()]);
+
+    await expect(page.getByRole("heading", { name: "家长空间" })).toBeVisible({ timeout: 15_000 });
+
+    await page
+      .getByPlaceholder("例如：本周把分数运算讲明白并完成 6 道巩固题")
+      .fill(weeklyGoal);
+    await page.locator('input[type="date"]').first().fill(targetDate);
+    await page.getByRole("button", { name: "保存目标" }).click();
+    await expect(page.getByText("本周目标已保存，后续可以围绕这个目标安排今晚的陪伴。")).toBeVisible({
+      timeout: 15_000
+    });
+
+    await page.getByPlaceholder("写一句今晚想对孩子说的话").fill(encouragementMessage);
+    await page.getByRole("button", { name: "发送鼓励" }).click();
+    await expect(page.getByText("鼓励卡片已经送到学生端首页。")).toBeVisible({ timeout: 15_000 });
+
+    await page.goto("/login?role=student");
+    await page.getByLabel("邮箱").fill(studentEmail);
+    await page.getByLabel("密码").fill(PASSWORD);
+    await Promise.all([page.waitForURL("**/student"), page.getByRole("button", { name: "登录" }).click()]);
+
+    await expect(page.getByText("来自家长的鼓励")).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator("body")).toContainText(encouragementMessage, { timeout: 15_000 });
+
+    await page.getByRole("button", { name: "已看到" }).click();
+    await expect(page.getByText("来自家长的鼓励")).toHaveCount(0);
+  });
+
+  test("teacher can generate a lesson plan and open the classroom live dashboard", async ({ page }) => {
+    const teacherEmail = `${uniqueId("lesson-teacher")}@local.test`;
+    const studentEmail = `${uniqueId("lesson-student")}@local.test`;
+    const className = `PW Lesson Class ${uniqueId("cls")}`;
+    const topic = `PW Lesson Topic ${uniqueId("topic")}`;
+
+    await page.goto("/login");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "Lesson Student"
+    });
+
+    await page.goto("/login?role=teacher");
+    await registerTeacherByApi(page, {
+      email: teacherEmail,
+      name: "Lesson Teacher"
+    });
+    const classId = await createClass(page, {
+      name: className,
+      subject: "math",
+      grade: "5"
+    });
+    await addStudentToClass(page, {
+      classId,
+      email: studentEmail
+    });
+
+    await page.goto("/teacher/lesson-planner");
+    await expect(page.getByRole("heading", { name: "AI 备课助手" })).toBeVisible({ timeout: 15_000 });
+
+    await page.getByLabel("主题").fill(topic);
+    await page.getByRole("button", { name: "生成备课方案" }).click();
+
+    await expect(page.locator("body")).toContainText("常见错误预测", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("课堂互动设计", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("分层作业建议", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("教学反思提示", { timeout: 15_000 });
+
+    await page.goto("/teacher/classroom-live");
+    await expect(page.getByRole("heading", { name: "课堂实时仪表盘" })).toBeVisible({ timeout: 15_000 });
+
+    await page.getByRole("button", { name: "发起课堂练习" }).click();
+
+    await expect(page.locator("body")).toContainText("推进到下一题", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("已作答 / 总人数", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("0/1", { timeout: 15_000 });
+
+    await page.getByRole("button", { name: "推进到下一题" }).click();
+    await expect(page.locator("body")).toContainText("老师已切换到下一题，请同学们继续作答。", {
+      timeout: 15_000
+    });
+  });
+
+  test("teacher and student can complete a featured PBL workflow", async ({ page }) => {
+    const teacherEmail = `${uniqueId("pbl-teacher")}@local.test`;
+    const studentEmail = `${uniqueId("pbl-student")}@local.test`;
+    const topic = `PW PBL Topic ${uniqueId("topic")}`;
+    const submission = `我先从校园能耗记录入手，整理了照明、空调和用水三个环节的观察结论。-${uniqueId("sub")}`;
+
+    await page.goto("/login");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "PBL Student"
+    });
+
+    await page.goto("/login?role=teacher");
+    await registerTeacherByApi(page, {
+      email: teacherEmail,
+      name: "PBL Teacher"
+    });
+
+    const beforeProjects = await getJson<ProjectListResponse>(page, "/api/projects");
+    expectApiOk(beforeProjects, "project list should load before pbl creation");
+    const initialProjectCount = beforeProjects.body?.data?.length ?? 0;
+
+    await page.goto("/teacher/projects");
+    await expect(page.getByRole("heading", { name: "项目式学习" })).toBeVisible({ timeout: 15_000 });
+
+    await page.getByPlaceholder("例如：设计一座节能校园").fill(topic);
+    await page.getByPlaceholder("学科用逗号分隔").fill("科学, 语文, 美术");
+    await page.getByRole("button", { name: "AI 生成项目骨架" }).click();
+
+    await expect
+      .poll(
+        async () => {
+          const projects = await getJson<ProjectListResponse>(page, "/api/projects");
+          return projects.body?.data?.length ?? 0;
+        },
+        { timeout: 15_000 }
+      )
+      .toBeGreaterThan(initialProjectCount);
+
+    const afterProjects = await getJson<ProjectListResponse>(page, "/api/projects");
+    expectApiOk(afterProjects, "project list should load after pbl creation");
+    const createdProject = afterProjects.body?.data?.[0];
+    expect(createdProject?.id, "latest pbl project should expose id").toBeTruthy();
+    expect(createdProject?.tasks?.length ?? 0, "latest pbl project should expose tasks").toBeGreaterThan(0);
+
+    await expect(page.locator("body")).toContainText(createdProject?.title ?? "", { timeout: 15_000 });
+
+    await page.getByRole("button", { name: "设为展示项目" }).first().click();
+    await expect(page.getByRole("button", { name: "取消展示" }).first()).toBeVisible({ timeout: 15_000 });
+
+    await loginByApi(page, {
+      email: studentEmail,
+      role: "student"
+    });
+
+    await page.goto("/student/projects");
+    await expect(page.getByRole("heading", { name: "项目式学习空间" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator("body")).toContainText(createdProject?.title ?? "", { timeout: 15_000 });
+    await expect(page.locator("body")).toContainText("展示项目", { timeout: 15_000 });
+
+    const projectCard = page
+      .locator("div.card")
+      .filter({ hasText: createdProject?.title ?? "" })
+      .filter({ has: page.getByRole("button", { name: "提交这一阶段成果" }) })
+      .first();
+    await expect(projectCard).toBeVisible({ timeout: 15_000 });
+
+    const firstTaskInput = projectCard.locator("textarea").first();
+    await firstTaskInput.fill(submission);
+    await projectCard.getByRole("button", { name: "提交这一阶段成果" }).first().click();
+
+    await expect(projectCard).toContainText("过程得分", { timeout: 15_000 });
+    await expect(projectCard.locator(".status-note").first()).toBeVisible({ timeout: 15_000 });
   });
 
   test("user can submit an account recovery request", async ({ page }) => {

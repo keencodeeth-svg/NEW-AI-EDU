@@ -1,0 +1,366 @@
+version: "1"
+
+meta:
+  title: "NEW-AI-EDU 产品全景 Demo"
+  description: "一次性展示学生、家长、教师与管理端的核心产品细节"
+  resolution: { width: 1440, height: 900 }
+  fps: 30
+  output: "./output/new-ai-edu-product-showcase.mp4"
+
+target:
+  url: "http://127.0.0.1:3000"
+  startCommand: "corepack pnpm dev"
+  startTimeout: 60000
+  readyWhen: "url:http://127.0.0.1:3000/api/health"
+
+voiceover:
+  provider: "say"
+  config:
+    voice: "Tingting"
+    rate: 138
+
+scenes:
+  - id: "intro"
+    type: "title"
+    title: "NEW-AI-EDU 产品全景 Demo"
+    subtitle: "一次录完学生、家长、教师与管理端主路径"
+    narration: "下面我们用一条完整录制，连续展示 NEW-AI-EDU 的学生端、家长端、教师端和管理端，重点看每个角色最核心的工作路径与产品细节。"
+
+  - id: "student-title"
+    type: "title"
+    title: "学生端"
+    subtitle: "先开工，再进入互动课堂"
+    narration: "首先看学生端。学生首页不会先堆满报表，而是先给出今天最值得开始的动作，再把任务队列、成长闭环和互动课堂入口自然接上。"
+
+  - id: "student-dashboard"
+    type: "interaction"
+    narration: "我们先切到学生身份。登录后首屏先聚焦今日动作中心，再把自主学习入口、任务队列和成长闭环按执行顺序展开，让学生很快开始当天任务。"
+    steps:
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/login"
+        body:
+          email: "student@demo.com"
+          password: "Student123"
+          role: "student"
+        expectedStatus: 200
+      - action: "navigate"
+        url: "/student"
+      - action: "wait"
+        selector: "#student-action-center"
+      - action: "highlight"
+        selector: "#student-action-center"
+        duration: 1800
+      - action: "highlight"
+        selector: "#student-self-study-entry"
+        duration: 1700
+      - action: "scroll"
+        selector: "#student-task-queue"
+        smooth: true
+      - action: "highlight"
+        selector: "#student-task-queue"
+        duration: 1700
+      - action: "click"
+        selector: "#student-task-queue > summary"
+      - action: "pause"
+        duration: 1200
+      - action: "scroll"
+        selector: "#student-growth-center"
+        smooth: true
+      - action: "click"
+        selector: "#student-growth-center > summary"
+      - action: "highlight"
+        selector: "#student-growth-center"
+        duration: 1700
+
+  - id: "student-classroom"
+    type: "interaction"
+    narration: "继续进入学生自主互动课堂。学生只要输入当前主题，就能一键发起预习、巩固、兴趣探索或课堂回看，把首页任务和互动课堂直接连成一条学习主线。"
+    steps:
+      - action: "navigate"
+        url: "/student/interactive-classroom"
+      - action: "wait"
+        selector: "[data-testid='student-self-study-topic']"
+      - action: "type"
+        selector: "[data-testid='student-self-study-topic']"
+        value: "圆柱的表面积"
+        typeDelay: 75
+      - action: "pause"
+        duration: 900
+      - action: "highlight"
+        selector: "[data-testid='student-self-study-topic']"
+        duration: 1700
+      - action: "highlight"
+        selector: "[data-testid='student-self-study-launch']"
+        duration: 1800
+      - action: "pause"
+        duration: 1500
+
+  - id: "parent-title"
+    type: "title"
+    title: "家长端"
+    subtitle: "把看报告变成今晚先做什么"
+    narration: "接着看家长端。这里不是让家长先读完所有报表，而是先告诉家长今晚先做什么，再补充周报、薄弱点、订正和收藏题，帮助家长真正完成陪伴闭环。"
+
+  - id: "parent-dashboard"
+    type: "interaction"
+    narration: "我们切到家长身份后，可以看到首页先聚焦今晚第一步，然后把订正、作业、周报、薄弱点和低压力复盘按跟进顺序摆出来，让家长先行动，再看全貌。"
+    steps:
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/logout"
+        expectedStatus: 200
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/login"
+        body:
+          email: "parent@demo.com"
+          password: "Parent123"
+          role: "parent"
+        expectedStatus: 200
+      - action: "navigate"
+        url: "/parent"
+      - action: "wait"
+        selector: "#parent-action-center"
+      - action: "highlight"
+        selector: "#parent-action-center"
+        duration: 1700
+      - action: "scroll"
+        selector: "#parent-corrections"
+        smooth: true
+      - action: "highlight"
+        selector: "#parent-corrections"
+        duration: 1500
+      - action: "highlight"
+        selector: "#parent-assignments"
+        duration: 1500
+      - action: "scroll"
+        selector: "#parent-weekly-report"
+        smooth: true
+      - action: "highlight"
+        selector: "#parent-weekly-report"
+        duration: 1600
+      - action: "highlight"
+        selector: "#parent-weak-points"
+        duration: 1600
+      - action: "scroll"
+        selector: "#parent-favorites"
+        smooth: true
+      - action: "highlight"
+        selector: "#parent-favorites"
+        duration: 1700
+
+  - id: "teacher-title"
+    type: "title"
+    title: "教师端"
+    subtitle: "先清阻塞，再进入教学执行"
+    narration: "再看教师端。教师首页会先把今日第一步、作业发布和真实班级执行入口放前面，再把教学盘面、风险预警和资产台账折叠起来，帮助老师快速进入教学执行。"
+
+  - id: "teacher-dashboard"
+    type: "interaction"
+    narration: "切到教师身份后，先看到今日动作中心，然后进入作业发布区。接着展开教学盘面与上下文，再展开班级和作业台账，把执行动作、风险判断和真实资产串成同一条主线。"
+    steps:
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/logout"
+        expectedStatus: 200
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/login"
+        body:
+          email: "teacher@demo.com"
+          password: "Teacher123"
+          role: "teacher"
+        expectedStatus: 200
+      - action: "navigate"
+        url: "/teacher"
+      - action: "wait"
+        selector: "#teacher-action-center"
+      - action: "highlight"
+        selector: "#teacher-action-center"
+        duration: 1600
+      - action: "scroll"
+        selector: "#teacher-compose-assignment"
+        smooth: true
+      - action: "highlight"
+        selector: "#teacher-compose-assignment"
+        duration: 1700
+      - action: "click"
+        selector: "#teacher-context-layers > summary"
+      - action: "pause"
+        duration: 1100
+      - action: "highlight"
+        selector: "#teacher-context-layers"
+        duration: 1700
+      - action: "click"
+        selector: "#teacher-assets-center > summary"
+      - action: "pause"
+        duration: 1100
+      - action: "highlight"
+        selector: "#teacher-class-list"
+        duration: 1600
+      - action: "highlight"
+        selector: "#teacher-assets-center"
+        duration: 1500
+
+  - id: "teacher-analysis"
+    type: "interaction"
+    narration: "教师还可以直接进入分析页，把告警、因果分析和热力图放在一起看，从课堂执行自然过渡到学情判断，而不是在不同系统之间来回切换。"
+    steps:
+      - action: "navigate"
+        url: "/teacher/analysis"
+      - action: "wait"
+        selector: "#analysis-alerts"
+      - action: "highlight"
+        selector: "#analysis-alerts"
+        duration: 1600
+      - action: "highlight"
+        selector: "#analysis-causality"
+        duration: 1600
+      - action: "scroll"
+        selector: "#analysis-heatmap"
+        smooth: true
+      - action: "highlight"
+        selector: "#analysis-heatmap"
+        duration: 1800
+
+  - id: "teacher-ai-tools"
+    type: "interaction"
+    narration: "在教师 AI 工具页，系统把课堂面板和发起入口收在一起。老师不需要重新组织上下文，就能直接发起 AI 课堂相关动作。"
+    steps:
+      - action: "navigate"
+        url: "/teacher/ai-tools"
+      - action: "wait"
+        selector: "[data-testid='teacher-ai-tools-classroom-panel']"
+      - action: "highlight"
+        selector: "[data-testid='teacher-ai-tools-classroom-panel']"
+        duration: 1800
+      - action: "highlight"
+        selector: "[data-testid='teacher-launch-ai-classroom']"
+        duration: 1800
+      - action: "pause"
+        duration: 1200
+
+  - id: "admin-title"
+    type: "title"
+    title: "管理端"
+    subtitle: "把运营、模型与上线准备串起来"
+    narration: "最后看管理端。这里不仅管理题库和知识点，还把 AI 模型路由、可观测性和上线准备统一纳入一个闭环，方便运营、技术和发布协同。"
+
+  - id: "admin-overview"
+    type: "interaction"
+    narration: "切到管理员身份后，可以先看到管理控制台总览，再从这里进入 AI 模型中心和上线准备中心，把资料、运营、发布和平台健康收在同一张管理地图里。"
+    steps:
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/logout"
+        expectedStatus: 200
+      - action: "request"
+        method: "POST"
+        path: "/api/auth/login"
+        body:
+          email: "admin@demo.com"
+          password: "Admin123"
+          role: "admin"
+        expectedStatus: 200
+      - action: "navigate"
+        url: "/admin"
+      - action: "wait"
+        selector: "h2:has-text('管理控制台')"
+      - action: "highlight"
+        selector: "h2:has-text('管理控制台')"
+        duration: 1500
+      - action: "highlight"
+        selector: "text=打开模型中心"
+        duration: 1500
+      - action: "highlight"
+        selector: "text=打开上线准备中心"
+        duration: 1500
+      - action: "scroll"
+        selector: "text=接口可观测性"
+        smooth: true
+      - action: "highlight"
+        selector: "text=接口可观测性"
+        duration: 1500
+      - action: "highlight"
+        selector: "text=观测告警"
+        duration: 1600
+
+  - id: "admin-ai-models"
+    type: "interaction"
+    narration: "进入 AI 模型路由中心后，可以看到后台托管密钥、任务策略、离线评测与质量校准、评测门禁和调用指标。这让模型配置不再散落在不同页面里。"
+    steps:
+      - action: "navigate"
+        url: "/admin/ai-models"
+      - action: "wait"
+        selector: "h2:has-text('AI 模型路由中心')"
+      - action: "highlight"
+        selector: "h2:has-text('AI 模型路由中心')"
+        duration: 1500
+      - action: "scroll"
+        selector: "div.section-title:has-text('任务策略')"
+        smooth: true
+      - action: "highlight"
+        selector: "div.section-title:has-text('任务策略')"
+        duration: 1600
+      - action: "scroll"
+        selector: "div.section-title:has-text('离线评测与质量校准')"
+        smooth: true
+      - action: "highlight"
+        selector: "div.section-title:has-text('离线评测与质量校准')"
+        duration: 1700
+      - action: "scroll"
+        selector: "div.section-title:has-text('AI 调用指标')"
+        smooth: true
+      - action: "highlight"
+        selector: "div.section-title:has-text('AI 调用指标')"
+        duration: 1700
+
+  - id: "admin-launch-readiness"
+    type: "interaction"
+    narration: "上线准备中心会把当前结论、阻断项、预警项、逐项检查和运行时依赖明细压成统一报告。发布前先看这一页，就能快速判断当前环境是否适合上线。"
+    steps:
+      - action: "navigate"
+        url: "/admin/launch-readiness"
+      - action: "wait"
+        selector: "h2:has-text('上线准备中心')"
+      - action: "highlight"
+        selector: "div.section-title:has-text('当前结论')"
+        duration: 1500
+      - action: "highlight"
+        selector: "div.section-title:has-text('上线前优先处理')"
+        duration: 1500
+      - action: "highlight"
+        selector: "div.section-title:has-text('建议继续收敛')"
+        duration: 1500
+      - action: "scroll"
+        selector: "div.section-title:has-text('逐项检查')"
+        smooth: true
+      - action: "highlight"
+        selector: "div.section-title:has-text('逐项检查')"
+        duration: 1700
+      - action: "scroll"
+        selector: "div.section-title:has-text('运行时依赖明细')"
+        smooth: true
+      - action: "highlight"
+        selector: "div.section-title:has-text('运行时依赖明细')"
+        duration: 1700
+
+  - id: "outro"
+    type: "title"
+    title: "一条视频看完整个平台"
+    subtitle: "角色主路径、AI 能力与上线闭环已经串起来"
+    narration: "通过这一条连续录制，我们把学生、家长、教师和管理端的核心主路径全部串了起来，既能讲清楚业务逻辑，也能完整展示平台细节。"
+
+transitions:
+  default: "cut"
+  duration: 300
+
+style:
+  highlight:
+    color: "rgba(34, 197, 94, 0.2)"
+    borderRadius: 18
+  captions:
+    enabled: true
+    position: "bottom"
+    fontSize: 24

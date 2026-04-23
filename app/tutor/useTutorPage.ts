@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
+import type { HintTier } from "@/lib/ai-types";
 import { MAX_IMAGE_COUNT } from "./config";
 import { buildTutorStageState } from "./tutorStageState";
 import { useTutorEntrySync } from "./useTutorEntrySync";
@@ -12,6 +13,7 @@ import { useTutorPageState } from "./useTutorPageState";
 import { useTutorShareResult } from "./useTutorShareResult";
 import { useTutorSolveFlow } from "./useTutorSolveFlow";
 import { useTutorVariantTraining } from "./useTutorVariantTraining";
+import { requestTutorCoach } from "./tutorRequests";
 import { resolveTutorModeLabels } from "./tutorPageUtils";
 
 export function useTutorPage() {
@@ -163,12 +165,101 @@ export function useTutorPage() {
     setAnswerMode: pageState.setAnswerMode
   });
 
+  // Scaffolding state
+  const [maxUnlockedHintTier, setMaxUnlockedHintTier] = useState<HintTier>(1);
+  const [loadingHintTier, setLoadingHintTier] = useState(false);
+  const [metacognitionSubmitted, setMetacognitionSubmitted] = useState(false);
+  const [metacognitionAttribution, setMetacognitionAttribution] = useState<string | null>(null);
+  const [loadingMetacognition, setLoadingMetacognition] = useState(false);
+  const [correctStreakCount, setCorrectStreakCount] = useState(0);
+  const [showStreakCelebration, setShowStreakCelebration] = useState(false);
+
+  // Reset scaffolding state when answer changes
+  useEffect(() => {
+    setMaxUnlockedHintTier(1);
+    setMetacognitionSubmitted(false);
+    setMetacognitionAttribution(null);
+  }, [answer?.recognizedQuestion]);
+
+  const handleRequestHintTier = useCallback(async (tier: HintTier) => {
+    if (!answer || loading) return;
+    setLoadingHintTier(true);
+    try {
+      const result = await requestTutorCoach({
+        question: answer.recognizedQuestion ?? pageState.question,
+        subject: pageState.subject,
+        grade: pageState.grade,
+        origin: "text",
+        studentAnswer: studyThinking || undefined,
+        hintTier: tier
+      });
+      setAnswer(result);
+      setMaxUnlockedHintTier((prev) => Math.max(prev, tier) as HintTier);
+    } catch {
+      // Hint request failure should not disrupt the flow
+    } finally {
+      setLoadingHintTier(false);
+    }
+  }, [answer, loading, pageState.question, pageState.subject, pageState.grade, studyThinking, setAnswer]);
+
+  const handleSubmitMetacognition = useCallback(async (attribution: string) => {
+    if (!answer || loading) return;
+    setLoadingMetacognition(true);
+    try {
+      const result = await requestTutorCoach({
+        question: answer.recognizedQuestion ?? pageState.question,
+        subject: pageState.subject,
+        grade: pageState.grade,
+        origin: "text",
+        studentAnswer: studyThinking || undefined,
+        metacognition: true,
+        metacognitionAttribution: attribution
+      });
+      setAnswer(result);
+      setMetacognitionSubmitted(true);
+      setMetacognitionAttribution(attribution);
+    } catch {
+      // Metacognition failure should not disrupt the flow
+    } finally {
+      setLoadingMetacognition(false);
+    }
+  }, [answer, loading, pageState.question, pageState.subject, pageState.grade, studyThinking, setAnswer]);
+
   useEffect(() => {
     if (!answer) return;
     requestAnimationFrame(() => {
       pageState.answerSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }, [answer, pageState.answerSectionRef]);
+
+  useEffect(() => {
+    if (!answer || answer.stage !== "reveal") {
+      return;
+    }
+    const signal = `${answer.feedback ?? ""} ${answer.coachReply ?? ""}`;
+    const isPositive = /(正确|做对|不错|很好|答对|清晰|扎实)/.test(signal);
+    if (!isPositive) {
+      setCorrectStreakCount(0);
+      return;
+    }
+    setCorrectStreakCount((prev) => {
+      const next = prev + 1;
+      if (next >= 3) {
+        setShowStreakCelebration(true);
+      }
+      return next;
+    });
+  }, [answer]);
+
+  useEffect(() => {
+    if (!showStreakCelebration) {
+      return;
+    }
+    const timer = window.setTimeout(() => {
+      setShowStreakCelebration(false);
+    }, 3000);
+    return () => window.clearTimeout(timer);
+  }, [showStreakCelebration]);
 
   const {
     focusComposerInput,
@@ -345,7 +436,20 @@ export function useTutorPage() {
           onVariantSubmit: handleVariantSubmit,
           onLoadVariantReflection: () => {
             void loadVariantReflection("manual");
-          }
+          },
+          maxUnlockedHintTier,
+          loadingHintTier,
+          metacognitionSubmitted,
+          metacognitionAttribution,
+          loadingMetacognition,
+          onRequestHintTier: (tier: HintTier) => {
+            void handleRequestHintTier(tier);
+          },
+          onSubmitMetacognition: (attribution: string) => {
+            void handleSubmitMetacognition(attribution);
+          },
+          correctStreakCount,
+          showStreakCelebration
         }
       : null,
     historyCardProps: {

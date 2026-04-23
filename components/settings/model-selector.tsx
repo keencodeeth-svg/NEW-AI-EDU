@@ -21,7 +21,10 @@ import { useI18n } from '@/lib/hooks/use-i18n';
 import type { ProviderId } from '@/lib/ai/providers';
 import type { ProvidersConfig } from '@/lib/types/settings';
 import { formatContextWindow } from './utils';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import {
+  getClientProviderRequestConfig,
+  getClientProviderUiState,
+} from '@/lib/provider-request-config';
 
 interface ModelSelectorProps {
   providerId: ProviderId;
@@ -70,12 +73,15 @@ export function ModelSelector({
   // - Has at least one model
   // - Has baseUrl or defaultBaseUrl configured
   const configuredProviders = Object.entries(providersConfig)
-    .filter(
-      ([, config]) =>
-        (!config.requiresApiKey || config.apiKey || config.isServerConfigured) &&
+    .filter(([, config]) => {
+      const requestConfig = getClientProviderRequestConfig(config);
+      const uiState = getClientProviderUiState(config, config.defaultBaseUrl);
+      return (
+        (!config.requiresApiKey || requestConfig.apiKey || config.isServerConfigured) &&
         config.models.length >= 1 &&
-        (config.baseUrl || config.defaultBaseUrl || config.serverBaseUrl),
-    )
+        uiState.effectiveBaseUrl
+      );
+    })
     .map(([id, config]) => ({
       id: id as ProviderId,
       name: config.name,

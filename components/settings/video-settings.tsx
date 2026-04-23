@@ -21,7 +21,8 @@ import {
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { VideoProviderId } from '@/lib/media/types';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 interface VideoSettingsProps {
   selectedProviderId: VideoProviderId;
@@ -60,6 +61,10 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
     [currentConfig?.customModels],
   );
   const isServerConfigured = !!currentConfig?.isServerConfigured;
+  const { canEditSecrets, effectiveBaseUrl, requestConfig } = useMemo(
+    () => getClientProviderUiState(currentConfig, currentProvider?.defaultBaseUrl),
+    [currentConfig, currentProvider?.defaultBaseUrl],
+  );
 
   const handleApiKeyChange = (apiKey: string) => {
     setVideoProviderConfig(selectedProviderId, { apiKey });
@@ -74,7 +79,6 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
     setTestStatus('idle');
     setTestMessage('');
     try {
-      const requestConfig = getClientProviderRequestConfig(currentConfig);
       const response = await fetch('/api/verify-video-provider', {
         method: 'POST',
         headers: {
@@ -142,12 +146,10 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {isServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={isServerConfigured}
+        browserOverridesDisabled={!canEditSecrets}
+      />
 
       {/* API Key + Test inline */}
       <div className="space-y-2">
@@ -162,19 +164,23 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
               autoCorrect="off"
               spellCheck={false}
               placeholder={
-                isServerConfigured
-                  ? t('settings.optionalOverride')
-                  : selectedProviderId === 'kling'
-                    ? 'accessKey:secretKey'
-                    : t('settings.enterApiKey')
+                canEditSecrets
+                  ? isServerConfigured
+                    ? t('settings.optionalOverride')
+                    : selectedProviderId === 'kling'
+                      ? 'accessKey:secretKey'
+                      : t('settings.enterApiKey')
+                  : t('settings.browserOverridesDisabledShort')
               }
               value={currentConfig?.apiKey || ''}
               onChange={(e) => handleApiKeyChange(e.target.value)}
+              disabled={!canEditSecrets}
               className="h-8 pr-8"
             />
             <button
               type="button"
               onClick={() => setShowApiKey(!showApiKey)}
+              disabled={!canEditSecrets}
               className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
             >
               {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -184,7 +190,7 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
             variant="outline"
             size="sm"
             onClick={handleTest}
-            disabled={testLoading || (!currentConfig?.apiKey && !isServerConfigured)}
+            disabled={testLoading || (!requestConfig.apiKey && !isServerConfigured)}
             className="gap-1.5"
           >
             {testLoading ? (
@@ -228,19 +234,17 @@ export function VideoSettings({ selectedProviderId }: VideoSettingsProps) {
           spellCheck={false}
           value={currentConfig?.baseUrl || ''}
           onChange={(e) => handleBaseUrlChange(e.target.value)}
+          disabled={!canEditSecrets}
           placeholder={
-            currentConfig?.serverBaseUrl ||
-            currentProvider?.defaultBaseUrl ||
-            t('settings.enterCustomBaseUrl')
+            canEditSecrets
+              ? currentConfig?.serverBaseUrl ||
+                currentProvider?.defaultBaseUrl ||
+                t('settings.enterCustomBaseUrl')
+              : t('settings.browserOverridesDisabledShort')
           }
           className="h-8"
         />
         {(() => {
-          const effectiveBaseUrl =
-            currentConfig?.baseUrl ||
-            currentConfig?.serverBaseUrl ||
-            currentProvider?.defaultBaseUrl ||
-            '';
           if (!effectiveBaseUrl) return null;
           return (
             <p className="text-xs text-muted-foreground break-all">

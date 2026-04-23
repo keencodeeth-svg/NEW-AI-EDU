@@ -1,4 +1,6 @@
 const isProduction = process.env.NODE_ENV === "production";
+const extraFrameAncestors = process.env.ALLOWED_FRAME_ANCESTORS?.trim();
+const frameAncestors = extraFrameAncestors ? `'self' ${extraFrameAncestors}` : "'self'";
 
 function buildContentSecurityPolicy() {
   const directives = [
@@ -14,7 +16,7 @@ function buildContentSecurityPolicy() {
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
-    "frame-ancestors 'self'",
+    `frame-ancestors ${frameAncestors}`,
     ...(isProduction ? ["upgrade-insecure-requests"] : []),
   ];
 
@@ -34,10 +36,14 @@ const securityHeaders = [
     key: "X-Content-Type-Options",
     value: "nosniff",
   },
-  {
-    key: "X-Frame-Options",
-    value: "SAMEORIGIN",
-  },
+  ...(!extraFrameAncestors
+    ? [
+        {
+          key: "X-Frame-Options",
+          value: "SAMEORIGIN",
+        },
+      ]
+    : []),
   {
     key: "Permissions-Policy",
     value: "camera=(self), microphone=(self), geolocation=(), browsing-topics=()",

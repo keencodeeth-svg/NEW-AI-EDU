@@ -60,9 +60,7 @@ export function usePBLChat({ projectConfig, userRole, onConfigUpdate }: UsePBLCh
         const headers: Record<string, string> = {
           'Content-Type': 'application/json',
           'x-model': modelConfig.modelString,
-          'x-api-key': modelConfig.apiKey,
         };
-        if (modelConfig.baseUrl) headers['x-base-url'] = modelConfig.baseUrl;
         if (modelConfig.providerType) headers['x-provider-type'] = modelConfig.providerType;
         if (modelConfig.requiresApiKey) headers['x-requires-api-key'] = 'true';
 

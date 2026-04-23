@@ -66,6 +66,7 @@ export function useTeacherDashboardPageState() {
     difficulty: "medium",
     questionType: "choice",
     submissionType: "quiz",
+    differentiated: false,
     maxUploads: 3,
     gradingFocus: ""
   });

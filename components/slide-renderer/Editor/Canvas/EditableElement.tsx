@@ -8,6 +8,7 @@ import { ChartElement } from '../../components/element/ChartElement';
 import { LatexElement } from '../../components/element/LatexElement';
 import { TableElement } from '../../components/element/TableElement';
 import { VideoElement } from '../../components/element/VideoElement';
+import { BaseCodeElement } from '../../components/element/CodeElement/BaseCodeElement';
 import {
   ContextMenu,
   ContextMenuContent,
@@ -62,6 +63,7 @@ export function EditableElement({
       [ElementTypes.LATEX]: LatexElement,
       [ElementTypes.TABLE]: TableElement,
       [ElementTypes.VIDEO]: VideoElement,
+      [ElementTypes.CODE]: BaseCodeElement,
       // TODO: Add other element types
       // [ElementTypes.AUDIO]: AudioElement,
     };

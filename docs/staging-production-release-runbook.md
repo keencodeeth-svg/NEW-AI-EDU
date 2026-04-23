@@ -1,6 +1,6 @@
 # Staging / Production 发布手册
 
-更新时间：2026-03-28
+更新时间：2026-04-05
 
 适用目标：
 - staging 预发验证
@@ -19,20 +19,25 @@
 本地代码检查：
 
 ```bash
-npm run verify:strict
-npm run test:smoke:production-like:local
+corepack pnpm verify:strict
+corepack pnpm test:smoke:production-like:local
 ```
+
+当前基线说明：
+- 2026-04-05 已通过 `corepack pnpm launch:readiness`，结果为 `pass 5 / warn 1 / fail 0`
+- 唯一预警是当前环境为 `development`，严格 runtime guardrails 已由同日 `corepack pnpm test:smoke:production-like:local` 补充复核
+- 若本次改动直接影响管理员配置、模型路由、巡检令牌或会话依赖，建议把 `corepack pnpm launch:readiness` 也纳入发布前固定步骤
 
 如果本次变更直接影响浏览器关键流程、对象存储读写链路或 production-like 浏览器回归，再额外执行：
 
 ```bash
-npm run test:browser:production-like:local
+corepack pnpm test:browser:production-like:local
 ```
 
 如果本次变更涉及学校排课 AI 预演 / 应用 / 回滚、模板、教师规则、禁排时段或相关运行时状态，再额外执行：
 
 ```bash
-npm run test:school-schedules:production-like:local
+corepack pnpm test:school-schedules:production-like:local
 ```
 
 如果当前机器没有可用 Docker daemon，但本机已有可复用 PostgreSQL，可改用：
@@ -41,7 +46,7 @@ npm run test:school-schedules:production-like:local
 PRODUCTION_LIKE_USE_EXISTING_DB=1 \
 PRODUCTION_LIKE_DB_NAME=hangke_ai_edu_local \
 PRODUCTION_LIKE_DB_RESET=1 \
-npm run test:smoke:production-like:local
+corepack pnpm test:smoke:production-like:local
 ```
 
 说明：
@@ -106,20 +111,23 @@ OBJECT_STORAGE_ROOT=/data/hk-ai-edu/objects
 ```bash
 DEPLOY_REMOTE_HOST=root@staging.example.com \
 DEPLOY_EXTERNAL_HEALTH_URL=https://staging.example.com/api/health \
-npm run deploy:remote:prebuilt
+corepack pnpm deploy:remote:prebuilt
 ```
 
 脚本默认行为：
-- 本地先执行 `npm run build`
-- 打包当前工作区，但排除 `node_modules` 与 `.next/cache`
+- 本地先执行自动识别包管理器的构建命令；当前仓库默认是 `corepack pnpm build`
+- 以 `.next/standalone` 为 release 根目录，再补上 `.next/static`
+- 默认剔除 release 内的 `.runtime-data`、`tests`、`docs`、`output`，避免把运行态数据和无关资产一并上传
 - 上传 release 包到远端并恢复远端 `.env.production`
-- 远端仅执行 `npm ci --omit=dev`、`db:migrate`、`3001` canary、`3000` 正式切流
+- 远端默认不再执行依赖安装，而是直接复用 standalone 内已 vendored 的运行时依赖
+- 远端默认执行 `node scripts/init-db.mjs`、`3001` canary、`3000` 正式切流
 - 若 `.env.production` 内存在 `READINESS_PROBE_TOKEN`，会额外校验 readiness
 
 脚本前提：
 - 工作区默认必须干净；如要显式部署未提交改动，需设置 `DEPLOY_ALLOW_DIRTY=1`
 - 远端需要保留稳定的环境文件，默认路径 `/var/www/HK-AIEDU/.env.production`
 - 远端已安装 `pm2`
+- Next.js 生产构建必须生成 `.next/standalone/server.js`
 
 常用覆盖项：
 
@@ -130,13 +138,18 @@ DEPLOY_PM2_APP_NAME=hk-ai-edu-staging \
 DEPLOY_CANARY_APP_NAME=hk-ai-edu-staging-canary \
 DEPLOY_REMOTE_PRODUCTION_PORT=3100 \
 DEPLOY_REMOTE_CANARY_PORT=3101 \
-npm run deploy:remote:prebuilt
+corepack pnpm deploy:remote:prebuilt
 ```
+
+`DEPLOY_SKIP_BUILD=1` 使用说明：
+- 仅当当前工作区内现有 `.next` 产物与本次要发布的应用代码完全一致时才安全。
+- 脚本即使跳过构建，仍会把最新的 `scripts`、`db`、`public`、`data`、`configs`、`assets`、`package.json` 覆盖进 release 包。
+- 但这不意味着页面、路由、Server Component、Client Component 或 API 处理逻辑的代码变更可以跳过重新构建；只要这些代码有改动，就必须先重新执行一次构建，再发布。
 
 2. 确认迁移已执行；若这次不是通过脚本发布，再手工执行：
 
 ```bash
-npm run db:migrate
+corepack pnpm db:migrate
 ```
 
 3. 检查健康接口：
@@ -154,7 +167,7 @@ API_TEST_READINESS_TOKEN=$READINESS_PROBE_TOKEN \
 API_TEST_ADMIN_EMAIL=admin@demo.com \
 API_TEST_ADMIN_PASSWORD=Admin123 \
 API_TEST_SMOKE_SCHOOL_ID=school-default \
-npm run test:smoke:remote
+corepack pnpm test:smoke:remote
 ```
 
 5. 如需只做依赖健康验证，可执行：
@@ -178,13 +191,13 @@ node scripts/test-api-routes.mjs
 ```bash
 DEPLOY_REMOTE_HOST=root@prod.example.com \
 DEPLOY_EXTERNAL_HEALTH_URL=https://prod.example.com/api/health \
-npm run deploy:remote:prebuilt
+corepack pnpm deploy:remote:prebuilt
 ```
 
 3. 确认迁移已执行；若这次不是通过脚本发布，再手工执行：
 
 ```bash
-npm run db:migrate
+corepack pnpm db:migrate
 ```
 
 4. 检查健康接口：
@@ -202,7 +215,7 @@ API_TEST_READINESS_TOKEN=$READINESS_PROBE_TOKEN \
 API_TEST_ADMIN_EMAIL=admin@demo.com \
 API_TEST_ADMIN_PASSWORD=Admin123 \
 API_TEST_SMOKE_SCHOOL_ID=school-default \
-npm run test:smoke:remote
+corepack pnpm test:smoke:remote
 ```
 
 6. 检查管理端关键面板：
@@ -278,7 +291,7 @@ API_TEST_READINESS_TOKEN=$READINESS_PROBE_TOKEN \
 API_TEST_ADMIN_EMAIL=admin@demo.com \
 API_TEST_ADMIN_PASSWORD=Admin123 \
 API_TEST_SMOKE_SCHOOL_ID=school-default \
-npm run test:smoke:remote
+corepack pnpm test:smoke:remote
 ```
 
 5. 在发布记录中补齐：

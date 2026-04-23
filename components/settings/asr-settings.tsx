@@ -11,6 +11,8 @@ import type { ASRProviderId } from '@/lib/audio/types';
 import { Mic, MicOff, CheckCircle2, XCircle, Eye, EyeOff } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { createLogger } from '@/lib/logger';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 const log = createLogger('ASRSettings');
 
@@ -26,7 +28,12 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
   const setASRProviderConfig = useSettingsStore((state) => state.setASRProviderConfig);
 
   const asrProvider = ASR_PROVIDERS[selectedProviderId] ?? ASR_PROVIDERS['openai-whisper'];
-  const isServerConfigured = !!asrProvidersConfig[selectedProviderId]?.isServerConfigured;
+  const asrProviderConfig = asrProvidersConfig[selectedProviderId];
+  const isServerConfigured = !!asrProviderConfig?.isServerConfigured;
+  const { canEditSecrets, effectiveBaseUrl, requestConfig } = getClientProviderUiState(
+    asrProviderConfig,
+    asrProvider.defaultBaseUrl,
+  );
 
   const [showApiKey, setShowApiKey] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
@@ -105,10 +112,6 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
             formData.append('audio', audioBlob, 'recording.webm');
             formData.append('providerId', selectedProviderId);
             formData.append('language', asrLanguage);
-            const apiKeyValue = asrProvidersConfig[selectedProviderId]?.apiKey;
-            if (apiKeyValue?.trim()) formData.append('apiKey', apiKeyValue);
-            const baseUrlValue = asrProvidersConfig[selectedProviderId]?.baseUrl;
-            if (baseUrlValue?.trim()) formData.append('baseUrl', baseUrlValue);
 
             try {
               const response = await fetch('/api/transcription', {
@@ -146,12 +149,12 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {isServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={isServerConfigured}
+        browserOverridesDisabled={
+          (asrProvider.requiresApiKey || isServerConfigured) && !canEditSecrets
+        }
+      />
 
       {/* API Key & Base URL */}
       {(asrProvider.requiresApiKey || isServerConfigured) && (
@@ -168,19 +171,25 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
                   autoCorrect="off"
                   spellCheck={false}
                   placeholder={
-                    isServerConfigured ? t('settings.optionalOverride') : t('settings.enterApiKey')
+                    canEditSecrets
+                      ? isServerConfigured
+                        ? t('settings.optionalOverride')
+                        : t('settings.enterApiKey')
+                      : t('settings.browserOverridesDisabledShort')
                   }
-                  value={asrProvidersConfig[selectedProviderId]?.apiKey || ''}
+                  value={asrProviderConfig?.apiKey || ''}
                   onChange={(e) =>
                     setASRProviderConfig(selectedProviderId, {
                       apiKey: e.target.value,
                     })
                   }
+                  disabled={!canEditSecrets}
                   className="font-mono text-sm pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
+                  disabled={!canEditSecrets}
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -195,21 +204,26 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                placeholder={asrProvider.defaultBaseUrl || t('settings.enterCustomBaseUrl')}
-                value={asrProvidersConfig[selectedProviderId]?.baseUrl || ''}
+                placeholder={
+                  canEditSecrets
+                    ? asrProviderConfig?.serverBaseUrl ||
+                      asrProvider.defaultBaseUrl ||
+                      t('settings.enterCustomBaseUrl')
+                    : t('settings.browserOverridesDisabledShort')
+                }
+                value={asrProviderConfig?.baseUrl || ''}
                 onChange={(e) =>
                   setASRProviderConfig(selectedProviderId, {
                     baseUrl: e.target.value,
                   })
                 }
+                disabled={!canEditSecrets}
                 className="text-sm"
               />
             </div>
           </div>
           {/* Request URL Preview */}
           {(() => {
-            const effectiveBaseUrl =
-              asrProvidersConfig[selectedProviderId]?.baseUrl || asrProvider.defaultBaseUrl || '';
             if (!effectiveBaseUrl) return null;
             let endpointPath = '';
             switch (selectedProviderId) {
@@ -242,11 +256,7 @@ export function ASRSettings({ selectedProviderId }: ASRSettingsProps) {
           />
           <Button
             onClick={handleToggleASRRecording}
-            disabled={
-              asrProvider.requiresApiKey &&
-              !asrProvidersConfig[selectedProviderId]?.apiKey?.trim() &&
-              !isServerConfigured
-            }
+            disabled={asrProvider.requiresApiKey && !requestConfig.apiKey && !isServerConfigured}
             className="gap-2 w-[140px]"
           >
             {isRecording ? (

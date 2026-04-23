@@ -7,6 +7,7 @@
 
 import type { ActionType } from './action';
 import type { MediaGenerationRequest } from '@/lib/media/types';
+import type { WidgetConfig, WidgetType } from './widgets';
 
 // ==================== PDF Image Types ====================
 
@@ -68,6 +69,7 @@ export interface UserRequirements {
   userNickname?: string; // Student nickname for personalization
   userBio?: string; // Student background for personalization
   webSearch?: boolean; // Enable web search for richer context
+  generationMode?: 'standard' | 'deep-interactive'; // OpenMAIC v0.2 style interactive-first generation
 }
 
 /**
@@ -118,6 +120,9 @@ export interface SceneOutline {
     designIdea: string;
     subject?: string;
   };
+  // Deep Interactive widget contract (OpenMAIC v0.2 compatible)
+  widgetType?: WidgetType;
+  widgetOutline?: WidgetConfig | Record<string, unknown>;
   // PBL-specific config
   pblConfig?: {
     projectTopic: string;
@@ -178,6 +183,8 @@ export interface ScientificModel {
 export interface GeneratedInteractiveContent {
   html: string;
   scientificModel?: ScientificModel;
+  widgetType?: WidgetType;
+  widgetOutline?: WidgetConfig | Record<string, unknown>;
 }
 
 // ==================== Legacy Types (for compatibility) ====================

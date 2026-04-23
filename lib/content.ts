@@ -30,6 +30,9 @@ type DbQuestion = {
   question_type: string | null;
   tags: string[] | null;
   abilities: string[] | null;
+  actual_difficulty: number | null;
+  needs_manual_review: boolean | null;
+  review_reason: string | null;
   created_at?: string | null;
   updated_at?: string | null;
 };
@@ -37,6 +40,14 @@ type DbQuestion = {
 export function normalizeQuestionType(value?: string | null) {
   const normalized = value?.trim().toLowerCase();
   return normalized || "choice";
+}
+
+function isMissingQuestionQualityColumnsError(error: unknown) {
+  const pgError = error as { code?: string; message?: string };
+  if (pgError?.code !== "42703") {
+    return false;
+  }
+  return /actual_difficulty|needs_manual_review|review_reason/i.test(pgError?.message ?? "");
 }
 
 function mapKnowledgePoint(row: DbKnowledgePoint): KnowledgePoint {
@@ -63,7 +74,10 @@ function mapQuestion(row: DbQuestion): Question {
     difficulty: (row.difficulty as Difficulty | null) ?? undefined,
     questionType: normalizeQuestionType(row.question_type),
     tags: row.tags ?? [],
-    abilities: row.abilities ?? []
+    abilities: row.abilities ?? [],
+    actualDifficulty: typeof row.actual_difficulty === "number" ? row.actual_difficulty : null,
+    needsManualReview: Boolean(row.needs_manual_review),
+    reviewReason: row.review_reason ?? null
   };
 }
 
@@ -169,6 +183,9 @@ export async function createQuestion(input: Omit<Question, "id">) {
       difficulty: input.difficulty ?? "medium",
       tags: input.tags ?? [],
       abilities: input.abilities ?? [],
+      actualDifficulty: input.actualDifficulty ?? null,
+      needsManualReview: Boolean(input.needsManualReview),
+      reviewReason: input.reviewReason ?? null,
       ...input,
       questionType
     };
@@ -177,25 +194,46 @@ export async function createQuestion(input: Omit<Question, "id">) {
     return next;
   }
   const id = `q-${crypto.randomBytes(6).toString("hex")}`;
-  const row = await queryOne<DbQuestion>(
-    `INSERT INTO questions (id, subject, grade, knowledge_point_id, stem, options, answer, explanation, difficulty, question_type, tags, abilities)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
-     RETURNING *`,
-    [
-      id,
-      input.subject,
-      input.grade,
-      input.knowledgePointId,
-      input.stem,
-      input.options,
-      input.answer,
-      input.explanation,
-      input.difficulty ?? "medium",
-      questionType,
-      input.tags ?? [],
-      input.abilities ?? []
-    ]
-  );
+  const insertParams = [
+    id,
+    input.subject,
+    input.grade,
+    input.knowledgePointId,
+    input.stem,
+    input.options,
+    input.answer,
+    input.explanation,
+    input.difficulty ?? "medium",
+    questionType,
+    input.tags ?? [],
+    input.abilities ?? []
+  ];
+
+  let row: DbQuestion | null = null;
+  try {
+    row = await queryOne<DbQuestion>(
+      `INSERT INTO questions (id, subject, grade, knowledge_point_id, stem, options, answer, explanation, difficulty, question_type, tags, abilities, actual_difficulty, needs_manual_review, review_reason)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15)
+       RETURNING *`,
+      [
+        ...insertParams,
+        input.actualDifficulty ?? null,
+        Boolean(input.needsManualReview),
+        input.reviewReason ?? null
+      ]
+    );
+  } catch (error) {
+    if (!isMissingQuestionQualityColumnsError(error)) {
+      throw error;
+    }
+
+    row = await queryOne<DbQuestion>(
+      `INSERT INTO questions (id, subject, grade, knowledge_point_id, stem, options, answer, explanation, difficulty, question_type, tags, abilities)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+       RETURNING *`,
+      insertParams
+    );
+  }
   return row ? mapQuestion(row) : null;
 }
 
@@ -216,37 +254,73 @@ export async function updateQuestion(id: string, input: Partial<Question>) {
     await saveQuestions(list);
     return next;
   }
-  const row = await queryOne<DbQuestion>(
-    `UPDATE questions
-     SET subject = COALESCE($2, subject),
-         grade = COALESCE($3, grade),
-         knowledge_point_id = COALESCE($4, knowledge_point_id),
-         stem = COALESCE($5, stem),
-         options = COALESCE($6, options),
-         answer = COALESCE($7, answer),
-         explanation = COALESCE($8, explanation),
-         difficulty = COALESCE($9, difficulty),
-         question_type = COALESCE($10, question_type),
-         tags = COALESCE($11, tags),
-         abilities = COALESCE($12, abilities),
-         updated_at = now()
-     WHERE id = $1
-     RETURNING *`,
-    [
-      id,
-      input.subject ?? null,
-      input.grade ?? null,
-      input.knowledgePointId ?? null,
-      input.stem ?? null,
-      input.options ?? null,
-      input.answer ?? null,
-      input.explanation ?? null,
-      input.difficulty ?? null,
-      normalizedQuestionType ?? null,
-      input.tags ?? null,
-      input.abilities ?? null
-    ]
-  );
+  const updateParams = [
+    id,
+    input.subject ?? null,
+    input.grade ?? null,
+    input.knowledgePointId ?? null,
+    input.stem ?? null,
+    input.options ?? null,
+    input.answer ?? null,
+    input.explanation ?? null,
+    input.difficulty ?? null,
+    normalizedQuestionType ?? null,
+    input.tags ?? null,
+    input.abilities ?? null
+  ];
+
+  let row: DbQuestion | null = null;
+  try {
+    row = await queryOne<DbQuestion>(
+      `UPDATE questions
+       SET subject = COALESCE($2, subject),
+           grade = COALESCE($3, grade),
+           knowledge_point_id = COALESCE($4, knowledge_point_id),
+           stem = COALESCE($5, stem),
+           options = COALESCE($6, options),
+           answer = COALESCE($7, answer),
+           explanation = COALESCE($8, explanation),
+           difficulty = COALESCE($9, difficulty),
+           question_type = COALESCE($10, question_type),
+           tags = COALESCE($11, tags),
+           abilities = COALESCE($12, abilities),
+           actual_difficulty = COALESCE($13, actual_difficulty),
+           needs_manual_review = COALESCE($14, needs_manual_review),
+           review_reason = COALESCE($15, review_reason),
+           updated_at = now()
+       WHERE id = $1
+       RETURNING *`,
+      [
+        ...updateParams,
+        input.actualDifficulty ?? null,
+        input.needsManualReview ?? null,
+        input.reviewReason ?? null
+      ]
+    );
+  } catch (error) {
+    if (!isMissingQuestionQualityColumnsError(error)) {
+      throw error;
+    }
+
+    row = await queryOne<DbQuestion>(
+      `UPDATE questions
+       SET subject = COALESCE($2, subject),
+           grade = COALESCE($3, grade),
+           knowledge_point_id = COALESCE($4, knowledge_point_id),
+           stem = COALESCE($5, stem),
+           options = COALESCE($6, options),
+           answer = COALESCE($7, answer),
+           explanation = COALESCE($8, explanation),
+           difficulty = COALESCE($9, difficulty),
+           question_type = COALESCE($10, question_type),
+           tags = COALESCE($11, tags),
+           abilities = COALESCE($12, abilities),
+           updated_at = now()
+       WHERE id = $1
+       RETURNING *`,
+      updateParams
+    );
+  }
   return row ? mapQuestion(row) : null;
 }
 

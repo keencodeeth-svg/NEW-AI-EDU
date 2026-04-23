@@ -4,6 +4,7 @@ import type {
   TutorAskResponse,
   TutorHistoryOrigin
 } from "./types";
+import type { HintTier } from "@/lib/ai-types";
 import { requestJson } from "@/lib/client-request";
 import type { TutorLearningMode } from "./utils";
 
@@ -56,6 +57,9 @@ type RequestTutorCoachParams = {
   origin: TutorHistoryOrigin;
   studentAnswer?: string;
   revealAnswer?: boolean;
+  hintTier?: HintTier;
+  metacognition?: boolean;
+  metacognitionAttribution?: string;
 };
 
 export async function requestTutorCoach({
@@ -64,7 +68,10 @@ export async function requestTutorCoach({
   grade,
   origin,
   studentAnswer,
-  revealAnswer
+  revealAnswer,
+  hintTier,
+  metacognition,
+  metacognitionAttribution
 }: RequestTutorCoachParams) {
   const payload = await requestJson<
     TutorAskResponse & { data?: TutorAnswer & { sources?: string[] } }
@@ -77,7 +84,10 @@ export async function requestTutorCoach({
       grade,
       studentAnswer,
       revealAnswer,
-      origin
+      origin,
+      hintTier,
+      metacognition,
+      metacognitionAttribution
     })
   });
 

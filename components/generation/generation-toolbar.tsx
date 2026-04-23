@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useMemo } from 'react';
-import { Bot, Check, ChevronLeft, Globe, Paperclip, FileText, X, Globe2 } from 'lucide-react';
+import { Bot, Check, ChevronLeft, Globe, Paperclip, FileText, X, Globe2, Blocks } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import {
   Select,
@@ -21,6 +21,7 @@ import type { WebSearchProviderId } from '@/lib/web-search/types';
 import type { ProviderId } from '@/lib/ai/providers';
 import type { SettingsSection } from '@/lib/types/settings';
 import { MediaPopover } from '@/components/generation/media-popover';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
 
 // ─── Constants ───────────────────────────────────────────────
 const MAX_PDF_SIZE_MB = 50;
@@ -30,6 +31,8 @@ const MAX_PDF_SIZE_BYTES = MAX_PDF_SIZE_MB * 1024 * 1024;
 export interface GenerationToolbarProps {
   language: 'zh-CN' | 'en-US';
   onLanguageChange: (lang: 'zh-CN' | 'en-US') => void;
+  generationMode: 'standard' | 'deep-interactive';
+  onGenerationModeChange: (mode: 'standard' | 'deep-interactive') => void;
   webSearch: boolean;
   onWebSearchChange: (v: boolean) => void;
   onSettingsOpen: (section?: SettingsSection) => void;
@@ -43,6 +46,8 @@ export interface GenerationToolbarProps {
 export function GenerationToolbar({
   language,
   onLanguageChange,
+  generationMode,
+  onGenerationModeChange,
   webSearch,
   onWebSearchChange,
   onSettingsOpen,
@@ -67,21 +72,30 @@ export function GenerationToolbar({
   // Check if the selected web search provider has a valid config (API key or server-configured)
   const webSearchProvider = WEB_SEARCH_PROVIDERS[webSearchProviderId];
   const webSearchConfig = webSearchProvidersConfig[webSearchProviderId];
+  const webSearchUiState = getClientProviderUiState(
+    webSearchConfig,
+    webSearchProvider?.defaultBaseUrl,
+  );
   const webSearchAvailable = webSearchProvider
-    ? !webSearchProvider.requiresApiKey ||
-      !!webSearchConfig?.apiKey ||
-      !!webSearchConfig?.isServerConfigured
+    ? (!webSearchProvider.requiresApiKey ||
+        !!webSearchUiState.requestConfig.apiKey ||
+        !!webSearchConfig?.isServerConfigured) &&
+      !!webSearchUiState.effectiveBaseUrl
     : false;
 
   // Configured LLM providers (only those with valid credentials + models + endpoint)
   const configuredProviders = providersConfig
     ? Object.entries(providersConfig)
-        .filter(
-          ([, config]) =>
-            (!config.requiresApiKey || config.apiKey || config.isServerConfigured) &&
+        .filter(([, config]) => {
+          const uiState = getClientProviderUiState(config, config.defaultBaseUrl);
+          return (
+            (!config.requiresApiKey ||
+              !!uiState.requestConfig.apiKey ||
+              config.isServerConfigured) &&
             config.models.length >= 1 &&
-            (config.baseUrl || config.defaultBaseUrl || config.serverBaseUrl),
-        )
+            !!uiState.effectiveBaseUrl
+          );
+        })
         .map(([id, config]) => ({
           id: id as ProviderId,
           name: config.name,
@@ -184,8 +198,15 @@ export function GenerationToolbar({
               <SelectContent>
                 {Object.values(PDF_PROVIDERS).map((provider) => {
                   const cfg = pdfProvidersConfig[provider.id];
+                  const uiState = getClientProviderUiState(cfg, provider.baseUrl);
+                  const needsRemoteConfig =
+                    provider.id === 'mineru' || provider.id === 'mineru-cloud';
+                  const hasRequiredCredentials =
+                    !provider.requiresApiKey ||
+                    !!uiState.requestConfig.apiKey ||
+                    !!cfg?.isServerConfigured;
                   const available =
-                    !provider.requiresApiKey || !!cfg?.apiKey || !!cfg?.isServerConfigured;
+                    hasRequiredCredentials && (!needsRemoteConfig || !!uiState.effectiveBaseUrl);
                   return (
                     <SelectItem key={provider.id} value={provider.id} disabled={!available}>
                       <div className={cn('flex items-center gap-1.5', !available && 'opacity-50')}>
@@ -324,8 +345,12 @@ export function GenerationToolbar({
                 <SelectContent>
                   {Object.values(WEB_SEARCH_PROVIDERS).map((provider) => {
                     const cfg = webSearchProvidersConfig[provider.id];
+                    const uiState = getClientProviderUiState(cfg, provider.defaultBaseUrl);
                     const available =
-                      !provider.requiresApiKey || !!cfg?.apiKey || !!cfg?.isServerConfigured;
+                      (!provider.requiresApiKey ||
+                        !!uiState.requestConfig.apiKey ||
+                        !!cfg?.isServerConfigured) &&
+                      !!uiState.effectiveBaseUrl;
                     return (
                       <SelectItem key={provider.id} value={provider.id} disabled={!available}>
                         <div
@@ -358,6 +383,27 @@ export function GenerationToolbar({
       )}
 
       {/* ── Language pill ── */}
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <button
+            onClick={() =>
+              onGenerationModeChange(
+                generationMode === 'deep-interactive' ? 'standard' : 'deep-interactive',
+              )
+            }
+            className={generationMode === 'deep-interactive' ? pillActive : pillMuted}
+          >
+            <Blocks className="size-3.5" />
+            <span>
+              {generationMode === 'deep-interactive'
+                ? t('toolbar.generationModeDeep')
+                : t('toolbar.generationModeStandard')}
+            </span>
+          </button>
+        </TooltipTrigger>
+        <TooltipContent>{t('toolbar.generationModeDeepHint')}</TooltipContent>
+      </Tooltip>
+
       <Tooltip>
         <TooltipTrigger asChild>
           <button
@@ -428,8 +474,7 @@ function ModelSelectorPopover({
               className={cn(
                 'inline-flex items-center justify-center size-7 rounded-full transition-all cursor-pointer select-none',
                 'ring-1 ring-border/60 hover:ring-border hover:bg-muted/60',
-                currentModelId &&
-                  'ring-sky-300 dark:ring-sky-700 bg-sky-50 dark:bg-sky-950/20',
+                currentModelId && 'ring-sky-300 dark:ring-sky-700 bg-sky-50 dark:bg-sky-950/20',
               )}
             >
               {currentProviderConfig?.icon ? (

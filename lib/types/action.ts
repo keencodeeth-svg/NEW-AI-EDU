@@ -147,6 +147,29 @@ export interface WbCloseAction extends ActionBase {
   type: 'wb_close';
 }
 
+/** Draw code block on whiteboard (wait for typing animation) */
+export interface WbDrawCodeAction extends ActionBase {
+  type: 'wb_draw_code';
+  elementId?: string;
+  language: string;
+  code: string;
+  x: number;
+  y: number;
+  width?: number;
+  height?: number;
+  fileName?: string;
+}
+
+/** Edit an existing whiteboard code block by line IDs */
+export interface WbEditCodeAction extends ActionBase {
+  type: 'wb_edit_code';
+  elementId: string;
+  operation: 'insert_after' | 'insert_before' | 'delete_lines' | 'replace_lines';
+  lineId?: string;
+  lineIds?: string[];
+  content?: string;
+}
+
 /** Play video — start playback of a video element on the slide */
 export interface PlayVideoAction extends ActionBase {
   type: 'play_video';
@@ -175,6 +198,8 @@ export type Action =
   | WbDrawLatexAction
   | WbDrawTableAction
   | WbDrawLineAction
+  | WbDrawCodeAction
+  | WbEditCodeAction
   | WbClearAction
   | WbDeleteAction
   | WbCloseAction
@@ -199,6 +224,8 @@ export const SYNC_ACTIONS: ActionType[] = [
   'wb_draw_latex',
   'wb_draw_table',
   'wb_draw_line',
+  'wb_draw_code',
+  'wb_edit_code',
   'wb_clear',
   'wb_delete',
   'wb_close',

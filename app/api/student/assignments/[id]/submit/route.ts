@@ -4,6 +4,7 @@ import {
   completeAssignmentProgress,
   getAssignmentById,
   getAssignmentItems,
+  getAssignmentProgressForStudent,
   upsertAssignmentSubmission
 } from "@/lib/assignments";
 import { getQuestions } from "@/lib/content";
@@ -70,6 +71,10 @@ export const POST = createLearningRoute({
     const classes = await getClassesByStudent(user.id);
     const classIds = new Set(classes.map((item) => item.id));
     if (!classIds.has(assignment.classId)) {
+      notFound("not found");
+    }
+    const progress = await getAssignmentProgressForStudent(assignment.id, user.id);
+    if (!progress) {
       notFound("not found");
     }
 

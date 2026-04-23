@@ -7,7 +7,7 @@ export async function getStudentContext() {
   if (user.role === "parent" && user.studentId) {
     const student = await getUserById(user.studentId);
     if (!student) return null;
-    const { password, ...safeStudent } = student;
+    const { password: _password, ...safeStudent } = student;
     return safeStudent as typeof user;
   }
   return null;

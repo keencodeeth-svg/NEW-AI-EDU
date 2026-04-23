@@ -62,7 +62,7 @@ function normalizeContentType(value?: string) {
 }
 
 function toPublicLibraryItem<T extends { contentStorageProvider?: string; contentStorageKey?: string }>(item: T) {
-  const { contentStorageProvider, contentStorageKey, ...rest } = item;
+  const { contentStorageProvider: _contentStorageProvider, contentStorageKey: _contentStorageKey, ...rest } = item;
   return rest;
 }
 

@@ -440,6 +440,14 @@ function summarizeElement(el: any): string {
     }
     case 'latex':
       return `${id} latex: "${(el.latex || '').slice(0, 40)}" ${pos}${size}`;
+    case 'code': {
+      const preview = (el.lines || [])
+        .slice(0, 2)
+        .map((line: { content?: string }) => line.content || '')
+        .join(' | ')
+        .slice(0, 60);
+      return `${id} code[${el.language || 'code'}]${el.fileName ? ` "${el.fileName}"` : ''}: "${preview}${preview.length >= 60 ? '...' : ''}" ${pos}${size}`;
+    }
     case 'line': {
       const lx = Math.round(el.left ?? 0);
       const ly = Math.round(el.top ?? 0);
@@ -505,8 +513,6 @@ function buildVirtualWhiteboardContext(
         elements.length = 0;
         break;
       case 'wb_delete': {
-        // Remove element by matching elementId from initial whiteboard state
-        // (elements drawn this round don't have tracked IDs)
         const deleteId = String(record.params.elementId || '');
         const idx = elements.findIndex((el) => el.elementId === deleteId);
         if (idx >= 0) elements.splice(idx, 1);
@@ -520,6 +526,8 @@ function buildVirtualWhiteboardContext(
         const h = record.params.height ?? 100;
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `text: "${content}${content.length >= 40 ? '...' : ''}" at (${x},${y}), size ~${w}x${h}`,
         });
         break;
@@ -532,6 +540,8 @@ function buildVirtualWhiteboardContext(
         const h = record.params.height ?? 100;
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `shape(${shapeType}) at (${x},${y}), size ${w}x${h}`,
         });
         break;
@@ -547,6 +557,8 @@ function buildVirtualWhiteboardContext(
         const h = record.params.height ?? 250;
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `chart(${chartType})${labels ? `: labels=[${(labels as string[]).slice(0, 4).join(',')}]` : ''} at (${x},${y}), size ${w}x${h}`,
         });
         break;
@@ -560,6 +572,8 @@ function buildVirtualWhiteboardContext(
         const h = record.params.height ?? 80;
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `latex: "${latex}${latex.length >= 40 ? '...' : ''}" at (${x},${y}), size ~${w}x${h}`,
         });
         break;
@@ -574,6 +588,8 @@ function buildVirtualWhiteboardContext(
         const h = record.params.height ?? rows * 40 + 20;
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `table(${rows}×${cols}) at (${x},${y}), size ${w}x${h}`,
         });
         break;
@@ -587,8 +603,37 @@ function buildVirtualWhiteboardContext(
         const hasArrow = pts?.includes('arrow') ? ' (arrow)' : '';
         elements.push({
           agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
           summary: `line${hasArrow}: (${sx},${sy}) → (${ex},${ey})`,
         });
+        break;
+      }
+      case 'wb_draw_code': {
+        const language = String(record.params.language || 'code');
+        const fileName = record.params.fileName ? ` "${record.params.fileName}"` : '';
+        const lineCount = String(record.params.code || '').split('\n').length;
+        const x = record.params.x ?? '?';
+        const y = record.params.y ?? '?';
+        const w = record.params.width ?? 500;
+        const h = record.params.height ?? 300;
+        elements.push({
+          agentName: record.agentName,
+          elementId:
+            typeof record.params.elementId === 'string' ? record.params.elementId : undefined,
+          summary: `code${fileName} (${language}, ${lineCount} lines) at (${x},${y}), size ${w}x${h}`,
+        });
+        break;
+      }
+      case 'wb_edit_code': {
+        const targetId = String(record.params.elementId || '');
+        const index = elements.findIndex((el) => el.elementId === targetId);
+        if (index >= 0) {
+          elements[index] = {
+            ...elements[index],
+            summary: `${elements[index].summary} [edited: ${String(record.params.operation || 'edit')}]`,
+          };
+        }
         break;
       }
       // wb_open, wb_close — skip

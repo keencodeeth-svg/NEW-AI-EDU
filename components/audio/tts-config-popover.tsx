@@ -18,7 +18,6 @@ import { useI18n } from '@/lib/hooks/use-i18n';
 import { useSettingsStore } from '@/lib/store/settings';
 import { getTTSVoices } from '@/lib/audio/constants';
 import { useTTSPreview } from '@/lib/audio/use-tts-preview';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
 
 /** Extract the English name from voice name format "ChineseName (English)" */
 function getVoiceDisplayName(name: string, lang: string): string {
@@ -39,7 +38,6 @@ export function TtsConfigPopover() {
   const ttsProviderId = useSettingsStore((s) => s.ttsProviderId);
   const ttsVoice = useSettingsStore((s) => s.ttsVoice);
   const ttsSpeed = useSettingsStore((s) => s.ttsSpeed);
-  const ttsProvidersConfig = useSettingsStore((s) => s.ttsProvidersConfig);
   const setTTSVoice = useSettingsStore((s) => s.setTTSVoice);
 
   const voices = getTTSVoices(ttsProviderId);
@@ -61,15 +59,11 @@ export function TtsConfigPopover() {
       return;
     }
     try {
-      const providerConfig = ttsProvidersConfig[ttsProviderId];
-      const requestConfig = getClientProviderRequestConfig(providerConfig);
       await startPreview({
         text: t('settings.ttsTestTextDefault'),
         providerId: ttsProviderId,
         voice: ttsVoice,
         speed: ttsSpeed,
-        apiKey: requestConfig.apiKey,
-        baseUrl: requestConfig.baseUrl || undefined,
       });
     } catch (error) {
       const message =
@@ -82,7 +76,6 @@ export function TtsConfigPopover() {
     stopPreview,
     t,
     ttsProviderId,
-    ttsProvidersConfig,
     ttsSpeed,
     ttsVoice,
   ]);

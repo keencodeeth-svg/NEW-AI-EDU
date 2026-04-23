@@ -9,7 +9,6 @@ import type { TeacherScheduleRule } from "@/lib/teacher-schedule-rules";
 import type { TeacherUnavailableSlot } from "@/lib/teacher-unavailability";
 import { isSchoolAdminAuthRequiredError } from "../utils";
 import type {
-  AiMode,
   AiOperationSummary,
   AiScheduleResponse,
   AiScheduleFormState,

@@ -1,6 +1,6 @@
 # Strict Testing Baseline
 
-更新时间：2026-03-17
+更新时间：2026-04-05
 
 目标：把“开发时建议跑测试”升级为“开发与合并默认执行同一条严格质量门”。
 
@@ -9,22 +9,30 @@
 本地与 CI 的统一严格门为：
 
 ```bash
-npm run verify:strict
+corepack pnpm verify:strict
 ```
 
 执行顺序：
 
-1. `npm run lint`
-2. `npm run build`
-3. `npm run test:unit`
-4. `npm run test:api`
-5. `npm run test:browser:built`
+1. `corepack pnpm lint`
+2. `corepack pnpm check:project-snapshot`
+3. `corepack pnpm build`
+4. `corepack pnpm test:unit`
+5. `corepack pnpm test:api`
+6. `corepack pnpm test:browser:built`
 
 说明：
 
-- `npm test` 仍保留为快速门，只覆盖 `unit + api`
+- `corepack pnpm test` 仍保留为快速门，只覆盖 `unit + api`
 - `verify:strict` 才是后续开发默认必须通过的完整门禁
 - CI 已收口到 `strict-verify` job，避免“分散绿灯但整链未验证”的假通过
+
+最近一次本地严格验证基线：
+
+- 2026-04-05 已通过 `corepack pnpm verify:strict`
+- 2026-04-05 已通过 `corepack pnpm launch:readiness`
+- 2026-04-05 已通过 `corepack pnpm test:smoke:production-like:local`
+- `launch:readiness` 当前结果为 `pass 5 / warn 1 / fail 0`，唯一预警是当前环境仍为 `development`，未启用严格 runtime guardrails；同日已用 production-like local smoke 完成补充复核
 
 ## 2. 当前覆盖面评估
 
@@ -33,11 +41,11 @@ npm run verify:strict
 - 静态与类型层：`lint + build`
 - 纯逻辑层：`tests/unit/*`
 - API 集成层：`scripts/test-api-routes.mjs`
-- 浏览器关键链路：`tests/browser/smoke.spec.ts`
+- 浏览器关键链路与 a11y：`tests/browser/*.spec.ts`
 - production-like 部署基线：CI 中带 PostgreSQL + 对象存储根路径的 smoke + browser smoke + 学校排课深回归
-- 本地 production-like 复现入口：`npm run test:smoke:production-like:local`
-- 本地 production-like 浏览器复现入口：`npm run test:browser:production-like:local`
-- 本地学校排课深回归入口：`npm run test:school-schedules:production-like:local`
+- 本地 production-like 复现入口：`corepack pnpm test:smoke:production-like:local`
+- 本地 production-like 浏览器复现入口：`corepack pnpm test:browser:production-like:local`
+- 本地学校排课深回归入口：`corepack pnpm test:school-schedules:production-like:local`
 - 部署后远端验证：`release-smoke.yml`
 
 本地 production-like 入口额外保证：
@@ -78,8 +86,8 @@ npm run verify:strict
 
 当前学校排课 production-like API 回归入口：
 
-- 默认本地入口：`npm run test:school-schedules`
-- DB-only / object-storage 本地入口：`npm run test:school-schedules:production-like:local`
+- 默认本地入口：`corepack pnpm test:school-schedules`
+- DB-only / object-storage 本地入口：`corepack pnpm test:school-schedules:production-like:local`
 - CI 入口：`.github/workflows/ci.yml` 中的 `production-like-regression` job 会顺序执行 `test:smoke:production-like`、`test:browser:production-like` 与 `test:school-schedules:production-like`
 - 可通过 `API_TEST_SCHOOL_ID` 覆盖默认学校，未设置时回退到 `school-default`
 
@@ -87,18 +95,30 @@ npm run verify:strict
 
 - 学生登录并进入学习控制台
 - 教师发布作业
+- 教师从 AI 工具页带班级上下文发起互动课堂
 - 家长提交行动回执
+- 家长发送鼓励卡片，学生首页可见并可标记已读
+- 教师生成 AI 备课方案并打开课堂实时仪表盘
+- 教师创建展示项目后，学生完成项目式学习阶段提交
 - 用户提交账号恢复请求
 - 管理员异常登录后收到安全告警通知
 - 用户连续登录失败后被临时锁定
 - 学生完成老师发布考试并提交
+- 学生发起自主互动课堂并生成个性化主题
 - 学生上传作业附件并由教师在批改页读取 / 下载
 - 管理员在工单台接单并解决恢复请求
 - 管理员完成资料库文件上传、下载与分享
 - 学校管理员完成排课 AI 预演、写入与回滚
+- 学校管理员打开互动课堂治理中心并读取交付数据
 - 学校管理员组织边界隔离
 - 管理员高风险操作 `step-up`
 - 教师会话越权访问 admin API 被拦截
+
+当前浏览器 a11y 回归已覆盖：
+
+- 公开入口页 zero critical accessibility violations
+- 学生工作台与练习流 zero critical accessibility violations
+- 教师工作台与课堂实时页 zero critical accessibility violations
 
 当前浏览器 smoke 还额外执行三条严格约束：
 
@@ -115,7 +135,7 @@ npm run verify:strict
 
 ## 4. 后续开发规则
 
-- 任何影响工作台主流程、权限、提交流程、AI 结果回写的改动，提交前默认跑 `npm run verify:strict`
+- 任何影响工作台主流程、权限、提交流程、AI 结果回写的改动，提交前默认跑 `corepack pnpm verify:strict`
 - 任何涉及登录、权限、管理员操作、家长回执、作业/考试提交的改动，优先补浏览器或 API 回归，不只补单测
 - 任何涉及生产运行时状态迁移的改动，优先补 API 集成测试，不接受只靠手测
 - 发布前除本地严格门外，仍需执行远端 smoke

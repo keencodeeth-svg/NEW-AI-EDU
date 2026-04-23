@@ -12,8 +12,6 @@ export interface TTSPreviewOptions {
   providerId: string;
   voice: string;
   speed: number;
-  apiKey?: string;
-  baseUrl?: string;
 }
 
 /**
@@ -98,8 +96,6 @@ export function useTTSPreview() {
           ttsVoice: options.voice,
           ttsSpeed: options.speed,
         };
-        if (options.apiKey?.trim()) body.ttsApiKey = options.apiKey;
-        if (options.baseUrl?.trim()) body.ttsBaseUrl = options.baseUrl;
 
         const res = await fetch('/api/generate/tts', {
           method: 'POST',

@@ -1,5 +1,5 @@
 import type { AiHistoryMeta, AiHistoryOrigin } from "@/lib/ai-history";
-import type { AiLearningMode, AiQualityMeta, AssistAnswerMode, StudyCoachStage } from "@/lib/ai-types";
+import type { AiLearningMode, AiQualityMeta, AssistAnswerMode, HintTier, MetacognitionPrompt, ScaffoldedHint, StudyCoachStage } from "@/lib/ai-types";
 
 export type TutorHistoryOrigin = AiHistoryOrigin;
 export type TutorHistoryOriginFilter = TutorHistoryOrigin | "all";
@@ -47,6 +47,9 @@ export type TutorAnswer = {
   source?: string[];
   provider?: string;
   quality?: AiQualityMeta;
+  scaffoldedHints?: ScaffoldedHint[];
+  activeHintTier?: HintTier;
+  metacognition?: MetacognitionPrompt | null;
 };
 
 export type TutorAskResponse = TutorAnswer & {

@@ -112,6 +112,7 @@ export function Operate({
       [ElementTypes.LATEX]: CommonElementOperate,
       [ElementTypes.VIDEO]: CommonElementOperate,
       [ElementTypes.AUDIO]: CommonElementOperate,
+      [ElementTypes.CODE]: CommonElementOperate,
     };
     return elementTypeMap[elementInfo.type] || null;
   }, [elementInfo.type]);

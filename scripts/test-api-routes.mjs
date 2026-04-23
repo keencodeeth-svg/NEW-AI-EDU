@@ -2,6 +2,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { assertApiTestBuildFreshness } from "./api-test/build-freshness.mjs";
+import { resolveApiTestPort } from "./api-test/runtime-port.mjs";
 import { createRuntime } from "./api-test/runtime.mjs";
 import { runAdminContentSuite } from "./api-test/suites/admin-content.mjs";
 import { runCoreAuthSuite } from "./api-test/suites/core-auth.mjs";
@@ -10,7 +11,11 @@ import { runSchoolScheduleSuite } from "./api-test/suites/school-schedules.mjs";
 import { runSmokeSuite } from "./api-test/suites/smoke.mjs";
 import { runTeacherExamSuite } from "./api-test/suites/teacher-exam.mjs";
 
-const port = Number(process.env.API_TEST_PORT || 3210);
+const requestedPort = Number(process.env.API_TEST_PORT || 3210);
+const port = await resolveApiTestPort({
+  preferredPort: requestedPort,
+  explicitPort: Boolean(process.env.API_TEST_PORT?.trim()),
+});
 const runtime = createRuntime(port);
 const SNAPSHOT_DIRS = ["data", ".runtime-data"];
 const traceEnabled = process.env.API_TEST_TRACE === "true";

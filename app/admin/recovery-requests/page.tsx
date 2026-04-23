@@ -1,6 +1,5 @@
 "use client";
 
-import Card from "@/components/Card";
 import StatePanel from "@/components/StatePanel";
 import { AdminRecoveryRequestsDetailCard } from "./_components/AdminRecoveryRequestsDetailCard";
 import { AdminRecoveryRequestsListCard } from "./_components/AdminRecoveryRequestsListCard";

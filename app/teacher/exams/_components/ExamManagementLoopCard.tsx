@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Card from "@/components/Card";
 import EduIcon from "@/components/EduIcon";
-import { SUBJECT_LABELS, getGradeLabel } from "@/lib/constants";
+import { SUBJECT_LABELS } from "@/lib/constants";
 import type { TeacherExamItem } from "../types";
 import { getAttentionScore, getDueRelativeLabel, getSubmissionRate } from "../utils";
 

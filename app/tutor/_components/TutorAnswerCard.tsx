@@ -2,7 +2,8 @@ import Card from "@/components/Card";
 import MathText from "@/components/MathText";
 import StatePanel from "@/components/StatePanel";
 import { getGradeLabel, SUBJECT_LABELS } from "@/lib/constants";
-import { ANSWER_MODE_OPTIONS, QUALITY_RISK_LABELS } from "../config";
+import type { HintTier } from "@/lib/ai-types";
+import { QUALITY_RISK_LABELS } from "../config";
 import type {
   TutorAnswer,
   TutorAnswerMode,
@@ -20,6 +21,9 @@ import {
   isStudyResult,
   truncateText
 } from "../utils";
+import { TutorHintTierSelector } from "./TutorHintTierSelector";
+import { TutorMetacognitionCard } from "./TutorMetacognitionCard";
+import TutorStepReveal from "./TutorStepReveal";
 
 type TutorAnswerCardProps = {
   answer: TutorAnswer;
@@ -69,6 +73,15 @@ type TutorAnswerCardProps = {
   onVariantAnswerChange: (index: number, value: string) => void;
   onVariantSubmit: (index: number, selected: string, correctAnswer: string) => void;
   onLoadVariantReflection: () => void;
+  maxUnlockedHintTier: HintTier;
+  loadingHintTier: boolean;
+  metacognitionSubmitted: boolean;
+  metacognitionAttribution: string | null;
+  loadingMetacognition: boolean;
+  onRequestHintTier: (tier: HintTier) => void;
+  onSubmitMetacognition: (attribution: string) => void;
+  correctStreakCount: number;
+  showStreakCelebration: boolean;
 };
 
 export function TutorAnswerCard({
@@ -118,7 +131,16 @@ export function TutorAnswerCard({
   onOpenShareThread,
   onVariantAnswerChange,
   onVariantSubmit,
-  onLoadVariantReflection
+  onLoadVariantReflection,
+  maxUnlockedHintTier,
+  loadingHintTier,
+  metacognitionSubmitted,
+  metacognitionAttribution,
+  loadingMetacognition,
+  onRequestHintTier,
+  onSubmitMetacognition,
+  correctStreakCount,
+  showStreakCelebration
 }: TutorAnswerCardProps) {
   const studyResult = isStudyResult(answer);
   const answerSections = getAnswerSections(answer, resultAnswerMode);
@@ -150,6 +172,11 @@ export function TutorAnswerCard({
       </div>
 
       {actionMessage ? <div className="status-note success" style={{ marginBottom: 10 }}>{actionMessage}</div> : null}
+      {showStreakCelebration ? (
+        <div className="status-note success" style={{ marginBottom: 10 }}>
+          已连续答对 {correctStreakCount} 次，这种“会做并能讲清”的状态很值得保持。
+        </div>
+      ) : null}
       <div className="tutor-result-summary">{resultSummary}</div>
       <div className="cta-row tutor-result-next-actions" style={{ marginBottom: 12 }}>
         <button className="button secondary" type="button" onClick={onStartOver}>
@@ -219,6 +246,26 @@ export function TutorAnswerCard({
             <div className="status-note info" style={{ marginBottom: 12 }}>
               下一步：{answer.nextPrompt}
             </div>
+          ) : null}
+
+          {answer.scaffoldedHints?.length || (!answer.answer.trim() && studyResult) ? (
+            <TutorHintTierSelector
+              scaffoldedHints={answer.scaffoldedHints ?? []}
+              activeTier={answer.activeHintTier ?? 1}
+              maxUnlockedTier={maxUnlockedHintTier}
+              loading={loadingHintTier}
+              onRequestTier={onRequestHintTier}
+            />
+          ) : null}
+
+          {answer.metacognition && answer.stage === "check" ? (
+            <TutorMetacognitionCard
+              metacognition={answer.metacognition}
+              submitted={metacognitionSubmitted}
+              submittedAttribution={metacognitionAttribution}
+              loading={loadingMetacognition}
+              onSubmit={onSubmitMetacognition}
+            />
           ) : null}
 
           {!answer.answer.trim() ? (
@@ -423,10 +470,7 @@ export function TutorAnswerCard({
 
       {studyResult && answer.answer.trim() && answer.steps?.length ? (
         <div className="grid" style={{ gap: 6, marginTop: 12 }}>
-          <div className="badge">完整讲解步骤</div>
-          {answer.steps.map((item) => (
-            <MathText as="div" key={`study-step-${item}`} text={item} />
-          ))}
+          <TutorStepReveal steps={answer.steps} subject={subject} grade={grade} />
         </div>
       ) : null}
 

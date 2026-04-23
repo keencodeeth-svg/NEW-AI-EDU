@@ -11,7 +11,8 @@ import { PDF_PROVIDERS } from '@/lib/pdf/constants';
 import type { PDFProviderId } from '@/lib/pdf/types';
 import { CheckCircle2, Eye, EyeOff, Loader2, Zap, XCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { getClientProviderOverride } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 /**
  * Get display label for feature
@@ -44,8 +45,14 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
   const pdfProvider = PDF_PROVIDERS[selectedProviderId];
   const isServerConfigured = !!pdfProvidersConfig[selectedProviderId]?.isServerConfigured;
   const providerConfig = pdfProvidersConfig[selectedProviderId];
-  const hasBaseUrl = !!providerConfig?.baseUrl;
-  const needsRemoteConfig = selectedProviderId === 'mineru';
+  const { canEditSecrets, effectiveBaseUrl, requestConfig } =
+    getClientProviderUiState(providerConfig, pdfProvider?.baseUrl);
+  const effectiveConfiguredBaseUrl = effectiveBaseUrl;
+  const hasBaseUrl = !!effectiveConfiguredBaseUrl;
+  const needsRemoteConfig =
+    selectedProviderId === 'mineru' || selectedProviderId === 'mineru-cloud';
+  const hasRequiredCredentials =
+    !pdfProvider.requiresApiKey || !!requestConfig.apiKey || isServerConfigured;
 
   // Reset state when provider changes
   const [prevSelectedProviderId, setPrevSelectedProviderId] = useState(selectedProviderId);
@@ -57,21 +64,19 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
   }
 
   const handleTestConnection = async () => {
-    const baseUrl = providerConfig?.baseUrl;
-    if (!baseUrl) return;
+    if (!hasBaseUrl) return;
 
     setTestStatus('testing');
     setTestMessage('');
 
     try {
-      const providerOverride = getClientProviderOverride(providerConfig);
       const response = await fetch('/api/verify-pdf-provider', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           providerId: selectedProviderId,
-          ...(providerOverride?.apiKey ? { apiKey: providerOverride.apiKey } : {}),
-          ...(providerOverride?.baseUrl ? { baseUrl: providerOverride.baseUrl } : {}),
+          ...(requestConfig.apiKey ? { apiKey: requestConfig.apiKey } : {}),
+          ...(requestConfig.baseUrl ? { baseUrl: requestConfig.baseUrl } : {}),
         }),
       });
 
@@ -93,12 +98,10 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {isServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={isServerConfigured}
+        browserOverridesDisabled={(needsRemoteConfig || isServerConfigured) && !canEditSecrets}
+      />
 
       {/* Base URL + API Key Configuration (for remote providers like MinerU) */}
       {(needsRemoteConfig || isServerConfigured) && (
@@ -113,18 +116,25 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
                   autoCapitalize="none"
                   autoCorrect="off"
                   spellCheck={false}
-                  placeholder="http://localhost:8080"
+                  placeholder={
+                    canEditSecrets
+                      ? providerConfig?.serverBaseUrl ||
+                        pdfProvider?.baseUrl ||
+                        'http://localhost:8080'
+                      : t('settings.browserOverridesDisabledShort')
+                  }
                   value={providerConfig?.baseUrl || ''}
                   onChange={(e) =>
                     setPDFProviderConfig(selectedProviderId, { baseUrl: e.target.value })
                   }
+                  disabled={!canEditSecrets}
                   className="text-sm"
                 />
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={handleTestConnection}
-                  disabled={testStatus === 'testing' || !hasBaseUrl}
+                  disabled={testStatus === 'testing' || !hasBaseUrl || !hasRequiredCredentials}
                   className="gap-1.5 shrink-0"
                 >
                   {testStatus === 'testing' ? (
@@ -142,9 +152,11 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
             <div className="space-y-2">
               <Label className="text-sm">
                 {t('settings.pdfApiKey')}
-                <span className="text-muted-foreground ml-1 font-normal">
-                  ({t('settings.optional')})
-                </span>
+                {!pdfProvider.requiresApiKey && (
+                  <span className="text-muted-foreground ml-1 font-normal">
+                    ({t('settings.optional')})
+                  </span>
+                )}
               </Label>
               <div className="relative">
                 <Input
@@ -155,7 +167,11 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
                   autoCorrect="off"
                   spellCheck={false}
                   placeholder={
-                    isServerConfigured ? t('settings.optionalOverride') : t('settings.enterApiKey')
+                    canEditSecrets
+                      ? isServerConfigured
+                        ? t('settings.optionalOverride')
+                        : t('settings.enterApiKey')
+                      : t('settings.browserOverridesDisabledShort')
                   }
                   value={providerConfig?.apiKey || ''}
                   onChange={(e) =>
@@ -163,11 +179,13 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
                       apiKey: e.target.value,
                     })
                   }
+                  disabled={!canEditSecrets}
                   className="font-mono text-sm pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
+                  disabled={!canEditSecrets}
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -197,9 +215,11 @@ export function PDFSettings({ selectedProviderId }: PDFSettingsProps) {
 
           {/* Request URL Preview */}
           {(() => {
-            const effectiveBaseUrl = providerConfig?.baseUrl || '';
+            const effectiveBaseUrl = effectiveConfiguredBaseUrl;
             if (!effectiveBaseUrl) return null;
-            const fullUrl = effectiveBaseUrl + '/file_parse';
+            const fullUrl =
+              effectiveBaseUrl +
+              (selectedProviderId === 'mineru-cloud' ? '/file-urls/batch' : '/file_parse');
             return (
               <p className="text-xs text-muted-foreground break-all">
                 {t('settings.requestUrl')}: {fullUrl}

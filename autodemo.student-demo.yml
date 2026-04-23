@@ -1,0 +1,140 @@
+version: "1"
+
+meta:
+  title: "NEW-AI-EDU 学生端 Demo"
+  description: "学生登录、首页主路径与自主互动课堂入口演示"
+  resolution: { width: 1440, height: 900 }
+  fps: 30
+  output: "./output/new-ai-edu-student-demo.mp4"
+
+target:
+  url: "http://127.0.0.1:3000"
+  startCommand: "corepack pnpm dev"
+  startTimeout: 60000
+  readyWhen: "url:http://127.0.0.1:3000/api/health"
+
+voiceover:
+  provider: "say"
+  config:
+    voice: "Tingting"
+    rate: 145
+
+scenes:
+  - id: "intro"
+    type: "title"
+    title: "航科 AI 教育平台"
+    subtitle: "学生端与互动课堂演示"
+    narration: "下面我们完整演示航科 AI 教育平台的学生端首页，以及学生自主互动课堂入口。"
+
+  - id: "login"
+    type: "interaction"
+    narration: "首先进入登录页，使用学生演示账号登录系统，进入今天的学习工作台。"
+    steps:
+      - action: "navigate"
+        url: "/login"
+      - action: "wait"
+        selector: ".auth-form input[type='email']"
+      - action: "type"
+        selector: ".auth-form input[type='email']"
+        value: "student@demo.com"
+        typeDelay: 45
+      - action: "type"
+        selector: ".auth-form input[type='password']"
+        value: "Student123"
+        typeDelay: 35
+      - action: "click"
+        selector: ".auth-form button[type='submit']"
+      - action: "waitForNavigation"
+        url: "/student"
+      - action: "pause"
+        duration: 1800
+
+  - id: "student-dashboard"
+    type: "interaction"
+    narration: "登录后可以看到学生首页主路径。系统会先给出当前最值得开始的动作，再把互动课堂和后续学习入口放在后面。"
+    steps:
+      - action: "wait"
+        selector: "#student-action-center"
+      - action: "highlight"
+        selector: "#student-action-center"
+        duration: 1800
+      - action: "pause"
+        duration: 1200
+      - action: "highlight"
+        selector: "#student-self-study-entry"
+        duration: 1800
+      - action: "scroll"
+        selector: "#student-task-queue"
+        smooth: true
+      - action: "pause"
+        duration: 1000
+      - action: "highlight"
+        selector: "#student-task-queue"
+        duration: 1600
+      - action: "pause"
+        duration: 1400
+
+  - id: "student-context"
+    type: "interaction"
+    narration: "继续往下，可以展开完整任务队列、时间预算和学习闭环，让学生先开工，再逐步补全上下文。"
+    steps:
+      - action: "wait"
+        selector: "#student-task-queue"
+      - action: "click"
+        selector: "#student-task-queue > summary"
+      - action: "pause"
+        duration: 1500
+      - action: "scroll"
+        selector: "#student-growth-center"
+        smooth: true
+      - action: "click"
+        selector: "#student-growth-center > summary"
+      - action: "pause"
+        duration: 1200
+      - action: "highlight"
+        selector: "#student-growth-center"
+        duration: 1800
+      - action: "pause"
+        duration: 1400
+
+  - id: "interactive-classroom"
+    type: "interaction"
+    narration: "接着进入学生自主互动课堂。学生只需要输入主题，就可以一键发起预习、巩固、兴趣探索或课堂回看。"
+    steps:
+      - action: "navigate"
+        url: "/student/interactive-classroom"
+      - action: "wait"
+        selector: "[data-testid='student-self-study-topic']"
+      - action: "type"
+        selector: "[data-testid='student-self-study-topic']"
+        value: "圆柱的表面积"
+        typeDelay: 80
+      - action: "pause"
+        duration: 1000
+      - action: "highlight"
+        selector: "[data-testid='student-self-study-topic']"
+        duration: 1800
+      - action: "highlight"
+        selector: "[data-testid='student-self-study-launch']"
+        duration: 1800
+      - action: "pause"
+        duration: 1800
+
+  - id: "outro"
+    type: "title"
+    title: "学生端主路径更清晰"
+    subtitle: "登录即可开始任务，也能一键进入互动课堂"
+    narration: "通过这样的首页结构，学生可以更快开始当天任务，也能自然进入互动课堂与后续学习闭环。"
+
+transitions:
+  default: "cut"
+  duration: 250
+
+style:
+  highlight:
+    color: "rgba(56, 189, 248, 0.22)"
+    borderRadius: 18
+  captions:
+    enabled: true
+    position: "bottom"
+    fontSize: 24

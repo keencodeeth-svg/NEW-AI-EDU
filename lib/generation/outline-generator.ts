@@ -15,6 +15,10 @@ import { buildPrompt, PROMPT_IDS } from './prompts';
 import { formatImageDescription, formatImagePlaceholder } from './prompt-formatters';
 import { parseJsonResponse } from './json-repair';
 import { uniquifyMediaElementIds } from './scene-builder';
+import {
+  buildDeepInteractivePromptGuidance,
+  normalizeDeepInteractiveOutline,
+} from './deep-interactive';
 import type { AICallFn, GenerationResult, GenerationCallbacks } from './pipeline-types';
 import { createLogger } from '@/lib/logger';
 const log = createLogger('Generation');
@@ -107,6 +111,7 @@ export async function generateSceneOutlinesFromRequirements(
     availableImages: availableImagesText,
     userProfile: userProfileText,
     mediaGenerationPolicy,
+    deepInteractiveGuidance: buildDeepInteractivePromptGuidance(requirements.generationMode),
     researchContext:
       options?.researchContext || (requirements.language === 'zh-CN' ? '无' : 'None'),
     // Server-side generation populates this via options; client-side populates via formatTeacherPersonaForPrompt
@@ -137,12 +142,14 @@ export async function generateSceneOutlinesFromRequirements(
       };
     }
     // Ensure IDs, order, and language
-    const enriched = outlines.map((outline, index) => ({
-      ...outline,
-      id: outline.id || nanoid(),
-      order: index + 1,
-      language: requirements.language,
-    }));
+    const enriched = outlines.map((outline, index) =>
+      normalizeDeepInteractiveOutline({
+        ...outline,
+        id: outline.id || nanoid(),
+        order: index + 1,
+        language: requirements.language,
+      }),
+    );
 
     // Replace sequential gen_img_N/gen_vid_N with globally unique IDs
     const result = uniquifyMediaElementIds(enriched);
@@ -171,6 +178,8 @@ export function applyOutlineFallbacks(
   outline: SceneOutline,
   hasLanguageModel: boolean,
 ): SceneOutline {
+  outline = normalizeDeepInteractiveOutline(outline);
+
   if (outline.type === 'interactive' && !outline.interactiveConfig) {
     log.warn(
       `Interactive outline "${outline.title}" missing interactiveConfig, falling back to slide`,

@@ -41,6 +41,18 @@ type CreateAssignmentResponse = {
   message?: string;
 };
 
+type DifferentiatedAssignmentResponse = {
+  data?: {
+    tiers?: Array<{
+      tier: "A" | "B" | "C";
+      label: string;
+      assignmentId: string | null;
+      students: Array<{ id: string; name: string; score: number }>;
+      questionIds: string[];
+    }>;
+  };
+};
+
 type UpdateClassResponse = {
   data?: Partial<ClassItem>;
 };
@@ -219,52 +231,82 @@ export function useTeacherDashboardClassActions({
     setAssignmentMessage(null);
 
     try {
-      const payload = await requestJson<CreateAssignmentResponse>("/api/teacher/assignments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          classId: assignmentForm.classId,
-          moduleId: assignmentForm.moduleId || undefined,
-          title: assignmentForm.title,
-          description: assignmentForm.description,
-          dueDate: assignmentForm.dueDate,
-          questionCount: assignmentForm.questionCount,
-          knowledgePointId: assignmentForm.knowledgePointId || undefined,
-          mode: assignmentForm.mode,
-          difficulty: assignmentForm.difficulty,
-          questionType: assignmentForm.questionType,
-          submissionType: assignmentForm.submissionType,
-          maxUploads: assignmentForm.maxUploads,
-          gradingFocus: assignmentForm.gradingFocus
-        })
-      });
-
-      const createdAssignment = payload.data ?? {};
       const targetClass = classes.find((item) => item.id === assignmentForm.classId);
       const selectedModule = modules.find((item) => item.id === assignmentForm.moduleId);
+      const requestBody = {
+        classId: assignmentForm.classId,
+        moduleId: assignmentForm.moduleId || undefined,
+        title: assignmentForm.title,
+        description: assignmentForm.description,
+        dueDate: assignmentForm.dueDate,
+        questionCount: assignmentForm.questionCount,
+        knowledgePointId: assignmentForm.knowledgePointId || undefined,
+        mode: assignmentForm.mode,
+        difficulty: assignmentForm.difficulty,
+        questionType: assignmentForm.questionType,
+        submissionType: assignmentForm.submissionType,
+        maxUploads: assignmentForm.maxUploads,
+        gradingFocus: assignmentForm.gradingFocus
+      };
 
-      if (createdAssignment.id && targetClass) {
-        setAssignments((previous) =>
-          prependTeacherDashboardAssignment(
-            previous,
-            createdAssignment,
-            targetClass,
-            assignmentForm,
-            selectedModule
-          )
-        );
-        setClasses((previous) =>
-          incrementTeacherDashboardAssignmentCount(previous, targetClass.id)
-        );
+      let nextMessage = "作业发布成功。";
+
+      if (assignmentForm.differentiated && assignmentForm.submissionType === "quiz") {
+        const payload = await requestJson<DifferentiatedAssignmentResponse>("/api/teacher/differentiated-assignment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody)
+        });
+        const tiers = payload.data?.tiers ?? [];
+        const publishedTiers = tiers.filter((item) => item.assignmentId);
+        const coveredStudents = tiers.reduce((sum, item) => sum + item.students.length, 0);
+
+        if (targetClass && publishedTiers.length) {
+          setClasses((previous) =>
+            previous.map((item) =>
+              item.id === targetClass.id
+                ? { ...item, assignmentCount: item.assignmentCount + publishedTiers.length }
+                : item
+            )
+          );
+        }
+
+        nextMessage = publishedTiers.length
+          ? `已生成 ${publishedTiers.length} 档差异化作业，覆盖 ${coveredStudents} 名学生。`
+          : "差异化作业分析完成，但当前没有可发布的分层题组。";
+      } else {
+        const payload = await requestJson<CreateAssignmentResponse>("/api/teacher/assignments", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(requestBody)
+        });
+        const createdAssignment = payload.data ?? {};
+
+        if (createdAssignment.id && targetClass) {
+          setAssignments((previous) =>
+            prependTeacherDashboardAssignment(
+              previous,
+              createdAssignment,
+              targetClass,
+              assignmentForm,
+              selectedModule
+            )
+          );
+          setClasses((previous) =>
+            incrementTeacherDashboardAssignmentCount(previous, targetClass.id)
+          );
+        }
+
+        nextMessage = payload.message ?? "作业发布成功。";
       }
 
-      const nextMessage = payload.message ?? "作业发布成功。";
       setMessage(nextMessage);
       setAssignmentMessage(nextMessage);
       setAssignmentForm((previous) => ({
         ...previous,
         title: "",
         description: "",
+        differentiated: false,
         gradingFocus: ""
       }));
       refreshTeacherDashboard(loadAll);

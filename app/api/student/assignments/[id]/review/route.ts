@@ -1,5 +1,5 @@
 import { getClassesByStudent } from "@/lib/classes";
-import { getAssignmentById, getAssignmentItems, getAssignmentSubmission } from "@/lib/assignments";
+import { getAssignmentById, getAssignmentItems, getAssignmentProgressForStudent, getAssignmentSubmission } from "@/lib/assignments";
 import { getQuestions } from "@/lib/content";
 import { getReview } from "@/lib/reviews";
 import { getAssignmentAIReview } from "@/lib/assignment-ai";
@@ -35,6 +35,10 @@ export const GET = createLearningRoute({
     const classes = await getClassesByStudent(user.id);
     const classIds = new Set(classes.map((item) => item.id));
     if (!classIds.has(assignment.classId)) {
+      notFound("not found");
+    }
+    const progress = await getAssignmentProgressForStudent(assignment.id, user.id);
+    if (!progress) {
       notFound("not found");
     }
 

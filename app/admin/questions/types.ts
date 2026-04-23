@@ -19,6 +19,9 @@ export type Question = {
   questionType?: string;
   tags?: string[];
   abilities?: string[];
+  actualDifficulty?: number | null;
+  needsManualReview?: boolean;
+  reviewReason?: string | null;
   qualityScore?: number | null;
   duplicateRisk?: "low" | "medium" | "high" | null;
   ambiguityRisk?: "low" | "medium" | "high" | null;
@@ -147,6 +150,9 @@ export type QuestionProcessFailedItem = {
 
 export type QuestionQualityResultItem = {
   id: string;
+  actualDifficulty?: number | null;
+  needsManualReview?: boolean;
+  reviewReason?: string | null;
   qualityScore: number | null;
   duplicateRisk: Question["duplicateRisk"];
   ambiguityRisk: Question["ambiguityRisk"];

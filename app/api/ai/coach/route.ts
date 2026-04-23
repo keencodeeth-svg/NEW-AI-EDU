@@ -1,5 +1,6 @@
 import { generateAssistAnswer } from "@/lib/ai";
 import { buildStudyCoachResponse } from "@/lib/ai-study-mode";
+import type { HintTier } from "@/lib/ai-types";
 import { addHistoryItem, AI_HISTORY_ORIGINS, getHistoryByUser, type AiHistoryItem } from "@/lib/ai-history";
 import { assessAiQuality } from "@/lib/ai-quality-control";
 import { badRequest, unauthorized } from "@/lib/api/http";
@@ -13,6 +14,9 @@ const coachBodySchema = v.object<{
   studentAnswer?: string;
   revealAnswer?: boolean;
   origin?: (typeof AI_HISTORY_ORIGINS)[number];
+  hintTier?: number;
+  metacognition?: boolean;
+  metacognitionAttribution?: string;
 }>(
   {
     question: v.string({ minLength: 1 }),
@@ -20,7 +24,10 @@ const coachBodySchema = v.object<{
     grade: v.optional(v.string({ minLength: 1 })),
     studentAnswer: v.optional(v.string({ allowEmpty: true, trim: false })),
     revealAnswer: v.optional(v.boolean()),
-    origin: v.optional(v.enum(AI_HISTORY_ORIGINS))
+    origin: v.optional(v.enum(AI_HISTORY_ORIGINS)),
+    hintTier: v.optional(v.number({ min: 1, max: 3, integer: true })),
+    metacognition: v.optional(v.boolean()),
+    metacognitionAttribution: v.optional(v.string({ allowEmpty: true }))
   },
   { allowUnknown: false }
 );
@@ -132,7 +139,9 @@ export const POST = createAiRoute({
       question,
       subject,
       grade,
-      memoryContext: memorySnapshot.contextPrompt,
+      memoryContext: body.metacognitionAttribution
+        ? `${memorySnapshot.contextPrompt} 学生自我归因：${body.metacognitionAttribution}。`
+        : memorySnapshot.contextPrompt,
       answerMode: "hints_first"
     });
 
@@ -141,7 +150,9 @@ export const POST = createAiRoute({
       subject,
       studentAnswer: body.studentAnswer,
       revealAnswer: body.revealAnswer,
-      assist
+      assist,
+      requestedHintTier: body.hintTier as HintTier | undefined,
+      metacognitionTrigger: body.metacognition
     });
     const quality = assessAiQuality({
       kind: "coach",
@@ -167,7 +178,8 @@ export const POST = createAiRoute({
           subject ? `subject:${subject}` : "",
           grade ? `grade:${grade}` : "",
           body.studentAnswer?.trim() ? "with_thinking" : "without_thinking",
-          body.revealAnswer ? "answer_revealed" : "answer_locked"
+          body.revealAnswer ? "answer_revealed" : "answer_locked",
+          body.metacognitionAttribution ? "metacognition_submitted" : ""
         ].filter(Boolean);
         const answerSummary = [
           study.coachReply,

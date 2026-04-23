@@ -1,13 +1,18 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
+import GuidedTour from "@/components/GuidedTour";
 import WorkspacePage, { WorkspaceAuthState, WorkspaceErrorState, WorkspaceLoadingState } from "@/components/WorkspacePage";
 import WorkspaceHero from "@/components/WorkspaceHero";
+import { requestJson } from "@/lib/client-request";
 import StudentDashboardSectionHeader from "./_components/StudentDashboardSectionHeader";
 import StudentDashboardGuideCard from "./_components/StudentDashboardGuideCard";
+import StudentEncouragementBanner from "./_components/StudentEncouragementBanner";
 import StudentEntryCollection from "./_components/StudentEntryCollection";
 import StudentExecutionSummaryCard from "./_components/StudentExecutionSummaryCard";
 import StudentInteractiveClassroomEntryCard from "./_components/StudentInteractiveClassroomEntryCard";
 import StudentLearningLoopCard from "./_components/StudentLearningLoopCard";
+import StudentLiveClassroomBanner from "./_components/StudentLiveClassroomBanner";
 import StudentMotivationCard from "./_components/StudentMotivationCard";
 import StudentNextActionCard from "./_components/StudentNextActionCard";
 import StudentPriorityTasksCard from "./_components/StudentPriorityTasksCard";
@@ -15,11 +20,13 @@ import StudentQuickTutorCard from "./_components/StudentQuickTutorCard";
 import StudentScheduleCard from "./_components/StudentScheduleCard";
 import StudentTaskOverviewCard from "./_components/StudentTaskOverviewCard";
 import StudentUnifiedTaskQueueCard from "./_components/StudentUnifiedTaskQueueCard";
+import StudentDailyChallengeCard from "./_components/StudentDailyChallengeCard";
 import { CATEGORY_META } from "./utils";
 import { useStudentDashboardPageView } from "./useStudentDashboardPageView";
 
 export default function StudentPage() {
   const dashboardPage = useStudentDashboardPageView();
+  const [showTour, setShowTour] = useState(false);
   const mustDoCount = dashboardPage.nextActionCardProps.mustDoCount ?? 0;
   const totalTaskCount = dashboardPage.unifiedTaskQueueCardProps.todayTasks?.summary?.total ?? 0;
   const todayLessonCount = dashboardPage.executionSummaryCardProps.schedule?.todayLessons?.length ?? 0;
@@ -81,6 +88,46 @@ export default function StudentPage() {
       chip: "04",
     },
   ];
+
+  useEffect(() => {
+    let mounted = true;
+    void requestJson<{ data?: { completedAt?: string | null } }>("/api/user/onboarding")
+      .then((payload) => {
+        if (mounted && !payload.data?.completedAt) {
+          setShowTour(true);
+        }
+      })
+      .catch(() => {
+        // Ignore onboarding fetch failures and keep the dashboard usable.
+      });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const studentTourSteps = useMemo(
+    () => [
+      {
+        targetSelector: "#student-action-center",
+        title: "先看今天第一项",
+        content: "这里是系统已经帮你排好的开始动作，先推进当前第一项，再决定是否展开完整队列。",
+        placement: "bottom" as const
+      },
+      {
+        targetSelector: "#student-self-study-entry",
+        title: "需要完整陪学就直接开互动课堂",
+        content: "预习、巩固、兴趣探索都可以从这里继续，不需要在首页反复重新判断入口。",
+        placement: "bottom" as const
+      },
+      {
+        targetSelector: "#student-growth-center",
+        title: "做完以后再回看成长闭环",
+        content: "每日挑战、学习入口、激励和成长追踪都收纳在这里，先开工，再补充上下文。",
+        placement: "top" as const
+      }
+    ],
+    []
+  );
 
   if (dashboardPage.loading && !dashboardPage.hasDashboardData && !dashboardPage.authRequired) {
     return <WorkspaceLoadingState title="学习控制台加载中" description="正在汇总课表、学习计划、今日任务和成长激励。" />;
@@ -164,6 +211,16 @@ export default function StudentPage() {
         />
       }
     >
+      <div style={{ display: "grid", gap: 10, marginBottom: 12 }}>
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <button className="button ghost" type="button" onClick={() => setShowTour(true)}>
+            ? 重新引导
+          </button>
+        </div>
+        <StudentEncouragementBanner />
+        <StudentLiveClassroomBanner />
+      </div>
+
       <div className="student-start-strip" aria-label="学生开始路径">
         {startFlowItems.map((item) => (
           <a key={item.id} className="student-start-strip-item" href={item.href}>
@@ -275,6 +332,7 @@ export default function StudentPage() {
 
           <div className="student-overview-grid">
             <StudentMotivationCard {...dashboardPage.motivationCardProps} />
+            <StudentDailyChallengeCard />
             <StudentDashboardGuideCard {...dashboardPage.dashboardGuideCardProps} />
           </div>
 
@@ -287,6 +345,23 @@ export default function StudentPage() {
           <StudentEntryCollection {...dashboardPage.entryCollectionProps} />
         </div>
       </details>
+      <GuidedTour
+        open={showTour}
+        steps={studentTourSteps}
+        onSkip={() => setShowTour(false)}
+        onComplete={() => {
+          setShowTour(false);
+          void requestJson("/api/user/onboarding", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              completedSteps: ["tour", "student-action-center", "student-self-study-entry", "student-growth-center"]
+            })
+          }).catch(() => {
+            // Ignore persistence failures and keep the UI responsive.
+          });
+        }}
+      />
     </WorkspacePage>
   );
 }

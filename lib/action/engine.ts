@@ -29,7 +29,10 @@ import type {
   WbDrawTableAction,
   WbDeleteAction,
   WbDrawLineAction,
+  WbDrawCodeAction,
+  WbEditCodeAction,
 } from '@/lib/types/action';
+import type { CodeLine } from '@/lib/types/slides';
 import katex from 'katex';
 import { createLogger } from '@/lib/logger';
 
@@ -47,6 +50,19 @@ const SHAPE_PATHS: Record<string, string> = {
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function codeToLines(code: string): CodeLine[] {
+  return code.split('\n').map((content, index) => ({
+    id: `L${index + 1}`,
+    content,
+  }));
+}
+
+let lineIdCounter = 0;
+
+function generateLineIds(count: number): string[] {
+  return Array.from({ length: count }, () => `L_${++lineIdCounter}_${Date.now().toString(36)}`);
 }
 
 // ==================== ActionEngine ====================
@@ -114,6 +130,10 @@ export class ActionEngine {
         return this.executeWbDrawTable(action);
       case 'wb_draw_line':
         return this.executeWbDrawLine(action as WbDrawLineAction);
+      case 'wb_draw_code':
+        return this.executeWbDrawCode(action as WbDrawCodeAction);
+      case 'wb_edit_code':
+        return this.executeWbEditCode(action as WbEditCodeAction);
       case 'wb_clear':
         return this.executeWbClear();
       case 'wb_delete':
@@ -483,6 +503,101 @@ export class ActionEngine {
 
     // Wait for element fade-in animation
     await delay(800);
+  }
+
+  private async executeWbDrawCode(action: WbDrawCodeAction): Promise<void> {
+    const wb = this.stageAPI.whiteboard.get();
+    if (!wb.success || !wb.data) return;
+
+    const lines = codeToLines(action.code);
+
+    this.stageAPI.whiteboard.addElement(
+      {
+        id: action.elementId || '',
+        type: 'code',
+        language: action.language,
+        lines,
+        fileName: action.fileName,
+        showLineNumbers: true,
+        fontSize: 14,
+        left: action.x,
+        top: action.y,
+        width: action.width ?? 500,
+        height: action.height ?? 300,
+        rotate: 0,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } as any,
+      wb.data.id,
+    );
+
+    const animMs = Math.min(800 + lines.length * 50, 3000);
+    await delay(animMs);
+  }
+
+  private async executeWbEditCode(action: WbEditCodeAction): Promise<void> {
+    const wb = this.stageAPI.whiteboard.get();
+    if (!wb.success || !wb.data) return;
+
+    const elementResult = this.stageAPI.whiteboard.getElement(action.elementId, wb.data.id);
+    if (!elementResult.success || !elementResult.data) return;
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const element = elementResult.data as any;
+    if (element.type !== 'code' || !Array.isArray(element.lines)) return;
+
+    let lines: CodeLine[] = [...element.lines];
+    const newContentLines = action.content ? action.content.split('\n') : [];
+    const newLineIds = generateLineIds(newContentLines.length);
+
+    switch (action.operation) {
+      case 'insert_after': {
+        const index = lines.findIndex((line) => line.id === action.lineId);
+        if (index === -1) return;
+        const inserted = newContentLines.map((content, idx) => ({
+          id: newLineIds[idx],
+          content,
+        }));
+        lines.splice(index + 1, 0, ...inserted);
+        break;
+      }
+      case 'insert_before': {
+        const index = lines.findIndex((line) => line.id === action.lineId);
+        if (index === -1) return;
+        const inserted = newContentLines.map((content, idx) => ({
+          id: newLineIds[idx],
+          content,
+        }));
+        lines.splice(index, 0, ...inserted);
+        break;
+      }
+      case 'delete_lines': {
+        if (!action.lineIds?.length) return;
+        const deleteSet = new Set(action.lineIds);
+        lines = lines.filter((line) => !deleteSet.has(line.id));
+        break;
+      }
+      case 'replace_lines': {
+        if (!action.lineIds?.length) return;
+        const firstIndex = lines.findIndex((line) => line.id === action.lineIds?.[0]);
+        if (firstIndex === -1) return;
+        const deleteSet = new Set(action.lineIds);
+        lines = lines.filter((line) => !deleteSet.has(line.id));
+        const replaced = newContentLines.map((content, idx) => ({
+          id: idx < action.lineIds!.length ? action.lineIds![idx] : newLineIds[idx],
+          content,
+        }));
+        lines.splice(firstIndex, 0, ...replaced);
+        break;
+      }
+    }
+
+    this.stageAPI.whiteboard.updateElement(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      { ...element, lines } as any,
+      wb.data.id,
+    );
+
+    await delay(600);
   }
 
   private async executeWbDelete(action: WbDeleteAction): Promise<void> {

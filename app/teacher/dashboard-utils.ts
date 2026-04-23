@@ -230,6 +230,9 @@ export function getTeacherDashboardClassRequestMessage(error: unknown, fallback:
   if (requestMessage === "题库数量不足") {
     return "当前题库数量不足，无法按现有条件发布作业。";
   }
+  if (lower === "class has no students") {
+    return "当前班级还没有学生，暂时无法生成或发布分层作业。";
+  }
 
   return getRequestErrorMessage(error, fallback);
 }

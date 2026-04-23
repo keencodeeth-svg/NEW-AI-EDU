@@ -31,7 +31,8 @@ import {
   isBrowserTTSAbortError,
   playBrowserTTSPreview,
 } from '@/lib/audio/browser-tts-preview';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 const log = createLogger('AudioSettings');
 
@@ -169,6 +170,14 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
 
   const asrProvider = ASR_PROVIDERS[asrProviderId] ?? ASR_PROVIDERS['openai-whisper'];
+  const activeTTSUiState = getClientProviderUiState(
+    ttsProvidersConfig[ttsProviderId],
+    ttsProvider.defaultBaseUrl,
+  );
+  const activeASRUiState = getClientProviderUiState(
+    asrProvidersConfig[asrProviderId],
+    asrProvider.defaultBaseUrl,
+  );
 
   // Update test text when language changes (derived state pattern)
   const [prevT, setPrevT] = useState(() => t);
@@ -344,15 +353,6 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
         ttsSpeed: ttsSpeed,
       };
 
-      const requestConfig = getClientProviderRequestConfig(ttsProvidersConfig[ttsProviderId]);
-      if (requestConfig.apiKey) {
-        requestBody.ttsApiKey = requestConfig.apiKey;
-      }
-
-      if (requestConfig.baseUrl) {
-        requestBody.ttsBaseUrl = requestConfig.baseUrl;
-      }
-
       const response = await fetch('/api/generate/tts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -470,16 +470,6 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
             formData.append('audio', audioBlob, 'recording.webm');
             formData.append('providerId', asrProviderId);
             formData.append('language', asrLanguage);
-
-            // Only append non-empty values
-            const apiKeyValue = asrProvidersConfig[asrProviderId]?.apiKey;
-            if (apiKeyValue && apiKeyValue.trim()) {
-              formData.append('apiKey', apiKeyValue);
-            }
-            const baseUrlValue = asrProvidersConfig[asrProviderId]?.baseUrl;
-            if (baseUrlValue && baseUrlValue.trim()) {
-              formData.append('baseUrl', baseUrlValue);
-            }
 
             try {
               const response = await fetch('/api/transcription', {
@@ -602,6 +592,10 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
           {(ttsProvider.requiresApiKey ||
             ttsProvidersConfig[ttsProviderId]?.isServerConfigured) && (
             <>
+              <ProviderPolicyNotice
+                isServerConfigured={!!ttsProvidersConfig[ttsProviderId]?.isServerConfigured}
+                browserOverridesDisabled={!activeTTSUiState.canEditSecrets}
+              />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm">{t('settings.ttsApiKey')}</Label>
@@ -609,9 +603,11 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                     <Input
                       type={showTTSApiKey ? 'text' : 'password'}
                       placeholder={
-                        ttsProvidersConfig[ttsProviderId]?.isServerConfigured
-                          ? t('settings.optionalOverride')
-                          : t('settings.enterApiKey')
+                        activeTTSUiState.canEditSecrets
+                          ? ttsProvidersConfig[ttsProviderId]?.isServerConfigured
+                            ? t('settings.optionalOverride')
+                            : t('settings.enterApiKey')
+                          : t('settings.browserOverridesDisabledShort')
                       }
                       value={ttsProvidersConfig[ttsProviderId]?.apiKey || ''}
                       onChange={(e) =>
@@ -619,11 +615,13 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                           apiKey: e.target.value,
                         })
                       }
+                      disabled={!activeTTSUiState.canEditSecrets}
                       className="font-mono text-sm pr-10"
                     />
                     <button
                       type="button"
                       onClick={() => setShowTTSApiKey(!showTTSApiKey)}
+                      disabled={!activeTTSUiState.canEditSecrets}
                       className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     >
                       {showTTSApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -634,20 +632,26 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                 <div className="space-y-2">
                   <Label className="text-sm">{t('settings.ttsBaseUrl')}</Label>
                   <Input
-                    placeholder={ttsProvider.defaultBaseUrl || t('settings.enterCustomBaseUrl')}
+                    placeholder={
+                      activeTTSUiState.canEditSecrets
+                        ? ttsProvidersConfig[ttsProviderId]?.serverBaseUrl ||
+                          ttsProvider.defaultBaseUrl ||
+                          t('settings.enterCustomBaseUrl')
+                        : t('settings.browserOverridesDisabledShort')
+                    }
                     value={ttsProvidersConfig[ttsProviderId]?.baseUrl || ''}
                     onChange={(e) =>
                       handleTTSProviderConfigChange(ttsProviderId, {
                         baseUrl: e.target.value,
                       })
                     }
+                    disabled={!activeTTSUiState.canEditSecrets}
                     className="text-sm"
                   />
                 </div>
               </div>
               {(() => {
-                const effectiveBaseUrl =
-                  ttsProvidersConfig[ttsProviderId]?.baseUrl || ttsProvider.defaultBaseUrl || '';
+                const effectiveBaseUrl = activeTTSUiState.effectiveBaseUrl;
                 if (!effectiveBaseUrl) return null;
 
                 // Get endpoint path based on provider
@@ -854,7 +858,7 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                   testingTTS ||
                   !testText.trim() ||
                   (ttsProvider.requiresApiKey &&
-                    !ttsProvidersConfig[ttsProviderId]?.apiKey?.trim() &&
+                    !activeTTSUiState.requestConfig.apiKey &&
                     !ttsProvidersConfig[ttsProviderId]?.isServerConfigured)
                 }
                 size="default"
@@ -974,6 +978,10 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
           {(asrProvider.requiresApiKey ||
             asrProvidersConfig[asrProviderId]?.isServerConfigured) && (
             <>
+              <ProviderPolicyNotice
+                isServerConfigured={!!asrProvidersConfig[asrProviderId]?.isServerConfigured}
+                browserOverridesDisabled={!activeASRUiState.canEditSecrets}
+              />
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label className="text-sm">{t('settings.asrApiKey')}</Label>
@@ -981,9 +989,11 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                     <Input
                       type={showASRApiKey ? 'text' : 'password'}
                       placeholder={
-                        asrProvidersConfig[asrProviderId]?.isServerConfigured
-                          ? t('settings.optionalOverride')
-                          : t('settings.enterApiKey')
+                        activeASRUiState.canEditSecrets
+                          ? asrProvidersConfig[asrProviderId]?.isServerConfigured
+                            ? t('settings.optionalOverride')
+                            : t('settings.enterApiKey')
+                          : t('settings.browserOverridesDisabledShort')
                       }
                       value={asrProvidersConfig[asrProviderId]?.apiKey || ''}
                       onChange={(e) =>
@@ -991,11 +1001,13 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                           apiKey: e.target.value,
                         })
                       }
+                      disabled={!activeASRUiState.canEditSecrets}
                       className="font-mono text-sm pr-10"
                     />
                     <button
                       type="button"
                       onClick={() => setShowASRApiKey(!showASRApiKey)}
+                      disabled={!activeASRUiState.canEditSecrets}
                       className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     >
                       {showASRApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -1006,20 +1018,26 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                 <div className="space-y-2">
                   <Label className="text-sm">{t('settings.asrBaseUrl')}</Label>
                   <Input
-                    placeholder={asrProvider.defaultBaseUrl || t('settings.enterCustomBaseUrl')}
+                    placeholder={
+                      activeASRUiState.canEditSecrets
+                        ? asrProvidersConfig[asrProviderId]?.serverBaseUrl ||
+                          asrProvider.defaultBaseUrl ||
+                          t('settings.enterCustomBaseUrl')
+                        : t('settings.browserOverridesDisabledShort')
+                    }
                     value={asrProvidersConfig[asrProviderId]?.baseUrl || ''}
                     onChange={(e) =>
                       handleASRProviderConfigChange(asrProviderId, {
                         baseUrl: e.target.value,
                       })
                     }
+                    disabled={!activeASRUiState.canEditSecrets}
                     className="text-sm"
                   />
                 </div>
               </div>
               {(() => {
-                const effectiveBaseUrl =
-                  asrProvidersConfig[asrProviderId]?.baseUrl || asrProvider.defaultBaseUrl || '';
+                const effectiveBaseUrl = activeASRUiState.effectiveBaseUrl;
                 if (!effectiveBaseUrl) return null;
 
                 // Get endpoint path based on provider
@@ -1088,7 +1106,7 @@ export function AudioSettings({ onSave }: AudioSettingsProps = {}) {
                       onClick={handleToggleASRRecording}
                       disabled={
                         asrProvider.requiresApiKey &&
-                        !asrProvidersConfig[asrProviderId]?.apiKey?.trim() &&
+                        !activeASRUiState.requestConfig.apiKey &&
                         !asrProvidersConfig[asrProviderId]?.isServerConfigured
                       }
                       className="gap-2 w-[140px]"

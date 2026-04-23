@@ -22,7 +22,6 @@ export interface GenerationSessionState {
   pdfStorageKey?: string;
   pdfFileName?: string;
   pdfProviderId?: string;
-  pdfProviderConfig?: { apiKey?: string; baseUrl?: string };
   // Web search context
   researchContext?: string;
   researchSources?: Array<{ title: string; url: string }>;

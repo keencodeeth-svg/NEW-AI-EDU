@@ -562,7 +562,7 @@ export async function runSchoolScheduleSuite(context, options = {}) {
       weekday: weeklyLimitSlot.weekday,
       startTime: weeklyLimitSlot.startTime,
       endTime: weeklyLimitSlot.endTime,
-      room: "周上限教室",
+      room: `周上限教室-${scheduleRunId}`,
       campus: "主校区",
       slotLabel: "周上限测试"
     }
@@ -633,7 +633,7 @@ export async function runSchoolScheduleSuite(context, options = {}) {
       weekday: consecutiveSlotPair.first.weekday,
       startTime: consecutiveSlotPair.first.startTime,
       endTime: consecutiveSlotPair.first.endTime,
-      room: "连堂测试教室1",
+      room: `连堂测试教室1-${scheduleRunId}`,
       campus: "主校区",
       slotLabel: "连堂测试一"
     }
@@ -666,7 +666,7 @@ export async function runSchoolScheduleSuite(context, options = {}) {
       weekday: consecutiveSlotPair.second.weekday,
       startTime: consecutiveSlotPair.second.startTime,
       endTime: consecutiveSlotPair.second.endTime,
-      room: "连堂测试教室2",
+      room: `连堂测试教室2-${scheduleRunId}`,
       campus: "主校区",
       slotLabel: "连堂测试二"
     }
@@ -681,7 +681,7 @@ export async function runSchoolScheduleSuite(context, options = {}) {
       weekday: campusSlotPair.first.weekday,
       startTime: campusSlotPair.first.startTime,
       endTime: campusSlotPair.first.endTime,
-      room: "跨校区测试教室1",
+      room: `跨校区测试教室1-${scheduleRunId}`,
       campus: "南校区",
       slotLabel: "跨校区测试一"
     }
@@ -710,7 +710,7 @@ export async function runSchoolScheduleSuite(context, options = {}) {
       weekday: campusSlotPair.second.weekday,
       startTime: campusSlotPair.second.startTime,
       endTime: campusSlotPair.second.endTime,
-      room: "跨校区测试教室2",
+      room: `跨校区测试教室2-${scheduleRunId}`,
       campus: "北校区",
       slotLabel: "跨校区测试二"
     }

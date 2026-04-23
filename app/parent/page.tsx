@@ -10,7 +10,10 @@ import WorkspacePage, {
 import ParentSectionHeader from "./_components/ParentSectionHeader";
 import ParentAssignmentsCard from "./_components/ParentAssignmentsCard";
 import ParentCorrectionsCard from "./_components/ParentCorrectionsCard";
+import ParentEncouragementCard from "./_components/ParentEncouragementCard";
 import ParentFavoritesCard from "./_components/ParentFavoritesCard";
+import ParentGoalSetCard from "./_components/ParentGoalSetCard";
+import ParentMoodTrendCard from "./_components/ParentMoodTrendCard";
 import { ParentExecutionSummaryCard, ParentNextStepCard } from "./_components/ParentActionCenterPanels";
 import ParentWeakPointsCard from "./_components/ParentWeakPointsCard";
 import ParentWeeklyReportCard from "./_components/ParentWeeklyReportCard";
@@ -62,6 +65,19 @@ export default function ParentPage() {
         description="把逾期、临近截止和行动卡放在一起看，避免家长在多个区域来回切换。"
         chip="Tonight"
       />
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 16,
+          alignItems: "start"
+        }}
+      >
+        <ParentGoalSetCard />
+        <ParentEncouragementCard />
+        <ParentMoodTrendCard />
+      </div>
 
       <div className="grid grid-2" style={{ alignItems: "start" }}>
         <div id="parent-corrections">

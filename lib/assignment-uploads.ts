@@ -51,15 +51,27 @@ function mapUpload(row: DbUpload): AssignmentUploadRecord {
 
 async function hydrateUploadContent(upload: AssignmentUploadRecord): Promise<AssignmentUpload> {
   if (upload.contentBase64?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicUpload } = upload;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicUpload
+    } = upload;
     return publicUpload;
   }
   if (!upload.contentStorageKey?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicUpload } = upload;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicUpload
+    } = upload;
     return publicUpload;
   }
   const contentBase64 = await getBase64Object(upload.contentStorageKey);
-  const { contentStorageProvider, contentStorageKey, ...publicUpload } = upload;
+  const {
+    contentStorageProvider: _contentStorageProvider,
+    contentStorageKey: _contentStorageKey,
+    ...publicUpload
+  } = upload;
   return {
     ...publicUpload,
     contentBase64: contentBase64 ?? ""

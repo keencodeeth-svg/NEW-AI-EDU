@@ -90,19 +90,35 @@ function mapResource(row: DbResource): ModuleResourceRecord {
 
 async function hydrateModuleResourceContent(resource: ModuleResourceRecord): Promise<ModuleResource> {
   if (resource.resourceType !== "file") {
-    const { contentStorageProvider, contentStorageKey, ...publicResource } = resource;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicResource
+    } = resource;
     return publicResource;
   }
   if (resource.contentBase64?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicResource } = resource;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicResource
+    } = resource;
     return publicResource;
   }
   if (!resource.contentStorageKey?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicResource } = resource;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicResource
+    } = resource;
     return publicResource;
   }
   const contentBase64 = await getBase64Object(resource.contentStorageKey);
-  const { contentStorageProvider, contentStorageKey, ...publicResource } = resource;
+  const {
+    contentStorageProvider: _contentStorageProvider,
+    contentStorageKey: _contentStorageKey,
+    ...publicResource
+  } = resource;
   return {
     ...publicResource,
     contentBase64: contentBase64 ?? undefined

@@ -2,6 +2,7 @@ import crypto from "crypto";
 import { getQuestions } from "@/lib/content";
 import { addAttempt } from "@/lib/progress";
 import { getMasteryRecord, getWeaknessRankMap, updateMasteryByAttempt } from "@/lib/mastery";
+import { recalibrateQuestionDifficulty } from "@/lib/difficulty-calibration";
 import { notFound, unauthorized } from "@/lib/api/http";
 import { parseJson, v } from "@/lib/api/validation";
 import { createLearningRoute } from "@/lib/api/domains";
@@ -48,6 +49,7 @@ export const POST = createLearningRoute({
       },
       { reviewOrigin: { sourceType: "practice" } }
     );
+    await recalibrateQuestionDifficulty(question.id, question.difficulty ?? null);
 
     const masteryUpdate = await updateMasteryByAttempt({
       userId: user.id,

@@ -63,19 +63,35 @@ function mapCourseFile(row: DbCourseFile): CourseFileRecord {
 
 async function hydrateCourseFileContent(file: CourseFileRecord): Promise<CourseFile> {
   if (file.resourceType !== "file") {
-    const { contentStorageProvider, contentStorageKey, ...publicFile } = file;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicFile
+    } = file;
     return publicFile;
   }
   if (file.contentBase64?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicFile } = file;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicFile
+    } = file;
     return publicFile;
   }
   if (!file.contentStorageKey?.trim()) {
-    const { contentStorageProvider, contentStorageKey, ...publicFile } = file;
+    const {
+      contentStorageProvider: _contentStorageProvider,
+      contentStorageKey: _contentStorageKey,
+      ...publicFile
+    } = file;
     return publicFile;
   }
   const contentBase64 = await getBase64Object(file.contentStorageKey);
-  const { contentStorageProvider, contentStorageKey, ...publicFile } = file;
+  const {
+    contentStorageProvider: _contentStorageProvider,
+    contentStorageKey: _contentStorageKey,
+    ...publicFile
+  } = file;
   return {
     ...publicFile,
     contentBase64: contentBase64 ?? undefined

@@ -1,4 +1,4 @@
-import { getCurrentUser, getUserById } from "@/lib/auth";
+import { getUserById } from "@/lib/auth";
 import { getClassesByTeacher, getJoinRequestsByTeacher, getClassById } from "@/lib/classes";
 import { unauthorized } from "@/lib/api/http";
 import { createLearningRoute } from "@/lib/api/domains";

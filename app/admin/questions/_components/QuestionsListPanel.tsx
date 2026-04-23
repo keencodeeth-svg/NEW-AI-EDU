@@ -71,8 +71,19 @@ function riskText(risk: ResultRiskKey) {
 
 function buildQuestionBadges(item: Question) {
   const badges: Array<{ key: string; text: string }> = [];
+  const presetDifficulty = item.difficulty === "easy" ? 30 : item.difficulty === "hard" ? 80 : 55;
   if (typeof item.qualityScore === "number") {
     badges.push({ key: `${item.id}-quality`, text: `质量分 ${item.qualityScore}` });
+  }
+  if (typeof item.actualDifficulty === "number") {
+    const deviation = item.actualDifficulty - presetDifficulty;
+    badges.push({
+      key: `${item.id}-actual-difficulty`,
+      text: `实际难度 ${item.actualDifficulty}（偏差 ${deviation >= 0 ? "+" : ""}${deviation}）`
+    });
+  }
+  if (item.needsManualReview) {
+    badges.push({ key: `${item.id}-manual-review`, text: "需人工复核" });
   }
   if (item.riskLevel) {
     badges.push({ key: `${item.id}-risk`, text: `风险等级 ${riskLabel[item.riskLevel]}` });
@@ -658,7 +669,18 @@ export default function QuestionsListPanel({
                   正确答案：<MathText text={resolvedSelectedQuestion.answer} />
                 </span>
                 <span className="badge">知识点ID：{resolvedSelectedQuestion.knowledgePointId}</span>
+                {typeof resolvedSelectedQuestion.actualDifficulty === "number" ? (
+                  <span className="badge">
+                    实际难度 {resolvedSelectedQuestion.actualDifficulty} / 预设 {resolvedSelectedQuestion.difficulty === "easy" ? 30 : resolvedSelectedQuestion.difficulty === "hard" ? 80 : 55}
+                  </span>
+                ) : null}
               </div>
+              {resolvedSelectedQuestion.needsManualReview ? (
+                <div className="status-note warning">
+                  该题已标记为需人工复核。
+                  {resolvedSelectedQuestion.reviewReason ? ` ${resolvedSelectedQuestion.reviewReason}` : ""}
+                </div>
+              ) : null}
               <div className="questions-selected-explanation">
                 <div className="section-title questions-selected-title">
                   解析

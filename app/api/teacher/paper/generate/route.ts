@@ -1,5 +1,4 @@
 import crypto from "crypto";
-import { getCurrentUser } from "@/lib/auth";
 import { getClassById } from "@/lib/classes";
 import { getKnowledgePoints, getQuestions } from "@/lib/content";
 import { generateQuestionDraft, hasConfiguredLlmProvider } from "@/lib/ai";

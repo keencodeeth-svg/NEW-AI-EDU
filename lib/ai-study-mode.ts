@@ -1,4 +1,4 @@
-import type { AssistResponse, StudyCoachResponse } from "./ai-types";
+import type { AssistResponse, StudyCoachResponse, HintTier, ScaffoldedHint, MetacognitionPrompt } from "./ai-types";
 
 const STAGE_LABELS: Record<StudyCoachResponse["stage"], string> = {
   diagnose: "先说思路",
@@ -147,12 +147,124 @@ function buildRevealAnswerCta(stage: StudyCoachResponse["stage"]) {
   return "先回答后再看讲解";
 }
 
+function buildAnalogyHint(assist: AssistResponse, subject?: string): ScaffoldedHint {
+  const primarySource = assist.sources.find(Boolean);
+  let content: string;
+
+  if (primarySource) {
+    content = `想想你之前学过的「${primarySource}」，这道题的核心思路和它是类似的。`;
+  } else if (subject === "math") {
+    content = "试试把这道题里的数字换成更简单的数（比如 1、2、3），先用简单情况找规律。";
+  } else if (subject === "english") {
+    content = "把这道题翻译成中文理解一遍，看看考的是词汇、语法还是语境。";
+  } else if (subject === "chinese") {
+    content = "回忆一下课文里有没有类似的表达方式或写作手法，先找到对应的知识点。";
+  } else {
+    content = "想想生活中有没有类似的场景，先用自己的话描述一遍这道题在问什么。";
+  }
+
+  return { tier: 1, tierLabel: "类比提示", content };
+}
+
+function buildFirstStepHint(assist: AssistResponse): ScaffoldedHint {
+  const firstStep = assist.steps[0];
+  const content = firstStep
+    ? `第一步方向：${simplifyStepLead(firstStep)}`
+    : "第一步：先把题目里的已知条件全部列出来，再判断要求什么。";
+
+  return { tier: 2, tierLabel: "第一步", content };
+}
+
+function buildFormulaHint(assist: AssistResponse): ScaffoldedHint {
+  const primarySource = assist.sources.find(Boolean);
+  const keyStep = assist.steps.find((s) => /公式|定理|法则|规则|原理/.test(s));
+
+  let content: string;
+  if (primarySource && keyStep) {
+    content = `关键知识点：${primarySource}。核心方法：${normalizeInline(keyStep, 64)}`;
+  } else if (primarySource) {
+    content = `关键知识点：${primarySource}。回忆这个知识点对应的公式或方法，直接套用。`;
+  } else {
+    content = assist.steps.length
+      ? `核心方法：${normalizeInline(assist.steps[0], 64)}`
+      : "回忆课本上这类题目对应的公式或定理，直接套用。";
+  }
+
+  return { tier: 3, tierLabel: "关键公式", content };
+}
+
+function buildScaffoldedHints(
+  assist: AssistResponse,
+  subject?: string,
+  requestedTier: HintTier = 1
+): ScaffoldedHint[] {
+  const hints: ScaffoldedHint[] = [buildAnalogyHint(assist, subject)];
+  if (requestedTier >= 2) {
+    hints.push(buildFirstStepHint(assist));
+  }
+  if (requestedTier >= 3) {
+    hints.push(buildFormulaHint(assist));
+  }
+  return hints;
+}
+
+function buildMetacognitionPrompt(subject?: string): MetacognitionPrompt {
+  const baseQuestion = "你觉得这道题做错（或卡住）的主要原因是什么？";
+
+  const mathSuggestions = [
+    "题目没读清楚",
+    "知道方法但计算出错",
+    "不知道该用什么方法",
+    "公式记混了",
+    "粗心大意",
+  ];
+
+  const chineseSuggestions = [
+    "题目理解有偏差",
+    "关键词没找对",
+    "答题角度没选好",
+    "知识点记忆模糊",
+    "审题太快",
+  ];
+
+  const englishSuggestions = [
+    "单词不认识",
+    "语法规则不熟",
+    "句意理解错误",
+    "固定搭配不记得",
+    "审题不仔细",
+  ];
+
+  const defaultSuggestions = [
+    "题目没看懂",
+    "方法不对",
+    "知识点没掌握",
+    "粗心出错",
+    "时间不够",
+  ];
+
+  let attributionSuggestions: string[];
+  if (subject === "math") {
+    attributionSuggestions = mathSuggestions;
+  } else if (subject === "chinese") {
+    attributionSuggestions = chineseSuggestions;
+  } else if (subject === "english") {
+    attributionSuggestions = englishSuggestions;
+  } else {
+    attributionSuggestions = defaultSuggestions;
+  }
+
+  return { question: baseQuestion, attributionSuggestions };
+}
+
 export function buildStudyCoachResponse(input: {
   question: string;
   subject?: string;
   studentAnswer?: string;
   revealAnswer?: boolean;
   assist: AssistResponse;
+  requestedHintTier?: HintTier;
+  metacognitionTrigger?: boolean;
 }): StudyCoachResponse {
   const stage: StudyCoachResponse["stage"] = input.revealAnswer
     ? "reveal"
@@ -177,6 +289,15 @@ export function buildStudyCoachResponse(input: {
     sources: input.assist.sources,
     steps: input.assist.steps
   });
+
+  const scaffoldedHints = stage !== "reveal"
+    ? buildScaffoldedHints(input.assist, input.subject, input.requestedHintTier)
+    : undefined;
+  const activeHintTier = stage !== "reveal" ? (input.requestedHintTier ?? 1) : undefined;
+  const metacognition =
+    stage === "check" && input.metacognitionTrigger
+      ? buildMetacognitionPrompt(input.subject)
+      : null;
 
   return {
     learningMode: "study",
@@ -204,6 +325,9 @@ export function buildStudyCoachResponse(input: {
     sources: input.assist.sources,
     provider: input.assist.provider,
     quality: input.assist.quality,
-    feedback
+    feedback,
+    scaffoldedHints,
+    activeHintTier,
+    metacognition
   };
 }

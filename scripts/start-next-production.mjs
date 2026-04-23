@@ -103,19 +103,35 @@ for (let index = 0; index < args.length; index += 1) {
   forwardedArgs.push(value);
 }
 
-const standaloneServer = path.join(cwd, ".next", "standalone", "server.js");
-const hasStandaloneBuild = fs.existsSync(standaloneServer);
+const standaloneServerCandidates = [
+  {
+    mode: "nested",
+    serverPath: path.join(cwd, ".next", "standalone", "server.js"),
+  },
+  {
+    mode: "root",
+    serverPath: path.join(cwd, "server.js"),
+  },
+];
+
+const activeStandaloneBuild =
+  standaloneServerCandidates.find((candidate) => fs.existsSync(candidate.serverPath)) ?? null;
+const standaloneServer = activeStandaloneBuild?.serverPath ?? "";
+const hasStandaloneBuild = activeStandaloneBuild !== null;
 
 if (hasStandaloneBuild) {
   loadStandaloneEnv(env);
   normalizeStandalonePathEnv(env, "DATA_DIR", path.join(cwd, ".runtime-data"));
   normalizeStandalonePathEnv(env, "DATA_SEED_DIR", path.join(cwd, "data"));
   normalizeStandalonePathEnv(env, "OBJECT_STORAGE_ROOT", path.join(cwd, ".runtime-data", "objects"));
-  ensureStandaloneAssetMount(
-    path.join(cwd, ".next", "static"),
-    path.join(cwd, ".next", "standalone", ".next", "static")
-  );
-  ensureStandaloneAssetMount(path.join(cwd, "public"), path.join(cwd, ".next", "standalone", "public"));
+
+  if (activeStandaloneBuild?.mode === "nested") {
+    ensureStandaloneAssetMount(
+      path.join(cwd, ".next", "static"),
+      path.join(cwd, ".next", "standalone", ".next", "static")
+    );
+    ensureStandaloneAssetMount(path.join(cwd, "public"), path.join(cwd, ".next", "standalone", "public"));
+  }
 }
 
 const command = hasStandaloneBuild

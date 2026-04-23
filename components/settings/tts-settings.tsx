@@ -12,7 +12,8 @@ import { Volume2, Loader2, CheckCircle2, XCircle, Eye, EyeOff } from 'lucide-rea
 import { cn } from '@/lib/utils';
 import { createLogger } from '@/lib/logger';
 import { useTTSPreview } from '@/lib/audio/use-tts-preview';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 const log = createLogger('TTSSettings');
 
@@ -37,7 +38,12 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
       : DEFAULT_TTS_VOICES[selectedProviderId] || 'default';
 
   const ttsProvider = TTS_PROVIDERS[selectedProviderId] ?? TTS_PROVIDERS['openai-tts'];
-  const isServerConfigured = !!ttsProvidersConfig[selectedProviderId]?.isServerConfigured;
+  const ttsProviderConfig = ttsProvidersConfig[selectedProviderId];
+  const isServerConfigured = !!ttsProviderConfig?.isServerConfigured;
+  const { canEditSecrets, effectiveBaseUrl, requestConfig } = getClientProviderUiState(
+    ttsProviderConfig,
+    ttsProvider.defaultBaseUrl,
+  );
 
   const [showApiKey, setShowApiKey] = useState(false);
   const [testText, setTestText] = useState(t('settings.ttsTestTextDefault'));
@@ -65,14 +71,11 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
     setTestMessage('');
 
     try {
-      const requestConfig = getClientProviderRequestConfig(ttsProvidersConfig[selectedProviderId]);
       await startPreview({
         text: testText,
         providerId: selectedProviderId,
         voice: effectiveVoice,
         speed: ttsSpeed,
-        apiKey: requestConfig.apiKey,
-        baseUrl: requestConfig.baseUrl || undefined,
       });
       setTestStatus('success');
       setTestMessage(t('settings.ttsTestSuccess'));
@@ -89,12 +92,12 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {isServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={isServerConfigured}
+        browserOverridesDisabled={
+          (ttsProvider.requiresApiKey || isServerConfigured) && !canEditSecrets
+        }
+      />
 
       {/* API Key & Base URL */}
       {(ttsProvider.requiresApiKey || isServerConfigured) && (
@@ -111,19 +114,25 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
                   autoCorrect="off"
                   spellCheck={false}
                   placeholder={
-                    isServerConfigured ? t('settings.optionalOverride') : t('settings.enterApiKey')
+                    canEditSecrets
+                      ? isServerConfigured
+                        ? t('settings.optionalOverride')
+                        : t('settings.enterApiKey')
+                      : t('settings.browserOverridesDisabledShort')
                   }
-                  value={ttsProvidersConfig[selectedProviderId]?.apiKey || ''}
+                  value={ttsProviderConfig?.apiKey || ''}
                   onChange={(e) =>
                     setTTSProviderConfig(selectedProviderId, {
                       apiKey: e.target.value,
                     })
                   }
+                  disabled={!canEditSecrets}
                   className="font-mono text-sm pr-10"
                 />
                 <button
                   type="button"
                   onClick={() => setShowApiKey(!showApiKey)}
+                  disabled={!canEditSecrets}
                   className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                 >
                   {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
@@ -138,21 +147,26 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
                 autoCapitalize="none"
                 autoCorrect="off"
                 spellCheck={false}
-                placeholder={ttsProvider.defaultBaseUrl || t('settings.enterCustomBaseUrl')}
-                value={ttsProvidersConfig[selectedProviderId]?.baseUrl || ''}
+                placeholder={
+                  canEditSecrets
+                    ? ttsProviderConfig?.serverBaseUrl ||
+                      ttsProvider.defaultBaseUrl ||
+                      t('settings.enterCustomBaseUrl')
+                    : t('settings.browserOverridesDisabledShort')
+                }
+                value={ttsProviderConfig?.baseUrl || ''}
                 onChange={(e) =>
                   setTTSProviderConfig(selectedProviderId, {
                     baseUrl: e.target.value,
                   })
                 }
+                disabled={!canEditSecrets}
                 className="text-sm"
               />
             </div>
           </div>
           {/* Request URL Preview */}
           {(() => {
-            const effectiveBaseUrl =
-              ttsProvidersConfig[selectedProviderId]?.baseUrl || ttsProvider.defaultBaseUrl || '';
             if (!effectiveBaseUrl) return null;
             let endpointPath = '';
             switch (selectedProviderId) {
@@ -192,9 +206,7 @@ export function TTSSettings({ selectedProviderId }: TTSSettingsProps) {
             disabled={
               testingTTS ||
               !testText.trim() ||
-              (ttsProvider.requiresApiKey &&
-                !ttsProvidersConfig[selectedProviderId]?.apiKey?.trim() &&
-                !isServerConfigured)
+              (ttsProvider.requiresApiKey && !requestConfig.apiKey && !isServerConfigured)
             }
             size="default"
             className="gap-2 w-32"

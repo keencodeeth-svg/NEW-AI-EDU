@@ -6,10 +6,12 @@ import MathViewControls from "@/components/MathViewControls";
 import StatePanel from "@/components/StatePanel";
 import PracticeGuideCard from "./_components/PracticeGuideCard";
 import PracticeMobileActionBar from "./_components/PracticeMobileActionBar";
+import PracticePeerChallengeCard from "./_components/PracticePeerChallengeCard";
 import PracticeQuestionCard from "./_components/PracticeQuestionCard";
 import PracticeResultCard from "./_components/PracticeResultCard";
 import PracticeSettingsCard from "./_components/PracticeSettingsCard";
 import { PracticeVariantAnalysisCard, PracticeVariantTrainingCard } from "./_components/PracticeVariantCards";
+import StudentMoodCheckin from "../student/_components/StudentMoodCheckin";
 import { PRACTICE_MODE_LABELS } from "./config";
 import { usePracticePage } from "./usePracticePage";
 
@@ -39,6 +41,10 @@ export default function PracticePage() {
     autoFixing,
     autoFixHint,
     lastLoadedAt,
+    showBreakSuggestion,
+    dismissBreakSuggestion,
+    moodCheckinVisible,
+    handleMoodCheckinSaved,
     mathView,
     showPracticeGuide,
     hidePracticeGuide,
@@ -159,6 +165,15 @@ export default function PracticePage() {
             </button>
           }
         />
+      ) : null}
+
+      {showBreakSuggestion ? (
+        <div className="status-note info" style={{ display: "flex", justifyContent: "space-between", gap: 12, alignItems: "center" }}>
+          <div>你已经持续练习超过 25 分钟了。先放松半分钟、喝口水，再回来做下一题，效率通常会更高。</div>
+          <button className="button ghost" type="button" onClick={dismissBreakSuggestion}>
+            继续练习
+          </button>
+        </div>
       ) : null}
 
       <div className="practice-workflow-top-grid">
@@ -339,6 +354,15 @@ export default function PracticePage() {
         </div>
       ) : null}
 
+      {result && question ? (
+        <PracticePeerChallengeCard
+          questionId={question.id}
+          questionStem={question.stem}
+          correctAnswer={result.answer}
+          commonMistake={result.explanation}
+        />
+      ) : null}
+
       {variantPack ? (
         <details className="workflow-collapsible" id="practice-variants" open>
           <summary>
@@ -378,6 +402,12 @@ export default function PracticePage() {
           </button>
         </Card>
       ) : null}
+
+      <StudentMoodCheckin
+        visible={moodCheckinVisible}
+        context={`${subject}-${mode}`}
+        onSaved={handleMoodCheckinSaved}
+      />
 
       <PracticeMobileActionBar
         questionVisible={Boolean(question)}

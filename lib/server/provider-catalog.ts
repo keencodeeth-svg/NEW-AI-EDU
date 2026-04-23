@@ -35,6 +35,7 @@ export const ASR_ENV_MAP: Record<string, string> = {
 export const PDF_ENV_MAP: Record<string, string> = {
   PDF_UNPDF: "unpdf",
   PDF_MINERU: "mineru",
+  PDF_MINERU_CLOUD: "mineru-cloud",
 };
 
 export const IMAGE_ENV_MAP: Record<string, string> = {

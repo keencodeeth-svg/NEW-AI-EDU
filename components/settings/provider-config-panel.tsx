@@ -36,7 +36,8 @@ import type { ProviderConfig } from '@/lib/ai/providers';
 import type { ProvidersConfig } from '@/lib/types/settings';
 import { formatContextWindow } from './utils';
 import { cn } from '@/lib/utils';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
+import { ProviderPolicyNotice } from './provider-policy-notice';
 
 interface ProviderConfigPanelProps {
   provider: ProviderConfig;
@@ -81,6 +82,15 @@ export function ProviderConfigPanel({
   const [testStatus, setTestStatus] = useState<'idle' | 'testing' | 'success' | 'error'>('idle');
   const [testMessage, setTestMessage] = useState('');
   const [showResetDialog, setShowResetDialog] = useState(false);
+  const { canEditSecrets, effectiveBaseUrl, requestConfig } = getClientProviderUiState(
+    {
+      apiKey,
+      baseUrl,
+      isServerConfigured,
+      serverBaseUrl,
+    },
+    provider.defaultBaseUrl,
+  );
 
   // Update local state when provider changes or initial values change
   useEffect(() => {
@@ -127,18 +137,21 @@ export function ProviderConfigPanel({
     const testModelId = availableModels[0].id;
 
     try {
-      const requestConfig = getClientProviderRequestConfig({
-        apiKey,
-        baseUrl,
-        isServerConfigured,
-        serverBaseUrl,
-      });
+      const { requestConfig: currentRequestConfig } = getClientProviderUiState(
+        {
+          apiKey,
+          baseUrl,
+          isServerConfigured,
+          serverBaseUrl,
+        },
+        provider.defaultBaseUrl,
+      );
       const response = await fetch('/api/verify-model', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          apiKey: requestConfig.apiKey,
-          baseUrl: requestConfig.baseUrl || undefined,
+          apiKey: currentRequestConfig.apiKey,
+          baseUrl: currentRequestConfig.baseUrl || undefined,
           model: `${provider.id}:${testModelId}`,
           providerType: provider.type,
           requiresApiKey: requiresApiKey,
@@ -161,6 +174,7 @@ export function ProviderConfigPanel({
   }, [
     apiKey,
     baseUrl,
+    provider.defaultBaseUrl,
     isServerConfigured,
     provider.id,
     provider.type,
@@ -175,12 +189,10 @@ export function ProviderConfigPanel({
 
   return (
     <div className="space-y-6 max-w-3xl">
-      {/* Server-configured notice */}
-      {providerIsServerConfigured && (
-        <div className="rounded-lg border border-blue-200 bg-blue-50 dark:border-blue-800 dark:bg-blue-950/30 p-3 text-sm text-blue-700 dark:text-blue-300">
-          {t('settings.serverConfiguredNotice')}
-        </div>
-      )}
+      <ProviderPolicyNotice
+        isServerConfigured={providerIsServerConfigured}
+        browserOverridesDisabled={!canEditSecrets}
+      />
 
       {/* API Key */}
       <div className="space-y-2">
@@ -194,18 +206,24 @@ export function ProviderConfigPanel({
               autoCapitalize="none"
               autoCorrect="off"
               spellCheck={false}
-              placeholder={providerIsServerConfigured ? t('settings.optionalOverride') : 'sk-...'}
+              placeholder={
+                canEditSecrets
+                  ? providerIsServerConfigured
+                    ? t('settings.optionalOverride')
+                    : 'sk-...'
+                  : t('settings.browserOverridesDisabledShort')
+              }
               value={apiKey}
               onChange={(e) => handleApiKeyChange(e.target.value)}
               onBlur={onSave}
-              disabled={!requiresApiKey && !isServerConfigured}
+              disabled={!canEditSecrets || (!requiresApiKey && !isServerConfigured)}
               className="h-8 pr-8"
             />
             <button
               type="button"
               onClick={() => setShowApiKey(!showApiKey)}
               className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-              disabled={!requiresApiKey}
+              disabled={!canEditSecrets || !requiresApiKey}
             >
               {showApiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
             </button>
@@ -215,7 +233,8 @@ export function ProviderConfigPanel({
             size="sm"
             onClick={handleTestApi}
             disabled={
-              testStatus === 'testing' || (requiresApiKey && !apiKey && !isServerConfigured)
+              testStatus === 'testing' ||
+              (requiresApiKey && !requestConfig.apiKey && !isServerConfigured)
             }
             className="gap-1.5"
           >
@@ -272,14 +291,18 @@ export function ProviderConfigPanel({
           autoCapitalize="none"
           autoCorrect="off"
           spellCheck={false}
-          placeholder={provider.defaultBaseUrl || 'https://api.example.com/v1'}
+          placeholder={
+            canEditSecrets
+              ? serverBaseUrl || provider.defaultBaseUrl || 'https://api.example.com/v1'
+              : t('settings.browserOverridesDisabledShort')
+          }
           value={baseUrl}
           onChange={(e) => handleBaseUrlChange(e.target.value)}
           onBlur={onSave}
+          disabled={!canEditSecrets}
           className="h-8"
         />
         {(() => {
-          const effectiveBaseUrl = baseUrl || provider.defaultBaseUrl || '';
           if (!effectiveBaseUrl) return null;
 
           // Generate endpoint path based on provider type

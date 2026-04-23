@@ -47,7 +47,6 @@ import {
   classroomToneCard,
   classroomTonePill,
 } from '@/lib/ui/classroom-theme';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
 
 const log = createLogger('GenerationPreview');
 
@@ -240,27 +239,17 @@ function GenerationPreviewContent() {
   const getApiHeaders = () => {
     const modelConfig = getCurrentModelConfig();
     const settings = useSettingsStore.getState();
-    const imageProviderConfig = settings.imageProvidersConfig?.[settings.imageProviderId];
-    const videoProviderConfig = settings.videoProvidersConfig?.[settings.videoProviderId];
-    const imageRequestConfig = getClientProviderRequestConfig(imageProviderConfig);
-    const videoRequestConfig = getClientProviderRequestConfig(videoProviderConfig);
     return {
       'Content-Type': 'application/json',
       'x-model': modelConfig.modelString,
-      'x-api-key': modelConfig.apiKey,
-      'x-base-url': modelConfig.baseUrl,
       'x-provider-type': modelConfig.providerType || '',
       'x-requires-api-key': modelConfig.requiresApiKey ? 'true' : 'false',
       // Image generation provider
       'x-image-provider': settings.imageProviderId || '',
       'x-image-model': settings.imageModelId || '',
-      'x-image-api-key': imageRequestConfig.apiKey,
-      'x-image-base-url': imageRequestConfig.baseUrl,
       // Video generation provider
       'x-video-provider': settings.videoProviderId || '',
       'x-video-model': settings.videoModelId || '',
-      'x-video-api-key': videoRequestConfig.apiKey,
-      'x-video-base-url': videoRequestConfig.baseUrl,
       // Media generation toggles
       'x-image-generation-enabled': String(settings.imageGenerationEnabled ?? false),
       'x-video-generation-enabled': String(settings.videoGenerationEnabled ?? false),
@@ -331,13 +320,6 @@ function GenerationPreviewContent() {
 
         if (currentSession.pdfProviderId) {
           parseFormData.append('providerId', currentSession.pdfProviderId);
-        }
-        const pdfRequestConfig = getClientProviderRequestConfig(currentSession.pdfProviderConfig);
-        if (pdfRequestConfig.apiKey) {
-          parseFormData.append('apiKey', pdfRequestConfig.apiKey);
-        }
-        if (pdfRequestConfig.baseUrl) {
-          parseFormData.append('baseUrl', pdfRequestConfig.baseUrl);
         }
 
         const parseResponse = await fetch('/api/parse-pdf', {
@@ -454,16 +436,11 @@ function GenerationPreviewContent() {
         setCurrentStepIndex(webSearchStepIdx);
         setWebSearchSources([]);
 
-        const wsSettings = useSettingsStore.getState();
-        const webSearchRequestConfig = getClientProviderRequestConfig(
-          wsSettings.webSearchProvidersConfig?.[wsSettings.webSearchProviderId],
-        );
         const res = await fetch('/api/web-search', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             query: currentSession.requirements.requirement,
-            apiKey: webSearchRequestConfig.apiKey || undefined,
           }),
           signal,
         });
@@ -815,8 +792,6 @@ function GenerationPreviewContent() {
         const teacherVoice = resolveTeacherVoice(currentSession.classroomContext);
         const effectiveTTSProviderId = teacherVoice.providerId || settings.ttsProviderId;
         const effectiveTTSVoice = teacherVoice.voiceId || settings.ttsVoice;
-        const ttsProviderConfig = settings.ttsProvidersConfig?.[effectiveTTSProviderId];
-        const ttsRequestConfig = getClientProviderRequestConfig(ttsProviderConfig);
         const speechActions = (data.scene.actions || []).filter(
           (a: { type: string; text?: string }) => a.type === 'speech' && a.text,
         );
@@ -835,8 +810,6 @@ function GenerationPreviewContent() {
                 ttsProviderId: effectiveTTSProviderId,
                 ttsVoice: effectiveTTSVoice,
                 ttsSpeed: settings.ttsSpeed,
-                ...(ttsRequestConfig.apiKey ? { ttsApiKey: ttsRequestConfig.apiKey } : {}),
-                ...(ttsRequestConfig.baseUrl ? { ttsBaseUrl: ttsRequestConfig.baseUrl } : {}),
               }),
               signal,
             });

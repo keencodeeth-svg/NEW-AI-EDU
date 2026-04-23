@@ -48,6 +48,7 @@ afterEach(() => {
 
 test("server-managed provider keys take precedence over browser-provided keys", () => {
   setEnv({
+    ALLOW_CLIENT_PROVIDER_SECRETS: "true",
     NODE_ENV: "development",
     OPENAI_API_KEY: "server-openai-key",
     RUNTIME_GUARDRAILS_ENFORCE: undefined
@@ -80,7 +81,7 @@ test("guarded runtime blocks browser-provided provider secrets", () => {
   assert.match(getBlockedClientProviderSecretMessage(), /AI Provider Vault/);
 });
 
-test("local development can still use browser-provided provider secrets as fallback", () => {
+test("browser-provided provider secrets stay blocked by default even in local development", () => {
   setEnv({
     NODE_ENV: "development",
     OPENAI_API_KEY: undefined,
@@ -88,10 +89,10 @@ test("local development can still use browser-provided provider secrets as fallb
     TAVILY_API_KEY: undefined
   });
 
-  assert.equal(shouldAllowClientProviderSecrets(), true);
-  assert.equal(resolveManagedSecret(undefined, "client-openai-key"), "client-openai-key");
-  assert.equal(resolveManagedBaseUrl(undefined, "https://client.example.com/v1"), "https://client.example.com/v1");
-  assert.equal(resolveManagedSecret(process.env.TAVILY_API_KEY, "client-tavily-key"), "client-tavily-key");
+  assert.equal(shouldAllowClientProviderSecrets(), false);
+  assert.equal(resolveManagedSecret(undefined, "client-openai-key"), "");
+  assert.equal(resolveManagedBaseUrl(undefined, "https://client.example.com/v1"), undefined);
+  assert.equal(resolveManagedSecret(process.env.TAVILY_API_KEY, "client-tavily-key"), "");
 });
 
 test("explicit flag can re-enable browser-provided provider secrets for controlled environments", () => {

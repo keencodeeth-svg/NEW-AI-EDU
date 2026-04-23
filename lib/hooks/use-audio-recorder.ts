@@ -1,6 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
 import { createLogger } from '@/lib/logger';
-import { getClientProviderOverride } from '@/lib/provider-request-config';
 
 const log = createLogger('AudioRecorder');
 
@@ -45,20 +44,10 @@ export function useAudioRecorder(options: UseAudioRecorderOptions = {}) {
         // Note: This requires importing useSettingsStore in browser context
         if (typeof window !== 'undefined') {
           const { useSettingsStore } = await import('@/lib/store/settings');
-          const { asrProviderId, asrLanguage, asrProvidersConfig } = useSettingsStore.getState();
+          const { asrProviderId, asrLanguage } = useSettingsStore.getState();
 
           formData.append('providerId', asrProviderId);
           formData.append('language', asrLanguage);
-
-          // Append API key and base URL if configured
-          const providerConfig = asrProvidersConfig?.[asrProviderId];
-          const providerOverride = getClientProviderOverride(providerConfig);
-          if (providerOverride?.apiKey) {
-            formData.append('apiKey', providerOverride.apiKey);
-          }
-          if (providerOverride?.baseUrl) {
-            formData.append('baseUrl', providerOverride.baseUrl);
-          }
         }
 
         const response = await fetch('/api/transcription', {

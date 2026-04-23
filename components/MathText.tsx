@@ -418,7 +418,7 @@ export default function MathText({
   ) : null;
   if (as === "div") {
     return (
-      <div className={classes}>
+      <div className={classes} role="math" aria-label={plainText || content}>
         {renderSegments(segments, autoDetect)}
         {copyActions}
       </div>
@@ -426,14 +426,14 @@ export default function MathText({
   }
   if (as === "p") {
     return (
-      <p className={classes}>
+      <p className={classes} role="math" aria-label={plainText || content}>
         {renderSegments(segments, autoDetect)}
         {copyActions}
       </p>
     );
   }
   return (
-    <span className={classes}>
+    <span className={classes} role="math" aria-label={plainText || content}>
       {renderSegments(segments, autoDetect)}
       {copyActions}
     </span>

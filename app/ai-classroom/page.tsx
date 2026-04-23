@@ -89,12 +89,12 @@ import {
   classroomToolbarStrip,
   type ClassroomTone,
 } from '@/lib/ui/classroom-theme';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
 
 const log = createLogger('Home');
 
 const WEB_SEARCH_STORAGE_KEY = 'webSearchEnabled';
 const LANGUAGE_STORAGE_KEY = 'generationLanguage';
+const GENERATION_MODE_STORAGE_KEY = 'generationMode';
 const RECENT_OPEN_STORAGE_KEY = 'recentClassroomsOpen';
 
 function resolveStudentSelfStudyMode(
@@ -117,6 +117,7 @@ interface FormState {
   pdfFile: File | null;
   requirement: string;
   language: 'zh-CN' | 'en-US';
+  generationMode: 'standard' | 'deep-interactive';
   webSearch: boolean;
 }
 
@@ -146,6 +147,7 @@ const initialFormState: FormState = {
   pdfFile: null,
   requirement: '',
   language: 'zh-CN',
+  generationMode: 'standard',
   webSearch: false,
 };
 
@@ -189,12 +191,16 @@ function HomePage() {
     try {
       const savedWebSearch = localStorage.getItem(WEB_SEARCH_STORAGE_KEY);
       const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
+      const savedGenerationMode = localStorage.getItem(GENERATION_MODE_STORAGE_KEY);
       const updates: Partial<FormState> = {};
       if (savedWebSearch === 'true') updates.webSearch = true;
       if (savedLanguage === 'zh-CN' || savedLanguage === 'en-US') {
         updates.language = savedLanguage;
       } else {
         updates.language = detectPreferredLocale();
+      }
+      if (savedGenerationMode === 'standard' || savedGenerationMode === 'deep-interactive') {
+        updates.generationMode = savedGenerationMode;
       }
       if (Object.keys(updates).length > 0) {
         setForm((prev) => ({ ...prev, ...updates }));
@@ -360,6 +366,9 @@ function HomePage() {
     try {
       if (field === 'webSearch') localStorage.setItem(WEB_SEARCH_STORAGE_KEY, String(value));
       if (field === 'language') localStorage.setItem(LANGUAGE_STORAGE_KEY, String(value));
+      if (field === 'generationMode') {
+        localStorage.setItem(GENERATION_MODE_STORAGE_KEY, String(value));
+      }
       if (field === 'requirement') updateRequirementCache(value as string);
     } catch {
       /* ignore */
@@ -420,6 +429,7 @@ function HomePage() {
       const requirements: UserRequirements = {
         requirement: form.requirement,
         language: form.language,
+        generationMode: form.generationMode,
         userNickname: userProfile.nickname || undefined,
         userBio: userProfile.bio || undefined,
         webSearch: form.webSearch || undefined,
@@ -428,19 +438,12 @@ function HomePage() {
       let pdfStorageKey: string | undefined;
       let pdfFileName: string | undefined;
       let pdfProviderId: string | undefined;
-      let pdfProviderConfig: { apiKey?: string; baseUrl?: string } | undefined;
-
       if (form.pdfFile) {
         pdfStorageKey = await storePdfBlob(form.pdfFile);
         pdfFileName = form.pdfFile.name;
 
         const settings = useSettingsStore.getState();
         pdfProviderId = settings.pdfProviderId;
-        const providerCfg = settings.pdfProvidersConfig?.[settings.pdfProviderId];
-        const providerRequestConfig = getClientProviderRequestConfig(providerCfg);
-        if (providerRequestConfig.apiKey || providerRequestConfig.baseUrl) {
-          pdfProviderConfig = providerRequestConfig;
-        }
       }
 
       const sessionState = {
@@ -452,7 +455,6 @@ function HomePage() {
         pdfStorageKey,
         pdfFileName,
         pdfProviderId,
-        pdfProviderConfig,
         classroomContext,
         sceneOutlines: null,
         currentStep: 'generating' as const,
@@ -1501,6 +1503,8 @@ function HomePage() {
                 <GenerationToolbar
                   language={form.language}
                   onLanguageChange={(lang) => updateForm('language', lang)}
+                  generationMode={form.generationMode}
+                  onGenerationModeChange={(mode) => updateForm('generationMode', mode)}
                   webSearch={form.webSearch}
                   onWebSearchChange={(v) => updateForm('webSearch', v)}
                   onSettingsOpen={(section) => {

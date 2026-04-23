@@ -15,7 +15,9 @@ export type AiTaskType =
   | "writing_feedback"
   | "kp_extract"
   | "lesson_outline"
+  | "lesson_plan"
   | "wrong_review_script"
+  | "reexplain"
   | "learning_report"
   | "question_check"
   | "knowledge_points_generate"
@@ -109,7 +111,9 @@ const TASK_OPTIONS: Array<{
   { taskType: "writing_feedback", label: "作文批改", description: "写作结构语法词汇反馈。" },
   { taskType: "kp_extract", label: "知识点提取", description: "从教材或文本抽取知识点。" },
   { taskType: "lesson_outline", label: "教案课件", description: "课堂提纲、讲稿、课件结构。" },
+  { taskType: "lesson_plan", label: "备课助手", description: "备课方案、互动设计与分层作业建议。" },
   { taskType: "wrong_review_script", label: "错题讲评", description: "班级错题讲评脚本生成。" },
+  { taskType: "reexplain", label: "换种方式讲", description: "针对单步内容做类比式、图像式重讲。" },
   { taskType: "learning_report", label: "学情报告", description: "学习报告与亮点提醒。" },
   { taskType: "question_check", label: "题目质检", description: "题目歧义、风险与建议检查。" },
   { taskType: "knowledge_points_generate", label: "知识点生成", description: "章节知识点草稿生成。" },
@@ -136,7 +140,9 @@ const TASK_DEFAULTS: Record<
   writing_feedback: { timeoutMs: 10000, maxRetries: 1, budgetLimit: 2600, minQualityScore: 70 },
   kp_extract: { timeoutMs: 7000, maxRetries: 1, budgetLimit: 1400, minQualityScore: 65 },
   lesson_outline: { timeoutMs: 12000, maxRetries: 1, budgetLimit: 3200, minQualityScore: 70 },
+  lesson_plan: { timeoutMs: 12000, maxRetries: 1, budgetLimit: 3200, minQualityScore: 72 },
   wrong_review_script: { timeoutMs: 10000, maxRetries: 1, budgetLimit: 2600, minQualityScore: 70 },
+  reexplain: { timeoutMs: 9000, maxRetries: 1, budgetLimit: 2200, minQualityScore: 70 },
   learning_report: { timeoutMs: 10000, maxRetries: 1, budgetLimit: 2600, minQualityScore: 70 },
   question_check: { timeoutMs: 8000, maxRetries: 1, budgetLimit: 1800, minQualityScore: 70 },
   knowledge_points_generate: { timeoutMs: 9000, maxRetries: 1, budgetLimit: 2200, minQualityScore: 70 },
@@ -211,10 +217,6 @@ function normalizeTaskTypeToken(value: string | null | undefined): AiTaskType | 
     return null;
   }
   return normalized as AiTaskType;
-}
-
-function isKnownTaskType(value: string): value is AiTaskType {
-  return normalizeTaskTypeToken(value) !== null;
 }
 
 function normalizePolicyRecord(taskType: AiTaskType, record?: AiTaskPolicyRecord | null): AiTaskPolicyRecord {

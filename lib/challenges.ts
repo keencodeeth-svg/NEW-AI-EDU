@@ -6,6 +6,7 @@ import { getAttemptsByUser, getStreak, getWeeklyStats } from "./progress";
 import { getKnowledgePoints } from "./content";
 import { getMasteryRecordsByUser } from "./mastery";
 import { getAssignmentSubmissionsByStudent } from "./assignments";
+import { addXp } from "./gamification";
 import {
   CHALLENGE_EXPERIMENT_KEY,
   type ExperimentAssignment,
@@ -588,6 +589,11 @@ export async function claimChallenge(userId: string, taskId: string) {
     const list = readJson<Claim[]>(CLAIM_FILE, []);
     list.push(claim);
     writeJson(CLAIM_FILE, list);
+    try {
+      await addXp(userId, task.points, "challenge_claim", claim.id, task.title);
+    } catch {
+      // XP ledger failure should not block challenge claim
+    }
     return { ok: true, claim };
   }
 
@@ -611,6 +617,12 @@ export async function claimChallenge(userId: string, taskId: string) {
 
   if (!row) {
     return { ok: false, message: "已领取" };
+  }
+
+  try {
+    await addXp(userId, task.points, "challenge_claim", claim.id, task.title);
+  } catch {
+    // XP ledger failure should not block challenge claim
   }
 
   return { ok: true, claim: mapClaim(row) };

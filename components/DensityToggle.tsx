@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type DensityMode = "comfortable" | "compact";
 
@@ -14,20 +14,23 @@ function readStoredMode(): DensityMode {
 
 export default function DensityToggle() {
   const [mode, setMode] = useState<DensityMode>("comfortable");
-  const [storageHydrated, setStorageHydrated] = useState(false);
+  const storageHydratedRef = useRef(false);
 
   useEffect(() => {
-    setMode(readStoredMode());
-    setStorageHydrated(true);
+    const timer = window.setTimeout(() => {
+      setMode(readStoredMode());
+      storageHydratedRef.current = true;
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.setAttribute("data-density", mode);
-    if (storageHydrated && typeof window !== "undefined") {
+    if (storageHydratedRef.current && typeof window !== "undefined") {
       window.localStorage.setItem(STORAGE_KEY, mode);
     }
-  }, [mode, storageHydrated]);
+  }, [mode]);
 
   return (
     <button

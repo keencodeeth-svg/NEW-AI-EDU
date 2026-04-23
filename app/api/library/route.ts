@@ -15,14 +15,18 @@ function isLightListModeEnabled() {
 }
 
 function stripStorageMeta(item: LearningLibraryItem) {
-  const { contentStorageProvider, contentStorageKey, ...rest } = item;
+  const {
+    contentStorageProvider: _contentStorageProvider,
+    contentStorageKey: _contentStorageKey,
+    ...rest
+  } = item;
   return rest;
 }
 
 function toLibraryListItem(item: LearningLibraryItem, lightList: boolean) {
   const sanitized = stripStorageMeta(item);
   if (!lightList) return sanitized;
-  const { contentBase64, textContent, ...rest } = sanitized;
+  const { contentBase64: _contentBase64, textContent: _textContent, ...rest } = sanitized;
   return rest;
 }
 

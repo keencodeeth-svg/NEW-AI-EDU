@@ -7,6 +7,7 @@ export type Question = {
   stem: string;
   options: string[];
   knowledgePointId: string;
+  isRecovery?: boolean;
   recommendation?: {
     reason?: string;
     weaknessRank?: number | null;
@@ -88,6 +89,8 @@ export type KnowledgePointListResponse = {
 
 export type PracticeQuestionResponse = {
   question?: Question | null;
+  reviewSourceType?: "wrong" | "memory" | null;
+  reviewDueAt?: string | null;
 };
 
 export type PracticeSubmitResponse = {

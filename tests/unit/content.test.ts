@@ -331,6 +331,155 @@ function loadAdminQuestionsRoute() {
   );
 }
 
+function loadAdminQuestionsDbRouteWithLegacySchema() {
+  restoreEnv();
+  setEnvValue("NODE_ENV", "development");
+  process.env.API_TEST_ALLOW_CUSTOM_ORIGIN_HEADER = "true";
+  process.env.DATABASE_URL = "postgres://demo:demo@localhost:5432/demo";
+  delete process.env.RUNTIME_GUARDRAILS_ENFORCE;
+
+  resetModules();
+
+  const adminUser = {
+    id: "admin-1",
+    role: "admin",
+    email: "admin@example.com",
+    name: "平台管理员"
+  };
+
+  const legacyRow = {
+    id: "q-legacy-db",
+    subject: "math",
+    grade: "7",
+    knowledge_point_id: "kp-1",
+    stem: "旧库题干",
+    options: ["A", "B"],
+    answer: "A",
+    explanation: "",
+    difficulty: "medium",
+    question_type: "choice",
+    tags: [],
+    abilities: [],
+    actual_difficulty: null,
+    needs_manual_review: null,
+    review_reason: null
+  };
+
+  setMockModule("../../lib/auth", {
+    getCurrentUser: async () => adminUser,
+    getSessionCookieName: () => "mvp_session"
+  });
+  setMockModule("../../lib/guard", {
+    requireRole: async () => adminUser
+  });
+  setMockModule("../../lib/db", {
+    isDbEnabled: () => true,
+    query: async (text: string) => {
+      const normalized = text.replace(/\s+/g, " ").trim();
+
+      if (normalized.includes("q.actual_difficulty") || normalized.includes("q.needs_manual_review") || normalized.includes("q.review_reason")) {
+        const error = new Error('column "actual_difficulty" does not exist') as Error & { code?: string };
+        error.code = "42703";
+        throw error;
+      }
+
+      if (normalized.includes("SELECT COUNT(*)::int AS total")) {
+        return [{ total: 1 }];
+      }
+
+      if (normalized.includes("NULLIF(to_jsonb(q)->>'actual_difficulty', '')::double precision AS actual_difficulty")) {
+        return [legacyRow];
+      }
+
+      if (normalized.includes("SELECT q.subject AS value")) {
+        return [{ value: "math", count: 1 }];
+      }
+
+      if (normalized.includes("SELECT q.grade AS value")) {
+        return [{ value: "7", count: 1 }];
+      }
+
+      if (normalized.includes("SELECT COALESCE(kp.chapter, '未分章节') AS value")) {
+        return [{ value: "第一章", count: 1 }];
+      }
+
+      if (normalized.includes("SELECT COALESCE(q.difficulty, 'medium') AS value")) {
+        return [{ value: "medium", count: 1 }];
+      }
+
+      if (
+        normalized.includes(
+          "SELECT COALESCE(NULLIF(LOWER(BTRIM(q.question_type)), ''), 'choice') AS value"
+        )
+      ) {
+        return [{ value: "choice", count: 1 }];
+      }
+
+      if (
+        normalized.includes(
+          "SELECT q.subject, q.grade, COALESCE(kp.chapter, '未分章节') AS chapter, COUNT(*)::int AS count"
+        )
+      ) {
+        return [{ subject: "math", grade: "7", chapter: "第一章", count: 1 }];
+      }
+
+      if (normalized.includes("SELECT COUNT(qm.question_id)::int AS tracked_count")) {
+        return [
+          {
+            tracked_count: 0,
+            isolated_count: 0,
+            high_risk_count: 0,
+            medium_risk_count: 0,
+            answer_conflict_count: 0,
+            duplicate_cluster_count: 0
+          }
+        ];
+      }
+
+      if (normalized.includes("SELECT qm.duplicate_cluster_id AS id")) {
+        return [];
+      }
+
+      throw new Error(`unexpected query: ${normalized}`);
+    },
+    queryOne: async () => null
+  });
+  setMockModule("../../lib/content", {
+    normalizeQuestionType: (value?: string | null) => {
+      const normalized = value?.trim().toLowerCase();
+      return normalized || "choice";
+    },
+    getQuestions: async () => [],
+    getKnowledgePoints: async () => [],
+    createQuestion: async () => null
+  });
+  setMockModule("../../lib/question-quality", {
+    attachQualityFields: (question: Record<string, unknown>) => question,
+    evaluateAndUpsertQuestionQuality: async () => null,
+    listQuestionQualityMetrics: async () => []
+  });
+  setMockModule("../../lib/admin-log", {
+    addAdminLog: async () => {}
+  });
+  setMockModule("../../lib/admin-step-up", {
+    assertAdminStepUp: () => {}
+  });
+  setMockModule("../../lib/observability", {
+    recordApiRequest: async () => {}
+  });
+  setMockModule("../../lib/error-tracker", {
+    reportApiServerError: async () => {}
+  });
+  setMockModule("../../lib/runtime-guardrails", {
+    getRuntimeGuardrailIssues: () => [],
+    logRuntimeGuardrailIssues: () => {}
+  });
+
+  return withAliasResolution(
+    () => require("../../app/api/admin/questions/route") as AdminQuestionsRouteModule & RouteModule
+  );
+}
+
 afterEach(() => {
   resetModules();
   restoreEnv();
@@ -459,5 +608,27 @@ test("admin questions route normalizes mixed-case questionType filters", async (
   assert.equal(payload.data?.[0]?.id, "q-choice");
   assert.equal(payload.data?.[0]?.questionType, "choice");
   assert.equal(payload.filters?.questionType, "choice");
+  assert.deepEqual(payload.facets?.questionTypes, [{ value: "choice", count: 1 }]);
+});
+
+test("admin questions route lists db-backed questions even when legacy tables miss quality columns", async () => {
+  const route = loadAdminQuestionsDbRouteWithLegacySchema();
+
+  assert.ok(route.GET);
+  const response = await route.GET(createAdminQuestionsGetRequest("?page=1&pageSize=30"), { params: {} });
+  assert.equal(response.status, 200);
+
+  const payload = (await response.json()) as {
+    data?: Array<{ id?: string; actualDifficulty?: number | null; needsManualReview?: boolean | null }>;
+    meta?: { total?: number; totalPages?: number };
+    facets?: { questionTypes?: Array<{ value?: string; count?: number }> };
+  };
+
+  assert.equal(payload.data?.length, 1);
+  assert.equal(payload.data?.[0]?.id, "q-legacy-db");
+  assert.equal(payload.data?.[0]?.actualDifficulty ?? null, null);
+  assert.equal(payload.data?.[0]?.needsManualReview ?? null, false);
+  assert.equal(payload.meta?.total, 1);
+  assert.equal(payload.meta?.totalPages, 1);
   assert.deepEqual(payload.facets?.questionTypes, [{ value: "choice", count: 1 }]);
 });

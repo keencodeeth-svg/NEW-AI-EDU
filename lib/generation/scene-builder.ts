@@ -195,6 +195,8 @@ export function buildCompleteScene(
         type: 'interactive',
         url: '',
         html: content.html,
+        widgetType: content.widgetType,
+        widgetOutline: content.widgetOutline,
       },
       actions,
       createdAt: Date.now(),

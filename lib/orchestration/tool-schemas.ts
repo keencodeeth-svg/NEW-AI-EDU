@@ -5,7 +5,7 @@
  * Actions are parsed from JSON array items in the model's response.
  */
 
-import { SLIDE_ONLY_ACTIONS } from '@/lib/types/action';
+import { SLIDE_ONLY_ACTIONS } from '../types/action';
 
 // ==================== Effective Actions ====================
 
@@ -46,6 +46,10 @@ export function getActionDescriptions(allowedActions: string[]): string {
       'Add a table to the whiteboard. Use for structured data display and comparisons. Parameters: { x: number, y: number, width: number, height: number, data: string[][] (first row is header), outline?: { width: number, style: string, color: string }, theme?: { color: string }, elementId?: string }',
     wb_draw_line:
       'Add a line or arrow to the whiteboard. Use for connecting elements, drawing relationships, flow diagrams, or annotations. Parameters: { startX: number, startY: number, endX: number, endY: number, color?: string (default "#333333"), width?: number (line thickness, default 2), style?: "solid"|"dashed" (default "solid"), points?: [startMarker, endMarker] where marker is ""|"arrow" (default ["",""]), elementId?: string }',
+    wb_draw_code:
+      'Add a code block to the whiteboard with syntax highlighting. The header shows the file name and language label, so reserve space for that when positioning it. Use for algorithms, code walkthroughs, and programming concepts. Parameters: { language: string, code: string (use \\n for newlines), x: number, y: number, width?: number (default 500), height?: number (default 300), fileName?: string, elementId?: string }',
+    wb_edit_code:
+      'Edit an existing code block on the whiteboard line-by-line. Use this after wb_draw_code for step-by-step code teaching. Parameters: { elementId: string, operation: "insert_after"|"insert_before"|"delete_lines"|"replace_lines", lineId?: string, lineIds?: string[], content?: string (use \\n for newlines) }',
     wb_clear:
       'Clear all elements from the whiteboard. Use when whiteboard is too crowded before adding new elements. Parameters: {}',
     wb_delete:

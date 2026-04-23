@@ -30,7 +30,7 @@ import { cn } from '@/lib/utils';
 import { useI18n } from '@/lib/hooks/use-i18n';
 import { useSettingsStore } from '@/lib/store/settings';
 import { useTTSPreview } from '@/lib/audio/use-tts-preview';
-import { getClientProviderRequestConfig } from '@/lib/provider-request-config';
+import { getClientProviderUiState } from '@/lib/provider-request-config';
 import { IMAGE_PROVIDERS } from '@/lib/media/image-providers';
 import { VIDEO_PROVIDERS } from '@/lib/media/video-providers';
 import { TTS_PROVIDERS, getTTSVoices } from '@/lib/audio/constants';
@@ -105,7 +105,6 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
   const ttsProviderId = useSettingsStore((s) => s.ttsProviderId);
   const ttsVoice = useSettingsStore((s) => s.ttsVoice);
   const ttsSpeed = useSettingsStore((s) => s.ttsSpeed);
-  const ttsProvidersConfig = useSettingsStore((s) => s.ttsProvidersConfig);
   const setTTSVoice = useSettingsStore((s) => s.setTTSVoice);
   const setTTSSpeed = useSettingsStore((s) => s.setTTSSpeed);
 
@@ -130,10 +129,18 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
   ].filter(Boolean).length;
 
   const cfgOk = (
-    configs: Record<string, { apiKey?: string; isServerConfigured?: boolean }>,
+    configs: Record<
+      string,
+      { apiKey?: string; baseUrl?: string; serverBaseUrl?: string; isServerConfigured?: boolean }
+    >,
     id: string,
     needsKey: boolean,
-  ) => !needsKey || !!configs[id]?.apiKey || !!configs[id]?.isServerConfigured;
+    defaultBaseUrl?: string,
+  ) => {
+    const config = configs[id];
+    const uiState = getClientProviderUiState(config, defaultBaseUrl);
+    return !needsKey || !!uiState.requestConfig.apiKey || !!config?.isServerConfigured;
+  };
 
   const ttsSpeedRange = TTS_PROVIDERS[ttsProviderId]?.speedRange;
 
@@ -141,7 +148,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
   const imageGroups = useMemo(
     () =>
       Object.values(IMAGE_PROVIDERS)
-        .filter((p) => cfgOk(imageProvidersConfig, p.id, p.requiresApiKey))
+        .filter((p) => cfgOk(imageProvidersConfig, p.id, p.requiresApiKey, p.defaultBaseUrl))
         .map((p) => ({
           groupId: p.id,
           groupName: p.name,
@@ -158,7 +165,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
   const videoGroups = useMemo(
     () =>
       Object.values(VIDEO_PROVIDERS)
-        .filter((p) => cfgOk(videoProvidersConfig, p.id, p.requiresApiKey))
+        .filter((p) => cfgOk(videoProvidersConfig, p.id, p.requiresApiKey, p.defaultBaseUrl))
         .map((p) => ({
           groupId: p.id,
           groupName: p.name,
@@ -189,37 +196,24 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
       return;
     }
     try {
-      const providerConfig = ttsProvidersConfig[ttsProviderId];
-      const requestConfig = getClientProviderRequestConfig(providerConfig);
       await startPreview({
         text: t('settings.ttsTestTextDefault'),
         providerId: ttsProviderId,
         voice: ttsVoice,
         speed: ttsSpeed,
-        apiKey: requestConfig.apiKey,
-        baseUrl: requestConfig.baseUrl || undefined,
       });
     } catch (error) {
       const message =
         error instanceof Error && error.message ? error.message : t('settings.ttsTestFailed');
       toast.error(message);
     }
-  }, [
-    previewing,
-    startPreview,
-    stopPreview,
-    t,
-    ttsProviderId,
-    ttsProvidersConfig,
-    ttsSpeed,
-    ttsVoice,
-  ]);
+  }, [previewing, startPreview, stopPreview, t, ttsProviderId, ttsSpeed, ttsVoice]);
 
   // ASR: only available providers
   const asrGroups = useMemo(
     () =>
       Object.values(ASR_PROVIDERS)
-        .filter((p) => cfgOk(asrProvidersConfig, p.id, p.requiresApiKey))
+        .filter((p) => cfgOk(asrProvidersConfig, p.id, p.requiresApiKey, p.defaultBaseUrl))
         .map((p) => ({
           groupId: p.id,
           groupName: p.name,

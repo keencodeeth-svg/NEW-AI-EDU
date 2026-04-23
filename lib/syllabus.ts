@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import { readJson, writeJson } from "./storage";
-import { isDbEnabled, query, queryOne } from "./db";
+import { isDbEnabled, queryOne } from "./db";
 
 export type CourseSyllabus = {
   id: string;

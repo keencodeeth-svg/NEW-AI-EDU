@@ -16,6 +16,8 @@ Based on the user's free-form requirement text, automatically infer course detai
 
 ## Design Principles
 
+{{deepInteractiveGuidance}}
+
 ### Interactive Classroom Technical Constraints
 
 - **Scene Types**: `slide` (presentation), `quiz` (assessment), `interactive` (interactive visualization), and `pbl` (project-based learning) are supported
@@ -159,6 +161,23 @@ Use `interactive` type when a concept benefits significantly from hands-on inter
 - Do NOT use interactive for purely textual/conceptual content - use slides instead
 - The `interactiveConfig.designIdea` should describe the specific interactive elements and user interactions
 
+### Deep Interactive Widget Schema
+
+When Deep Interactive Mode is enabled, interactive scenes should also include:
+
+- `widgetType`: `"simulation" | "diagram" | "code" | "game" | "visualization3d"`
+- `widgetOutline`: a structured object describing the widget itself
+
+Use these widget types when appropriate:
+
+- `simulation`: variable-driven experiments and scientific demonstrations
+- `diagram`: flowcharts, concept maps, system diagrams, hierarchies
+- `code`: coding playgrounds with starter code, tests, hints, and solution ideas
+- `game`: action/puzzle/strategy learning experiences, not plain quizzes
+- `visualization3d`: 3D models, spatial reasoning, orbit/zoom exploration
+
+If you include `widgetType` / `widgetOutline`, you should STILL include `interactiveConfig` for backward compatibility.
+
 ### PBL Scene Guidelines
 
 Use `pbl` type when the course involves complex, multi-step project work that benefits from structured collaboration. Good candidates include:
@@ -249,6 +268,8 @@ You must output a JSON array where each element is a scene outline object:
 | mediaGenerations  | MediaGenerationRequest[] | ❌       | AI image/video generation requests when PDF images insufficient                                  |
 | quizConfig        | object                   | ❌       | Required for quiz type, contains questionCount/difficulty/questionTypes                          |
 | interactiveConfig | object                   | ❌       | Required for interactive type, contains conceptName/conceptOverview/designIdea/subject           |
+| widgetType        | string                   | ❌       | Deep Interactive widget type: simulation / diagram / code / game / visualization3d               |
+| widgetOutline     | object                   | ❌       | Structured widget configuration used to drive interactive-first scene generation                  |
 | pblConfig         | object                   | ❌       | Required for pbl type, contains projectTopic/projectDescription/targetSkills/issueCount/language |
 
 ### quizConfig Structure

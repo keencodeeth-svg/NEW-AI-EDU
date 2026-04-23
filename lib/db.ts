@@ -91,6 +91,26 @@ function wrapMissingSchemaError(error: unknown) {
   return error;
 }
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+export function isMissingRelationError(error: unknown, relationNames?: string | string[]) {
+  const message = (error as { message?: string } | null)?.message ?? "";
+  const missingRelation = /relation\s+"?[\w.]+"?\s+does not exist/i.test(message) || /Database relation missing/i.test(message);
+  if (!missingRelation) {
+    return false;
+  }
+  if (!relationNames) {
+    return true;
+  }
+  const names = Array.isArray(relationNames) ? relationNames : [relationNames];
+  return names.some((name) => {
+    const pattern = new RegExp(`relation\\s+"?${escapeRegExp(name)}"?\\s+does not exist`, "i");
+    return pattern.test(message) || message.includes(name);
+  });
+}
+
 export async function query<T>(text: string, params: QueryParams = []) {
   const db = getPool();
   try {

@@ -1,6 +1,6 @@
 import { getCurrentUser } from "@/lib/auth";
 import { getAssignmentsByClass, getAssignmentProgress } from "@/lib/assignments";
-import { getClassById, getClassesByTeacher, getClassStudents } from "@/lib/classes";
+import { getClassesByTeacher, getClassStudents } from "@/lib/classes";
 import { parseSearchParams, v } from "@/lib/api/validation";
 import { notFound, unauthorized } from "@/lib/api/http";
 import { createLearningRoute } from "@/lib/api/domains";

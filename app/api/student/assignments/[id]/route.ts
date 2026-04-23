@@ -52,6 +52,9 @@ export const GET = createLearningRoute({
       }));
 
     const progress = await getAssignmentProgressForStudent(assignment.id, user.id);
+    if (!progress) {
+      notFound("not found");
+    }
     const lessonLinkRecord = (await listAssignmentLessonLinks({ assignmentId: assignment.id, taskKind: "prestudy" }))[0] ?? null;
     const lessonSession = lessonLinkRecord ? await getClassScheduleSessionById(lessonLinkRecord.scheduleSessionId) : null;
 

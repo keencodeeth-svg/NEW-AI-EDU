@@ -47,7 +47,7 @@ export default function AssignmentSubmissionCard({
   loading,
   error,
   message,
-  hasUploads,
+  hasUploads: _hasUploads,
   hasText,
   maxUploads,
   canSubmit,

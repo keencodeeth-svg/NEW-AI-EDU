@@ -1,6 +1,6 @@
 import crypto from "crypto";
 import { getKnowledgePoints } from "./content";
-import { isDbEnabled, query, queryOne } from "./db";
+import { isDbEnabled, queryOne } from "./db";
 import { readJson, writeJson } from "./storage";
 
 export type ExamReviewWrongQuestion = {

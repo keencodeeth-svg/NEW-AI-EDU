@@ -18,6 +18,7 @@ import { I18nProvider } from "@/lib/hooks/use-i18n";
 import { Toaster } from "@/components/ui/sonner";
 import { ServerProvidersInit } from "@/components/server-providers-init";
 import { PRODUCT_BRAND_NAME } from "@/lib/classroom-integration";
+import DetailsAriaSync from "@/components/DetailsAriaSync";
 
 const inter = localFont({
   src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
@@ -64,6 +65,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           links: [
             { href: "/student/modules", label: "课程模块" },
             { href: "/diagnostic", label: "诊断测评" },
+            { href: "/student/knowledge-map", label: "知识图谱" },
+            { href: "/student/projects", label: "项目式学习" },
             { href: "/reading", label: "朗读评分" },
             { href: "/writing", label: "写作批改" }
           ]
@@ -114,6 +117,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           title: "教学执行",
           links: [
             { href: "/teacher/notifications", label: "通知规则" },
+            { href: "/teacher/lesson-planner", label: "AI 备课助手" },
+            { href: "/teacher/classroom-live", label: "课堂实时仪表盘" },
+            { href: "/teacher/projects", label: "项目式学习" },
             { href: "/teacher/ai-tools", label: "教师 AI 工具" }
           ]
         },
@@ -273,6 +279,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ThemeProvider>
           <I18nProvider>
             <ServerProvidersInit />
+            <DetailsAriaSync />
             <a className="skip-link" href="#main-content">
               跳转到主内容
             </a>
