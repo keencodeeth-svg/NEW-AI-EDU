@@ -94,7 +94,7 @@ export default function StudentGrowthPage() {
         <StatePanel title="本次刷新存在异常" description={growthPage.pageError} tone="error" compact />
       ) : null}
 
-      <Card title="互动课堂学习资产" tag="航科互动课堂">
+      <Card title="互动课堂学习资产" tag="知序课堂">
         {latestArtifacts.length ? (
           <div className="grid" style={{ gap: 12 }}>
             <div className="feature-card">

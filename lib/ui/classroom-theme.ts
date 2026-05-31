@@ -16,10 +16,8 @@ const toneCardStyles: Record<ClassroomTone, string> = {
   sky: 'border-sky-200/80 bg-sky-50/92 dark:border-sky-900/50 dark:bg-sky-950/24',
   emerald:
     'border-emerald-200/80 bg-emerald-50/92 dark:border-emerald-900/50 dark:bg-emerald-950/22',
-  amber:
-    'border-amber-200/80 bg-amber-50/92 dark:border-amber-900/50 dark:bg-amber-950/22',
-  slate:
-    'border-sky-100/80 bg-white/90 dark:border-slate-800/80 dark:bg-slate-950/36',
+  amber: 'border-amber-200/80 bg-amber-50/92 dark:border-amber-900/50 dark:bg-amber-950/22',
+  slate: 'border-sky-100/80 bg-white/90 dark:border-slate-800/80 dark:bg-slate-950/36',
 };
 
 const toneIconBadgeStyles: Record<ClassroomTone, string> = {
@@ -50,36 +48,35 @@ const softButtonStyles: Record<ClassroomTone, string> = {
 };
 
 export const classroomHeroPanel =
-  'rounded-[32px] border border-[rgba(205,225,248,0.78)] bg-[linear-gradient(135deg,rgba(255,255,255,0.996),rgba(247,251,255,0.984)_52%,rgba(247,253,248,0.976))] shadow-[0_24px_68px_rgba(73,122,189,0.08)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/72';
+  'classroom-hero-panel rounded-[32px] border shadow-[0_24px_68px_rgba(73,122,189,0.08)] backdrop-blur-xl';
 
 export const classroomPanel =
-  'rounded-[28px] border border-[rgba(209,226,246,0.72)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994),rgba(247,251,255,0.968),rgba(249,252,247,0.95))] shadow-[0_18px_46px_rgba(73,122,189,0.065)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/72';
+  'classroom-panel rounded-[28px] border shadow-[0_18px_46px_rgba(73,122,189,0.065)] backdrop-blur-xl';
 
 export const classroomSectionPanel =
-  'rounded-[26px] border border-[rgba(210,227,246,0.74)] bg-[linear-gradient(180deg,rgba(255,255,255,0.994),rgba(247,251,255,0.966),rgba(248,252,247,0.952))] shadow-[0_16px_40px_rgba(73,122,189,0.06)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/74';
+  'classroom-section-panel rounded-[26px] border shadow-[0_16px_40px_rgba(73,122,189,0.06)] backdrop-blur-xl';
 
 export const classroomInsetPanel =
-  'rounded-[22px] border border-[rgba(196,221,246,0.72)] bg-[linear-gradient(180deg,rgba(255,255,255,0.988),rgba(246,250,255,0.962),rgba(249,252,247,0.948))] shadow-[0_10px_24px_rgba(73,122,189,0.04)] dark:border-slate-800/80 dark:bg-slate-950/35';
+  'classroom-inset-panel rounded-[22px] border shadow-[0_10px_24px_rgba(73,122,189,0.04)]';
 
-export const classroomSoftSurface =
-  'rounded-[22px] border border-[rgba(201,221,242,0.72)] bg-[linear-gradient(180deg,rgba(255,255,255,0.992),rgba(249,252,255,0.97))] dark:border-slate-800/75 dark:bg-slate-950/50';
+export const classroomSoftSurface = 'classroom-soft-surface rounded-[22px] border';
 
 export const classroomToolbarStrip =
-  'flex max-w-full flex-wrap items-center gap-1.5 rounded-[22px] border border-white/94 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,250,255,0.92))] px-1.5 py-1.5 shadow-[0_10px_22px_rgba(73,122,189,0.06)] backdrop-blur-xl dark:border-slate-800/72 dark:bg-slate-900/70';
+  'classroom-toolbar-strip flex max-w-full flex-wrap items-center gap-1.5 rounded-[22px] border px-1.5 py-1.5 shadow-[0_10px_22px_rgba(73,122,189,0.06)] backdrop-blur-xl';
 
 export const classroomControlDivider = 'h-4 w-px bg-slate-200/80 dark:bg-slate-700/70';
 
 export const classroomControlToggle =
-  'inline-flex min-h-9 items-center justify-center gap-1 rounded-full border border-transparent px-3.5 py-1.5 text-xs font-semibold text-slate-600 transition-all hover:border-sky-100 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-800/90 dark:hover:text-slate-100';
+  'classroom-control-toggle inline-flex min-h-11 items-center justify-center gap-1 rounded-full border border-transparent px-3.5 py-2 text-xs font-semibold text-slate-600 transition-all hover:border-sky-100 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-800/90 dark:hover:text-slate-100';
 
 export const classroomControlButton =
-  'group inline-flex h-9 w-9 items-center justify-center rounded-full border border-transparent text-slate-500 transition-all hover:border-sky-100 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800/90 dark:hover:text-slate-100';
+  'classroom-control-button group inline-flex h-11 w-11 items-center justify-center rounded-full border border-transparent text-slate-500 transition-all hover:border-sky-100 hover:bg-white hover:text-slate-900 hover:shadow-sm dark:text-slate-400 dark:hover:border-slate-700 dark:hover:bg-slate-800/90 dark:hover:text-slate-100';
 
 export const classroomIconButton =
-  'flex h-8 w-8 items-center justify-center rounded-[18px] border border-slate-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,249,253,0.92))] text-slate-500 shadow-[0_8px_18px_rgba(15,23,42,0.05)] transition hover:-translate-y-[1px] hover:border-sky-200/90 hover:bg-white hover:text-slate-700 dark:border-slate-800/80 dark:bg-slate-900/78 dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:hover:text-slate-100';
+  'classroom-icon-button flex h-11 w-11 items-center justify-center rounded-[18px] border text-slate-500 shadow-[0_8px_18px_rgba(15,23,42,0.05)] transition hover:-translate-y-[1px] hover:border-sky-200/90 hover:bg-white hover:text-slate-700 dark:text-slate-300 dark:hover:border-slate-700 dark:hover:bg-slate-900 dark:hover:text-slate-100';
 
 export const classroomDropdownMenu =
-  'absolute top-full right-0 z-50 mt-2 min-w-[140px] overflow-hidden rounded-[20px] border border-white/84 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(246,250,255,0.95))] p-1.5 shadow-[0_20px_42px_rgba(15,23,42,0.12)] backdrop-blur-xl dark:border-slate-800/82 dark:bg-slate-950/92';
+  'classroom-dropdown-menu absolute top-full right-0 z-50 mt-2 min-w-[140px] overflow-hidden rounded-[20px] border p-1.5 shadow-[0_20px_42px_rgba(15,23,42,0.12)] backdrop-blur-xl';
 
 export function classroomDropdownItem(active?: boolean) {
   return cn(
@@ -89,7 +86,7 @@ export function classroomDropdownItem(active?: boolean) {
 }
 
 export const classroomPrimaryButton =
-  'rounded-2xl border border-sky-200/80 bg-[linear-gradient(180deg,rgba(240,249,255,0.98),rgba(224,242,254,0.94))] px-4 py-2.5 text-xs font-semibold text-sky-950 shadow-[0_10px_26px_rgba(14,165,233,0.10)] transition hover:border-sky-300 hover:bg-white dark:border-sky-800/60 dark:bg-sky-950/36 dark:text-sky-100 dark:hover:bg-sky-950/48';
+  'classroom-primary-button rounded-2xl border px-4 py-2.5 text-xs font-semibold shadow-[0_10px_26px_rgba(14,165,233,0.10)] transition hover:border-sky-300 hover:bg-white dark:text-sky-100 dark:hover:bg-sky-950/48';
 
 export function classroomOutlineButton(tone: ClassroomTone = 'slate') {
   return cn(
@@ -106,11 +103,7 @@ export function classroomSoftButton(tone: ClassroomTone = 'sky') {
 }
 
 export function classroomTonePill(tone: ClassroomTone = 'slate', className?: string) {
-  return cn(
-    'rounded-full border px-3 py-1 text-xs font-semibold',
-    tonePillStyles[tone],
-    className,
-  );
+  return cn('rounded-full border px-3 py-1 text-xs font-semibold', tonePillStyles[tone], className);
 }
 
 export function classroomToneCard(tone: ClassroomTone = 'slate', className?: string) {

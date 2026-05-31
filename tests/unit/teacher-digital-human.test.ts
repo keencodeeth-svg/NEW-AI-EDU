@@ -203,7 +203,7 @@ test("db-backed teacher digital human profiles import legacy file state and pers
         {
           "teacher-1": {
             teacherId: "teacher-1",
-            displayName: "航科王老师",
+            displayName: "知序王老师",
             portraitUrl: "https://example.com/avatar.png",
             updatedAt: "2026-03-17T00:00:00.000Z"
           }
@@ -214,7 +214,7 @@ test("db-backed teacher digital human profiles import legacy file state and pers
     );
 
     const loaded = await mod.getTeacherDigitalHumanProfile("teacher-1", "王老师");
-    assert.equal(loaded.displayName, "航科王老师");
+    assert.equal(loaded.displayName, "知序王老师");
     assert.equal(dbState.rows.length, 1);
     assert.equal(dbState.rows[0]?.portrait_url, "https://example.com/avatar.png");
 

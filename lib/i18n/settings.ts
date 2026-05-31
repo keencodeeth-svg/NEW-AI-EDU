@@ -52,7 +52,7 @@ export const settingsZhCN = {
     selectedAgents: '选中的智能体',
     required: '必选',
     agentNames: {
-      'default-1': '航科导学老师',
+      'default-1': '知序导学老师',
       'default-2': '课堂助教',
       'default-3': '课堂发言人',
       'default-4': '问题追问者',
@@ -221,6 +221,7 @@ export const settingsZhCN = {
     providerAzureTTS: 'Azure TTS',
     providerGLMTTS: 'GLM TTS',
     providerQwenTTS: 'Qwen TTS（阿里云百炼）',
+    providerVoxCPM2TTS: 'VoxCPM2 TTS（语音克隆）',
     providerBrowserNativeTTS: '浏览器原生 TTS',
     providerOpenAIWhisper: 'OpenAI ASR (gpt-4o-mini-transcribe)',
     providerBrowserNative: '浏览器原生 ASR',
@@ -284,6 +285,7 @@ export const settingsZhCN = {
     glmVoiceKazi: '动动动物圈kazi音色',
     glmVoiceDouji: '动动动物圈douji音色',
     glmVoiceLuodo: '动动动物圈luodo音色',
+    voxcpm2VoiceDefault: '使用服务端默认音色；可扩展 reference_audio 做教师专属克隆音色',
     // TTS Voice descriptions (Qwen)
     qwenVoiceCherry: '阳光积极、亲切自然小姐姐',
     qwenVoiceSerena: '温柔小姐姐',
@@ -809,6 +811,7 @@ export const settingsEnUS = {
     providerAzureTTS: 'Azure TTS',
     providerGLMTTS: 'GLM TTS',
     providerQwenTTS: 'Qwen TTS (Alibaba Cloud Bailian)',
+    providerVoxCPM2TTS: 'VoxCPM2 TTS (voice cloning)',
     providerBrowserNativeTTS: 'Browser Native TTS',
     providerOpenAIWhisper: 'OpenAI ASR (gpt-4o-mini-transcribe)',
     providerBrowserNative: 'Browser Native ASR',
@@ -873,6 +876,8 @@ export const settingsEnUS = {
     glmVoiceKazi: 'Kazi voice',
     glmVoiceDouji: 'Douji voice',
     glmVoiceLuodo: 'Luodo voice',
+    voxcpm2VoiceDefault:
+      'Uses the server default voice; can be extended with reference_audio for teacher-specific cloned voices',
     // TTS Voice descriptions (Qwen)
     qwenVoiceCherry: 'Sunny, warm and natural',
     qwenVoiceSerena: 'Gentle and soft',

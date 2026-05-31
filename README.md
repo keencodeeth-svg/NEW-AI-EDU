@@ -1,4 +1,4 @@
-# 航科（K12 AI 教育平台）
+# 知序学习平台（K12 AI 教育操作系统）
 
 面向 K12 的 AI 教育产品原型，覆盖学生、教师、家长、学校管理员、平台管理员五端，围绕“诊断 -> 计划 -> 练习 -> 复练 -> 干预 -> 反馈 -> 验证”的提分闭环构建。
 
@@ -6,7 +6,7 @@
 
 ## 1. 项目定位
 
-航科不是单点工具，而是一个完整的学习运营系统：
+知序学习平台不是单点工具，而是一个完整的学习运营系统：
 
 - 学生端：练习、错题复练、考试测评、成长画像、AI 陪练
 - 教师端：班级作业、考试组卷、预警干预、讲评包、AI 教案/课件
@@ -36,7 +36,7 @@
 
 此前新增（2026-03-17）：
 
-- 新增 `docs/hangke-interactive-classroom-world-class-prd.md`，明确“预习 / 巩固 / 兴趣探索 / 课堂回看”四模式学生学习工作台、教师学习包工厂与学校治理后台的统一产品主线
+- 新增历史 PRD 文档 `docs/hangke-interactive-classroom-world-class-prd.md`（内容按知序课堂产品线继续演进），明确“预习 / 巩固 / 兴趣探索 / 课堂回看”四模式学生学习工作台、教师学习包工厂与学校质量后台的统一产品主线
 - 新增 `docs/project-readiness-index.md` 作为项目状态、P0 阻断项、测试与发布入口的统一索引
 - 学校排课栈、AI 质量校准、AI eval gate 与 student personas 均已具备 DB canonical path；当前工作树 `data/` 目录下可见的 `23` 个 JSON 文件都已完成 DB 对应关系梳理
 - 单测基线扩到 `90` 个测试文件、`235` 条用例，新增 `API_TEST_SUITE=school-schedules` 的独立深排课回归与 production-like 本地入口
@@ -481,6 +481,8 @@ npm run infra:postgres:up
 - 用户名：`postgres`
 - 密码：`postgres`
 
+说明：`hangke_ai_edu_local` 是历史运行时数据库名，为兼容既有本地环境、脚本和部署数据保留；产品展示与文档主线使用“知序学习平台 / 知序课堂”。
+
 常用命令：
 
 ```bash
@@ -794,6 +796,9 @@ npm run db:migrate
 
 - `docs/world-class-product-assessment-2026-04-04.md`
   用途：按世界级教育 AI 产品标准看当前项目的优势、短板、评分和 `P0 / P1 / P2` 改造顺序。
+
+- `docs/p0-p2-full-score-optimization-roadmap.md`
+  用途：把 P0/P1/P2 优化整理为可打分、可验收、可回归的满分路线图，后续每轮优化都按指标、证据和验收命令推进。
 
 - `docs/project-readiness-index.md`
   用途：先看当前项目状态、规模指标、主要风险，以及“该跳去哪份文档”。

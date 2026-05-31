@@ -104,7 +104,7 @@ function buildTeacherDashboardActions({
       description: "新学生没进班，作业、分析和课表提醒都会断开；这一步最影响后续教学闭环。",
       href: "#teacher-join-requests",
       ctaLabel: "审核申请",
-      badgeLabel: "阻塞项",
+      badgeLabel: "关键事项",
       tone: "critical"
     });
   }
@@ -172,7 +172,7 @@ function buildTeacherDashboardActions({
       description: `${SUBJECT_LABELS[topRiskClass.subject] ?? topRiskClass.subject} · ${topRiskClass.grade} 年级，当前风险分 ${topRiskClass.riskScore}，建议优先复盘薄弱点与高风险学生。`,
       href: "/teacher/analysis",
       ctaLabel: "查看班级分析",
-      badgeLabel: "班级治理",
+      badgeLabel: "班级质量",
       tone: "steady"
     });
   }
@@ -182,7 +182,7 @@ function buildTeacherDashboardActions({
       {
         id: "seating",
         title: "本周课堂节奏稳定，适合复盘学期排座",
-        description: "当下没有明显阻塞项，可以把时间放在座位微调、课堂环境优化和重点学生前排策略上。",
+        description: "当下没有明显卡点，可以把时间放在座位微调、课堂环境优化和重点学生前排策略上。",
         href: "/teacher/seating",
         ctaLabel: "进入学期排座",
         badgeLabel: "结构优化",
@@ -302,8 +302,8 @@ export function TeacherExecutionSummaryCard({ classes, assignments, joinRequests
   const dueSoonAssignments = assignmentsInProgress.filter((item) => getHoursUntil(item.dueDate) <= 48);
   const totalStudents = insights?.summary.students ?? classes.reduce((sum, item) => sum + item.studentCount, 0);
 
-  let focusMessage = "当前没有明显阻塞项，适合把时间投到学情复盘、排座和测验准备。";
-  let budgetHeadline = "今天的教学盘面相对平稳";
+  let focusMessage = "当前没有明显卡点，适合把时间投到学情复盘、排座和测验准备。";
+  let budgetHeadline = "今天的教学情况相对平稳";
   let budgetMeta = `班级 ${classes.length} 个 · 学生 ${totalStudents} 人`;
   if (!classes.length) {
     focusMessage = "先创建班级，后面的学生加入、作业发布、分析和排座都依赖它。";
@@ -311,8 +311,8 @@ export function TeacherExecutionSummaryCard({ classes, assignments, joinRequests
     budgetMeta = "没有班级时，其他教学动作都无法闭环";
   } else if (pendingJoinRequests.length) {
     focusMessage = "今天最该先清掉待审核的入班申请，避免新学生掉出教学闭环。";
-    budgetHeadline = `当前有 ${pendingJoinRequests.length} 条入班阻塞`;
-    budgetMeta = "这组阻塞会直接影响学生能否收到任务与提醒";
+    budgetHeadline = `当前有 ${pendingJoinRequests.length} 条入班申请待处理`;
+    budgetMeta = "这组事项会直接影响学生能否收到任务与提醒";
   } else if (activeAlerts.length) {
     focusMessage = "预警还在激活中，建议先处理风险学生和薄弱知识点，再回头做常规发布。";
     budgetHeadline = `先处理 ${activeAlerts.length} 条活跃预警`;

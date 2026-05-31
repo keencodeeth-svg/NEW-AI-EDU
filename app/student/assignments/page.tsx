@@ -105,7 +105,7 @@ export default function StudentAssignmentsPage() {
         <span className="chip">{assignmentsPage.activeFilterSummary}</span>
       </div>
 
-      <Card title="互动课堂作业闭环" tag="航科互动课堂">
+      <Card title="互动课堂作业闭环" tag="知序课堂">
         {linkedArtifacts.length ? (
           <div className="grid" style={{ gap: 12 }}>
             <p>

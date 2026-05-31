@@ -35,7 +35,7 @@ function buildTeachingLoop(props: TeacherTeachingLoopCardProps) {
 
   const stepOne = pendingJoinRequests.length
     ? {
-        kicker: "先稳住阻塞项",
+        kicker: "先处理关键事项",
         title: `处理 ${pendingJoinRequests.length} 条入班申请`,
         description: "学生没进班，作业、提醒和分析数据都会断开。这一步先清掉，今天后面的教学动作才能落地。",
         meta: "这是最直接影响教学闭环的入口阻塞",
@@ -61,12 +61,12 @@ function buildTeachingLoop(props: TeacherTeachingLoopCardProps) {
             actionLabel: "处理预警"
           }
         : {
-            kicker: "先看当天盘面",
-            title: "当前没有明显阻塞项",
+            kicker: "先看当天情况",
+            title: "当前没有明显卡点",
             description: "可以直接进入当天教学执行，重点放在作业推进、课堂准备和效果复盘。",
             meta: "今天更适合做前置安排，而不是救火",
             href: "/teacher/analysis",
-            actionLabel: "查看学情盘面"
+            actionLabel: "查看学情"
           };
 
   const stepTwo = classesMissingAssignments.length
@@ -133,9 +133,9 @@ export default function TeacherTeachingLoopCard(props: TeacherTeachingLoopCardPr
   const loopSignals = [
     {
       id: "blocker",
-      label: "当前阻塞",
-      value: pendingJoinRequests.length ? `${pendingJoinRequests.length} 条入班申请待审` : activeAlerts.length ? `${activeAlerts.length} 条预警待处理` : "当前没有明显阻塞项",
-      meta: pendingJoinRequests.length ? "先清掉学生进班阻塞，后面数据链路才会通" : activeAlerts.length ? "先处理风险，再做常规发布更有效" : "可以把时间投到发布、复盘和课堂准备"
+      label: "关键事项",
+      value: pendingJoinRequests.length ? `${pendingJoinRequests.length} 条入班申请待审` : activeAlerts.length ? `${activeAlerts.length} 条预警待处理` : "当前没有明显卡点",
+      meta: pendingJoinRequests.length ? "先处理学生进班申请，后面数据链路才会通" : activeAlerts.length ? "先处理风险，再做常规发布更有效" : "可以把时间投到发布、复盘和课堂准备"
     },
     {
       id: "dispatch",
@@ -161,7 +161,7 @@ export default function TeacherTeachingLoopCard(props: TeacherTeachingLoopCardPr
           <div>
             <div className="teacher-teaching-loop-kicker">别在首页来回切入口</div>
             <div className="teacher-teaching-loop-title">
-              先稳住风险和阻塞，再推进任务派发，最后回到学情和成绩看效果。
+              先稳住风险和关键事项，再推进任务派发，最后回到学情和成绩看效果。
             </div>
             <p className="teacher-teaching-loop-description">
               教师首页不该只是工具集合，而应该把当天最短的教学执行路径排出来，减少你在“先做什么”上的切换成本。

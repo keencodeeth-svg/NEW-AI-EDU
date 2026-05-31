@@ -606,6 +606,25 @@ export const TTS_PROVIDERS: Record<TTSProviderId, TTSProviderConfig> = {
     supportedFormats: ['mp3', 'wav', 'pcm'],
   },
 
+  'voxcpm2-tts': {
+    id: 'voxcpm2-tts',
+    name: 'VoxCPM2 TTS',
+    requiresApiKey: true,
+    defaultBaseUrl: 'https://api.siliconflow.cn/v1',
+    icon: '/logos/siliconflow.svg',
+    voices: [
+      {
+        id: 'default',
+        name: '默认克隆音色',
+        language: 'zh-CN',
+        gender: 'neutral',
+        description: 'voxcpm2VoiceDefault',
+      },
+    ],
+    supportedFormats: ['wav'],
+    speedRange: { min: 0.5, max: 2.0, default: 1.0 },
+  },
+
   'browser-native-tts': {
     id: 'browser-native-tts',
     name: '浏览器原生 (Web Speech API)',
@@ -833,6 +852,7 @@ export const DEFAULT_TTS_VOICES: Record<TTSProviderId, string> = {
   'azure-tts': 'zh-CN-XiaoxiaoNeural',
   'glm-tts': 'tongtong',
   'qwen-tts': 'Cherry',
+  'voxcpm2-tts': 'default',
   'browser-native-tts': 'default',
 };
 

@@ -208,7 +208,7 @@ export default function StudentModulesPage() {
         </div>
       </Card>
 
-      <Card title="互动课堂联动预习" tag="航科互动课堂">
+      <Card title="互动课堂联动预习" tag="知序课堂">
         {linkedArtifacts.length ? (
           <div className="grid" style={{ gap: 12 }}>
             <div className="feature-card">

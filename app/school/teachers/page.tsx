@@ -120,14 +120,14 @@ export default function SchoolTeachersPage() {
         <StatePanel
           compact
           tone="info"
-          title="已从互动课堂治理中心进入"
+          title="已从课堂质量中心进入"
           description={`当前已自动定位${
             teachersPage.sourceContext.teacherName ? `教师“${teachersPage.sourceContext.teacherName}”` : "教师上下文"
           }${teachersPage.sourceContext.className ? `，并关联班级“${teachersPage.sourceContext.className}”` : ""}。`}
           action={
             <div className="cta-row">
               <Link className="button secondary" href="/school/interactive-classrooms">
-                返回治理中心
+                返回质量中心
               </Link>
               <Link
                 className="button ghost"

@@ -1,5 +1,8 @@
 import { cn } from '@/lib/utils';
 import {
+  PLATFORM_BRAND_NAME,
+  PLATFORM_BRAND_SUBTITLE,
+  PLATFORM_BRAND_TAGLINE,
   PRODUCT_BRAND_NAME,
   PRODUCT_BRAND_SUBTITLE,
   PRODUCT_BRAND_TAGLINE,
@@ -12,6 +15,9 @@ type ClassroomBrandProps = {
   readonly showSubtitle?: boolean;
   readonly showTagline?: boolean;
   readonly subtitle?: string;
+  readonly title?: string;
+  readonly tagline?: string;
+  readonly platform?: boolean;
 };
 
 const sizeMap = {
@@ -44,9 +50,15 @@ export function ClassroomBrand({
   align = 'left',
   showSubtitle = true,
   showTagline = false,
-  subtitle = PRODUCT_BRAND_SUBTITLE,
+  subtitle,
+  title,
+  tagline,
+  platform = false,
 }: ClassroomBrandProps) {
   const config = sizeMap[size];
+  const resolvedTitle = title ?? (platform ? PLATFORM_BRAND_NAME : PRODUCT_BRAND_NAME);
+  const resolvedSubtitle = subtitle ?? (platform ? PLATFORM_BRAND_SUBTITLE : PRODUCT_BRAND_SUBTITLE);
+  const resolvedTagline = tagline ?? (platform ? PLATFORM_BRAND_TAGLINE : PRODUCT_BRAND_TAGLINE);
 
   return (
     <div
@@ -65,7 +77,7 @@ export function ClassroomBrand({
           config.mark,
         )}
       >
-        <img src="/logos/hangke-mark.svg" alt="" className="h-full w-full object-cover" />
+        <img src="/logos/zhixu-mark.svg" alt="" className="h-full w-full object-cover" />
       </span>
       <span className="classroom-brand-copy flex min-w-0 flex-col">
         {showSubtitle ? (
@@ -76,13 +88,13 @@ export function ClassroomBrand({
               config.subtitle,
             )}
           >
-            {subtitle}
+            {resolvedSubtitle}
           </span>
         ) : null}
         <span
           className={cn('classroom-brand-title text-slate-950 dark:text-slate-50', config.title)}
         >
-          {PRODUCT_BRAND_NAME}
+          {resolvedTitle}
         </span>
         {showTagline ? (
           <span
@@ -91,7 +103,7 @@ export function ClassroomBrand({
               config.tagline,
             )}
           >
-            {PRODUCT_BRAND_TAGLINE}
+            {resolvedTagline}
           </span>
         ) : null}
       </span>

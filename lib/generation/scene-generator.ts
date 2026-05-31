@@ -28,6 +28,11 @@ import { parseActionsFromStructuredOutput } from './action-parser';
 import { parseJsonResponse } from './json-repair';
 import { normalizeDeepInteractiveOutline } from './deep-interactive';
 import {
+  normalizeQuizOutline,
+  normalizeQuizQuestion,
+  normalizeSceneOutlineRuntime,
+} from './runtime-validators';
+import {
   buildCourseContext,
   formatAgentsForPrompt,
   formatTeacherPersonaForPrompt,
@@ -163,7 +168,7 @@ export async function generateSceneContent(
   | GeneratedPBLContent
   | null
 > {
-  outline = normalizeDeepInteractiveOutline(outline);
+  outline = normalizeDeepInteractiveOutline(normalizeSceneOutlineRuntime(outline));
 
   // If outline is interactive but missing interactiveConfig, fall back to slide
   if (outline.type === 'interactive' && !outline.interactiveConfig) {
@@ -814,16 +819,17 @@ async function generateQuizContent(
   outline: SceneOutline,
   aiCall: AICallFn,
 ): Promise<GeneratedQuizContent | null> {
-  const quizConfig = outline.quizConfig || {
+  const normalizedOutline = normalizeQuizOutline(outline);
+  const quizConfig = normalizedOutline.quizConfig || {
     questionCount: 3,
     difficulty: 'medium',
     questionTypes: ['single'],
   };
 
   const prompts = buildPrompt(PROMPT_IDS.QUIZ_CONTENT, {
-    title: outline.title,
-    description: outline.description,
-    keyPoints: (outline.keyPoints || []).map((p, i) => `${i + 1}. ${p}`).join('\n'),
+    title: normalizedOutline.title,
+    description: normalizedOutline.description,
+    keyPoints: (normalizedOutline.keyPoints || []).map((p, i) => `${i + 1}. ${p}`).join('\n'),
     questionCount: quizConfig.questionCount,
     difficulty: quizConfig.difficulty,
     questionTypes: quizConfig.questionTypes.join(', '),
@@ -833,23 +839,24 @@ async function generateQuizContent(
     return null;
   }
 
-  log.debug(`Generating quiz content for: ${outline.title}`);
+  log.debug(`Generating quiz content for: ${normalizedOutline.title}`);
   const response = await aiCall(prompts.system, prompts.user);
   const generatedQuestions = parseJsonResponse<QuizQuestion[]>(response);
 
   if (!generatedQuestions || !Array.isArray(generatedQuestions)) {
-    log.error(`Failed to parse AI response for: ${outline.title}`);
+    log.error(`Failed to parse AI response for: ${normalizedOutline.title}`);
     return null;
   }
 
-  log.debug(`Got ${generatedQuestions.length} questions for: ${outline.title}`);
+  log.debug(`Got ${generatedQuestions.length} questions for: ${normalizedOutline.title}`);
 
   // Ensure each question has an ID and normalize options format
   const questions: QuizQuestion[] = generatedQuestions.map((q) => {
-    const isText = q.type === 'short_answer';
+    const normalizedQuestion = normalizeQuizQuestion(q);
+    const isText = normalizedQuestion.type === 'short_answer';
     return {
-      ...q,
-      id: q.id || `q_${nanoid(8)}`,
+      ...normalizedQuestion,
+      id: normalizedQuestion.id || `q_${nanoid(8)}`,
       options: isText ? undefined : normalizeQuizOptions(q.options),
       answer: isText ? undefined : normalizeQuizAnswer(q as unknown as Record<string, unknown>),
       hasAnswer: isText ? false : true,
@@ -918,7 +925,7 @@ async function generateInteractiveContent(
   aiCall: AICallFn,
   language: 'zh-CN' | 'en-US' = 'zh-CN',
 ): Promise<GeneratedInteractiveContent | null> {
-  outline = normalizeDeepInteractiveOutline(outline);
+  outline = normalizeDeepInteractiveOutline(normalizeSceneOutlineRuntime(outline));
   const config = outline.interactiveConfig!;
 
   // Step 1: Scientific modeling (with fallback on failure)

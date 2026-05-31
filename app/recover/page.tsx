@@ -143,7 +143,7 @@ export default function RecoverPage() {
                 autoComplete="organization"
                 value={recoverPage.schoolName}
                 onChange={(event) => recoverPage.setField("schoolName", event.target.value)}
-                placeholder="例如：航科实验学校"
+                placeholder="例如：知序实验学校"
                 disabled={recoverPage.loading}
               />
             </label>

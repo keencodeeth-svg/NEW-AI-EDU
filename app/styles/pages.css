@@ -565,9 +565,31 @@ textarea:focus {
   max-width: 560px;
 }
 
+.auth-page-head {
+  align-items: flex-start;
+}
+
+.auth-page-copy {
+  display: grid;
+  gap: 6px;
+  max-width: 44ch;
+}
+
 .auth-form {
   display: grid;
   gap: 12px;
+}
+
+.auth-role-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.auth-role-note {
+  margin: -2px 0 0;
 }
 
 .form-field {
@@ -658,9 +680,59 @@ textarea:focus {
 .auth-links {
   margin-top: 8px;
   display: grid;
-  gap: 6px;
+  gap: 10px;
   font-size: 13px;
   color: var(--ink-1);
+}
+
+.auth-support-stack {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.auth-recovery-note {
+  margin: 0;
+}
+
+.auth-links-primary {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid var(--stroke);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.auth-register-button {
+  width: 100%;
+}
+
+.auth-register-details {
+  border: 1px solid var(--stroke);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.auth-register-details > summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  list-style: none;
+  font-weight: 700;
+  color: var(--ink-0);
+  cursor: pointer;
+}
+
+.auth-register-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.auth-links-list {
+  display: grid;
+  gap: 8px;
+  padding: 0 14px 14px;
 }
 
 .pill-list {
@@ -710,6 +782,7 @@ textarea:focus {
 }
 
 .role-card {
+  min-height: 72px;
   text-align: left;
   padding: 12px 14px;
   border-radius: 14px;
@@ -1041,6 +1114,29 @@ textarea:focus {
   margin-top: 18px;
 }
 
+.home-hero-support {
+  display: grid;
+  gap: 6px;
+  max-width: 48ch;
+  margin-top: 14px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(118, 150, 191, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.home-hero-support-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-0);
+}
+
+.home-hero-support p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 .home-trust-strip {
   margin-top: 16px;
 }
@@ -1100,6 +1196,49 @@ textarea:focus {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+}
+
+.home-stage-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-stage-priority {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(118, 150, 191, 0.12);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.home-stage-priority-label {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 28px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(236, 247, 255, 0.92);
+  border: 1px solid rgba(14, 165, 233, 0.16);
+  color: var(--brand-0);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.home-stage-priority-value {
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--ink-0);
+}
+
+.home-stage-priority p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-1);
 }
 
 .home-status-tile {
@@ -2728,6 +2867,10 @@ html[data-density='compact'] .main {
     grid-template-columns: 1fr;
   }
 
+  .home-stage-summary {
+    grid-template-columns: 1fr;
+  }
+
   .student-overview-grid {
     grid-template-columns: 1fr;
   }
@@ -2817,6 +2960,7 @@ html[data-density='compact'] .main {
   }
 
   .home-stage-grid,
+  .home-stage-summary,
   .home-role-grid,
   .home-flow-grid {
     grid-template-columns: 1fr;

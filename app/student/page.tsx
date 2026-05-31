@@ -130,15 +130,15 @@ export default function StudentPage() {
   );
 
   if (dashboardPage.loading && !dashboardPage.hasDashboardData && !dashboardPage.authRequired) {
-    return <WorkspaceLoadingState title="学习控制台加载中" description="正在汇总课表、学习计划、今日任务和成长激励。" />;
+    return <WorkspaceLoadingState title="今日学习加载中" description="正在汇总课表、学习计划、今日任务和成长激励。" />;
   }
 
   if (dashboardPage.authRequired) {
-    return <WorkspaceAuthState title="需要学生账号登录" description="请先登录学生账号，再查看学习控制台和今日任务。" />;
+    return <WorkspaceAuthState title="需要学生账号登录" description="请先登录学生账号，再查看今日学习和任务。" />;
   }
 
   if (dashboardPage.pageError && !dashboardPage.hasDashboardData) {
-    return <WorkspaceErrorState title="学习控制台加载失败" description={dashboardPage.pageError} onRetry={dashboardPage.retryDashboard} />;
+    return <WorkspaceErrorState title="今日学习加载失败" description={dashboardPage.pageError} onRetry={dashboardPage.retryDashboard} />;
   }
 
   return (
@@ -147,7 +147,7 @@ export default function StudentPage() {
       hideHeader
       lead={
         <WorkspaceHero
-          eyebrow="Student Launchpad"
+          eyebrow="学生今日学习"
           title="先推进今天最值得开始的动作，再决定要不要展开全部上下文"
           description="把任务、互动课堂、自主学习、课表和补救链路压成一条更容易进入的开始路径。学生不需要在首页重新判断优先级，直接从当前最合适的入口起步。"
           badges={[
@@ -214,7 +214,7 @@ export default function StudentPage() {
       <div style={{ display: "grid", gap: 10, marginBottom: 12 }}>
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <button className="button ghost" type="button" onClick={() => setShowTour(true)}>
-            ? 重新引导
+            重新引导
           </button>
         </div>
         <StudentEncouragementBanner />

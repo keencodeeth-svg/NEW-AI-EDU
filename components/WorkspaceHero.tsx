@@ -1,7 +1,7 @@
-import type { ReactNode } from "react";
-import { cn } from "@/lib/utils";
+import type { ReactNode } from 'react';
+import { cn } from '@/lib/utils';
 
-type WorkspaceHeroTone = "sky" | "emerald" | "amber" | "slate";
+type WorkspaceHeroTone = 'sky' | 'emerald' | 'amber' | 'slate';
 
 export type WorkspaceHeroStat = {
   label: string;
@@ -31,17 +31,17 @@ type WorkspaceHeroProps = {
 };
 
 const TONE_CARD_CLASS: Record<WorkspaceHeroTone, string> = {
-  sky: "border-sky-200/80 bg-sky-50/86",
-  emerald: "border-emerald-200/80 bg-emerald-50/86",
-  amber: "border-amber-200/80 bg-amber-50/86",
-  slate: "border-slate-200/85 bg-white/86",
+  sky: 'workspace-hero-tone-sky',
+  emerald: 'workspace-hero-tone-emerald',
+  amber: 'workspace-hero-tone-amber',
+  slate: 'workspace-hero-tone-slate',
 };
 
 const TONE_BADGE_CLASS: Record<WorkspaceHeroTone, string> = {
-  sky: "bg-sky-100 text-sky-700",
-  emerald: "bg-emerald-100 text-emerald-700",
-  amber: "bg-amber-100 text-amber-700",
-  slate: "bg-slate-100 text-slate-700",
+  sky: 'workspace-hero-badge-sky',
+  emerald: 'workspace-hero-badge-emerald',
+  amber: 'workspace-hero-badge-amber',
+  slate: 'workspace-hero-badge-slate',
 };
 
 export default function WorkspaceHero({
@@ -58,32 +58,15 @@ export default function WorkspaceHero({
   className,
 }: WorkspaceHeroProps) {
   return (
-    <section
-      className={cn(
-        "relative overflow-hidden rounded-[32px] border border-[rgba(116,150,191,0.12)] bg-[linear-gradient(180deg,rgba(255,255,255,0.99),rgba(247,251,255,0.94))] p-5 shadow-[0_20px_56px_rgba(73,122,189,0.07)] md:p-7",
-        className,
-      )}
-    >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[8%] top-0 h-28 w-28 rounded-full bg-sky-200/18 blur-3xl" />
-        <div className="absolute bottom-[-12%] right-[12%] h-36 w-36 rounded-full bg-emerald-200/18 blur-3xl" />
-        <div className="absolute inset-x-10 top-0 h-px bg-white/80" />
-      </div>
-
-      <div className="relative grid gap-4 xl:grid-cols-[minmax(0,1.16fr)_minmax(320px,0.84fr)]">
-        <div className="min-w-0">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky-700/80">
-            {eyebrow}
-          </div>
-          <h1 className="mt-3 max-w-[19ch] text-balance text-[clamp(2rem,3.8vw,3.05rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-slate-900">
-            {title}
-          </h1>
-          <p className="mt-3 max-w-[68ch] text-sm leading-7 text-slate-600 md:text-[15px]">
-            {description}
-          </p>
+    <section className={cn('workspace-hero', className)}>
+      <div className="workspace-hero-grid">
+        <div className="workspace-hero-copy">
+          <div className="workspace-hero-eyebrow">{eyebrow}</div>
+          <h1 className="workspace-hero-title">{title}</h1>
+          <p className="workspace-hero-description">{description}</p>
 
           {badges.length ? (
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="workspace-hero-badges">
               {badges.map((badge) => (
                 <span key={badge} className="chip">
                   {badge}
@@ -92,43 +75,31 @@ export default function WorkspaceHero({
             </div>
           ) : null}
 
-          {actions ? <div className="cta-row no-margin mt-6 flex-wrap">{actions}</div> : null}
+          {actions ? (
+            <div className="cta-row no-margin workspace-hero-actions">{actions}</div>
+          ) : null}
         </div>
 
-        <div className="rounded-[26px] border border-white/84 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(249,252,255,0.84))] p-4 shadow-[0_14px_36px_rgba(73,122,189,0.05)] backdrop-blur-xl">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
-            {sideLabel}
-          </div>
-          <div className="mt-2 text-xl font-semibold tracking-[-0.02em] text-slate-900">
-            {sideTitle}
-          </div>
-          <div className="mt-2 text-sm leading-6 text-slate-600">{sideDescription}</div>
+        <div className="workspace-hero-side">
+          <div className="workspace-hero-side-label">{sideLabel}</div>
+          <div className="workspace-hero-side-title">{sideTitle}</div>
+          <div className="workspace-hero-side-description">{sideDescription}</div>
 
-          <div className="mt-4 grid gap-3">
+          <div className="workspace-hero-notes">
             {notes.map((note, index) => {
-              const tone = note.tone ?? "sky";
+              const tone = note.tone ?? 'sky';
               return (
                 <div
                   key={`${note.title}-${index}`}
-                  className={cn(
-                    "rounded-[22px] border px-4 py-3.5 shadow-sm",
-                    TONE_CARD_CLASS[tone],
-                  )}
+                  className={cn('workspace-hero-note', TONE_CARD_CLASS[tone])}
                 >
-                  <div className="flex items-start gap-3">
-                    <span
-                      className={cn(
-                        "inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-[11px] font-semibold",
-                        TONE_BADGE_CLASS[tone],
-                      )}
-                    >
+                  <div className="workspace-hero-note-row">
+                    <span className={cn('workspace-hero-note-index', TONE_BADGE_CLASS[tone])}>
                       {index + 1}
                     </span>
-                    <div className="min-w-0">
-                      <div className="text-sm font-semibold text-slate-900">{note.title}</div>
-                      <div className="mt-1 text-xs leading-5 text-slate-600">
-                        {note.description}
-                      </div>
+                    <div className="workspace-hero-note-copy">
+                      <div className="workspace-hero-note-title">{note.title}</div>
+                      <div className="workspace-hero-note-description">{note.description}</div>
                     </div>
                   </div>
                 </div>
@@ -138,24 +109,17 @@ export default function WorkspaceHero({
         </div>
       </div>
 
-      <div className="relative mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+      <div className="workspace-hero-stat-grid">
         {stats.map((stat) => {
-          const tone = stat.tone ?? "slate";
+          const tone = stat.tone ?? 'slate';
           return (
             <div
               key={`${stat.label}-${stat.value}`}
-              className={cn(
-                "rounded-[24px] border px-4 py-4 shadow-sm backdrop-blur-sm",
-                TONE_CARD_CLASS[tone],
-              )}
+              className={cn('workspace-hero-stat', TONE_CARD_CLASS[tone])}
             >
-              <div className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-                {stat.label}
-              </div>
-              <div className="mt-2 text-[clamp(1.35rem,2vw,1.8rem)] font-semibold tracking-[-0.03em] text-slate-900">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm leading-6 text-slate-600">{stat.description}</div>
+              <div className="workspace-hero-stat-label">{stat.label}</div>
+              <div className="workspace-hero-stat-value">{stat.value}</div>
+              <div className="workspace-hero-stat-description">{stat.description}</div>
             </div>
           );
         })}

@@ -798,7 +798,7 @@ export default function ClassroomDetailPage() {
                         {deliveryDockActionHeading}
                       </div>
                       <div className="mt-1 text-[13px] font-semibold text-slate-900 dark:text-slate-100">
-                        {isStudentSelfStudyStage ? '把这节课接回学生成长链路' : '把这节课接回真实教学链路'}
+                        {isStudentSelfStudyStage ? '把这节课接回学生成长记录' : '把这节课接回教学反馈'}
                       </div>
                       <div className="mt-1 text-[11px] leading-5 text-slate-600 dark:text-slate-300/85">
                         {deliveryDockActionHint}
@@ -851,13 +851,13 @@ export default function ClassroomDetailPage() {
                               href="/teacher/ai-tools"
                               className={`${classroomOutlineButton('sky')} inline-flex items-center justify-center px-3 py-2 text-[12px]`}
                             >
-                              去教师工具台
+                              去教师课堂工具
                             </Link>
                             <Link
                               href="/school/interactive-classrooms"
                               className={`${classroomOutlineButton('amber')} inline-flex items-center justify-center px-3 py-2 text-[12px]`}
                             >
-                              查看交付台账
+                              查看课堂质量
                             </Link>
                           </>
                         )}

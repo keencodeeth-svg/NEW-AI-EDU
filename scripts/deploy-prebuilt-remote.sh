@@ -20,13 +20,18 @@ Common optional env:
   DEPLOY_SKIP_BUILD             Skip local build when set to 1
   DEPLOY_ALLOW_DIRTY            Allow deploying a dirty worktree when set to 1
   DEPLOY_SKIP_CANARY            Skip port 3001 canary when set to 1
+  DEPLOY_POST_DEPLOY_COMMAND    Optional command to run as post-deploy smoke
+  DEPLOY_POST_DEPLOY_URL        Optional URL to check as post-deploy smoke
+  DEPLOY_POST_DEPLOY_EXPECT_STATUS
+                                Optional comma-separated accepted statuses, default 200
+  DEPLOY_POST_DEPLOY_TIMEOUT_MS Optional timeout for post-deploy URL check, default 10000
 
 What it does:
   1. Optionally runs a local build.
   2. Creates a standalone release archive with vendored runtime deps, scripts, and static assets.
   3. Uploads the archive to the remote host.
   4. Restores the remote .env.production into the release dir.
-  5. Runs db:migrate, starts canary, then cuts PM2 over.
+  5. Runs db:migrate, starts canary, then reloads PM2 with rollback-aware safety checks.
 EOF
 }
 
@@ -117,6 +122,10 @@ DEPLOY_EXTERNAL_HEALTH_URL="${DEPLOY_EXTERNAL_HEALTH_URL:-}"
 DEPLOY_SKIP_BUILD="${DEPLOY_SKIP_BUILD:-0}"
 DEPLOY_ALLOW_DIRTY="${DEPLOY_ALLOW_DIRTY:-0}"
 DEPLOY_SKIP_CANARY="${DEPLOY_SKIP_CANARY:-0}"
+DEPLOY_POST_DEPLOY_COMMAND="${DEPLOY_POST_DEPLOY_COMMAND:-}"
+DEPLOY_POST_DEPLOY_URL="${DEPLOY_POST_DEPLOY_URL:-}"
+DEPLOY_POST_DEPLOY_EXPECT_STATUS="${DEPLOY_POST_DEPLOY_EXPECT_STATUS:-200}"
+DEPLOY_POST_DEPLOY_TIMEOUT_MS="${DEPLOY_POST_DEPLOY_TIMEOUT_MS:-10000}"
 DEPLOY_SSH_PORT="${DEPLOY_SSH_PORT:-22}"
 
 SSH_OPTS=(-p "$DEPLOY_SSH_PORT" -o ConnectTimeout=20)
@@ -156,6 +165,9 @@ if [[ ! -d ".next/static" ]]; then
   echo "Missing .next/static. Run a local build first or unset DEPLOY_SKIP_BUILD." >&2
   exit 1
 fi
+
+log "Verifying standalone prompt assets"
+node scripts/verify-standalone-prompts.mjs
 
 TEMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/hk-ai-edu-deploy.XXXXXX")"
 STAGE_DIR="$TEMP_DIR/release"
@@ -228,7 +240,11 @@ ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" bash -s -- \
   "$DEPLOY_PRODUCTION_WAIT_SECONDS" \
   "$DEPLOY_SKIP_CANARY" \
   "$DEPLOY_REMOTE_INSTALL_COMMAND" \
-  "$DEPLOY_REMOTE_MIGRATE_COMMAND" <<'REMOTE_SCRIPT'
+  "$DEPLOY_REMOTE_MIGRATE_COMMAND" \
+  "$DEPLOY_POST_DEPLOY_COMMAND" \
+  "$DEPLOY_POST_DEPLOY_URL" \
+  "$DEPLOY_POST_DEPLOY_EXPECT_STATUS" \
+  "$DEPLOY_POST_DEPLOY_TIMEOUT_MS" <<'REMOTE_SCRIPT'
 set -euo pipefail
 
 target_commit="$1"
@@ -246,6 +262,118 @@ production_wait="${12}"
 skip_canary="${13}"
 install_command="${14}"
 migrate_command="${15}"
+post_deploy_command="${16}"
+post_deploy_url="${17}"
+post_deploy_expect_status="${18}"
+post_deploy_timeout_ms="${19}"
+
+run_inline_health() {
+  local target_port="$1"
+  curl -fsS "http://127.0.0.1:${target_port}/api/health" >/dev/null
+  if [[ -n "${READINESS_PROBE_TOKEN:-}" ]]; then
+    curl -fsS -H "x-readiness-token: $READINESS_PROBE_TOKEN" \
+      "http://127.0.0.1:${target_port}/api/health/readiness" >/dev/null
+  fi
+}
+
+run_post_deploy_smoke() {
+  if [[ -z "$post_deploy_command" && -z "$post_deploy_url" ]]; then
+    return 0
+  fi
+
+  POST_DEPLOY_SMOKE_COMMAND="$post_deploy_command" \
+  POST_DEPLOY_SMOKE_URL="$post_deploy_url" \
+  POST_DEPLOY_SMOKE_EXPECT_STATUS="$post_deploy_expect_status" \
+  POST_DEPLOY_SMOKE_TIMEOUT_MS="$post_deploy_timeout_ms" \
+    node scripts/post-deploy-smoke.mjs
+}
+
+ensure_pm2_process() {
+  local app_name="$1"
+  local app_port="$2"
+  local cwd_path="$3"
+
+  if pm2 describe "$app_name" >/dev/null 2>&1; then
+    PORT="$app_port" HOSTNAME="127.0.0.1" pm2 startOrReload "$cwd_path/ecosystem.config.cjs" \
+      --only "$app_name" --update-env >/dev/null
+    return
+  fi
+
+  PORT="$app_port" HOSTNAME="127.0.0.1" pm2 start "$cwd_path/ecosystem.config.cjs" \
+    --only "$app_name" --update-env >/dev/null
+}
+
+get_pm2_cwd() {
+  local app_name="$1"
+  pm2 jlist | node -e '
+    const fs = require("fs");
+    const appName = process.argv[1];
+    const input = fs.readFileSync(0, "utf8");
+    const processes = JSON.parse(input);
+    const match = processes.find((entry) => entry?.name === appName);
+    if (!match) process.exit(1);
+    const cwd = match.pm2_env?.pm_cwd || match.pm2_env?.cwd || "";
+    if (!cwd) process.exit(2);
+    process.stdout.write(cwd);
+  ' "$app_name"
+}
+
+write_ecosystem_config() {
+  local cwd_path="$1"
+  cat > "$cwd_path/ecosystem.config.cjs" <<EOF
+module.exports = {
+  apps: [
+    {
+      name: "${pm2_app_name}",
+      script: "npm",
+      args: "start",
+      cwd: "${cwd_path}",
+      interpreter: "none",
+      env: {
+        NODE_ENV: "production",
+        NEXT_TELEMETRY_DISABLED: "1",
+        PORT: "${production_port}",
+        HOSTNAME: "127.0.0.1",
+      },
+    },
+    {
+      name: "${canary_app_name}",
+      script: "npm",
+      args: "start",
+      cwd: "${cwd_path}",
+      interpreter: "none",
+      env: {
+        NODE_ENV: "production",
+        NEXT_TELEMETRY_DISABLED: "1",
+        PORT: "${canary_port}",
+        HOSTNAME: "127.0.0.1",
+      },
+    },
+  ],
+};
+EOF
+}
+
+previous_pm2_cwd=""
+production_reloaded=0
+
+rollback_production() {
+  if [[ "$production_reloaded" != "1" ]]; then
+    return 0
+  fi
+
+  if [[ -n "$previous_pm2_cwd" && -f "$previous_pm2_cwd/ecosystem.config.cjs" ]]; then
+    echo "Production validation failed, rolling back PM2 app ${pm2_app_name} to ${previous_pm2_cwd}" >&2
+    PORT="$production_port" HOSTNAME="127.0.0.1" pm2 startOrReload \
+      "$previous_pm2_cwd/ecosystem.config.cjs" --only "$pm2_app_name" --update-env >/dev/null || true
+    sleep "$production_wait"
+    run_inline_health "$production_port" || true
+    return 0
+  fi
+
+  echo "Production validation failed and no previous PM2 release was found; stopping new app ${pm2_app_name}" >&2
+  pm2 delete "$pm2_app_name" >/dev/null 2>&1 || true
+}
 
 load_release_env() {
   set -a
@@ -274,7 +402,7 @@ printf 'released_at=%s\n' "$(date -u '+%Y-%m-%dT%H:%M:%SZ')" >> DEPLOYMENT_INFO
 export NEXT_TELEMETRY_DISABLED=1
 export NODE_ENV=production
 
-eval "$install_command"
+eval "$install_command" </dev/null
 load_release_env
 
 if [[ -z "${DATABASE_URL:-}" ]]; then
@@ -282,27 +410,30 @@ if [[ -z "${DATABASE_URL:-}" ]]; then
   exit 1
 fi
 
-eval "$migrate_command"
+eval "$migrate_command" </dev/null
+
+write_ecosystem_config "$remote_release_dir"
 
 if [[ "$skip_canary" != "1" ]]; then
   pm2 delete "$canary_app_name" >/dev/null 2>&1 || true
   load_release_env
-  pm2 start npm --name "$canary_app_name" --cwd "$remote_release_dir" -- start -- -p "$canary_port" -H 127.0.0.1 >/dev/null
+  ensure_pm2_process "$canary_app_name" "$canary_port" "$remote_release_dir"
   sleep "$canary_wait"
-  curl -fsS "http://127.0.0.1:${canary_port}/api/health" >/dev/null
-  if [[ -n "${READINESS_PROBE_TOKEN:-}" ]]; then
-    curl -fsS -H "x-readiness-token: $READINESS_PROBE_TOKEN" "http://127.0.0.1:${canary_port}/api/health/readiness" >/dev/null
-  fi
+  run_inline_health "$canary_port"
 fi
 
-pm2 delete "$pm2_app_name" >/dev/null 2>&1 || true
-load_release_env
-pm2 start npm --name "$pm2_app_name" --cwd "$remote_release_dir" -- start -- -p "$production_port" -H 127.0.0.1 >/dev/null
-sleep "$production_wait"
-curl -fsS "http://127.0.0.1:${production_port}/api/health" >/dev/null
-if [[ -n "${READINESS_PROBE_TOKEN:-}" ]]; then
-  curl -fsS -H "x-readiness-token: $READINESS_PROBE_TOKEN" "http://127.0.0.1:${production_port}/api/health/readiness" >/dev/null
+if pm2 describe "$pm2_app_name" >/dev/null 2>&1; then
+  previous_pm2_cwd="$(get_pm2_cwd "$pm2_app_name" || true)"
 fi
+
+load_release_env
+trap 'rollback_production' ERR
+ensure_pm2_process "$pm2_app_name" "$production_port" "$remote_release_dir"
+production_reloaded=1
+sleep "$production_wait"
+run_inline_health "$production_port"
+run_post_deploy_smoke
+trap - ERR
 
 pm2 delete "$canary_app_name" >/dev/null 2>&1 || true
 pm2 save >/dev/null

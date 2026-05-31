@@ -477,6 +477,9 @@ test.describe("browser smoke", () => {
 
     await expect(page.getByRole("heading", { name: "先推进今天最值得开始的动作，再决定要不要展开全部上下文" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "今天直接开始" })).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
   });
 
   test("teacher can review class context and publish an assignment", async ({ page }) => {
@@ -504,6 +507,9 @@ test.describe("browser smoke", () => {
       timeout: 15_000
     });
     await expect(page.getByRole("heading", { name: "现在先开工" })).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
 
     const classId = await createClass(page, {
       name: className
@@ -1013,7 +1019,7 @@ test.describe("browser smoke", () => {
     });
 
     await page.goto("/student/interactive-classroom?mode=interest-cultivation");
-    await expect(page.getByRole("heading", { name: "航科互动课堂" })).toBeVisible({
+    await expect(page.getByRole("heading", { name: "知序课堂" })).toBeVisible({
       timeout: 15_000
     });
 
@@ -1345,12 +1351,12 @@ test.describe("browser smoke", () => {
       audienceMode: "whole-class",
       studentCount: 42,
       teacherName: "Playwright Governance Teacher",
-      publishedUrl: "https://example.com/hangke-governance-preview"
+      publishedUrl: "https://example.com/zhixu-classroom-quality-preview"
     });
     expectApiOk(deliveryResult, "classroom delivery audit record should be created");
 
     await page.goto("/school/interactive-classrooms");
-    await expect(page.getByRole("heading", { name: "互动课堂治理中心" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("heading", { name: "课堂质量中心" })).toBeVisible({ timeout: 15_000 });
     await expect(page.locator("body")).toContainText("累计 1 次交付");
     await expect(page.locator("body")).toContainText(className);
     await expect(page.locator("body")).toContainText("覆盖 42 人");

@@ -1,0 +1,9 @@
+export const PLATFORM_BRAND_NAME = "知序教育";
+export const PLATFORM_PRODUCT_NAME = "知序学习平台";
+export const PLATFORM_BRAND_SUBTITLE = "Learning Operating System";
+export const PLATFORM_BRAND_TAGLINE = "让学习、教学与陪伴，都有清晰下一步。";
+export const CLASSROOM_PRODUCT_NAME = "知序课堂";
+export const PRODUCT_BRAND_NAME = CLASSROOM_PRODUCT_NAME;
+export const PRODUCT_BRAND_SUBTITLE = "Classroom Learning System";
+export const PRODUCT_BRAND_TAGLINE = "把备课、授课、自主学习、反馈与质量改进组织成闭环。";
+export const PRODUCT_SERVICE_NAME = "zhixu-classroom";

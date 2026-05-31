@@ -136,7 +136,7 @@ export async function buildAiClassroomLaunchPayloadFromLibraryItem(
   }
 
   const requirementSections = [
-    `请基于以下${contentTypeLabel}资料，生成一节适合${item.grade}年级${subjectLabel}教学场景的航科互动课堂。`,
+    `请基于以下${contentTypeLabel}资料，生成一节适合${item.grade}年级${subjectLabel}教学场景的知序课堂。`,
     `资料标题：${item.title}`,
     item.description ? `资料说明：${item.description}` : '',
     knowledgePoints.length ? `重点知识点：${knowledgePoints.join('、')}` : '',
@@ -168,7 +168,7 @@ export function buildAiClassroomLaunchPayloadFromTeacherOutline(input: {
   const knowledgePoints = (input.knowledgePoints ?? []).map((item) => item.title).filter(Boolean);
 
   const baseRequirement = [
-    `请为${input.classItem.name}设计一节适合${input.classItem.grade}年级${subjectLabel}的航科互动课堂。`,
+    `请为${input.classItem.name}设计一节适合${input.classItem.grade}年级${subjectLabel}的知序课堂。`,
     topic ? `课堂主题：${topic}` : '',
     knowledgePoints.length ? `关联知识点：${knowledgePoints.join('、')}` : '',
     '课堂要求：适合教师授课演示，包含角色互动、分步讲解、课堂提问、板书推进和课后延伸。',

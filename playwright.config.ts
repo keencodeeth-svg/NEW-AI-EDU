@@ -10,25 +10,35 @@ function compactEnv(input: Record<string, string | undefined>) {
   );
 }
 
-const webServerEnv = compactEnv({
-  ADMIN_INVITE_CODE: process.env.ADMIN_INVITE_CODE ?? "PW-ADMIN-2026",
-  API_TEST_SCOPE: process.env.API_TEST_SCOPE ?? "playwright",
-  API_TEST_ALLOW_CUSTOM_ORIGIN_HEADER: process.env.API_TEST_ALLOW_CUSTOM_ORIGIN_HEADER ?? "true",
-  ALLOW_JSON_FALLBACK: process.env.ALLOW_JSON_FALLBACK,
-  DATA_DIR: process.env.DATA_DIR ?? ".runtime-data/playwright",
-  DATA_SEED_DIR: process.env.DATA_SEED_DIR,
-  DATABASE_URL: process.env.DATABASE_URL,
-  DB_SSL: process.env.DB_SSL,
-  FILE_INLINE_CONTENT: process.env.FILE_INLINE_CONTENT ?? "false",
-  FILE_OBJECT_STORAGE_ENABLED: process.env.FILE_OBJECT_STORAGE_ENABLED ?? "true",
-  LIBRARY_INLINE_FILE_CONTENT: process.env.LIBRARY_INLINE_FILE_CONTENT ?? "false",
-  LIBRARY_OBJECT_STORAGE_ENABLED: process.env.LIBRARY_OBJECT_STORAGE_ENABLED ?? "true",
-  OBJECT_STORAGE_ROOT: process.env.OBJECT_STORAGE_ROOT ?? ".runtime-data/playwright-objects",
-  READINESS_PROBE_TOKEN: process.env.READINESS_PROBE_TOKEN,
-  REQUIRE_DATABASE: process.env.REQUIRE_DATABASE,
-  RUNTIME_GUARDRAILS_ENFORCE: process.env.RUNTIME_GUARDRAILS_ENFORCE ?? (IS_PRODUCTION_LIKE ? "true" : "false"),
-  SCHOOL_ADMIN_INVITE_CODE: process.env.SCHOOL_ADMIN_INVITE_CODE ?? "PW-SCHOOL-2026",
-  TEACHER_INVITE_CODES: process.env.TEACHER_INVITE_CODES ?? "PW-TEACH-2026"
+export function buildPlaywrightWebServerEnv(
+  input: Record<string, string | undefined> = process.env,
+  options: { productionLike?: boolean } = {}
+) {
+  const productionLike = options.productionLike ?? input.PLAYWRIGHT_FORCE_PRODUCTION_LIKE === "true";
+  return compactEnv({
+    ADMIN_INVITE_CODE: input.ADMIN_INVITE_CODE ?? "PW-ADMIN-2026",
+    API_TEST_SCOPE: input.API_TEST_SCOPE ?? "playwright",
+    API_TEST_ALLOW_CUSTOM_ORIGIN_HEADER: input.API_TEST_ALLOW_CUSTOM_ORIGIN_HEADER ?? "true",
+    ALLOW_JSON_FALLBACK: input.ALLOW_JSON_FALLBACK ?? (productionLike ? "false" : "true"),
+    DATA_DIR: input.DATA_DIR ?? ".runtime-data/playwright",
+    DATA_SEED_DIR: input.DATA_SEED_DIR,
+    DATABASE_URL: input.DATABASE_URL ?? (productionLike ? undefined : ""),
+    DB_SSL: input.DB_SSL,
+    FILE_INLINE_CONTENT: input.FILE_INLINE_CONTENT ?? "false",
+    FILE_OBJECT_STORAGE_ENABLED: input.FILE_OBJECT_STORAGE_ENABLED ?? "true",
+    LIBRARY_INLINE_FILE_CONTENT: input.LIBRARY_INLINE_FILE_CONTENT ?? "false",
+    LIBRARY_OBJECT_STORAGE_ENABLED: input.LIBRARY_OBJECT_STORAGE_ENABLED ?? "true",
+    OBJECT_STORAGE_ROOT: input.OBJECT_STORAGE_ROOT ?? ".runtime-data/playwright-objects",
+    READINESS_PROBE_TOKEN: input.READINESS_PROBE_TOKEN,
+    REQUIRE_DATABASE: input.REQUIRE_DATABASE ?? (productionLike ? "true" : "false"),
+    RUNTIME_GUARDRAILS_ENFORCE: input.RUNTIME_GUARDRAILS_ENFORCE ?? (productionLike ? "true" : "false"),
+    SCHOOL_ADMIN_INVITE_CODE: input.SCHOOL_ADMIN_INVITE_CODE ?? "PW-SCHOOL-2026",
+    TEACHER_INVITE_CODES: input.TEACHER_INVITE_CODES ?? "PW-TEACH-2026"
+  });
+}
+
+const webServerEnv = buildPlaywrightWebServerEnv(process.env, {
+  productionLike: IS_PRODUCTION_LIKE
 });
 
 export default defineConfig({

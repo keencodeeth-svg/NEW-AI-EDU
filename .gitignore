@@ -35,6 +35,7 @@ data/wrong-review-items.json
 # Generated exports
 exports/*.csv
 output/
+.tmp/
 
 # Env
 .env

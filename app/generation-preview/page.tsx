@@ -962,7 +962,7 @@ function GenerationPreviewContent() {
                 先发起一节明确的课堂，再进入生成预览主舞台
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/85 md:text-[15px]">
-                当前还没有可恢复的生成会话。你可以直接重新发起航科互动课堂，也可以从学生自主学习入口进入预习、巩固、兴趣探索或课堂回看场景。
+                当前还没有可恢复的生成会话。你可以直接重新发起知序课堂，也可以从学生自主学习入口进入预习、巩固、兴趣探索或课堂回看场景。
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -1120,7 +1120,7 @@ function GenerationPreviewContent() {
   const previewHeadline =
     session.classroomContext?.source === 'student-self-study'
       ? '正在把这次自主学习目标编排成一节可直接进入的互动课堂'
-      : '正在把教材、角色和课堂目标编排成一节可直接播放的航科互动课堂';
+      : '正在把教材、角色和课堂目标编排成一节可直接播放的知序课堂';
   const previewDescription =
     session.classroomContext?.source === 'student-self-study'
       ? '系统会把学习主题、画像薄弱点、课堂节奏和导出能力一起带入，让学生从等待生成到正式开课之间也能保持明确预期。'

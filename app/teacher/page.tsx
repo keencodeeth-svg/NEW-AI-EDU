@@ -91,7 +91,7 @@ export default function TeacherPage() {
       },
       {
         targetSelector: "#teacher-context-layers",
-        title: "最后再看风险与整体盘面",
+        title: "最后再看风险与整体情况",
         content: "风险预警、教学闭环和课表背景被收纳在这里，先执行，再回看整体数据。",
         placement: "top" as const
       }
@@ -100,17 +100,17 @@ export default function TeacherPage() {
   );
 
   if (loading && !pageReady && !unauthorized) {
-    return <WorkspaceLoadingState title="教师工作台加载中" description="正在同步班级、作业、预警和教学执行数据。" />;
+    return <WorkspaceLoadingState title="教师教学台加载中" description="正在同步班级、作业、预警和教学执行数据。" />;
   }
 
   if (unauthorized) {
-    return <WorkspaceAuthState title="需要教师账号登录" description="请先使用教师账号登录后，再查看教学工作台和班级执行动作。" />;
+    return <WorkspaceAuthState title="需要教师账号登录" description="请先使用教师账号登录后，再查看教学台和班级执行动作。" />;
   }
 
   if (pageError && !pageReady) {
     return (
       <WorkspaceErrorState
-        title="教师工作台加载失败"
+        title="教师教学台加载失败"
         description={pageError}
         onRetry={() => void refreshDashboard()}
       />
@@ -123,9 +123,9 @@ export default function TeacherPage() {
       hideHeader
       lead={
         <WorkspaceHero
-          eyebrow="Teacher Launchpad"
+          eyebrow="教师今日教学"
           title="把教学执行、审批动作与课堂主线压缩成今天能真正完成的路径"
-          description="先稳住阻塞项和课堂风险，再推进作业、班级与互动课堂动作，最后回到盘面做复盘。教师不用先读完所有数据，首屏直接进入最应该先做的事。"
+          description="先处理影响课堂推进的申请与风险，再推进作业、班级与互动课堂动作，最后回到整体情况做复盘。教师不用先读完所有数据，首屏直接进入最应该先做的事。"
           badges={[
             teacherClassCount ? `当前班级 ${teacherClassCount}` : "先建立班级结构",
             teacherJoinCount ? `待审申请 ${teacherJoinCount}` : "班级申请已收口",
@@ -145,11 +145,11 @@ export default function TeacherPage() {
             </>
           }
           sideLabel="今天建议这样推进"
-          sideTitle="先处理阻塞，再进入教学执行"
-          sideDescription="把真正影响课堂节奏的审批、预警和执行动作放在前面，班级台账和长期盘面放到后面展开，避免教师首屏并列太多总览。"
+          sideTitle="先处理关键事项，再进入教学执行"
+          sideDescription="把真正影响课堂节奏的审批、预警和执行动作放在前面，班级清单和长期趋势放到后面展开，避免教师首屏并列太多总览。"
           notes={[
             {
-              title: "先清阻塞项",
+              title: "先看关键事项",
               description: "入班申请、待补作业和高风险预警优先处理，最能直接恢复课堂节奏。",
               tone: "sky",
             },
@@ -159,7 +159,7 @@ export default function TeacherPage() {
               tone: "emerald",
             },
             {
-              title: "最后回到盘面",
+              title: "最后回看整体情况",
               description: "学情、成绩和教学闭环适合在执行后回看，不和第一步动作抢注意力。",
               tone: "amber",
             },
@@ -189,13 +189,13 @@ export default function TeacherPage() {
     >
       <TeacherDashboardSectionHeader
         title="现在先开工"
-        description="首屏先只看阻塞项、风险和今天第一步，不在首页重新排一次教学优先级。"
+        description="首屏先只看关键事项、风险和今天第一步，不在首页重新排一次教学优先级。"
         chip="即时开工"
       />
 
       <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 8 }}>
         <button className="button ghost" type="button" onClick={() => setShowTour(true)}>
-          ? 重新引导
+          重新引导
         </button>
       </div>
 
@@ -230,7 +230,7 @@ export default function TeacherPage() {
 
       <TeacherDashboardSectionHeader
         title="今天要执行的动作"
-        description="先把最常见的教学执行入口放在前面，再回头看盘面说明和课表上下文。"
+        description="先把最常见的教学执行入口放在前面，再回头看整体说明和课表上下文。"
         chip="教学执行"
       />
 
@@ -245,16 +245,16 @@ export default function TeacherPage() {
       </div>
 
       <TeacherDashboardSectionHeader
-        title="盘面与上下文"
+        title="整体情况与上下文"
         description="执行入口明确后，再看风险覆盖、教学闭环和课表背景，避免首屏并列太多总览卡片。"
-        chip="盘面与背景"
+        chip="整体情况"
       />
 
       <TeacherMoodTrendCard classes={executionSummaryProps.classes.map((item) => ({ id: item.id, name: item.name }))} />
 
       <details className="workflow-collapsible" id="teacher-context-layers">
         <summary>
-          <span>展开教学盘面与上下文</span>
+          <span>展开教学整体情况与上下文</span>
           <span className="chip">{teacherContextSummary || "风险 / 课表 / 闭环 / 考试"}</span>
         </summary>
         <div className="workflow-collapsible-body">
@@ -278,7 +278,7 @@ export default function TeacherPage() {
 
       <details className="workflow-collapsible" id="teacher-assets-center">
         <summary>
-          <span>展开班级、学生与作业台账</span>
+          <span>展开班级、学生与作业清单</span>
           <span className="chip">{teacherAssetSummary || "班级 / 学生 / 作业"}</span>
         </summary>
         <div className="workflow-collapsible-body">

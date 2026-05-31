@@ -18,12 +18,43 @@ type LoginFormState = {
 };
 
 export const loginRoleOptions = [
-  { value: "student" as const, label: "学生", desc: "学习/练习/作业" },
-  { value: "teacher" as const, label: "教师", desc: "作业发布/批改/分析" },
-  { value: "parent" as const, label: "家长", desc: "周报/监督/提醒" },
-  { value: "admin" as const, label: "管理员", desc: "题库/知识点/日志" },
-  { value: "school_admin" as const, label: "学校管理员", desc: "学校组织/教师/班级" }
+  { value: "student" as const, label: "学生", desc: "今日学习与自主课堂" },
+  { value: "teacher" as const, label: "教师", desc: "课堂准备与班级反馈" },
+  { value: "parent" as const, label: "家长", desc: "陪伴动作与回执" },
+  { value: "admin" as const, label: "管理员", desc: "平台配置与质量观察" },
+  { value: "school_admin" as const, label: "学校管理员", desc: "课堂质量与组织覆盖" }
 ];
+
+export const loginRegistrationMap: Record<
+  LoginRole,
+  { primaryHref: string; primaryLabel: string; helper: string }
+> = {
+  student: {
+    primaryHref: "/register?role=student&entry=login",
+    primaryLabel: "学生注册",
+    helper: "适合学生本人创建学习账号。"
+  },
+  teacher: {
+    primaryHref: "/teacher/register?entry=login",
+    primaryLabel: "教师注册",
+    helper: "用于教师备课、发作业与课堂发布。"
+  },
+  parent: {
+    primaryHref: "/register?role=parent&entry=login",
+    primaryLabel: "家长注册",
+    helper: "用于接收陪伴动作、回执与学习反馈。"
+  },
+  admin: {
+    primaryHref: "/admin/register?entry=login",
+    primaryLabel: "管理员注册",
+    helper: "用于平台配置、异常处理与实验管理。"
+  },
+  school_admin: {
+    primaryHref: "/school/register?entry=login",
+    primaryLabel: "学校管理员注册",
+    helper: "用于学校排课、课堂质量与组织视图。"
+  }
+};
 
 export const loginPlaceholderMap: Record<LoginRole, string> = {
   student: "student@demo.com",

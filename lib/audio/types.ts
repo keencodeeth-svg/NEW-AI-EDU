@@ -82,6 +82,7 @@ export type TTSProviderId =
   | 'azure-tts'
   | 'glm-tts'
   | 'qwen-tts'
+  | 'voxcpm2-tts'
   | 'browser-native-tts';
 // Add new TTS providers below (uncomment and modify):
 // | 'elevenlabs-tts'
@@ -99,6 +100,8 @@ export interface TTSVoiceInfo {
   localeName?: string; // Language name in its native script (e.g., "中文（简体，中国）", "日本語")
   gender?: 'male' | 'female' | 'neutral';
   description?: string;
+  referenceAudioUrl?: string;
+  referenceText?: string;
 }
 
 /**

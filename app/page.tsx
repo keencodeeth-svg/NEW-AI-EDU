@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Card from "@/components/Card";
+import { CLASSROOM_PRODUCT_NAME } from "@/lib/classroom-integration";
 import { HomeDifferentiatorsSection } from "./_components/HomeDifferentiatorsSection";
 import { HomeFirstDayFlowsSection } from "./_components/HomeFirstDayFlowsSection";
 import { HomeHeroSection } from "./_components/HomeHeroSection";
@@ -24,21 +25,21 @@ export default function Home() {
       <section className="home-section-stack">
         <div className="section-head">
           <div>
-            <h2>航科互动课堂已经成为平台主能力</h2>
-            <div className="section-sub">上传讲义、绑定班级、生成真实教师与学生参与的互动课堂，并继续回流到教学、学习与治理业务中。</div>
+            <h2>{CLASSROOM_PRODUCT_NAME}作为课堂次入口，承接课前、课中与课后闭环</h2>
+            <div className="section-sub">当用户已经明确要备课、开课、整班观看或课后回看时，再进入课堂主线，避免首页第一屏把课堂与平台主入口并列成两个主目标。</div>
           </div>
-          <span className="chip">航科原生融合</span>
+          <span className="chip">课堂产品线</span>
         </div>
         <Card
-          title="航科互动课堂引擎"
-          tag="平台融合"
+          title={CLASSROOM_PRODUCT_NAME}
+          tag="学习闭环"
           bodyClassName="home-classroom-callout"
         >
           <div className="home-classroom-callout-copy">
-            <h3 className="home-classroom-callout-title">从一节课的生成，到课堂交付、整班观看、回看与导出，全部走同一条真实教学链路</h3>
+            <h3 className="home-classroom-callout-title">当目标是“上这一节课”，课堂入口会把准备、发布、观看与回看收束到同一条链路</h3>
             <p>
-              现在可以直接在统一项目里进入航科互动课堂，完成教材解析、课堂大纲生成、场景编排、数字人讲解、全班观看发布与导出，
-              同时继续回流到教师工作台、学生自学和学校治理链路中。
+              教材解析、课堂大纲、场景编排、教师讲解形象、全班观看发布与导出都围绕同一条课堂主线组织，
+              同时继续回流到教师教学台、学生自主学习和学校质量视图中。
             </p>
             <div className="badge-row">
               <span className="badge">讲义转课堂</span>
@@ -48,7 +49,7 @@ export default function Home() {
             </div>
             <div className="cta-row" style={{ flexWrap: "wrap" }}>
               <Link className="button primary" href="/ai-classroom">
-                进入航科互动课堂
+                进入{CLASSROOM_PRODUCT_NAME}
               </Link>
               <Link className="button secondary" href="/student/interactive-classroom">
                 学生自主学习模式
@@ -62,11 +63,11 @@ export default function Home() {
             </div>
             <div className="home-classroom-brief">
               <div className="home-classroom-brief-label">课堂分发</div>
-              <div className="home-classroom-brief-value">工作区开课、整班观看、课堂回看、导出留存和学校治理链路全部打通。</div>
+              <div className="home-classroom-brief-value">备课开课、整班观看、课堂回看、导出留存和学校质量视图全部打通。</div>
             </div>
             <div className="home-classroom-brief">
               <div className="home-classroom-brief-label">身份兼容</div>
-              <div className="home-classroom-brief-value">教师、学生、家长、学校后台与统一 API 配置由同一平台能力托底。</div>
+              <div className="home-classroom-brief-value">教师、学生、家长和学校管理者看到各自最需要的学习与教学下一步。</div>
             </div>
           </div>
         </Card>

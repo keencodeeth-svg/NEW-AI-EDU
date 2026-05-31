@@ -251,8 +251,7 @@ function HomePage() {
             persistedRecentSession?.topic ||
             payload.classroomContext?.focusKnowledgePointTitle ||
             payload.classroomContext?.interestTopic,
-          learnerGoal:
-            payload.classroomContext?.learnerGoal || persistedRecentSession?.learnerGoal,
+          learnerGoal: payload.classroomContext?.learnerGoal || persistedRecentSession?.learnerGoal,
         });
 
         setRecentStudentSession(nextRecentSession);
@@ -565,9 +564,7 @@ function HomePage() {
     classroomContext?.learnerGoal ||
     null;
   const teacherContextName =
-    classroomContext?.teacher?.digitalHuman?.displayName ||
-    classroomContext?.teacher?.name ||
-    null;
+    classroomContext?.teacher?.digitalHuman?.displayName || classroomContext?.teacher?.name || null;
   const classroomRoleSummary = classroomContext
     ? isStudentSelfStudy
       ? classroomContext.learner?.name || '当前学习者待指定'
@@ -798,51 +795,56 @@ function HomePage() {
           tone: 'amber',
         },
       ];
-  const workspaceLinks: Array<{ href: string; label: string; tone: ClassroomTone; primary?: boolean }> =
-    isStudentSelfStudy
-      ? [
-          {
-            href: studentReturnHref,
-            label: '返回学生启动页',
-            tone: 'sky',
-            primary: true,
-          },
-          {
-            href: '/student/portrait',
-            label: '查看学习画像',
-            tone: 'sky',
-          },
-          {
-            href: '/student',
-            label: '返回学习控制台',
-            tone: 'amber',
-          },
-        ]
-      : [
-          {
-            href: '/teacher/ai-tools',
-            label: '返回教师 AI 工具',
-            tone: 'sky',
-            primary: true,
-          },
-          {
-            href: '/library',
-            label: '从教材课件继续',
-            tone: 'sky',
-          },
-          {
-            href: '/teacher',
-            label: '查看教务工作台',
-            tone: 'amber',
-          },
-        ];
+  const workspaceLinks: Array<{
+    href: string;
+    label: string;
+    tone: ClassroomTone;
+    primary?: boolean;
+  }> = isStudentSelfStudy
+    ? [
+        {
+          href: studentReturnHref,
+          label: '返回学生启动页',
+          tone: 'sky',
+          primary: true,
+        },
+        {
+          href: '/student/portrait',
+          label: '查看学习画像',
+          tone: 'sky',
+        },
+        {
+          href: '/student',
+          label: '返回学习控制台',
+          tone: 'amber',
+        },
+      ]
+    : [
+        {
+          href: '/teacher/ai-tools',
+          label: '返回教师 AI 工具',
+          tone: 'sky',
+          primary: true,
+        },
+        {
+          href: '/library',
+          label: '从教材课件继续',
+          tone: 'sky',
+        },
+        {
+          href: '/teacher',
+          label: '查看教务工作台',
+          tone: 'amber',
+        },
+      ];
   const studentActionCards: StudentSelfStudyActionCard[] = isStudentSelfStudy
     ? currentStudentMode === 'preview-preparation'
       ? [
           {
             id: 'preview-workbench',
             title: '回到学生启动页继续定制',
-            description: '随时回到学生工作台调整主题、学科和目标，把预习起点继续打磨得更贴近真实课堂。',
+            description:
+              '随时回到学生工作台调整主题、学科和目标，把预习起点继续打磨得更贴近真实课堂。',
             href: studentReturnHref,
             cta: '返回学生启动页',
             tone: 'sky',
@@ -850,7 +852,8 @@ function HomePage() {
           {
             id: 'preview-modules',
             title: '先去课程模块找主线',
-            description: '如果你想让这节预习更贴近班级进度，先看课程模块会更容易锁定当前单元和老师节奏。',
+            description:
+              '如果你想让这节预习更贴近班级进度，先看课程模块会更容易锁定当前单元和老师节奏。',
             href: '/student/modules',
             cta: '查看课程模块',
             tone: 'emerald',
@@ -858,7 +861,8 @@ function HomePage() {
           {
             id: 'preview-follow-up',
             title: '预习后切到课堂回看',
-            description: '等上完正式课堂后，建议用课堂回看模式把主线重新压缩一遍，形成自己的复盘闭环。',
+            description:
+              '等上完正式课堂后，建议用课堂回看模式把主线重新压缩一遍，形成自己的复盘闭环。',
             href: studentFollowUpHref ?? '/student/interactive-classroom?mode=classroom-review',
             cta: `切到${buildLearningModeLabel(studentFollowUpMode ?? 'classroom-review')}`,
             tone: 'amber',
@@ -869,7 +873,8 @@ function HomePage() {
             {
               id: 'reinforcement-wrong-book',
               title: '马上回到错题本做收口',
-              description: '先把这节巩固课对应的错因重新捞出来，再回看讲解，你会更容易发现自己真正卡住的地方。',
+              description:
+                '先把这节巩固课对应的错因重新捞出来，再回看讲解，你会更容易发现自己真正卡住的地方。',
               href: '/wrong-book',
               cta: '进入错题本',
               tone: 'amber',
@@ -877,7 +882,8 @@ function HomePage() {
             {
               id: 'reinforcement-practice',
               title: '讲完立刻接一轮复练',
-              description: '最怕只听不练。把讲解后的理解立刻接到复练里，才能把“听懂了”变成“会做题”。',
+              description:
+                '最怕只听不练。把讲解后的理解立刻接到复练里，才能把“听懂了”变成“会做题”。',
               href: '/practice?mode=review',
               cta: '开始定向复练',
               tone: 'sky',
@@ -885,7 +891,8 @@ function HomePage() {
             {
               id: 'reinforcement-follow-up',
               title: '巩固后切到课堂回看',
-              description: '如果这轮收口已经讲顺，下一步可以切到课堂回看模式，把这次理解重新压缩成可复述的知识主线。',
+              description:
+                '如果这轮收口已经讲顺，下一步可以切到课堂回看模式，把这次理解重新压缩成可复述的知识主线。',
               href: studentFollowUpHref ?? '/student/interactive-classroom?mode=classroom-review',
               cta: `切到${buildLearningModeLabel(studentFollowUpMode ?? 'classroom-review')}`,
               tone: 'emerald',
@@ -904,7 +911,8 @@ function HomePage() {
               {
                 id: 'review-growth',
                 title: '把这次回看沉淀到成长档案',
-                description: '回看后最值得做的是去成长档案观察轨迹，把“今天会了什么”变成可持续积累的证据。',
+                description:
+                  '回看后最值得做的是去成长档案观察轨迹，把“今天会了什么”变成可持续积累的证据。',
                 href: '/student/growth',
                 cta: '打开成长档案',
                 tone: 'emerald',
@@ -912,8 +920,11 @@ function HomePage() {
               {
                 id: 'review-follow-up',
                 title: '回看后切到学科巩固',
-                description: '如果回看已经捋顺了主线，下一步适合重新切回学科巩固，用一轮讲解加练习把薄弱点真正做稳。',
-                href: studentFollowUpHref ?? '/student/interactive-classroom?mode=subject-reinforcement',
+                description:
+                  '如果回看已经捋顺了主线，下一步适合重新切回学科巩固，用一轮讲解加练习把薄弱点真正做稳。',
+                href:
+                  studentFollowUpHref ??
+                  '/student/interactive-classroom?mode=subject-reinforcement',
                 cta: `切到${buildLearningModeLabel(studentFollowUpMode ?? 'subject-reinforcement')}`,
                 tone: 'sky',
               },
@@ -922,7 +933,8 @@ function HomePage() {
               {
                 id: 'interest-growth',
                 title: '把兴趣主题沉淀进成长档案',
-                description: '别让一次探索停在“有意思”。把这节课后的收获回收到成长档案，才能形成长期学习资产。',
+                description:
+                  '别让一次探索停在“有意思”。把这节课后的收获回收到成长档案，才能形成长期学习资产。',
                 href: '/student/growth',
                 cta: '打开成长档案',
                 tone: 'emerald',
@@ -930,7 +942,8 @@ function HomePage() {
               {
                 id: 'interest-favorites',
                 title: '把启发点留进收藏夹',
-                description: '如果这次探索里遇到想反复回看的问题、题型或线索，可以继续沉淀到个人收藏夹。',
+                description:
+                  '如果这次探索里遇到想反复回看的问题、题型或线索，可以继续沉淀到个人收藏夹。',
                 href: '/student/favorites',
                 cta: '查看收藏夹',
                 tone: 'amber',
@@ -938,7 +951,8 @@ function HomePage() {
               {
                 id: 'interest-follow-up',
                 title: '探索后切到课堂回看',
-                description: '兴趣主题讲活以后，建议切到课堂回看模式，把内容重新压缩成可复述、可分享的成果。',
+                description:
+                  '兴趣主题讲活以后，建议切到课堂回看模式，把内容重新压缩成可复述、可分享的成果。',
                 href: studentFollowUpHref ?? '/student/interactive-classroom?mode=classroom-review',
                 cta: `切到${buildLearningModeLabel(studentFollowUpMode ?? 'classroom-review')}`,
                 tone: 'sky',
@@ -1084,12 +1098,17 @@ function HomePage() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.08, duration: 0.45 }}
-            className={cn(classroomHeroPanel, 'flex w-full flex-col px-5 py-4 text-left md:px-6 md:py-5')}
+            className={cn(
+              classroomHeroPanel,
+              'flex w-full flex-col px-5 py-4 text-left md:px-6 md:py-5',
+            )}
           >
             <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(320px,360px)] lg:items-start">
               <div className="min-w-0 lg:pr-2">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className={classroomTonePill('sky', 'font-medium')}>航科互动课堂工作区</span>
+                  <span className={classroomTonePill('sky', 'font-medium')}>
+                    知序课堂工作区
+                  </span>
                   {classroomModeLabel ? (
                     <span className={classroomTonePill('emerald', 'font-medium')}>
                       {classroomModeLabel}
@@ -1154,10 +1173,7 @@ function HomePage() {
                       </div>
                       <div className="mt-1 flex flex-wrap items-center gap-2">
                         <span
-                          className={classroomTonePill(
-                            needsSetup ? 'amber' : 'sky',
-                            'font-medium',
-                          )}
+                          className={classroomTonePill(needsSetup ? 'amber' : 'sky', 'font-medium')}
                         >
                           {needsSetup ? '还需补齐配置' : '课堂环境已就绪'}
                         </span>
@@ -1358,7 +1374,9 @@ function HomePage() {
                         {item.label}
                       </div>
                       <div className="mt-1.5 text-[13px] leading-5 text-slate-600 dark:text-slate-300/90">
-                        <div className="font-semibold text-slate-900 dark:text-slate-100">{item.value}</div>
+                        <div className="font-semibold text-slate-900 dark:text-slate-100">
+                          {item.value}
+                        </div>
                         <div className="mt-1">{item.description}</div>
                       </div>
                     </div>
@@ -1391,7 +1409,9 @@ function HomePage() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={item.primary ? classroomPrimaryButton : classroomOutlineButton(item.tone)}
+                      className={
+                        item.primary ? classroomPrimaryButton : classroomOutlineButton(item.tone)
+                      }
                     >
                       {item.label}
                     </Link>
@@ -1476,7 +1496,10 @@ function HomePage() {
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {composerMetaPills.map((item) => (
-                    <span key={item} className={classroomTonePill('slate', 'px-2 py-0.5 text-[10px]')}>
+                    <span
+                      key={item}
+                      className={classroomTonePill('slate', 'px-2 py-0.5 text-[10px]')}
+                    >
                       {item}
                     </span>
                   ))}
@@ -1567,7 +1590,10 @@ function HomePage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.38, duration: 0.35 }}
-            className={cn(classroomSectionPanel, 'grid w-full max-w-[1080px] gap-2.5 self-center px-4 py-3.5 text-left')}
+            className={cn(
+              classroomSectionPanel,
+              'grid w-full max-w-[1080px] gap-2.5 self-center px-4 py-3.5 text-left',
+            )}
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
@@ -1587,7 +1613,8 @@ function HomePage() {
               {classroomContext ? (
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={classroomTonePill('sky')}>
-                    {classroomContext.className ?? (isStudentSelfStudy ? '当前学习链路' : '当前课堂链路')}
+                    {classroomContext.className ??
+                      (isStudentSelfStudy ? '当前学习链路' : '当前课堂链路')}
                   </span>
                   <span className={classroomTonePill('amber')}>
                     {buildAudienceModeLabel(classroomContext.audienceMode)}
@@ -1638,9 +1665,7 @@ function HomePage() {
                 {isStudentSelfStudy && studentWorkflowHeadline ? (
                   <div className={cn(classroomSoftSurface, 'mt-4 px-4 py-3')}>
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className={classroomTonePill('sky')}>
-                        学生自学闭环
-                      </span>
+                      <span className={classroomTonePill('sky')}>学生自学闭环</span>
                       {currentStudentMode ? (
                         <span className={classroomTonePill('amber')}>
                           当前模式：{buildLearningModeLabel(currentStudentMode)}
@@ -1656,10 +1681,7 @@ function HomePage() {
                       </div>
                     ) : null}
                     <div className="mt-3 flex flex-wrap gap-2">
-                      <Link
-                        href={studentReturnHref}
-                        className={classroomOutlineButton('sky')}
-                      >
+                      <Link href={studentReturnHref} className={classroomOutlineButton('sky')}>
                         返回学生启动页
                       </Link>
                       {studentFollowUpHref ? (
@@ -1683,9 +1705,15 @@ function HomePage() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.42, duration: 0.35 }}
-            className={cn(classroomSectionPanel, 'grid w-full max-w-[1080px] gap-3 self-center px-4 py-3.5 text-left')}
+            className={cn(
+              classroomSectionPanel,
+              'grid w-full max-w-[1080px] gap-3 self-center px-4 py-3.5 text-left',
+            )}
           >
-            <details className="classroom-launch-panel-disclosure classroom-launch-followup-disclosure" data-testid="ai-classroom-followup">
+            <details
+              className="classroom-launch-panel-disclosure classroom-launch-followup-disclosure"
+              data-testid="ai-classroom-followup"
+            >
               <summary>
                 <div>
                   <div className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400">
@@ -1814,7 +1842,7 @@ function HomePage() {
 
       {/* Footer — flows with content, at the very end */}
       <div className="pt-10 pb-3 text-center text-xs text-muted-foreground/50">
-        {PRODUCT_BRAND_NAME} · 航科 AI 教学平台原生互动课堂工作区
+        {PRODUCT_BRAND_NAME} · 知序学习平台课堂学习空间
       </div>
     </div>
   );

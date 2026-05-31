@@ -41,6 +41,6 @@
     "node_modules",
     "dist",
     "packages/*/src",
-    "openclaw"
+    ".legacy-archives"
   ]
 }

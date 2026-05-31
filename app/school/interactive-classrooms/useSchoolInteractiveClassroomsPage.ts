@@ -356,7 +356,7 @@ export function useSchoolInteractiveClassroomsPage() {
         setAuthRequired(true);
         setPayload(null);
       } else {
-        setError(getSchoolAdminRequestMessage(nextError, "加载互动课堂治理中心失败"));
+        setError(getSchoolAdminRequestMessage(nextError, "加载课堂质量中心失败"));
       }
     } finally {
       if (loadRequestIdRef.current === requestId) {
@@ -539,7 +539,7 @@ export function useSchoolInteractiveClassroomsPage() {
     const tips: string[] = [];
 
     if (!filteredRecords.length) {
-      return ["当前筛选下暂无记录，建议先清空筛选或扩大班级与学科范围，再判断学校侧治理结论。"];
+      return ["当前筛选下暂无记录，建议先清空筛选或扩大班级与学科范围，再判断学校侧课堂质量结论。"];
     }
 
     if (filteredSummary.activeTeachers <= 1 && filteredSummary.deliveries >= 2) {
@@ -560,7 +560,7 @@ export function useSchoolInteractiveClassroomsPage() {
       (payload?.filterOptions.subjects.length ?? 0) > 1
     ) {
       const focusedSubject = filteredRecords.find((item) => item.subject)?.subject || "单一学科";
-      tips.push(`当前治理数据主要集中在 ${focusedSubject}，建议向更多学科复制互动课堂工作流，避免只在单点学科起量。`);
+      tips.push(`当前课堂数据主要集中在 ${focusedSubject}，建议向更多学科复制知序课堂工作流，避免只在单点学科起量。`);
     }
     if (!tips.length) {
       tips.push("当前范围内已经形成教师发布、学生自学和资源沉淀的基础闭环，下一步建议对比不同班级和教研组的扩散速度。");
@@ -596,7 +596,7 @@ export function useSchoolInteractiveClassroomsPage() {
     });
 
     const report = [
-      `# ${PRODUCT_BRAND_NAME}治理报告`,
+      `# ${PRODUCT_BRAND_NAME}质量报告`,
       "",
       `- 导出时间：${formatExportTimestamp(exportedAt)}`,
       `- 学校：${payload?.summary.schoolId ?? "未标注学校"}`,
@@ -645,7 +645,7 @@ export function useSchoolInteractiveClassroomsPage() {
         ),
       ),
       "",
-      "## 治理建议",
+      "## 质量建议",
       buildMarkdownBulletLines(governanceTips),
       "",
       "## 最近交付快照",
@@ -654,7 +654,7 @@ export function useSchoolInteractiveClassroomsPage() {
     ].join("\n");
 
     downloadTextFile(
-      buildDownloadName("hangke-classroom-governance-report", "md"),
+      buildDownloadName("zhixu-classroom-quality-report", "md"),
       report,
       "text/markdown;charset=utf-8",
     );
@@ -717,7 +717,7 @@ export function useSchoolInteractiveClassroomsPage() {
     ]);
 
     downloadTextFile(
-      buildDownloadName("hangke-classroom-governance-records", "csv"),
+      buildDownloadName("zhixu-classroom-quality-records", "csv"),
       `\uFEFF${buildCsvContent(header, rows)}`,
       "text/csv;charset=utf-8",
     );

@@ -251,7 +251,7 @@ export default function RoleSidebarNav({
               已显示 {visibleLinkCount} / {allLinks.length} 个入口
             </div>
             <button type="button" className="role-side-search-launch" onClick={emitOpenCommandPalette}>
-              全局搜索⌘K
+              全局搜索 Cmd/Ctrl + K
             </button>
           </div>
         </div>

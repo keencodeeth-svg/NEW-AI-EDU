@@ -55,7 +55,7 @@ export async function syncClassroomDeliveryAudit(input: SyncClassroomDeliveryInp
   });
 
   if (!response.ok) {
-    let message = "课堂交付台账同步失败";
+    let message = "课堂分享记录同步失败";
     try {
       const payload = (await response.json()) as { error?: string; message?: string };
       message = payload.error || payload.message || message;

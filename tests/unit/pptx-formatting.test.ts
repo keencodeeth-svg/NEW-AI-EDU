@@ -16,7 +16,7 @@ test("buildTruncatedExportBaseName keeps readable prefix and limits byte length"
     learningModeLabel: "兴趣培养",
     stageName:
       "请围绕“我大学的理论力学挂科了，想要考前冲刺一下”为小星设计一节适合学生自主使用的兴趣培养课堂，并支持课后回看与导出复用",
-    fallback: "航科互动课堂"
+    fallback: "知序课堂"
   });
 
   assert.match(name, /^高一（3）班-math-兴趣培养-/);

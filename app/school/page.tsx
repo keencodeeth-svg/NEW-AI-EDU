@@ -29,15 +29,15 @@ export default function SchoolPage() {
   } = useSchoolPageView();
 
   if (loading && !hasOverview && !authRequired) {
-    return <WorkspaceLoadingState title="学校控制台加载中" description="正在汇总学校组织、班级和成员数据。" />;
+    return <WorkspaceLoadingState title="学校质量视图加载中" description="正在汇总学校组织、班级和成员数据。" />;
   }
 
   if (authRequired) {
-    return <WorkspaceAuthState title="需要学校管理员权限" description="请使用学校管理员或平台主管账号登录后查看学校控制台。" />;
+    return <WorkspaceAuthState title="需要学校管理员权限" description="请使用学校管理员或平台主管账号登录后查看学校质量视图。" />;
   }
 
   if (pageError && !hasOverview) {
-    return <WorkspaceErrorState title="学校控制台加载失败" description={pageError} onRetry={reload} />;
+    return <WorkspaceErrorState title="学校质量视图加载失败" description={pageError} onRetry={reload} />;
   }
 
   if (!hasOverview) {
@@ -58,18 +58,18 @@ export default function SchoolPage() {
       hideHeader
       lead={
         <WorkspaceHero
-          eyebrow="School Governance"
-          title="先看覆盖风险，再把互动课堂、课程表和班级治理推进到真实执行"
-          description="学校首屏不再只是堆指标，而是把组织覆盖、互动课堂传播和需要优先整改的班级收敛成一条治理路径。这样学校管理员可以先处理最影响教学运行的问题，再展开资产台账。"
+          eyebrow="学校课堂质量"
+          title="先看覆盖缺口，再把知序课堂、课程表和班级支持推进到真实执行"
+          description="学校首屏不再只是堆指标，而是把组织覆盖、课堂传播和需要优先跟进的班级收敛成一条质量路径。学校管理员可以先处理最影响教学运行的问题，再展开组织清单。"
           badges={[
             `学校班级 ${schoolOverview.classCount}`,
             `教师 ${schoolOverview.teacherCount} / 学生 ${schoolOverview.studentCount}`,
-            deliverySummary ? `互动课堂交付 ${deliverySummary.totalDeliveries}` : "互动课堂治理已接入",
+            deliverySummary ? `课堂使用 ${deliverySummary.totalDeliveries}` : "课堂质量已接入",
           ]}
           actions={
             <>
               <a className="button primary" href="/school/interactive-classrooms">
-                进入互动课堂治理
+                进入课堂质量中心
               </a>
               <a className="button secondary" href="/school/schedules">
                 查看课程表管理
@@ -79,9 +79,9 @@ export default function SchoolPage() {
               </a>
             </>
           }
-          sideLabel="学校管理建议"
-          sideTitle="先管覆盖，再管扩散和沉淀"
-          sideDescription="学校真正需要先看的是哪里还没覆盖、哪里已经扩散、哪些班级需要立即跟进，而不是在首页阅读所有列表。"
+          sideLabel="学校质量建议"
+          sideTitle="先看覆盖，再看应用和沉淀"
+          sideDescription="学校真正需要先看的是哪里还没覆盖、哪里已经应用、哪些班级需要立即跟进，而不是在首页阅读所有列表。"
           notes={[
             {
               title: "先看覆盖缺口",
@@ -89,12 +89,12 @@ export default function SchoolPage() {
               tone: "sky",
             },
             {
-              title: "再看互动课堂传播",
+              title: "再看课堂应用",
               description: "把教师发布、学生自主学习和导出沉淀放到同一面板里，直接看学校级覆盖与复用情况。",
               tone: "emerald",
             },
             {
-              title: "最后看资产台账",
+              title: "最后看组织清单",
               description: "组织成员和班级清单放到后面展开，避免学校首页同时并列太多长列表。",
               tone: "amber",
             },
@@ -103,7 +103,7 @@ export default function SchoolPage() {
             {
               label: "组织覆盖",
               value: `${schoolOverview.classCount} 个班级 / ${schoolOverview.teacherCount} 位教师`,
-              description: "先确认学校班级和教师配置是否到位，治理动作才有明确落点。",
+              description: "先确认学校班级和教师配置是否到位，质量改进才有明确落点。",
               tone: "sky",
             },
             {
@@ -113,11 +113,11 @@ export default function SchoolPage() {
               tone: "emerald",
             },
             {
-              label: "互动课堂交付",
-              value: deliverySummary ? `${deliverySummary.deliveredClassroomCount} 节已交付课堂` : "等待交付数据",
+              label: "课堂应用",
+              value: deliverySummary ? `${deliverySummary.deliveredClassroomCount} 节已使用课堂` : "等待课堂数据",
               description: deliverySummary
-                ? `累计 ${deliverySummary.totalDeliveries} 次发布、导出或学生自主使用，已经形成学校级交付台账。`
-                : "教师发布、导出或学生自主使用后，会自动沉淀到学校级治理面板。",
+                ? `累计 ${deliverySummary.totalDeliveries} 次发布、导出或学生自主使用，已经形成学校级质量记录。`
+                : "教师发布、导出或学生自主使用后，会自动沉淀到学校级质量视图。",
               tone: "amber",
             },
           ]}
@@ -126,10 +126,10 @@ export default function SchoolPage() {
     >
       <div className="section-head">
         <div>
-          <h2>全局治理与课堂分发</h2>
-          <div className="section-sub">先看学校整体覆盖、互动课堂传播和需要立即处理的班级，避免首页被长台账淹没。</div>
+          <h2>学校质量与课堂应用</h2>
+          <div className="section-sub">先看学校整体覆盖、知序课堂应用和需要立即处理的班级，避免首页被长列表淹没。</div>
         </div>
-        <span className="chip">治理总览</span>
+        <span className="chip">质量总览</span>
       </div>
 
       <SchoolDashboardOverviewCard {...overviewCardProps} />
@@ -146,16 +146,16 @@ export default function SchoolPage() {
 
       <details className="workflow-collapsible" id="school-assets-center">
         <summary>
-          <span>展开组织资产与成员台账</span>
+          <span>展开组织资产与成员清单</span>
           <span className="chip">{`班级 ${classSnapshotCardProps.classPreview.length} · 成员预览 ${memberSnapshotCardProps.teacherPreview.length + memberSnapshotCardProps.studentPreview.length}`}</span>
         </summary>
         <div className="workflow-collapsible-body">
           <div className="section-head">
             <div>
               <h2>组织资产与成员视图</h2>
-              <div className="section-sub">当你需要看学校班级、教师和学生台账时，再展开完整资产视图，减少首页的信息噪音。</div>
+              <div className="section-sub">当你需要看学校班级、教师和学生清单时，再展开完整资产视图，减少首页的信息噪音。</div>
             </div>
-            <span className="chip">资产台账</span>
+            <span className="chip">组织清单</span>
           </div>
 
           <div className="grid grid-2" style={{ alignItems: "start" }}>

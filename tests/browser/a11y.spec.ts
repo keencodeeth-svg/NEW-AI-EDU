@@ -3,6 +3,7 @@ import { expect, test, type Page } from "@playwright/test";
 
 const PASSWORD = "Playwright123!";
 const TEACHER_INVITE_CODE = "PW-TEACH-2026";
+const INCLUDE_SERIOUS_VIOLATIONS = process.env.PLAYWRIGHT_A11Y_INCLUDE_SERIOUS === "true";
 
 type ApiResult<T = unknown> = {
   ok: boolean;
@@ -55,8 +56,32 @@ function formatViolations(
 async function expectNoCriticalViolations(page: Page, label: string) {
   await page.waitForLoadState("networkidle");
   const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
-  const criticalViolations = results.violations.filter((violation) => violation.impact === "critical");
-  expect(criticalViolations, formatViolations(label, criticalViolations)).toEqual([]);
+  const blockedImpacts = INCLUDE_SERIOUS_VIOLATIONS ? new Set(["critical", "serious"]) : new Set(["critical"]);
+  const blockedViolations = results.violations.filter((violation) => blockedImpacts.has(violation.impact ?? ""));
+  expect(blockedViolations, formatViolations(label, blockedViolations)).toEqual([]);
+}
+
+async function expectSkipLinkKeyboardReachable(page: Page) {
+  await page.keyboard.press("Tab");
+  const skipLink = page.getByRole("link", { name: "跳转到主内容" });
+  await expect(skipLink).toBeFocused();
+  await skipLink.press("Enter");
+  await expect.poll(() => page.evaluate(() => window.location.hash)).toBe("#main-content");
+  await expect(page.locator("#main-content")).toBeVisible();
+}
+
+async function expectThemeToggleAria(page: Page) {
+  const themeToggle = page.locator(".theme-mode-toggle");
+  await expect(themeToggle).toHaveAttribute("role", "group");
+  await expect(themeToggle).toHaveAttribute("aria-label", /外观模式/);
+
+  const lightButton = page.getByRole("button", { name: "切换到浅色模式" });
+  const darkButton = page.getByRole("button", { name: "切换到暗色模式" });
+  const systemButton = page.getByRole("button", { name: "跟随系统外观" });
+
+  await expect(lightButton).toHaveAttribute("aria-pressed", /true|false/);
+  await expect(darkButton).toHaveAttribute("aria-pressed", /true|false/);
+  await expect(systemButton).toHaveAttribute("aria-pressed", /true|false/);
 }
 
 async function registerStudent(page: Page, params: { email: string; name: string; grade?: string }) {
@@ -101,9 +126,13 @@ async function dismissGuidedTourIfVisible(page: Page) {
 test.describe("browser accessibility", () => {
   test("public entry pages have no critical accessibility violations", async ({ page }) => {
     await page.goto("/");
+    await expectSkipLinkKeyboardReachable(page);
+    await expectThemeToggleAria(page);
     await expectNoCriticalViolations(page, "首页");
 
     await page.goto("/login");
+    await expectSkipLinkKeyboardReachable(page);
+    await expectThemeToggleAria(page);
     await expectNoCriticalViolations(page, "登录页");
   });
 
@@ -123,10 +152,14 @@ test.describe("browser accessibility", () => {
     await page.goto("/student");
     await dismissGuidedTourIfVisible(page);
     await expect(page.getByRole("heading", { name: "今天直接开始" })).toBeVisible({ timeout: 15_000 });
+    await expectThemeToggleAria(page);
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
     await expectNoCriticalViolations(page, "学生首页");
 
     await page.goto("/practice");
     await expect(page.getByRole("heading", { name: "智能练习" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
     await expectNoCriticalViolations(page, "练习页");
   });
 
@@ -146,10 +179,14 @@ test.describe("browser accessibility", () => {
     await page.goto("/teacher");
     await dismissGuidedTourIfVisible(page);
     await expect(page.getByRole("heading", { name: "现在先开工" })).toBeVisible({ timeout: 15_000 });
+    await expectThemeToggleAria(page);
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
     await expectNoCriticalViolations(page, "教师首页");
 
     await page.goto("/teacher/classroom-live");
     await expect(page.getByRole("heading", { name: "课堂实时仪表盘" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
     await expectNoCriticalViolations(page, "课堂实时仪表盘");
   });
 });

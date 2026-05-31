@@ -515,15 +515,6 @@ export default function StudentInteractiveClassroomPage() {
   }, [loadPage]);
 
   useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute('data-classroom-focus', 'true');
-
-    return () => {
-      root.removeAttribute('data-classroom-focus');
-    };
-  }, []);
-
-  useEffect(() => {
     setRecentSession(loadRecentStudentSelfStudySession());
   }, []);
 
@@ -1512,7 +1503,7 @@ export default function StudentInteractiveClassroomPage() {
     return (
       <WorkspacePage
         className="grid dashboard-stack student-self-study-shell"
-        title="航科互动课堂"
+        title="知序课堂"
         subtitle="登录后，预习、巩固、兴趣探索和课堂回看会收进同一条可持续推进的学习主线。"
         chips={[
           <span key="student-auth-preview" className="chip">
@@ -1640,12 +1631,12 @@ export default function StudentInteractiveClassroomPage() {
   return (
     <WorkspacePage
       className="grid dashboard-stack student-self-study-shell"
-      title="航科互动课堂"
-      subtitle="把预习、巩固、兴趣探索和课堂回看收进一个可以反复使用的 AI 学习工作台。"
+      title="知序课堂"
+      subtitle="把预习、巩固、兴趣探索和课堂回看收进一个可以反复使用的自主学习空间。"
       lastLoadedAt={lastLoadedAt}
       chips={[
         <span key="student-self-study-mode" className="chip">
-          学生自主学习工作台
+          学生自主学习
         </span>,
         <span key="student-mode-current" className="chip">
           {buildLearningModeLabel(mode)}
@@ -1664,7 +1655,7 @@ export default function StudentInteractiveClassroomPage() {
       actions={
         <>
           <Link className="button ghost" href="/student">
-            返回学习控制台
+            返回今日学习
           </Link>
           {guestExperienceMode ? (
             <Link className="button secondary" href="/login">

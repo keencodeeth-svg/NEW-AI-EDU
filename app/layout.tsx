@@ -1,279 +1,64 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
-import "./globals.css";
-import "animate.css";
-import "katex/dist/katex.min.css";
-import { getCurrentUser } from "@/lib/auth";
-import UserMenu from "@/components/UserMenu";
-import DensityToggle from "@/components/DensityToggle";
-import RoleSidebarNav from "@/components/RoleSidebarNav";
-import AppToastHub from "@/components/AppToastHub";
-import MobileAppNav from "@/components/MobileAppNav";
-import GlobalCommandPalette from "@/components/GlobalCommandPalette";
-import { ClassroomBrand } from "@/components/brand/classroom-brand";
-import { ThemeProvider } from "@/lib/hooks/use-theme";
-import { I18nProvider } from "@/lib/hooks/use-i18n";
-import { Toaster } from "@/components/ui/sonner";
-import { ServerProvidersInit } from "@/components/server-providers-init";
-import { PRODUCT_BRAND_NAME } from "@/lib/classroom-integration";
-import DetailsAriaSync from "@/components/DetailsAriaSync";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import localFont from 'next/font/local';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+import './globals.css';
+import 'animate.css';
+import 'katex/dist/katex.min.css';
+import { getCurrentUser } from '@/lib/auth';
+import UserMenu from '@/components/UserMenu';
+import DensityToggle from '@/components/DensityToggle';
+import ThemeModeToggle from '@/components/ThemeModeToggle';
+import RoleSidebarNav from '@/components/RoleSidebarNav';
+import AppToastHub from '@/components/AppToastHub';
+import MobileAppNav from '@/components/MobileAppNav';
+import GlobalCommandPalette from '@/components/GlobalCommandPalette';
+import { ClassroomBrand } from '@/components/brand/classroom-brand';
+import { ThemeProvider } from '@/lib/hooks/use-theme';
+import { I18nProvider } from '@/lib/hooks/use-i18n';
+import { Toaster } from '@/components/ui/sonner';
+import { ServerProvidersInit } from '@/components/server-providers-init';
+import {
+  CLASSROOM_PRODUCT_NAME,
+  PLATFORM_BRAND_NAME,
+  PLATFORM_BRAND_TAGLINE,
+  PLATFORM_PRODUCT_NAME,
+} from '@/lib/classroom-integration';
+import {
+  guestGroups,
+  guestPrimaryLinks,
+  roleLabelMap,
+  roleNavConfig,
+  type AppRole,
+} from '@/lib/navigation/role-nav-config';
+import DetailsAriaSync from '@/components/DetailsAriaSync';
 
 const inter = localFont({
-  src: "../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2",
-  variable: "--font-sans",
-  weight: "100 900"
+  src: '../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2',
+  variable: '--font-sans',
+  weight: '100 900',
 });
 
 export const metadata: Metadata = {
-  title: PRODUCT_BRAND_NAME,
-  description: "航科 AI 教学平台与互动课堂、数字人和后台统一模型能力的融合版"
-};
-
-type NavLink = { href: string; label: string };
-type NavGroup = { title: string; links: NavLink[] };
-type RoleNavConfig = {
-  primary: NavLink[];
-  groups: NavGroup[];
+  title: PLATFORM_PRODUCT_NAME,
+  description: `${PLATFORM_BRAND_TAGLINE} 面向学生、教师、家长与学校的智能学习与教学操作系统。`,
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
-  const roleNavConfig: Record<"student" | "teacher" | "parent" | "admin" | "school_admin", RoleNavConfig> = {
-    student: {
-      primary: [
-        { href: "/student", label: "学习控制台" },
-        { href: "/student/assignments", label: "作业中心" },
-        { href: "/student/exams", label: "在线考试" },
-        { href: "/wrong-book", label: "错题复练" },
-        { href: "/tutor", label: "AI 辅导" },
-        { href: "/student/interactive-classroom", label: "航科互动课堂" }
-      ],
-      groups: [
-        {
-          title: "学习节奏",
-          links: [
-            { href: "/dashboard", label: "学习总看板" },
-            { href: "/plan", label: "学习计划" },
-            { href: "/practice", label: "练习" },
-            { href: "/coach", label: "学习陪练" }
-          ]
-        },
-        {
-          title: "专项能力",
-          links: [
-            { href: "/student/modules", label: "课程模块" },
-            { href: "/diagnostic", label: "诊断测评" },
-            { href: "/student/knowledge-map", label: "知识图谱" },
-            { href: "/student/projects", label: "项目式学习" },
-            { href: "/reading", label: "朗读评分" },
-            { href: "/writing", label: "写作批改" }
-          ]
-        },
-        {
-          title: "成长追踪",
-          links: [
-            { href: "/report", label: "学习报告" },
-            { href: "/student/growth", label: "成长画像" },
-            { href: "/challenge", label: "挑战任务" },
-            { href: "/focus", label: "专注计时" }
-          ]
-        },
-        {
-          title: "资源协作",
-          links: [
-            { href: "/course", label: "课程主页" },
-            { href: "/library", label: "教材课件" },
-            { href: "/discussions", label: "讨论区" },
-            { href: "/files", label: "文件中心" },
-            { href: "/inbox", label: "收件箱" },
-            { href: "/calendar", label: "课程表" },
-            { href: "/announcements", label: "班级公告" },
-            { href: "/notifications", label: "通知中心" }
-          ]
-        }
-      ]
-    },
-    teacher: {
-      primary: [
-        { href: "/teacher", label: "教师工作台" },
-        { href: "/teacher/analysis", label: "学情分析" },
-        { href: "/teacher/gradebook", label: "成绩册" },
-        { href: "/teacher/submissions", label: "提交箱" },
-        { href: "/teacher/exams", label: "在线考试" },
-        { href: "/ai-classroom", label: "航科互动课堂" }
-      ],
-      groups: [
-        {
-          title: "教学总览",
-          links: [
-            { href: "/dashboard", label: "教学总看板" },
-            { href: "/teacher/modules", label: "课程模块" },
-            { href: "/teacher/seating", label: "学期排座" }
-          ]
-        },
-        {
-          title: "教学执行",
-          links: [
-            { href: "/teacher/notifications", label: "通知规则" },
-            { href: "/teacher/lesson-planner", label: "AI 备课助手" },
-            { href: "/teacher/classroom-live", label: "课堂实时仪表盘" },
-            { href: "/teacher/projects", label: "项目式学习" },
-            { href: "/teacher/ai-tools", label: "教师 AI 工具" }
-          ]
-        },
-        {
-          title: "课程资源",
-          links: [
-            { href: "/course", label: "课程主页" },
-            { href: "/library", label: "教材课件" },
-            { href: "/files", label: "文件中心" },
-            { href: "/calendar", label: "教学课表" },
-            { href: "/announcements", label: "班级公告" }
-          ]
-        },
-        {
-          title: "班级协作",
-          links: [
-            { href: "/discussions", label: "讨论区" },
-            { href: "/inbox", label: "收件箱" }
-          ]
-        }
-      ]
-    },
-    parent: {
-      primary: [
-        { href: "/parent", label: "家长端" },
-        { href: "/calendar", label: "课程表" },
-        { href: "/notifications", label: "通知中心" }
-      ],
-      groups: [
-        {
-          title: "补充总览",
-          links: [
-            { href: "/dashboard", label: "家长总看板" }
-          ]
-        },
-        {
-          title: "家校协同",
-          links: [
-            { href: "/course", label: "课程主页" },
-            { href: "/discussions", label: "讨论区" },
-            { href: "/files", label: "文件中心" },
-            { href: "/inbox", label: "收件箱" },
-            { href: "/announcements", label: "班级公告" }
-          ]
-        }
-      ]
-    },
-    admin: {
-      primary: [
-        { href: "/admin", label: "管理端" },
-        { href: "/library", label: "教材课件" },
-        { href: "/admin/questions", label: "题库管理" },
-        { href: "/admin/knowledge-points", label: "知识点管理" },
-        { href: "/admin/knowledge-tree", label: "知识点树" },
-        { href: "/admin/experiments", label: "实验中心" },
-        { href: "/admin/ai-models", label: "AI模型中心" },
-        { href: "/admin/launch-readiness", label: "上线准备中心" },
-        { href: "/admin/recovery-requests", label: "账号恢复工单" },
-        { href: "/admin/logs", label: "操作日志" }
-      ],
-      groups: [
-        {
-          title: "内容治理",
-          links: [
-            { href: "/admin/questions", label: "题库管理" },
-            { href: "/admin/knowledge-points", label: "知识点管理" },
-            { href: "/admin/knowledge-tree", label: "知识点树" },
-            { href: "/library", label: "教材课件" }
-          ]
-        },
-        {
-          title: "实验与模型",
-          links: [
-            { href: "/admin/experiments", label: "A/B与灰度" },
-            { href: "/admin/ai-models", label: "模型路由策略" },
-            { href: "/admin/launch-readiness", label: "上线准备中心" }
-          ]
-        },
-        {
-          title: "审计运维",
-          links: [
-            { href: "/admin/recovery-requests", label: "账号恢复工单" },
-            { href: "/admin/logs", label: "操作日志" },
-            { href: "/admin", label: "控制台总览" }
-          ]
-        }
-      ]
-    },
-    school_admin: {
-      primary: [
-        { href: "/school", label: "学校控制台" },
-        { href: "/school/interactive-classrooms", label: "互动课堂治理" },
-        { href: "/school/classes", label: "学校班级" },
-        { href: "/school/schedules", label: "课程表管理" },
-        { href: "/school/teachers", label: "教师管理" },
-        { href: "/school/students", label: "学生管理" }
-      ],
-      groups: [
-        {
-          title: "组织治理",
-          links: [
-            { href: "/school/classes", label: "班级总览" },
-            { href: "/school/teachers", label: "教师名单" },
-            { href: "/school/students", label: "学生名单" }
-          ]
-        },
-        {
-          title: "教学协同",
-          links: [
-            { href: "/dashboard", label: "数据看板" },
-            { href: "/school/interactive-classrooms", label: "互动课堂治理中心" },
-            { href: "/school/schedules", label: "课程表管理" },
-            { href: "/library", label: "教材课件" }
-          ]
-        }
-      ]
-    }
-  };
-
-  const guestPrimaryLinks: NavLink[] = [
-    { href: "/", label: "首页" },
-    { href: "/ai-classroom", label: "航科互动课堂" },
-    { href: "/login", label: "登录" },
-    { href: "/register", label: "学生/家长注册" }
-  ];
-  const guestGroups: NavGroup[] = [
-    {
-      title: "注册入口",
-      links: [
-        { href: "/teacher/register", label: "教师注册" },
-        { href: "/admin/register", label: "管理员注册" },
-        { href: "/school/register", label: "学校管理员注册" }
-      ]
-    }
-  ];
-
-  const role = user?.role as "student" | "teacher" | "parent" | "admin" | "school_admin" | undefined;
+  const role = user?.role as AppRole | undefined;
   const navConfig = role ? roleNavConfig[role] : null;
   const primaryLinks = navConfig?.primary ?? guestPrimaryLinks;
   const navGroups = navConfig?.groups ?? guestGroups;
-  const roleLabelMap: Record<"student" | "teacher" | "parent" | "admin" | "school_admin", string> = {
-    student: "学生空间",
-    teacher: "教师空间",
-    parent: "家长空间",
-    admin: "管理空间",
-    school_admin: "学校空间"
-  };
-  const roleLabel = role ? roleLabelMap[role] : "访客模式";
+  const roleLabel = role ? roleLabelMap[role] : '访客模式';
+  const isAuthenticated = Boolean(user);
 
   return (
     <html lang="zh-CN" className={inter.variable} suppressHydrationWarning>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
-        data-authenticated={user ? "1" : "0"}
+        data-authenticated={user ? '1' : '0'}
         suppressHydrationWarning
       >
         <ThemeProvider>
@@ -283,30 +68,55 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <a className="skip-link" href="#main-content">
               跳转到主内容
             </a>
-            <div className="app-shell with-side-nav">
-              <aside className="app-sidebar desktop-sidebar">
-                <div className="brand-shell">
-                  <ClassroomBrand size="sm" showSubtitle={false} className="min-w-0" />
-                </div>
-                <RoleSidebarNav primaryLinks={primaryLinks} navGroups={navGroups} />
-              </aside>
+            <div className={`app-shell${isAuthenticated ? ' with-side-nav' : ' public-shell'}`}>
+              {isAuthenticated ? (
+                <aside className="app-sidebar desktop-sidebar">
+                  <div className="brand-shell">
+                    <ClassroomBrand size="sm" showSubtitle={false} platform className="min-w-0" />
+                  </div>
+                  <RoleSidebarNav primaryLinks={primaryLinks} navGroups={navGroups} />
+                </aside>
+              ) : null}
 
               <div className="app-main-shell">
                 <header className="site-header compact-header">
                   <div className="site-header-left">
-                    <MobileAppNav roleLabel={roleLabel} primaryLinks={primaryLinks} navGroups={navGroups} />
+                    {isAuthenticated ? (
+                      <MobileAppNav
+                        roleLabel={roleLabel}
+                        primaryLinks={primaryLinks}
+                        navGroups={navGroups}
+                      />
+                    ) : (
+                      <Link className="public-header-brand" href="/" aria-label={`${PLATFORM_PRODUCT_NAME}首页`}>
+                        <ClassroomBrand size="sm" showSubtitle={false} platform className="min-w-0" />
+                      </Link>
+                    )}
                     <div className="site-header-context">
-                      <ClassroomBrand size="sm" showSubtitle={false} className="site-header-brand" />
                       <div className="site-header-meta">
-                        <div className="section-sub desktop-role-badge">{roleLabel}</div>
+                        {isAuthenticated ? (
+                          <div className="section-sub desktop-role-badge">{roleLabel}</div>
+                        ) : null}
                         <div className="site-header-purpose">
-                          学习、教学、陪伴与学校治理一体化教育工作台
+                          {PLATFORM_BRAND_NAME}把每天最关键的学习、教学与质量改进动作组织成清晰主线
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="header-actions">
-                    <GlobalCommandPalette roleLabel={roleLabel} primaryLinks={primaryLinks} navGroups={navGroups} />
+                    {isAuthenticated ? (
+                      <GlobalCommandPalette
+                        roleLabel={roleLabel}
+                        primaryLinks={primaryLinks}
+                        navGroups={navGroups}
+                      />
+                    ) : (
+                      <nav className="public-header-links" aria-label="公共页面导航">
+                        <Link href="/">首页</Link>
+                        <Link href="/ai-classroom">{CLASSROOM_PRODUCT_NAME}</Link>
+                      </nav>
+                    )}
+                    <ThemeModeToggle />
                     {user ? <DensityToggle /> : null}
                     <UserMenu user={user} />
                   </div>
@@ -315,8 +125,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   {children}
                 </main>
                 <footer className="site-footer">
-                  <div className="site-footer-copy">© 2026 {PRODUCT_BRAND_NAME}</div>
-                  <div className="site-footer-meta">面向学生、教师、家长与学校的一体化 AI 教育产品</div>
+                  <div className="site-footer-copy">© 2026 {PLATFORM_BRAND_NAME}</div>
+                  <div className="site-footer-meta">
+                    {PLATFORM_BRAND_TAGLINE}
+                  </div>
                 </footer>
               </div>
             </div>

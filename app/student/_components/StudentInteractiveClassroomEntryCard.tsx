@@ -123,7 +123,7 @@ export default function StudentInteractiveClassroomEntryCard({
   const outputCapabilities = ['数字老师讲解', '即时练习', '课后回看', '导出分享'];
 
   return (
-    <Card title="航科互动课堂" tag="学生自学" bodyClassName="student-classroom-entry-body">
+    <Card title="知序课堂" tag="学生自学" bodyClassName="student-classroom-entry-body">
       <div className="student-classroom-entry-grid">
         <div className="student-classroom-entry-main">
           <div className="student-classroom-entry-hero">
@@ -176,7 +176,7 @@ export default function StudentInteractiveClassroomEntryCard({
                 {`开始${recommendedModeLabel}`}
               </Link>
               <Link className="button secondary" href="/student/interactive-classroom">
-                进入完整工作台
+                查看全部学习模式
               </Link>
               <Link className="button ghost" href="/student/portrait">
                 查看学习画像

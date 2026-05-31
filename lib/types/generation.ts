@@ -8,6 +8,7 @@
 import type { ActionType } from './action';
 import type { MediaGenerationRequest } from '@/lib/media/types';
 import type { WidgetConfig, WidgetType } from './widgets';
+import type { CanonicalQuizQuestionType, QuizQuestionTypeInput } from './stage';
 
 // ==================== PDF Image Types ====================
 
@@ -69,7 +70,7 @@ export interface UserRequirements {
   userNickname?: string; // Student nickname for personalization
   userBio?: string; // Student background for personalization
   webSearch?: boolean; // Enable web search for richer context
-  generationMode?: 'standard' | 'deep-interactive'; // OpenMAIC v0.2 style interactive-first generation
+  generationMode?: 'standard' | 'deep-interactive'; // Zhixu classroom interactive-first generation
 }
 
 /**
@@ -111,7 +112,7 @@ export interface SceneOutline {
   quizConfig?: {
     questionCount: number;
     difficulty: 'easy' | 'medium' | 'hard';
-    questionTypes: ('single' | 'multiple' | 'text')[];
+    questionTypes: QuizQuestionTypeInput[];
   };
   // Interactive-specific config
   interactiveConfig?: {
@@ -120,7 +121,7 @@ export interface SceneOutline {
     designIdea: string;
     subject?: string;
   };
-  // Deep Interactive widget contract (OpenMAIC v0.2 compatible)
+  // Zhixu interactive classroom widget contract
   widgetType?: WidgetType;
   widgetOutline?: WidgetConfig | Record<string, unknown>;
   // PBL-specific config
@@ -199,7 +200,7 @@ export interface SuggestedSlideElement {
 }
 
 export interface SuggestedQuizQuestion {
-  type: 'single' | 'multiple' | 'short_answer';
+  type: CanonicalQuizQuestionType;
   questionOutline: string;
   suggestedOptions?: string[];
   targetConceptId?: string;

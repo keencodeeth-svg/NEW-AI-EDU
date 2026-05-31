@@ -1,20 +1,28 @@
-import { createLearningRoute } from "@/lib/api/domains";
-import { getTeacherDigitalHumanProfile, saveTeacherDigitalHumanProfile } from "@/lib/teacher-digital-human";
-import { unauthorized } from "@/lib/api/http";
-import { v } from "@/lib/api/validation";
-import type { TeacherDigitalHumanProfile } from "@/lib/classroom-integration";
-import type { TTSProviderId } from "@/lib/audio/types";
-import type { ImageProviderId } from "@/lib/media/types";
+import { createLearningRoute } from '@/lib/api/domains';
+import {
+  getTeacherDigitalHumanProfile,
+  saveTeacherDigitalHumanProfile,
+} from '@/lib/teacher-digital-human';
+import { unauthorized } from '@/lib/api/http';
+import { v } from '@/lib/api/validation';
+import type { TeacherDigitalHumanProfile } from '@/lib/classroom-integration';
+import type { TTSProviderId } from '@/lib/audio/types';
+import type { ImageProviderId } from '@/lib/media/types';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
-const IMAGE_PROVIDER_IDS = ["seedream", "qwen-image", "nano-banana"] as const satisfies readonly ImageProviderId[];
+const IMAGE_PROVIDER_IDS = [
+  'seedream',
+  'qwen-image',
+  'nano-banana',
+] as const satisfies readonly ImageProviderId[];
 const TTS_PROVIDER_IDS = [
-  "openai-tts",
-  "azure-tts",
-  "glm-tts",
-  "qwen-tts",
-  "browser-native-tts",
+  'openai-tts',
+  'azure-tts',
+  'glm-tts',
+  'qwen-tts',
+  'voxcpm2-tts',
+  'browser-native-tts',
 ] as const satisfies readonly TTSProviderId[];
 
 const updateBodySchema = v.object<Partial<TeacherDigitalHumanProfile>>(
@@ -34,10 +42,10 @@ const updateBodySchema = v.object<Partial<TeacherDigitalHumanProfile>>(
 );
 
 export const GET = createLearningRoute({
-  role: "teacher",
-  cache: "private-realtime",
+  role: 'teacher',
+  cache: 'private-realtime',
   handler: async ({ user }) => {
-    if (!user || user.role !== "teacher") {
+    if (!user || user.role !== 'teacher') {
       unauthorized();
     }
 
@@ -48,11 +56,11 @@ export const GET = createLearningRoute({
 });
 
 export const POST = createLearningRoute({
-  role: "teacher",
+  role: 'teacher',
   body: updateBodySchema,
-  cache: "private-realtime",
+  cache: 'private-realtime',
   handler: async ({ body, user }) => {
-    if (!user || user.role !== "teacher") {
+    if (!user || user.role !== 'teacher') {
       unauthorized();
     }
 

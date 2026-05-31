@@ -42,11 +42,11 @@ export function SchoolInteractiveClassroomDeliveryCard({
 }) {
   if (!summary) {
     return (
-      <Card title="互动课堂交付治理" tag="航科互动课堂">
+      <Card title="课堂交付质量" tag="知序课堂">
         <StatePanel
           compact
           tone="loading"
-          title="互动课堂交付治理加载中"
+          title="课堂交付质量加载中"
           description="正在汇总学校内的发布、导出与学生自主使用数据。"
         />
       </Card>
@@ -54,9 +54,9 @@ export function SchoolInteractiveClassroomDeliveryCard({
   }
 
   return (
-    <Card title="互动课堂交付治理" tag="航科互动课堂">
+    <Card title="课堂交付质量" tag="知序课堂">
       <div className="section-sub">
-        把教师发布、资源导出与学生自主巩固放在同一套治理面板里，学校可以直接看到互动课堂的实际覆盖、传播与复用情况。
+        把教师发布、资源导出与学生自主巩固放在同一套质量视图里，学校可以直接看到课堂学习的实际覆盖、传播与复用情况。
       </div>
 
       <div className="grid grid-3" style={{ marginTop: 12 }}>
@@ -73,8 +73,8 @@ export function SchoolInteractiveClassroomDeliveryCard({
           <StatePanel
             compact
             tone="info"
-            title="学校还没有沉淀互动课堂交付记录"
-            description="老师发布全班观看地址、导出 PPT/资源包，或学生开始自主巩固之后，这里会自动形成学校级治理台账。"
+            title="学校还没有沉淀课堂交付记录"
+            description="老师发布全班观看地址、导出 PPT/资源包，或学生开始自主巩固之后，这里会自动形成学校级质量台账。"
           />
         </div>
       ) : (
@@ -177,7 +177,7 @@ export function SchoolInteractiveClassroomDeliveryCard({
 
       <div className="cta-row" style={{ marginTop: 14 }}>
         <Link className="button secondary" href="/school/interactive-classrooms">
-          进入治理中心
+          进入质量中心
         </Link>
         <Link className="button ghost" href="/school">
           返回学校总览
@@ -189,7 +189,7 @@ export function SchoolInteractiveClassroomDeliveryCard({
           查看教师互动工具台
         </Link>
         <Link className="button ghost" href="/ai-classroom">
-          进入互动课堂工作区
+          进入课堂工作区
         </Link>
       </div>
     </Card>

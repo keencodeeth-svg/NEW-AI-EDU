@@ -1,5 +1,6 @@
 import type { SceneOutline } from '@/lib/types/generation';
 import type { WidgetConfig, WidgetType } from '@/lib/types/widgets';
+import { normalizeInteractiveOutline } from './runtime-validators';
 
 const SUPPORTED_WIDGET_TYPES = new Set<WidgetType>([
   'simulation',
@@ -17,9 +18,9 @@ export function buildDeepInteractivePromptGuidance(mode?: string): string {
   if (!isDeepInteractiveMode(mode)) return '';
 
   return `
-## Deep Interactive Mode
+## Zhixu Interactive Classroom Mode
 
-The user enabled Deep Interactive Mode. Design this course as an interactive-first learning experience inspired by OpenMAIC v0.2:
+The user enabled Zhixu Interactive Classroom Mode. Design this course as an interactive-first learning experience using the internal classroom widget contract:
 
 - Prefer hands-on interactive scenes over passive slides when the concept benefits from exploration.
 - Target roughly 60-70% interactive scenes and 30-40% slides/quiz transitions, unless the topic is unsuitable.
@@ -85,6 +86,7 @@ function inferConceptOverview(outline: SceneOutline): string {
 }
 
 export function normalizeDeepInteractiveOutline(outline: SceneOutline): SceneOutline {
+  outline = normalizeInteractiveOutline(outline);
   if (outline.type !== 'interactive') return outline;
   if (outline.interactiveConfig) return outline;
 

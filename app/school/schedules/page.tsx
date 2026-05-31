@@ -153,14 +153,14 @@ export default function SchoolSchedulesPage() {
         <StatePanel
           compact
           tone="info"
-          title="已从互动课堂治理中心进入"
+          title="已从课堂质量中心进入"
           description={`当前已自动定位${
             sourceContext.className ? `班级“${sourceContext.className}”` : "排课上下文"
-          }${sourceContext.teacherName ? `，并关联教师“${sourceContext.teacherName}”` : ""}。你可以直接检查当前班级是否缺课、补排课时，或切回治理中心继续查看扩散情况。`}
+          }${sourceContext.teacherName ? `，并关联教师“${sourceContext.teacherName}”` : ""}。你可以直接检查当前班级是否缺课、补排课时，或切回质量中心继续查看课堂应用情况。`}
           action={
             <div className="cta-row">
               <Link className="button secondary" href="/school/interactive-classrooms">
-                返回治理中心
+                返回质量中心
               </Link>
               {sourceContext.classId || sourceContext.className ? (
                 <Link
@@ -172,7 +172,7 @@ export default function SchoolSchedulesPage() {
                     teacherName: sourceContext.teacherName ?? null
                   })}
                 >
-                  查看班级治理
+                  查看班级质量
                 </Link>
               ) : null}
               {sourceContext.teacherId || sourceContext.teacherName ? (
@@ -184,7 +184,7 @@ export default function SchoolSchedulesPage() {
                     className: sourceContext.className ?? null
                   })}
                 >
-                  查看教师治理
+                  查看教师应用
                 </Link>
               ) : null}
               <Link className="button ghost" href="/school/schedules">

@@ -1,10 +1,8 @@
 /**
- * Deep Interactive widget schemas.
+ * Zhixu interactive classroom widget schemas.
  *
- * These mirror the OpenMAIC v0.2 interactive-first outline contract while
- * staying renderer-agnostic. Scene generation can use the structured outline
- * to produce a self-contained HTML widget today, and richer native renderers
- * can adopt the same schema later.
+ * These renderer-agnostic schemas define the structured classroom interaction
+ * contract used by scene generation today and richer native renderers later.
  */
 
 export type WidgetType = 'simulation' | 'diagram' | 'code' | 'game' | 'visualization3d';

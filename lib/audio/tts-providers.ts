@@ -130,6 +130,9 @@ export async function generateTTS(
     case 'qwen-tts':
       return await generateQwenTTS(config, text);
 
+    case 'voxcpm2-tts':
+      return await generateVoxCPM2TTS(config, text);
+
     case 'browser-native-tts':
       throw new Error(
         'Browser Native TTS must be handled client-side using Web Speech API. This provider cannot be used on the server.',
@@ -313,6 +316,104 @@ async function generateQwenTTS(config: TTSModelConfig, text: string): Promise<TT
   return {
     audio: new Uint8Array(arrayBuffer),
     format: 'wav', // Qwen3 TTS returns WAV format
+  };
+}
+
+/**
+ * VoxCPM2 TTS implementation.
+ *
+ * This adapter follows the OpenAI-compatible /audio/speech shape used by
+ * hosted VoxCPM2 endpoints. When the selected voice carries reference audio
+ * metadata, it is forwarded for zero-shot voice cloning; otherwise the hosted
+ * endpoint's default voice is used.
+ */
+async function generateVoxCPM2TTS(
+  config: TTSModelConfig,
+  text: string,
+): Promise<TTSGenerationResult> {
+  const baseUrl = (config.baseUrl || TTS_PROVIDERS['voxcpm2-tts'].defaultBaseUrl)?.replace(
+    /\/$/,
+    '',
+  );
+  const voiceInfo = TTS_PROVIDERS['voxcpm2-tts'].voices.find((voice) => voice.id === config.voice);
+  const body: Record<string, unknown> = {
+    model: 'VoxCPM2',
+    input: text,
+    voice: config.voice || 'default',
+    speed: config.speed || 1.0,
+    response_format: config.format || 'wav',
+  };
+
+  if (voiceInfo?.referenceAudioUrl) {
+    body.reference_audio = voiceInfo.referenceAudioUrl;
+  }
+  if (voiceInfo?.referenceText) {
+    body.reference_text = voiceInfo.referenceText;
+  }
+
+  const response = await fetch(`${baseUrl}/audio/speech`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${config.apiKey}`,
+      'Content-Type': 'application/json; charset=utf-8',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text().catch(() => response.statusText);
+    let errorMessage = `VoxCPM2 TTS API error: ${errorText}`;
+    try {
+      const errorJson = JSON.parse(errorText);
+      if (errorJson.error?.message) {
+        errorMessage = `VoxCPM2 TTS API error: ${errorJson.error.message}`;
+      }
+    } catch {
+      // Keep raw text for non-JSON provider errors.
+    }
+    throw new Error(errorMessage);
+  }
+
+  const contentType = response.headers.get('content-type') || '';
+  if (contentType.includes('application/json')) {
+    const data = await response.json();
+    const audioUrl =
+      data.output?.audio?.url ||
+      data.audio?.url ||
+      data.url ||
+      data.data?.url ||
+      data.data?.audio_url;
+    const base64Audio = data.audio || data.data?.audio || data.output?.audio?.base64;
+
+    if (typeof audioUrl === 'string' && audioUrl) {
+      const audioResponse = await fetch(audioUrl);
+      if (!audioResponse.ok) {
+        throw new Error(`Failed to download VoxCPM2 audio: ${audioResponse.statusText}`);
+      }
+      return {
+        audio: new Uint8Array(await audioResponse.arrayBuffer()),
+        format: 'wav',
+      };
+    }
+
+    if (typeof base64Audio === 'string' && base64Audio) {
+      const normalized = base64Audio.includes(',')
+        ? base64Audio.slice(base64Audio.indexOf(',') + 1)
+        : base64Audio;
+      return {
+        audio: new Uint8Array(Buffer.from(normalized, 'base64')),
+        format: 'wav',
+      };
+    }
+
+    throw new Error(
+      `VoxCPM2 TTS error: No audio payload in response. Response: ${JSON.stringify(data)}`,
+    );
+  }
+
+  return {
+    audio: new Uint8Array(await response.arrayBuffer()),
+    format: 'wav',
   };
 }
 

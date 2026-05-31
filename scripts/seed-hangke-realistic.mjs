@@ -11,7 +11,7 @@ bootstrapProjectEnv();
 const SCHOOL = {
   id: "hangke-school-lingang",
   code: "HKIC",
-  name: "航科实验学校"
+  name: "知序实验学校"
 };
 
 const PASSWORDS = {

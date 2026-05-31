@@ -21,6 +21,7 @@
 | --- | --- | --- |
 | 想快速知道项目现在到哪一步、接下来先做什么 | `docs/project-readiness-index.md` | `docs/development-checklist.md` |
 | 想按“世界级产品”标准看当前差距、优势与改造顺序 | `docs/world-class-product-assessment-2026-04-04.md` | `docs/hangke-interactive-classroom-world-class-prd.md` |
+| 想把 P0/P1/P2 优化推进成可打分、可验收、可回归的满分路线图 | `docs/p0-p2-full-score-optimization-roadmap.md` | `docs/p0-optimization-task-cards.md`、`docs/p1-p2-feature-task-cards.md` |
 | 想回查本轮 P1/P2 功能到底做了什么、怎么验收的 | `docs/p1-p2-feature-task-cards.md` | `tests/browser/smoke.spec.ts`、`scripts/api-test/suites/learning.mjs` |
 | 想在发布前快速确认数据库、模型链、管理员账号和巡检密钥是否就绪 | `docs/project-readiness-index.md` | `/admin/launch-readiness`、`corepack pnpm launch:readiness` |
 | 想确认 P0 到底还差哪些阻断项 | `docs/p0-productization-checklist.md` | `docs/p0-optimization-task-cards.md` |
@@ -48,6 +49,7 @@
 补充建议：
 
 - 如果当前目标不是“先能跑”，而是“按世界级产品标准评估还差什么”，优先看 `docs/world-class-product-assessment-2026-04-04.md`。
+- 如果当前目标是“把 P0/P1/P2 指标持续推向满分”，优先看 `docs/p0-p2-full-score-optimization-roadmap.md`，并把每轮优化的分数变化、验收命令和截图证据补回路线图或任务卡。
 
 当前最大的四个风险：
 

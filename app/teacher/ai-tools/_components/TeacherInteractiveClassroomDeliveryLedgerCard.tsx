@@ -66,7 +66,7 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
 
       setItems(deliveredStages);
     } catch (nextError) {
-      setLoadError(nextError instanceof Error ? nextError.message : "课堂交付台账加载失败");
+      setLoadError(nextError instanceof Error ? nextError.message : "课堂分享记录加载失败");
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -99,11 +99,11 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
 
   if (loading) {
     return (
-      <Card title="课堂交付台账" tag="交付闭环">
+      <Card title="课堂分享记录" tag="课堂闭环">
         <StatePanel
           compact
           tone="loading"
-          title="课堂交付台账加载中"
+          title="课堂分享记录加载中"
           description="正在汇总最近的发布、导出与资源包记录。"
         />
       </Card>
@@ -112,11 +112,11 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
 
   if (loadError) {
     return (
-      <Card title="课堂交付台账" tag="交付闭环">
+      <Card title="课堂分享记录" tag="课堂闭环">
         <StatePanel
           compact
           tone="error"
-          title="课堂交付台账加载失败"
+          title="课堂分享记录加载失败"
           description={loadError}
           action={
             <button className="button secondary" type="button" onClick={() => void load("refresh")}>
@@ -129,14 +129,14 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
   }
 
   return (
-    <Card title="课堂交付台账" tag="交付闭环">
+    <Card title="课堂分享记录" tag="课堂闭环">
       <div className="grid" style={{ gap: 14 }}>
         <div style={{ fontSize: 14, lineHeight: 1.7 }}>
-          这里汇总最近课堂的全班观看发布、PPT 课件导出和资源包导出记录，方便老师回看哪一节课已经交付、是否适合继续复用，或继续加工成学生自主巩固课堂。
+          这里汇总最近课堂的全班观看发布、PPT 课件导出和资源包导出记录，方便老师回看哪一节课已经分享、是否适合继续复用，或继续加工成学生自主巩固课堂。
         </div>
 
         <div className="badge-row">
-          <span className="badge">已交付课堂 {summary.classrooms} 节</span>
+          <span className="badge">已分享课堂 {summary.classrooms} 节</span>
           <span className="badge">全班观看发布 {summary.publishes} 次</span>
           <span className="badge">导出记录 {summary.exports} 次</span>
         </div>
@@ -148,7 +148,7 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
             onClick={() => void load("refresh")}
             disabled={refreshing}
           >
-            {refreshing ? "刷新中..." : "刷新台账"}
+            {refreshing ? "刷新中..." : "刷新记录"}
           </button>
           <Link className="button ghost" href="/ai-classroom">
             新建互动课堂
@@ -199,7 +199,7 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
                         ) : null}
                       </div>
                       <div style={{ marginTop: 8, fontSize: 13, lineHeight: 1.7 }}>
-                        最近交付：{latest.label} · {toTimeLabel(latest.createdAt)}
+                        最近动作：{latest.label} · {toTimeLabel(latest.createdAt)}
                         {latest.fileName ? ` · ${latest.fileName}` : ""}
                       </div>
                     </div>
@@ -254,8 +254,8 @@ export default function TeacherInteractiveClassroomDeliveryLedgerCard() {
           <StatePanel
             compact
             tone="info"
-            title="还没有课堂交付记录"
-            description="先生成一节互动课堂并发布全班观看地址，或导出 PPT / 资源包后，这里就会开始沉淀交付台账。"
+            title="还没有课堂分享记录"
+            description="先生成一节互动课堂并发布全班观看地址，或导出 PPT / 资源包后，这里就会开始沉淀课堂分享记录。"
           />
         )}
 

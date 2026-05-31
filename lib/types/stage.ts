@@ -86,9 +86,13 @@ export interface QuizOption {
   value: string; // Selection key: "A", "B", "C", "D"
 }
 
+export type CanonicalQuizQuestionType = 'single' | 'multiple' | 'short_answer';
+export type LegacyQuizQuestionType = 'text';
+export type QuizQuestionTypeInput = CanonicalQuizQuestionType | LegacyQuizQuestionType;
+
 export interface QuizQuestion {
   id: string;
-  type: 'single' | 'multiple' | 'short_answer';
+  type: CanonicalQuizQuestionType;
   question: string;
   options?: QuizOption[];
   answer?: string[]; // Correct answer values: ["A"], ["A","C"], or undefined for text

@@ -93,5 +93,5 @@ export function buildStudentDashboardDegradedNotice(labels: string[]) {
       ? `${visibleLabels.slice(0, 3).join('、')}等模块`
       : visibleLabels.join('、');
 
-  return `当前已切换为基础模式：${summary}暂时使用兜底数据。你仍可以继续查看学习入口、启动航科互动课堂，并推进今日学习。`;
+  return `当前已切换为基础模式：${summary}暂时使用兜底数据。你仍可以继续查看学习入口、启动知序课堂，并推进今日学习。`;
 }

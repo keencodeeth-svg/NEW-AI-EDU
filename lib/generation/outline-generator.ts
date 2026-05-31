@@ -19,6 +19,7 @@ import {
   buildDeepInteractivePromptGuidance,
   normalizeDeepInteractiveOutline,
 } from './deep-interactive';
+import { normalizeSceneOutlineRuntime } from './runtime-validators';
 import type { AICallFn, GenerationResult, GenerationCallbacks } from './pipeline-types';
 import { createLogger } from '@/lib/logger';
 const log = createLogger('Generation');
@@ -143,12 +144,14 @@ export async function generateSceneOutlinesFromRequirements(
     }
     // Ensure IDs, order, and language
     const enriched = outlines.map((outline, index) =>
-      normalizeDeepInteractiveOutline({
-        ...outline,
-        id: outline.id || nanoid(),
-        order: index + 1,
-        language: requirements.language,
-      }),
+      normalizeDeepInteractiveOutline(
+        normalizeSceneOutlineRuntime({
+          ...outline,
+          id: outline.id || nanoid(),
+          order: index + 1,
+          language: requirements.language,
+        }),
+      ),
     );
 
     // Replace sequential gen_img_N/gen_vid_N with globally unique IDs
@@ -178,7 +181,7 @@ export function applyOutlineFallbacks(
   outline: SceneOutline,
   hasLanguageModel: boolean,
 ): SceneOutline {
-  outline = normalizeDeepInteractiveOutline(outline);
+  outline = normalizeDeepInteractiveOutline(normalizeSceneOutlineRuntime(outline));
 
   if (outline.type === 'interactive' && !outline.interactiveConfig) {
     log.warn(

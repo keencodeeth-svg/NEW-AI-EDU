@@ -9,7 +9,7 @@ import type { ProviderId } from '@/lib/ai/providers';
 import type { ProvidersConfig } from '@/lib/types/settings';
 import { PROVIDERS } from '@/lib/ai/providers';
 import type { TTSProviderId, ASRProviderId } from '@/lib/audio/types';
-import { ASR_PROVIDERS, DEFAULT_TTS_VOICES } from '@/lib/audio/constants';
+import { ASR_PROVIDERS, DEFAULT_TTS_VOICES, TTS_PROVIDERS } from '@/lib/audio/constants';
 import type { PDFProviderId } from '@/lib/pdf/types';
 import type { ImageProviderId, VideoProviderId } from '@/lib/media/types';
 import { IMAGE_PROVIDERS } from '@/lib/media/image-providers';
@@ -264,6 +264,7 @@ const getDefaultAudioConfig = () => ({
     'azure-tts': { apiKey: '', baseUrl: '', enabled: false },
     'glm-tts': { apiKey: '', baseUrl: '', enabled: false },
     'qwen-tts': { apiKey: '', baseUrl: '', enabled: false },
+    'voxcpm2-tts': { apiKey: '', baseUrl: '', enabled: false },
     'browser-native-tts': { apiKey: '', baseUrl: '', enabled: true },
   } as Record<TTSProviderId, { apiKey: string; baseUrl: string; enabled: boolean }>,
   asrProvidersConfig: {
@@ -349,6 +350,17 @@ function ensureBuiltInProviders(state: Partial<SettingsState>): void {
       };
     }
   });
+}
+
+function ensureBuiltInTTSProviders(state: Partial<SettingsState>): void {
+  if (!state.ttsProvidersConfig) return;
+  const defaults = getDefaultAudioConfig().ttsProvidersConfig;
+  for (const providerId of Object.keys(TTS_PROVIDERS) as TTSProviderId[]) {
+    state.ttsProvidersConfig[providerId] = {
+      ...defaults[providerId],
+      ...state.ttsProvidersConfig[providerId],
+    };
+  }
 }
 
 function ensureBuiltInPDFProviders(state: Partial<SettingsState>): void {
@@ -995,6 +1007,7 @@ export const useSettingsStore = create<SettingsState>()(
 
         // Ensure providersConfig has all built-in providers (also in merge below)
         ensureBuiltInProviders(state);
+        ensureBuiltInTTSProviders(state);
 
         // Migrate from old ttsModel to new ttsProviderId
         if (state.ttsModel && !state.ttsProviderId) {
@@ -1014,6 +1027,7 @@ export const useSettingsStore = create<SettingsState>()(
           const defaultAudioConfig = getDefaultAudioConfig();
           Object.assign(state, defaultAudioConfig);
         }
+        ensureBuiltInTTSProviders(state);
 
         // Add default PDF config if missing
         if (!state.pdfProvidersConfig) {
@@ -1094,6 +1108,7 @@ export const useSettingsStore = create<SettingsState>()(
       merge: (persistedState, currentState) => {
         const merged = { ...currentState, ...(persistedState as object) };
         ensureBuiltInProviders(merged as Partial<SettingsState>);
+        ensureBuiltInTTSProviders(merged as Partial<SettingsState>);
         ensureBuiltInPDFProviders(merged as Partial<SettingsState>);
         return merged as SettingsState;
       },

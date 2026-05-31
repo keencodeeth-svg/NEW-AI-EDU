@@ -21,7 +21,7 @@ export function useStudentDashboardPageView() {
 
   const workspacePageProps: Omit<ComponentProps<typeof WorkspacePage>, 'children'> = {
     className: 'grid dashboard-stack',
-    title: '学习控制台',
+    title: '今日学习',
     subtitle: '先做什么、卡住怎么办、做完看哪里，都在这里直接推进。',
     lastLoadedAt: page.lastLoadedAt,
     chips: [
@@ -75,7 +75,7 @@ export function useStudentDashboardPageView() {
         ? {
             id: 'student-dashboard-degraded',
             tone: 'info' as const,
-            title: '学习控制台已切换为基础模式',
+            title: '今日学习已切换为基础模式',
             description: page.dashboardNotice,
           }
         : null,

@@ -1,11 +1,20 @@
 import type { TTSProviderId } from "@/lib/audio/types";
 import type { ImageProviderId } from "@/lib/media/types";
 import { SUBJECT_LABELS } from "@/lib/constants";
+import { PRODUCT_BRAND_NAME as PRODUCT_BRAND_NAME_VALUE } from "@/lib/classroom/brand";
+export {
+  CLASSROOM_PRODUCT_NAME,
+  PLATFORM_BRAND_NAME,
+  PLATFORM_BRAND_SUBTITLE,
+  PLATFORM_BRAND_TAGLINE,
+  PLATFORM_PRODUCT_NAME,
+  PRODUCT_BRAND_NAME,
+  PRODUCT_BRAND_SUBTITLE,
+  PRODUCT_BRAND_TAGLINE,
+  PRODUCT_SERVICE_NAME,
+} from "@/lib/classroom/brand";
 
-export const PRODUCT_BRAND_NAME = "航科互动课堂";
-export const PRODUCT_BRAND_SUBTITLE = "Interactive Classroom OS";
-export const PRODUCT_BRAND_TAGLINE = "为真实教学而生的数字课堂系统";
-export const PRODUCT_SERVICE_NAME = "hangke-interactive-classroom";
+const PRODUCT_BRAND_NAME = PRODUCT_BRAND_NAME_VALUE;
 
 export type ClassroomSource = "teacher-tools" | "library" | "direct" | "student-self-study";
 export type ClassroomAudienceMode = "teacher-private" | "whole-class";
@@ -416,7 +425,7 @@ export function buildClassroomAgents(
         role: "student" as const,
         persona: [
           learner
-            ? `你是正在自主使用航科互动课堂学习的学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`
+            ? `你是正在自主使用知序课堂学习的学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`
             : `你是${className}的真实学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`,
           styleSeed,
           learner

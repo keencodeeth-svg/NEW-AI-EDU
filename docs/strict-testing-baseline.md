@@ -119,10 +119,27 @@ corepack pnpm verify:strict
 - 公开入口页 zero critical accessibility violations
 - 学生工作台与练习流 zero critical accessibility violations
 - 教师工作台与课堂实时页 zero critical accessibility violations
+- 键盘首个 Tab 可达 `skip-link`，并能跳到 `#main-content`
+- 主题切换控件存在基础 ARIA 契约：`role=group`、可感知标签、按钮 `aria-pressed`
+
+当前本地视觉巡检已覆盖：
+
+- 公开页与登录后关键页桌面 / 移动视口截图落盘
+- JSON 巡检报告包含 `http status`、横向溢出、主题切换、关键壳层存在 / 不存在断言
+- 任一路由断言失败默认直接非零退出，不再是“有截图但门禁仍通过”
+- 默认输出仍兼容 `output/playwright/*`，但可通过环境变量覆盖截图目录、报告路径与基线路径
+
+视觉巡检本地入口：
+
+- `corepack pnpm test:visual`
+- 可通过 `VISUAL_CHECK_BASE_URL` 覆盖目标地址
+- 可通过 `VISUAL_CHECK_SCREENSHOT_DIR`、`VISUAL_CHECK_REPORT_PATH`、`VISUAL_CHECK_BASELINE_PATH` 定制产物路径
+- 可通过 `VISUAL_CHECK_MAX_FAILURES` 放宽允许失败数，默认 `0`
+- 如需把 a11y 门从 `critical` 扩大到 `serious + critical`，使用 `corepack pnpm test:a11y:serious`
 
 当前浏览器 smoke 还额外执行三条严格约束：
 
-- Playwright 启动的内置服务统一带 `API_TEST_SCOPE=playwright`，与 API 集成测试使用同一类测试运行时契约，避免 API/浏览器对高频状态存储策略不一致
+- Playwright 启动的内置服务统一带 `API_TEST_SCOPE=playwright`，默认显式清空 `DATABASE_URL`、设置 `REQUIRE_DATABASE=false` 与 `ALLOW_JSON_FALLBACK=true`，与 API 集成测试使用同一类隔离测试运行时契约，避免本机 `.env.local` 误连真实数据库；`PLAYWRIGHT_FORCE_PRODUCTION_LIKE=true` 时仍切回 `REQUIRE_DATABASE=true + ALLOW_JSON_FALLBACK=false`
 - 任一同源 `/api/*` 请求若返回 `4xx/5xx`，浏览器 smoke 将直接失败，不再允许“页面看起来通过但后台已经报错”
 - CI 额外执行 `production-like-regression`，在 `DATABASE_URL + REQUIRE_DATABASE=true + ALLOW_JSON_FALLBACK=false + OBJECT_STORAGE_ROOT` 下先跑最小 smoke，再跑浏览器 smoke 与学校排课深回归
 

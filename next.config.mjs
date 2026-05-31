@@ -70,6 +70,9 @@ const securityHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   output: process.env.VERCEL ? undefined : "standalone",
+  outputFileTracingIncludes: {
+    "/*": ["./lib/generation/prompts/**/*"],
+  },
   transpilePackages: ["mathml2omml", "pptxgenjs"],
   serverExternalPackages: [],
   experimental: {

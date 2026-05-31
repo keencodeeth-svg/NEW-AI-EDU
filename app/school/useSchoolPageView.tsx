@@ -18,8 +18,8 @@ export function useSchoolPageView() {
   const overview = page.overview as SchoolOverview | null;
 
   const workspacePageProps: Omit<ComponentProps<typeof WorkspacePage>, "children"> = {
-    title: "学校控制台",
-    subtitle: "统一查看学校组织运行、班级执行、课程表覆盖与成员状态，并给出优先整改动作。",
+    title: "学校质量视图",
+    subtitle: "统一查看学校组织运行、班级执行、课程表覆盖与成员状态，并给出优先跟进动作。",
     lastLoadedAt: page.lastLoadedAt,
     chips: [
       <span key="school-admin" className="chip">
@@ -29,7 +29,7 @@ export function useSchoolPageView() {
     actions: (
       <>
         <Link className="button ghost" href="/school/interactive-classrooms">
-          互动课堂治理
+          课堂质量中心
         </Link>
         <Link className="button ghost" href="/school/schedules">
           课程表管理

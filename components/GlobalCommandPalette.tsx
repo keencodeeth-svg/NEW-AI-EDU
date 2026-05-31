@@ -33,7 +33,7 @@ const SEARCH_ALIASES_BY_HREF: Record<string, string[]> = {
   "/school/schedules": ["学校排课", "学校课表", "课程表管理", "课表管理", "AI排课", "一键排课"],
   "/school/classes": ["班级", "班级管理"],
   "/school/teachers": ["教师管理", "老师管理"],
-  "/school/interactive-classrooms": ["互动课堂治理", "互动课堂治理中心", "课堂治理", "交付治理", "课堂交付", "学校互动课堂"]
+  "/school/interactive-classrooms": ["课堂质量", "课堂质量中心", "知序课堂", "课堂使用", "学校互动课堂"]
 };
 
 function buildAliases(item: NavLink) {

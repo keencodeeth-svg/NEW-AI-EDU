@@ -22,9 +22,9 @@ voiceover:
 scenes:
   - id: "intro"
     type: "title"
-    title: "航科 AI 教育平台"
+    title: "知序学习平台"
     subtitle: "学生端与互动课堂演示"
-    narration: "下面我们完整演示航科 AI 教育平台的学生端首页，以及学生自主互动课堂入口。"
+    narration: "下面我们完整演示知序学习平台的学生端首页，以及学生自主互动课堂入口。"
 
   - id: "login"
     type: "interaction"
