@@ -1041,6 +1041,30 @@ test.describe("browser smoke", () => {
     await expect(page.getByTestId("ai-classroom-enter")).toBeEnabled();
   });
 
+  test("student self-study guest mode states real data boundaries", async ({ page }) => {
+    expectApiFailure(page, {
+      method: "GET",
+      path: "/api/auth/me",
+      status: 503
+    });
+    await page.route("**/api/auth/me", (route) =>
+      route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "service temporarily unavailable" })
+      })
+    );
+
+    await page.goto("/student/interactive-classroom?mode=interest-cultivation");
+    await expect(page.getByRole("heading", { name: "知序课堂" })).toBeVisible({
+      timeout: 15_000
+    });
+    await expect(page.getByText("访客体验模式")).toBeVisible();
+    await expect(page.getByText("真实画像、今日任务和课表暂未接入")).toBeVisible();
+    await expect(page.getByText("默认学习档案")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "登录同步个人进度" })).toBeVisible();
+  });
+
   test("student can upload assignment evidence and teacher can review/download it", async ({ page }) => {
     const studentEmail = `${uniqueId("assignment-upload-student")}@local.test`;
     const teacherEmail = `${uniqueId("assignment-upload-teacher")}@local.test`;

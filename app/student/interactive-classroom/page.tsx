@@ -400,7 +400,7 @@ export default function StudentInteractiveClassroomPage() {
           setModules([]);
           setAssignments([]);
           setBootstrapNotice(
-            '当前已切换为访客体验模式。教务、画像和个人进度暂未接入，系统已带入一套可直接开课的默认学习档案。',
+            '当前已切换为访客体验模式。真实画像、今日任务和课表暂未接入；本页仅提供示例课堂流程，登录后才会同步个人进度与真实学习数据。',
           );
           setLastLoadedAt(new Date().toISOString());
           return;
@@ -1184,6 +1184,32 @@ export default function StudentInteractiveClassroomPage() {
     .filter(Boolean)
     .join(' · ');
   const modeOutcomeSummary = activeConfig.deliverables.slice(0, 2).join(' / ');
+  const contextualPromiseCopy = guestExperienceMode
+    ? '当前为体验模式，只展示示例课堂流程；登录后才会接入真实画像、今日任务、课表和个人进度。'
+    : '系统会自动带入真实课堂上下文，让讲解、练习、回看与导出保持同一条学习主线。';
+  const launchActionValue = guestExperienceMode
+    ? '进入体验课堂'
+    : recentResumeHref
+      ? '可以继续上次进度'
+      : '一键进入互动课堂';
+  const launchActionHelper = guestExperienceMode
+    ? '课堂内容会按示例流程生成，不会写入或宣称使用真实个人数据'
+    : '课堂结束后再回到作业、模块或追练页面做收口';
+  const launchHeadingCopy = guestExperienceMode ? '从这里进入体验课堂' : '从这里直接进入互动课堂';
+  const launchDescriptionCopy = guestExperienceMode
+    ? '先体验课堂生成和互动节奏；登录后再把真实任务、模块和个人进度接回来。'
+    : '先用最少设定开课，再把这次学习接回任务、模块和后续追练。';
+  const editorAutomaticValue = guestExperienceMode ? '体验模式会标注边界' : '系统会补齐';
+  const editorAutomaticHelper = guestExperienceMode
+    ? '当前不会宣称已接入真实画像、任务或课表；登录后再同步个人学习数据。'
+    : '会自动带入教务角色、学习画像、模块和任务联动。';
+  const launchButtonLabel = useMemo(() => {
+    if (guestExperienceMode) return '进入体验课堂';
+    if (mode === 'preview-preparation') return '生成预习课堂并进入';
+    if (mode === 'subject-reinforcement') return '生成巩固课堂并进入';
+    if (mode === 'classroom-review') return '生成回看课堂并进入';
+    return '生成探索课堂并进入';
+  }, [guestExperienceMode, mode]);
   const actionChecklist = [
     {
       id: 'mode',
@@ -1202,8 +1228,8 @@ export default function StudentInteractiveClassroomPage() {
     {
       id: 'launch',
       label: '最后开课',
-      value: recentResumeHref ? '可以继续上次进度' : '一键进入互动课堂',
-      helper: '课堂结束后再回到作业、模块或追练页面做收口',
+      value: launchActionValue,
+      helper: launchActionHelper,
     },
   ];
   const quickStartHighlights = [
@@ -1277,8 +1303,8 @@ export default function StudentInteractiveClassroomPage() {
     {
       id: 'automatic',
       label: '系统会补齐',
-      value: '角色、节奏、上下文',
-      helper: '会自动带入教务角色、学习画像、模块和任务联动。',
+      value: editorAutomaticValue,
+      helper: editorAutomaticHelper,
     },
     {
       id: 'outcome',
@@ -1425,13 +1451,6 @@ export default function StudentInteractiveClassroomPage() {
     }
     updateTopicDraft(nextMode, recommendedTopics[nextMode] || `${selectedSubjectLabel}重点巩固`);
   };
-
-  const launchButtonLabel = useMemo(() => {
-    if (mode === 'preview-preparation') return '生成预习课堂并进入';
-    if (mode === 'subject-reinforcement') return '生成巩固课堂并进入';
-    if (mode === 'classroom-review') return '生成回看课堂并进入';
-    return '生成探索课堂并进入';
-  }, [mode]);
 
   const handleLaunch = async () => {
     if (mode === 'interest-cultivation' && !activeTopic) {
@@ -1694,7 +1713,7 @@ export default function StudentInteractiveClassroomPage() {
             围绕「{currentTopicDisplay}」开始一节{buildLearningModeLabel(mode)}
           </div>
           <p className="student-self-study-focus-description">
-            {activeConfig.summary} 系统会自动带入真实课堂上下文，让讲解、练习、回看与导出保持同一条学习主线。
+            {activeConfig.summary} {contextualPromiseCopy}
           </p>
           <div className="pill-list" style={{ marginTop: 14 }}>
             <span className="pill">{stageLabel}</span>
@@ -1766,9 +1785,9 @@ export default function StudentInteractiveClassroomPage() {
 
         <div className="workflow-spotlight-card student-self-study-action-card">
           <div className="student-self-study-focus-kicker">快速开课</div>
-          <div className="student-self-study-action-title">从这里直接进入互动课堂</div>
+          <div className="student-self-study-action-title">{launchHeadingCopy}</div>
           <p className="student-self-study-action-description">
-            先用最少设定开课，再把这次学习接回任务、模块和后续追练。
+            {launchDescriptionCopy}
           </p>
           <div className="student-self-study-action-note">当前建议：{recommendedReason}</div>
           <div className="cta-row" style={{ marginTop: 0 }}>
