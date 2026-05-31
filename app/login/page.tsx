@@ -114,7 +114,7 @@ export default function LoginPage() {
               autoComplete="current-password"
               value={loginPage.password}
               onChange={(event) => loginPage.setField("password", event.target.value)}
-              placeholder="Student123"
+              placeholder="请输入账号密码"
               aria-invalid={Boolean(loginPage.error)}
               aria-describedby={errorId}
               required
@@ -155,12 +155,6 @@ export default function LoginPage() {
             </details>
           </section>
         </div>
-        <details className="auth-demo-details">
-          <summary>内部演示账号</summary>
-          <div className="auth-footnote">
-            student@demo.com / Student123（可切换身份后登录）
-          </div>
-        </details>
       </Card>
     </div>
   );

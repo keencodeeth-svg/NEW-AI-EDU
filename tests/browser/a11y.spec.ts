@@ -133,6 +133,10 @@ test.describe("browser accessibility", () => {
     await page.goto("/login");
     await expectSkipLinkKeyboardReachable(page);
     await expectThemeToggleAria(page);
+    await expect(page.getByLabel("邮箱")).not.toHaveAttribute("placeholder", /demo\.com/i);
+    await expect(page.getByLabel("密码")).not.toHaveAttribute("placeholder", /Student123/i);
+    await expect(page.getByText("内部演示账号")).toHaveCount(0);
+    await expect(page.getByText(/student@demo\.com|Student123/)).toHaveCount(0);
     await expectNoCriticalViolations(page, "登录页");
 
     await page.goto("/register");

@@ -57,11 +57,11 @@ export const loginRegistrationMap: Record<
 };
 
 export const loginPlaceholderMap: Record<LoginRole, string> = {
-  student: "student@demo.com",
-  teacher: "teacher@demo.com",
-  parent: "parent@demo.com",
-  admin: "admin@demo.com",
-  school_admin: "school-admin@demo.com"
+  student: "请输入学生账号邮箱",
+  teacher: "请输入教师账号邮箱",
+  parent: "请输入家长账号邮箱",
+  admin: "请输入管理员账号邮箱",
+  school_admin: "请输入学校管理员账号邮箱"
 };
 
 function formatLockUntil(lockUntil?: string | null) {
