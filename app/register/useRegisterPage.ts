@@ -33,6 +33,8 @@ export function useRegisterPage() {
 
   const setField = useCallback(<K extends keyof RegisterFormState>(field: K, value: RegisterFormState[K]) => {
     setForm((current) => ({ ...current, [field]: value }));
+    setError(null);
+    setMessage(null);
   }, []);
 
   useEffect(() => {

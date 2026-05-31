@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import Link from "next/link";
 import Card from "@/components/Card";
 import StatePanel from "@/components/StatePanel";
@@ -14,6 +15,35 @@ import {
 
 export default function RecoverPage() {
   const recoverPage = useRecoverPage();
+  const roleButtonRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const errorId = recoverPage.error ? "recover-form-error" : undefined;
+
+  const handleRoleKeyDown = (index: number, key: string) => {
+    if (key === "ArrowRight" || key === "ArrowDown") {
+      const nextIndex = (index + 1) % recoveryRoleOptions.length;
+      recoverPage.setField("role", recoveryRoleOptions[nextIndex].value);
+      roleButtonRefs.current[nextIndex]?.focus();
+      return true;
+    }
+    if (key === "ArrowLeft" || key === "ArrowUp") {
+      const nextIndex = (index - 1 + recoveryRoleOptions.length) % recoveryRoleOptions.length;
+      recoverPage.setField("role", recoveryRoleOptions[nextIndex].value);
+      roleButtonRefs.current[nextIndex]?.focus();
+      return true;
+    }
+    if (key === "Home") {
+      recoverPage.setField("role", recoveryRoleOptions[0].value);
+      roleButtonRefs.current[0]?.focus();
+      return true;
+    }
+    if (key === "End") {
+      const lastIndex = recoveryRoleOptions.length - 1;
+      recoverPage.setField("role", recoveryRoleOptions[lastIndex].value);
+      roleButtonRefs.current[lastIndex]?.focus();
+      return true;
+    }
+    return false;
+  };
 
   return (
     <div className="grid auth-page" style={{ gap: 18, maxWidth: 620 }}>
@@ -59,22 +89,36 @@ export default function RecoverPage() {
 
       <Card title="提交恢复请求" tag="安全流程">
         <form onSubmit={recoverPage.handleSubmit} className="auth-form">
-          <div>
-            <div className="section-title">选择身份</div>
-            <div className="role-grid">
-              {recoveryRoleOptions.map((option) => (
+          <fieldset className="auth-role-fieldset">
+            <legend className="section-title">选择恢复身份</legend>
+            <p className="form-note auth-role-note">选择最接近当前账号的身份，管理员会按该身份核验信息。</p>
+            <div className="role-grid" role="radiogroup" aria-label="选择恢复身份">
+              {recoveryRoleOptions.map((option, index) => (
                 <button
                   key={option.value}
+                  ref={(node) => {
+                    roleButtonRefs.current[index] = node;
+                  }}
                   type="button"
+                  role="radio"
+                  aria-checked={recoverPage.role === option.value}
+                  tabIndex={recoverPage.role === option.value ? 0 : -1}
                   className={`role-card${recoverPage.role === option.value ? " active" : ""}`}
+                  disabled={recoverPage.loading}
                   onClick={() => recoverPage.setField("role", option.value)}
+                  onKeyDown={(event) => {
+                    if (handleRoleKeyDown(index, event.key)) {
+                      event.preventDefault();
+                    }
+                  }}
                 >
+                  <span className="sr-only">{recoverPage.role === option.value ? "已选中" : "未选中"}</span>
                   <div className="role-title">{option.label}</div>
                   <div className="role-desc">{option.desc}</div>
                 </button>
               ))}
             </div>
-          </div>
+          </fieldset>
 
           <label className="form-field">
             <div className="section-title">问题类型</div>
@@ -83,6 +127,7 @@ export default function RecoverPage() {
               value={recoverPage.issueType}
               onChange={(event) => recoverPage.setField("issueType", event.target.value as RecoveryIssueType)}
               disabled={recoverPage.loading}
+              aria-describedby={errorId}
             >
               {recoveryIssueOptions.map((item) => (
                 <option key={item.value} value={item.value}>
@@ -103,7 +148,10 @@ export default function RecoverPage() {
               value={recoverPage.email}
               onChange={(event) => recoverPage.setField("email", event.target.value)}
               placeholder="请输入注册时使用的邮箱"
+              aria-invalid={Boolean(recoverPage.error)}
+              aria-describedby={errorId}
               required
+              disabled={recoverPage.loading}
             />
           </label>
 
@@ -131,6 +179,7 @@ export default function RecoverPage() {
                 onChange={(event) => recoverPage.setField("studentEmail", event.target.value)}
                 placeholder="若记得可填写，便于加快处理"
                 disabled={recoverPage.loading}
+                autoComplete="email"
               />
             </label>
           ) : null}
@@ -162,7 +211,11 @@ export default function RecoverPage() {
           </label>
 
           <PasswordPolicyHint />
-          {recoverPage.error ? <div className="status-note error">{recoverPage.error}</div> : null}
+          {recoverPage.error ? (
+            <div className="status-note error" id={errorId} role="alert" aria-live="assertive">
+              {recoverPage.error}
+            </div>
+          ) : null}
 
           <button className="button primary" type="submit" disabled={recoverPage.loading || !recoverPage.email.trim()}>
             {recoverPage.loading ? "提交中..." : "提交恢复请求"}

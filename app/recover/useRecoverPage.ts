@@ -46,6 +46,9 @@ export function useRecoverPage() {
 
   const setField = useCallback(<K extends keyof RecoverFormState>(field: K, value: RecoverFormState[K]) => {
     setForm((current) => ({ ...current, [field]: value }));
+    setError(null);
+    setResult(null);
+    setResultMessage("");
   }, []);
 
   const handleSubmit = useCallback(

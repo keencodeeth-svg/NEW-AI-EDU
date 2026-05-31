@@ -134,6 +134,46 @@ test.describe("browser accessibility", () => {
     await expectSkipLinkKeyboardReachable(page);
     await expectThemeToggleAria(page);
     await expectNoCriticalViolations(page, "登录页");
+
+    await page.goto("/register");
+    await expectThemeToggleAria(page);
+    await expect(page.getByRole("radiogroup", { name: "选择注册身份" })).toBeVisible();
+    await expect(page.getByRole("radio", { name: /学生/ })).toHaveAttribute("aria-checked", "true");
+    await expect(page.getByLabel("姓名")).toHaveAttribute("autocomplete", "name");
+    await expect(page.getByLabel("邮箱")).toHaveAttribute("type", "email");
+    await expect(page.getByLabel("邮箱")).toHaveAttribute("autocomplete", "username");
+    await expect(page.getByLabel("密码")).toHaveAttribute("autocomplete", "new-password");
+    await page.route("**/api/auth/register", (route) =>
+      route.fulfill({
+        status: 409,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "email exists" })
+      })
+    );
+    await page.getByLabel("姓名").fill("公共入口测试学生");
+    await page.getByLabel("邮箱").fill(`${uniqueId("register-a11y")}@local.test`);
+    await page.getByLabel("密码").fill(PASSWORD);
+    await page.getByRole("button", { name: "注册" }).click();
+    await expect(page.locator("#register-form-error")).toHaveAttribute("role", "alert");
+    await expect(page.locator("#register-form-error")).toContainText("该邮箱已注册");
+    await expectNoCriticalViolations(page, "注册页");
+
+    await page.goto("/recover");
+    await expectThemeToggleAria(page);
+    await expect(page.getByRole("radiogroup", { name: "选择恢复身份" })).toBeVisible();
+    await expect(page.getByRole("radio", { name: /学生/ })).toHaveAttribute("aria-checked", "true");
+    await page.route("**/api/auth/recovery-request", (route) =>
+      route.fulfill({
+        status: 429,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "rate limited" })
+      })
+    );
+    await page.getByRole("textbox", { name: "注册邮箱" }).fill(`${uniqueId("recover-a11y")}@local.test`);
+    await page.getByRole("button", { name: "提交恢复请求" }).click();
+    await expect(page.locator("#recover-form-error")).toHaveAttribute("role", "alert");
+    await expect(page.locator("#recover-form-error")).toContainText("恢复请求提交过于频繁");
+    await expectNoCriticalViolations(page, "账号恢复页");
   });
 
   test("student dashboard and practice flow keep critical accessibility issues at zero", async ({ page }) => {
