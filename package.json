@@ -59,6 +59,7 @@
     "test:smoke:production-like:local": "bash scripts/run-production-like-smoke-local.sh",
     "test:school-schedules:production-like:local": "PRODUCTION_LIKE_TEST_SCRIPT=test:school-schedules:production-like bash scripts/run-production-like-smoke-local.sh",
     "launch:readiness": "node scripts/launch-readiness-report.mjs",
+    "launch:readiness:strict": "node scripts/launch-readiness-report.mjs --strict",
     "export:users": "node scripts/export-users.mjs",
     "security:migrate-passwords": "node scripts/migrate-password-hash.mjs",
     "storage:migrate": "node scripts/migrate-file-payloads-to-object-storage.mjs",

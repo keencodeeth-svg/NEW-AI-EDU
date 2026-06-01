@@ -20,13 +20,14 @@
 
 ```bash
 corepack pnpm verify:strict
+corepack pnpm launch:readiness:strict
 corepack pnpm test:smoke:production-like:local
 ```
 
 当前基线说明：
-- 2026-04-05 已通过 `corepack pnpm launch:readiness`，结果为 `pass 5 / warn 1 / fail 0`
-- 唯一预警是当前环境为 `development`，严格 runtime guardrails 已由同日 `corepack pnpm test:smoke:production-like:local` 补充复核
-- 若本次改动直接影响管理员配置、模型路由、巡检令牌或会话依赖，建议把 `corepack pnpm launch:readiness` 也纳入发布前固定步骤
+- `corepack pnpm launch:readiness:strict` 是固定发布门禁，会强制使用 strict launch mode，不依赖当前 shell 的 `NODE_ENV`。
+- strict readiness 会把缺失 `DATABASE_URL`、`READINESS_PROBE_TOKEN`、`ADMIN_STEP_UP_SECRET`、不合规 JSON fallback、缺失可用 AI 模型链等问题作为发布阻断。
+- 只读查看本地开发态准备情况时，可以使用 `corepack pnpm launch:readiness`；正式 staging / production 发布前必须使用 strict 入口。
 
 如果本次变更直接影响浏览器关键流程、对象存储读写链路或 production-like 浏览器回归，再额外执行：
 
@@ -65,6 +66,12 @@ corepack pnpm test:smoke:production-like:local
 - 已准备远端 smoke 使用的管理员账号
 - 已准备远端 smoke 读取的学校 ID（默认 `school-default`，可通过 `API_TEST_SMOKE_SCHOOL_ID` 覆盖）
 - 已准备本次发布的 commit / tag / rollback 目标版本
+- 已记录公网 HTTPS 证书有效期：
+
+```bash
+echo | openssl s_client -connect eduai.net.cn:443 -servername eduai.net.cn 2>/dev/null | \
+openssl x509 -noout -issuer -subject -dates
+```
 
 推荐记录：
 - 发布人

@@ -146,6 +146,17 @@ function shouldEnforceRuntimeGuardrails() {
   return process.env.NODE_ENV === "production";
 }
 
+function shouldUseStrictLaunchMode(args) {
+  if (args.has("--strict")) {
+    return true;
+  }
+  const explicit = parseBooleanEnv(process.env.LAUNCH_READINESS_STRICT);
+  if (explicit !== null) {
+    return explicit;
+  }
+  return shouldEnforceRuntimeGuardrails() || process.env.REQUIRE_DATABASE === "true";
+}
+
 function buildRuntimeChecks(strict) {
   const checks = [];
   const guardrailIssues = [];
@@ -367,7 +378,7 @@ async function main() {
 
   const args = new Set(process.argv.slice(2));
   const jsonMode = args.has("--json");
-  const strict = shouldEnforceRuntimeGuardrails() || process.env.REQUIRE_DATABASE === "true";
+  const strict = shouldUseStrictLaunchMode(args);
   const items = [];
   const runtimeChecks = buildRuntimeChecks(strict);
   const runtimeSummary = summarize(runtimeChecks);
