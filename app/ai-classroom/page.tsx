@@ -1246,7 +1246,7 @@ function HomePage() {
               <div className="min-w-0 lg:pr-2">
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={classroomTonePill('sky', 'font-medium')}>
-                    知序课堂工作区
+                    航科互动课堂工作区
                   </span>
                   {classroomModeLabel ? (
                     <span className={classroomTonePill('emerald', 'font-medium')}>
@@ -2026,7 +2026,7 @@ function HomePage() {
 
       {/* Footer — flows with content, at the very end */}
       <div className="pt-10 pb-3 text-center text-xs text-muted-foreground/50">
-        {PRODUCT_BRAND_NAME} · 知序学习平台课堂学习空间
+        {PRODUCT_BRAND_NAME} · 航科 AI 教育平台课堂学习空间
       </div>
     </div>
   );

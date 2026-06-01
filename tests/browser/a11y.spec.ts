@@ -426,7 +426,7 @@ test.describe("browser accessibility", () => {
       })
     );
     await page.goto("/student/interactive-classroom?mode=interest-cultivation");
-    await expect(page.getByRole("heading", { name: "知序课堂" })).toBeVisible({
+    await expect(page.getByRole("heading", { name: "航科互动课堂" })).toBeVisible({
       timeout: 15_000
     });
     await expect(page.getByText("体验模式").first()).toBeVisible();

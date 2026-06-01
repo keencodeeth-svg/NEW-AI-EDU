@@ -393,7 +393,7 @@ export default function TeacherDigitalHumanCard() {
           <div className="card" style={{ padding: 12 }}>
             <div className="section-title">课堂中会自动使用</div>
             <div style={{ marginTop: 8, fontSize: 13, lineHeight: 1.7 }}>
-              保存后，这套数字人会自动进入老师发起的知序课堂，用于班级授课、自主巩固课堂和导出资源中的教师身份表达。
+              保存后，这套数字人会自动进入老师发起的航科互动课堂，用于班级授课、自主巩固课堂和导出资源中的教师身份表达。
             </div>
             <div className="badge-row" style={{ marginTop: 10 }}>
               <span className="badge">全班观看主讲老师</span>

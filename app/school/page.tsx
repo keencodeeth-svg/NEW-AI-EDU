@@ -59,7 +59,7 @@ export default function SchoolPage() {
       lead={
         <WorkspaceHero
           eyebrow="学校课堂质量"
-          title="先看覆盖缺口，再把知序课堂、课程表和班级支持推进到真实执行"
+          title="先看覆盖缺口，再把航科互动课堂、课程表和班级支持推进到真实执行"
           description="学校首屏不再只是堆指标，而是把组织覆盖、课堂传播和需要优先跟进的班级收敛成一条质量路径。学校管理员可以先处理最影响教学运行的问题，再展开组织清单。"
           badges={[
             `学校班级 ${schoolOverview.classCount}`,
@@ -127,7 +127,7 @@ export default function SchoolPage() {
       <div className="section-head">
         <div>
           <h2>学校质量与课堂应用</h2>
-          <div className="section-sub">先看学校整体覆盖、知序课堂应用和需要立即处理的班级，避免首页被长列表淹没。</div>
+          <div className="section-sub">先看学校整体覆盖、航科互动课堂应用和需要立即处理的班级，避免首页被长列表淹没。</div>
         </div>
         <span className="chip">质量总览</span>
       </div>

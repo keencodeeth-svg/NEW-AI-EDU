@@ -73,7 +73,7 @@ export function Stage({
   const audienceTeacherLabel =
     classroomMeta?.teacher?.digitalHuman?.displayName ||
     classroomMeta?.teacher?.name ||
-    (classroomMeta?.source === 'student-self-study' ? '知序导学老师' : null);
+    (classroomMeta?.source === 'student-self-study' ? '航科导学老师' : null);
   const audienceStageTitle =
     currentScene?.title ||
     (audienceTopicLabel && classroomMeta?.learningMode === 'subject-reinforcement'

@@ -123,8 +123,8 @@ export default function TeacherAiToolsPage() {
   ];
   const workflowFocusText = selectedOutlineClass
     ? currentTopic
-      ? "当前已具备班级与主题，可以直接进入知序课堂生成整班可观看的互动内容。"
-      : "班级已就绪，补充课堂主题后即可把当前备课上下文送入知序课堂。"
+      ? "当前已具备班级与主题，可以直接进入航科互动课堂生成整班可观看的互动内容。"
+      : "班级已就绪，补充课堂主题后即可把当前备课上下文送入航科互动课堂。"
     : "先选择班级，再确定主题与知识点，首屏就能顺滑进入互动课堂。";
   const workflowReadySteps = [
     selectedOutlineClass ? "班级已锁定" : "等待班级选择",
@@ -269,7 +269,7 @@ export default function TeacherAiToolsPage() {
       <div className="section-head">
         <div>
           <h2>AI 教学工具</h2>
-          <div className="section-sub">一站式组卷、讲稿、数字人与知序课堂联动。</div>
+          <div className="section-sub">一站式组卷、讲稿、数字人与航科互动课堂联动。</div>
         </div>
         <div className="workflow-toolbar">
           <span className="chip">教学助手</span>
@@ -311,7 +311,7 @@ export default function TeacherAiToolsPage() {
               <div className="section-title">当前焦点</div>
               <div style={{ marginTop: 8, fontSize: 14, lineHeight: 1.8 }}>{workflowFocusText}</div>
               <div className="workflow-card-meta" style={{ marginTop: 12 }}>
-                <span className="pill">知序课堂已融合教师工具流</span>
+                <span className="pill">航科互动课堂已融合教师工具流</span>
                 <span className="pill">支持全班观看与导出</span>
                 <span className="pill">支持学生自主巩固与兴趣学习延展</span>
               </div>
@@ -331,7 +331,7 @@ export default function TeacherAiToolsPage() {
         </div>
       </Card>
 
-      <Card title="知序课堂" tag="学习闭环">
+      <Card title="航科互动课堂" tag="学习闭环">
         <div className="grid" style={{ gap: 10 }} data-testid="teacher-ai-tools-classroom-panel">
           <div style={{ fontSize: 14, lineHeight: 1.7 }}>
             可以把当前教师工具页里的班级、主题、知识点和教师数字人一起送入课堂学习系统，继续完成讲义驱动、多角色、场景化的课堂生成。生成后的课堂同时支持全班观看发布，以及 PPTX / 资源包导出。
@@ -383,7 +383,7 @@ export default function TeacherAiToolsPage() {
               disabled={!selectedOutlineClass || launchingInteractiveClassroom}
               data-testid="teacher-launch-ai-classroom"
             >
-              {launchingInteractiveClassroom ? "启动中..." : "带当前班级进入知序课堂"}
+              {launchingInteractiveClassroom ? "启动中..." : "带当前班级进入航科互动课堂"}
             </button>
             <Link className="button ghost" href="/library">
               先从教材资料启动

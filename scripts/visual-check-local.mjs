@@ -88,7 +88,7 @@ const studentRoutes = [
     route: "/student/interactive-classroom",
     slug: "student-interactive-classroom",
     expectedShell: "authenticated",
-    headingText: "知序课堂",
+    headingText: "航科互动课堂",
     requireSidebarOnDesktop: true,
     requireMobileTabbarOnMobile: true,
     requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],

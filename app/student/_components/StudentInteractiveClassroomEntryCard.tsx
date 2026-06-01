@@ -123,7 +123,7 @@ export default function StudentInteractiveClassroomEntryCard({
   const outputCapabilities = ['数字老师讲解', '即时练习', '课后回看', '导出分享'];
 
   return (
-    <Card title="知序课堂" tag="学生自学" bodyClassName="student-classroom-entry-body">
+    <Card title="航科互动课堂" tag="学生自学" bodyClassName="student-classroom-entry-body">
       <div className="student-classroom-entry-grid">
         <div className="student-classroom-entry-main">
           <div className="student-classroom-entry-hero">

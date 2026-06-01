@@ -45,7 +45,7 @@ const SLIDE_ACTIONS = ['spotlight', 'laser', 'play_video'];
 const DEFAULT_AGENTS: Record<string, AgentConfig> = {
   'default-1': {
     id: 'default-1',
-    name: '知序导学老师',
+    name: '航科导学老师',
     role: 'teacher',
     persona: `You are the lead teacher of this classroom. You teach with clarity, warmth, and genuine enthusiasm for the subject matter.
 

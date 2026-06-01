@@ -1,11 +1,11 @@
 ---
 name: hangke-classroom
-description: Guided SOP for setting up and using Zhixu Classroom locally. Use when the user wants to initialize the repo, choose a startup mode, configure unified provider keys, start the service, or generate/publish/export a classroom. Proceed one phase at a time and ask for confirmation before each state-changing action.
+description: Guided SOP for setting up and using Hangke Classroom locally. Use when the user wants to initialize the repo, choose a startup mode, configure unified provider keys, start the service, or generate/publish/export a classroom. Proceed one phase at a time and ask for confirmation before each state-changing action.
 user-invocable: true
 metadata: { "hangke": { "emoji": "🏫" } }
 ---
 
-# Zhixu Classroom Skill
+# Hangke Classroom Skill
 
 Use this skill as a confirmation-heavy local deployment and classroom delivery SOP.
 
@@ -23,7 +23,7 @@ Use this skill as a confirmation-heavy local deployment and classroom delivery S
 
 ## Optional Skill Config
 
-If present, read defaults from `~/.zhixu-edu/classroom.json` under:
+If present, read defaults from `~/.hangke-edu/classroom.json` under:
 
 ```jsonc
 {

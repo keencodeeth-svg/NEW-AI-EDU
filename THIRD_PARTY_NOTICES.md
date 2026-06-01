@@ -20,4 +20,4 @@ Some avatar SVG assets under `public/avatars/` are retained for compatibility wi
 
 ## Brand Assets
 
-The current product mark under `public/logos/zhixu-mark.svg` is project-specific application artwork. Historical compatibility filenames may remain where needed so older references do not break.
+The current product mark under `public/logos/hangke-mark.svg` is project-specific application artwork. Historical compatibility filenames may remain where needed so older references do not break.

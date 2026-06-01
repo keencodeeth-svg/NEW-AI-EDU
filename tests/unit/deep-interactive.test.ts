@@ -10,7 +10,7 @@ import {
   normalizeSceneOutlineRuntime,
 } from '../../lib/generation/runtime-validators';
 
-test('deep interactive guidance includes the Zhixu classroom widget contract', () => {
+test('deep interactive guidance includes the Hangke classroom widget contract', () => {
   const guidance = buildDeepInteractivePromptGuidance('deep-interactive');
 
   assert.match(guidance, /Interactive Classroom Mode/);

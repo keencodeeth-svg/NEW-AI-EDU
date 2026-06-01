@@ -18,9 +18,9 @@ export function buildDeepInteractivePromptGuidance(mode?: string): string {
   if (!isDeepInteractiveMode(mode)) return '';
 
   return `
-## Zhixu Interactive Classroom Mode
+## Hangke Interactive Classroom Mode
 
-The user enabled Zhixu Interactive Classroom Mode. Design this course as an interactive-first learning experience using the internal classroom widget contract:
+The user enabled Hangke Interactive Classroom Mode. Design this course as an interactive-first learning experience using the internal classroom widget contract:
 
 - Prefer hands-on interactive scenes over passive slides when the concept benefits from exploration.
 - Target roughly 60-70% interactive scenes and 30-40% slides/quiz transitions, unless the topic is unsuitable.

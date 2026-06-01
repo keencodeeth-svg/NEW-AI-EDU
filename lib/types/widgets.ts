@@ -1,5 +1,5 @@
 /**
- * Zhixu interactive classroom widget schemas.
+ * Hangke interactive classroom widget schemas.
  *
  * These renderer-agnostic schemas define the structured classroom interaction
  * contract used by scene generation today and richer native renderers later.

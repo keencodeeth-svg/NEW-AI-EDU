@@ -101,7 +101,7 @@ export function HomeHeroSection({
           </div>
           <div className="home-stage-priority">
             <span className="home-stage-priority-label">次入口</span>
-            <div className="home-stage-priority-value">知序课堂作为明确的课堂入口</div>
+            <div className="home-stage-priority-value">航科互动课堂作为明确的课堂入口</div>
             <p>当用户已经知道自己要开课、看课或发布课堂时，再进入课堂产品线，不在第一屏抢主目标。</p>
           </div>
         </div>

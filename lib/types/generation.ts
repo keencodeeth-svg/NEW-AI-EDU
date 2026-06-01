@@ -70,7 +70,7 @@ export interface UserRequirements {
   userNickname?: string; // Student nickname for personalization
   userBio?: string; // Student background for personalization
   webSearch?: boolean; // Enable web search for richer context
-  generationMode?: 'standard' | 'deep-interactive'; // Zhixu classroom interactive-first generation
+  generationMode?: 'standard' | 'deep-interactive'; // Hangke classroom interactive-first generation
 }
 
 /**
@@ -121,7 +121,7 @@ export interface SceneOutline {
     designIdea: string;
     subject?: string;
   };
-  // Zhixu interactive classroom widget contract
+  // Hangke interactive classroom widget contract
   widgetType?: WidgetType;
   widgetOutline?: WidgetConfig | Record<string, unknown>;
   // PBL-specific config

@@ -107,7 +107,7 @@ export const ENTRY_ITEMS: EntryItem[] = [
   },
   {
     id: "interactive-classroom",
-    title: "知序课堂",
+    title: "航科互动课堂",
     tag: "自学",
     description: "按薄弱点做学科巩固，或围绕兴趣主题生成可回看的互动课堂。",
     href: "/student/interactive-classroom",

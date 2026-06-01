@@ -560,7 +560,7 @@ export function useSchoolInteractiveClassroomsPage() {
       (payload?.filterOptions.subjects.length ?? 0) > 1
     ) {
       const focusedSubject = filteredRecords.find((item) => item.subject)?.subject || "单一学科";
-      tips.push(`当前课堂数据主要集中在 ${focusedSubject}，建议向更多学科复制知序课堂工作流，避免只在单点学科起量。`);
+      tips.push(`当前课堂数据主要集中在 ${focusedSubject}，建议向更多学科复制航科互动课堂工作流，避免只在单点学科起量。`);
     }
     if (!tips.length) {
       tips.push("当前范围内已经形成教师发布、学生自学和资源沉淀的基础闭环，下一步建议对比不同班级和教研组的扩散速度。");
@@ -654,7 +654,7 @@ export function useSchoolInteractiveClassroomsPage() {
     ].join("\n");
 
     downloadTextFile(
-      buildDownloadName("zhixu-classroom-quality-report", "md"),
+      buildDownloadName("hangke-classroom-quality-report", "md"),
       report,
       "text/markdown;charset=utf-8",
     );
@@ -717,7 +717,7 @@ export function useSchoolInteractiveClassroomsPage() {
     ]);
 
     downloadTextFile(
-      buildDownloadName("zhixu-classroom-quality-records", "csv"),
+      buildDownloadName("hangke-classroom-quality-records", "csv"),
       `\uFEFF${buildCsvContent(header, rows)}`,
       "text/csv;charset=utf-8",
     );

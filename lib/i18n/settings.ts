@@ -52,7 +52,7 @@ export const settingsZhCN = {
     selectedAgents: '选中的智能体',
     required: '必选',
     agentNames: {
-      'default-1': '知序导学老师',
+      'default-1': '航科导学老师',
       'default-2': '课堂助教',
       'default-3': '课堂发言人',
       'default-4': '问题追问者',

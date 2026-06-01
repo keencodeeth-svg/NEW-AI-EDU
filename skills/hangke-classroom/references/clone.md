@@ -2,7 +2,7 @@
 
 ## Goal
 
-Confirm which local checkout of the Zhixu learning platform should be used for setup and runtime actions.
+Confirm which local checkout of the Hangke AI education platform should be used for setup and runtime actions.
 
 ## Procedure
 

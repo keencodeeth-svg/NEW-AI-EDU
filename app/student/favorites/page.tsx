@@ -80,7 +80,7 @@ export default function StudentFavoritesPage() {
 
       <StudentFavoritesOverviewSection {...favoritesPage.overviewProps} />
 
-      <Card title="互动课堂灵感收藏" tag="知序课堂">
+      <Card title="互动课堂灵感收藏" tag="航科互动课堂">
         {favoriteArtifacts.length ? (
           <div className="grid" style={{ gap: 12 }}>
             <p>

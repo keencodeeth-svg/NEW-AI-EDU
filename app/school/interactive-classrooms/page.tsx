@@ -242,7 +242,7 @@ export default function SchoolInteractiveClassroomsPage() {
       lastLoadedAt={page.lastLoadedAt}
       chips={[
         <span key="brand" className="chip">
-          知序课堂
+          航科互动课堂
         </span>,
         <span key="records" className="chip">
           累计 {payload.summary.totalDeliveries} 次使用
@@ -923,7 +923,7 @@ export default function SchoolInteractiveClassroomsPage() {
               <div className="card">
                 <div className="section-title">记录来源</div>
                 <div style={{ fontSize: 13, color: "var(--ink-1)", marginTop: 6, lineHeight: 1.8 }}>
-                  当前口径覆盖知序课堂发布全班观看地址、PPTX 导出、资源包导出，以及学生自主使用触发的课堂学习动作。所有数据来自服务端记录而非浏览器本地缓存。
+                  当前口径覆盖航科互动课堂发布全班观看地址、PPTX 导出、资源包导出，以及学生自主使用触发的课堂学习动作。所有数据来自服务端记录而非浏览器本地缓存。
                 </div>
               </div>
               <div className="card">

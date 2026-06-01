@@ -425,7 +425,7 @@ export function buildClassroomAgents(
         role: "student" as const,
         persona: [
           learner
-            ? `你是正在自主使用知序课堂学习的学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`
+            ? `你是正在自主使用航科互动课堂学习的学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`
             : `你是${className}的真实学生 ${student.name}${student.grade ? `，当前所在年级为${student.grade}` : ""}。`,
           styleSeed,
           learner

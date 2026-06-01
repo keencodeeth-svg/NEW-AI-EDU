@@ -2,7 +2,7 @@
 
 ## Critical Boundary
 
-Zhixu Classroom does not automatically reuse the agent's current model or API key.
+Hangke Classroom does not automatically reuse the agent's current model or API key.
 
 The service resolves model routing, media providers, TTS, PDF parsing, and search keys from its own server-side configuration.
 

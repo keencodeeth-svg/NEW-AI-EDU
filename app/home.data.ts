@@ -15,16 +15,16 @@ export const HERO_PILLS = [
 ];
 
 export const PRODUCT_STATUS_METRICS: ProductStatusMetric[] = [
-  { label: "学生端", value: "知序学习台", helper: "先看到今天要推进什么，再进入课表、自学、拍题与课堂。" },
-  { label: "教师端", value: "知序教学台", helper: "把今日待处理、课堂准备和教学反馈收束成一条执行链路。" },
-  { label: "家长端", value: "知序陪伴台", helper: "今晚先做什么、如何回执、需要陪伴什么都会被讲清楚。" },
-  { label: "学校端", value: "知序校务台", helper: "从预演排课到课堂质量复盘，形成连续可治理视图。" }
+  { label: "学生端", value: "航科学习台", helper: "先看到今天要推进什么，再进入课表、自学、拍题与课堂。" },
+  { label: "教师端", value: "航科教学台", helper: "把今日待处理、课堂准备和教学反馈收束成一条执行链路。" },
+  { label: "家长端", value: "航科陪伴台", helper: "今晚先做什么、如何回执、需要陪伴什么都会被讲清楚。" },
+  { label: "学校端", value: "航科校务台", helper: "从预演排课到课堂质量复盘，形成连续可治理视图。" }
 ];
 
 export const FIRST_LOOK_ITEMS: FirstLookItem[] = [
   { title: "多角色直达", description: "学生、教师、家长和学校都能在第一屏直接进入自己的工作台。" },
   { title: "注册边界清晰", description: "学生与家长可自助注册，教师、学校和平台管理账号必须按授权路径开通。" },
-  { title: "课堂作为次入口", description: "当目标已经明确为开课、看课或发布时，再进入知序课堂。" }
+  { title: "课堂作为次入口", description: "当目标已经明确为开课、看课或发布时，再进入航科互动课堂。" }
 ];
 
 export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
@@ -42,7 +42,7 @@ export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
   {
     id: "teacher",
     title: "教师",
-    subtitle: "围绕真实教学节奏组织教学台，把今日待处理、知序课堂、作业与分析收束到一条执行链路。",
+    subtitle: "围绕真实教学节奏组织教学台，把今日待处理、航科互动课堂、作业与分析收束到一条执行链路。",
     tag: "教学执行",
     primaryLabel: "进入教师端",
     primaryHref: "/login?role=teacher&entry=landing",
@@ -134,7 +134,7 @@ export const FIRST_DAY_FLOWS: FirstDayFlow[] = [
 
 export const DIFFERENTIATORS: Differentiator[] = [
   { title: "不是把功能堆在一起，而是把下一步讲清楚", description: "学生、教师、家长和学校都先被带入最适合的动作，而不是在一堆入口里做选择题。" },
-  { title: "不是只放 AI 能力，而是把 AI 放进真实教学", description: "知序课堂、教师讲解形象、拍题和排课都围绕真实场景组织，而不是孤立工具箱。" },
+  { title: "不是只放 AI 能力，而是把 AI 放进真实教学", description: "航科互动课堂、教师讲解形象、拍题和排课都围绕真实场景组织，而不是孤立工具箱。" },
   { title: "不是只展示数据，而是让行动和回执发生", description: "从课堂分享、家校回执到学校质量视图，平台强调闭环感与后续动作，不让分析停在图表里。" }
 ];
 

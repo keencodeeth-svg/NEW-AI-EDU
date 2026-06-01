@@ -113,7 +113,7 @@ export default function LibraryDetailPage() {
             onClick={() => void handleLaunchInteractiveClassroom()}
             disabled={launchingInteractiveClassroom}
           >
-            {launchingInteractiveClassroom ? "准备互动课堂中..." : "带资料进入知序课堂"}
+            {launchingInteractiveClassroom ? "准备互动课堂中..." : "带资料进入航科互动课堂"}
           </button>
           <button className="button ghost" type="button" onClick={detailPage.createShare} disabled={detailPage.creatingShare || detailPage.refreshing}>
             {detailPage.creatingShare ? "生成中..." : "生成分享链接"}
@@ -126,7 +126,7 @@ export default function LibraryDetailPage() {
         </div>
       </Card>
 
-      <Card title="知序课堂" tag="课堂学习">
+      <Card title="航科互动课堂" tag="课堂学习">
         <div className="grid" style={{ gap: 10 }}>
           <div style={{ fontSize: 14, lineHeight: 1.7 }}>
             当前资料可以直接带入课堂学习系统，自动预填主题、年级、学科、知识点和资料摘要。
@@ -148,7 +148,7 @@ export default function LibraryDetailPage() {
               onClick={() => void handleLaunchInteractiveClassroom()}
               disabled={launchingInteractiveClassroom}
             >
-              {launchingInteractiveClassroom ? "准备互动课堂中..." : "一键生成知序课堂"}
+              {launchingInteractiveClassroom ? "准备互动课堂中..." : "一键生成航科互动课堂"}
             </button>
             <Link className="button ghost" href="/ai-classroom">
               空白启动

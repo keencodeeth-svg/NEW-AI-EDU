@@ -42,7 +42,7 @@ export function SchoolInteractiveClassroomDeliveryCard({
 }) {
   if (!summary) {
     return (
-      <Card title="课堂交付质量" tag="知序课堂">
+      <Card title="课堂交付质量" tag="航科互动课堂">
         <StatePanel
           compact
           tone="loading"
@@ -54,7 +54,7 @@ export function SchoolInteractiveClassroomDeliveryCard({
   }
 
   return (
-    <Card title="课堂交付质量" tag="知序课堂">
+    <Card title="课堂交付质量" tag="航科互动课堂">
       <div className="section-sub">
         把教师发布、资源导出与学生自主巩固放在同一套质量视图里，学校可以直接看到课堂学习的实际覆盖、传播与复用情况。
       </div>

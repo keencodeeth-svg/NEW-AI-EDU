@@ -2,7 +2,7 @@
 
 ## Goal
 
-Help the user choose how Zhixu Classroom should run before you start anything.
+Help the user choose how Hangke Classroom should run before you start anything.
 
 ## Options
 

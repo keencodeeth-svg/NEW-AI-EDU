@@ -144,7 +144,7 @@ function buildStudentProfiles(students) {
     grade: student.grade ?? gradeCycle(idx),
     subjects: SUBJECTS,
     target: "巩固基础、提升成绩",
-    school: "知序实验学校",
+    school: "航科实验学校",
     observerCode: `HKOB${String(idx + 1).padStart(3, "0")}`,
     updatedAt: iso(now)
   }));

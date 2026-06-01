@@ -1585,7 +1585,7 @@ export default function StudentInteractiveClassroomPage() {
     return (
       <WorkspacePage
         className="grid dashboard-stack student-self-study-shell"
-        title="知序课堂"
+        title="航科互动课堂"
         subtitle="登录后，预习、巩固、兴趣探索和课堂回看会收进同一条可持续推进的学习主线。"
         chips={[
           <span key="student-auth-preview" className="chip">
@@ -1713,7 +1713,7 @@ export default function StudentInteractiveClassroomPage() {
   return (
     <WorkspacePage
       className="grid dashboard-stack student-self-study-shell"
-      title="知序课堂"
+      title="航科互动课堂"
       subtitle="把预习、巩固、兴趣探索和课堂回看收进一个可以反复使用的自主学习空间。"
       lastLoadedAt={lastLoadedAt}
       chips={[

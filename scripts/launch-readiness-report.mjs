@@ -472,7 +472,7 @@ async function main() {
   }
 
   console.log("");
-  console.log("知序课堂上线准备报告");
+  console.log("航科互动课堂上线准备报告");
   console.log(`时间: ${new Date(report.generatedAt).toLocaleString("zh-CN")}`);
   console.log(`环境: ${process.env.NODE_ENV || "development"}`);
   console.log(`AI 生效链来源: ${report.providerSource === "runtime" ? "后台运行时配置" : "环境变量"}`);

@@ -77,7 +77,7 @@ export function ClassroomBrand({
           config.mark,
         )}
       >
-        <img src="/logos/zhixu-mark.svg" alt="" className="h-full w-full object-cover" />
+        <img src="/logos/hangke-mark.svg" alt="" className="h-full w-full object-cover" />
       </span>
       <span className="classroom-brand-copy flex min-w-0 flex-col">
         {showSubtitle ? (

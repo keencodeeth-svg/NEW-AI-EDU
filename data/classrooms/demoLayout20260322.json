@@ -3,13 +3,13 @@
   "stage": {
     "id": "demoLayout20260322",
     "name": "课堂版式验收课",
-    "description": "用于验证知序课堂标准播放态的空间比例与信息层级",
+    "description": "用于验证航科互动课堂标准播放态的空间比例与信息层级",
     "language": "zh-CN",
     "style": "professional",
     "createdAt": 1774120000000,
     "updatedAt": 1774120000000,
     "classroomMeta": {
-      "brandName": "知序课堂",
+      "brandName": "航科互动课堂",
       "source": "teacher-tools",
       "classId": "CLS-DEMO-01",
       "className": "高一（3）班",
@@ -84,7 +84,7 @@
               "width": 760,
               "height": 72,
               "rotate": 0,
-              "content": "<p><span style=\"font-size:34px;font-weight:700;color:#0f172a;\">知序课堂 · 课堂版式验收课</span></p>",
+              "content": "<p><span style=\"font-size:34px;font-weight:700;color:#0f172a;\">航科互动课堂 · 课堂版式验收课</span></p>",
               "defaultFontName": "Microsoft YaHei",
               "defaultColor": "#0f172a",
               "lineHeight": 1.2,
@@ -111,7 +111,7 @@
         {
           "id": "speech-demo-1",
           "type": "speech",
-          "text": "欢迎来到知序课堂课堂版式验收课，我们现在重点确认课堂舞台是否更聚焦、更舒展。"
+          "text": "欢迎来到航科互动课堂课堂版式验收课，我们现在重点确认课堂舞台是否更聚焦、更舒展。"
         }
       ]
     }
