@@ -19,7 +19,7 @@ test("external health check stays inside remote rollback window", () => {
   const trapIndex = remoteScript.indexOf("trap 'rollback_production' ERR");
   const trapClearIndex = remoteScript.indexOf("trap - ERR");
   const externalHealthCallIndex = remoteScript.indexOf("\nrun_external_health\n");
-  const externalHealthCurlIndex = remoteScript.indexOf('curl -fsS --max-time 20 "$external_health_url" >/dev/null');
+  const externalHealthCurlIndex = remoteScript.indexOf('curl -fsSL --max-time 20 "$external_health_url" >/dev/null');
   const localTailExternalHealthIndex = scriptContent.indexOf(
     'if [[ -n "$DEPLOY_EXTERNAL_HEALTH_URL" ]]; then'
   );
@@ -59,5 +59,37 @@ test("remote activation arguments are shell-quoted before ssh execution", () => 
     scriptContent,
     /ssh "\$\{SSH_OPTS\[@\]\}" "\$DEPLOY_REMOTE_HOST" bash -s --/,
     "deploy script should not pass unescaped positional args through the remote shell"
+  );
+});
+
+test("production PM2 process is replaced and verified against the target release cwd", () => {
+  const remoteScriptMatch = scriptContent.match(/<<'REMOTE_SCRIPT'\n([\s\S]*?)\nREMOTE_SCRIPT/);
+
+  assert.ok(remoteScriptMatch, "remote here-doc should exist");
+
+  const remoteScript = remoteScriptMatch[1];
+
+  assert.match(
+    remoteScript,
+    /replace_pm2_process\(\)[\s\S]*pm2 delete "\$app_name"[\s\S]*pm2 start "\$cwd_path\/ecosystem\.config\.cjs"[\s\S]*assert_pm2_cwd "\$app_name" "\$cwd_path"/,
+    "production deploy should replace the PM2 process and verify it runs from the target cwd"
+  );
+  assert.match(
+    remoteScript,
+    /production_reloaded=1\s*\nreplace_pm2_process "\$pm2_app_name" "\$production_port" "\$remote_release_dir"/,
+    "rollback window should open before replacing the production process"
+  );
+  assert.doesNotMatch(
+    remoteScript,
+    /ensure_pm2_process "\$pm2_app_name" "\$production_port" "\$remote_release_dir"/,
+    "production deploy should not rely on startOrReload because PM2 can keep the old cwd"
+  );
+});
+
+test("external health check follows redirects to validate the final health response", () => {
+  assert.match(
+    scriptContent,
+    /curl -fsSL --max-time 20 "\$external_health_url" >\/dev\/null/,
+    "external health check should follow HTTP to HTTPS redirects instead of accepting a 301 response"
   );
 });

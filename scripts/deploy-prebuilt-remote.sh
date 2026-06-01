@@ -303,7 +303,7 @@ run_external_health() {
   fi
 
   echo "Checking external health: $external_health_url" >&2
-  curl -fsS --max-time 20 "$external_health_url" >/dev/null
+  curl -fsSL --max-time 20 "$external_health_url" >/dev/null
 }
 
 ensure_pm2_process() {
@@ -334,6 +334,34 @@ get_pm2_cwd() {
     if (!cwd) process.exit(2);
     process.stdout.write(cwd);
   ' "$app_name"
+}
+
+assert_pm2_cwd() {
+  local app_name="$1"
+  local expected_cwd="$2"
+  local actual_cwd
+  local normalized_actual
+  local normalized_expected
+
+  actual_cwd="$(get_pm2_cwd "$app_name")"
+  normalized_actual="$(readlink -f "$actual_cwd")"
+  normalized_expected="$(readlink -f "$expected_cwd")"
+
+  if [[ "$normalized_actual" != "$normalized_expected" ]]; then
+    echo "PM2 app ${app_name} is running from ${actual_cwd}, expected ${expected_cwd}" >&2
+    return 1
+  fi
+}
+
+replace_pm2_process() {
+  local app_name="$1"
+  local app_port="$2"
+  local cwd_path="$3"
+
+  pm2 delete "$app_name" >/dev/null 2>&1 || true
+  PORT="$app_port" HOSTNAME="127.0.0.1" pm2 start "$cwd_path/ecosystem.config.cjs" \
+    --only "$app_name" --update-env >/dev/null
+  assert_pm2_cwd "$app_name" "$cwd_path"
 }
 
 write_ecosystem_config() {
@@ -446,8 +474,8 @@ fi
 
 load_release_env
 trap 'rollback_production' ERR
-ensure_pm2_process "$pm2_app_name" "$production_port" "$remote_release_dir"
 production_reloaded=1
+replace_pm2_process "$pm2_app_name" "$production_port" "$remote_release_dir"
 sleep "$production_wait"
 run_inline_health "$production_port"
 run_external_health
