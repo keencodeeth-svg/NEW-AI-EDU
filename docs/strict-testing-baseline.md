@@ -1,6 +1,6 @@
 # Strict Testing Baseline
 
-更新时间：2026-04-05
+更新时间：2026-06-01
 
 目标：把“开发时建议跑测试”升级为“开发与合并默认执行同一条严格质量门”。
 
@@ -95,7 +95,12 @@ corepack pnpm verify:strict
 
 当前浏览器 smoke 已覆盖：
 
+- 首页角色入口不再依赖学生默认路径，学生 / 教师 / 家长 / 学校 / 管理员都能从首屏进入自己的入口
 - 学生登录并进入学习控制台
+- 学生登录后可直达 `/practice`，练习页保留认证壳层、主题切换和 `#main-content`
+- 家长登录后可直达 `/parent`，家长空间保留认证壳层、主题切换和今晚第一步 CTA
+- 学校管理员登录后可直达 `/school`，学校质量视图保留认证壳层、主题切换和课堂质量 / 课程表 CTA
+- 公开用户可直达 `/ai-classroom`，空需求时开课按钮禁用，填写课堂需求后可启动
 - 教师发布作业
 - 教师从 AI 工具页带班级上下文发起互动课堂
 - 家长提交行动回执
@@ -122,6 +127,7 @@ corepack pnpm verify:strict
 - 学生主线与课堂入口：`/student`、`/practice`、`/student/interactive-classroom`、`/ai-classroom` zero critical / serious accessibility violations
 - 教师工作台与课堂实时页：`/teacher`、`/teacher/classroom-live` zero critical / serious accessibility violations
 - 学校与管理治理页：`/school`、`/school/interactive-classrooms`、`/admin` zero critical / serious accessibility violations
+- 家长与第一批 P1 高价值页：`/parent`、`/library`、`/teacher/lesson-planner` zero critical / serious accessibility violations
 - 键盘首个 Tab 可达 `skip-link`，并能跳到 `#main-content`
 - 主题切换控件存在基础 ARIA 契约：`role=group`、可感知标签、按钮 `aria-pressed`
 
@@ -131,9 +137,10 @@ corepack pnpm verify:strict
 - JSON 巡检报告包含 `http status`、横向溢出、主题切换、关键壳层存在 / 不存在断言
 - 任一路由断言失败默认直接非零退出，不再是“有截图但门禁仍通过”
 - 默认输出仍兼容 `output/playwright/*`，但可通过环境变量覆盖截图目录、报告路径与基线路径
-- 当前稳定覆盖矩阵为 14 条路由：`/`、`/login`、`/register`、`/recover`、`/ai-classroom`、`/student`、`/practice`、`/student/interactive-classroom`、`/teacher`、`/teacher/classroom-live`、`/parent`、`/school`、`/school/interactive-classrooms`、`/admin`
+- 当前稳定覆盖矩阵为 16 条路由：`/`、`/login`、`/register`、`/recover`、`/ai-classroom`、`/student`、`/practice`、`/student/interactive-classroom`、`/student/exams`、`/teacher`、`/teacher/classroom-live`、`/teacher/lesson-planner`、`/parent`、`/school`、`/school/interactive-classrooms`、`/admin`
+- visual report 现在额外输出 coverage summary：`16 routes x 2 viewports x 2 themes = 64 checks`，并按 session 汇总为 `public 5`、`student 4`、`teacher 3`、`parent 1`、`school 2`、`admin 1`
 - `parent/school/admin` 使用脚本内 API 注册 / 登录链路建立隔离会话，不依赖认证页 UI 提交流程；`parent` 额外注入最小学生观察码 + 教师作业数据，保证进入真实工作台
-- `student/interactive-classroom` 与 `/school/interactive-classrooms` 已复用现有学生 / 学校管理员隔离会话进入 visual route matrix；`/classroom/[id]` 仍需动态课堂 id，暂不纳入本批稳定矩阵
+- `student/interactive-classroom`、`/student/exams`、`/teacher/lesson-planner` 与 `/school/interactive-classrooms` 已复用现有角色隔离会话进入 visual route matrix；`/classroom/[id]` 仍需动态课堂 id，暂不纳入本批稳定矩阵
 
 视觉巡检本地入口：
 

@@ -102,6 +102,17 @@ async function registerStudent(page: Page, params: { email: string; name: string
   expect(result.ok, `student registration failed: ${result.status}`).toBe(true);
 }
 
+async function registerParent(page: Page, params: { email: string; name: string; observerCode: string }) {
+  const result = await postJson(page, "/api/auth/register", {
+    role: "parent",
+    email: params.email,
+    password: PASSWORD,
+    name: params.name,
+    observerCode: params.observerCode
+  });
+  expect(result.ok, `parent registration failed: ${result.status}`).toBe(true);
+}
+
 async function registerTeacherByApi(page: Page, params: { email: string; name: string; schoolCode?: string }) {
   const result = await postJson(page, "/api/auth/teacher-register", {
     email: params.email,
@@ -115,7 +126,7 @@ async function registerTeacherByApi(page: Page, params: { email: string; name: s
 
 async function loginByApi(
   page: Page,
-  params: { email: string; role: "student" | "teacher" | "admin" | "school_admin" }
+  params: { email: string; role: "student" | "parent" | "teacher" | "admin" | "school_admin" }
 ) {
   const result = await postJson(page, "/api/auth/login", {
     email: params.email,
@@ -123,6 +134,26 @@ async function loginByApi(
     role: params.role
   });
   expect(result.ok, `${params.role} login failed: ${result.status}`).toBe(true);
+}
+
+async function getObserverCode(page: Page) {
+  const result = await page.evaluate(async () => {
+    const response = await fetch("/api/student/profile", {
+      headers: {
+        "x-test-origin": window.location.origin
+      }
+    });
+    const payload = await response.json().catch(() => null);
+    return {
+      ok: response.ok,
+      status: response.status,
+      body: payload
+    };
+  });
+  expect(result.ok, `student profile fetch failed: ${result.status}`).toBe(true);
+  const observerCode = result.body?.data?.observerCode;
+  expect(observerCode, "observer code should exist after student profile bootstrap").toBeTruthy();
+  return observerCode as string;
 }
 
 async function registerAdminByApi(page: Page, params: { email: string; name: string }) {
@@ -452,5 +483,88 @@ test.describe("browser accessibility", () => {
     });
     await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
     await expectNoCriticalViolations(page, "学校互动课堂质量中心");
+  });
+
+  test("route inventory accessibility: parent dashboard has no critical accessibility violations", async ({ page }) => {
+    const studentEmail = `${uniqueId("a11y-parent-student")}@local.test`;
+    const parentEmail = `${uniqueId("a11y-parent")}@local.test`;
+
+    await page.goto("/register?role=student");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "A11y Parent Student"
+    });
+    await loginByApi(page, {
+      email: studentEmail,
+      role: "student"
+    });
+    const observerCode = await getObserverCode(page);
+
+    await page.goto("/register?role=parent");
+    await registerParent(page, {
+      email: parentEmail,
+      name: "A11y Parent",
+      observerCode
+    });
+    await loginByApi(page, {
+      email: parentEmail,
+      role: "parent"
+    });
+
+    await page.goto("/parent");
+    await dismissGuidedTourIfVisible(page);
+    await expect(page.getByRole("heading", { name: "家长空间" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("button", { name: "刷新" })).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+    await expectThemeToggleAria(page);
+    await expectNoCriticalViolations(page, "家长空间");
+  });
+
+  test("route inventory accessibility: library page has no critical accessibility violations", async ({ page }) => {
+    const adminEmail = `${uniqueId("a11y-library-admin")}@local.test`;
+
+    await page.goto("/admin/register");
+    await registerAdminByApi(page, {
+      email: adminEmail,
+      name: "A11y Library Admin"
+    });
+    await loginByApi(page, {
+      email: adminEmail,
+      role: "admin"
+    });
+
+    await page.goto("/library");
+    await expect(page.getByRole("heading", { name: "教材与课件资料库" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("button", { name: "导入资料" })).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+    await expectThemeToggleAria(page);
+    await expectNoCriticalViolations(page, "教材与课件资料库");
+  });
+
+  test("route inventory accessibility: teacher lesson planner has no critical accessibility violations", async ({
+    page
+  }) => {
+    const teacherEmail = `${uniqueId("a11y-lesson-teacher")}@local.test`;
+
+    await page.goto("/login?role=teacher");
+    await registerTeacherByApi(page, {
+      email: teacherEmail,
+      name: "A11y Lesson Teacher"
+    });
+    await loginByApi(page, {
+      email: teacherEmail,
+      role: "teacher"
+    });
+
+    await page.goto("/teacher/lesson-planner");
+    await expect(page.getByRole("heading", { name: "AI 备课助手" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByLabel("主题")).toBeVisible();
+    await expect(page.getByRole("button", { name: "生成备课方案" })).toBeDisabled();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+    await expectThemeToggleAria(page);
+    await expectNoCriticalViolations(page, "AI 备课助手");
   });
 });

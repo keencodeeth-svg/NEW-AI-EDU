@@ -93,6 +93,16 @@ const studentRoutes = [
     requireMobileTabbarOnMobile: true,
     requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
     forbiddenSelectors: [".public-header-links"]
+  },
+  {
+    route: "/student/exams",
+    slug: "student-exams",
+    expectedShell: "authenticated",
+    headingText: "在线考试",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
   }
 ];
 
@@ -112,6 +122,16 @@ const teacherRoutes = [
     slug: "teacher-classroom-live",
     expectedShell: "authenticated",
     headingText: "课堂实时仪表盘",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  },
+  {
+    route: "/teacher/lesson-planner",
+    slug: "teacher-lesson-planner",
+    expectedShell: "authenticated",
+    headingText: "AI 备课助手",
     requireSidebarOnDesktop: true,
     requireMobileTabbarOnMobile: true,
     requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
@@ -175,6 +195,24 @@ const viewports = [
   { name: "mobile", width: 390, height: 844 }
 ];
 
+function getVisualSessionRouteMap() {
+  return {
+    public: publicRoutes,
+    student: studentRoutes,
+    parent: parentRoutes,
+    teacher: teacherRoutes,
+    school: schoolRoutes,
+    admin: adminRoutes
+  };
+}
+
+function getVisualRouteGroups() {
+  const sessionRouteMap = getVisualSessionRouteMap();
+  return Object.fromEntries(
+    Object.entries(sessionRouteMap).map(([session, routes]) => [session, routes.map((route) => route.route)])
+  );
+}
+
 function readNumberEnv(name, fallback) {
   const raw = process.env[name];
   if (!raw) {
@@ -207,24 +245,35 @@ function sanitizeSlug(route) {
 }
 
 export function getVisualRouteMatrix() {
+  const routeGroups = getVisualRouteGroups();
   return {
-    publicRoutes: publicRoutes.map((route) => route.route),
-    studentRoutes: studentRoutes.map((route) => route.route),
-    parentRoutes: parentRoutes.map((route) => route.route),
-    teacherRoutes: teacherRoutes.map((route) => route.route),
-    schoolRoutes: schoolRoutes.map((route) => route.route),
-    adminRoutes: adminRoutes.map((route) => route.route)
+    publicRoutes: routeGroups.public,
+    studentRoutes: routeGroups.student,
+    parentRoutes: routeGroups.parent,
+    teacherRoutes: routeGroups.teacher,
+    schoolRoutes: routeGroups.school,
+    adminRoutes: routeGroups.admin
   };
 }
 
 export function getVisualSessionGroups() {
+  return getVisualRouteGroups();
+}
+
+export function getVisualCoverageSummary() {
+  const sessionGroups = getVisualSessionGroups();
+  const routeCountsBySession = Object.fromEntries(
+    Object.entries(sessionGroups).map(([session, routes]) => [session, routes.length])
+  );
+  const totalRoutes = Object.values(routeCountsBySession).reduce((sum, count) => sum + count, 0);
+  const viewportNames = viewports.map((viewport) => viewport.name);
+
   return {
-    public: publicRoutes.map((route) => route.route),
-    student: studentRoutes.map((route) => route.route),
-    parent: parentRoutes.map((route) => route.route),
-    teacher: teacherRoutes.map((route) => route.route),
-    school: schoolRoutes.map((route) => route.route),
-    admin: adminRoutes.map((route) => route.route)
+    totalRoutes,
+    routeCountsBySession,
+    viewportNames,
+    themes: [...themes],
+    totalChecks: totalRoutes * viewportNames.length * themes.length
   };
 }
 
@@ -931,24 +980,28 @@ export async function runVisualCheck() {
 
   await fs.writeFile(reportPath, JSON.stringify(results, null, 2));
 
+  const coverageSummary = getVisualCoverageSummary();
   const summary = {
     baseUrl,
     screenshotDir,
     reportPath,
     baselinePath: baselinePath || null,
     maxFailures,
-    themes,
+    themes: coverageSummary.themes,
+    viewportNames: coverageSummary.viewportNames,
+    routeCountsBySession: coverageSummary.routeCountsBySession,
+    totalRoutes: coverageSummary.totalRoutes,
     totalChecks: results.length,
     failedChecks: unexpectedFailures
   };
 
-  console.log(JSON.stringify({ summary, results }, null, 2));
+  console.log(JSON.stringify({ summary, coverageSummary, results }, null, 2));
 
   if (unexpectedFailures > maxFailures) {
     process.exitCode = 1;
   }
 
-  return { summary, results };
+  return { summary, coverageSummary, results };
 }
 
 const currentFile = fileURLToPath(import.meta.url);

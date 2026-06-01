@@ -529,6 +529,113 @@ test.describe("browser smoke", () => {
     await expect(page.locator(".public-header-links")).toHaveCount(0);
   });
 
+  test("student can open the practice route directly from an authenticated session", async ({ page }) => {
+    const studentEmail = `${uniqueId("practice-direct-student")}@local.test`;
+
+    await page.goto("/register?role=student");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "Practice Direct Student"
+    });
+    await loginByApi(page, {
+      email: studentEmail,
+      role: "student"
+    });
+
+    await page.goto("/practice");
+    await expect(page.getByRole("heading", { name: "智能练习" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("先准备好这一轮练习")).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+  });
+
+  test("parent can open the family workspace route directly from an authenticated session", async ({ page }) => {
+    const studentEmail = `${uniqueId("parent-direct-student")}@local.test`;
+    const parentEmail = `${uniqueId("parent-direct-parent")}@local.test`;
+
+    await page.goto("/register?role=student");
+    await registerStudent(page, {
+      email: studentEmail,
+      name: "Parent Direct Student"
+    });
+    await loginByApi(page, {
+      email: studentEmail,
+      role: "student"
+    });
+    const observerCode = await getObserverCode(page);
+
+    await page.goto("/register?role=parent");
+    await registerParent(page, {
+      email: parentEmail,
+      name: "Parent Direct Parent",
+      observerCode
+    });
+    await loginByApi(page, {
+      email: parentEmail,
+      role: "parent"
+    });
+
+    await page.goto("/parent");
+    await expect(page.getByRole("heading", { name: "家长空间" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("heading", { name: "今晚先做什么" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "去今晚第一步" })).toHaveAttribute("href", "#parent-action-center");
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+  });
+
+  test("school admin can open the quality workspace route directly from an authenticated session", async ({ page }) => {
+    const schoolCode = `PWSC${Date.now().toString(36)}D${Math.random().toString(36).slice(2, 5)}`.toUpperCase();
+    const schoolAdminEmail = `${uniqueId("school-direct-admin")}@local.test`;
+
+    await page.goto("/school/register");
+    await registerSchoolAdminByApi(page, {
+      email: schoolAdminEmail,
+      name: "School Direct Admin",
+      schoolName: `Playwright Direct School ${schoolCode}`,
+      schoolCode
+    });
+    await loginByApi(page, {
+      email: schoolAdminEmail,
+      role: "school_admin"
+    });
+
+    await page.goto("/school");
+    await expect(page.getByRole("heading", { name: "学校质量与课堂应用" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByRole("link", { name: "进入课堂质量中心" })).toHaveAttribute(
+      "href",
+      "/school/interactive-classrooms"
+    );
+    await expect(page.getByRole("link", { name: "查看课程表管理" })).toHaveAttribute("href", "/school/schedules");
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toHaveCount(0);
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+  });
+
+  test("ai classroom can be opened directly as a public classroom planning workspace", async ({ page }) => {
+    await page.goto("/ai-classroom");
+
+    await expect(page.getByTestId("ai-classroom-headline")).toContainText(
+      "让教材、班级与数字人老师进入同一课堂主线",
+      { timeout: 15_000 }
+    );
+    await expect(page.getByTestId("ai-classroom-workspace-links-heading")).toContainText("切换到其他工作区");
+    await expect(page.getByTestId("ai-classroom-requirement")).toBeVisible();
+    await expect(page.getByTestId("ai-classroom-enter")).toBeDisabled();
+    await page
+      .getByTestId("ai-classroom-requirement")
+      .fill("给五年级学生上一节 20 分钟的航天主题公开课，学完后回到科学探究任务。");
+    await expect(page.getByTestId("ai-classroom-enter")).toBeEnabled();
+    await expect(page.locator(".theme-mode-toggle")).toBeVisible();
+    await expect(page.locator(".public-header-links")).toBeVisible();
+    await expect(page.locator(".app-sidebar")).toHaveCount(0);
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+  });
+
   test("teacher can review class context and publish an assignment", async ({ page }) => {
     const studentEmail = `${uniqueId("class-student")}@local.test`;
     const teacherEmail = `${uniqueId("teacher")}@local.test`;
