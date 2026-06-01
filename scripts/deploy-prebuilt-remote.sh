@@ -225,7 +225,7 @@ ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" "mkdir -p '$DEPLOY_REMOTE_RELEASES_DI
 scp "${SCP_OPTS[@]}" "$ARCHIVE_PATH" "$DEPLOY_REMOTE_HOST:$REMOTE_ARCHIVE_PATH"
 
 log "Activating remote release $REMOTE_RELEASE_DIR"
-ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" bash -s -- \
+REMOTE_SCRIPT_ARGS=(
   "$DEPLOY_TARGET_COMMIT" \
   "$DEPLOY_PROJECT_NAME" \
   "$DEPLOY_REMOTE_ENV_SOURCE" \
@@ -245,7 +245,14 @@ ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" bash -s -- \
   "$DEPLOY_POST_DEPLOY_COMMAND" \
   "$DEPLOY_POST_DEPLOY_URL" \
   "$DEPLOY_POST_DEPLOY_EXPECT_STATUS" \
-  "$DEPLOY_POST_DEPLOY_TIMEOUT_MS" <<'REMOTE_SCRIPT'
+  "$DEPLOY_POST_DEPLOY_TIMEOUT_MS"
+)
+remote_command="bash -s --"
+for remote_arg in "${REMOTE_SCRIPT_ARGS[@]}"; do
+  printf -v quoted_remote_arg "%q" "$remote_arg"
+  remote_command+=" $quoted_remote_arg"
+done
+ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" "$remote_command" <<'REMOTE_SCRIPT'
 set -euo pipefail
 
 target_commit="$1"

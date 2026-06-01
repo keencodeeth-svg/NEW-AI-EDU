@@ -38,3 +38,26 @@ test("external health check stays inside remote rollback window", () => {
     "script should not keep a separate post-SSH external health check outside rollback handling"
   );
 });
+
+test("remote activation arguments are shell-quoted before ssh execution", () => {
+  assert.match(
+    scriptContent,
+    /REMOTE_SCRIPT_ARGS=\(\s*"\$DEPLOY_TARGET_COMMIT"[\s\S]*"\$DEPLOY_POST_DEPLOY_TIMEOUT_MS"\s*\)/,
+    "deploy script should collect remote activation args in an array"
+  );
+  assert.match(
+    scriptContent,
+    /printf -v quoted_remote_arg "%q" "\$remote_arg"/,
+    "deploy script should shell-quote each remote activation arg"
+  );
+  assert.match(
+    scriptContent,
+    /remote_command\+=" \$quoted_remote_arg"/,
+    "deploy script should append the quoted arg to the remote command"
+  );
+  assert.doesNotMatch(
+    scriptContent,
+    /ssh "\$\{SSH_OPTS\[@\]\}" "\$DEPLOY_REMOTE_HOST" bash -s --/,
+    "deploy script should not pass unescaped positional args through the remote shell"
+  );
+});
