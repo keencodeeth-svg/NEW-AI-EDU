@@ -56,6 +56,11 @@ export function SpeechButton({
   const sizeClasses = isMd ? 'h-8 w-8' : 'h-6 w-6';
   const iconSize = isMd ? 'w-4 h-4' : 'w-3.5 h-3.5';
   const barH = isMd ? 14 : 10;
+  const buttonLabel = isProcessing
+    ? t('roundtable.processing')
+    : isRecording
+      ? t('voice.stopListening')
+      : t('voice.startListening');
 
   return (
     <Tooltip>
@@ -64,6 +69,8 @@ export function SpeechButton({
           type="button"
           disabled={disabled || isProcessing}
           onClick={handleClick}
+          aria-label={buttonLabel}
+          aria-pressed={isRecording}
           className={cn(
             'relative flex items-center justify-center rounded-lg transition-all duration-200 shrink-0 cursor-pointer',
             sizeClasses,
@@ -130,11 +137,7 @@ export function SpeechButton({
         </button>
       </TooltipTrigger>
       <TooltipContent side="top" className="text-xs">
-        {isProcessing
-          ? t('roundtable.processing')
-          : isRecording
-            ? t('voice.stopListening')
-            : t('voice.startListening')}
+        {buttonLabel}
       </TooltipContent>
     </Tooltip>
   );

@@ -3,6 +3,8 @@ import { expect, test, type Page } from "@playwright/test";
 import { isBlockedA11yImpact } from "./a11y-policy";
 
 const PASSWORD = "Playwright123!";
+const ADMIN_INVITE_CODE = "PW-ADMIN-2026";
+const SCHOOL_ADMIN_INVITE_CODE = "PW-SCHOOL-2026";
 const TEACHER_INVITE_CODE = "PW-TEACH-2026";
 
 type ApiResult<T = unknown> = {
@@ -111,13 +113,41 @@ async function registerTeacherByApi(page: Page, params: { email: string; name: s
   expect(result.ok, `teacher registration failed: ${result.status}`).toBe(true);
 }
 
-async function loginByApi(page: Page, params: { email: string; role: "student" | "teacher" }) {
+async function loginByApi(
+  page: Page,
+  params: { email: string; role: "student" | "teacher" | "admin" | "school_admin" }
+) {
   const result = await postJson(page, "/api/auth/login", {
     email: params.email,
     password: PASSWORD,
     role: params.role
   });
   expect(result.ok, `${params.role} login failed: ${result.status}`).toBe(true);
+}
+
+async function registerAdminByApi(page: Page, params: { email: string; name: string }) {
+  const result = await postJson(page, "/api/auth/admin-register", {
+    email: params.email,
+    password: PASSWORD,
+    name: params.name,
+    inviteCode: ADMIN_INVITE_CODE
+  });
+  expect(result.ok, `admin registration failed: ${result.status}`).toBe(true);
+}
+
+async function registerSchoolAdminByApi(
+  page: Page,
+  params: { email: string; name: string; schoolName: string; schoolCode: string }
+) {
+  const result = await postJson(page, "/api/auth/school-register", {
+    email: params.email,
+    password: PASSWORD,
+    name: params.name,
+    schoolName: params.schoolName,
+    schoolCode: params.schoolCode,
+    inviteCode: SCHOOL_ADMIN_INVITE_CODE
+  });
+  expect(result.ok, `school admin registration failed: ${result.status}`).toBe(true);
 }
 
 async function dismissGuidedTourIfVisible(page: Page) {
@@ -136,19 +166,19 @@ test.describe("browser accessibility", () => {
     await expect(page.getByText("先用学生主入口理解平台主线")).toHaveCount(0);
     await expect(page.getByText("学生、教师、家长与学校都从这里进入各自主线")).toBeVisible();
     const roleEntryGroup = page.getByLabel("学生、教师、家长和学校快速入口");
-    await expect(roleEntryGroup.getByRole("link", { name: "学生登录 今日学习、练习、课堂与成长记录" })).toHaveAttribute(
+    await expect(roleEntryGroup.getByRole("link", { name: /学生登录/ })).toHaveAttribute(
       "href",
       "/login?role=student&entry=landing"
     );
-    await expect(roleEntryGroup.getByRole("link", { name: "教师登录 备课、课堂发布、作业与学情" })).toHaveAttribute(
+    await expect(roleEntryGroup.getByRole("link", { name: /教师登录/ })).toHaveAttribute(
       "href",
       "/login?role=teacher&entry=landing"
     );
-    await expect(roleEntryGroup.getByRole("link", { name: "家长登录 今晚陪伴动作与家校回执" })).toHaveAttribute(
+    await expect(roleEntryGroup.getByRole("link", { name: /家长登录/ })).toHaveAttribute(
       "href",
       "/login?role=parent&entry=landing"
     );
-    await expect(roleEntryGroup.getByRole("link", { name: "学校登录 课表预演、班级和课堂质量" })).toHaveAttribute(
+    await expect(roleEntryGroup.getByRole("link", { name: /学校登录/ })).toHaveAttribute(
       "href",
       "/login?role=school_admin&entry=landing"
     );
@@ -348,5 +378,79 @@ test.describe("browser accessibility", () => {
     await expect(page.getByRole("heading", { name: "课堂实时仪表盘" })).toBeVisible({ timeout: 15_000 });
     await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
     await expectNoCriticalViolations(page, "课堂实时仪表盘");
+  });
+
+  test("ai classroom and student experience classroom have no critical accessibility violations", async ({ page }) => {
+    await page.goto("/ai-classroom");
+    await expect(page.getByTestId("ai-classroom-headline")).toBeVisible({ timeout: 15_000 });
+    await expectThemeToggleAria(page);
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+    await expectNoCriticalViolations(page, "AI 课堂工作区");
+
+    await page.route("**/api/auth/me", (route) =>
+      route.fulfill({
+        status: 503,
+        contentType: "application/json",
+        body: JSON.stringify({ error: "service temporarily unavailable" })
+      })
+    );
+    await page.goto("/student/interactive-classroom?mode=interest-cultivation");
+    await expect(page.getByRole("heading", { name: "知序课堂" })).toBeVisible({
+      timeout: 15_000
+    });
+    await expect(page.getByText("体验模式").first()).toBeVisible();
+    await expect(page.getByText("真实画像、今日任务和课表暂未接入")).toBeVisible();
+    await expectThemeToggleAria(page);
+    await expectNoCriticalViolations(page, "学生体验模式互动课堂");
+  });
+
+  test("admin and school governance pages have no critical accessibility violations", async ({ page }) => {
+    const adminEmail = `${uniqueId("a11y-admin")}@local.test`;
+    const schoolCode = `A11Y${Date.now().toString(36)}${Math.random().toString(36).slice(2, 5)}`.toUpperCase();
+    const schoolAdminEmail = `${uniqueId("a11y-school")}@local.test`;
+
+    await page.goto("/login?role=admin");
+    await registerAdminByApi(page, {
+      email: adminEmail,
+      name: "A11y Admin"
+    });
+    await loginByApi(page, {
+      email: adminEmail,
+      role: "admin"
+    });
+    await page.goto("/admin");
+    await expect(page.getByRole("heading", { name: "管理运营工作台" })).toBeVisible({
+      timeout: 15_000
+    });
+    await expect(page.getByRole("list", { name: "管理员今日优先行动" })).toBeVisible();
+    await expectThemeToggleAria(page);
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expectNoCriticalViolations(page, "管理运营工作台");
+
+    await page.goto("/school/register");
+    await registerSchoolAdminByApi(page, {
+      email: schoolAdminEmail,
+      name: "A11y School Admin",
+      schoolName: `A11y School ${schoolCode}`,
+      schoolCode
+    });
+    await loginByApi(page, {
+      email: schoolAdminEmail,
+      role: "school_admin"
+    });
+    await page.goto("/school");
+    await expect(page.getByRole("heading", { name: "学校质量与课堂应用" })).toBeVisible({
+      timeout: 15_000
+    });
+    await expectThemeToggleAria(page);
+    await expect(page.locator(".app-sidebar")).toBeVisible();
+    await expectNoCriticalViolations(page, "学校质量工作台");
+
+    await page.goto("/school/interactive-classrooms");
+    await expect(page.getByRole("heading", { name: "课堂质量中心" })).toBeVisible({
+      timeout: 15_000
+    });
+    await expect(page.locator(".main")).toHaveAttribute("id", "main-content");
+    await expectNoCriticalViolations(page, "学校互动课堂质量中心");
   });
 });

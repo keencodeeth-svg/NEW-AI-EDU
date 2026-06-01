@@ -1337,10 +1337,13 @@ function HomePage() {
                     >
                       <div className="relative">
                         <button
+                          type="button"
                           onClick={() => {
                             setLanguageOpen(!languageOpen);
                             setThemeOpen(false);
                           }}
+                          aria-label="切换课堂生成语言"
+                          aria-expanded={languageOpen}
                           className={classroomControlToggle}
                         >
                           {locale === 'zh-CN' ? 'CN' : 'EN'}
@@ -1348,6 +1351,7 @@ function HomePage() {
                         {languageOpen && (
                           <div className={cn(classroomDropdownMenu, 'min-w-[120px]')}>
                             <button
+                              type="button"
                               onClick={() => {
                                 setLocale('zh-CN');
                                 setLanguageOpen(false);
@@ -1357,6 +1361,7 @@ function HomePage() {
                               简体中文
                             </button>
                             <button
+                              type="button"
                               onClick={() => {
                                 setLocale('en-US');
                                 setLanguageOpen(false);
@@ -1373,10 +1378,13 @@ function HomePage() {
 
                       <div className="relative">
                         <button
+                          type="button"
                           onClick={() => {
                             setThemeOpen(!themeOpen);
                             setLanguageOpen(false);
                           }}
+                          aria-label="切换课堂外观模式"
+                          aria-expanded={themeOpen}
                           className={classroomControlButton}
                         >
                           {theme === 'light' && <Sun className="w-4 h-4" />}
@@ -1386,6 +1394,7 @@ function HomePage() {
                         {themeOpen && (
                           <div className={cn(classroomDropdownMenu, 'min-w-[140px]')}>
                             <button
+                              type="button"
                               onClick={() => {
                                 setTheme('light');
                                 setThemeOpen(false);
@@ -1396,6 +1405,7 @@ function HomePage() {
                               {t('settings.themeOptions.light')}
                             </button>
                             <button
+                              type="button"
                               onClick={() => {
                                 setTheme('dark');
                                 setThemeOpen(false);
@@ -1406,6 +1416,7 @@ function HomePage() {
                               {t('settings.themeOptions.dark')}
                             </button>
                             <button
+                              type="button"
                               onClick={() => {
                                 setTheme('system');
                                 setThemeOpen(false);
@@ -1423,7 +1434,9 @@ function HomePage() {
 
                       <div className="relative">
                         <button
+                          type="button"
                           onClick={() => setSettingsOpen(true)}
+                          aria-label="打开课堂设置"
                           className={cn(
                             classroomControlButton,
                             needsSetup &&
@@ -1653,6 +1666,7 @@ function HomePage() {
               </div>
               <textarea
                 ref={textareaRef}
+                aria-label="课堂需求输入"
                 placeholder={composerPlaceholder}
                 className="min-h-[82px] max-h-[220px] w-full resize-none border-0 bg-transparent px-4 pb-3 pt-1.5 text-[13px] leading-relaxed placeholder:text-slate-400/80 focus:outline-none md:min-h-[96px]"
                 value={form.requirement}
@@ -1697,6 +1711,7 @@ function HomePage() {
 
               {/* Send button */}
               <button
+                type="button"
                 onClick={handleGenerate}
                 disabled={!canGenerate}
                 className={cn(
@@ -1938,6 +1953,7 @@ function HomePage() {
         >
           {/* Trigger — divider-line with centered text */}
           <button
+            type="button"
             onClick={() => {
               const next = !recentOpen;
               setRecentOpen(next);
@@ -1947,6 +1963,8 @@ function HomePage() {
                 /* ignore */
               }
             }}
+            aria-expanded={recentOpen}
+            aria-controls="recent-classrooms-list"
             className="group w-full flex items-center gap-4 py-2 cursor-pointer"
           >
             <div className="flex-1 h-px bg-border/40 group-hover:bg-border/70 transition-colors" />
@@ -1968,6 +1986,7 @@ function HomePage() {
           <AnimatePresence>
             {recentOpen && (
               <motion.div
+                id="recent-classrooms-list"
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
@@ -2036,6 +2055,7 @@ function GreetingBar() {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const avatarInputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const avatarInputId = 'classroom-avatar-upload';
 
   const displayName = nickname || t('profile.defaultNickname');
 
@@ -2101,18 +2121,23 @@ function GreetingBar() {
       className="relative w-full px-4 pt-2 lg:w-full lg:max-w-[272px] lg:px-0 lg:pb-0.5"
     >
       <input
+        id={avatarInputId}
         ref={avatarInputRef}
         type="file"
         accept="image/*"
+        aria-label="上传课堂头像"
         className="hidden"
         onChange={handleAvatarUpload}
       />
 
       {/* ── Collapsed pill (always in flow) ── */}
       {!open && (
-        <div
+        <button
+          type="button"
           className="flex w-full items-center justify-between gap-2 rounded-[18px] border border-border/50 px-2.5 py-1 text-muted-foreground/70 transition-all duration-200 group cursor-pointer hover:bg-muted/60 hover:text-foreground active:scale-[0.97] lg:w-auto lg:justify-start"
           onClick={() => setOpen(true)}
+          aria-label={`打开课堂身份设置，当前身份 ${displayName}`}
+          aria-expanded={open}
         >
           <div className="shrink-0 relative">
             <div className="size-7 rounded-full overflow-hidden ring-[1.5px] ring-border/30 group-hover:ring-sky-400/60 dark:group-hover:ring-sky-400/40 transition-all duration-300">
@@ -2142,7 +2167,7 @@ function GreetingBar() {
               </TooltipContent>
             </Tooltip>
           </div>
-        </div>
+        </button>
       )}
 
       {/* ── Expanded panel (kept inline to avoid overlapping the main stage) ── */}
@@ -2197,6 +2222,7 @@ function GreetingBar() {
                       <input
                         ref={nameInputRef}
                         value={nameDraft}
+                        aria-label="课堂昵称"
                         onChange={(e) => setNameDraft(e.target.value)}
                         onKeyDown={(e) => {
                           if (e.key === 'Enter') commitName();
@@ -2210,7 +2236,9 @@ function GreetingBar() {
                         className="flex-1 min-w-0 h-6 bg-transparent border-b border-border/80 text-[13px] font-semibold text-foreground outline-none placeholder:text-muted-foreground/40"
                       />
                       <button
+                        type="button"
                         onClick={commitName}
+                        aria-label="确认课堂昵称"
                         className="shrink-0 size-5 rounded flex items-center justify-center text-sky-500 hover:bg-sky-100 dark:hover:bg-sky-900/30"
                       >
                         <Check className="size-3" />
@@ -2221,6 +2249,16 @@ function GreetingBar() {
                       onClick={(e) => {
                         e.stopPropagation();
                         startEditName();
+                      }}
+                      role="button"
+                      tabIndex={0}
+                      aria-label="编辑课堂昵称"
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          startEditName();
+                        }
                       }}
                       className="group/name inline-flex items-center gap-1 cursor-pointer"
                     >
@@ -2258,7 +2296,9 @@ function GreetingBar() {
                         {AVATAR_OPTIONS.map((url) => (
                           <button
                             key={url}
+                            type="button"
                             onClick={() => setAvatar(url)}
+                            aria-label={avatar === url ? '当前课堂头像' : '选择课堂头像'}
                             className={cn(
                               'size-7 rounded-full overflow-hidden bg-gray-50 dark:bg-gray-800 cursor-pointer transition-all duration-150',
                               'hover:scale-110 active:scale-95',
@@ -2270,7 +2310,9 @@ function GreetingBar() {
                             <img src={url} alt="" className="size-full" />
                           </button>
                         ))}
-                        <label
+                        <button
+                          type="button"
+                          aria-label="上传自定义课堂头像"
                           className={cn(
                             'size-7 rounded-full flex items-center justify-center cursor-pointer transition-all duration-150 border border-dashed',
                             'hover:scale-110 active:scale-95',
@@ -2282,7 +2324,7 @@ function GreetingBar() {
                           title={t('profile.uploadAvatar')}
                         >
                           <ImagePlus className="size-3" />
-                        </label>
+                        </button>
                       </div>
                     </motion.div>
                   )}
@@ -2292,6 +2334,7 @@ function GreetingBar() {
                 <UITextarea
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
+                  aria-label="课堂身份简介"
                   placeholder={t('profile.bioPlaceholder')}
                   maxLength={200}
                   rows={2}
@@ -2372,8 +2415,10 @@ function ClassroomCard({
               transition={{ duration: 0.15 }}
             >
               <Button
+                type="button"
                 size="icon"
                 variant="ghost"
+                aria-label={`删除课堂 ${classroom.name}`}
                 className="absolute top-2 right-2 size-7 opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 hover:bg-destructive/80 text-white hover:text-white backdrop-blur-sm rounded-full"
                 onClick={(e) => {
                   e.stopPropagation();
@@ -2402,12 +2447,14 @@ function ClassroomCard({
               </span>
               <div className="flex gap-2">
                 <button
+                  type="button"
                   className="px-3.5 py-1 rounded-lg text-[12px] font-medium bg-white/15 text-white/80 hover:bg-white/25 backdrop-blur-sm transition-colors"
                   onClick={onCancelDelete}
                 >
                   {t('common.cancel')}
                 </button>
                 <button
+                  type="button"
                   className="px-3.5 py-1 rounded-lg text-[12px] font-medium bg-red-500/90 text-white hover:bg-red-500 transition-colors"
                   onClick={onConfirmDelete}
                 >
@@ -2443,6 +2490,8 @@ function ClassroomCard({
             <div className="flex items-center gap-1.5">
               <span className="break-all">{classroom.name}</span>
               <button
+                type="button"
+                aria-label={`复制课堂名称 ${classroom.name}`}
                 className="shrink-0 p-0.5 rounded hover:bg-foreground/10 transition-colors"
                 onClick={(e) => {
                   e.stopPropagation();

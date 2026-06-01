@@ -143,6 +143,7 @@ export function GenerationToolbar({
         <Tooltip>
           <TooltipTrigger asChild>
             <button
+              type="button"
               onClick={() => onSettingsOpen('providers')}
               className={cn(
                 pillCls,
@@ -163,28 +164,37 @@ export function GenerationToolbar({
 
       {/* ── PDF (parser + upload) combined Popover ── */}
       <Popover>
-        <PopoverTrigger asChild>
-          {pdfFile ? (
-            <button className={pillActive}>
-              <Paperclip className="size-3.5" />
-              <span className="max-w-[100px] truncate">{pdfFile.name}</span>
-              <span
-                role="button"
-                className="size-4 rounded-full inline-flex items-center justify-center hover:bg-sky-200 dark:hover:bg-sky-800 transition-colors"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  onPdfFileChange(null);
-                }}
+        {pdfFile ? (
+          <div className={pillActive}>
+            <PopoverTrigger asChild>
+              <button
+                type="button"
+                className="inline-flex min-w-0 items-center gap-1.5"
+                aria-label={`打开 PDF 设置，当前附件 ${pdfFile.name}`}
               >
-                <X className="size-2.5" />
-              </span>
+                <Paperclip className="size-3.5" />
+                <span className="max-w-[100px] truncate">{pdfFile.name}</span>
+              </button>
+            </PopoverTrigger>
+            <button
+              type="button"
+              className="size-4 rounded-full inline-flex items-center justify-center hover:bg-sky-200 dark:hover:bg-sky-800 transition-colors"
+              aria-label={`移除 PDF 附件 ${pdfFile.name}`}
+              onClick={(e) => {
+                e.stopPropagation();
+                onPdfFileChange(null);
+              }}
+            >
+              <X className="size-2.5" />
             </button>
-          ) : (
-            <button className={pillMuted}>
+          </div>
+        ) : (
+          <PopoverTrigger asChild>
+            <button type="button" className={pillMuted} aria-label="打开 PDF 上传设置">
               <Paperclip className="size-3.5" />
             </button>
-          )}
-        </PopoverTrigger>
+          </PopoverTrigger>
+        )}
         <PopoverContent align="start" className="w-72 p-0">
           {/* Parser selector */}
           <div className="flex items-center gap-2 px-3 pt-3 pb-2">
@@ -254,6 +264,7 @@ export function GenerationToolbar({
                   </div>
                 </div>
                 <button
+                  type="button"
                   onClick={() => onPdfFileChange(null)}
                   className="w-full text-xs text-destructive hover:underline text-left"
                 >
@@ -261,14 +272,16 @@ export function GenerationToolbar({
                 </button>
               </div>
             ) : (
-              <div
+              <button
+                type="button"
                 className={cn(
-                  'flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-4 transition-colors cursor-pointer',
+                  'flex w-full flex-col items-center justify-center rounded-lg border-2 border-dashed p-4 transition-colors cursor-pointer',
                   isDragging
                     ? 'border-sky-400 bg-sky-50 dark:bg-sky-950/20'
                     : 'border-muted-foreground/20 hover:border-sky-300',
                 )}
                 onClick={() => fileInputRef.current?.click()}
+                aria-label="选择 PDF 文件上传"
                 onDragOver={(e) => {
                   e.preventDefault();
                   setIsDragging(true);
@@ -286,7 +299,7 @@ export function GenerationToolbar({
                 <p className="text-[10px] text-muted-foreground/60 mt-0.5">
                   {t('upload.pdfSizeLimit')}
                 </p>
-              </div>
+              </button>
             )}
           </div>
         </PopoverContent>
@@ -296,7 +309,15 @@ export function GenerationToolbar({
       {webSearchAvailable ? (
         <Popover>
           <PopoverTrigger asChild>
-            <button className={webSearch ? pillActive : pillMuted}>
+            <button
+              type="button"
+              className={webSearch ? pillActive : pillMuted}
+              aria-label={
+                webSearch
+                  ? `打开联网搜索设置，当前服务 ${WEB_SEARCH_PROVIDERS[webSearchProviderId]?.name || 'Search'}`
+                  : '打开联网搜索设置'
+              }
+            >
               <Globe2 className={cn('size-3.5', webSearch && 'animate-pulse')} />
               {webSearch && (
                 <span>{WEB_SEARCH_PROVIDERS[webSearchProviderId]?.name || 'Search'}</span>
@@ -306,6 +327,7 @@ export function GenerationToolbar({
           <PopoverContent align="start" className="w-64 p-3 space-y-3">
             {/* Toggle */}
             <button
+              type="button"
               onClick={() => onWebSearchChange(!webSearch)}
               className={cn(
                 'w-full flex items-center gap-2.5 rounded-lg border px-3 py-2.5 text-left transition-all',
@@ -374,7 +396,12 @@ export function GenerationToolbar({
       ) : (
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className={cn(pillCls, 'text-muted-foreground/40 cursor-not-allowed')} disabled>
+            <button
+              type="button"
+              className={cn(pillCls, 'text-muted-foreground/40 cursor-not-allowed')}
+              disabled
+              aria-label="联网搜索暂不可用，先配置搜索服务"
+            >
               <Globe2 className="size-3.5" />
             </button>
           </TooltipTrigger>
@@ -386,6 +413,7 @@ export function GenerationToolbar({
       <Tooltip>
         <TooltipTrigger asChild>
           <button
+            type="button"
             onClick={() =>
               onGenerationModeChange(
                 generationMode === 'deep-interactive' ? 'standard' : 'deep-interactive',
@@ -407,6 +435,7 @@ export function GenerationToolbar({
       <Tooltip>
         <TooltipTrigger asChild>
           <button
+            type="button"
             onClick={() => onLanguageChange(language === 'zh-CN' ? 'en-US' : 'zh-CN')}
             className={pillMuted}
           >
@@ -458,6 +487,9 @@ function ModelSelectorPopover({
     () => configuredProviders.find((p) => p.id === drillProvider),
     [configuredProviders, drillProvider],
   );
+  const modelSelectorLabel = currentModelId
+    ? `选择模型，当前为 ${currentProviderConfig?.name || currentProviderId} ${currentModelId}`
+    : t('settings.selectModel');
 
   return (
     <Popover
@@ -471,6 +503,9 @@ function ModelSelectorPopover({
         <TooltipTrigger asChild>
           <PopoverTrigger asChild>
             <button
+              type="button"
+              aria-label={modelSelectorLabel}
+              aria-expanded={popoverOpen}
               className={cn(
                 'inline-flex items-center justify-center size-7 rounded-full transition-all cursor-pointer select-none',
                 'ring-1 ring-border/60 hover:ring-border hover:bg-muted/60',
@@ -510,6 +545,7 @@ function ModelSelectorPopover({
               return (
                 <button
                   key={provider.id}
+                  type="button"
                   onClick={() => setDrillProvider(provider.id)}
                   className={cn(
                     'w-full flex items-center gap-2.5 px-3 py-2.5 text-left transition-colors border-b border-border/30',
@@ -549,6 +585,7 @@ function ModelSelectorPopover({
           <div className="max-h-72 overflow-y-auto">
             {/* Back header */}
             <button
+              type="button"
               onClick={() => setDrillProvider(null)}
               className="w-full flex items-center gap-2 px-3 py-2 border-b bg-muted/40 hover:bg-muted/60 transition-colors"
             >
@@ -573,6 +610,7 @@ function ModelSelectorPopover({
               return (
                 <button
                   key={model.id}
+                  type="button"
                   onClick={() => {
                     setModel(drillProvider, model.id);
                     setPopoverOpen(false);

@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/lib/hooks/use-i18n';
@@ -164,6 +163,7 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
       <Tooltip>
         <TooltipTrigger asChild>
           <button
+            type="button"
             className={cn(
               'group flex items-center gap-2 cursor-pointer transition-all w-full',
               'border border-border/50 text-muted-foreground/70 hover:text-foreground hover:bg-muted/60',
@@ -226,7 +226,9 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
               {/* Mode tabs — full width, 50/50 */}
               <div className="flex rounded-lg border bg-muted/30 p-0.5 mb-2.5">
                 <button
+                  type="button"
                   onClick={() => handleModeChange('preset')}
+                  aria-pressed={agentMode === 'preset'}
                   className={cn(
                     'flex-1 py-1.5 text-xs font-medium rounded-md transition-all text-center',
                     agentMode === 'preset'
@@ -237,7 +239,9 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
                   {t('settings.agentModePreset')}
                 </button>
                 <button
+                  type="button"
                   onClick={() => handleModeChange('auto')}
+                  aria-pressed={agentMode === 'auto'}
                   className={cn(
                     'flex-1 py-1.5 text-xs font-medium rounded-md transition-all text-center flex items-center justify-center gap-1',
                     agentMode === 'auto'
@@ -258,15 +262,27 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
                     .map((agent) => {
                       const isSelected = selectedAgentIds.includes(agent.id);
                       return (
-                        <div
+                        <button
+                          type="button"
                           key={agent.id}
                           onClick={() => toggleAgent(agent.id)}
+                          aria-pressed={isSelected}
                           className={cn(
                             'w-full flex items-center gap-3 px-3 py-2 text-left transition-colors cursor-pointer rounded-lg',
                             isSelected ? 'bg-primary/5' : 'hover:bg-muted/50',
                           )}
                         >
-                          <Checkbox checked={isSelected} className="pointer-events-none" />
+                          <span
+                            aria-hidden="true"
+                            className={cn(
+                              'flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-primary transition-colors',
+                              isSelected && 'bg-primary',
+                            )}
+                          >
+                            {isSelected && (
+                              <span className="block h-2 w-2 rounded-[2px] bg-primary-foreground" />
+                            )}
+                          </span>
                           <div
                             className="size-8 rounded-full overflow-hidden shrink-0 ring-1 ring-border/40"
                             style={{
@@ -296,7 +312,7 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
                               ) : null;
                             })()}
                           </div>
-                        </div>
+                        </button>
                       );
                     })}
                 </div>
@@ -320,10 +336,11 @@ export function AgentBar({ compact = false }: { compact?: boolean } = {}) {
 
               {/* Max turns — always visible */}
               <div className="pt-2.5 mt-2.5 border-t flex items-center gap-3">
-                <span className="text-xs text-muted-foreground shrink-0">
+                <label htmlFor="agent-max-turns" className="text-xs text-muted-foreground shrink-0">
                   {t('settings.maxTurns')}
-                </span>
+                </label>
                 <Input
+                  id="agent-max-turns"
                   type="number"
                   min="1"
                   max="20"

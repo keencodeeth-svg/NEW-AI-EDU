@@ -461,6 +461,53 @@ async function getSchoolScheduleSessionCount(page: Page) {
 }
 
 test.describe("browser smoke", () => {
+  test("home page exposes role-first entry points without student-only framing", async ({ page }) => {
+    await page.goto("/");
+
+    await expect(page.getByRole("heading", { name: /学生、教师、家长与学校/ })).toBeVisible({
+      timeout: 15_000
+    });
+    await expect(page.getByText("先用学生主入口理解平台主线")).toHaveCount(0);
+
+    const roleEntryGroup = page.getByLabel("学生、教师、家长和学校快速入口");
+    await expect(roleEntryGroup.getByRole("link", { name: /学生登录/ })).toHaveAttribute(
+      "href",
+      "/login?role=student&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: /教师登录/ })).toHaveAttribute(
+      "href",
+      "/login?role=teacher&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: /家长登录/ })).toHaveAttribute(
+      "href",
+      "/login?role=parent&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: /学校登录/ })).toHaveAttribute(
+      "href",
+      "/login?role=school_admin&entry=landing"
+    );
+    await expect(page.getByRole("link", { name: "进入学生端" })).toHaveAttribute(
+      "href",
+      "/login?role=student&entry=landing"
+    );
+    await expect(page.getByRole("link", { name: "进入教师端" })).toHaveAttribute(
+      "href",
+      "/login?role=teacher&entry=landing"
+    );
+    await expect(page.getByRole("link", { name: "进入家长端" })).toHaveAttribute(
+      "href",
+      "/login?role=parent&entry=landing"
+    );
+    await expect(page.getByRole("link", { name: "进入学校端" })).toHaveAttribute(
+      "href",
+      "/login?role=school_admin&entry=landing"
+    );
+    await expect(page.getByRole("link", { name: "进入管理端" })).toHaveAttribute(
+      "href",
+      "/login?role=admin&entry=landing"
+    );
+  });
+
   test("student can log in and reach the execution-first dashboard", async ({ page }) => {
     const studentEmail = `${uniqueId("student")}@local.test`;
 

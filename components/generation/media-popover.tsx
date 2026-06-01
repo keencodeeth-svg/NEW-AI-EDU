@@ -243,6 +243,11 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
     <Popover open={open} onOpenChange={handleOpenChange}>
       <PopoverTrigger asChild>
         <button
+          type="button"
+          aria-label={
+            enabledCount > 0 ? `打开媒体能力设置，已启用 ${enabledCount} 项` : '打开媒体能力设置'
+          }
+          aria-expanded={open}
           className={cn(
             'inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-all cursor-pointer select-none whitespace-nowrap border',
             enabledCount > 0
@@ -269,7 +274,9 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
               return (
                 <button
                   key={tab.id}
+                  type="button"
                   onClick={() => setActiveTab(tab.id)}
+                  aria-pressed={isActive}
                   className={cn(
                     'flex-1 flex items-center justify-center gap-1.5 py-1.5 rounded-md text-[11px] font-medium transition-all relative',
                     isActive
@@ -361,6 +368,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
                   </SelectContent>
                 </Select>
                 <button
+                  type="button"
                   onClick={handlePreview}
                   className={cn(
                     'inline-flex items-center gap-1 rounded-md px-2 py-1.5 text-[11px] font-medium transition-all shrink-0',
@@ -421,6 +429,7 @@ export function MediaPopover({ onSettingsOpen }: MediaPopoverProps) {
         {/* ── Footer ── */}
         <div className="border-t border-border/40">
           <button
+            type="button"
             onClick={() => {
               setOpen(false);
               onSettingsOpen(activeTab);

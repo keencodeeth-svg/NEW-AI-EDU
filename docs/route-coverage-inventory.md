@@ -28,8 +28,8 @@
 
 当前覆盖摘要：
 
-- smoke：当前归一化触达 28 条路由，其中部分为流程进入或动态 id 进入。
-- a11y：当前直接覆盖 `/`、`/login`、`/register`、`/recover`、`/student`、`/practice`、`/teacher`、`/teacher/classroom-live`。
+- smoke：当前归一化触达 25 条路由，其中部分为流程进入或动态 id 进入；`/` 已有独立角色入口 smoke。
+- a11y：当前直接覆盖 `/`、`/login`、`/register`、`/recover`、`/student`、`/practice`、`/teacher`、`/teacher/classroom-live`、`/ai-classroom`、`/student/interactive-classroom`、`/admin`、`/school`、`/school/interactive-classrooms`。
 - visual：当前工作区脚本明示覆盖 `/`、`/login`、`/register`、`/recover`、`/ai-classroom`、`/student`、`/practice`、`/student/interactive-classroom`、`/teacher`、`/teacher/classroom-live`、`/parent`、`/school`、`/school/interactive-classrooms`、`/admin`。
 - 状态页：当前只发现 `app/dashboard/error.tsx`；其余路由的 empty/loading/error 需要在页面内或后续路由文件中建立明确契约。
 
@@ -37,20 +37,20 @@
 
 | 路由 | 角色 | 用户意图 | smoke | a11y | visual | empty/loading/error 状态要求 | 下一步缺口 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `/` | 公开入口 / 全角色 | 选择学生、教师、家长或学校主线，不先被迫理解学生路径 | 未覆盖 | 已覆盖 | 壳层覆盖 | 入口卡片为空时仍展示角色选择；首屏资源加载中保留布局；链接或角色入口异常要给恢复路径 | 补最小 smoke，确认四类角色入口 href 与品牌出口 |
+| `/` | 公开入口 / 全角色 | 选择学生、教师、家长或学校主线，不先被迫理解学生路径 | 已覆盖 | 已覆盖 | 壳层覆盖 | 入口卡片为空时仍展示角色选择；首屏资源加载中保留布局；链接或角色入口异常要给恢复路径 | 补异常资源加载和品牌资产失败态 |
 | `/login` | 公开入口 / 全角色 | 选择角色并登录到对应工作台 | 已覆盖 | 已覆盖 | 壳层覆盖 | 登录中按钮禁用；错误用可读 `alert`；锁定、无权限、网络错误给下一步 | 继续拆分学生、教师、家长、学校、管理员登录用例的独立断言 |
 | `/register` | 公开入口 / 学生、家长、教师、学校、管理员开通入口 | 自助注册或找到非自助角色开通路径 | 已覆盖 | 已覆盖 | 壳层覆盖 | 空表单有必填语义；提交中禁用；重复邮箱、邀请码错误、成功态可读 | 补教师、学校、管理员注册入口的 a11y 与 visual 独立门禁 |
 | `/recover` | 公开入口 / 全角色 | 提交账号恢复请求并获得服务时效 | 已覆盖 | 已覆盖 | 壳层覆盖 | 空表单有说明；提交中禁用；限流、成功状态用 `alert/status` | 补各角色恢复入口的 smoke 参数化覆盖 |
 | `/student` | 学生 | 查看今天最值得开始的学习动作 | 流程覆盖 | 已覆盖 | 壳层覆盖 | 无任务时给练习/课堂/计划 CTA；加载中保留工作台骨架；接口失败给重试与登录边界 | 补 dashboard 数据空态和接口失败场景 |
 | `/teacher` | 教师 | 从备课、课堂、作业和学情里选择今天先做什么 | 流程覆盖 | 已覆盖 | 壳层覆盖 | 无班级/无作业时给建班和发布 CTA；加载中保留导航；接口失败给重试 | 补无班级、无学生、API 失败的 smoke |
 | `/parent` | 家长 | 查看孩子状态、陪伴动作、鼓励反馈 | 流程覆盖 | 未覆盖 | 壳层覆盖 | 未绑定孩子时显示观察码绑定路径；加载中保留家长工作台；提交失败可恢复 | 补 Axe 门禁和未绑定孩子空态 |
-| `/school` | 学校管理员 | 查看学校质量治理、课堂应用和排课风险 | 未覆盖 | 未覆盖 | 壳层覆盖 | 无班级/无教师时给导入与邀请路径；加载中保留治理概览；接口失败给只读降级 | 补登录后直达 smoke 与 Axe 门禁 |
-| `/admin` | 平台管理员 | 优先处理发布风险、账号恢复、模型链和内容治理 | 已覆盖 | 未覆盖 | 壳层覆盖 | 无工单/无告警时解释健康状态；高风险动作 loading/step-up/error 明确 | 补 Axe 门禁和异常队列空态 |
+| `/school` | 学校管理员 | 查看学校质量治理、课堂应用和排课风险 | 未覆盖 | 已覆盖 | 壳层覆盖 | 无班级/无教师时给导入与邀请路径；加载中保留治理概览；接口失败给只读降级 | 补登录后直达 smoke 与学校数据空态 |
+| `/admin` | 平台管理员 | 优先处理发布风险、账号恢复、模型链和内容治理 | 已覆盖 | 已覆盖 | 壳层覆盖 | 无工单/无告警时解释健康状态；高风险动作 loading/step-up/error 明确 | 补异常队列空态和 step-up 失败态 |
 | `/practice` | 学生 | 进入智能练习并完成学习巩固 | 未覆盖 | 已覆盖 | 壳层覆盖 | 无题目时给生成或选择知识点 CTA；加载题目有 skeleton；提交错误可重试 | 补业务 smoke 与错误态 |
-| `/ai-classroom` | 公开 / 学生 / 教师 | 带课堂上下文进入 AI 课堂生成主线 | 流程覆盖 | 未覆盖 | 壳层覆盖 | 未带上下文时解释可独立使用；生成中禁用提交；生成失败不伪装成功 | 补 Axe 门禁、直达 smoke、生成失败态 |
-| `/student/interactive-classroom` | 学生 | 从学生端发起自学或兴趣培养课堂 | 已覆盖 | 未覆盖 | 壳层覆盖 | 未登录或接口失败时标注体验模式；加载画像不跳动；错误说明真实画像未接入 | 补 Axe 门禁，并把体验模式边界纳入 visual 断言 |
+| `/ai-classroom` | 公开 / 学生 / 教师 | 带课堂上下文进入 AI 课堂生成主线 | 流程覆盖 | 已覆盖 | 壳层覆盖 | 未带上下文时解释可独立使用；生成中禁用提交；生成失败不伪装成功 | 补直达 smoke、生成失败态和课堂卡片键盘流 |
+| `/student/interactive-classroom` | 学生 | 从学生端发起自学或兴趣培养课堂 | 已覆盖 | 已覆盖 | 壳层覆盖 | 未登录或接口失败时标注体验模式；加载画像不跳动；错误说明真实画像未接入 | 补真实学习态 Axe 与更多 visual 断言 |
 | `/teacher/classroom-live` | 教师 | 发起课堂练习并查看实时课堂反馈 | 已覆盖 | 已覆盖 | 壳层覆盖 | 无班级/无人作答要有空态；推进中禁用；课堂 API 失败可重试 | 补更多真实班级数据态与移动交互断言 |
-| `/school/interactive-classrooms` | 学校管理员 | 查看互动课堂交付和质量治理数据 | 已覆盖 | 未覆盖 | 壳层覆盖 | 无交付记录时说明如何发起；加载中保留指标位；接口失败可重试 | 补 Axe 门禁和无数据空态 |
+| `/school/interactive-classrooms` | 学校管理员 | 查看互动课堂交付和质量治理数据 | 已覆盖 | 已覆盖 | 壳层覆盖 | 无交付记录时说明如何发起；加载中保留指标位；接口失败可重试 | 补无数据空态和榜单切换 AT 状态 |
 | `/classroom/[id]` | 学生 / 教师 / 课堂参与者 | 进入沉浸式课堂详情或预览 | 未覆盖 | 未覆盖 | 未覆盖 | 缺失 id、未授权、课堂不存在、加载中都要有明确边界 | 建立可复现课堂 fixture，并加入 smoke/a11y/visual |
 
 ## 4. 核心 P1 覆盖矩阵
@@ -78,20 +78,20 @@
 
 | 路由 | 源文件 | seed 分层 | 角色桶 | 覆盖备注 |
 | --- | --- | --- | --- | --- |
-| `/` | `app/page.tsx` | P0 | 公开入口 | a11y + visual；smoke 缺口 |
+| `/` | `app/page.tsx` | P0 | 公开入口 | smoke + a11y + visual |
 | `/login` | `app/login/page.tsx` | P0 | 公开入口 | smoke + a11y + visual |
 | `/register` | `app/register/page.tsx` | P0 | 公开入口 | smoke + a11y + visual |
 | `/recover` | `app/recover/page.tsx` | P0 | 公开入口 | smoke + a11y + visual |
 | `/student` | `app/student/page.tsx` | P0 | 学生 | smoke flow + a11y + visual |
 | `/teacher` | `app/teacher/page.tsx` | P0 | 教师 | smoke flow + a11y + visual |
 | `/parent` | `app/parent/page.tsx` | P0 | 家长 | smoke flow + visual |
-| `/school` | `app/school/page.tsx` | P0 | 学校管理员 | visual；smoke/a11y 缺口 |
-| `/admin` | `app/admin/page.tsx` | P0 | 平台管理员 | smoke + visual；a11y 缺口 |
+| `/school` | `app/school/page.tsx` | P0 | 学校管理员 | a11y + visual；smoke 缺口 |
+| `/admin` | `app/admin/page.tsx` | P0 | 平台管理员 | smoke + a11y + visual |
 | `/practice` | `app/practice/page.tsx` | P0 | 学生 | a11y + visual；smoke 缺口 |
-| `/ai-classroom` | `app/ai-classroom/page.tsx` | P0 | 学生 / 教师 / 公开 | smoke flow + visual |
-| `/student/interactive-classroom` | `app/student/interactive-classroom/page.tsx` | P0 | 学生 | smoke + visual；a11y 缺口 |
+| `/ai-classroom` | `app/ai-classroom/page.tsx` | P0 | 学生 / 教师 / 公开 | smoke flow + a11y + visual |
+| `/student/interactive-classroom` | `app/student/interactive-classroom/page.tsx` | P0 | 学生 | smoke + a11y + visual |
 | `/teacher/classroom-live` | `app/teacher/classroom-live/page.tsx` | P0 | 教师 | smoke + a11y + visual |
-| `/school/interactive-classrooms` | `app/school/interactive-classrooms/page.tsx` | P0 | 学校管理员 | smoke + visual；a11y 缺口 |
+| `/school/interactive-classrooms` | `app/school/interactive-classrooms/page.tsx` | P0 | 学校管理员 | smoke + a11y + visual |
 | `/classroom/[id]` | `app/classroom/[id]/page.tsx` | P0 | 课堂参与者 | 未覆盖 |
 | `/notifications` | `app/notifications/page.tsx` | P1 | 全角色 | smoke |
 | `/library` | `app/library/page.tsx` | P1 | 管理员 / 教师 / 学校 | smoke |
@@ -160,7 +160,7 @@
 
 ## 6. 下一步补齐顺序
 
-1. 把 P0 中仍缺 smoke/a11y/visual 的 `/`、`/parent`、`/school`、`/admin`、`/practice`、`/ai-classroom`、`/student/interactive-classroom`、`/school/interactive-classrooms`、`/classroom/[id]` 补齐到同一门禁口径。
+1. 把 P0 中仍缺 smoke/a11y/visual 的 `/parent`、`/school`、`/practice`、`/ai-classroom`、`/classroom/[id]` 补齐到同一门禁口径；其中 `/ai-classroom` 当前已有流程 smoke、a11y 与 visual，下一步补直达 smoke 和生成失败态。
 2. 把 P1 已有 smoke 的列表/详情/高风险操作页补上 Axe 与 visual：`/library`、`/library/[id]`、`/student/exams*`、`/student/assignments/[id]`、`/teacher/lesson-planner`、`/teacher/projects`、`/school/schedules`、`/school/classes`、`/admin/ai-models`、`/admin/recovery-requests`。
 3. 为动态详情页建立稳定 fixture：`/classroom/[id]`、`/library/[id]`、`/student/exams/[id]`、`/student/assignments/[id]`、`/teacher/assignments/[id]/reviews/[studentId]`。
 4. 为所有 P0/P1 页面定义统一 empty/loading/error 状态验收样例，后续再扩到 P2 长尾学习页、管理页和通用协作页。

@@ -118,9 +118,10 @@ corepack pnpm verify:strict
 
 当前浏览器 a11y 回归已覆盖：
 
-- 公开入口页 zero critical / serious accessibility violations
-- 学生工作台与练习流 zero critical / serious accessibility violations
-- 教师工作台与课堂实时页 zero critical / serious accessibility violations
+- 公开入口页：`/`、`/login`、`/register`、`/recover` zero critical / serious accessibility violations
+- 学生主线与课堂入口：`/student`、`/practice`、`/student/interactive-classroom`、`/ai-classroom` zero critical / serious accessibility violations
+- 教师工作台与课堂实时页：`/teacher`、`/teacher/classroom-live` zero critical / serious accessibility violations
+- 学校与管理治理页：`/school`、`/school/interactive-classrooms`、`/admin` zero critical / serious accessibility violations
 - 键盘首个 Tab 可达 `skip-link`，并能跳到 `#main-content`
 - 主题切换控件存在基础 ARIA 契约：`role=group`、可感知标签、按钮 `aria-pressed`
 
