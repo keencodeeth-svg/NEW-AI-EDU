@@ -134,13 +134,25 @@ test.describe("browser accessibility", () => {
     await expectSkipLinkKeyboardReachable(page);
     await expectThemeToggleAria(page);
     await expect(page.getByText("先用学生主入口理解平台主线")).toHaveCount(0);
-    await expect(page.getByRole("link", { name: "学生登录" })).toHaveAttribute("href", "/login?role=student&entry=landing");
-    await expect(page.getByRole("link", { name: "教师登录" })).toHaveAttribute("href", "/login?role=teacher&entry=landing");
-    await expect(page.getByRole("link", { name: "家长登录" })).toHaveAttribute("href", "/login?role=parent&entry=landing");
-    await expect(page.getByRole("link", { name: "学校登录" })).toHaveAttribute(
+    await expect(page.getByText("学生、教师、家长与学校都从这里进入各自主线")).toBeVisible();
+    const roleEntryGroup = page.getByLabel("学生、教师、家长和学校快速入口");
+    await expect(roleEntryGroup.getByRole("link", { name: "学生登录 今日学习、练习、课堂与成长记录" })).toHaveAttribute(
+      "href",
+      "/login?role=student&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: "教师登录 备课、课堂发布、作业与学情" })).toHaveAttribute(
+      "href",
+      "/login?role=teacher&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: "家长登录 今晚陪伴动作与家校回执" })).toHaveAttribute(
+      "href",
+      "/login?role=parent&entry=landing"
+    );
+    await expect(roleEntryGroup.getByRole("link", { name: "学校登录 课表预演、班级和课堂质量" })).toHaveAttribute(
       "href",
       "/login?role=school_admin&entry=landing"
     );
+    await expect(page.getByText("不需要先按学生路径理解平台，再切换到教师、家长或学校角色。")).toBeVisible();
     await expectNoCriticalViolations(page, "首页");
 
     await page.goto("/login");
@@ -173,6 +185,23 @@ test.describe("browser accessibility", () => {
     await page.getByRole("button", { name: "注册" }).click();
     await expect(page.locator("#register-form-error")).toHaveAttribute("role", "alert");
     await expect(page.locator("#register-form-error")).toContainText("该邮箱已注册");
+    await expect(page.getByText("学生与家长可自助注册", { exact: true })).toBeVisible();
+    await expect(
+      page.getByText("教师、学校管理员与平台管理员账号需通过邀请码、学校授权或平台授权开通", { exact: true })
+    ).toBeVisible();
+    const activationPaths = page.getByLabel("其他角色开通路径");
+    await expect(activationPaths.getByRole("link", { name: "教师账号开通" })).toHaveAttribute(
+      "href",
+      "/teacher/register?entry=register"
+    );
+    await expect(activationPaths.getByRole("link", { name: "学校账号开通" })).toHaveAttribute(
+      "href",
+      "/school/register?entry=register"
+    );
+    await expect(activationPaths.getByRole("link", { name: "平台管理账号开通" })).toHaveAttribute(
+      "href",
+      "/admin/register?entry=register"
+    );
     await expectNoCriticalViolations(page, "注册页");
 
     await page.goto("/recover");
@@ -200,6 +229,11 @@ test.describe("browser accessibility", () => {
       "href",
       "/recover?role=teacher&entry=login"
     );
+    await expect(page.getByRole("link", { name: "教师账号开通方式" })).toHaveAttribute(
+      "href",
+      "/teacher/register?entry=login&role=teacher"
+    );
+    await expect(page.getByText("教师账号需要学校邀请码或平台授权后开通")).toBeVisible();
 
     await page.getByRole("link", { name: "忘记教师账号或密码？去恢复" }).click();
     await expect(page).toHaveURL(/\/recover\?role=teacher&entry=login/);
@@ -226,6 +260,7 @@ test.describe("browser accessibility", () => {
       "href",
       "/login?role=teacher&entry=recover"
     );
+    await expect(page.getByRole("link", { name: "返回教师登录" })).toBeVisible();
   });
 
   test("student dashboard and practice flow keep critical accessibility issues at zero", async ({ page }) => {

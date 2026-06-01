@@ -241,6 +241,7 @@ ssh "${SSH_OPTS[@]}" "$DEPLOY_REMOTE_HOST" bash -s -- \
   "$DEPLOY_SKIP_CANARY" \
   "$DEPLOY_REMOTE_INSTALL_COMMAND" \
   "$DEPLOY_REMOTE_MIGRATE_COMMAND" \
+  "$DEPLOY_EXTERNAL_HEALTH_URL" \
   "$DEPLOY_POST_DEPLOY_COMMAND" \
   "$DEPLOY_POST_DEPLOY_URL" \
   "$DEPLOY_POST_DEPLOY_EXPECT_STATUS" \
@@ -262,10 +263,11 @@ production_wait="${12}"
 skip_canary="${13}"
 install_command="${14}"
 migrate_command="${15}"
-post_deploy_command="${16}"
-post_deploy_url="${17}"
-post_deploy_expect_status="${18}"
-post_deploy_timeout_ms="${19}"
+external_health_url="${16}"
+post_deploy_command="${17}"
+post_deploy_url="${18}"
+post_deploy_expect_status="${19}"
+post_deploy_timeout_ms="${20}"
 
 run_inline_health() {
   local target_port="$1"
@@ -286,6 +288,15 @@ run_post_deploy_smoke() {
   POST_DEPLOY_SMOKE_EXPECT_STATUS="$post_deploy_expect_status" \
   POST_DEPLOY_SMOKE_TIMEOUT_MS="$post_deploy_timeout_ms" \
     node scripts/post-deploy-smoke.mjs
+}
+
+run_external_health() {
+  if [[ -z "$external_health_url" ]]; then
+    return 0
+  fi
+
+  echo "Checking external health: $external_health_url" >&2
+  curl -fsS --max-time 20 "$external_health_url" >/dev/null
 }
 
 ensure_pm2_process() {
@@ -432,6 +443,7 @@ ensure_pm2_process "$pm2_app_name" "$production_port" "$remote_release_dir"
 production_reloaded=1
 sleep "$production_wait"
 run_inline_health "$production_port"
+run_external_health
 run_post_deploy_smoke
 trap - ERR
 
@@ -439,11 +451,6 @@ pm2 delete "$canary_app_name" >/dev/null 2>&1 || true
 pm2 save >/dev/null
 pm2 list
 REMOTE_SCRIPT
-
-if [[ -n "$DEPLOY_EXTERNAL_HEALTH_URL" ]]; then
-  log "Checking external health: $DEPLOY_EXTERNAL_HEALTH_URL"
-  curl -fsS --max-time 20 "$DEPLOY_EXTERNAL_HEALTH_URL" >/dev/null
-fi
 
 log "Remote deploy complete for $RELEASE_LABEL"
 log "Active release: $REMOTE_RELEASE_DIR"

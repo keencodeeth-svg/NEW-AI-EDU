@@ -1,10 +1,14 @@
 import { chromium } from "@playwright/test";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const PASSWORD = process.env.VISUAL_CHECK_PASSWORD || "Playwright123!";
 const FIXED_STUDENT_EMAIL = process.env.VISUAL_CHECK_STUDENT_EMAIL || "";
+const FIXED_TEACHER_EMAIL = process.env.VISUAL_CHECK_TEACHER_EMAIL || "";
 const STUDENT_NAME = process.env.VISUAL_CHECK_STUDENT_NAME || "Visual Check Student";
+const TEACHER_NAME = process.env.VISUAL_CHECK_TEACHER_NAME || "Visual Check Teacher";
+const TEACHER_INVITE_CODE = process.env.VISUAL_CHECK_TEACHER_INVITE_CODE || "PW-TEACH-2026";
 const baseUrl = process.env.VISUAL_CHECK_BASE_URL || "http://127.0.0.1:3001";
 const screenshotDir = process.env.VISUAL_CHECK_SCREENSHOT_DIR || "output/playwright";
 const reportPath = process.env.VISUAL_CHECK_REPORT_PATH || path.join(screenshotDir, "visual-check.json");
@@ -24,19 +28,26 @@ const publicRoutes = [
     route: "/login",
     slug: "login",
     expectedShell: "public",
-    requiredSelectors: [".public-header-links", ".theme-mode-toggle"],
+    requiredSelectors: [".public-header-links", ".theme-mode-toggle", ".skip-link"],
     forbiddenSelectors: [".app-sidebar"]
   },
   {
-    route: "/ai-classroom",
-    slug: "ai-classroom",
+    route: "/register",
+    slug: "register",
     expectedShell: "public",
-    requiredSelectors: [".public-header-links", ".theme-mode-toggle"],
+    requiredSelectors: [".public-header-links", ".theme-mode-toggle", ".skip-link"],
+    forbiddenSelectors: [".app-sidebar"]
+  },
+  {
+    route: "/recover",
+    slug: "recover",
+    expectedShell: "public",
+    requiredSelectors: [".public-header-links", ".theme-mode-toggle", ".skip-link"],
     forbiddenSelectors: [".app-sidebar"]
   }
 ];
 
-const authenticatedRoutes = [
+const studentRoutes = [
   {
     route: "/student",
     slug: "student-dashboard",
@@ -48,15 +59,41 @@ const authenticatedRoutes = [
     forbiddenSelectors: [".public-header-links"]
   },
   {
-    route: "/student/interactive-classroom",
-    slug: "student-interactive-classroom",
+    route: "/practice",
+    slug: "practice",
     expectedShell: "authenticated",
+    headingText: "智能练习",
     requireSidebarOnDesktop: true,
     requireMobileTabbarOnMobile: true,
-    requiredSelectors: [".theme-mode-toggle", ".main"],
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
     forbiddenSelectors: [".public-header-links"]
   }
 ];
+
+const teacherRoutes = [
+  {
+    route: "/teacher",
+    slug: "teacher-dashboard",
+    expectedShell: "authenticated",
+    headingText: "现在先开工",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  },
+  {
+    route: "/teacher/classroom-live",
+    slug: "teacher-classroom-live",
+    expectedShell: "authenticated",
+    headingText: "课堂实时仪表盘",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  }
+];
+
+const themes = ["light", "dark"];
 
 const viewports = [
   { name: "desktop", width: 1440, height: 1000 },
@@ -94,6 +131,18 @@ function sanitizeSlug(route) {
   return route === "/" ? "home" : route.slice(1).replaceAll("/", "-");
 }
 
+export function getResultKey(route, viewport, theme) {
+  return `${route}::${viewport}::${theme}`;
+}
+
+function getLegacyBaselineKey(route, viewport) {
+  return `${route}::${viewport}`;
+}
+
+export function getScreenshotFileName(slug, viewport, theme) {
+  return `${slug}-${viewport}-${theme}.png`;
+}
+
 function normalizeBaseline(rawBaseline) {
   const baselineMap = new Map();
   if (!Array.isArray(rawBaseline)) {
@@ -104,8 +153,15 @@ function normalizeBaseline(rawBaseline) {
     if (!item || typeof item.route !== "string" || typeof item.viewport !== "string") {
       continue;
     }
-    baselineMap.set(`${item.route}::${item.viewport}`, item);
+
+    if (typeof item.theme === "string") {
+      baselineMap.set(getResultKey(item.route, item.viewport, item.theme), item);
+      continue;
+    }
+
+    baselineMap.set(getLegacyBaselineKey(item.route, item.viewport), item);
   }
+
   return baselineMap;
 }
 
@@ -122,117 +178,139 @@ async function loadBaseline() {
   }
 }
 
+function getBaselineForResult(baselineMap, route, viewport, theme) {
+  return baselineMap.get(getResultKey(route, viewport, theme)) ?? baselineMap.get(getLegacyBaselineKey(route, viewport)) ?? null;
+}
+
+function uniqueEmail(prefix, fixedEmail) {
+  if (fixedEmail) {
+    return fixedEmail;
+  }
+  return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}@local.test`;
+}
+
+async function evaluateJson(page, requestUrl, requestBody) {
+  return page.evaluate(
+    async ({ targetUrl, body }) => {
+      const response = await fetch(targetUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-test-origin": window.location.origin
+        },
+        body: JSON.stringify(body)
+      });
+      const payload = await response.json().catch(() => null);
+      return { ok: response.ok, status: response.status, body: payload };
+    },
+    { targetUrl: requestUrl, body: requestBody }
+  );
+}
+
 async function ensureStudentSession(page) {
-  const email =
-    FIXED_STUDENT_EMAIL || `visual-check-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}@local.test`;
+  const email = uniqueEmail("visual-check-student", FIXED_STUDENT_EMAIL);
 
   await page.goto(`${baseUrl}/login?role=student`, {
     waitUntil: "domcontentloaded",
     timeout: 30_000
   });
 
-  const registration = await page.evaluate(
-    async ({ email, password, name }) => {
-      const response = await fetch("/api/auth/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-test-origin": window.location.origin
-        },
-        body: JSON.stringify({
-          role: "student",
-          email,
-          password,
-          name,
-          grade: "4"
-        })
-      });
-      const body = await response.json().catch(() => null);
-      return { ok: response.ok, status: response.status, body };
-    },
-    { email, password: PASSWORD, name: STUDENT_NAME }
-  );
+  const registration = await evaluateJson(page, "/api/auth/register", {
+    role: "student",
+    email,
+    password: PASSWORD,
+    name: STUDENT_NAME,
+    grade: "4"
+  });
 
-  if (
-    !registration.ok &&
-    FIXED_STUDENT_EMAIL &&
-    registration.status >= 400 &&
-    registration.status < 500
-  ) {
-    // A fixed visual-check account may already exist from a prior run.
+  if (!registration.ok && FIXED_STUDENT_EMAIL && registration.status >= 400 && registration.status < 500) {
     console.warn(`Student registration skipped for ${email}: ${registration.status}`);
   } else if (!registration.ok) {
     throw new Error(`Student registration failed: ${registration.status} ${JSON.stringify(registration.body)}`);
   }
 
-  const login = await page.evaluate(
-    async ({ email, password }) => {
-      const response = await fetch("/api/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-test-origin": window.location.origin
-        },
-        body: JSON.stringify({
-          email,
-          password,
-          role: "student"
-        })
-      });
-      const body = await response.json().catch(() => null);
-      return { ok: response.ok, status: response.status, body };
-    },
-    { email, password: PASSWORD }
-  );
+  const login = await evaluateJson(page, "/api/auth/login", {
+    email,
+    password: PASSWORD,
+    role: "student"
+  });
 
   if (!login.ok) {
     throw new Error(`Student login failed: ${login.status} ${JSON.stringify(login.body)}`);
   }
+
+  return { email };
 }
 
-async function collectThemeMetrics(page) {
-  const root = page.locator("html");
-  const toggle = page.locator(".theme-mode-toggle");
-  const darkButton = page.getByRole("button", { name: getThemeButtonName("dark") });
-  const lightButton = page.getByRole("button", { name: getThemeButtonName("light") });
+async function ensureTeacherSession(page) {
+  const email = uniqueEmail("visual-check-teacher", FIXED_TEACHER_EMAIL);
 
-  if (!(await toggle.count())) {
-    return {
-      themeTogglePresent: false,
-      themeCycleSucceeded: false,
-      initialRootClass: "",
-      darkRootClass: "",
-      lightRootClass: ""
-    };
+  await page.goto(`${baseUrl}/login?role=teacher`, {
+    waitUntil: "domcontentloaded",
+    timeout: 30_000
+  });
+
+  const registration = await evaluateJson(page, "/api/auth/teacher-register", {
+    email,
+    password: PASSWORD,
+    name: TEACHER_NAME,
+    inviteCode: TEACHER_INVITE_CODE
+  });
+
+  if (!registration.ok && FIXED_TEACHER_EMAIL && registration.status >= 400 && registration.status < 500) {
+    console.warn(`Teacher registration skipped for ${email}: ${registration.status}`);
+  } else if (!registration.ok) {
+    throw new Error(`Teacher registration failed: ${registration.status} ${JSON.stringify(registration.body)}`);
   }
 
-  const initialRootClass = (await root.getAttribute("class")) ?? "";
-  await darkButton.click();
-  await page.waitForTimeout(waitAfterThemeToggleMs);
-  const darkRootClass = (await root.getAttribute("class")) ?? "";
+  const login = await evaluateJson(page, "/api/auth/login", {
+    email,
+    password: PASSWORD,
+    role: "teacher"
+  });
 
-  await lightButton.click();
-  await page.waitForTimeout(waitAfterThemeToggleMs);
-  const lightRootClass = (await root.getAttribute("class")) ?? "";
+  if (!login.ok) {
+    throw new Error(`Teacher login failed: ${login.status} ${JSON.stringify(login.body)}`);
+  }
 
-  return {
-    themeTogglePresent: true,
-    themeCycleSucceeded: darkRootClass.includes("dark") && !lightRootClass.includes("dark"),
-    initialRootClass,
-    darkRootClass,
-    lightRootClass
-  };
+  return { email };
 }
 
 async function dismissGuidedTourIfVisible(page) {
   const skipButton = page.getByRole("button", { name: "跳过" });
   if (await skipButton.isVisible().catch(() => false)) {
-    await skipButton.click();
-    await page.waitForLoadState("networkidle");
+    await page.keyboard.press("Escape");
+    await skipButton.waitFor({ state: "hidden", timeout: 5_000 }).catch(() => undefined);
   }
 }
 
-async function collectPageMetrics(page, routeConfig, viewportName) {
+async function setTheme(page, theme) {
+  const toggle = page.locator(".theme-mode-toggle");
+  if (!(await toggle.count())) {
+    return {
+      themeTogglePresent: false,
+      targetTheme: theme,
+      rootClass: (await page.locator("html").getAttribute("class")) ?? "",
+      themeApplied: false
+    };
+  }
+
+  const button = page.getByRole("button", { name: getThemeButtonName(theme) });
+  await button.click();
+  await page.waitForTimeout(waitAfterThemeToggleMs);
+
+  const rootClass = (await page.locator("html").getAttribute("class")) ?? "";
+  const isDark = rootClass.includes("dark");
+
+  return {
+    themeTogglePresent: true,
+    targetTheme: theme,
+    rootClass,
+    themeApplied: theme === "dark" ? isDark : !isDark
+  };
+}
+
+async function collectPageMetrics(page, routeConfig, viewportName, themeState) {
   const shellMetrics = await page.evaluate(
     ({ selectors, viewport }) => {
       const html = document.documentElement;
@@ -282,9 +360,7 @@ async function collectPageMetrics(page, routeConfig, viewportName) {
     }
   );
 
-  const themeMetrics = await collectThemeMetrics(page);
   const rules = [];
-
   rules.push(
     createRuleResult(
       "http-status-ok",
@@ -294,23 +370,23 @@ async function collectPageMetrics(page, routeConfig, viewportName) {
   );
   rules.push(
     createRuleResult(
+      "theme-toggle-present",
+      themeState.themeTogglePresent,
+      themeState.themeTogglePresent ? "theme toggle located" : "missing .theme-mode-toggle"
+    )
+  );
+  rules.push(
+    createRuleResult(
+      "theme-applied",
+      themeState.themeApplied,
+      `target=${themeState.targetTheme} rootClass=${themeState.rootClass || "(empty)"}`
+    )
+  );
+  rules.push(
+    createRuleResult(
       "no-horizontal-overflow",
       !shellMetrics.overflowX,
       `scrollWidth=${shellMetrics.scrollWidth}, clientWidth=${shellMetrics.clientWidth}, bodyScrollWidth=${shellMetrics.bodyScrollWidth}`
-    )
-  );
-  rules.push(
-    createRuleResult(
-      "theme-toggle-present",
-      themeMetrics.themeTogglePresent,
-      themeMetrics.themeTogglePresent ? "theme toggle located" : "missing .theme-mode-toggle"
-    )
-  );
-  rules.push(
-    createRuleResult(
-      "theme-toggle-cycle",
-      themeMetrics.themeCycleSucceeded,
-      `initial=${themeMetrics.initialRootClass || "(empty)"} dark=${themeMetrics.darkRootClass || "(empty)"} light=${themeMetrics.lightRootClass || "(empty)"}`
     )
   );
 
@@ -366,7 +442,10 @@ async function collectPageMetrics(page, routeConfig, viewportName) {
 
   return {
     ...shellMetrics,
-    ...themeMetrics,
+    theme: themeState.targetTheme,
+    themeRootClass: themeState.rootClass,
+    themeTogglePresent: themeState.themeTogglePresent,
+    themeApplied: themeState.themeApplied,
     rules
   };
 }
@@ -402,105 +481,141 @@ function compareWithBaseline(result, baseline) {
       )
     );
   }
+  if (typeof baseline.theme === "string") {
+    comparisons.push(
+      createRuleResult(
+        "baseline-theme-match",
+        baseline.theme === result.theme,
+        `baseline=${baseline.theme} current=${result.theme}`
+      )
+    );
+  }
   return comparisons;
 }
 
-await fs.mkdir(screenshotDir, { recursive: true });
+async function runRouteChecks(page, routeConfig, viewportName, baselineMap) {
+  const response = await page.goto(`${baseUrl}${routeConfig.route}`, {
+    waitUntil: "networkidle",
+    timeout: 30_000
+  });
 
-const baselineMap = await loadBaseline();
-const browser = await chromium.launch({ headless: true });
-const results = [];
-let unexpectedFailures = 0;
+  await dismissGuidedTourIfVisible(page);
 
-try {
-  for (const viewport of viewports) {
-    const publicContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
-    const publicPage = await publicContext.newPage();
+  const routeResults = [];
 
-    for (const routeConfig of publicRoutes) {
-      const response = await publicPage.goto(`${baseUrl}${routeConfig.route}`, {
-        waitUntil: "networkidle",
-        timeout: 30_000
-      });
+  for (const theme of themes) {
+    const themeState = await setTheme(page, theme);
+    const result = await collectPageMetrics(page, routeConfig, viewportName, themeState);
+    result.route = routeConfig.route;
+    result.viewport = viewportName;
+    result.theme = theme;
+    result.slug = routeConfig.slug || sanitizeSlug(routeConfig.route);
+    result.key = getResultKey(routeConfig.route, viewportName, theme);
+    result.expectedShell = routeConfig.expectedShell;
+    result.status = response?.status() ?? 0;
+    result.screenshot = path.join(screenshotDir, getScreenshotFileName(result.slug, viewportName, theme));
+    result.rules[0] = createRuleResult("http-status-ok", result.status >= 200 && result.status < 400, `status=${result.status}`);
+    result.rules.push(...compareWithBaseline(result, getBaselineForResult(baselineMap, routeConfig.route, viewportName, theme)));
+    result.failedRules = result.rules.filter((rule) => !rule.passed);
+    result.passed = result.failedRules.length === 0;
 
-      const result = await collectPageMetrics(publicPage, routeConfig, viewport.name);
-      result.route = routeConfig.route;
-      result.viewport = viewport.name;
-      result.slug = routeConfig.slug || sanitizeSlug(routeConfig.route);
-      result.expectedShell = routeConfig.expectedShell;
-      result.status = response?.status() ?? 0;
-      result.rules[0] = createRuleResult("http-status-ok", result.status >= 200 && result.status < 400, `status=${result.status}`);
-      result.rules.push(...compareWithBaseline(result, baselineMap.get(`${routeConfig.route}::${viewport.name}`)));
-      result.failedRules = result.rules.filter((rule) => !rule.passed);
-      result.passed = result.failedRules.length === 0;
+    await page.screenshot({
+      path: result.screenshot,
+      fullPage: true
+    });
 
-      await publicPage.screenshot({
-        path: path.join(screenshotDir, `${result.slug}-${viewport.name}.png`),
-        fullPage: true
-      });
-
-      if (!result.passed) {
-        unexpectedFailures += 1;
-      }
-      results.push(result);
-    }
-
-    await publicContext.close();
-
-    const authedContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
-    const authedPage = await authedContext.newPage();
-    await ensureStudentSession(authedPage);
-
-    for (const routeConfig of authenticatedRoutes) {
-      const response = await authedPage.goto(`${baseUrl}${routeConfig.route}`, {
-        waitUntil: "networkidle",
-        timeout: 30_000
-      });
-
-      await dismissGuidedTourIfVisible(authedPage);
-
-      const result = await collectPageMetrics(authedPage, routeConfig, viewport.name);
-      result.route = routeConfig.route;
-      result.viewport = viewport.name;
-      result.slug = routeConfig.slug || sanitizeSlug(routeConfig.route);
-      result.expectedShell = routeConfig.expectedShell;
-      result.status = response?.status() ?? 0;
-      result.rules[0] = createRuleResult("http-status-ok", result.status >= 200 && result.status < 400, `status=${result.status}`);
-      result.rules.push(...compareWithBaseline(result, baselineMap.get(`${routeConfig.route}::${viewport.name}`)));
-      result.failedRules = result.rules.filter((rule) => !rule.passed);
-      result.passed = result.failedRules.length === 0;
-
-      await authedPage.screenshot({
-        path: path.join(screenshotDir, `${result.slug}-${viewport.name}.png`),
-        fullPage: true
-      });
-
-      if (!result.passed) {
-        unexpectedFailures += 1;
-      }
-      results.push(result);
-    }
-
-    await authedContext.close();
+    routeResults.push(result);
   }
-} finally {
-  await browser.close();
+
+  return routeResults;
 }
 
-await fs.writeFile(reportPath, JSON.stringify(results, null, 2));
+export async function runVisualCheck() {
+  await fs.mkdir(screenshotDir, { recursive: true });
 
-const summary = {
-  baseUrl,
-  screenshotDir,
-  reportPath,
-  baselinePath: baselinePath || null,
-  maxFailures,
-  totalChecks: results.length,
-  failedChecks: unexpectedFailures
-};
+  const baselineMap = await loadBaseline();
+  const browser = await chromium.launch({ headless: true });
+  const results = [];
+  let unexpectedFailures = 0;
 
-console.log(JSON.stringify({ summary, results }, null, 2));
+  try {
+    for (const viewport of viewports) {
+      const publicContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const publicPage = await publicContext.newPage();
 
-if (unexpectedFailures > maxFailures) {
-  process.exitCode = 1;
+      for (const routeConfig of publicRoutes) {
+        const routeResults = await runRouteChecks(publicPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await publicContext.close();
+
+      const studentContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const studentPage = await studentContext.newPage();
+      await ensureStudentSession(studentPage);
+
+      for (const routeConfig of studentRoutes) {
+        const routeResults = await runRouteChecks(studentPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await studentContext.close();
+
+      const teacherContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const teacherPage = await teacherContext.newPage();
+      await ensureTeacherSession(teacherPage);
+
+      for (const routeConfig of teacherRoutes) {
+        const routeResults = await runRouteChecks(teacherPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await teacherContext.close();
+    }
+  } finally {
+    await browser.close();
+  }
+
+  await fs.writeFile(reportPath, JSON.stringify(results, null, 2));
+
+  const summary = {
+    baseUrl,
+    screenshotDir,
+    reportPath,
+    baselinePath: baselinePath || null,
+    maxFailures,
+    themes,
+    totalChecks: results.length,
+    failedChecks: unexpectedFailures
+  };
+
+  console.log(JSON.stringify({ summary, results }, null, 2));
+
+  if (unexpectedFailures > maxFailures) {
+    process.exitCode = 1;
+  }
+
+  return { summary, results };
+}
+
+const currentFile = fileURLToPath(import.meta.url);
+const invokedFile = process.argv[1] ? path.resolve(process.argv[1]) : "";
+
+if (invokedFile === currentFile) {
+  await runVisualCheck();
 }

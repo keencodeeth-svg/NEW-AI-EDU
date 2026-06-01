@@ -64,11 +64,30 @@ export default function RegisterPage() {
       <div className="section-head auth-page-head">
         <div>
           <h2>注册{PLATFORM_PRODUCT_NAME}</h2>
-          <div className="section-sub">先确认身份，再创建对应的学生学习账号或家长陪伴账号。</div>
+          <div className="section-sub">学生与家长可自助注册；教师、学校与平台管理账号需通过邀请码或授权开通。</div>
         </div>
         <span className="chip">账号中心</span>
       </div>
       <Card title="注册" tag="账户">
+        <div className="grid" style={{ gap: 10, marginBottom: 16 }}>
+          <div className="status-note" role="note">
+            学生与家长可自助注册
+          </div>
+          <div className="status-note" role="note">
+            教师、学校管理员与平台管理员账号需通过邀请码、学校授权或平台授权开通
+          </div>
+          <div className="auth-links-list" aria-label="其他角色开通路径">
+            <div>
+              <Link href="/teacher/register?entry=register">教师账号开通</Link>
+            </div>
+            <div>
+              <Link href="/school/register?entry=register">学校账号开通</Link>
+            </div>
+            <div>
+              <Link href="/admin/register?entry=register">平台管理账号开通</Link>
+            </div>
+          </div>
+        </div>
         <form onSubmit={registerPage.handleSubmit} className="auth-form">
           <fieldset className="auth-role-fieldset">
             <legend className="section-title">选择注册身份</legend>
@@ -240,11 +259,13 @@ export default function RegisterPage() {
             </div>
             <div className="auth-links-list">
               <div>
-                <Link href="/recover">忘记账号或密码？去恢复</Link>
+                <Link href={`/recover?role=${registerPage.role}&entry=register`}>忘记账号或密码？去恢复</Link>
               </div>
               <div>
-                教师和学校账号需要邀请码：<Link href="/teacher/register">教师注册</Link> /{" "}
-                <Link href="/school/register">学校注册</Link>
+                教师、学校和平台管理账号按授权开通：
+                <Link href="/teacher/register?entry=register">教师账号开通</Link> /{" "}
+                <Link href="/school/register?entry=register">学校账号开通</Link> /{" "}
+                <Link href="/admin/register?entry=register">平台管理账号开通</Link>
               </div>
             </div>
           </section>

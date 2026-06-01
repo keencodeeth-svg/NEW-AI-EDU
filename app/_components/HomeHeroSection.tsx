@@ -8,6 +8,11 @@ import type { FirstLookItem, ProductStatusMetric } from "../home.types";
 
 const HERO_ROLE_ENTRY_LINKS = [
   {
+    label: "学生登录",
+    href: "/login?role=student&entry=landing",
+    helper: "今日学习、练习、课堂与成长记录"
+  },
+  {
     label: "教师登录",
     href: "/login?role=teacher&entry=landing",
     helper: "备课、课堂发布、作业与学情"
@@ -21,11 +26,6 @@ const HERO_ROLE_ENTRY_LINKS = [
     label: "学校登录",
     href: "/login?role=school_admin&entry=landing",
     helper: "课表预演、班级和课堂质量"
-  },
-  {
-    label: "管理登录",
-    href: "/login?role=admin&entry=landing",
-    helper: "内容、模型、发布与恢复工单"
   }
 ];
 
@@ -42,17 +42,17 @@ export function HomeHeroSection({
     <section className="hero hero-stage home-hero-grid">
       <div className="home-hero-copy">
         <div className="home-eyebrow">{PLATFORM_BRAND_NAME} · 多角色学习与教学操作系统</div>
-        <h1 className="home-hero-title">让学习、教学与陪伴，都有清晰下一步</h1>
+        <h1 className="home-hero-title">学生、教师、家长与学校都从这里进入各自主线</h1>
         <p className="home-hero-description">
           {PLATFORM_BRAND_TAGLINE}
-          学生、教师、家长和学校都可以从这里直接进入自己的工作主线：学生开始今天的学习，教师进入备课与课堂，家长查看今晚陪伴动作，学校跟进课堂质量。
+          这是面向学生、教师、家长与学校的可信入口：学生进入今日学习主线，教师进入教学执行面板，家长进入今晚陪伴动作，学校进入课堂质量与组织视图。
         </p>
         <div className="home-hero-actions">
           <Link className="button primary" href="/login?role=student&entry=landing">
             学生登录
           </Link>
-          <Link className="button secondary" href="/register?role=student&entry=landing">
-            学生注册
+          <Link className="button secondary" href="/login?role=teacher&entry=landing">
+            教师登录
           </Link>
           <Link className="button secondary" href="/ai-classroom">
             课堂入口：进入{CLASSROOM_PRODUCT_NAME}
@@ -61,9 +61,9 @@ export function HomeHeroSection({
         <div className="home-hero-support">
           <div>
             <div className="home-hero-support-title">按身份直接进入自己的工作台</div>
-            <p>每个角色都有独立登录与注册路径，不需要先走学生入口理解平台。</p>
+            <p>不需要先按学生路径理解平台，再切换到教师、家长或学校角色。</p>
           </div>
-          <div className="home-hero-role-links" aria-label="教师、家长、学校和管理员快速入口">
+          <div className="home-hero-role-links" aria-label="学生、教师、家长和学校快速入口">
             {HERO_ROLE_ENTRY_LINKS.map((item) => (
               <Link key={item.label} className="home-hero-role-link" href={item.href}>
                 <span>{item.label}</span>
@@ -71,7 +71,7 @@ export function HomeHeroSection({
               </Link>
             ))}
           </div>
-          <Link className="home-hero-recovery-link" href="/recover?entry=landing">
+          <Link className="home-hero-recovery-link" href="/recover?role=student&entry=landing">
             忘记密码或账号异常？提交恢复请求
           </Link>
         </div>
@@ -88,7 +88,7 @@ export function HomeHeroSection({
         <div className="home-stage-head">
           <div>
             <p className="home-stage-kicker">第一屏优先级</p>
-            <h2 className="home-stage-title">先让用户知道现在该做什么，再决定要不要进入课堂或角色工作台</h2>
+            <h2 className="home-stage-title">先按角色进入执行主线，再决定是否进入课堂或更深功能</h2>
           </div>
           <span className="chip">清晰下一步</span>
         </div>

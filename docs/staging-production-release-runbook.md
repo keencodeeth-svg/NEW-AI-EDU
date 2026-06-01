@@ -129,6 +129,7 @@ corepack pnpm deploy:remote:prebuilt
 - 远端默认不再执行依赖安装，而是直接复用 standalone 内已 vendored 的运行时依赖
 - 远端默认执行 `node scripts/init-db.mjs`、`3001` canary、`3000` 正式切流
 - 若 `.env.production` 内存在 `READINESS_PROBE_TOKEN`，会额外校验 readiness
+- 若设置 `DEPLOY_EXTERNAL_HEALTH_URL`，脚本会在新版本切到正式端口后、仍可自动回滚的窗口内执行一次公网 HTTPS `curl -fsS --max-time 20`
 
 脚本前提：
 - 工作区默认必须干净；如要显式部署未提交改动，需设置 `DEPLOY_ALLOW_DIRTY=1`
@@ -177,6 +178,10 @@ API_TEST_SMOKE_SCHOOL_ID=school-default \
 corepack pnpm test:smoke:remote
 ```
 
+说明：
+- `DEPLOY_EXTERNAL_HEALTH_URL` 现在属于自动回滚窗口内门禁；公网 health 失败会直接触发现有 PM2 回滚逻辑，而不是等远端脚本整体成功后才暴露。
+- 这里的远端 smoke 仍是发布后的只读验证，不应在自动发布链路里加入会写入业务状态的生产 smoke。
+
 5. 如需只做依赖健康验证，可执行：
 
 ```bash
@@ -200,6 +205,10 @@ DEPLOY_REMOTE_HOST=root@prod.example.com \
 DEPLOY_EXTERNAL_HEALTH_URL=https://prod.example.com/api/health \
 corepack pnpm deploy:remote:prebuilt
 ```
+
+说明：
+- 若设置 `DEPLOY_EXTERNAL_HEALTH_URL`，生产公网 health 现在会在自动回滚窗口内校验；失败会直接回退到上一个稳定 PM2 release。
+- 生产远端 smoke 仍保持人工触发、只读优先；不要把写入型 smoke 自动接到发布脚本里。
 
 3. 确认迁移已执行；若这次不是通过脚本发布，再手工执行：
 
@@ -307,6 +316,9 @@ corepack pnpm test:smoke:remote
 - 回滚完成时间
 - 影响范围
 - 后续修复负责人
+
+说明：
+- 当前预构建发布脚本只会自动处理应用进程回滚与健康门禁失败，不会自动执行证书续期、Nginx reload、主机 reboot 或数据库回滚。
 
 ## 8. 发布记录模板
 

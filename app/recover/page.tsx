@@ -50,7 +50,7 @@ export default function RecoverPage() {
       <div className="section-head">
         <div>
           <h2>账号恢复</h2>
-          <div className="section-sub">当你忘记密码、忘记账号或账号被临时锁定时，可在这里提交恢复请求。</div>
+          <div className="section-sub">当你忘记密码、忘记账号或账号被临时锁定时，可按当前身份提交恢复请求并回到同一角色登录。</div>
         </div>
         <span className="chip">恢复中心</span>
       </div>
@@ -92,7 +92,7 @@ export default function RecoverPage() {
         <form onSubmit={recoverPage.handleSubmit} className="auth-form">
           <fieldset className="auth-role-fieldset">
             <legend className="section-title">选择恢复身份</legend>
-            <p className="form-note auth-role-note">选择最接近当前账号的身份，管理员会按该身份核验信息。</p>
+            <p className="form-note auth-role-note">选择最接近当前账号的身份，管理员会按该身份核验信息，并在处理后返回该角色登录入口。</p>
             <div className="role-grid" role="radiogroup" aria-label="选择恢复身份">
               {recoveryRoleOptions.map((option, index) => (
                 <button

@@ -40,10 +40,10 @@ export const recoveryRoleLabelMap: Record<RecoveryRole, string> = {
 
 export const recoveryRegistrationHrefMap: Record<RecoveryRole, string> = {
   student: "/register?role=student&entry=recover",
-  teacher: "/teacher/register?entry=recover",
+  teacher: "/teacher/register?entry=recover&role=teacher",
   parent: "/register?role=parent&entry=recover",
-  admin: "/admin/register?entry=recover",
-  school_admin: "/school/register?entry=recover"
+  admin: "/admin/register?entry=recover&role=admin",
+  school_admin: "/school/register?entry=recover&role=school_admin"
 };
 
 function isRecoveryRole(value: string | null): value is RecoveryRole {

@@ -35,9 +35,9 @@ export const loginRegistrationMap: Record<
     helper: "适合学生本人创建学习账号。"
   },
   teacher: {
-    primaryHref: "/teacher/register?entry=login",
-    primaryLabel: "教师注册",
-    helper: "用于教师备课、发作业与课堂发布。"
+    primaryHref: "/teacher/register?entry=login&role=teacher",
+    primaryLabel: "教师账号开通方式",
+    helper: "教师账号需要学校邀请码或平台授权后开通。"
   },
   parent: {
     primaryHref: "/register?role=parent&entry=login",
@@ -45,14 +45,14 @@ export const loginRegistrationMap: Record<
     helper: "用于接收陪伴动作、回执与学习反馈。"
   },
   admin: {
-    primaryHref: "/admin/register?entry=login",
-    primaryLabel: "管理员注册",
-    helper: "用于平台配置、异常处理与实验管理。"
+    primaryHref: "/admin/register?entry=login&role=admin",
+    primaryLabel: "平台管理账号开通方式",
+    helper: "平台管理账号仅面向经授权的运营与平台人员开放。"
   },
   school_admin: {
-    primaryHref: "/school/register?entry=login",
-    primaryLabel: "学校管理员注册",
-    helper: "用于学校排课、课堂质量与组织视图。"
+    primaryHref: "/school/register?entry=login&role=school_admin",
+    primaryLabel: "学校账号开通方式",
+    helper: "学校管理员账号需要学校授权或邀请码后开通。"
   }
 };
 

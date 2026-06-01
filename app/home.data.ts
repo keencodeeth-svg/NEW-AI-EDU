@@ -8,8 +8,8 @@ import type {
 } from "./home.types";
 
 export const HERO_PILLS = [
-  "学生今日学习主线",
-  "教师课堂发布",
+  "学生学习主线",
+  "教师教学执行",
   "家长陪伴回执",
   "学校质量视图"
 ];
@@ -22,9 +22,9 @@ export const PRODUCT_STATUS_METRICS: ProductStatusMetric[] = [
 ];
 
 export const FIRST_LOOK_ITEMS: FirstLookItem[] = [
-  { title: "学生直达", description: "学生可以直接进入今天的学习主线，也可以从首屏完成注册。" },
-  { title: "角色直达", description: "教师、家长、学校和管理员都能在第一屏直接进入自己的工作台。" },
-  { title: "课堂次入口", description: "当目标已经明确为开课、看课或发布时，再进入知序课堂。" }
+  { title: "多角色直达", description: "学生、教师、家长和学校都能在第一屏直接进入自己的工作台。" },
+  { title: "注册边界清晰", description: "学生与家长可自助注册，教师、学校和平台管理账号必须按授权路径开通。" },
+  { title: "课堂作为次入口", description: "当目标已经明确为开课、看课或发布时，再进入知序课堂。" }
 ];
 
 export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
@@ -46,9 +46,9 @@ export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
     tag: "教学执行",
     primaryLabel: "进入教师端",
     primaryHref: "/login?role=teacher&entry=landing",
-    secondaryLabel: "教师注册",
-    secondaryHref: "/teacher/register?entry=landing",
-    highlights: ["先看今日待办", "再发作业和看分析", "按学期排座微调"]
+    secondaryLabel: "教师账号开通",
+    secondaryHref: "/teacher/register?entry=landing&role=teacher",
+    highlights: ["先看今日待办", "学校邀请码或授权开通", "再发作业和看分析"]
   },
   {
     id: "parent",
@@ -68,9 +68,9 @@ export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
     tag: "课堂质量",
     primaryLabel: "进入学校端",
     primaryHref: "/login?role=school_admin&entry=landing",
-    secondaryLabel: "学校管理员注册",
-    secondaryHref: "/school/register?entry=landing",
-    highlights: ["排前检查", "先预演再写入", "课表问题可回滚"]
+    secondaryLabel: "学校账号开通",
+    secondaryHref: "/school/register?entry=landing&role=school_admin",
+    highlights: ["排前检查", "先预演再写入", "需学校授权后开通"]
   },
   {
     id: "admin",
@@ -79,9 +79,9 @@ export const ROLE_LAUNCH_CARDS: RoleLaunchCard[] = [
     tag: "平台运营",
     primaryLabel: "进入管理端",
     primaryHref: "/login?role=admin&entry=landing",
-    secondaryLabel: "管理员注册",
-    secondaryHref: "/admin/register?entry=landing",
-    highlights: ["处理异常与恢复", "看实验与发布", "管理 AI 路由"]
+    secondaryLabel: "平台管理账号开通",
+    secondaryHref: "/admin/register?entry=landing&role=admin",
+    highlights: ["处理异常与恢复", "看实验与发布", "需平台授权开通"]
   }
 ];
 

@@ -58,7 +58,7 @@ export default function LoginPage() {
       <div className="section-head auth-page-head">
         <div className="auth-page-copy">
           <h2>登录{PLATFORM_PRODUCT_NAME}</h2>
-          <div className="section-sub">先确认当前身份，再进入对应的学习、教学、陪伴或管理主线。</div>
+          <div className="section-sub">先确认当前身份，再进入对应的学习、教学、陪伴、学校治理或平台管理主线。</div>
         </div>
         <span className="chip">账号中心</span>
       </div>
@@ -66,7 +66,7 @@ export default function LoginPage() {
         <form onSubmit={loginPage.handleSubmit} className="auth-form">
           <fieldset className="auth-role-fieldset">
             <legend className="section-title">选择身份</legend>
-            <p className="form-note auth-role-note">默认只展示当前身份最相关的注册入口，减少切换成本。</p>
+            <p className="form-note auth-role-note">保持当前角色上下文登录，并只展示最相关的注册或开通路径。</p>
             <div className="role-grid" role="radiogroup" aria-label="登录身份">
               {loginRoleOptions.map((option, index) => (
                 <button
