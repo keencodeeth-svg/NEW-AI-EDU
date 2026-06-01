@@ -84,6 +84,12 @@ async function expectThemeToggleAria(page: Page) {
   await expect(systemButton).toHaveAttribute("aria-pressed", /true|false/);
 }
 
+function getSelectedRoleRadio(page: Page, label: string) {
+  return page.locator('[role="radio"][aria-checked="true"]').filter({
+    has: page.locator(".role-title", { hasText: new RegExp(`^${label}$`) })
+  });
+}
+
 async function registerStudent(page: Page, params: { email: string; name: string; grade?: string }) {
   const result = await postJson(page, "/api/auth/register", {
     role: "student",
@@ -128,6 +134,14 @@ test.describe("browser accessibility", () => {
     await page.goto("/");
     await expectSkipLinkKeyboardReachable(page);
     await expectThemeToggleAria(page);
+    await expect(page.getByText("先用学生主入口理解平台主线")).toHaveCount(0);
+    await expect(page.getByRole("link", { name: "学生登录" })).toHaveAttribute("href", "/login?role=student&entry=landing");
+    await expect(page.getByRole("link", { name: "教师登录" })).toHaveAttribute("href", "/login?role=teacher&entry=landing");
+    await expect(page.getByRole("link", { name: "家长登录" })).toHaveAttribute("href", "/login?role=parent&entry=landing");
+    await expect(page.getByRole("link", { name: "学校登录" })).toHaveAttribute(
+      "href",
+      "/login?role=school_admin&entry=landing"
+    );
     await expectNoCriticalViolations(page, "首页");
 
     await page.goto("/login");
@@ -178,6 +192,41 @@ test.describe("browser accessibility", () => {
     await expect(page.locator("#recover-form-error")).toHaveAttribute("role", "alert");
     await expect(page.locator("#recover-form-error")).toContainText("恢复请求提交过于频繁");
     await expectNoCriticalViolations(page, "账号恢复页");
+  });
+
+  test("public account recovery keeps selected role context", async ({ page }) => {
+    await page.goto("/login?role=teacher&entry=landing");
+    await expect(getSelectedRoleRadio(page, "教师")).toHaveCount(1);
+    await expect(page.getByRole("link", { name: "忘记教师账号或密码？去恢复" })).toHaveAttribute(
+      "href",
+      "/recover?role=teacher&entry=login"
+    );
+
+    await page.getByRole("link", { name: "忘记教师账号或密码？去恢复" }).click();
+    await expect(page).toHaveURL(/\/recover\?role=teacher&entry=login/);
+    await expect(getSelectedRoleRadio(page, "教师")).toHaveCount(1);
+
+    await page.route("**/api/auth/recovery-request", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          message: "恢复请求已提交",
+          data: {
+            ticketId: "REC-TEACHER-1",
+            submittedAt: "2026-06-01T08:00:00.000Z",
+            serviceLevel: "1 个工作日内处理",
+            nextSteps: ["管理员会核验教师身份"]
+          }
+        })
+      })
+    );
+    await page.getByRole("textbox", { name: "注册邮箱" }).fill(`${uniqueId("teacher-recover")}@local.test`);
+    await page.getByRole("button", { name: "提交恢复请求" }).click();
+    await expect(page.getByRole("link", { name: "返回教师登录" })).toHaveAttribute(
+      "href",
+      "/login?role=teacher&entry=recover"
+    );
   });
 
   test("student dashboard and practice flow keep critical accessibility issues at zero", async ({ page }) => {

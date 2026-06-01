@@ -61,8 +61,8 @@ export default function RecoverPage() {
           description={recoverPage.resultMessage}
           tone="success"
           action={
-            <Link className="button secondary" href="/login">
-              返回登录
+            <Link className="button secondary" href={recoverPage.loginHref}>
+              返回{recoverPage.roleLabel}登录
             </Link>
           }
         >
@@ -87,6 +87,7 @@ export default function RecoverPage() {
         </StatePanel>
       ) : null}
 
+      {!recoverPage.result ? (
       <Card title="提交恢复请求" tag="安全流程">
         <form onSubmit={recoverPage.handleSubmit} className="auth-form">
           <fieldset className="auth-role-fieldset">
@@ -224,13 +225,14 @@ export default function RecoverPage() {
 
         <div className="auth-links">
           <div>
-            想直接登录？<Link href="/login">返回登录</Link>
+            想直接登录？<Link href={recoverPage.loginHref}>返回{recoverPage.roleLabel}登录</Link>
           </div>
           <div>
-            还没有账号？<Link href="/register">去注册</Link>
+            还没有账号？<Link href={recoverPage.registrationHref}>查看{recoverPage.roleLabel}开通方式</Link>
           </div>
         </div>
       </Card>
+      ) : null}
     </div>
   );
 }

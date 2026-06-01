@@ -6,6 +6,29 @@ import {
 } from "@/lib/classroom-integration";
 import type { FirstLookItem, ProductStatusMetric } from "../home.types";
 
+const HERO_ROLE_ENTRY_LINKS = [
+  {
+    label: "教师登录",
+    href: "/login?role=teacher&entry=landing",
+    helper: "备课、课堂发布、作业与学情"
+  },
+  {
+    label: "家长登录",
+    href: "/login?role=parent&entry=landing",
+    helper: "今晚陪伴动作与家校回执"
+  },
+  {
+    label: "学校登录",
+    href: "/login?role=school_admin&entry=landing",
+    helper: "课表预演、班级和课堂质量"
+  },
+  {
+    label: "管理登录",
+    href: "/login?role=admin&entry=landing",
+    helper: "内容、模型、发布与恢复工单"
+  }
+];
+
 export function HomeHeroSection({
   pills,
   productStatusMetrics,
@@ -22,19 +45,35 @@ export function HomeHeroSection({
         <h1 className="home-hero-title">让学习、教学与陪伴，都有清晰下一步</h1>
         <p className="home-hero-description">
           {PLATFORM_BRAND_TAGLINE}
-          先把学生今天该推进的动作讲清楚，再把教师、家长和学校带到各自的执行主线。
+          学生、教师、家长和学校都可以从这里直接进入自己的工作主线：学生开始今天的学习，教师进入备课与课堂，家长查看今晚陪伴动作，学校跟进课堂质量。
         </p>
         <div className="home-hero-actions">
           <Link className="button primary" href="/login?role=student&entry=landing">
-            以学生身份开始
+            学生登录
+          </Link>
+          <Link className="button secondary" href="/register?role=student&entry=landing">
+            学生注册
           </Link>
           <Link className="button secondary" href="/ai-classroom">
             课堂入口：进入{CLASSROOM_PRODUCT_NAME}
           </Link>
         </div>
         <div className="home-hero-support">
-          <div className="home-hero-support-title">如果你是教师、家长或学校管理员</div>
-          <p>先用学生主入口理解平台主线，再在下方按身份进入对应工作台，不需要在第一屏完成全部选择。</p>
+          <div>
+            <div className="home-hero-support-title">按身份直接进入自己的工作台</div>
+            <p>每个角色都有独立登录与注册路径，不需要先走学生入口理解平台。</p>
+          </div>
+          <div className="home-hero-role-links" aria-label="教师、家长、学校和管理员快速入口">
+            {HERO_ROLE_ENTRY_LINKS.map((item) => (
+              <Link key={item.label} className="home-hero-role-link" href={item.href}>
+                <span>{item.label}</span>
+                <small>{item.helper}</small>
+              </Link>
+            ))}
+          </div>
+          <Link className="home-hero-recovery-link" href="/recover?entry=landing">
+            忘记密码或账号异常？提交恢复请求
+          </Link>
         </div>
         <div className="pill-list home-trust-strip">
           {pills.map((pill) => (
@@ -57,8 +96,8 @@ export function HomeHeroSection({
         <div className="home-stage-summary">
           <div className="home-stage-priority">
             <span className="home-stage-priority-label">主目标</span>
-            <div className="home-stage-priority-value">进入平台并开始今天的学习动作</div>
-            <p>把第一步集中到一个主 CTA，避免用户在首页同时面对角色选择、课堂入口和全量功能概览。</p>
+            <div className="home-stage-priority-value">按身份进入今天的执行主线</div>
+            <p>学生、教师、家长、学校和管理员都能从首屏直达自己的入口，不需要借用其他角色路径。</p>
           </div>
           <div className="home-stage-priority">
             <span className="home-stage-priority-label">次入口</span>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { resolveRecoveryRequestError } from "@/lib/auth-form-errors";
 import { requestJson } from "@/lib/client-request";
 import type { RecoveryIssueType, RecoveryResponse, RecoveryRole } from "./types";
@@ -29,7 +30,34 @@ export const recoveryIssueOptions = [
   { value: "account_locked" as const, label: "账号被锁定", desc: "登录失败次数过多" }
 ];
 
+export const recoveryRoleLabelMap: Record<RecoveryRole, string> = {
+  student: "学生",
+  teacher: "教师",
+  parent: "家长",
+  admin: "管理员",
+  school_admin: "学校管理员"
+};
+
+export const recoveryRegistrationHrefMap: Record<RecoveryRole, string> = {
+  student: "/register?role=student&entry=recover",
+  teacher: "/teacher/register?entry=recover",
+  parent: "/register?role=parent&entry=recover",
+  admin: "/admin/register?entry=recover",
+  school_admin: "/school/register?entry=recover"
+};
+
+function isRecoveryRole(value: string | null): value is RecoveryRole {
+  return (
+    value === "student" ||
+    value === "teacher" ||
+    value === "parent" ||
+    value === "admin" ||
+    value === "school_admin"
+  );
+}
+
 export function useRecoverPage() {
+  const searchParams = useSearchParams();
   const [form, setForm] = useState<RecoverFormState>({
     role: "student",
     issueType: "forgot_password",
@@ -50,6 +78,13 @@ export function useRecoverPage() {
     setResult(null);
     setResultMessage("");
   }, []);
+
+  useEffect(() => {
+    const nextRole = searchParams.get("role");
+    if (isRecoveryRole(nextRole)) {
+      setForm((current) => ({ ...current, role: nextRole }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = useCallback(
     async (event: FormEvent<HTMLFormElement>) => {
@@ -86,6 +121,9 @@ export function useRecoverPage() {
 
   return {
     role: form.role,
+    roleLabel: recoveryRoleLabelMap[form.role],
+    loginHref: `/login?role=${form.role}&entry=recover`,
+    registrationHref: recoveryRegistrationHrefMap[form.role],
     issueType: form.issueType,
     email: form.email,
     name: form.name,

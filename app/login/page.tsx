@@ -7,6 +7,7 @@ import { PLATFORM_PRODUCT_NAME } from "@/lib/classroom-integration";
 import {
   loginPlaceholderMap,
   loginRegistrationMap,
+  loginRoleLabelMap,
   loginRoleOptions,
   useLoginPage
 } from "./useLoginPage";
@@ -21,6 +22,8 @@ export default function LoginPage() {
       href: loginRegistrationMap[option.value].primaryHref,
       label: loginRegistrationMap[option.value].primaryLabel
     }));
+  const selectedRoleLabel = loginRoleLabelMap[loginPage.role];
+  const recoveryHref = `/recover?role=${loginPage.role}&entry=login`;
   const errorId = loginPage.error ? "login-form-error" : undefined;
 
   const handleRoleKeyDown = (index: number, key: string) => {
@@ -131,7 +134,7 @@ export default function LoginPage() {
         </form>
         <div className="auth-support-stack">
           <div className="form-note auth-recovery-note">
-            忘记密码、忘记账号或账号被锁定？<Link href="/recover">去发起恢复请求</Link>
+            <Link href={recoveryHref}>忘记{selectedRoleLabel}账号或密码？去恢复</Link>
           </div>
           <section className="auth-links" aria-labelledby="auth-register-title">
             <div className="auth-links-primary">

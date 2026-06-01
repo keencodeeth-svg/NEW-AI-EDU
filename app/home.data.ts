@@ -22,8 +22,8 @@ export const PRODUCT_STATUS_METRICS: ProductStatusMetric[] = [
 ];
 
 export const FIRST_LOOK_ITEMS: FirstLookItem[] = [
-  { title: "学生优先", description: "默认先把今天的学习动作排好，第一屏不要求用户理解全部产品结构。" },
-  { title: "角色分流", description: "教师、家长和学校在确认主线后，再按身份进入更合适的工作台。" },
+  { title: "学生直达", description: "学生可以直接进入今天的学习主线，也可以从首屏完成注册。" },
+  { title: "角色直达", description: "教师、家长、学校和管理员都能在第一屏直接进入自己的工作台。" },
   { title: "课堂次入口", description: "当目标已经明确为开课、看课或发布时，再进入知序课堂。" }
 ];
 

@@ -56,6 +56,14 @@ export const loginRegistrationMap: Record<
   }
 };
 
+export const loginRoleLabelMap: Record<LoginRole, string> = {
+  student: "学生",
+  teacher: "教师",
+  parent: "家长",
+  admin: "管理员",
+  school_admin: "学校管理员"
+};
+
 export const loginPlaceholderMap: Record<LoginRole, string> = {
   student: "请输入学生账号邮箱",
   teacher: "请输入教师账号邮箱",
