@@ -13,7 +13,8 @@ const PUBLIC_AUTH_ENTRY_FILES = [
 const PUBLIC_PRODUCT_SURFACE_FILES = [
   "app/_components/HomeRoleLaunchSection.tsx",
   "app/_components/HomeFirstDayFlowsSection.tsx",
-  "app/school/useSchoolPageView.tsx"
+  "app/school/useSchoolPageView.tsx",
+  "app/student/interactive-classroom/page.tsx"
 ] as const;
 
 const FORBIDDEN_PUBLIC_PLACEHOLDERS = [
@@ -25,7 +26,8 @@ const FORBIDDEN_PUBLIC_PLACEHOLDERS = [
 const FORBIDDEN_TEMPLATE_COPY = [
   /Role-first/,
   /Onboarding/,
-  /School Admin/
+  /School Admin/,
+  /访客体验/
 ] as const;
 
 test("public auth entry pages do not expose demo or placeholder school copy", () => {

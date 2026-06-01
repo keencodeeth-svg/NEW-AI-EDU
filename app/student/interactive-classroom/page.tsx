@@ -1730,7 +1730,7 @@ export default function StudentInteractiveClassroomPage() {
         ) : null,
         guestExperienceMode ? (
           <span key="student-guest-mode" className="chip">
-            访客体验
+            体验模式
           </span>
         ) : null,
       ].filter(Boolean)}

@@ -1,7 +1,7 @@
-import type { TTSProviderId } from "@/lib/audio/types";
-import type { ImageProviderId } from "@/lib/media/types";
-import { SUBJECT_LABELS } from "@/lib/constants";
-import { PRODUCT_BRAND_NAME as PRODUCT_BRAND_NAME_VALUE } from "@/lib/classroom/brand";
+import type { TTSProviderId } from "./audio/types";
+import type { ImageProviderId } from "./media/types";
+import { SUBJECT_LABELS } from "./constants";
+import { PRODUCT_BRAND_NAME as PRODUCT_BRAND_NAME_VALUE } from "./classroom/brand";
 export {
   CLASSROOM_PRODUCT_NAME,
   PLATFORM_BRAND_NAME,
@@ -12,7 +12,7 @@ export {
   PRODUCT_BRAND_SUBTITLE,
   PRODUCT_BRAND_TAGLINE,
   PRODUCT_SERVICE_NAME,
-} from "@/lib/classroom/brand";
+} from "./classroom/brand";
 
 const PRODUCT_BRAND_NAME = PRODUCT_BRAND_NAME_VALUE;
 
@@ -473,6 +473,7 @@ export function buildLaunchRequirementWithClassroomContext(input: {
   const context = input.classroomContext;
   if (context.source === "student-self-study") {
     const learnerName = context.learner?.name || "当前学生";
+    const isExperienceMode = isExperienceModeClassroomContext(context);
     const modeSpecificLines =
       context.learningMode === "preview-preparation"
         ? [
@@ -500,11 +501,14 @@ export function buildLaunchRequirementWithClassroomContext(input: {
     const contextLines = [
       requirement,
       "",
-      "请将本次内容按学生自主使用的个性化互动课堂进行编排：",
+      isExperienceMode
+        ? "请将本次内容按体验模式示例课堂进行编排，不要宣称已接入真实学生画像、任务或课表："
+        : "请将本次内容按学生自主使用的互动课堂进行编排：",
       `学习者：${learnerName}`,
       context.grade ? `年级：${context.grade}` : "",
       context.subject ? `学习学科：${buildSubjectLabel(context.subject)}` : "",
       `使用模式：${buildLearningModeLabel(context.learningMode)}`,
+      isExperienceMode ? "体验边界：真实画像、任务、课表未接入，本次仅展示示例课堂流程。" : "",
       context.focusKnowledgePointTitle ? `当前巩固重点：${context.focusKnowledgePointTitle}` : "",
       context.interestTopic ? `兴趣主题：${context.interestTopic}` : "",
       context.learnerGoal ? `学习目标：${context.learnerGoal}` : "",
@@ -512,7 +516,9 @@ export function buildLaunchRequirementWithClassroomContext(input: {
       "课堂要求：",
       "- 内容适合单人自主观看与跟练，先建立情境，再进行讲解、追问、小练习和鼓励反馈。",
       ...modeSpecificLines,
-      "- 成品既要适合学生当下使用，也要支持回看与导出复用。",
+      isExperienceMode
+        ? "- 成品只作为体验模式示例课堂展示，必须持续提醒真实个人进度、学习画像和课表尚未接入。"
+        : "- 成品既要适合学生自主学习，也要支持回看与导出复用。",
     ].filter(Boolean);
 
     return contextLines.join("\n");
@@ -539,6 +545,18 @@ export function buildLaunchRequirementWithClassroomContext(input: {
   ].filter(Boolean);
 
   return contextLines.join("\n");
+}
+
+export function isExperienceModeClassroomContext(
+  classroomContext?: ClassroomContext | null,
+) {
+  return (
+    classroomContext?.source === "student-self-study" &&
+    (classroomContext.className === "体验模式示例课堂" ||
+      classroomContext.learner?.id === "experience-mode-student" ||
+      classroomContext.learner?.name === "体验模式" ||
+      classroomContext.learnerGoal?.includes("体验模式"))
+  );
 }
 
 export function resolveTeacherVoice(

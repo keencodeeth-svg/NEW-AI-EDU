@@ -83,6 +83,16 @@ const studentRoutes = [
     requireMobileTabbarOnMobile: true,
     requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
     forbiddenSelectors: [".public-header-links"]
+  },
+  {
+    route: "/student/interactive-classroom",
+    slug: "student-interactive-classroom",
+    expectedShell: "authenticated",
+    headingText: "知序课堂",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
   }
 ];
 
@@ -128,6 +138,16 @@ const schoolRoutes = [
     slug: "school-dashboard",
     expectedShell: "authenticated",
     headingText: "学校质量与课堂应用",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  },
+  {
+    route: "/school/interactive-classrooms",
+    slug: "school-interactive-classrooms",
+    expectedShell: "authenticated",
+    headingText: "课堂质量中心",
     requireSidebarOnDesktop: true,
     requireMobileTabbarOnMobile: true,
     requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],

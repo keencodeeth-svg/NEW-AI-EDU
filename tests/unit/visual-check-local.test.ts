@@ -40,13 +40,14 @@ test("visual check screenshot names include theme suffix", () => {
   assert.equal(payload.teacherDarkScreenshot, "teacher-classroom-live-mobile-dark.png");
 });
 
-test("visual check route matrix includes newly gated parent, school, admin, and ai classroom pages", () => {
+test("visual check route matrix includes newly gated parent, school, admin, ai classroom, and interactive classroom pages", () => {
   const payload = readVisualCheckExports();
 
   assert.ok(payload.routeMatrix, "route matrix export should exist");
   assert.deepEqual(payload.routeMatrix.publicRoutes, ["/", "/login", "/register", "/recover", "/ai-classroom"]);
+  assert.deepEqual(payload.routeMatrix.studentRoutes, ["/student", "/practice", "/student/interactive-classroom"]);
   assert.deepEqual(payload.routeMatrix.parentRoutes, ["/parent"]);
-  assert.deepEqual(payload.routeMatrix.schoolRoutes, ["/school"]);
+  assert.deepEqual(payload.routeMatrix.schoolRoutes, ["/school", "/school/interactive-classrooms"]);
   assert.deepEqual(payload.routeMatrix.adminRoutes, ["/admin"]);
 });
 
@@ -56,10 +57,10 @@ test("visual check session groups expose stable role-specific setup for gated ro
   assert.ok(payload.sessionGroups, "session group export should exist");
   assert.deepEqual(payload.sessionGroups, {
     public: ["/", "/login", "/register", "/recover", "/ai-classroom"],
-    student: ["/student", "/practice"],
+    student: ["/student", "/practice", "/student/interactive-classroom"],
     parent: ["/parent"],
     teacher: ["/teacher", "/teacher/classroom-live"],
-    school: ["/school"],
+    school: ["/school", "/school/interactive-classrooms"],
     admin: ["/admin"]
   });
 });

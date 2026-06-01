@@ -65,6 +65,7 @@ import {
 import {
   buildAudienceModeLabel,
   buildExportFormatLabel,
+  isExperienceModeClassroomContext,
   buildLearningModeLabel,
   PRODUCT_BRAND_NAME,
   type ClassroomContext,
@@ -480,6 +481,7 @@ function HomePage() {
 
   const canGenerate = !!form.requirement.trim();
   const isStudentSelfStudy = classroomContext?.source === 'student-self-study';
+  const isExperienceModeClassroom = isExperienceModeClassroomContext(classroomContext);
   const currentStudentMode = resolveStudentSelfStudyMode(classroomContext);
   const classroomModeLabel = classroomContext?.learningMode
     ? buildLearningModeLabel(classroomContext.learningMode)
@@ -503,7 +505,9 @@ function HomePage() {
           })
         : '/student/interactive-classroom';
   const studentModeSummary = isStudentSelfStudy
-    ? classroomContext?.learningMode === 'preview-preparation'
+    ? isExperienceModeClassroom
+      ? '本次仅展示示例课堂节奏；真实画像、任务、课表与个人进度登录后再同步。'
+      : classroomContext?.learningMode === 'preview-preparation'
       ? '本次会先帮学生建立主线、提出问题，再进入正式学习。'
       : classroomContext?.learningMode === 'subject-reinforcement'
         ? '本次会优先围绕薄弱点做收口、讲后立练和错因纠偏。'
@@ -517,20 +521,30 @@ function HomePage() {
     classroomContext?.learnerGoal ||
     null;
   const heroAudienceSummary = isStudentSelfStudy
-    ? `给${classroomContext?.learner?.name ?? '自己'}上的一节${classroomModeLabel ?? '自主学习'}课`
+    ? isExperienceModeClassroom
+      ? `给体验模式展示的一节${classroomModeLabel ?? '示例'}课`
+      : `给${classroomContext?.learner?.name ?? '自己'}上的一节${classroomModeLabel ?? '自主学习'}课`
     : `给${classroomContext?.className ?? '当前班级'}上的一节${classroomModeLabel ?? '互动课堂'}`;
   const heroLearningSummary = isStudentSelfStudy
-    ? focusSummary
+    ? isExperienceModeClassroom
+      ? focusSummary
+        ? `围绕${focusSummary}展示示例讲解、提问和练习节奏`
+        : '围绕示例学习目标展示讲解、提问和练习节奏'
+      : focusSummary
       ? `围绕${focusSummary}先讲清主线，再接一轮小练习或提问`
       : '围绕当前学习目标先讲清主线，再接一轮小练习或提问'
     : focusSummary
       ? `围绕${focusSummary}组织讲解节奏、互动提问和课堂重点`
       : `围绕${classroomSubjectLabel ?? '当前教材主题'}组织讲解节奏、互动提问和课堂重点`;
   const heroOutcomeSummary = isStudentSelfStudy
-    ? '学完回到作业、模块、错题本或成长档案继续收口'
+    ? isExperienceModeClassroom
+      ? '体验结束后登录再接入真实任务、画像、课表和个人进度'
+      : '学完回到作业、模块、错题本或成长档案继续收口'
     : '学完回到班级授课、课后追练、复习回看或校内分发继续推进';
   const classroomHeadline = isStudentSelfStudy
-    ? `为${classroomContext?.learner?.name ?? '你'}生成一节可独立使用的${classroomModeLabel ?? ''}互动课堂，学完继续回到真实学习任务`
+    ? isExperienceModeClassroom
+      ? `体验一节${classroomModeLabel ?? '示例'}互动课堂，真实画像、任务和课表登录后再接入`
+      : `为${classroomContext?.learner?.name ?? '你'}生成一节可独立使用的${classroomModeLabel ?? ''}互动课堂，学完继续回到真实学习任务`
     : '先讲清给谁上、学什么、学完去哪，让教材、班级与数字人老师进入同一课堂主线';
   const studentFollowUpMode = currentStudentMode
     ? resolveStudentSelfStudyFollowUpMode(currentStudentMode)
@@ -557,7 +571,9 @@ function HomePage() {
           : '先把兴趣主题学活，再沉淀成可以继续回看的成果'
     : null;
   const studentWorkflowSummary = isStudentSelfStudy
-    ? currentStudentMode === 'preview-preparation'
+    ? isExperienceModeClassroom
+      ? '当前仅展示示例课堂流程，不会读取或沉淀真实画像、今日任务、课表与个人进度；登录后再把生成结果接回真实学习链路。'
+      : currentStudentMode === 'preview-preparation'
       ? '这节课最适合用来建立主线、记下问题，然后回到真实课堂、课程模块和课后回看继续推进。'
       : currentStudentMode === 'subject-reinforcement'
         ? '这节课最适合用来收口一个薄弱点。生成后要顺手接错题本、定向复练和当前作业，才会真正转化成稳定掌握。'
@@ -568,12 +584,16 @@ function HomePage() {
   const contextPanelHeading = launchSource?.label
     ? launchSource.label
     : isStudentSelfStudy
-      ? '已带入当前学生学习链路'
+      ? isExperienceModeClassroom
+        ? '体验模式边界已带入'
+        : '已带入当前学生学习链路'
       : '已带入当前教务与课堂链路';
   const contextPanelDescription = launchSource?.summary
     ? launchSource.summary
     : isStudentSelfStudy
-      ? '学习目标、学科与课堂模式会在生成时一起带入，方便继续预习、巩固、回看或兴趣探索。'
+      ? isExperienceModeClassroom
+        ? '真实画像、任务、课表和个人进度尚未接入；本次只展示示例课堂生成与互动节奏。'
+        : '学习目标、学科与课堂模式会在生成时一起带入，方便继续预习、巩固、回看或兴趣探索。'
       : '班级、主讲数字老师与分发方式会在生成时一起带入，方便直接进入真实教学链路。';
   const teacherContextName =
     classroomContext?.teacher?.digitalHuman?.displayName || classroomContext?.teacher?.name || null;
@@ -652,31 +672,52 @@ function HomePage() {
       ].filter((item): item is LaunchContextCard => Boolean(item))
     : [];
   const quickStartGuidance = isStudentSelfStudy
-    ? [
-        '先确认这节课是给谁学、围绕什么目标学，再直接进入课堂。',
-        '进入课堂后先收主线，再顺手留一道练习、提问或复述任务。',
-        '学完回到作业、模块、错题本或成长档案继续收口；导出和分享放在需要时再用。',
-      ]
+    ? isExperienceModeClassroom
+      ? [
+          '先确认这是体验模式示例课堂，只展示生成与互动节奏。',
+          '进入课堂后可以查看示例讲解、提问和练习如何组织。',
+          '体验结束后可登录同步真实画像、任务、课表和个人进度。',
+        ]
+      : [
+          '先确认这节课是给谁学、围绕什么目标学，再直接进入课堂。',
+          '进入课堂后先收主线，再顺手留一道练习、提问或复述任务。',
+          '学完回到作业、模块、错题本或成长档案继续收口；导出和分享放在需要时再用。',
+        ]
     : [
         '先写清这节课给哪个班上、围绕哪条教材主线展开。',
         '课堂会把教师身份、讲解节奏和班级情境一起带入，方便直接开讲。',
         '学完优先回到班级授课、课后追练和复习回看；导出与分享作为辅助交付。',
       ];
   const heroHighlights = isStudentSelfStudy
-    ? [
-        {
-          title: '学生自学',
-          description: '预习、巩固、兴趣探索、课堂回看可以按目标一键切换。',
-        },
-        {
-          title: '主线讲解',
-          description: '学生可独立发起，也能沿着真实老师节奏进入同一课堂主线。',
-        },
-        {
-          title: '课后收口',
-          description: '支持个人观看、整班展示与导出沉淀，方便持续追踪学习结果。',
-        },
-      ]
+    ? isExperienceModeClassroom
+      ? [
+          {
+            title: '体验模式',
+            description: '只展示示例课堂生成与互动节奏。',
+          },
+          {
+            title: '边界清楚',
+            description: '不会读取或沉淀真实画像、任务、课表和个人进度。',
+          },
+          {
+            title: '登录接入',
+            description: '登录后再同步真实学习数据并进入个人学习链路。',
+          },
+        ]
+      : [
+          {
+            title: '学生自学',
+            description: '预习、巩固、兴趣探索、课堂回看可以按目标一键切换。',
+          },
+          {
+            title: '主线讲解',
+            description: '学生可独立发起，也能沿着真实老师节奏进入同一课堂主线。',
+          },
+          {
+            title: '课后收口',
+            description: '支持个人观看、整班展示与导出沉淀，方便持续追踪学习结果。',
+          },
+        ]
     : [
         {
           title: '班级课堂',
@@ -692,26 +733,47 @@ function HomePage() {
         },
       ];
   const heroEntryCards: LaunchContextCard[] = isStudentSelfStudy
-    ? [
-        {
-          label: '给谁上',
-          value: heroAudienceSummary,
-          description: '学生可以独立发起，也能沿老师节奏进入同一节课堂主线。',
-          tone: 'sky',
-        },
-        {
-          label: '学什么',
-          value: heroLearningSummary,
-          description: '先讲清主线，再把提问、例题和练习顺手接上。',
-          tone: 'emerald',
-        },
-        {
-          label: '学完去哪',
-          value: heroOutcomeSummary,
-          description: '互动课堂不会停在“看完”，还能衔接作业、模块、错题本和成长档案。',
-          tone: 'amber',
-        },
-      ]
+    ? isExperienceModeClassroom
+      ? [
+          {
+            label: '给谁看',
+            value: heroAudienceSummary,
+            description: '当前面向未登录体验，课堂内容按示例流程展示。',
+            tone: 'sky',
+          },
+          {
+            label: '看什么',
+            value: heroLearningSummary,
+            description: '先看示例主线，再观察提问、例题和练习如何接上。',
+            tone: 'emerald',
+          },
+          {
+            label: '体验后去哪',
+            value: heroOutcomeSummary,
+            description: '体验页只负责展示流程；真实学习数据登录后再同步。',
+            tone: 'amber',
+          },
+        ]
+      : [
+          {
+            label: '给谁上',
+            value: heroAudienceSummary,
+            description: '学生可以独立发起，也能沿老师节奏进入同一节课堂主线。',
+            tone: 'sky',
+          },
+          {
+            label: '学什么',
+            value: heroLearningSummary,
+            description: '先讲清主线，再把提问、例题和练习顺手接上。',
+            tone: 'emerald',
+          },
+          {
+            label: '学完去哪',
+            value: heroOutcomeSummary,
+            description: '互动课堂不会停在“看完”，还能衔接作业、模块、错题本和成长档案。',
+            tone: 'amber',
+          },
+        ]
     : [
         {
           label: '给谁上',
@@ -765,26 +827,47 @@ function HomePage() {
           },
         ];
   const launchDeliverables: LaunchContextCard[] = isStudentSelfStudy
-    ? [
-        {
-          label: '给谁上',
-          value: '会锁定当前学习者、模式和课堂目标',
-          description: '把学习对象、进入方式和课堂语气先对齐，避免生成后再返工。',
-          tone: 'sky',
-        },
-        {
-          label: '学什么',
-          value: '会先整理适合当前目标的讲解顺序',
-          description: '把知识点、例子和互动节奏串成一条容易跟住的学习主线。',
-          tone: 'emerald',
-        },
-        {
-          label: '学完去哪',
-          value: '完成后会直接接到练习、回看和成长沉淀',
-          description: '让这节课自然衔接到后续复习、展示和个人学习档案。',
-          tone: 'amber',
-        },
-      ]
+    ? isExperienceModeClassroom
+      ? [
+          {
+            label: '体验对象',
+            value: '会标注体验模式示例课堂',
+            description: '页面会持续提示真实画像、任务、课表和个人进度尚未接入。',
+            tone: 'sky',
+          },
+          {
+            label: '示例内容',
+            value: '会整理示例主题的讲解顺序',
+            description: '把主题、例子和互动节奏串成一条便于理解的示例主线。',
+            tone: 'emerald',
+          },
+          {
+            label: '下一步',
+            value: '体验后引导登录或继续切换示例模式',
+            description: '不会把示例结果写入真实个人数据，也不会冒充已同步的学习记录。',
+            tone: 'amber',
+          },
+        ]
+      : [
+          {
+            label: '给谁上',
+            value: '会锁定当前学习者、模式和课堂目标',
+            description: '把学习对象、进入方式和课堂语气先对齐，避免生成后再返工。',
+            tone: 'sky',
+          },
+          {
+            label: '学什么',
+            value: '会先整理适合当前目标的讲解顺序',
+            description: '把知识点、例子和互动节奏串成一条容易跟住的学习主线。',
+            tone: 'emerald',
+          },
+          {
+            label: '学完去哪',
+            value: '完成后会直接接到练习、回看和成长沉淀',
+            description: '让这节课自然衔接到后续复习、展示和个人学习档案。',
+            tone: 'amber',
+          },
+        ]
     : [
         {
           label: '给谁上',
@@ -811,24 +894,43 @@ function HomePage() {
     tone: ClassroomTone;
     primary?: boolean;
   }> = isStudentSelfStudy
-    ? [
-        {
-          href: studentReturnHref,
-          label: '返回学生启动页',
-          tone: 'sky',
-          primary: true,
-        },
-        {
-          href: '/student/portrait',
-          label: '查看学习画像',
-          tone: 'sky',
-        },
-        {
-          href: '/student',
-          label: '返回学习控制台',
-          tone: 'amber',
-        },
-      ]
+    ? isExperienceModeClassroom
+      ? [
+          {
+            href: studentReturnHref,
+            label: '返回体验启动页',
+            tone: 'sky',
+            primary: true,
+          },
+          {
+            href: '/login',
+            label: '登录同步个人进度',
+            tone: 'emerald',
+          },
+          {
+            href: '/student/interactive-classroom?mode=preview-preparation',
+            label: '继续体验另一种模式',
+            tone: 'amber',
+          },
+        ]
+      : [
+          {
+            href: studentReturnHref,
+            label: '返回学生启动页',
+            tone: 'sky',
+            primary: true,
+          },
+          {
+            href: '/student/portrait',
+            label: '查看学习画像',
+            tone: 'sky',
+          },
+          {
+            href: '/student',
+            label: '返回学习控制台',
+            tone: 'amber',
+          },
+        ]
     : [
         {
           href: '/teacher/ai-tools',
@@ -848,7 +950,34 @@ function HomePage() {
         },
       ];
   const studentActionCards: StudentSelfStudyActionCard[] = isStudentSelfStudy
-    ? currentStudentMode === 'preview-preparation'
+    ? isExperienceModeClassroom
+      ? [
+          {
+            id: 'experience-return',
+            title: '返回体验启动页继续调整',
+            description: '可以更换示例主题、学科或课堂模式；页面仍会标注这是未登录体验流程。',
+            href: studentReturnHref,
+            cta: '返回体验启动页',
+            tone: 'sky',
+          },
+          {
+            id: 'experience-login',
+            title: '登录后接入真实学习数据',
+            description: '登录后再同步个人画像、今日任务、课表和进度，让课堂进入你的真实学习链路。',
+            href: '/login',
+            cta: '登录同步个人进度',
+            tone: 'emerald',
+          },
+          {
+            id: 'experience-switch',
+            title: '换一种模式继续体验',
+            description: '试试预习、巩固或课堂回看示例，比较不同学习场景下的课堂组织方式。',
+            href: '/student/interactive-classroom?mode=preview-preparation',
+            cta: '继续体验',
+            tone: 'amber',
+          },
+        ]
+      : currentStudentMode === 'preview-preparation'
       ? [
           {
             id: 'preview-workbench',
@@ -1139,7 +1268,9 @@ function HomePage() {
                 </h1>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300/85 md:text-[14px]">
                   {isStudentSelfStudy
-                    ? '先说明这节课给谁学、围绕什么目标学、学完回到哪条真实学习链路，再开始生成。'
+                    ? isExperienceModeClassroom
+                      ? '先说明这是示例体验、围绕什么主题展示、登录后再接入哪些真实学习数据，再开始生成。'
+                      : '先说明这节课给谁学、围绕什么目标学、学完回到哪条真实学习链路，再开始生成。'
                     : '先说明这节课给哪个班上、围绕哪条教材主线展开、课后要回到哪里继续推进，再开始生成。'}
                 </p>
 
@@ -1609,18 +1740,24 @@ function HomePage() {
           >
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div className="min-w-0 flex-1">
-                <div
-                  className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400"
-                  data-testid="ai-classroom-context-summary"
-                >
-                  {isStudentSelfStudy ? '学习上下文已带入' : '课堂上下文已带入'}
-                </div>
+                    <div
+                      className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400"
+                      data-testid="ai-classroom-context-summary"
+                    >
+                      {isStudentSelfStudy
+                        ? isExperienceModeClassroom
+                          ? '体验模式边界已带入'
+                          : '学习上下文已带入'
+                        : '课堂上下文已带入'}
+                    </div>
                 <div className="mt-1 text-sm font-semibold text-slate-900 dark:text-slate-100 md:text-[15px]">
                   {contextPanelHeading}
                 </div>
                 <div className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300/90">
                   {isStudentSelfStudy
-                    ? `${contextPanelDescription} 生成时会优先沿着“给谁学、学什么、学完去哪”组织课堂。`
+                    ? isExperienceModeClassroom
+                      ? `${contextPanelDescription} 生成时会优先沿着“体验对象、示例主题、登录后接入”组织课堂。`
+                      : `${contextPanelDescription} 生成时会优先沿着“给谁学、学什么、学完去哪”组织课堂。`
                     : `${contextPanelDescription} 生成时会优先沿着“给谁上、学什么、学完去哪”组织课堂。`}
                 </div>
               </div>
@@ -1628,7 +1765,11 @@ function HomePage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className={classroomTonePill('sky')}>
                     {classroomContext.className ??
-                      (isStudentSelfStudy ? '当前学习链路' : '当前课堂链路')}
+                      (isStudentSelfStudy
+                        ? isExperienceModeClassroom
+                          ? '体验模式示例课堂'
+                          : '当前学习链路'
+                        : '当前课堂链路')}
                   </span>
                   <span className={classroomTonePill('amber')}>
                     {buildAudienceModeLabel(classroomContext.audienceMode)}
@@ -1646,10 +1787,12 @@ function HomePage() {
               <details className="classroom-launch-context-details">
                 <summary>
                   <span>展开完整课堂上下文</span>
-                  <span className={classroomTonePill('slate')}>
+                      <span className={classroomTonePill('slate')}>
                     {launchContextCards.length
                       ? `${launchContextCards.length} 项已带入`
-                      : '查看自学闭环'}
+                      : isExperienceModeClassroom
+                        ? '查看体验边界'
+                        : '查看自学闭环'}
                   </span>
                 </summary>
 
@@ -1679,7 +1822,9 @@ function HomePage() {
                 {isStudentSelfStudy && studentWorkflowHeadline ? (
                   <div className={cn(classroomSoftSurface, 'mt-4 px-4 py-3')}>
                     <div className="flex flex-wrap items-center gap-2">
-                      <span className={classroomTonePill('sky')}>学生自学闭环</span>
+                      <span className={classroomTonePill('sky')}>
+                        {isExperienceModeClassroom ? '体验模式边界' : '学生自学闭环'}
+                      </span>
                       {currentStudentMode ? (
                         <span className={classroomTonePill('amber')}>
                           当前模式：{buildLearningModeLabel(currentStudentMode)}
@@ -1696,9 +1841,13 @@ function HomePage() {
                     ) : null}
                     <div className="mt-3 flex flex-wrap gap-2">
                       <Link href={studentReturnHref} className={classroomOutlineButton('sky')}>
-                        返回学生启动页
+                        {isExperienceModeClassroom ? '返回体验启动页' : '返回学生启动页'}
                       </Link>
-                      {studentFollowUpHref ? (
+                      {isExperienceModeClassroom ? (
+                        <Link href="/login" className={classroomOutlineButton('emerald')}>
+                          登录同步个人进度
+                        </Link>
+                      ) : studentFollowUpHref ? (
                         <Link
                           href={studentFollowUpHref}
                           className={classroomOutlineButton('emerald')}
@@ -1731,10 +1880,12 @@ function HomePage() {
               <summary>
                 <div>
                   <div className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400">
-                    课后继续推进
+                    {isExperienceModeClassroom ? '体验后下一步' : '课后继续推进'}
                   </div>
                   <div className="mt-1 text-sm font-semibold text-slate-900 dark:text-slate-100">
-                    课堂结束后再展开，选择下一步收口路径
+                    {isExperienceModeClassroom
+                      ? '体验结束后再展开，选择登录或继续试用'
+                      : '课堂结束后再展开，选择下一步收口路径'}
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-end gap-2">

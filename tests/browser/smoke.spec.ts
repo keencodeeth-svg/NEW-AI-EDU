@@ -887,15 +887,21 @@ test.describe("browser smoke", () => {
 
     await page.goto("/admin");
     await expect(page.getByRole("heading", { name: "管理运营工作台" })).toBeVisible({ timeout: 15_000 });
-    await expect(page.getByText("今天先处理什么")).toBeVisible();
+    await expect(page.getByText("今天先处理哪一类动作")).toBeVisible();
+    await expect(
+      page.getByText("如果今天影响上线、账号进入、模型稳定性或内容安全，就先处理这四类动作。")
+    ).toBeVisible();
     const priorityList = page.getByRole("list", { name: "管理员今日优先行动" });
-    await expect(priorityList.getByRole("listitem")).toHaveCount(3);
+    await expect(priorityList.getByRole("listitem")).toHaveCount(4);
     await expect(priorityList).toContainText("发布风险");
     await expect(priorityList).toContainText("账号恢复");
     await expect(priorityList).toContainText("AI 模型链");
+    await expect(priorityList).toContainText("内容治理");
     await expect(page.getByRole("link", { name: "处理发布阻断" })).toHaveAttribute("href", "/admin/launch-readiness");
     await expect(page.getByRole("link", { name: "处理恢复工单" })).toHaveAttribute("href", "/admin/recovery-requests");
     await expect(page.getByRole("link", { name: "检查模型链" })).toHaveAttribute("href", "/admin/ai-models");
+    await expect(page.getByRole("link", { name: "进入内容治理" })).toHaveAttribute("href", "/library");
+    await expect(priorityList).toContainText("先看什么信号");
     await expect(page.getByRole("heading", { name: "管理控制台" })).toHaveCount(0);
     await expect(page.locator(".chip", { hasText: /^P0$/ })).toHaveCount(0);
     await expect(page.locator(".chip", { hasText: /^A\/B$/ })).toHaveCount(0);
@@ -1071,6 +1077,13 @@ test.describe("browser smoke", () => {
   });
 
   test("student self-study guest mode states real data boundaries", async ({ page }) => {
+    const topic = `体验边界火箭 ${uniqueId("guest-topic")}`;
+
+    expectApiFailure(page, {
+      method: "GET",
+      path: "/api/auth/me",
+      status: 503
+    });
     expectApiFailure(page, {
       method: "GET",
       path: "/api/auth/me",
@@ -1088,10 +1101,33 @@ test.describe("browser smoke", () => {
     await expect(page.getByRole("heading", { name: "知序课堂" })).toBeVisible({
       timeout: 15_000
     });
-    await expect(page.getByText("访客体验模式")).toBeVisible();
+    await expect(page.getByText("体验模式").first()).toBeVisible();
     await expect(page.getByText("真实画像、今日任务和课表暂未接入")).toBeVisible();
     await expect(page.getByText("默认学习档案")).toHaveCount(0);
     await expect(page.getByRole("link", { name: "登录同步个人进度" })).toBeVisible();
+
+    await page.getByTestId("student-self-study-topic").fill(topic);
+    await Promise.all([
+      page.waitForURL("**/ai-classroom"),
+      page.getByTestId("student-self-study-launch").click()
+    ]);
+
+    await expect(page.getByTestId("ai-classroom-context-summary")).toContainText("体验模式边界", {
+      timeout: 15_000
+    });
+    await expect(page.getByTestId("ai-classroom-headline")).toContainText(
+      "真实画像、任务和课表登录后再接入",
+      { timeout: 15_000 }
+    );
+    await expect(page.getByTestId("ai-classroom-requirement")).toHaveValue(new RegExp(topic));
+    await expect(page.getByTestId("ai-classroom-requirement")).not.toHaveValue(
+      /个性化互动课堂|学生当下使用/
+    );
+    await expect(page.getByText("真实画像、任务、课表未接入").first()).toBeVisible();
+    await expect(page.getByText("体验后下一步")).toBeVisible();
+    await expect(page.getByText("真实学习任务")).toHaveCount(0);
+    await expect(page.getByText("成长档案继续收口")).toHaveCount(0);
+    await expect(page.getByText("查看学习画像")).toHaveCount(0);
   });
 
   test("student can upload assignment evidence and teacher can review/download it", async ({ page }) => {
