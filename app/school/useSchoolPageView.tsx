@@ -23,7 +23,7 @@ export function useSchoolPageView() {
     lastLoadedAt: page.lastLoadedAt,
     chips: [
       <span key="school-admin" className="chip">
-        School Admin
+        学校治理
       </span>
     ],
     actions: (

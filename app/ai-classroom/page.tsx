@@ -67,7 +67,6 @@ import {
   buildExportFormatLabel,
   buildLearningModeLabel,
   PRODUCT_BRAND_NAME,
-  PRODUCT_BRAND_TAGLINE,
   type ClassroomContext,
 } from '@/lib/classroom-integration';
 import {
@@ -512,9 +511,27 @@ function HomePage() {
           ? '本次会优先回收课堂重点、帮助复述主线并安排课后追练。'
           : '本次会优先用故事化与启发式方式带学生进入兴趣主题。'
     : null;
+  const focusSummary =
+    classroomContext?.focusKnowledgePointTitle ||
+    classroomContext?.interestTopic ||
+    classroomContext?.learnerGoal ||
+    null;
+  const heroAudienceSummary = isStudentSelfStudy
+    ? `给${classroomContext?.learner?.name ?? '自己'}上的一节${classroomModeLabel ?? '自主学习'}课`
+    : `给${classroomContext?.className ?? '当前班级'}上的一节${classroomModeLabel ?? '互动课堂'}`;
+  const heroLearningSummary = isStudentSelfStudy
+    ? focusSummary
+      ? `围绕${focusSummary}先讲清主线，再接一轮小练习或提问`
+      : '围绕当前学习目标先讲清主线，再接一轮小练习或提问'
+    : focusSummary
+      ? `围绕${focusSummary}组织讲解节奏、互动提问和课堂重点`
+      : `围绕${classroomSubjectLabel ?? '当前教材主题'}组织讲解节奏、互动提问和课堂重点`;
+  const heroOutcomeSummary = isStudentSelfStudy
+    ? '学完回到作业、模块、错题本或成长档案继续收口'
+    : '学完回到班级授课、课后追练、复习回看或校内分发继续推进';
   const classroomHeadline = isStudentSelfStudy
-    ? `为${classroomContext?.learner?.name ?? '你'}生成一节可独立使用的${classroomModeLabel ?? ''}互动课堂`
-    : '让教材、班级与数字人老师进入同一课堂主线';
+    ? `为${classroomContext?.learner?.name ?? '你'}生成一节可独立使用的${classroomModeLabel ?? ''}互动课堂，学完继续回到真实学习任务`
+    : '先讲清给谁上、学什么、学完去哪，让教材、班级与数字人老师进入同一课堂主线';
   const studentFollowUpMode = currentStudentMode
     ? resolveStudentSelfStudyFollowUpMode(currentStudentMode)
     : null;
@@ -558,11 +575,6 @@ function HomePage() {
     : isStudentSelfStudy
       ? '学习目标、学科与课堂模式会在生成时一起带入，方便继续预习、巩固、回看或兴趣探索。'
       : '班级、主讲数字老师与分发方式会在生成时一起带入，方便直接进入真实教学链路。';
-  const focusSummary =
-    classroomContext?.focusKnowledgePointTitle ||
-    classroomContext?.interestTopic ||
-    classroomContext?.learnerGoal ||
-    null;
   const teacherContextName =
     classroomContext?.teacher?.digitalHuman?.displayName || classroomContext?.teacher?.name || null;
   const classroomRoleSummary = classroomContext
@@ -641,83 +653,81 @@ function HomePage() {
     : [];
   const quickStartGuidance = isStudentSelfStudy
     ? [
-        '先确认主题和目标，再直接进入这节互动课堂。',
-        '课堂完成后回到作业、模块、错题本或成长档案继续收口。',
-        '支持个人观看、全班展示和导出沉淀。',
+        '先确认这节课是给谁学、围绕什么目标学，再直接进入课堂。',
+        '进入课堂后先收主线，再顺手留一道练习、提问或复述任务。',
+        '学完回到作业、模块、错题本或成长档案继续收口；导出和分享放在需要时再用。',
       ]
     : [
-        '先写清教材主题、班级对象和课堂目标。',
-        '教师数字人、教务角色和班级上下文会一起带入。',
-        '生成后可以直接全班观看、回看和导出。',
+        '先写清这节课给哪个班上、围绕哪条教材主线展开。',
+        '课堂会把教师身份、讲解节奏和班级情境一起带入，方便直接开讲。',
+        '学完优先回到班级授课、课后追练和复习回看；导出与分享作为辅助交付。',
       ];
   const heroHighlights = isStudentSelfStudy
     ? [
         {
-          title: '学习模式',
+          title: '学生自学',
           description: '预习、巩固、兴趣探索、课堂回看可以按目标一键切换。',
         },
         {
-          title: '使用方式',
+          title: '主线讲解',
           description: '学生可独立发起，也能沿着真实老师节奏进入同一课堂主线。',
         },
         {
-          title: '成果输出',
+          title: '课后收口',
           description: '支持个人观看、整班展示与导出沉淀，方便持续追踪学习结果。',
         },
       ]
     : [
         {
-          title: '教务角色',
+          title: '班级课堂',
           description: '授课教师、班级学生、课程上下文与课堂入口原生兼容。',
         },
         {
-          title: '数字人主讲',
+          title: '教材主线',
           description: '教师可配置专属画像、声音和讲解风格，形成稳定的课堂身份。',
         },
         {
-          title: '课堂分发',
+          title: '课后去向',
           description: '生成后可以工作区播放、全班观看、回看与导出，适配真实教学链路。',
         },
       ];
   const heroEntryCards: LaunchContextCard[] = isStudentSelfStudy
     ? [
         {
-          label: '自学入口',
-          value: '预习、巩固、兴趣探索和课堂回看可直接切换',
+          label: '给谁上',
+          value: heroAudienceSummary,
           description: '学生可以独立发起，也能沿老师节奏进入同一节课堂主线。',
           tone: 'sky',
         },
         {
-          label: '学习结果',
-          value: '学完后继续练、继续看、继续沉淀都能接上',
-          description: '互动课堂不会停在“看完”，还能衔接作业、模块、错题本和成长档案。',
+          label: '学什么',
+          value: heroLearningSummary,
+          description: '先讲清主线，再把提问、例题和练习顺手接上。',
           tone: 'emerald',
         },
         {
-          label: '内容交付',
-          value: '支持个人观看、整班展示与导出沉淀',
-          description: '同一节课堂既能自主学习，也能作为班级共享内容继续使用。',
+          label: '学完去哪',
+          value: heroOutcomeSummary,
+          description: '互动课堂不会停在“看完”，还能衔接作业、模块、错题本和成长档案。',
           tone: 'amber',
         },
       ]
     : [
         {
-          label: '教务原生',
-          value: '教材、班级与课堂角色会一起带入这节课',
+          label: '给谁上',
+          value: heroAudienceSummary,
           description: '不用反复录入教学背景，启动时就已经接入真实教务上下文。',
           tone: 'sky',
         },
         {
-          label: '数字主讲',
-          value: teacherContextName
-            ? `${teacherContextName} 已可以作为主讲数字老师使用`
-            : '支持教师专属画像、音色和讲解风格',
-          description: '老师的数字身份可以长期复用，让课堂始终保持统一品牌和表达风格。',
+          label: '学什么',
+          value: heroLearningSummary,
+          description: '先把教材主线、互动提问和课堂重点讲清，再决定是否补充数字人表达。',
           tone: 'emerald',
         },
         {
-          label: '课堂成果',
-          value: '生成后可全班播放、回看并导出沉淀',
+          label: '学完去哪',
+          value: heroOutcomeSummary,
           description: '适合公开课、复习课、班会课和学校统一分发的真实教学场景。',
           tone: 'amber',
         },
@@ -757,40 +767,40 @@ function HomePage() {
   const launchDeliverables: LaunchContextCard[] = isStudentSelfStudy
     ? [
         {
-          label: '课堂主线',
-          value: '会先整理适合当前目标的讲解顺序',
-          description: '把知识点、例子和互动节奏串成一条容易跟住的学习主线。',
+          label: '给谁上',
+          value: '会锁定当前学习者、模式和课堂目标',
+          description: '把学习对象、进入方式和课堂语气先对齐，避免生成后再返工。',
           tone: 'sky',
         },
         {
-          label: '数字讲解',
-          value: '会同步生成数字老师讲解和互动提示',
-          description: '不是单纯给一段文案，而是给到更接近真实课堂的讲述过程。',
+          label: '学什么',
+          value: '会先整理适合当前目标的讲解顺序',
+          description: '把知识点、例子和互动节奏串成一条容易跟住的学习主线。',
           tone: 'emerald',
         },
         {
-          label: '继续学习',
-          value: '完成后还能接练习、回看、导出和沉淀',
+          label: '学完去哪',
+          value: '完成后会直接接到练习、回看和成长沉淀',
           description: '让这节课自然衔接到后续复习、展示和个人学习档案。',
           tone: 'amber',
         },
       ]
     : [
         {
-          label: '课堂主线',
-          value: '会先整理教材主题、节奏和课堂目标',
-          description: '把真实教学目标压缩成一节结构清晰、可直接开讲的课堂脚本。',
+          label: '给谁上',
+          value: '会带入当前班级、教师身份和课堂对象',
+          description: '让授课对象与课堂语境先对齐，再决定具体的讲法与呈现。',
           tone: 'sky',
         },
         {
-          label: '数字主讲',
-          value: '会同步带入教师数字人身份与讲解风格',
-          description: '让人物设定、音色和讲解表达一起进入课堂，不用重复配置。',
+          label: '学什么',
+          value: '会先整理教材主题、节奏和课堂目标',
+          description: '把真实教学目标压缩成一节结构清晰、可直接开讲的课堂脚本。',
           tone: 'emerald',
         },
         {
-          label: '课堂交付',
-          value: '会生成可播放、可回看、可导出的课堂内容',
+          label: '学完去哪',
+          value: '会把整班播放、回看和课后收口一起准备好',
           description: '适合整班观看、校内分发以及后续复用，不会停在单次试用。',
           tone: 'amber',
         },
@@ -1037,8 +1047,8 @@ function HomePage() {
     : `例如：围绕${classroomSubjectLabel || '当前教材主题'}设计一节 30 分钟互动课堂，适合${classroomContext?.className || '当前班级'}全班观看，并保留导出与回看能力。`;
   const composerLabel = isStudentSelfStudy ? '学习目标' : '课堂目标';
   const composerAssistText = isStudentSelfStudy
-    ? '一句话写清主题、目标和希望的讲法'
-    : '一句话写清教材主题、班级对象和课堂结果';
+    ? '一句话写清给谁学、学什么、学完准备去哪'
+    : '一句话写清给哪个班上、讲什么、课后接什么';
   const composerMetaPills = [
     classroomModeLabel || null,
     classroomSubjectLabel || null,
@@ -1128,7 +1138,9 @@ function HomePage() {
                   {classroomHeadline}
                 </h1>
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600 dark:text-slate-300/85 md:text-[14px]">
-                  {PRODUCT_BRAND_TAGLINE}
+                  {isStudentSelfStudy
+                    ? '先说明这节课给谁学、围绕什么目标学、学完回到哪条真实学习链路，再开始生成。'
+                    : '先说明这节课给哪个班上、围绕哪条教材主线展开、课后要回到哪里继续推进，再开始生成。'}
                 </p>
 
                 <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
@@ -1184,7 +1196,7 @@ function HomePage() {
                         </span>
                       </div>
                       <div className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                        开课前只保留环境确认和课堂主线，让首屏更聚焦在“开始这节课”。
+                        开课前只保留环境确认和教学主线，让首屏先回答“给谁上、学什么、学完去哪”。
                       </div>
                     </div>
 
@@ -1321,7 +1333,7 @@ function HomePage() {
                           {isStudentSelfStudy ? '开始这节课' : '开始这节课堂'}
                         </div>
                         <div className="mt-1 text-[15px] font-semibold text-slate-900 dark:text-slate-100">
-                          默认只展开开课必需信息
+                          默认只展开教学主线必需信息
                         </div>
                       </div>
                       <span className={classroomTonePill('sky', 'font-medium')}>
@@ -1354,7 +1366,7 @@ function HomePage() {
                       课堂启动后会自动整理
                     </div>
                     <div className="mt-1 text-sm font-semibold text-slate-900 dark:text-slate-100">
-                      你得到的不只是一个静态页面
+                      你得到的是一条能接回真实教学的课堂主线
                     </div>
                   </div>
                   <span className={classroomTonePill('slate', 'font-medium')}>
@@ -1487,13 +1499,13 @@ function HomePage() {
             >
               <div className="flex flex-wrap items-center justify-between gap-2 px-4 pt-3">
                 <div className="min-w-0">
-                  <div className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400">
-                    {composerLabel}
+                    <div className="text-[11px] font-semibold tracking-[0.12em] text-slate-500 dark:text-slate-400">
+                      {composerLabel}
+                    </div>
+                    <div className="mt-0.5 text-[12px] leading-5 text-slate-500 dark:text-slate-400">
+                      {composerAssistText}
+                    </div>
                   </div>
-                  <div className="mt-0.5 text-[12px] leading-5 text-slate-500 dark:text-slate-400">
-                    {composerAssistText}
-                  </div>
-                </div>
                 <div className="flex flex-wrap items-center gap-1.5">
                   {composerMetaPills.map((item) => (
                     <span
@@ -1607,7 +1619,9 @@ function HomePage() {
                   {contextPanelHeading}
                 </div>
                 <div className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300/90">
-                  {contextPanelDescription}
+                  {isStudentSelfStudy
+                    ? `${contextPanelDescription} 生成时会优先沿着“给谁学、学什么、学完去哪”组织课堂。`
+                    : `${contextPanelDescription} 生成时会优先沿着“给谁上、学什么、学完去哪”组织课堂。`}
                 </div>
               </div>
               {classroomContext ? (

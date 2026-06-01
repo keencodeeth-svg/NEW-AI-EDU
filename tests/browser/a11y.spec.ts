@@ -222,6 +222,38 @@ test.describe("browser accessibility", () => {
     await expectNoCriticalViolations(page, "账号恢复页");
   });
 
+  test("recover page exposes form semantics and success status for screen readers", async ({ page }) => {
+    await page.goto("/recover?role=teacher&entry=login");
+    await expect(page.getByRole("radiogroup", { name: "选择恢复身份" })).toBeVisible();
+    await expect(getSelectedRoleRadio(page, "教师")).toHaveCount(1);
+    await expect(page.getByRole("combobox", { name: "问题类型" })).toHaveAttribute("required", "");
+    await expect(page.getByRole("textbox", { name: "注册邮箱" })).toHaveAttribute("autocomplete", "username");
+    await expect(page.getByRole("textbox", { name: "姓名（建议填写）" })).toHaveAttribute("autocomplete", "name");
+
+    await page.route("**/api/auth/recovery-request", (route) =>
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          message: "恢复请求已提交",
+          data: {
+            ticketId: "REC-A11Y-1",
+            submittedAt: "2026-06-01T08:00:00.000Z",
+            serviceLevel: "1 个工作日内处理",
+            nextSteps: ["管理员会核验教师身份"]
+          }
+        })
+      })
+    );
+    await page.getByRole("textbox", { name: "注册邮箱" }).fill(`${uniqueId("recover-status")}@local.test`);
+    await page.getByRole("button", { name: "提交恢复请求" }).click();
+    await expect(page.getByRole("status")).toContainText("恢复请求已提交");
+    await expect(page.getByRole("link", { name: "返回教师登录" })).toHaveAttribute(
+      "href",
+      "/login?role=teacher&entry=recover"
+    );
+  });
+
   test("public account recovery keeps selected role context", async ({ page }) => {
     await page.goto("/login?role=teacher&entry=landing");
     await expect(getSelectedRoleRadio(page, "教师")).toHaveCount(1);
@@ -256,6 +288,7 @@ test.describe("browser accessibility", () => {
     );
     await page.getByRole("textbox", { name: "注册邮箱" }).fill(`${uniqueId("teacher-recover")}@local.test`);
     await page.getByRole("button", { name: "提交恢复请求" }).click();
+    await expect(page.getByRole("status")).toContainText("恢复请求已提交");
     await expect(page.getByRole("link", { name: "返回教师登录" })).toHaveAttribute(
       "href",
       "/login?role=teacher&entry=recover"

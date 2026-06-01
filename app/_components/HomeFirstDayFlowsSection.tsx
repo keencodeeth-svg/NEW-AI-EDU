@@ -10,7 +10,7 @@ export function HomeFirstDayFlowsSection({ firstDayFlows }: { firstDayFlows: Fir
           <h2>首日上手路径</h2>
           <div className="section-sub">不讲空话，直接告诉新用户第一天如何把系统真正跑起来。</div>
         </div>
-        <span className="chip">Onboarding</span>
+        <span className="chip">首日上手</span>
       </div>
       <div className="home-flow-grid">
         {firstDayFlows.map((flow) => (

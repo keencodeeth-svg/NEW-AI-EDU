@@ -15,7 +15,9 @@ function readVisualCheckExports() {
         routeKey: mod.getResultKey("/teacher/classroom-live", "mobile", "dark"),
         homeLight: mod.getResultKey("/", "desktop", "light"),
         homeScreenshot: mod.getScreenshotFileName("home", "desktop", "light"),
-        teacherDarkScreenshot: mod.getScreenshotFileName("teacher-classroom-live", "mobile", "dark")
+        teacherDarkScreenshot: mod.getScreenshotFileName("teacher-classroom-live", "mobile", "dark"),
+        routeMatrix: mod.getVisualRouteMatrix?.(),
+        sessionGroups: mod.getVisualSessionGroups?.()
       }));`
     ],
     { encoding: "utf8" }
@@ -36,4 +38,28 @@ test("visual check screenshot names include theme suffix", () => {
 
   assert.equal(payload.homeScreenshot, "home-desktop-light.png");
   assert.equal(payload.teacherDarkScreenshot, "teacher-classroom-live-mobile-dark.png");
+});
+
+test("visual check route matrix includes newly gated parent, school, admin, and ai classroom pages", () => {
+  const payload = readVisualCheckExports();
+
+  assert.ok(payload.routeMatrix, "route matrix export should exist");
+  assert.deepEqual(payload.routeMatrix.publicRoutes, ["/", "/login", "/register", "/recover", "/ai-classroom"]);
+  assert.deepEqual(payload.routeMatrix.parentRoutes, ["/parent"]);
+  assert.deepEqual(payload.routeMatrix.schoolRoutes, ["/school"]);
+  assert.deepEqual(payload.routeMatrix.adminRoutes, ["/admin"]);
+});
+
+test("visual check session groups expose stable role-specific setup for gated routes", () => {
+  const payload = readVisualCheckExports();
+
+  assert.ok(payload.sessionGroups, "session group export should exist");
+  assert.deepEqual(payload.sessionGroups, {
+    public: ["/", "/login", "/register", "/recover", "/ai-classroom"],
+    student: ["/student", "/practice"],
+    parent: ["/parent"],
+    teacher: ["/teacher", "/teacher/classroom-live"],
+    school: ["/school"],
+    admin: ["/admin"]
+  });
 });

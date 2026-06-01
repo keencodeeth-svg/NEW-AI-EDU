@@ -56,35 +56,37 @@ export default function RecoverPage() {
       </div>
 
       {recoverPage.result ? (
-        <StatePanel
-          title="恢复请求已受理"
-          description={recoverPage.resultMessage}
-          tone="success"
-          action={
-            <Link className="button secondary" href={recoverPage.loginHref}>
-              返回{recoverPage.roleLabel}登录
-            </Link>
-          }
-        >
-          <div className="grid" style={{ gap: 8 }}>
-            <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
-              请求编号：{recoverPage.result.ticketId ?? "--"}
+        <div role="status" aria-live="polite" aria-atomic="true">
+          <StatePanel
+            title="恢复请求已受理"
+            description={recoverPage.resultMessage}
+            tone="success"
+            action={
+              <Link className="button secondary" href={recoverPage.loginHref}>
+                返回{recoverPage.roleLabel}登录
+              </Link>
+            }
+          >
+            <div className="grid" style={{ gap: 8 }}>
+              <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
+                请求编号：{recoverPage.result.ticketId ?? "--"}
+              </div>
+              <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
+                提交时间：{formatLoadedTime(recoverPage.result.submittedAt ?? null)}
+              </div>
+              <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
+                服务时效：{recoverPage.result.serviceLevel ?? "1 个工作日内处理"}
+              </div>
+              {recoverPage.result.nextSteps?.length ? (
+                <ul style={{ margin: "4px 0 0 18px", color: "var(--ink-1)" }}>
+                  {recoverPage.result.nextSteps.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
-            <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
-              提交时间：{formatLoadedTime(recoverPage.result.submittedAt ?? null)}
-            </div>
-            <div style={{ fontSize: 13, color: "var(--ink-1)" }}>
-              服务时效：{recoverPage.result.serviceLevel ?? "1 个工作日内处理"}
-            </div>
-            {recoverPage.result.nextSteps?.length ? (
-              <ul style={{ margin: "4px 0 0 18px", color: "var(--ink-1)" }}>
-                {recoverPage.result.nextSteps.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-        </StatePanel>
+          </StatePanel>
+        </div>
       ) : null}
 
       {!recoverPage.result ? (
@@ -129,6 +131,7 @@ export default function RecoverPage() {
               onChange={(event) => recoverPage.setField("issueType", event.target.value as RecoveryIssueType)}
               disabled={recoverPage.loading}
               aria-describedby={errorId}
+              required
             >
               {recoveryIssueOptions.map((item) => (
                 <option key={item.value} value={item.value}>

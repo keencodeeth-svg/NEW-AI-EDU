@@ -40,6 +40,11 @@ import type { RadarResponse, WeakKnowledgePoint } from '../portrait/types';
 import type { TodayTaskPayload } from '../types';
 import type { StudentAssignmentItem } from '../assignments/types';
 import type { StudentClassModules, StudentModule, StudentModulesResponse } from '../modules/types';
+import {
+  buildExperienceModeLaunchCopy,
+  buildExperienceModeState,
+  getExperienceModeTopic,
+} from './experience-mode';
 
 type LearningMode = StudentSelfStudyMode;
 type LearningModeConfig = {
@@ -70,15 +75,7 @@ type ScheduleData = NonNullable<ScheduleResponse['data']>;
 
 const GUEST_STUDENT_USER: NonNullable<AuthMeResponse['user']> = {
   id: 'guest-student',
-  name: '访客同学',
-};
-
-const GUEST_STUDENT_PROFILE: StudentProfilePayload = {
-  grade: '7',
-  subjects: ['math', 'english'],
-  preferredName: '访客同学',
-  target: '先把这一节的主线听懂，再做一轮互动练习把理解做稳。',
-  strengths: '喜欢先看主线，再跟着例题一步步理解概念。',
+  name: '体验模式',
 };
 
 type TodayTasksResponse = {
@@ -390,18 +387,22 @@ export default function StudentInteractiveClassroomPage() {
           return;
         }
         if (shouldUseGuestExperience(error)) {
+          const experienceModeState = buildExperienceModeState(mode);
           setAuthRequired(false);
           setGuestExperienceMode(true);
           setAuthUser(GUEST_STUDENT_USER);
-          setProfile(GUEST_STUDENT_PROFILE);
+          setProfile(experienceModeState.profile);
           setWeakKnowledgePoint(null);
           setTodayTasks(null);
           setSchedule(null);
           setModules([]);
           setAssignments([]);
-          setBootstrapNotice(
-            '当前已切换为访客体验模式。真实画像、今日任务和课表暂未接入；本页仅提供示例课堂流程，登录后才会同步个人进度与真实学习数据。',
-          );
+          setTopicDrafts((prev) => ({
+            ...prev,
+            [mode]: experienceModeState.topic,
+          }));
+          setLearnerGoal(experienceModeState.learnerGoal);
+          setBootstrapNotice(experienceModeState.bootstrapNotice);
           setLastLoadedAt(new Date().toISOString());
           return;
         }
@@ -508,7 +509,7 @@ export default function StudentInteractiveClassroomPage() {
       setLoading(false);
       setRefreshing(false);
     }
-  }, []);
+  }, [mode]);
 
   useEffect(() => {
     void loadPage('initial');
@@ -535,32 +536,53 @@ export default function StudentInteractiveClassroomPage() {
     const defaultSubjectLabel = defaultSubject
       ? (SUBJECT_LABELS[defaultSubject] ?? defaultSubject)
       : '综合';
+    const experienceModeState = buildExperienceModeState(defaultMode);
 
     setMode(defaultMode);
     setSubject(defaultSubject);
     setTopicDrafts({
-      'preview-preparation': buildPreviewTopicSuggestion(profile, defaultSubject),
+      'preview-preparation': guestExperienceMode
+        ? getExperienceModeTopic('preview-preparation', defaultSubject)
+        : buildPreviewTopicSuggestion(profile, defaultSubject),
       'subject-reinforcement':
-        weakKnowledgePoint?.title ??
-        (defaultSubject
-          ? `${SUBJECT_LABELS[defaultSubject] ?? defaultSubject}重点巩固`
-          : '当前重点巩固'),
-      'interest-cultivation': buildInterestTopicSuggestion(profile, defaultSubject),
-      'classroom-review': buildReviewTopicSuggestion(weakKnowledgePoint, defaultSubject),
+        guestExperienceMode
+          ? getExperienceModeTopic('subject-reinforcement', defaultSubject)
+          : weakKnowledgePoint?.title ??
+            (defaultSubject
+              ? `${SUBJECT_LABELS[defaultSubject] ?? defaultSubject}重点巩固`
+              : '当前重点巩固'),
+      'interest-cultivation': guestExperienceMode
+        ? getExperienceModeTopic('interest-cultivation', defaultSubject)
+        : buildInterestTopicSuggestion(profile, defaultSubject),
+      'classroom-review': guestExperienceMode
+        ? getExperienceModeTopic('classroom-review', defaultSubject)
+        : buildReviewTopicSuggestion(weakKnowledgePoint, defaultSubject),
     });
     setLearnerGoal(
-      normalizeText(profile?.target) || buildPrimaryGoalTemplate(defaultMode, defaultSubjectLabel),
+      guestExperienceMode
+        ? experienceModeState.learnerGoal
+        : normalizeText(profile?.target) ||
+            buildPrimaryGoalTemplate(defaultMode, defaultSubjectLabel),
     );
     setInitialized(true);
-  }, [authUser, initialized, profile, weakKnowledgePoint]);
+  }, [authUser, guestExperienceMode, initialized, profile, weakKnowledgePoint]);
 
   const learnerName = useMemo(() => {
+    if (guestExperienceMode) {
+      return buildExperienceModeState(mode).learnerName;
+    }
     const preferredName = normalizeText(profile?.preferredName);
     const authName = normalizeText(authUser?.name);
     return preferredName || authName || '当前学生';
-  }, [authUser?.name, profile?.preferredName]);
+  }, [authUser?.name, guestExperienceMode, mode, profile?.preferredName]);
 
   const subjectOptions = useMemo(() => {
+    if (guestExperienceMode) {
+      return SUBJECT_OPTIONS.map((item) => ({
+        value: item.value,
+        label: SUBJECT_LABELS[item.value] ?? item.value,
+      }));
+    }
     const values = new Set(profile?.subjects?.filter(Boolean) ?? []);
     if (weakKnowledgePoint?.subject) {
       values.add(weakKnowledgePoint.subject);
@@ -573,7 +595,7 @@ export default function StudentInteractiveClassroomPage() {
       value,
       label: SUBJECT_LABELS[value] ?? value,
     }));
-  }, [profile?.subjects, weakKnowledgePoint?.subject]);
+  }, [guestExperienceMode, profile?.subjects, weakKnowledgePoint?.subject]);
 
   const selectedSubjectLabel = subject ? (SUBJECT_LABELS[subject] ?? subject) : '综合';
   const stageLabel = getGradeLabel(profile?.grade);
@@ -607,17 +629,28 @@ export default function StudentInteractiveClassroomPage() {
 
   const recommendedTopics = useMemo<TopicDrafts>(
     () => ({
-      'preview-preparation': buildPreviewTopicSuggestion(profile, subject),
+      'preview-preparation': guestExperienceMode
+        ? getExperienceModeTopic('preview-preparation', subject)
+        : buildPreviewTopicSuggestion(profile, subject),
       'subject-reinforcement':
-        weakKnowledgePoint?.title ??
-        (subject ? `${SUBJECT_LABELS[subject] ?? subject}重点巩固` : '当前重点巩固'),
-      'interest-cultivation': buildInterestTopicSuggestion(profile, subject),
-      'classroom-review': buildReviewTopicSuggestion(weakKnowledgePoint, subject),
+        guestExperienceMode
+          ? getExperienceModeTopic('subject-reinforcement', subject)
+          : weakKnowledgePoint?.title ??
+            (subject ? `${SUBJECT_LABELS[subject] ?? subject}重点巩固` : '当前重点巩固'),
+      'interest-cultivation': guestExperienceMode
+        ? getExperienceModeTopic('interest-cultivation', subject)
+        : buildInterestTopicSuggestion(profile, subject),
+      'classroom-review': guestExperienceMode
+        ? getExperienceModeTopic('classroom-review', subject)
+        : buildReviewTopicSuggestion(weakKnowledgePoint, subject),
     }),
-    [profile, subject, weakKnowledgePoint],
+    [guestExperienceMode, profile, subject, weakKnowledgePoint],
   );
 
   const recommendedMode = useMemo<LearningMode>(() => {
+    if (guestExperienceMode) {
+      return mode;
+    }
     if (weakKnowledgePoint) {
       return 'subject-reinforcement';
     }
@@ -628,9 +661,12 @@ export default function StudentInteractiveClassroomPage() {
       return 'classroom-review';
     }
     return 'interest-cultivation';
-  }, [profile?.subjects, profile?.target, weakKnowledgePoint]);
+  }, [guestExperienceMode, mode, profile?.subjects, profile?.target, weakKnowledgePoint]);
 
   const recommendedReason = useMemo(() => {
+    if (guestExperienceMode) {
+      return '当前为体验模式：仅展示示例课堂链路，真实画像、任务、课表与后续进度需登录后接入。';
+    }
     if (recommendedMode === 'subject-reinforcement' && weakKnowledgePoint) {
       return `当前最值得优先收口的是“${weakKnowledgePoint.title}”，先把薄弱点做稳，最容易转化为真实提升。`;
     }
@@ -641,7 +677,7 @@ export default function StudentInteractiveClassroomPage() {
       return '你已经有稳定学科基础，适合把上过的内容压缩回收，形成可复述的主线和自己的总结。';
     }
     return '如果还没有明确任务，先从兴趣探索把学习状态拉起来，再转入正式巩固。';
-  }, [recommendedMode, weakKnowledgePoint]);
+  }, [guestExperienceMode, recommendedMode, weakKnowledgePoint]);
 
   const primaryGoalTemplate = useMemo(
     () => buildPrimaryGoalTemplate(mode, selectedSubjectLabel),
@@ -1151,7 +1187,9 @@ export default function StudentInteractiveClassroomPage() {
     weakKnowledgePoint,
   ]);
   const currentTopicDisplay = activeTopic || recommendedTopics[mode];
-  const currentGoalDisplay = normalizeText(learnerGoal) || primaryGoalTemplate;
+  const currentGoalDisplay = guestExperienceMode
+    ? normalizeText(learnerGoal) || buildExperienceModeState(mode).learnerGoal
+    : normalizeText(learnerGoal) || primaryGoalTemplate;
   const nextLessonSummary = relevantLesson
     ? `${relevantLesson.className} · ${formatTimeRangeLabel(relevantLesson.startAt, relevantLesson.endAt)}`
     : '暂无紧邻课程';
@@ -1220,10 +1258,18 @@ export default function StudentInteractiveClassroomPage() {
     {
       id: 'goal',
       label: '再带目标',
-      value: normalizedLearnerGoal ? '课堂目标已带入' : '系统会自动补目标',
+      value: guestExperienceMode
+        ? '体验模式边界已带入'
+        : normalizedLearnerGoal
+          ? '课堂目标已带入'
+          : '系统会自动补目标',
       helper: normalizedLearnerGoal
-        ? '本次课堂会围绕你的当前目标推进'
-        : '没有手填目标时也能先启动，再由系统补齐主推荐目标',
+        ? guestExperienceMode
+          ? '会明确标注这是示例目标，不宣称来自真实学习画像'
+          : '本次课堂会围绕你的当前目标推进'
+        : guestExperienceMode
+          ? '当前不会补写真实目标，只保留示例课堂边界'
+          : '没有手填目标时也能先启动，再由系统补齐主推荐目标',
     },
     {
       id: 'launch',
@@ -1258,7 +1304,11 @@ export default function StudentInteractiveClassroomPage() {
       id: 'goal',
       label: '学习目标',
       value: currentGoalDisplay,
-      helper: normalizedLearnerGoal ? '会作为本次课堂目标带入' : '已按当前模式补入主推荐目标',
+      helper: guestExperienceMode
+        ? '仅作为示例课堂目标展示，不代表已接入你的真实学习目标'
+        : normalizedLearnerGoal
+          ? '会作为本次课堂目标带入'
+          : '已按当前模式补入主推荐目标',
     },
   ];
   const actionPills = [
@@ -1486,6 +1536,19 @@ export default function StudentInteractiveClassroomPage() {
             ? activeTopic || weakKnowledgePoint?.title
             : undefined,
       });
+      if (guestExperienceMode) {
+        const experienceModeLaunchCopy = buildExperienceModeLaunchCopy({
+          mode,
+          topic: activeTopic || recommendedTopics[mode] || getExperienceModeTopic(mode, subject),
+          learnerGoal:
+            normalizedLearnerGoal || buildExperienceModeState(mode).learnerGoal,
+          subject: subject || undefined,
+          learnerName,
+        });
+        payload.sourceLabel = experienceModeLaunchCopy.sourceLabel;
+        payload.sourceSummary = experienceModeLaunchCopy.sourceSummary;
+        payload.classroomContext = experienceModeLaunchCopy.classroomContext;
+      }
 
       const nextRecentSession = saveRecentStudentSelfStudySession({
         mode,
@@ -1859,7 +1922,10 @@ export default function StudentInteractiveClassroomPage() {
             <div className="student-self-study-recent-panel">
               <div className="section-title">第一次启动也没关系</div>
               <div className="student-self-study-recent-description">
-                不需要一次把设定写得很满。先确定一个主题和一个目标就能开课，系统会自动补全课程联动、画像上下文和课堂脚本。
+                不需要一次把设定写得很满。先确定一个主题和一个目标就能开课，
+                {guestExperienceMode
+                  ? ' 当前为体验模式，只会展示示例课堂流程，不会补写或暗示真实画像、任务与课表。'
+                  : ' 系统会自动补全课程联动、画像上下文和课堂脚本。'}
               </div>
             </div>
           )}
@@ -2063,6 +2129,9 @@ export default function StudentInteractiveClassroomPage() {
                 <div className="status-note info">
                   当前模式会按“{buildLearningModeLabel(mode)}
                   ”编排学习脚本，默认支持自主学习、全班观看、课后回看和导出。
+                  {guestExperienceMode
+                    ? ' 当前为体验模式，结果页也会明确标注真实画像、任务与课表尚未接入。'
+                    : ''}
                 </div>
 
                 <div className="workflow-step-line student-self-study-editor-note">
@@ -2190,16 +2259,22 @@ export default function StudentInteractiveClassroomPage() {
                               {currentGoalDisplay}
                             </div>
                             <div className="workflow-summary-helper">
-                              如果没有手填目标，系统会按当前模式自动补全
+                              {guestExperienceMode
+                                ? '体验模式不会补写真实目标，只会保留示例课堂边界'
+                                : '如果没有手填目标，系统会按当前模式自动补全'}
                             </div>
                           </div>
                           <div className="workflow-summary-card">
                             <div className="workflow-summary-label">薄弱点</div>
                             <div className="workflow-summary-value student-self-study-summary-text">
-                              {weakKnowledgePoint?.title ?? '暂无明显单点弱项'}
+                              {guestExperienceMode
+                                ? '体验模式未接入真实学习画像'
+                                : weakKnowledgePoint?.title ?? '暂无明显单点弱项'}
                             </div>
                             <div className="workflow-summary-helper">
-                              {weakKnowledgePoint
+                              {guestExperienceMode
+                                ? '登录后才会同步真实画像、薄弱点和对应掌握度'
+                                : weakKnowledgePoint
                                 ? `${SUBJECT_LABELS[weakKnowledgePoint.subject] ?? weakKnowledgePoint.subject} · 掌握度 ${weakKnowledgePoint.masteryScore}`
                                 : '系统会先按学科和模式生成默认课堂'}
                             </div>
@@ -2214,7 +2289,7 @@ export default function StudentInteractiveClassroomPage() {
                             </div>
                           </div>
                         </div>
-                        {!weakKnowledgePoint ? (
+                        {!weakKnowledgePoint && !guestExperienceMode ? (
                           <StatePanel
                             compact
                             tone="info"

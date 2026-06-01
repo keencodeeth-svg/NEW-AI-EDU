@@ -6,9 +6,17 @@ import { fileURLToPath } from "node:url";
 const PASSWORD = process.env.VISUAL_CHECK_PASSWORD || "Playwright123!";
 const FIXED_STUDENT_EMAIL = process.env.VISUAL_CHECK_STUDENT_EMAIL || "";
 const FIXED_TEACHER_EMAIL = process.env.VISUAL_CHECK_TEACHER_EMAIL || "";
+const FIXED_PARENT_EMAIL = process.env.VISUAL_CHECK_PARENT_EMAIL || "";
+const FIXED_SCHOOL_ADMIN_EMAIL = process.env.VISUAL_CHECK_SCHOOL_ADMIN_EMAIL || "";
+const FIXED_ADMIN_EMAIL = process.env.VISUAL_CHECK_ADMIN_EMAIL || "";
 const STUDENT_NAME = process.env.VISUAL_CHECK_STUDENT_NAME || "Visual Check Student";
 const TEACHER_NAME = process.env.VISUAL_CHECK_TEACHER_NAME || "Visual Check Teacher";
+const PARENT_NAME = process.env.VISUAL_CHECK_PARENT_NAME || "Visual Check Parent";
+const SCHOOL_ADMIN_NAME = process.env.VISUAL_CHECK_SCHOOL_ADMIN_NAME || "Visual Check School Admin";
+const ADMIN_NAME = process.env.VISUAL_CHECK_ADMIN_NAME || "Visual Check Admin";
 const TEACHER_INVITE_CODE = process.env.VISUAL_CHECK_TEACHER_INVITE_CODE || "PW-TEACH-2026";
+const SCHOOL_ADMIN_INVITE_CODE = process.env.VISUAL_CHECK_SCHOOL_ADMIN_INVITE_CODE || "PW-SCHOOL-2026";
+const ADMIN_INVITE_CODE = process.env.VISUAL_CHECK_ADMIN_INVITE_CODE || "PW-ADMIN-2026";
 const baseUrl = process.env.VISUAL_CHECK_BASE_URL || "http://127.0.0.1:3001";
 const screenshotDir = process.env.VISUAL_CHECK_SCREENSHOT_DIR || "output/playwright";
 const reportPath = process.env.VISUAL_CHECK_REPORT_PATH || path.join(screenshotDir, "visual-check.json");
@@ -43,6 +51,14 @@ const publicRoutes = [
     slug: "recover",
     expectedShell: "public",
     requiredSelectors: [".public-header-links", ".theme-mode-toggle", ".skip-link"],
+    forbiddenSelectors: [".app-sidebar"]
+  },
+  {
+    route: "/ai-classroom",
+    slug: "ai-classroom",
+    expectedShell: "public",
+    headingText: "先讲清给谁上、学什么、学完去哪，让教材、班级与数字人老师进入同一课堂主线",
+    requiredSelectors: [".public-header-links", ".theme-mode-toggle", ".skip-link", ".main", "[data-testid='ai-classroom-headline']"],
     forbiddenSelectors: [".app-sidebar"]
   }
 ];
@@ -93,6 +109,45 @@ const teacherRoutes = [
   }
 ];
 
+const parentRoutes = [
+  {
+    route: "/parent",
+    slug: "parent-dashboard",
+    expectedShell: "authenticated",
+    headingText: "家长空间",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  }
+];
+
+const schoolRoutes = [
+  {
+    route: "/school",
+    slug: "school-dashboard",
+    expectedShell: "authenticated",
+    headingText: "学校质量与课堂应用",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  }
+];
+
+const adminRoutes = [
+  {
+    route: "/admin",
+    slug: "admin-dashboard",
+    expectedShell: "authenticated",
+    headingText: "管理运营工作台",
+    requireSidebarOnDesktop: true,
+    requireMobileTabbarOnMobile: true,
+    requiredSelectors: [".theme-mode-toggle", ".skip-link", ".main"],
+    forbiddenSelectors: [".public-header-links"]
+  }
+];
+
 const themes = ["light", "dark"];
 
 const viewports = [
@@ -129,6 +184,28 @@ function getThemeButtonName(theme) {
 
 function sanitizeSlug(route) {
   return route === "/" ? "home" : route.slice(1).replaceAll("/", "-");
+}
+
+export function getVisualRouteMatrix() {
+  return {
+    publicRoutes: publicRoutes.map((route) => route.route),
+    studentRoutes: studentRoutes.map((route) => route.route),
+    parentRoutes: parentRoutes.map((route) => route.route),
+    teacherRoutes: teacherRoutes.map((route) => route.route),
+    schoolRoutes: schoolRoutes.map((route) => route.route),
+    adminRoutes: adminRoutes.map((route) => route.route)
+  };
+}
+
+export function getVisualSessionGroups() {
+  return {
+    public: publicRoutes.map((route) => route.route),
+    student: studentRoutes.map((route) => route.route),
+    parent: parentRoutes.map((route) => route.route),
+    teacher: teacherRoutes.map((route) => route.route),
+    school: schoolRoutes.map((route) => route.route),
+    admin: adminRoutes.map((route) => route.route)
+  };
 }
 
 export function getResultKey(route, viewport, theme) {
@@ -271,6 +348,199 @@ async function ensureTeacherSession(page) {
 
   if (!login.ok) {
     throw new Error(`Teacher login failed: ${login.status} ${JSON.stringify(login.body)}`);
+  }
+
+  return { email };
+}
+
+async function getObserverCode(page) {
+  const profile = await page.evaluate(async () => {
+    const response = await fetch("/api/student/profile", {
+      cache: "no-store",
+      headers: {
+        "x-test-origin": window.location.origin
+      }
+    });
+    const payload = await response.json().catch(() => null);
+    return { ok: response.ok, status: response.status, body: payload };
+  });
+
+  if (!profile.ok) {
+    throw new Error(`Student profile fetch failed: ${profile.status} ${JSON.stringify(profile.body)}`);
+  }
+
+  const observerCode = profile.body?.data?.observerCode;
+  if (!observerCode) {
+    throw new Error(`Student observer code missing: ${JSON.stringify(profile.body)}`);
+  }
+
+  return observerCode;
+}
+
+async function ensureParentSession(page) {
+  const email = uniqueEmail("visual-check-parent", FIXED_PARENT_EMAIL);
+  const studentSession = await ensureStudentSession(page);
+  const observerCode = await getObserverCode(page);
+
+  const registration = await evaluateJson(page, "/api/auth/register", {
+    role: "parent",
+    email,
+    password: PASSWORD,
+    name: PARENT_NAME,
+    observerCode
+  });
+
+  if (!registration.ok && FIXED_PARENT_EMAIL && registration.status >= 400 && registration.status < 500) {
+    console.warn(`Parent registration skipped for ${email}: ${registration.status}`);
+  } else if (!registration.ok) {
+    throw new Error(`Parent registration failed: ${registration.status} ${JSON.stringify(registration.body)}`);
+  }
+
+  const teacherEmail = uniqueEmail("visual-check-parent-teacher", "");
+  await page.goto(`${baseUrl}/login?role=teacher`, {
+    waitUntil: "domcontentloaded",
+    timeout: 30_000
+  });
+  const teacherRegistration = await evaluateJson(page, "/api/auth/teacher-register", {
+    email: teacherEmail,
+    password: PASSWORD,
+    name: TEACHER_NAME,
+    inviteCode: TEACHER_INVITE_CODE
+  });
+
+  if (!teacherRegistration.ok) {
+    throw new Error(
+      `Parent fixture teacher registration failed: ${teacherRegistration.status} ${JSON.stringify(teacherRegistration.body)}`
+    );
+  }
+
+  const teacherLogin = await evaluateJson(page, "/api/auth/login", {
+    email: teacherEmail,
+    password: PASSWORD,
+    role: "teacher"
+  });
+
+  if (!teacherLogin.ok) {
+    throw new Error(`Parent fixture teacher login failed: ${teacherLogin.status} ${JSON.stringify(teacherLogin.body)}`);
+  }
+
+  const classResult = await evaluateJson(page, "/api/teacher/classes", {
+    name: `Visual Check Parent Class ${Date.now().toString(36)}`,
+    subject: "math",
+    grade: "4"
+  });
+
+  if (!classResult.ok) {
+    throw new Error(`Parent fixture class creation failed: ${classResult.status} ${JSON.stringify(classResult.body)}`);
+  }
+
+  const classId = classResult.body?.data?.id;
+  if (!classId) {
+    throw new Error(`Parent fixture class id missing: ${JSON.stringify(classResult.body)}`);
+  }
+
+  const enrollResult = await evaluateJson(page, `/api/teacher/classes/${classId}/students`, {
+    email: studentSession.email
+  });
+
+  if (!enrollResult.ok) {
+    throw new Error(`Parent fixture add student failed: ${enrollResult.status} ${JSON.stringify(enrollResult.body)}`);
+  }
+
+  const assignmentResult = await evaluateJson(page, "/api/teacher/assignments", {
+    classId,
+    title: `Visual Check Parent Assignment ${Date.now().toString(36)}`,
+    dueDate: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString().slice(0, 10),
+    submissionType: "essay",
+    maxUploads: 1,
+    gradingFocus: "先确认是否按时完成，再看表达与步骤是否完整。"
+  });
+
+  if (!assignmentResult.ok) {
+    throw new Error(
+      `Parent fixture assignment creation failed: ${assignmentResult.status} ${JSON.stringify(assignmentResult.body)}`
+    );
+  }
+
+  const parentLogin = await evaluateJson(page, "/api/auth/login", {
+    email,
+    password: PASSWORD,
+    role: "parent"
+  });
+
+  if (!parentLogin.ok) {
+    throw new Error(`Parent login failed: ${parentLogin.status} ${JSON.stringify(parentLogin.body)}`);
+  }
+
+  return { email };
+}
+
+async function ensureSchoolSession(page) {
+  const email = uniqueEmail("visual-check-school-admin", FIXED_SCHOOL_ADMIN_EMAIL);
+  const schoolCode = `VCSCH${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`.toUpperCase();
+
+  await page.goto(`${baseUrl}/school/register`, {
+    waitUntil: "domcontentloaded",
+    timeout: 30_000
+  });
+
+  const registration = await evaluateJson(page, "/api/auth/school-register", {
+    email,
+    password: PASSWORD,
+    name: SCHOOL_ADMIN_NAME,
+    schoolName: `Visual Check School ${schoolCode}`,
+    schoolCode,
+    inviteCode: SCHOOL_ADMIN_INVITE_CODE
+  });
+
+  if (!registration.ok && FIXED_SCHOOL_ADMIN_EMAIL && registration.status >= 400 && registration.status < 500) {
+    console.warn(`School admin registration skipped for ${email}: ${registration.status}`);
+  } else if (!registration.ok) {
+    throw new Error(`School admin registration failed: ${registration.status} ${JSON.stringify(registration.body)}`);
+  }
+
+  const login = await evaluateJson(page, "/api/auth/login", {
+    email,
+    password: PASSWORD,
+    role: "school_admin"
+  });
+
+  if (!login.ok) {
+    throw new Error(`School admin login failed: ${login.status} ${JSON.stringify(login.body)}`);
+  }
+
+  return { email };
+}
+
+async function ensureAdminSession(page) {
+  const email = uniqueEmail("visual-check-admin", FIXED_ADMIN_EMAIL);
+
+  await page.goto(`${baseUrl}/admin/register`, {
+    waitUntil: "domcontentloaded",
+    timeout: 30_000
+  });
+
+  const registration = await evaluateJson(page, "/api/auth/admin-register", {
+    email,
+    password: PASSWORD,
+    name: ADMIN_NAME,
+    inviteCode: ADMIN_INVITE_CODE
+  });
+
+  if (!registration.ok && FIXED_ADMIN_EMAIL && registration.status >= 400 && registration.status < 500) {
+    console.warn(`Admin registration skipped for ${email}: ${registration.status}`);
+  } else if (!registration.ok) {
+    throw new Error(`Admin registration failed: ${registration.status} ${JSON.stringify(registration.body)}`);
+  }
+
+  const login = await evaluateJson(page, "/api/auth/login", {
+    email,
+    password: PASSWORD,
+    role: "admin"
+  });
+
+  if (!login.ok) {
+    throw new Error(`Admin login failed: ${login.status} ${JSON.stringify(login.body)}`);
   }
 
   return { email };
@@ -586,6 +856,54 @@ export async function runVisualCheck() {
       }
 
       await teacherContext.close();
+
+      const parentContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const parentPage = await parentContext.newPage();
+      await ensureParentSession(parentPage);
+
+      for (const routeConfig of parentRoutes) {
+        const routeResults = await runRouteChecks(parentPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await parentContext.close();
+
+      const schoolContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const schoolPage = await schoolContext.newPage();
+      await ensureSchoolSession(schoolPage);
+
+      for (const routeConfig of schoolRoutes) {
+        const routeResults = await runRouteChecks(schoolPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await schoolContext.close();
+
+      const adminContext = await browser.newContext({ viewport, deviceScaleFactor: 1 });
+      const adminPage = await adminContext.newPage();
+      await ensureAdminSession(adminPage);
+
+      for (const routeConfig of adminRoutes) {
+        const routeResults = await runRouteChecks(adminPage, routeConfig, viewport.name, baselineMap);
+        for (const result of routeResults) {
+          if (!result.passed) {
+            unexpectedFailures += 1;
+          }
+          results.push(result);
+        }
+      }
+
+      await adminContext.close();
     }
   } finally {
     await browser.close();

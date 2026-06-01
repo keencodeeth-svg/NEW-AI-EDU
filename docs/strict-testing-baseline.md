@@ -130,6 +130,8 @@ corepack pnpm verify:strict
 - JSON 巡检报告包含 `http status`、横向溢出、主题切换、关键壳层存在 / 不存在断言
 - 任一路由断言失败默认直接非零退出，不再是“有截图但门禁仍通过”
 - 默认输出仍兼容 `output/playwright/*`，但可通过环境变量覆盖截图目录、报告路径与基线路径
+- 当前稳定覆盖矩阵为 12 条路由：`/`、`/login`、`/register`、`/recover`、`/ai-classroom`、`/student`、`/practice`、`/teacher`、`/teacher/classroom-live`、`/parent`、`/school`、`/admin`
+- `parent/school/admin` 使用脚本内 API 注册 / 登录链路建立隔离会话，不依赖认证页 UI 提交流程；`parent` 额外注入最小学生观察码 + 教师作业数据，保证进入真实工作台
 
 视觉巡检本地入口：
 
