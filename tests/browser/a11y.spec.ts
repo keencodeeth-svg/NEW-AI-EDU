@@ -1,9 +1,9 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { isBlockedA11yImpact } from "./a11y-policy";
 
 const PASSWORD = "Playwright123!";
 const TEACHER_INVITE_CODE = "PW-TEACH-2026";
-const INCLUDE_SERIOUS_VIOLATIONS = process.env.PLAYWRIGHT_A11Y_INCLUDE_SERIOUS === "true";
 
 type ApiResult<T = unknown> = {
   ok: boolean;
@@ -56,8 +56,7 @@ function formatViolations(
 async function expectNoCriticalViolations(page: Page, label: string) {
   await page.waitForLoadState("networkidle");
   const results = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa"]).analyze();
-  const blockedImpacts = INCLUDE_SERIOUS_VIOLATIONS ? new Set(["critical", "serious"]) : new Set(["critical"]);
-  const blockedViolations = results.violations.filter((violation) => blockedImpacts.has(violation.impact ?? ""));
+  const blockedViolations = results.violations.filter((violation) => isBlockedA11yImpact(violation.impact));
   expect(blockedViolations, formatViolations(label, blockedViolations)).toEqual([]);
 }
 

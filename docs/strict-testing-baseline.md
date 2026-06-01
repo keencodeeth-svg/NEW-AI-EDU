@@ -15,11 +15,13 @@ corepack pnpm verify:strict
 执行顺序：
 
 1. `corepack pnpm lint`
-2. `corepack pnpm check:project-snapshot`
-3. `corepack pnpm build`
-4. `corepack pnpm test:unit`
-5. `corepack pnpm test:api`
-6. `corepack pnpm test:browser:built`
+2. `corepack pnpm check:i18n-keys`
+3. `corepack pnpm check:project-snapshot`
+4. `corepack pnpm build`
+5. `corepack pnpm test:unit`
+6. `corepack pnpm test:api`
+7. `corepack pnpm test:a11y`
+8. `corepack pnpm test:browser:built`
 
 说明：
 
@@ -116,9 +118,9 @@ corepack pnpm verify:strict
 
 当前浏览器 a11y 回归已覆盖：
 
-- 公开入口页 zero critical accessibility violations
-- 学生工作台与练习流 zero critical accessibility violations
-- 教师工作台与课堂实时页 zero critical accessibility violations
+- 公开入口页 zero critical / serious accessibility violations
+- 学生工作台与练习流 zero critical / serious accessibility violations
+- 教师工作台与课堂实时页 zero critical / serious accessibility violations
 - 键盘首个 Tab 可达 `skip-link`，并能跳到 `#main-content`
 - 主题切换控件存在基础 ARIA 契约：`role=group`、可感知标签、按钮 `aria-pressed`
 
@@ -135,7 +137,7 @@ corepack pnpm verify:strict
 - 可通过 `VISUAL_CHECK_BASE_URL` 覆盖目标地址
 - 可通过 `VISUAL_CHECK_SCREENSHOT_DIR`、`VISUAL_CHECK_REPORT_PATH`、`VISUAL_CHECK_BASELINE_PATH` 定制产物路径
 - 可通过 `VISUAL_CHECK_MAX_FAILURES` 放宽允许失败数，默认 `0`
-- 如需把 a11y 门从 `critical` 扩大到 `serious + critical`，使用 `corepack pnpm test:a11y:serious`
+- `corepack pnpm test:a11y` 默认拦截 `critical + serious`；`test:a11y:serious` 仅保留为兼容别名
 
 当前浏览器 smoke 还额外执行三条严格约束：
 
