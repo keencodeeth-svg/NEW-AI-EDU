@@ -1,5 +1,6 @@
 import fs from "fs/promises";
 import path from "path";
+import { PRODUCT_SERVICE_NAME } from "./classroom/brand";
 import { isDbEnabled, isDatabaseRequired, queryOne } from "./db";
 import {
   getRuntimeGuardrailIssues,
@@ -68,7 +69,7 @@ export function getLivenessPayload() {
   return {
     ok: true,
     alive: true,
-    service: "hangke-ai-edu",
+    service: PRODUCT_SERVICE_NAME,
     mode: "liveness" as const,
     ts: new Date().toISOString()
   };
@@ -423,7 +424,7 @@ export async function getReadinessPayload(): Promise<ReadinessPayload> {
   return {
     ok: summary.fail === 0,
     ready: summary.fail === 0,
-    service: "hangke-ai-edu",
+    service: PRODUCT_SERVICE_NAME,
     mode: "readiness",
     ts: new Date().toISOString(),
     summary,

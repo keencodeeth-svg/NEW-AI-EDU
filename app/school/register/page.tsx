@@ -61,7 +61,7 @@ export default function SchoolRegisterPage() {
               className="form-control"
               value={registerForm.values.email}
               onChange={(event) => registerForm.setValue("email", event.target.value)}
-              placeholder="school-admin@demo.com"
+              placeholder="请输入学校管理员工作邮箱"
             />
           </label>
           <label className="form-field">
@@ -81,7 +81,7 @@ export default function SchoolRegisterPage() {
               className="form-control"
               value={registerForm.values.schoolCode}
               onChange={(event) => registerForm.setValue("schoolCode", event.target.value)}
-              placeholder="例如 HKHS01，已存在学校可直接绑定"
+              placeholder="如已有学校编码，可直接绑定"
             />
           </label>
           <label className="form-field">

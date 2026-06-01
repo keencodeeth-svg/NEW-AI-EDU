@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { afterEach, test } from "node:test";
+import { PRODUCT_SERVICE_NAME } from "../../lib/classroom/brand";
 import { getLivenessPayload, getReadinessPayload } from "../../lib/health";
 import { setEnvValue, unsetEnvValue } from "./env-test-helpers";
 
@@ -54,6 +55,7 @@ test("liveness payload is always alive", () => {
   const payload = getLivenessPayload();
   assert.equal(payload.ok, true);
   assert.equal(payload.alive, true);
+  assert.equal(payload.service, PRODUCT_SERVICE_NAME);
   assert.equal(payload.mode, "liveness");
 });
 
@@ -73,6 +75,7 @@ test("readiness stays ready in development with writable object storage and no d
 
     const payload = await getReadinessPayload();
     assert.equal(payload.ready, true);
+    assert.equal(payload.service, PRODUCT_SERVICE_NAME);
     assert.equal(payload.mode, "readiness");
     assert.ok(payload.summary.pass >= 1);
 

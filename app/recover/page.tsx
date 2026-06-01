@@ -193,7 +193,7 @@ export default function RecoverPage() {
                 autoComplete="organization"
                 value={recoverPage.schoolName}
                 onChange={(event) => recoverPage.setField("schoolName", event.target.value)}
-                placeholder="例如：知序实验学校"
+                placeholder="填写真实学校名称，便于管理员核验"
                 disabled={recoverPage.loading}
               />
             </label>

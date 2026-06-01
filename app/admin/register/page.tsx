@@ -55,7 +55,7 @@ export default function AdminRegisterPage() {
               className="form-control"
               value={registerForm.values.email}
               onChange={(event) => registerForm.setValue("email", event.target.value)}
-              placeholder="admin@demo.com"
+              placeholder="请输入管理员工作邮箱"
             />
           </label>
           <label className="form-field">

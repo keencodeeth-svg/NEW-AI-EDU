@@ -28,7 +28,7 @@ export default function TeacherRegisterPage() {
         fallback: "注册失败",
         emailExistsMessage: "该教师邮箱已注册，可直接登录。",
         invalidInviteMessage: "邀请码无效，或当前不允许教师自助注册。",
-        invalidSchoolCodeMessage: "学校编码无效，请核对后重试；不填则会归入默认学校。"
+        invalidSchoolCodeMessage: "学校编码无效，请核对后重试；不填则会等待学校管理员分配组织。"
       })
   });
 
@@ -58,7 +58,7 @@ export default function TeacherRegisterPage() {
               className="form-control"
               value={registerForm.values.email}
               onChange={(event) => registerForm.setValue("email", event.target.value)}
-              placeholder="teacher@demo.com"
+              placeholder="请输入教师工作邮箱"
             />
           </label>
           <label className="form-field">
@@ -78,7 +78,7 @@ export default function TeacherRegisterPage() {
               className="form-control"
               value={registerForm.values.schoolCode}
               onChange={(event) => registerForm.setValue("schoolCode", event.target.value)}
-              placeholder="例如 HKHS01，不填则归入默认学校"
+              placeholder="如已收到学校编码，请在此填写"
             />
           </label>
           <label className="form-field">
