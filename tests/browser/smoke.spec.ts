@@ -872,6 +872,35 @@ test.describe("browser smoke", () => {
     await expect(page.getByText(/1 次失败尝试/).first()).toBeVisible({ timeout: 15_000 });
   });
 
+  test("admin home prioritizes operational actions before generic cards", async ({ page }) => {
+    const adminEmail = `${uniqueId("admin-home")}@local.test`;
+
+    await page.goto("/admin/register");
+    await registerAdminByApi(page, {
+      email: adminEmail,
+      name: "Playwright Admin Home"
+    });
+    await loginByApi(page, {
+      email: adminEmail,
+      role: "admin"
+    });
+
+    await page.goto("/admin");
+    await expect(page.getByRole("heading", { name: "管理运营工作台" })).toBeVisible({ timeout: 15_000 });
+    await expect(page.getByText("今天先处理什么")).toBeVisible();
+    const priorityList = page.getByRole("list", { name: "管理员今日优先行动" });
+    await expect(priorityList.getByRole("listitem")).toHaveCount(3);
+    await expect(priorityList).toContainText("发布风险");
+    await expect(priorityList).toContainText("账号恢复");
+    await expect(priorityList).toContainText("AI 模型链");
+    await expect(page.getByRole("link", { name: "处理发布阻断" })).toHaveAttribute("href", "/admin/launch-readiness");
+    await expect(page.getByRole("link", { name: "处理恢复工单" })).toHaveAttribute("href", "/admin/recovery-requests");
+    await expect(page.getByRole("link", { name: "检查模型链" })).toHaveAttribute("href", "/admin/ai-models");
+    await expect(page.getByRole("heading", { name: "管理控制台" })).toHaveCount(0);
+    await expect(page.locator(".chip", { hasText: /^P0$/ })).toHaveCount(0);
+    await expect(page.locator(".chip", { hasText: /^A\/B$/ })).toHaveCount(0);
+  });
+
   test("user sees a temporary lockout after repeated failed login attempts", async ({ page }) => {
     const studentEmail = `${uniqueId("student-lockout")}@local.test`;
 

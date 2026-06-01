@@ -161,6 +161,118 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.admin-ops-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.admin-priority-card {
+  min-height: 100%;
+}
+
+.admin-priority-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: admin-priority;
+}
+
+.admin-priority-item {
+  counter-increment: admin-priority;
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--stroke);
+  background: var(--surface-panel);
+}
+
+.admin-priority-item-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: start;
+}
+
+.admin-priority-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-0);
+  font-weight: 800;
+}
+
+.admin-priority-title::before {
+  content: counter(admin-priority);
+  display: inline-grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(33, 102, 199, 0.08);
+  color: var(--brand-0);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.admin-priority-consequence {
+  margin-top: 6px;
+  color: var(--ink-1);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.admin-status-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  background: rgba(236, 247, 255, 0.9);
+  color: var(--brand-0);
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.admin-priority-actions {
+  margin-top: 0;
+}
+
+.admin-status-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-status-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--stroke);
+  color: var(--ink-1);
+  font-size: 13px;
+}
+
+.admin-status-row:first-child {
+  padding-top: 0;
+}
+
+.admin-status-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-status-row strong {
+  color: var(--ink-0);
+  text-align: right;
+}
+
 .card {
   background: var(--card);
   border: 1px solid rgba(116, 150, 191, 0.1);
@@ -3007,6 +3119,28 @@ html[data-density='compact'] .main {
 }
 
 @media (max-width: 720px) {
+  .admin-ops-grid,
+  .admin-priority-item-head {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-status-pill {
+    justify-self: flex-start;
+    white-space: normal;
+  }
+
+  .admin-priority-actions .button {
+    width: 100%;
+  }
+
+  .admin-status-row {
+    flex-direction: column;
+  }
+
+  .admin-status-row strong {
+    text-align: left;
+  }
+
   .home-hero-title {
     max-width: none;
     font-size: clamp(30px, 9vw, 44px);
